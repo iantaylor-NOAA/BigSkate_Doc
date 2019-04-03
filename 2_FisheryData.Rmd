@@ -1,0 +1,69 @@
+
+<!-- ************ASSESSMENT SECTION**************************************** -->
+#Assessment
+
+##Data
+Data used in the `r spp` assessment are summarized in Figure \ref{fig:data_plot}. 
+Descriptions of the data sources are in the following sections.
+
+
+<!-- ************FISHERY-DEPENDENT DATA************************************ -->
+###Commercial Fishery Landings
+
+
+###Commercial Discards
+
+
+###Commercial Fishery Length and Age Data
+
+
+The input sample sizes were calculated via the Stewart Method (Ian Stewart, personal 
+communication, IPHC):
+
+\begin{centering}
+
+Input effN = $N_{\text{trips}} + 0.138 * N_{\text{fish}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is $<$ 44
+
+Input effN = $7.06 * N_{\text{trips}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is $\geq$ 44
+
+\end{centering}
+
+
+###Sport Fishery Removals and Discards
+
+
+
+Biological samples from the recreational fleets are described in the sections below.
+
+###Fishery-Dependent Indices of Abundance
+
+**Data Source 1**
+
+_Data Source 1 Index Standardization_
+
+
+_Data Source 1 Length Composition_
+
+
+**Data Source 2**
+
+
+**Data Source 3**
+
+
+
+
+<!-- ************FISHERY-INDPENDENT DATA*********************************** -->
+
+###Fishery-Independent Data Sources
+
+**Data Source 1**
+
+_Data Source 1 Index Standardization_
+
+
+_Data Source 1 Length Composition_
+
+
+**Data Source 2**
+

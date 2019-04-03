@@ -1,0 +1,152 @@
+---
+title: ''
+author: ''
+date: ''
+output:
+  pdf_document:
+    fig_caption: yes
+    highlight: haddock
+    includes:
+      in_header: header.tex
+    keep_tex: yes
+    latex_engine: xelatex
+    template: Default_template_modified.tex
+    number_sections: yes
+    toc: yes
+    toc_depth: 4
+  html_document:
+    toc: yes
+  word_document: default
+documentclass: article
+fontsize: 12pt
+geometry: margin=1in
+csl: CJFAS.csl
+bibliography: BibFile.bib
+---
+```{r global_options, include=FALSE}
+    # set global options for R code chunks: echo=FALSE (don't include source code); 
+    # warning=FALSE (suppress R warnings); message=FALSE (suppress R messages)
+    # eval = TRUE is default
+    knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+```{r}
+    # Read in preamble R code - including required libraries and the SS file(s)
+    source('./Rcode/Preamble.R')
+ 
+    # Read in data/manipulations for executive summary tables and figures
+    # It may take time to edit this file and get it ready for your assessment
+    # Make small changes in this file and then try to compile the document
+    # Commit when you have a success!
+    source('./Rcode/Exec_summary_figs_tables.R')
+```
+
+USE THIS .Rmd TO TEST R CODE CHUNKS, FIGURES AND PLOTS BEFORE INSERTING INTO THE MAIN TEXT OR TO DEBUG
+
+
+
+```{r}
+# Extract reference points table data
+
+ 
+   mod = mod1
+   mod_area = 'mod1'
+ 
+      
+
+  # Rbind all of the data for the big summary reference table  
+  Ref_pts = rbind (
+  SSB_Unfished    = mod$derived_quants[grep('SSB_I', mod$derived_quants$Label), ],
+  TotBio_Unfished = mod$derived_quants[grep('TotBio', mod$derived_quants$Label), ],
+  Recr_Unfished   = mod$derived_quants[grep('Recr_I', mod$derived_quants$Label), ],
+  SSB_lastyr      = mod$derived_quants[grep(paste0('SSB_', LastYR), mod$derived_quants$Label), ],
+  Depletion_lastyr= mod$derived_quants[grep(paste0('Bratio_', LastYR), mod$derived_quants$Label), ],
+  Refpt_sB        = c(NA, NA, NA),
+  SSB_Btgt        = mod$derived_quants[grep('SSB_Btgt', mod$derived_quants$Label), ],
+  SPR_Btgt        = mod$derived_quants[grep('SPR_Btgt', mod$derived_quants$Label), ],
+  Fstd_Btgt       = mod$derived_quants[grep('Fstd_Btgt', mod$derived_quants$Label), ],
+  TotYield_Btgt   = mod$derived_quants[grep('TotYield_B', mod$derived_quants$Label), ],
+  Refpt_SPR       = c(NA, NA, NA),
+  SSB_SPRtgt      = mod$derived_quants[grep('SSB_SPR', mod$derived_quants$Label), ],
+  SPR_proxy       = c('SPR_proxy', .5, NA),
+  Fstd_SPRtgt     = mod$derived_quants[grep('Fstd_SPR', mod$derived_quants$Label), ],
+  TotYield_SPRtgt = mod$derived_quants[grep('TotYield_SPR', mod$derived_quants$Label), ],
+  Refpts_MSY      = c(NA, NA, NA),
+  SSB_MSY         = mod$derived_quants[grep('SSB_MSY', mod$derived_quants$Label), ],
+  SPR_MSY         = mod$derived_quants[grep('SPR_MSY', mod$derived_quants$Label), ],
+  Fstd_MSY        = mod$derived_quants[grep('Fstd_MSY', mod$derived_quants$Label), ],
+  TotYield_MSY    = mod$derived_quants[grep('TotYield_MSY', mod$derived_quants$Label), ] )
+  Ref_pts         = Ref_pts[, 1:3]
+  Ref_pts$Value   = as.numeric(Ref_pts$Value)
+  Ref_pts$StdDev  = as.numeric(Ref_pts$StdDev)
+  Ref_pts$Value1  = ifelse(Ref_pts$Value >= 1, as.character(round(Ref_pts$Value, 0)), 
+                           as.character(round(Ref_pts$Value,3)))   
+        
+  Ref_pts$lowerCI  = round(Ref_pts$Value + qnorm(0.025) * Ref_pts$StdDev, digits = 3)
+  
+  Ref_pts$upperCI  = round(Ref_pts$Value - qnorm(0.025) * Ref_pts$StdDev, digits = 3)
+  
+  Ref_pts$lowerCI1 = ifelse(Ref_pts$lowerCI >= 1, as.character(round(Ref_pts$lowerCI, 0)), 
+                            as.character(round(Ref_pts$lowerCI, 3))) 
+  
+  Ref_pts$upperCI1 = ifelse(Ref_pts$upperCI>=1, as.character(round(Ref_pts$upperCI,0)), 
+                            as.character(round(Ref_pts$upperCI, 3))) 
+  
+  #Ref_pts$CI1      = paste('(', Ref_pts$lowerCI1, '-', Ref_pts$upperCI1, ')', sep='')
+        
+  Quantity = c(paste('Unfished spawning output (', fecund_unit, ')', sep = ''),
+                     paste('Unfished age ', min_age, ' biomass (mt)', sep = ''),
+                    'Unfished recruitment (R0, thousands)',
+                     paste('Spawning output', '(', LastYR, ' ', fecund_unit, ')', sep = ''),
+                     paste('Depletion (', LastYR,')',sep=''),
+                    '\\textbf{$\\text{Reference points based on } \\mathbf{SB_{40\\%}}$}',
+                    'Proxy spawning output ($B_{40\\%}$)',
+                    'SPR resulting in $B_{40\\%}$ ($SPR_{B40\\%}$)',
+                    'Exploitation rate resulting in $B_{40\\%}$',
+                    'Yield with $SPR_{B40\\%}$ at $B_{40\\%}$ (mt)',
+                    '\\textbf{\\textit{Reference points based on SPR proxy for MSY}}',
+                    'Spawning output',
+                    '$SPR_{proxy}$',
+                    'Exploitation rate corresponding to $SPR_{proxy}$',
+                    'Yield with $SPR_{proxy}$ at $SB_{SPR}$ (mt)',
+                    '\\textbf{\\textit{Reference points based on estimated MSY values}}',
+                    'Spawning output at $MSY$ ($SB_{MSY}$)',
+                    '$SPR_{MSY}$',
+                    'Exploitation rate at $MSY$',
+                    '$MSY$ (mt) ')
+        
+  Ref_pts = cbind(Quantity, Ref_pts[, c(4, 7, 8)])
+  Ref_pts[c(6, 11, 13, 16), 3] = ''
+  Ref_pts[c(6, 11, 16), 2] = ''
+  colnames(Ref_pts) = c('\\textbf{Quantity}', '\\textbf{Estimate}', 
+                        '\\textbf{\\Low 2.5\\%  limit}',
+                        '\\textbf{\\High 2.5\\%  limit}')
+  assign(paste('Ref_pts_', mod_area, sep = ''), Ref_pts)
+  
+  
+  
+  
+  
+  Ref_pts_mod1.table = xtable(Ref_pts_mod1, 
+                            caption=c(paste('Summary of reference 
+                                      points and management quantities for the 
+                                      base case ', mod1_label, '.',sep = '')), 
+                            label='tab:Ref_pts_mod1')  
+# Add alignment      
+align(Ref_pts_mod1.table) = c('l',
+                              '>{\\raggedright}p{4.1in}',
+                              '>{\\centering}p{.6in}',
+                              '>{\\centering}p{.6in}',
+                              '>{\\centering}p{.6in}')  
+
+
+```
+
+
+```{r, results='asis'}
+   # Print reference point tables
+  
+     print(Ref_pts_mod1.table, include.rownames = FALSE, caption.placement = 'top',
+           sanitize.text.function = function(x){x})
+   
+```

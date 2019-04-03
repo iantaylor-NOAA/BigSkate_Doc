@@ -1,0 +1,64 @@
+
+
+<!--************BIOLOGICAL DATA*********************************************-->
+###Biological Parameters and Data
+
+ Love et al.  [-@Love1987]
+
+**Length and Age Compositions**
+
+Length compositions were provided from the following sources:
+
+\begin{itemize}[noitemsep,nolistsep,topsep=0pt]
+  \item Source 1 (\emph{type, e.g., commercial dead fish, research, recreational}, yyyy-yyyy)    
+  \item Source 2 (\emph{type}, yyyy-yyyy)    
+  \item Source 3 (\emph{research}, yyyy, yyyy, yyyy, yyyy) 
+\end{itemize}
+
+
+The length composition of all fisheries aggregated across time by fleet is in Figure
+\ref{fig:comp_lendat_aggregated_across_time}.  Descriptions and details of the length
+composition data are in the above section for each fleet or survey.
+
+
+\vspace{.5cm}
+**Age Structures**
+
+
+von Bertalanffy growth curve [@vonB1938], $L_i = L_{\infty}e^{(-k[t-t_0])}$, 
+where $L_i$ is the length (cm) at age $i$, $t$ is age in years, $k$ is rate of 
+increase in growth, $t_0$ is the intercept, and $L_{\infty}$ is the asymptotic length.
+
+
+
+
+\vspace{.5cm}
+**Aging Precision and Bias**
+
+
+
+
+\vspace{.5cm}
+**Weight-Length**
+
+
+
+\vspace{.5cm}
+**Sex Ratio, Maturity, and Fecundity**
+
+
+\vspace{.5cm}
+**Natural Mortality**
+
+
+
+\vspace{.5cm}
+
+
+###Environmental or Ecosystem Data Included in the Assessment
+In this assessment, neither environmental nor ecosystem considerations were explicitly included in the analysis.  This is primarily due to a lack of relevant data and results of analyses (conducted elsewhere) 
+that could contribute ecosystem-related quantitative information for the assessment.
+
+
+
+

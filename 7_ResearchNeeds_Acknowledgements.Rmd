@@ -1,0 +1,37 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+<!-- ****************************RESEARCH NEEDS**************************** -->
+#Research Needs
+There are a number of areas of research that could improve the stock 
+assessment for `r spp`.  Below are issues identified by the STAT team 
+and the STAR panel:
+
+\begin{enumerate}
+
+\item \textbf{xxxx}: 
+
+\item \textbf{xxxx}:
+
+\item \textbf{xxxx}:
+
+\item \textbf{xxxx}:
+
+\item \textbf{xxxx}:
+
+\end{enumerate}
+
+
+
+
+<!-- ***************************ACKNOWLEDGEMENTS*************************** -->
+#Acknowledgments
+
+
+
+
+\newpage
+\FloatBarrier

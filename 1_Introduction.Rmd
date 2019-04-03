@@ -1,0 +1,36 @@
+<!-- ***********INTRODUCTION SECTION*************************************** -->
+
+#Introduction
+
+##Basic Information and Life History
+
+
+
+## Early Life History
+
+
+##Map
+A map showing the scope of the assessment and depicting boundaries for fisheries or 
+data collection strata is provided in Figure \ref{fig:boundary_map}.
+
+##Ecosystem Considerations
+In this assessment, ecosystem considerations were not explicitly included in the analysis. 
+This is primarily due to a lack of relevant data and results of analyses (conducted elsewhere) 
+that could contribute ecosystem-related quantitative information for the assessment.
+
+
+##Fishery Information
+
+
+
+##Summary of Management History
+
+
+
+##Management Performance
+
+Table \ref{tab:mnmgt_perform}
+
+
+##Fisheries Off Mexico or Canada
+

@@ -1,0 +1,240 @@
+
+
+<!-- ***********HISTORY AND CURRENT ASSESSMENT***************************** -->
+##Previous Assessments
+
+###History of Modeling Approaches Used for this Stock
+
+
+###yyyy Assessment Recommendations
+
+\begin{description}[style=unboxed]
+
+  \item[Recommendation 1: ] \hfill \\
+
+   STAT response: xxxxx
+
+\item[Recommendation 2: ] \hfill \\
+
+  STAT response: xxxxx
+
+\item[Recommendation 3: ] \hfill \\
+
+  STAT response: xxxx
+
+  
+\end{description}
+
+
+
+
+<!-- ************************MODEL DESCRIPTION***************************** -->
+##Model Description
+
+
+###Transition to the Current Stock Assessment
+
+
+
+###Summary of Data for Fleets and Areas
+There are xxx fleets in the base model.  They include:
+
+*Commercial*: The commercial fleets include ...
+
+*Recreational*: The recreational fleets include ...
+
+*Research*: There are xx sources of fishery-independent data available ...
+
+###Other Specifications
+
+
+###Modeling Software
+The STAT team used Stock Synthesis 3 version 3.30.05.03 by Dr. Richard Methot at 
+the NWFSC. This most recent version was used, since it included 
+improvements and corrections to older versions.  The r4SS package 
+(GitHub release number v1.27.0) was used to post-processing output data from Stock
+Synthesis. 
+
+###Data Weighting
+
+
+###Priors
+The log-normal prior for female natural mortality were based on a meta-analysis 
+completed by Hamel [-@Hamel2015], as described under “Natural Mortality.” Female 
+natural mortality was fixed at the median of the prior, 0.xxx for an assumed
+maximum age of xx.  An uninformative prior was used for the male offset natural 
+mortality, which was estimated.
+
+The prior for steepness (*h*) assumes a beta distribution with parameters based on an update for the 
+Thorson-Dorn rockfish prior (Dorn, M. and Thorson, J., pers. comm.), which was endorsed by the Science 
+and Statistical Committee in 2018.  The prior is a beta distribution with $mu$=0.xxx and $sigma$=0.xxx.
+Steepness is fixed in the base model at the mean of the prior. The priors were applied in sensitivity analyses where these parameters were estimated.
+
+
+
+###Estimated and Fixed Parameters
+A full list of all estimated and fixed parameters is provided in Tables 
+\ref{tab:model_params}. 
+
+The base model has a total of xxx estimated parameters in the following categories:
+
+\begin{itemize}
+  \item xxx,
+  \item xxx
+  \item xxx, and
+  \item xxx selectivity parameters
+\end{itemize}
+
+The estimated parameters are described in greater detail below and a full list of 
+all estimated and parameters is provided in Table \ref{tab:model_params}.
+
+_Growth._ 
+
+_Natural Mortality._ 
+
+_Selectivity._  
+
+
+_Other Estimated Parameters._ 
+
+_Other Fixed Parameters._ 
+
+
+
+##Model Selection and Evaluation
+###Key Assumptions and Structural Choices
+
+
+###Alternate Models Considered
+
+
+###Convergence
+
+
+##Response to the Current STAR Panel Requests
+
+\begin{description}[style=sameline]
+
+\item[Request No. 1: ] \hfill \\
+  
+\textbf{Rationale:} xxx   
+    
+\textbf{STAT Response:} xxx
+
+
+\item[Request No. 2: ] \hfill \\
+
+
+\textbf{Rationale:} xxx 
+
+
+\textbf{STAT Response:} xxx
+    
+
+\item[Request No. 3: ] \hfill \\
+
+\textbf{Rationale:} x.  
+    
+  
+\textbf{STAT Response:} xxx
+
+\item[Request No. 4: ] \hfill \\
+
+\textbf{Rationale:} xxx 
+    
+    
+\textbf{STAT Response:} xxx
+
+
+\item[Request No. 5: ] \hfill \\
+
+\textbf{Rationale:} xxx
+  
+\textbf{STAT Response:} xxx  
+    
+
+
+\end{description}
+
+<!-- *********************MODEL 1 RESULTS********************************** -->
+##Base Case Model Results 
+The following description of the model results reflects a base model that 
+incorporates all of the changes made during the STAR panel (see previous section). 
+The base model parameter estimates and their approximate asymptotic standard errors 
+are shown in Table \ref{tab:model_params} and the likelihood components are in 
+Table \ref{tab:like_components}.  Estimates of derived reference points and 
+approximate 95% asymptotic confidence intervals are shown in Table \ref{tab:Ref_pts_mod1}.
+Time-series of estimated stock size over time are shown in Table \ref{tab:Timeseries_mod1}.
+
+
+
+###Parameter Estimates
+
+The additional survey variability (process error added directly to each year's input 
+variability) for all surveys was estimated within the model.  
+
+
+
+(Figure \ref{fig:ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals} ). 
+
+The stock-recruit curve ... Figure \ref{fig:SR_curve2} with estimated recruitments also 
+shown. 
+
+###Fits to the Data
+Model fits to the indices of abundance, fishery length composition, survey length 
+composition, and conditional age-at-length observations are all discussed below.  
+
+
+###Uncertainty and Sensitivity Analyses
+A number of sensitivity analyses were conducted, including:
+
+\begin{enumerate}
+
+  \item Sensitivity 1
+  
+  \item Sensitivity 2
+  
+  \item Sensitivity 3
+  
+  \item Sensitivity 4
+  
+  \item Sensitivity 5, etc/
+  
+  
+\end{enumerate}
+
+
+
+
+
+###Retrospective Analysis
+
+
+
+###Likelihood Profiles
+
+
+
+###Reference Points
+Reference points were calculated using the estimated selectivities and catch distribution 
+among fleets in the most recent year of the model, (`r LastYR - 1`). Sustainable total 
+yield (landings plus discards) were `r Ref_pts_mod1[15,2]` mt when using an $SPR_{50\%}$ 
+reference harvest rate and with a 95% confidence interval of `r Ref_pts_mod1[15,3]` mt 
+based on estimates of uncertainty. The spawning biomass equivalent to 40% of the unfished 
+level ($SB_{40\%}$) was `r Ref_pts_mod1[7,2]` mt. 
+
+
+(Figure \ref{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}
+
+The `r LastYR` spawning biomass relative to unfished equilibrium spawning biomass 
+is above/below the target of 40% of unfished 
+levels (Figure \ref{fig:ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals}). 
+The relative fishing intensity, $(1-SPR)/(1-SPR_{50\%})$, has been xxx the management target 
+for the entire time series of the model. 
+
+Table \ref{tab:Ref_pts_mod1} shows the full suite of estimated reference points for the base 
+model and Figure \ref{fig:yield1_yield_curve} shows the equilibrium curve based on a 
+steepness value xxx.
+
+
+

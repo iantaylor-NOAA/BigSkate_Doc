@@ -1,0 +1,136 @@
+---
+title: "Assessment Figure Examples"
+author: "Melissa Monk"
+date: "July 26, 2016"
+output: 
+  pdf_document:
+    fig_caption: yes
+    highlight: haddock
+    includes:
+      in_header: header.tex
+    latex_engine: xelatex
+---
+
+```{r global_options, include=FALSE}
+    # set global options for R code chunks: echo=FALSE (don't include source code); 
+    # warning=FALSE (suppress R warnings); message=FALSE (suppress R messages)
+    # eval = TRUE is default
+    knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+    options(xtable.comment=FALSE)
+    
+    library(xtable)    # create tables
+    library(ggplot2)   # plotting
+    library(reshape2)  # melt dataframes, etc
+    library(scales)    # print percents
+    library(knitr)
+
+     setwd('C:/Assessment_template/Example_tables_figures')    
+```
+
+<!-- 
+R script for figures removed from the template for generalization, but may be 
+useful for your assessment.  Text files for these tables in the folder
+"Example_tables_figures/txt_files"
+ 
+NOTE: If you're using a text file for both a figure and a table, you don't need to read 
+it in twice.  Files here are being read in, but you can remove these duplicates later on
+if you use any of these code chunks. 
+
+List of figures in this document and their table number from the 2015 China
+rockfish assessment for reference.
+
+5. Oregon commercial landings
+14. Washington recreational removals
+15. Oregon recreational removals
+16. California recreational removals
+-->
+
+
+
+
+
+
+
+
+
+<!--===========================================================================
+Figure 5.Oregon commercial landings FIGURES--> 
+```{r}
+   # If you using the data for a table and a figure, you only need to read it in once
+    OR_comm_removal = read.csv('./txt_files/OR_comm_removals.csv')    
+    OR_comm_remov = OR_comm_removal[,c(1:5)]
+    OR_comm_remov1 = melt(OR_comm_remov,id='Year')
+    colnames(OR_comm_remov1) = c('Year','Fleet','Removals')
+```
+
+```{r, fig.cap = 'Removals (mt) from the Oregon commercial fleet, north and south of Florence, OR. \\label{fig:OR_comm_removal}'}
+    # ggplot of the Oregon commercial removals - need to edit scale_fill_manual for the number of fleets you have
+      ggplot(OR_comm_remov1, 
+           aes(x=Year, y=Removals,fill=Fleet)) + 
+           geom_area(position='stack') + 
+           scale_fill_manual(values = c('lightsteelblue3', 'coral', 'aquamarine2', 'mediumpurple')) +
+           scale_x_continuous(breaks = seq(1900, 2016, 20)) + 
+           ylab('Removals (mt)')
+```
+<!--========================================================================-->
+
+
+<!--===========================================================================
+Figure 14. Washington recreational removals --> 
+```{r, eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+   
+   WA_rec_removal = read.csv('./txt_files/WA_rec_removals.csv')     
+   WA_rec_remov = WA_rec_removal[,1:5]
+   WA_rec_remov1 = melt(WA_rec_remov,id='Year')
+   colnames(WA_rec_remov1) = c('Year','Fleet','Removals')
+```
+
+```{r,eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE, fig.cap='Removals (mt) from the Washington recreational party/charter and private sectors.    Northern WA represents MCAs 3 and 4 and soutern WA represents MCAs 1 and 2. \\label{fig:WA_rec_removal}'}
+    # ggplot of the WA recreational removals      
+    ggplot(WA_rec_remov1, aes(x = Year, y = Removals, fill = Fleet)) +
+           geom_area(position='stack') + 
+           scale_fill_manual(values = c( 'lightsteelblue3', 'coral', 'aquamarine2', 'mediumpurple')) + 
+           scale_x_continuous(breaks=seq(1967,2014,5)) + ylab('Removals (mt)')
+```
+<!--========================================================================-->
+
+
+<!--===========================================================================
+15. Oregon recreational removals -->
+```{r, eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+    OR_rec_removal = read.csv('./txt_files/OR_rec_removals.csv')    
+    OR_rec_remov = OR_rec_removal[,1:5]
+    OR_rec_remov1 = melt(OR_rec_remov,id='Year')
+    colnames(OR_rec_remov1) = c('Year','Fleet','Removals')
+```
+
+```{r,eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE,fig.cap='Removals (mt) from the Oregon recreational party/charter and private sectors, north and south of Florence, OR. \\label{fig:OR_rec_removal}'}
+    # ggplot of the OR recreational removals      
+    ggplot(OR_rec_remov1, aes(x = Year, y = Removals, fill = Fleet)) +
+           geom_area(position = 'stack') + 
+           scale_fill_manual(values = c('lightsteelblue3', 'coral', 'aquamarine2', 'mediumpurple')) + 
+           scale_x_continuous(breaks = seq(1973, 2014, 5)) + 
+           ylab('Removals (mt)')
+```
+<!--========================================================================-->
+
+
+<!--===========================================================================
+16. California recreational removals -->
+```{r, eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+    CA_rec_removal = read.csv('./txt_files/CA_rec_removals.csv')   
+    CA_rec_remov = CA_rec_removal[,1:5]
+    colnames(CA_rec_remov) = c('Year','South PC','South PR','North PC','North PR')
+    CA_rec_remov1 = melt(CA_rec_remov,id='Year')
+    colnames(CA_rec_remov1) = c('Year','Fleet','Removals')
+```
+
+```{r,eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE,fig.cap='Removals (mt) from the California recreational party/charter and private sectors, north and south of $40^\\circ 10^\\prime$. \\label{fig:CA_rec_removal}'}
+    # ggplot of the OR recreational removals      
+    ggplot(CA_rec_remov1, aes(x = Year, y = Removals, fill = Fleet)) +
+           geom_area(position = 'stack') + 
+           scale_fill_manual(values = c('lightsteelblue3', 'coral', 'aquamarine2', 'mediumpurple')) + 
+           scale_x_continuous(breaks = seq(1928, 2014, 10)) + 
+           ylab('Removals (mt)')
+```
+

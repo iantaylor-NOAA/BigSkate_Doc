@@ -1,0 +1,189 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+<!-- ********************************************************************** -->
+<!-- ***********FIGURES: Model results ********************************** --> 
+<!-- ********************************************************************** -->
+
+\FloatBarrier
+
+<!-- ********************************************************************** -->
+<!-- ***********History of modelleing approaches FIGURES******************* --> 
+<!-- ********************************************************************** -->
+
+
+
+
+
+<!-- ********************************************************************** -->
+<!-- ****************STAR PANEL Recommendations FIGURES******************** --> 
+<!-- ********************************************************************** -->
+
+
+
+
+
+
+
+<!-- ********************************************************************** -->
+<!-- ****************Model description section FIGURES********************* --> 
+<!-- ********************************************************************** -->
+
+
+
+
+\FloatBarrier
+
+<!-- ====================================================================== -->
+<!-- *********************BASE MODEL FIGURES******************************* -->
+<!-- ====================================================================== -->
+
+<!-- ***********MODEL 1 BASE MODEL FIGURES********************************* --> 
+ 
+
+
+
+
+
+\FloatBarrier
+
+
+
+
+
+
+
+\FloatBarrier
+
+![Selectivity at length for all of the fleets in the base model. \label{fig:sel01_multiple_fleets_length1}](r4ss/plots_mod1/sel01_multiple_fleets_length1.png)
+
+
+
+
+\FloatBarrier
+
+
+<!--![Estimated time-series of recruitment deviations for `r spp` with 95% intervals. \label{fig:recdevs2_withbars}](r4ss/plots_mod1/recdevs2_withbars.png) -->
+
+
+
+![Estimated time-series of recruitment for `r spp`. \label{fig:ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals}](r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png)
+
+
+![Estimated recruitment (red circles) and the assumed stock-recruit relationship (black line) for `r spp`.  The green line shows the effect of the bias correction for the lognormal distribution. \label{fig:SR_curve2}](r4ss/plots_mod1/SR_curve2.png)
+
+
+<!-- ***********Fits to the data********************************* --> 
+
+
+
+\FloatBarrier
+
+
+```{r, results='asis'}
+#     # Plot all of the timeseries plots
+     for(i in 4:dim(AALComp_mod1)[1]) {
+#         
+#      # find matches to multi-page plots
+      page_test = sapply(multi_page_fig, grepl, AALComp_mod1$label[i])
+#      
+#      # if the plot is page2+ of a series, add the extra caption
+      if(TRUE %in% page_test) {
+        cat('\n![](', AALComp_mod1[i, path_col], ')', sep='')
+#       
+        cat('\\begin{center} \n
+              Figure continued from previous page \n
+             \\end{center}',sep='')
+#        
+      } else {
+#      
+    cat('\n![', AALComp_mod1[i,caption_col], ' \\label{fig:mod1_', i, '_', AALComp_mod1[i, label_col], '}](', AALComp_mod1[i, path_col], ')\n', sep='')
+ } }
+```
+
+
+
+
+
+\FloatBarrier
+
+
+
+<!-- ********************************************************************** -->
+<!-- ****************Uncertainty and Sensitivity FIGURES******************* -->
+<!-- ********************************************************************** -->
+
+
+
+
+<!-- ***********MODEL 1 Uncertainty and Sensitivity FIGURES**************** --> 
+
+
+
+
+\FloatBarrier
+
+
+
+
+
+<!-- ********************************************************************** -->
+<!-- *****************Retrospective analysis FIGURES*********************** -->
+<!-- ********************************************************************** -->
+
+<!-- ***********MODEL 1 Retrospective analysis FIGURE********************** --> 
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ********************************************************************** -->
+<!-- ******************Likelihood profile FIGURES************************** --> 
+<!-- ********************************************************************** -->
+
+<!-- ***********R0 Likelihood profile FIGURES****************************** --> 
+
+
+  
+
+
+
+\FloatBarrier
+<!-- ***********h Likelihood profile FIGURES******************************* -->
+
+
+<!-- ***********M Likelihood profile FIGURES******************************* -->
+
+
+
+\FloatBarrier
+<!-- ********************************************************************** -->
+<!-- *********************REFERENCE POINTS FIGURES************************* --> 
+<!-- ********************************************************************** -->
+
+<!-- ***********MODEL 1 REFERENCE POINTS FIGURES*************************** --> 
+
+
+![Estimated spawning biomass (mt) with approximate 95% asymptotic intervals. \label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}](r4ss/plots_mod1/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png)
+
+
+![Estimated spawning depletion with approximate 95% asymptotic intervals. \label{fig:ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals}](r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png)
+
+
+
+![Equilibrium yield curve for the base case model. Values are based on the `r Dat_end_mod1` fishery selectivity and with steepness fixed at 0.718. \label{fig:yield1_yield_curve}](r4ss/plots_mod1/yield1_yield_curve.png)
+
+
+\FloatBarrier
+<!-- ********************************************************************** --> 
+<!-- *************************FORECAST FIGURES***************************** --> 
+<!-- ********************************************************************** --> 

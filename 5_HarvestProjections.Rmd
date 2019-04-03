@@ -1,0 +1,13 @@
+<!-- **************HARVEST PROJECTIONS AND DECISION TABLE****************** -->
+#Harvest Projections and Decision Tables
+The forecasts of stock abundance and yield were developed using the final base model, 
+with the forecasted projections of the OFL presented in Table \ref{tab:OFL_projection}. 
+
+
+The forecasted projections of the OFL for each model are presented 
+in Table \ref{tab:Decision_table_mod1}. 
+
+ 
+
+
+

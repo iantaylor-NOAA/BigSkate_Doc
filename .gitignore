@@ -1,0 +1,19 @@
+
+=== 
+.Rproj.user
+=== 
+.Rhistory
+=== 
+#/Assessment_template.pdf
+#/Assessment_template.html
+#Assessment_template.tex
+#Test_figures_tables.tex
+*.docx
+
+**/list_of_dataframes.csv
+**/mod_structure.csv
+
+
+===  Latex temp files
+
+*unnamed-chunk*

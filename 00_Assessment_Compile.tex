@@ -1,0 +1,725 @@
+\documentclass[12pt,]{article}
+%\usepackage{lmodern}  Melissa removed to deal with font rendering issue
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+
+%Melissa removed the following section to deal with font rendering issue
+%\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+%  \usepackage[T1]{fontenc}
+%  \usepackage[utf8]{inputenc}
+%%\else % if luatex or xelatex
+%  \ifxetex
+%    \usepackage{mathspec}
+%  \else
+%    \usepackage{fontspec}
+%  \fi
+%  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+%  \newcommand{\euro}{€}
+%%%%%%\fi
+
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+\hypersetup{unicode=true,
+            pdftitle={Status of A Fish (Sebastes yourfish) Off the U.S. Pacific Coast in 2017},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{Status of A Fish (\emph{Sebastes yourfish}) Off the U.S. Pacific Coast
+in 2017}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{}
+  \preauthor{}\postauthor{}
+  \date{}
+  \predate{}\postdate{}
+
+
+% This file contains all of the LaTeX packages you may need to compile the document
+% Documentation for each package can be found onlines
+\usepackage{tabularx}                                             % table environment providing flexibility
+\usepackage{caption}                                              % for creating captions  
+\usepackage{longtable}                                            % allows tables to span multiple pages
+\usepackage{rotating}                                             % allows for sideways tables
+\usepackage{float}                                                % floating environments; may not need in rmarkdown
+\usepackage{placeins}                                             % keeps floats from moving
+\usepackage{indentfirst}                                          % indents first paragraph of a section
+\usepackage{mdwtab}                                               % continued float multi-page figure
+\usepackage{enumerate}                                            % create lists
+\usepackage{hyperref}                                             % highlight cross references
+\hypersetup{colorlinks=true, urlcolor=blue, linktoc=page, linkcolor=blue, citecolor=blue} %define referencing colors
+%\usepackage{makebox}                                             % make boxes around text
+\usepackage[usenames,dvipsnames]{xcolor}                          % color name options
+%\usepackage[space]{grffile}                                      % spaces in file name path
+\usepackage{soul}                                                 % highlight text
+\usepackage{enumitem}                                             % numbered lists
+\usepackage{lineno}                                               % Line numbers; comment out for final
+\usepackage{upquote}                                              % produce grave accent in latex
+\usepackage{verbatim}                                             % produces verbatim results
+\usepackage{fancyvrb}                                             % verbatim in a box
+%\usepackage{draftwatermark}                                      % places Draft watermark in background; comment out for final
+\usepackage{textcomp}                                             % fixes error with packages interfering
+\usepackage{lscape}                                               % rotate pages - to allow for landscape longtables
+%\pdfinterwordspaceon                                             % fix loss of inter word spacing
+\usepackage{cmap}                                                 % fix mapping characters to unicode
+\RequirePackage[linewidth = 1]{pdfcomment}                        % pdf comments
+\RequirePackage[l2tabu, orthodox]{nag}                            % checks packages related to the accessibility?
+\usepackage[inline]{showlabels}                                   % show table and figure labels; comment out for final
+%\RequirePackage[tagged]{accessibilityMeta}
+
+
+\linenumbers                                                      % specify use of line numbers
+
+
+\definecolor{light-gray}{gray}{.85}                               % define light-gray as a color
+%\usepackage[tagged]{accessibility-meta}
+
+ 
+%\showlabels[\color{mred}]{label}
+
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\begin{document}
+\maketitle
+
+
+\begin{center}
+\thispagestyle{empty}
+
+
+\vspace{.5cm}
+
+%\includegraphics{cover_photo}~\\[1cm]
+\pdftooltip{\includegraphics{cover_photo}}{This is a fish.}
+
+
+
+Author No. 1\textsuperscript{1}\\
+Author No. 2\textsuperscript{2}\\
+Author No. 3\textsuperscript{3}\\
+
+\vspace{.5cm}
+
+\small
+\textsuperscript{1}Southwest Fisheries Science Center, U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Marine Fisheries Service, 110 Shaffer Road, Santa Cruz, California 95060\\
+
+\vspace{.3cm}
+
+\textsuperscript{2}Northwest Fisheries Science Center, U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Marine Fisheries Service, 2725 Montlake Boulevard East, Seattle, Washington 98112\\
+
+\vspace{.3cm}
+
+\textsuperscript{3}Washington Department of Fish and Wildlife, 600 Capitol Way North, Olympia, Washington 98501\\
+
+
+\vspace{.5cm}
+
+\vfill
+DRAFT SAFE\\
+Disclaimer: This information is distributed solely for the purpose of pre-dissemination
+peer review under applicable information quality guidelines. It has not been formally
+disseminated by NOAA Fisheries. It does not represent and should not be construed to
+represent any agency determination or policy. 
+
+\vspace{.3cm}
+%Bottom of the page
+%{\large \today}
+
+
+\newpage{\thispagestyle{empty}}
+
+
+\begin{flushleft}
+This report may be cited as:
+
+ex. Monk, M. H. ,He, X., and Budrick, J. 2017. Status of the California Scorpionfish (\emph{Scorpaena guttata}) Off Southern California in 2017. Pacific Fishery Management Council, Portland, OR. Available from http://www.pcouncil.org/groundfish/stock-assessments/
+\end{flushleft}
+
+\maketitle
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+\end{center}
+
+{
+\setcounter{tocdepth}{4}
+\tableofcontents
+}
+\setlength{\parskip}{5mm plus1mm minus1mm} \pagebreak
+
+\setcounter{page}{1} \renewcommand{\thefigure}{\alph{figure}}
+\renewcommand{\thetable}{\alph{table}}
+
+\section*{Executive Summary}\label{executive-summary}
+\addcontentsline{toc}{section}{Executive Summary}
+
+\subsection*{Stock}\label{stock}
+\addcontentsline{toc}{subsection}{Stock}
+
+This assessment reports the status of the China rockfish
+(\emph{Sebastes nebulosus}) resource in U.S. waters off the coast of
+\ldots{} using data through 2016.
+
+\subsection*{Catches}\label{catches}
+\addcontentsline{toc}{subsection}{Catches}
+
+Information on historical landings of China rockfish are available back
+to xxxx\ldots{} (Table \ref{tab:Exec_catch}). Commercial landings were
+small during the years of World War II, ranging between 127 to 1430
+metric tons (mt) per year.
+
+(Figures \ref{fig:Exec_catch1}-\ref{fig:Exec_catch2})\\
+(Figure \ref{fig:r4ss_catches})
+
+Since 2000, annual total landings of China rockfish have ranged between
+17-230 mt, with landings in 2016 totaling 157 mt.
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{00_Assessment_Compile_files/figure-latex/unnamed-chunk-3-1.pdf}
+\caption{China rockfish catch history for the recreational fleets.
+\label{fig:Exec_catch1}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{00_Assessment_Compile_files/figure-latex/unnamed-chunk-4-1.pdf}
+\caption{Stacked line plot of China rockfish catch history for the
+commercial fleets. \label{fig:Exec_catch2}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/catch2 landings stacked.png}
+\caption{Catch history of China rockfish in the Northern model.
+\label{fig:r4ss_catches}}
+\end{figure}
+
+\begin{table}[ht]
+\centering
+\caption{Recent China rockfish landings (mt) by 
+                                            fleet.} 
+\label{tab:Exec_catch}
+\begin{tabular}{l>{\centering}p{1in}>{\centering}p{1in}>{\centering}p{1in}>{\centering}p{.9in}>{\centering}p{.9in}>{\centering}p{.6in}}
+  \hline
+Year & Landings 1 & Landings 2 & Landings 3 & Landings 4 & Landings 5 & Total \\ 
+  \hline
+2005 & - & - & - & - & - & - \\ 
+  2006 & - & - & - & - & - & - \\ 
+  2007 & - & - & - & - & - & - \\ 
+  2008 & - & - & - & - & - & - \\ 
+  2009 & - & - & - & - & - & - \\ 
+  2010 & - & - & - & - & - & - \\ 
+  2011 & - & - & - & - & - & - \\ 
+  2012 & - & - & - & - & - & - \\ 
+  2013 & - & - & - & - & - & - \\ 
+  2014 & - & - & - & - & - & - \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\newpage
+
+\subsection*{Data and Assessment}\label{data-and-assessment}
+\addcontentsline{toc}{subsection}{Data and Assessment}
+
+This a new full assessment for China rockfish, which was last assessed
+in \ldots{} using Stock Synthesis Version xx. This assessment uses the
+newest version of Stock Synthesis (3.30.xx). The model begins in 1892,
+and assumes the stock was at an unfished equilibrium that year.
+
+(Figure \ref{fig:assess_region_map}).
+
+\begin{figure}
+\centering
+\includegraphics{Figures/assess_region_map.png}
+\caption{Map depicting the distribution of California scorpionfish out
+to 600 ft. The stock assessment is bounded at Pt. Conception in the
+north to the U.S./Mexico border in the south.
+\label{fig:assess_region_map}}
+\end{figure}
+
+\FloatBarrier
+
+\subsection*{Stock Biomass}\label{stock-biomass}
+\addcontentsline{toc}{subsection}{Stock Biomass}
+
+(Figure \ref{fig:Spawnbio_all} and Table
+\ref{tab:SpawningDeplete_mod1}).
+
+The 2016 estimated spawning biomass relative to unfished equilibrium
+spawning biomass is above the target of 40\% of unfished spawning
+biomass at 48.6\% (95\% asymptotic interval: \(\pm\) 33.1\%-64.1\%)
+(Figure \ref{fig:RelDeplete_all}). Approximate confidence intervals
+based on the asymptotic variance estimates show that the uncertainty in
+the estimated spawning biomass is high.
+
+\FloatBarrier
+
+\begin{table}[ht]
+\centering
+\caption{Recent trend in beginning of the 
+                                      year spawning output and depletion for
+                                      the Northern model for China rockfish.} 
+\label{tab:SpawningDeplete_mod1}
+\begin{tabular}{l>{\centering}p{1.3in}>{\centering}p{1.2in}>{\centering}p{1in}>{\centering}p{1.2in}}
+  \hline
+Year & Spawning Output (million eggs) & \~{} 95\% confidence interval & Estimated depletion & \~{} 95\% confidence interval \\ 
+  \hline
+2008 & 2356470.000 & (1486547.83-3226392.17) & 0.318 & (0.234-0.402) \\ 
+  2009 & 2305860.000 & (1465472.52-3146247.48) & 0.311 & (0.231-0.391) \\ 
+  2010 & 2222620.000 & (1420102.95-3025137.05) & 0.300 & (0.225-0.374) \\ 
+  2011 & 2128110.000 & (1365979.96-2890240.04) & 0.287 & (0.218-0.357) \\ 
+  2012 & 2075150.000 & (1335847.67-2814452.33) & 0.280 & (0.214-0.346) \\ 
+  2013 & 2136640.000 & (1374072.89-2899207.11) & 0.288 & (0.221-0.356) \\ 
+  2014 & 2269820.000 & (1447003.6-3092636.4) & 0.306 & (0.233-0.38) \\ 
+  2015 & 2504740.000 & (1570086.09-3439393.91) & 0.338 & (0.253-0.423) \\ 
+  2016 & 3022300.000 & (1820646.08-4223953.92) & 0.408 & (0.292-0.523) \\ 
+  2017 & 3602830.000 & (2066273.12-5139386.88) & 0.486 & (0.331-0.641) \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png}
+\caption{Time series of spawning biomass trajectory (circles and line:
+median; light broken lines: 95\% credibility intervals) for the base
+case assessment model. \label{fig:Spawnbio_all}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png}
+\caption{Estimated relative depletion with approximate 95\% asymptotic
+confidence intervals (dashed lines) for the base case assessment model.
+\label{fig:RelDeplete_all}}
+\end{figure}
+
+\FloatBarrier
+
+\subsection*{Recruitment}\label{recruitment}
+\addcontentsline{toc}{subsection}{Recruitment}
+
+Recruitment deviations were estimated from xxxx-xxxx (Figure
+\ref{fig:Recruits_all} and Table \ref{tab:Recruit_mod1}).
+
+\begin{table}[ht]
+\centering
+\caption{Recent recruitment for the Northern model.} 
+\label{tab:Recruit_mod1}
+\begin{tabular}{>{\centering}p{.8in}>{\centering}p{1.6in}>{\centering}p{1.3in}}
+  \hline
+Year & Estimated Recruitment (1,000s) & \~{} 95\% confidence interval \\ 
+  \hline
+2008 & 977.55 & (499.52 - 1913.05) \\ 
+  2009 & 1949.49 & (1092.16 - 3479.81) \\ 
+  2010 & 5459.32 & (3214.23 - 9272.57) \\ 
+  2011 & 4593.51 & (2532.44 - 8332.03) \\ 
+  2012 & 2830.57 & (1454.32 - 5509.18) \\ 
+  2013 & 15581.50 & (8561.34 - 28358.06) \\ 
+  2014 & 7744.29 & (3606.39 - 16629.96) \\ 
+  2015 & 4222.87 & (1714.74 - 10399.64) \\ 
+  2016 & 2429.67 & (842.83 - 7004.12) \\ 
+  2017 & 6219.73 & (1193.57 - 32411.33) \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png}
+\caption{Time series of estimated China rockfish recruitments for the
+base-case model with 95\% confidence or credibility intervals.
+\label{fig:Recruits_all}}
+\end{figure}
+
+\FloatBarrier
+
+\subsection*{Exploitation status}\label{exploitation-status}
+\addcontentsline{toc}{subsection}{Exploitation status}
+
+Harvest rates estimated by the base model \ldots{}.. management target
+levels (Table \ref{tab:SPR_Exploit_mod1} and Figure \ref{fig:SPR_all}).
+
+\FloatBarrier
+
+\begin{table}[ht]
+\centering
+\caption{Recent trend in spawning potential 
+                                        ratio and exploitation for China rockfish in the Northern model.  Fishing intensity is (1-SPR) 
+                                        divided by 50\% (the SPR target) and exploitation 
+                                        is F divided by F\textsubscript{SPR}.} 
+\label{tab:SPR_Exploit_mod1}
+\begin{tabular}{l>{\centering}p{1in}>{\centering}p{1.2in}>{\centering}p{1in}>{\centering}p{1.2in}}
+  \hline
+Year & Fishing intensity & \~{} 95\% confidence interval & Exploitation rate & \~{} 95\% confidence interval \\ 
+  \hline
+2007 & 0.18 & (0.1-0.25) & 0.01 & (0-0.01) \\ 
+  2008 & 0.12 & (0.07-0.17) & 0.00 & (0-0.01) \\ 
+  2009 & 0.16 & (0.09-0.22) & 0.01 & (0-0.01) \\ 
+  2010 & 0.16 & (0.09-0.22) & 0.01 & (0-0.01) \\ 
+  2011 & 0.24 & (0.14-0.34) & 0.01 & (0.01-0.01) \\ 
+  2012 & 0.22 & (0.13-0.31) & 0.01 & (0.01-0.01) \\ 
+  2013 & 0.19 & (0.11-0.27) & 0.01 & (0.01-0.01) \\ 
+  2014 & 0.13 & (0.07-0.18) & 0.01 & (0-0.01) \\ 
+  2015 & 0.11 & (0.06-0.16) & 0.01 & (0-0.01) \\ 
+  2016 & 0.11 & (0.06-0.16) & 0.01 & (0-0.01) \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/SPR2_minusSPRseries.png}
+\caption{Estimated spawning potential ratio (SPR) for the base-case
+model. One minus SPR is plotted so that higher exploitation rates occur
+on the upper portion of the y-axis. The management target is plotted as
+a red horizontal line and values above this reflect harvests in excess
+of the overfishing proxy based on the SPR\textsubscript{50\%} harvest
+rate. The last year in the time series is 2016. \label{fig:SPR_all}}
+\end{figure}
+
+\FloatBarrier
+
+\subsection*{Ecosystem Considerations}\label{ecosystem-considerations}
+\addcontentsline{toc}{subsection}{Ecosystem Considerations}
+
+In this assessment, ecosystem considerations were not explicitly
+included in the analysis.\\
+This is primarily due to a lack of relevant data and results of analyses
+(conducted elsewhere) that could contribute ecosystem-related
+quantitative information for the assessment.
+
+\subsection*{Reference Points}\label{reference-points}
+\addcontentsline{toc}{subsection}{Reference Points}
+
+This stock assessment estimates that China rockfish in the Northern
+model is above the biomass target (\(SB_{40\%}\)), and well above the
+minimum stock size threshold (\(SB_{25\%}\)). The estimated relative
+depletion level for the base model in 2017 is 48.6\% (95\% asymptotic
+interval: \(\pm\) 33.1\%-64.1\%, corresponding to an unfished spawning
+biomass of 3602830 million eggs (95\% asymptotic interval:
+2066273.12-5139386.88 million eggs) of spawning biomass in the base
+model (Table \ref{tab:Ref_pts_mod1}). Unfished age 1+ biomass was
+estimated to be 47,359 mt in the base case model. The target spawning
+biomass (\(SB_{40\%}\)) is 2,964 million eggs, which corresponds with an
+equilibrium yield of 1,934 mt. Equilibrium yield at the proxy
+\(F_{MSY}\) harvest rate corresponding to \(SPR_{50\%}\) is 1,857 mt
+(Figure \ref{fig:Yield_all}).
+
+\FloatBarrier
+
+\begin{table}[ht]
+\centering
+\caption{Summary of reference 
+                                      points and management quantities for the 
+                                      base case Northern model.} 
+\label{tab:Ref_pts_mod1}
+\begin{tabular}{>{\raggedright}p{4.1in}>{\raggedleft}p{.62in}>{\raggedleft}p{.62in}>{\raggedleft}p{.62in}}
+  \hline
+\textbf{Quantity} & \textbf{Estimate} & \textbf{Low 2.5\%  limit} & \textbf{High 2.5\%  limit} \\ 
+  \hline
+Unfished spawning output (million eggs) & 7,195 & 5,766 & 8,623 \\ 
+  Unfished age 1+ biomass (mt) & 47,359 & 38,421 & 56,296 \\ 
+  Unfished recruitment ($R_{0}$) & 6,865 & 4,690 & 9,040 \\ 
+  Spawning output(2016 million eggs) & 3,022 & 1,821 & 4,224 \\ 
+  Depletion (2016) & 0.408 & 0.292 & 0.523 \\ 
+  \textbf{$\text{Reference points based on } \mathbf{SB_{40\%}}$} &  &  &  \\ 
+  Proxy spawning output ($B_{40\%}$) & 2,964 & 2,391 & 3,538 \\ 
+  SPR resulting in $B_{40\%}$ ($SPR_{B40\%}$) & 0.459 & 0.459 & 0.459 \\ 
+  Exploitation rate resulting in $B_{40\%}$ & 0.093 & 0.081 & 0.106 \\ 
+  Yield with $SPR_{B40\%}$ at $B_{40\%}$ (mt) & 1,934 & 1,462 & 2,406 \\ 
+  \textbf{\textit{Reference points based on SPR proxy for MSY}} &  &  &  \\ 
+  Spawning output & 3,302 & 2,663 & 3,941 \\ 
+  $SPR_{proxy}$ & 0.5 &  &  \\ 
+  Exploitation rate corresponding to $SPR_{proxy}$ & 0.082 & 0.071 & 0.092 \\ 
+  Yield with $SPR_{proxy}$ at $SB_{SPR}$ (mt) & 1,857 & 1,406 & 2,309 \\ 
+  \textbf{\textit{Reference points based on estimated MSY values}} &  &  &  \\ 
+  Spawning output at $MSY$ ($SB_{MSY}$) & 2,158 & 1,736 & 2,579 \\ 
+  $SPR_{MSY}$ & 0.361 & 0.357 & 0.365 \\ 
+  Exploitation rate at $MSY$ & 0.129 & 0.112 & 0.146 \\ 
+  $MSY$ (mt)  & 2,021 & 1,525 & 2,517 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\subsection*{Management Performance}\label{management-performance}
+\addcontentsline{toc}{subsection}{Management Performance}
+
+Table \ref{tab:mnmgt_perform}
+
+\begin{table}[ht]
+\centering
+\caption{Recent trend in total catch and commercial 
+                              landings (mt) relative to the management guidelines. 
+                              Estimated total catch reflect the commercial landings 
+                              plus the model estimated discarded biomass.} 
+\label{tab:mnmgt_perform}
+\scalebox{0.9}{
+\begin{tabular}{>{\raggedleft}p{1in}>{\centering}p{1in}>{\centering}p{1in}>{\centering}p{1in}>{\centering}p{1in}}
+  \hline
+Year & OFL (mt; ABC prior to 2011) & ABC (mt) & ACL (mt; OY prior to 2011) & Estimated total catch (mt) \\ 
+  \hline
+\textbf{2007} & - & - & - & - \\ 
+  \textbf{2008} & - & - & - & - \\ 
+  \textbf{2009} & - & - & - & - \\ 
+  \textbf{2010} & - & - & - & - \\ 
+  \textbf{2011} & - & - & - & - \\ 
+  \textbf{2012} & - & - & - & - \\ 
+  \textbf{2013} & - & - & - & - \\ 
+  \textbf{2014} & - & - & - & - \\ 
+  \textbf{2015} & - & - & - & - \\ 
+  \textbf{2016} & - & - & - & - \\ 
+  \textbf{2017} & - & - & - & - \\ 
+  \textbf{2018} & - & - & - & - \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\subsection*{Unresolved Problems and Major
+Uncertainties}\label{unresolved-problems-and-major-uncertainties}
+\addcontentsline{toc}{subsection}{Unresolved Problems and Major
+Uncertainties}
+
+\FloatBarrier
+
+\subsection*{Decision Table}\label{decision-table}
+\addcontentsline{toc}{subsection}{Decision Table}
+
+\begin{table}[ht]
+\centering
+\caption{Projections of potential OFL (mt) for 
+                                        each model, using the base model forecast.} 
+\label{tab:OFL_projection}
+\begin{tabular}{lr}
+  \hline
+Year & OFL \\ 
+  \hline
+2017 & 2232.79 \\ 
+  2018 & 2267.74 \\ 
+  2019 & 2315.49 \\ 
+  2020 & 2406.39 \\ 
+  2021 & 2510.83 \\ 
+  2022 & 2610.00 \\ 
+  2023 & 2699.77 \\ 
+  2024 & 2780.75 \\ 
+  2025 & 2853.83 \\ 
+  2026 & 2919.70 \\ 
+   \hline
+\end{tabular}
+\end{table}\begin{table}[ht]
+\centering
+\caption{Summary of 10-year 
+                                             projections beginning in 2018 
+                                             for alternate states of nature based on 
+                                             an axis of uncertainty for the Northern model.  Columns range over low, mid, and high
+                                             states of nature, and rows range over different 
+                                             assumptions of catch levels. An entry of "--" 
+                                             indicates that the stock is driven to very low 
+                                             abundance under the particular scenario.} 
+\label{tab:Decision_table_mod1}
+\scalebox{0.85}{
+\begin{tabular}{l|cc|>{\centering}p{.7in}c|>{\centering}p{.7in}c|>{\centering}p{.7in}c}
+   \multicolumn{3}{c}{}  &  \multicolumn{2}{c}{} 
+                               & \multicolumn{2}{c}{\textbf{States of nature}} 
+                               & \multicolumn{2}{c}{} \\
+  \multicolumn{3}{c}{}  &  \multicolumn{2}{c}{Low M 0.05} 
+                               & \multicolumn{2}{c}{Base M 0.07} 
+                               &  \multicolumn{2}{c}{High M 0.09} \\
+ \hline
+ & Year & Catch & Spawning Output & Depletion & Spawning Output & Depletion & Spawning Output & Depletion \\ 
+  \hline
+ & 2019 & - & - & - & - & - & - & - \\ 
+   & 2020 & - & - & - & - & - & - & - \\ 
+   & 2021 & - & - & - & - & - & - & - \\ 
+  40-10 Rule,  & 2022 & - & - & - & - & - & - & - \\ 
+  Low M & 2023 & - & - & - & - & - & - & - \\ 
+   & 2024 & - & - & - & - & - & - & - \\ 
+   & 2025 & - & - & - & - & - & - & - \\ 
+   & 2026 & - & - & - & - & - & - & - \\ 
+   & 2027 & - & - & - & - & - & - & - \\ 
+   & 2028 & - & - & - & - & - & - & - \\ 
+   \hline
+ & 2019 & - & - & - & - & - & - & - \\ 
+   & 2020 & - & - & - & - & - & - & - \\ 
+   & 2021 & - & - & - & - & - & - & - \\ 
+  40-10 Rule & 2022 & - & - & - & - & - & - & - \\ 
+   & 2023 & - & - & - & - & - & - & - \\ 
+   & 2024 & - & - & - & - & - & - & - \\ 
+   & 2025 & - & - & - & - & - & - & - \\ 
+   & 2026 & - & - & - & - & - & - & - \\ 
+   & 2027 & - & - & - & - & - & - & - \\ 
+   & 2028 & - & - & - & - & - & - & - \\ 
+   \hline
+ & 2019 & - & - & - & - & - & - & - \\ 
+   & 2020 & - & - & - & - & - & - & - \\ 
+   & 2021 & - & - & - & - & - & - & - \\ 
+  40-10 Rule, & 2022 & - & - & - & - & - & - & - \\ 
+  High M & 2023 & - & - & - & - & - & - & - \\ 
+   & 2024 & - & - & - & - & - & - & - \\ 
+   & 2025 & - & - & - & - & - & - & - \\ 
+   & 2026 & - & - & - & - & - & - & - \\ 
+   & 2027 & - & - & - & - & - & - & - \\ 
+   & 2028 & - & - & - & - & - & - & - \\ 
+   \hline
+ & 2019 & - & - & - & - & - & - & - \\ 
+   & 2020 & - & - & - & - & - & - & - \\ 
+   & 2021 & - & - & - & - & - & - & - \\ 
+  Average & 2022 & - & - & - & - & - & - & - \\ 
+  Catch & 2023 & - & - & - & - & - & - & - \\ 
+   & 2024 & - & - & - & - & - & - & - \\ 
+   & 2025 & - & - & - & - & - & - & - \\ 
+   & 2026 & - & - & - & - & - & - & - \\ 
+   & 2027 & - & - & - & - & - & - & - \\ 
+   & 2028 & - & - & - & - & - & - & - \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
+\begin{sidewaystable}[ht]
+\centering
+\caption{Base case results summary.} 
+\label{tab:base_summary}
+\scalebox{0.6}{
+\begin{tabular}{r>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}>{\centering}p{1.1in}}
+  \hline
+Quantity & 2008 & 2009 & 2010 & 2011 & 2012 & 2013 & 2014 & 2015 & 2016 & 2017 \\ 
+  \hline
+Landings (mt) &  &  &  &  &  &  &  &  &  &  \\ 
+  Total Est. Catch (mt) &  &  &  &  &  &  &  &  &  &  \\ 
+  OFL (mt) &  &  &  &  &  &  &  &  &  &  \\ 
+  ACL (mt) &  &  &  &  &  &  &  &  &  &  \\ 
+   \hline
+(1-$SPR$)(1-$SPR_{50\%}$) & 0.12 & 0.16 & 0.16 & 0.24 & 0.22 & 0.19 & 0.13 & 0.11 & 0.11 &  \\ 
+   \hline
+Exploitation rate & 0.00 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 &  \\ 
+  Age 1+ biomass (mt) & 14983.0 & 14623.4 & 14122.4 & 13582.6 & 13520.1 & 13915.2 & 14532.6 & 16669.2 & 19700.8 & 22815.9 \\ 
+   \hline
+Spawning Output & 2356470 & 2305860 & 2222620 & 2128110 & 2075150 & 2136640 & 2269820 & 2504740 & 3022300 & 3602830 \\ 
+  ~95\% CI & (1486547.83-3226392.17) & (1465472.52-3146247.48) & (1420102.95-3025137.05) & (1365979.96-2890240.04) & (1335847.67-2814452.33) & (1374072.89-2899207.11) & (1447003.6-3092636.4) & (1570086.09-3439393.91) & (1820646.08-4223953.92) & (2066273.12-5139386.88) \\ 
+   \hline
+Depletion & 0.3 & 0.3 & 0.3 & 0.3 & 0.3 & 0.3 & 0.3 & 0.3 & 0.4 & 0.5 \\ 
+  ~95\% CI & (0.234-0.402) & (0.231-0.391) & (0.225-0.374) & (0.218-0.357) & (0.214-0.346) & (0.221-0.356) & (0.233-0.38) & (0.253-0.423) & (0.292-0.523) & (0.331-0.641) \\ 
+   \hline
+Recruits &   977.55 &  1949.49 &  5459.32 &  4593.51 &  2830.57 & 15581.50 &  7744.29 &  4222.87 &  2429.67 &  6219.73 \\ 
+  ~95\% CI & (499.52 - 1913.05) & (1092.16 - 3479.81) & (3214.23 - 9272.57) & (2532.44 - 8332.03) & (1454.32 - 5509.18) & (8561.34 - 28358.06) & (3606.39 - 16629.96) & (1714.74 - 10399.64) & (842.83 - 7004.12) & (1193.57 - 32411.33) \\ 
+   \hline
+\end{tabular}
+}
+\end{sidewaystable}
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/yield1_yield_curve.png}
+\caption{Equilibrium yield curve for the base case model. Values are
+based on the 2016 fishery selectivity and with steepness fixed at 0.718.
+\label{fig:Yield_all}}
+\end{figure}
+
+\FloatBarrier
+
+\newpage
+
+\subsection*{Research and Data Needs}\label{research-and-data-needs}
+\addcontentsline{toc}{subsection}{Research and Data Needs}
+
+We recommend the following research be conducted before the next
+assessment:
+
+\begin{enumerate}
+
+\item \textbf{xxxx}: 
+
+\item \textbf{xxxx}:
+
+\item \textbf{xxxx}:
+
+\item \textbf{xxxx}:
+
+\item \textbf{xxxx}:
+
+\end{enumerate}
+
+\FloatBarrier
+
+\newpage
+
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+
+\setcounter{figure}{0} \setcounter{table}{0}
+
+\newpage
+
+\color{black}
+
+\section*{References}\label{references}
+\addcontentsline{toc}{section}{References}
+
+\renewcommand{\thepage}{}
+
+\end{document}
