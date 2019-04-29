@@ -24,8 +24,8 @@ load("./r4ss/SS_output.RData")
 # ============================================================================= 
 
 # Species, common and scientific
-spp = "China rockfish"
-spp.sci = "Sebastes nebulosus"
+spp = "Big Skate"
+spp.sci = "Beringraja binoculata"
   
 # minimum vulnerable age class
 min_age = "1+"
@@ -36,7 +36,7 @@ n_models = 1
 
 
 # model names; if you only have one model the label will just be "model"
-mod1_label = "Northern model" 
+mod1_label = "model" 
 #mod2_label = "Central model"  # (north of $40^\\circ 10^\\prime$ N. latitude to the OR-WA border)"
 #mod3_label = "Southern model" # (south of $40^\\circ 10^\\prime$ N. latitude)"
   

@@ -7,12 +7,17 @@ Data used in the `r spp` assessment are summarized in Figure \ref{fig:data_plot}
 Descriptions of the data sources are in the following sections.
 
 
+
 <!-- ************FISHERY-DEPENDENT DATA************************************ -->
 ###Commercial Fishery Landings
+
+Catch reconstructions for WA, OR, and CA
+Tribal catch in WA
 
 
 ###Commercial Discards
 
+Estimated discards
 
 ###Commercial Fishery Length and Age Data
 
@@ -57,13 +62,28 @@ _Data Source 1 Length Composition_
 
 ###Fishery-Independent Data Sources
 
-**Data Source 1**
+**Alaska Fisheries Science Center (AFSC) Triennial Shelf Survey**    
+Research surveys have been used since the 1970s to provide fishery-independent information about the abundance, distribution, and biological characteristics of `r spp`.  A coast-wide survey was conducted in 1977 [@Gunderson1980] by the Alaska Fisheries Science Center, and repeated every three years through 2001.  The final year of this survey, 2004, was conducted by the NWFSC according to the AFSC protocol. We refer to this as the **Triennial Survey**.
+
+The survey design used equally-spaced transects from which searches for tows in a specific depth range were initiated. The depth range and latitudinal range was not consistent across years, but all years in the period 1980-2004 included the area from 40$^\circ$ 10'N north to the Canadian border and a depth range that included 55-366 meters, which spans the range where the vast majority of Big Skate encountered in all trawl surveys. Therefore the index was based on this depth range.  The survey as conducted in 1977 had incomplete coverage and is not believe to be comparable to the later years, and is not used in the index.
+
+An index of abundance was estimated based on the VAST delta-GLMM model as described for the NWFSC Combo Index above. In this case as well, Q-Q plots indicated slightly better performance of the gamma over lognormal models for positive tows (Figure \ref{fig:VAST_QQ}).
+
+**Northwest Fisheries Science Center West Coast Groundfish Bottom Trawl Survey**
+
+In 2003, the NWFSC took over an ongoing slope survey the AFSC had been conducting, and expanded it spatially to include the continental shelf. This survey, referred to in this document as the **NWFSC Combo Survey**, has been conducted annually since. It uses a random-grid design covering the coastal waters from a depth of 55 m to 1,280 m from late-May to early-October [@Bradburn2011 ; @Keller2017]. Four chartered industry vessels are used each year (with the exception of 2013 when the U.S. federal-government shutdown curtailed the survey). Yellowtail catches in the NWFSC Combo Survey are shown in \ref{fig:assess_region_map2}.
+
+The data from the NWFSC Combo survey was analyzed using a spatio-temporal delta-model [@Thorson2015], implemented as an R package VAST [@Thorson2017] and publicly available online (https://github.com/James-Thorson/VAST).  Spatial and spatio-temporal variation is specifically included in both encounter probability and positive catch rates, a logit-link for encounter probability, and a log-link for positive catch rates.  Vessel-year effects were included for each unique combination of vessel and year in the database.
+
 
 _Data Source 1 Index Standardization_
+VAST
 
 
 _Data Source 1 Length Composition_
 
 
-**Data Source 2**
+**Triennial Survey**
+_Data Source 2 Index Standardization_
+VAST
 

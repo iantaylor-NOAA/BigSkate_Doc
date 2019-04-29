@@ -5,6 +5,9 @@
 
 ###History of Modeling Approaches Used for this Stock
 
+Deriving estimates of OFL for species in the “Other Fish” complex or potential alternative complexes
+
+The current “Other Fish” complex and proposed alternatives include a number of species for which estimates of OFL contributions are not available from stock assessments or data-poor methods. Four of the species had OFL contributions for the 2013–2014 management cycle calculated by applying approximate MSY harvest rates to estimates of stock biomass from the NWFSC West Coast Bottom Trawl Survey (Bradburn et al., 2012). This approach is described in detail in Cope et al. (2012). 
 
 ###yyyy Assessment Recommendations
 

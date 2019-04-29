@@ -3,9 +3,35 @@
 <!--************BIOLOGICAL DATA*********************************************-->
 ###Biological Parameters and Data
 
+**Measurement Details and Conversion Factors**
+
+Disc width to total length (estimated by Ian on Apr 15, similar to Ebert 2008 estimates for Alaska)
+L = 1.3399 * W estimated from 95 samples from WCGBTS where both measurements collected (R-squared = 0.9983). Little sex difference observed, so using single relationship for both sexes.
+Inter-spiracle width to total length from Downs & Cheng (2013): 
+L = 12.111 + 9.761*ISW (females)
+L = 3.824 + 10.927*ISW (males)
+
+
  Love et al.  [-@Love1987]
 
 **Length and Age Compositions**
+
+Length comps (some based on widths)
+
+WCGBTS
+Lengths from all years except 2006 and 2007
+Widths in 2006 and 2007
+
+Triennial Survey
+Sample sizes: 3 in 1998 (all widths), 84 in 2001 (3 widths, 81 lengths), 100 in 2004 (all lengths)
+Triennial survey
+About 90+ samples in each of 2001 and 2004 
+Only 3 unsexed fish from 1998
+
+Commercial fisheries
+In process
+Discard comps from 2010-2015
+
 
 Length compositions were provided from the following sources:
 
@@ -29,6 +55,16 @@ von Bertalanffy growth curve [@vonB1938], $L_i = L_{\infty}e^{(-k[t-t_0])}$,
 where $L_i$ is the length (cm) at age $i$, $t$ is age in years, $k$ is rate of 
 increase in growth, $t_0$ is the intercept, and $L_{\infty}$ is the asymptotic length.
 
+Ages
+WCGBTS
+Currently only 333 ages from 2010 present in data warehouse as of Apr 15
+Patrick submitting an 300 additional ages from 2016 and 2017 to Beth on Apr 2 and promised further additions during the week of Apr 15.
+
+Triennial Survey 
+No ages
+
+Commercial fisheries
+2009 samples from WA were stratified by length, so should be treated as conditionals
 
 
 
@@ -41,15 +77,27 @@ increase in growth, $t_0$ is the intercept, and $L_{\infty}$ is the asymptotic l
 \vspace{.5cm}
 **Weight-Length**
 
+Estimated by Ian based on WCGBT samples (n = 1159) using code in /R/growth_plots.R
+Weight = 7.4924e-06  * Length ^ 2.9925 
 
 
 \vspace{.5cm}
 **Sex Ratio, Maturity, and Fecundity**
 
+Estimated by Melissa Head from port samplers samples (n = 278, of which 241 were from OR and 37 from WA). 24 were mature. 
+
+Code is in /maturity/Longnose_BigSkate_maturity.r
+
+Parameter estimates: L50% = 149.5858, Slope parameter for SS = -0.13358
+
+Adding 55 additional samples from the WCGBTS (of which only 4 were mature) changes the parameter estimate to L50% = 148.2453, Slope = -0.13155
 
 \vspace{.5cm}
 **Natural Mortality**
 
+The Hamel prior for M is lognormal(ln(5.4/max age),.438), which based on 1 age-15 fish out of 1034 observed in the WCGBTS results in lognormal( -1.021651, 0.438)
+
+If it needs to be fixed, it should be set to M = 5.4/max age = 5.4/15 = 0.36
 
 
 \vspace{.5cm}

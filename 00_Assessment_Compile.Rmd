@@ -1,5 +1,5 @@
 ---
-title: Status of A Fish (*Sebastes yourfish*) Off the U.S. Pacific Coast
+title: Status of A Fish (*Beringraja binoculata*) Off the U.S. Pacific Coast
   in 2017
 author: ''
 date: ''
@@ -40,7 +40,7 @@ bibliography: BibFile.bib
     # It may take time to edit this file and get it ready for your assessment
     # Make small changes in this file and then try to compile the document
     # Commit when you have a success!
-    source('./Rcode/Exec_summary_figs_tables.R')
+    # source('./Rcode/Exec_summary_figs_tables.R')
 ```
 \setlength{\parskip}{5mm plus1mm minus1mm}
 \pagebreak
@@ -51,11 +51,32 @@ bibliography: BibFile.bib
 \renewcommand{\thetable}{\alph{table}}
 
 
-```{r child = "0_Executive_Summary.Rmd"}
+# ```{r child = "0_Executive_Summary.Rmd"}
+# ```
+\newpage
+```{r child = "1_Introduction.Rmd"}
 ```
-
-
-
+\newpage
+```{r child = "2_FisheryData.Rmd"}
+```
+\newpage
+```{r child = "3_BiologicalData.Rmd"}
+```
+\newpage
+```{r child = "4_Assessment.Rmd"}
+``` 
+\newpage
+```{r child = "5_HarvestProjections.Rmd"}
+```
+\newpage
+```{r child = "6_RegionalManagement.Rmd"}
+```
+\newpage
+```{r child = "7_ResearchNeeds.Rmd"}
+```
+\newpage
+```{r child = "8_Acknowledgments.Rmd"}
+```
 \newpage
 
 
