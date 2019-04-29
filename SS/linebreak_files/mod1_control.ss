@@ -22,13 +22,11 @@
 # st=2, age1=4, age2=10
 #
 2 #_Nblock_Patterns
-1 23 #_blocks_per_pattern
+1 10 #_blocks_per_pattern
 1995 2004 #Triennial Q offset
 # blocks for retention rate (not yet used)
-1995 1995 1996 1996 1997 1997 1998 1998 1999 1999 2000 2000 2001 2001 2002 
-2002 2003 2003 2004 2004 2005 2005 2006 2006 2007 2007 2008 2008 2009 2009 
-2010 2010 2011 2011 2012 2012 2013 2013 2014 2014 2015 2015 2016 2016 2017 
-2018 
+2008 2008 2009 2009 2010 2010 2011 2011 2012 2012 2013 2013 2014 2014 2015 
+2015 2016 2016 2017 2018 
 #
 # controls for all timevary parameters 
 1 #_env/block/dev_adjust_method for all time-vary parms (1=warn relative to
@@ -50,11 +48,11 @@
 # ic_K; 4=not implemented
 0  #_Growth_Age_for_L1
 20 #_Growth_Age_for_L2 (999 to use as Linf)
-0  #_exponential decay for growth above maxage (fixed at 0.2 in 3.24; value
-#  should approx initial Z; -999 replicates 3.24)
+0.36  #_exponential decay for growth above maxage (fixed at 0.2 in 3.24; va
+# lue should approx initial Z; -999 replicates 3.24)
 0  #_placeholder for future growth feature
 0  #_SD_add_to_LAA (set to 0.1 for SS2 V1.x compatibility)
-1  #_CV_Growth_Pattern:  0 CV=f(LAA); 1 CV=F(A); 2 SD=F(LAA); 3 SD=F(A); 4 
+2  #_CV_Growth_Pattern:  0 CV=f(LAA); 1 CV=F(A); 2 SD=F(LAA); 3 SD=F(A); 4 
 # logSD=F(A)
 1  #_maturity_option:  1=length logistic; 2=age logistic; 3=read age-maturi
 # ty matrix by growth_pattern; 4=read age-fecundity; 5=disabled; 6=read len
@@ -71,13 +69,14 @@
 #_LO HI INIT PRIOR PR_SD PR_type PHASE env_var&link dev_link dev_minyr dev_
 # maxyr dev_PH Block Block_Fxn  
 # Sex: 1  BioPattern: 1  NatMort
-0.01 0.8 0.2 0.2 0.04 0 1 0 0 0 0 0.5 0 0 # NatM_p_1_Fem_GP_1
+# lognormal Hamel prior has meanlog = ln(5.4/maxage) using maxage = 15 
+0.01 0.8 0.2 -1.021651 0.0438  3 1 0 0 0 0 0.5 0 0 # NatM_p_1_Fem_GP_1
 # Sex: 1  BioPattern: 1  Growth
 10 40 20  20 99 -1 2 0 0 0 0 0.5 0 0 # L_at_Amin_Fem_GP_1
 150 300 200  200 99 -1 2 0 0 0 0 0.5 0 0 # L_at_Amax_Fem_GP_1
-0.01 0.5 0.15 0.15 99 -1 1 0 0 0 0 0.5 0 0 # VonBert_K_Fem_GP_1
-0.1 0.5 0.1     0.1 99 -1 -5 0 0 0 0 0.5 0 0 # CV_young_Fem_GP_1
-0.1 0.5 0.1     0.1 99  -1 -5 0 0 0 0 0.5 0 0 # CV_old_Fem_GP_1
+0.005 0.5 0.15 0.15 99 -1 1 0 0 0 0 0.5 0 0 # VonBert_K_Fem_GP_1
+1 20 5       0.1 99 -1 5 0 0 0 0 0.5 0 0 # CV_young_Fem_GP_1
+1 20 5       0.1 99  -1 5 0 0 0 0 0.5 0 0 # CV_old_Fem_GP_1
 # Sex: 1  BioPattern: 1  WtLen
 0 3     7.4924e-6 7.4924e-6 99 -1 -3 0 0 0 0 0.5 0 0 # Wtlen_1_Fem_GP_1
 2 4 2.9925 2.9925 99 -1 -3 0 0 0 0 0.5 0 0 # Wtlen_2_Fem_GP_1
@@ -92,7 +91,7 @@
 # Sex: 2  BioPattern: 1  Growth
 -1 1 0 0 99 0 -2 0 0 0 0 0 0 0 # L_at_Amin_Mal_GP_1
 -1 1 0 0 99 0 2 0 0 0 0 0 0 0 # L_at_Amax_Mal_GP_1
--1 1 0 0 99 0 3 0 0 0 0 0 0 0 # VonBert_K_Mal_GP_1
+-10 20 0 0 99 0 3 0 0 0 0 0 0 0 # VonBert_K_Mal_GP_1
 -1 1 0 0 99 0 -5 0 0 0 0 0 0 0 # CV_young_Mal_GP_1
 -1 1 0 0 99 0 -5 0 0 0 0 0 0 0 # CV_old_Mal_GP_1
 # Sex: 2  BioPattern: 1  WtLen
@@ -117,52 +116,52 @@
 #_Cond -2 2 0 0 -1 99 -2 #_placeholder when no seasonal MG parameters
 #
 #_Spawner-Recruitment
-3 #_SR_function: 2=Ricker; 3=std_B-H; 4=SCAA; 5=Hockey; 6=B-H_flattop; 7=su
-# rvival_3Parm; 8=Shepard_3Parm
+3 #_Spawner-Recruitment; Options: 2=Ricker; 3=std_B-H; 4=SCAA; 5=Hockey; 6=
+# B-H_flattop; 7=survival_3Parm; 8=Shepherd_3Parm; 9=RickerPower_3parm
 0  # 0/1 to use steepness in initial equ recruitment calculation
 0  #  future feature:  0/1 to make realized sigmaR a function of SR curvatu
 # re
-#_LO          HI         INIT      PRIOR        PR_SD      PR_type   PHASE 
-#     env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk
-# _Fxn 
-  5           15         13         11.1        10       -1      1         
-       0          0          0          0          0          0          0 
-   # SR_LN(R0)
-  0.2          1         0.4       0.6       0.2          -1     -3        
-        0          0          0          0          0          0          0
-    # SR_BH_steep
-  0            0.4       0.3       0.3        0.8          -1     -2       
-         0          0          0          0          0          0          
-0    # SR_sigmaR
- -2            2         0          0           99           -1     -1     
-           0          0          0          0          0          0        
-  0    # SR_regime
-  0            0         0          0           0            -1     -99    
-           0          0          0          0          0          0        
-  0    # SR_autocorr
-
-1 #do_recdev:  0=none; 1=devvector; 2=simple deviations
+#_LO            HI          INIT         PRIOR         PR_SD       PR_type 
+#      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Bl
+# ock    Blk_Fxn #  parm_name
+   5            15       7.93855          11.1            10            -1 
+         1          0          0          0          0          0          
+0          0 # SR_LN(R0)
+ 0.2             1           0.4           0.6           0.2            -1 
+        -3          0          0          0          0          0          
+0          0 # SR_BH_steep
+   0           0.4           0.3           0.3           0.8            -1 
+        -2          0          0          0          0          0          
+0          0 # SR_sigmaR
+  -2             2             0             0            99            -1 
+        -1          0          0          0          0          0          
+0          0 # SR_regime
+   0             0             0             0             0            -1 
+       -99          0          0          0          0          0          
+0          0 # SR_autocorr
+1 #do_recdev:  0=none; 1=devvector (R=F(SSB)+dev); 2=deviations (R=F(SSB)+d
+# ev); 3=deviations (R=R0*dev; dev2=R-f(SSB)); 4=like 3 with sum(dev2) addi
+# ng penalty
 1984 # first year of main recr_devs; early devs can preceed this era
 2018 # last year of main recr_devs; forecast devs start in following year
 -3 #_recdev phase 
 1 # (0/1) to read 13 advanced options
-0 #_recdev_early_start (0=none; neg value makes relative to recdev_start)
--4 #_recdev_early_phase
--4 #_forecast_recruitment phase (incl. late recr) (0 value resets to maxpha
-# se+1)
-1 #_lambda for Fcast_recr_like occurring before endyr+1
-1956 #_last_yr_nobias_adj_in_MPD; begin of ramp
-1970 #_first_yr_fullbias_adj_in_MPD; begin of plateau
-2001 #_last_yr_fullbias_adj_in_MPD
-2002 #_end_yr_for_ramp_in_MPD (can be in forecast to shape ramp, but SS set
-# s bias_adj to 0.0 for fcast yrs)
-1 #_max_bias_adj_in_MPD (-1 to override ramp and set biasadj=1.0 for all es
-# timated recdevs)
-0 #_period of cycles in recruitment (N parms read below)
--5 #min rec_dev
-5 #max rec_dev
-0 #_read_recdevs
-#_end of advanced SR options
+ 0 #_recdev_early_start (0=none; neg value makes relative to recdev_start)
+ -4 #_recdev_early_phase
+ -4 #_forecast_recruitment phase (incl. late recr) (0 value resets to maxph
+# ase+1)
+ 1 #_lambda for Fcast_recr_like occurring before endyr+1
+ 1956 #_last_yr_nobias_adj_in_MPD; begin of ramp
+ 1970 #_first_yr_fullbias_adj_in_MPD; begin of plateau
+ 2001 #_last_yr_fullbias_adj_in_MPD
+ 2002 #_end_yr_for_ramp_in_MPD (can be in forecast to shape ramp, but SS se
+# ts bias_adj to 0.0 for fcast yrs)
+ 1 #_max_bias_adj_in_MPD (-1 to override ramp and set biasadj=1.0 for all e
+# stimated recdevs)
+ 0 #_period of cycles in recruitment (N parms read below)
+ -5 #min rec_dev
+ 5 #max rec_dev
+ 0 #_read_recdevs
 #
 #_placeholder for full parameter lines for recruitment cycles
 # read specified recr devs
@@ -198,62 +197,51 @@
 #_ LO HI INIT PRIOR PR_SD  PR_type  PHASE
 ##
 #_Q_setup
-#_    fleet       link  link_info   extra_se    biasadj      float  #  flee
-# tname
-          5          1          0          1          0          1  #  2_NW
-# FSC_shelf_slope
-          6          1          0          1          0          0  #  4_Tr
-# iennial     
-          7          1          0          1          0          1  #  5_IP
-# HC
+#_   fleet      link link_info  extra_se   biasadj     float  #  fleetname
+         5         1         0         1         0         0  #  WCGBTS
+         6         1         0         1         0         0  #  Triennial
+         7         1         0         1         0         0  #  IPHC
 -9999 0 0 0 0 0
 #
 #_Q_parms(if_any);Qunits_are_ln(q)
-#_         LO           HI         INIT        PRIOR        PR_SD      PR_t
-# ype     PHASE   env-var   use_dev  dev_mnyr  dev_mxyr    dev_PH     Block
-#    Blk_Fxn  #  parm_name
-           -7          5           -0.19        -0.19        0.187         
-0       -1         0         0         0         0         0         0     
-    0    #  LnQ_base_2_NWFSC_shelf_slope   
-           0          5         0            0.01        99            0   
-    -5         0         0         0         0         0         0         
-0    #  Q_extraSDe_2_NWFSC_shelf_slope
-           -7          0           -0.6          0           99            
-0        1         0         0         0         0         0         1     
-    2    #  LnQ_base_4_Triennial         
-           0          5         0            0.01        99            0   
-     5         0         0         0         0         0         0         
-0    #  Q_extraSD_4_Triennial
-           -7          0           -0.6          0           99            
-0       -1         0         0         0         0         0         0     
-    0    #  LnQ_base_5_IPHC
-           0          5        0            0.01        99            0    
-   -5         0         0         0         0         0         0         0
-    #  Q_extraSD_5_IPHC
-           
-#_timevary Q parameters
-# HI LO  init   PRIOR  PR_SD  PRIOR_TYPE PHASE
--7       0       -0.6    0       99       0      1      # LnQ_base_4_Trienn
-# ial 1995-2004 block         
-
-##LnQ_base_4_Triennial deviation
-#  0.0001    2         99    99     0.5  6      -5  # LnQ_base_4_Triennial_
-# dev_se
-#   -0.99    0.99      0     0      0.5  6      -6  # LnQ_base_4_Triennial_
-# dev_autocorr
+#_          LO            HI          INIT         PRIOR         PR_SD     
+#   PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_
+# PH      Block    Blk_Fxn  #  parm_name
+            -2             2             0             1          0.05     
+        1          1          0          0          0          0          0
+          0          0  #  LnQ_base_WCGBTS(5)
+             0             2           0.1          0.01            99     
+        0          5          0          0          0          0          0
+          0          0  #  Q_extraSD_WCGBTS(5)
+           -10             2             0             0            99     
+        0          1          0          0          0          0          0
+          1          2  #  LnQ_base_Triennial(6)
+             0             2           0.1          0.01            99     
+        0          5          0          0          0          0          0
+          0          0  #  Q_extraSD_Triennial(6)
+           -20             5           -12             0            99     
+        0          1          0          0          0          0          0
+          0          0  #  LnQ_base_IPHC(7)
+             0             2           0.1          0.01            99     
+        0          5          0          0          0          0          0
+          0          0  #  Q_extraSD_IPHC(7)
+# timevary Q parameters 
+#_          LO            HI          INIT         PRIOR         PR_SD     
+#   PR_type     PHASE  #  parm_name
+            -7             0             0             0            99     
+        0      1  # LnQ_base_Triennial(6)_BLK1repl_1995
 
 #_size_selex_types
 #discard_options:_0=none;_1=define_retention;_2=retention&mortality;_3=all_
 # discarded_dead
 #_Pattern Discard Male Special
-24 0 0 0 #  1_Fishery_current    
-#24 2 0 0 #  1_Fishery_current    
+24 2 0 0 #  1_Fishery_current    
 15 0 0 1 #  2_Fishery_historical    
 15 0 0 1 #  3_Discard_historical    
 15 0 0 1 #  4_Fishery_tribal    
 24 0 0 0 #  5_NWFSC_shelf_slope   
 24 0 0 0 #  6_Triennial        
-15 0 0 5 #  7_IPHC
+24 0 0 5 #  7_IPHC
 
 #_age_selex_types
 #_Pattern Discard Male Special
@@ -266,132 +254,156 @@
  0 0 0 0 # 7_AFSC_slope     
 
 #_size_selex_settings
-#_LO  HI    INIT  PRIOR    PR_SD    PR_type     PHASE env-var   use_dev  de
-# v_mnyr  dev_mxyr    dev_PH     Block   Blk_Fxn #  parm_name
-#_size_sel: 1_fishery 
-  80   150  85   85      99    0      4    0    0    0     0      0     0  
-  0    # PEAK
- -15   4    -15   -15        99      0         -5      0       0       0   
-      0          0        0       0     # TOP:_width of plateau
- -1   9   5.8   5.8     99    0      4    0    0    0     0      0     0   
- 0    # Asc_width  
- -1   20   8.3   6.7     99    0      5    0    0    0     0      0     0  
-  0    # Desc_width
- -999  9    1   -999      99    0     4    0    0    0     0      0     0  
-  0    # INIT:_selectivity_at_fist_bin
-# -999  9  -999   -999      99    0     -4    0    0    0     0      0     
-# 0    0    # INIT:_selectivity_at_fist_bin
- -999  9  -999   -999      99    0     -5    0    0    0     0      0     0
-    0    # FINAL:_selectivity_at_last_bin
-## #Retention
-## #_LO  HI    INIT  PRIOR PR_SD   PR_type PHASE   env-var use_dev dev_min 
-# dev_max dev_std Block   Block_Fxn
-## 15   150  27  35     99   -1      -2   0    0    0     0       0    0   
-#  0    #Inflection               
-## 0.1   10  2   1      99   -1      -2   0    0    0     0       0    0   
-#  0    #Slope                    # 1 means that parm’ = baseparm + blockpa
-# rm
-## -10   10  10  10     99   -1     -3   0    0    0     0       0    2    
-# 2    #Asymptotic retention     # 2 means that parm’ = blockparm
-## 0    0   0   0      99   -1     -3   0    0    0     0       0    0    0
-#        #Male offset To inflection
-## #Discard mortality
-## #_LO  HI    INIT  PRIOR PR_SD   PR_type PHASE   env-var use_dev dev_min 
-# dev_max dev_std Block   Block_Fxn
-## 5    15  5   5     99   -1     -4   0    0    0     0       0    0    0 
-#    #Descending inflection               
-## 0.001  10  0.1  0.1    99   -1     -4   0    0    0     0       0    0  
-#   0    #Descending slope 
-## 0    1   0.5  0.5    99   -1     -5   0    0    0     0       0    0    
-# 0    #Maximum discard mortality
-## 0    0   0   0     99   -1     -5   0    0    0     0       0    0    0 
-#       #Male offset to descending inflection (arithmetic, not multiplicati
-# ve)
-
-## #_size_sel: 2_NWFSC_shelf_slope                                         
-#                                   
-  80   150  85   85      99    0      4    0    0    0     0      0     0  
-  0    # PEAK
- -15   4    -15   -15        99      0         -5      0       0       0   
-      0          0        0       0     # TOP:_width of plateau
- -1   9   5.8   5.8     99    0      4    0    0    0     0      0     0   
- 0    # Asc_width  
- -1   20   8.3   6.7     99    0      5    0    0    0     0      0     0  
-  0    # Desc_width
- -999  9    1   -999      99    0     4    0    0    0     0      0     0  
-  0    # INIT:_selectivity_at_fist_bin
-# -999  9  -999   -999      99    0     -4    0    0    0     0      0     
-# 0    0    # INIT:_selectivity_at_fist_bin
- -999  9  -999   -999      99    0     -5    0    0    0     0      0     0
-    0    # FINAL:_selectivity_at_last_bin
-
-#_size_sel: 4_Triennial                                                    
-#                                 
-  40   130  75    75      99   0      4    0    0    0     0       0    0  
-  0    # PEAK                           
- -15   4    -15   -15        99      0         -5      0       0       0   
-      0           0       0       0     # TOP:_width of plateau
- -1   9   9   9      99   0      4    0    0    0     0       0    0    0  
-  # Asc_width                      
- -1   20    7.2   7.2    99   0       5    0    0    0     0       0    0  
-  0    # Desc_width                     
- -999  9    1   -999      99    0     4    0    0    0     0      0     0  
-  0    # INIT:_selectivity_at_fist_bin
-# -999  9  -999   -999      99    0     -4    0    0    0     0      0     
-# 0    0    # INIT:_selectivity_at_fist_bin
- -999  9   -999   -999     99    0     -5    0    0    0     0       0    0
-    0    # FINAL:_selectivity_at_last_bin
-
-#
-## # timevary selex parameters 
-## #23 blocks
-##            -10            10       0.15           0.15           99     
-#         0      4  # Retain_P3_Fishery_current
-##            -10            10       0.563298312        0.563298312       
-#     99             0      4  # Retain_P3_Fishery_current
-##            -10            10       1                  1                 
-#     99             0      4  # Retain_P3_Fishery_current
-##            -10            10       0.628109583        0.628109583       
-#     99             0      4  # Retain_P3_Fishery_current
-##            -10            10       0.867976747        0.867976747       
-#     99             0      4  # Retain_P3_Fishery_current
-##            -10            10       1                  1                 
-#     99             0      4  # Retain_P3_Fishery_current
-##            -10            10       0.767965696        0.767965696       
-#     99             0      4  # Retain_P3_Fishery_current
-##            -10            10       0.294830858        0.294830858       
-#     99             0      4  # Retain_P3_Fishery_current
-##            -10            10       0.744833013        0.744833013       
-#     99             0      4  # Retain_P3_Fishery_current
-##            -10            10       0.359207081        0.359207081       
-#     99             0      4  # Retain_P3_Fishery_current
-##            -10            10       0.584777793        0.584777793       
-#     99             0      4  # Retain_P3_Fishery_current
-##            -10            10       0.769113752        0.769113752       
-#     99             0      4  # Retain_P3_Fishery_current
-##            -10            10       0.631834109        0.631834109       
-#     99             0      4  # Retain_P3_Fishery_current
-##            -10            10       0.555969252        0.555969252       
-#     99             0      4  # Retain_P3_Fishery_current
-##            -10            10       0.56            0.56               99
-#              0      4  # Retain_P3_Fishery_current
-##            -10            10       0.75            0.75               99
-#              0      4  # Retain_P3_Fishery_current
-##            -10            10       0.78            0.78               99
-#              0      4  # Retain_P3_Fishery_current
-##            -10            10       0.83            0.83               99
-#              0      4  # Retain_P3_Fishery_current
-##            -10            10       0.83            0.83               99
-#              0      4  # Retain_P3_Fishery_current
-##            -10            10       0.81            0.81               99
-#              0      4  # Retain_P3_Fishery_current
-##            -10            10       0.83            0.83               99
-#              0      4  # Retain_P3_Fishery_current
-##            -10            10       0.82            0.82               99
-#              0      4  # Retain_P3_Fishery_current
-##            -10            10       0.78            0.78               99
-#              0      4  # Retain_P3_Fishery_current
-
+# 1   Fishery_current LenSelex
+#_          LO            HI          INIT         PRIOR PR_SD PR_type    P
+# HASE  #  parm_name
+            80           150       80.0095            85    99       0     
+     4          0          0          0          0          0          0   
+       0  #  Size_DblN_peak_Fishery_current(1)
+           -15             4           -15           -15    99       0     
+    -5          0          0          0          0          0          0   
+       0  #  Size_DblN_top_logit_Fishery_current(1)
+            -1             9        7.0738           5.8    99       0     
+     4          0          0          0          0          0          0   
+       0  #  Size_DblN_ascend_se_Fishery_current(1)
+            -1            20            20           6.7    99       0     
+    -5          0          0          0          0          0          0   
+       0  #  Size_DblN_descend_se_Fishery_current(1)
+          -999             9          -999          -999    99       0     
+    -4          0          0          0          0          0          0   
+       0  #  Size_DblN_start_logit_Fishery_current(1)
+          -999             9          -999          -999    99       0     
+    -5          0          0          0          0          0          0   
+       0  #  Size_DblN_end_logit_Fishery_current(1)
+# 1   Fishery_current Retention
+#_          LO            HI          INIT         PRIOR PR_SD PR_type    P
+# HASE  #  parm_name
+            15           150       66.7519            67    99       0     
+     2          0          0          0          0          0          0   
+       0  #  Retain_L_infl_Fishery_current(1)
+           0.1            10       5.61124             8    99       0     
+     2          0          0          0          0          0          0   
+       0  #  Retain_L_width_Fishery_current(1)
+           -10            10     0.0729519            10    99       0     
+     3          0          0          0          0          0          2   
+       2  #  Retain_L_asymptote_logit_Fishery_current(1)
+             0             0             0             0    99       0     
+    -3          0          0          0          0          0          0   
+       0  #  Retain_L_maleoffset_Fishery_current(1)
+# 1   Fishery_current Discard mortality                                    
+#         0
+#_          LO            HI          INIT         PRIOR PR_SD PR_type    P
+# HASE  #  parm_name
+             5            15             5             5    99       0     
+    -4          0          0          0          0          0          0   
+       0  #  DiscMort_L_infl_Fishery_current(1)
+         0.001            10             0             0    99       0     
+    -4          0          0          0          0          0          0   
+       0  #  DiscMort_L_width_Fishery_current(1)
+             0             1           0.5           0.5    99       0     
+    -5          0          0          0          0          0          0   
+       0  #  DiscMort_L_level_old_Fishery_current(1)
+             0             0             0             0    99       0     
+    -5          0          0          0          0          0          0   
+       0  #  DiscMort_L_male_offset_Fishery_current(1)
+# 2   Discard_historical LenSelex
+# 3   Fishery_historical LenSelex
+# 4   Fishery_tribal LenSelex
+# 5   WCGBTS LenSelex
+#_          LO            HI          INIT         PRIOR PR_SD PR_type    P
+# HASE  #  parm_name
+            50           150       61.7687            85    99       0     
+     4          0          0          0          0          0          0   
+       0  #  Size_DblN_peak_WCGBTS(5)
+           -15             4           -15           -15    99       0     
+    -5          0          0          0          0          0          0   
+       0  #  Size_DblN_top_logit_WCGBTS(5)
+            -1             9       6.15752           5.8    99       0     
+     4          0          0          0          0          0          0   
+       0  #  Size_DblN_ascend_se_WCGBTS(5)
+            -1            20       9.56599           6.7    99       0     
+     5          0          0          0          0          0          0   
+       0  #  Size_DblN_descend_se_WCGBTS(5)
+          -999             9            -5          -999    99       0     
+    -4          0          0          0          0          0          0   
+       0  #  Size_DblN_start_logit_WCGBTS(5)
+          -999             9          -999          -999    99       0     
+    -5          0          0          0          0          0          0   
+       0  #  Size_DblN_end_logit_WCGBTS(5)
+# 6   Triennial LenSelex
+#_          LO            HI          INIT         PRIOR PR_SD PR_type    P
+# HASE  #  parm_name
+            50           180       176.434            75    99       0     
+     4          0          0          0          0          0          0   
+       0  #  Size_DblN_peak_Triennial(6)
+           -15             4           -15           -15    99       0     
+    -5          0          0          0          0          0          0   
+       0  #  Size_DblN_top_logit_Triennial(6)
+            -1             9       8.93782             9    99       0     
+     4          0          0          0          0          0          0   
+       0  #  Size_DblN_ascend_se_Triennial(6)
+            -1            20     -0.957179           7.2    99       0     
+     5          0          0          0          0          0          0   
+       0  #  Size_DblN_descend_se_Triennial(6)
+          -999             9            -5          -999    99       0     
+    -4          0          0          0          0          0          0   
+       0  #  Size_DblN_start_logit_Triennial(6)
+          -999             9          -999          -999    99       0     
+    -5          0          0          0          0          0          0   
+       0  #  Size_DblN_end_logit_Triennial(6)
+# 7   IPHC LenSelex
+#_          LO            HI          INIT         PRIOR PR_SD PR_type    P
+# HASE  #  parm_name
+            50           180       120.817            75    99       0     
+     4          0          0          0          0          0          0   
+       0  #  Size_DblN_peak_IPHC(7)
+           -15             4           -15           -15    99       0     
+    -5          0          0          0          0          0          0   
+       0  #  Size_DblN_top_logit_IPHC(7)
+            -1             9       6.93617             9    99       0     
+     4          0          0          0          0          0          0   
+       0  #  Size_DblN_ascend_se_IPHC(7)
+            -1            20       16.1363           7.2    99       0     
+     5          0          0          0          0          0          0   
+       0  #  Size_DblN_descend_se_IPHC(7)
+          -999             9            -5          -999    99       0     
+    -4          0          0          0          0          0          0   
+       0  #  Size_DblN_start_logit_IPHC(7)
+          -999             9          -999          -999    99       0     
+    -5          0          0          0          0          0          0   
+       0  #  Size_DblN_end_logit_IPHC(7)
+# 1   Fishery_current AgeSelex
+# 2   Discard_historical AgeSelex
+# 3   Fishery_historical AgeSelex
+# 4   Fishery_tribal AgeSelex
+# 5   WCGBTS AgeSelex
+# 6   Triennial AgeSelex
+# 7   IPHC AgeSelex
+# timevary selex parameters 
+#_          LO            HI          INIT         PRIOR PR_SD PR_type    P
+# HASE  #  parm_name
+           -10            10       1.37269           0.6    99       0     
+ 4  # Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2008
+           -10            10       1.58009           0.6    99       0     
+ 4  # Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2009
+           -10            10       7.91782           0.6    99       0     
+ 4  # Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2010
+           -10            10       9.77089           0.6    99       0     
+ 4  # Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2011
+           -10            10       9.27732           0.6    99       0     
+ 4  # Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2012
+           -10            10       3.83195           0.6    99       0     
+ 4  # Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2013
+           -10            10       4.29056           0.6    99       0     
+ 4  # Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2014
+           -10            10       3.67212           0.6    99       0     
+ 4  # Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2015
+           -10            10       2.84151           0.6    99       0     
+ 4  # Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2016
+           -10            10       3.20117           0.6    99       0     
+ 4  # Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2017
+# info on dev vectors created for selex parms are reported with other devs 
+# after tag parameter section 
 #
 0  #_ 0/1 to request experimental 2D_AR selectivity smoother options
 # Tag loss and Tag reporting parameters go next
@@ -415,9 +427,28 @@
  #_5=mult_by_agecomp_N
  #_6=mult_by_size-at-age_N
  #_7=mult_by_generalized_sizecomp
-#_Factor  Fleet  Value
-
- -9999   1    0  # terminator
+ #Factor Fleet New_Var_adj hash Old_Var_adj New_Francis   New_MI Francis_mu
+# lt Francis_lo Francis_hi  MI_mult Type            Name                   
+#            Note
+       4     1    0.058465    #    0.033668    0.058465 0.049194     1.7365
+# 03   1.032268   3.871811 1.461153  len Fishery_current                   
+#                
+       4     5    0.072162    #    0.093821    0.072162 0.564407     0.7691
+# 51   0.532181   1.479075 6.015785  len          WCGBTS                   
+#                
+       4     6    1.163594    #    0.924847    1.163594 1.393440     1.2581
+# 48   1.258148        Inf 1.506671  len       Triennial                   
+#                
+       4     7    0.558397    #    1.000000          NA 0.558397           
+# NA         NA         NA 0.558397  len            IPHC No Francis weight-
+# -using MI value
+       5     1    0.051710    #    0.075651    0.051710 0.417821     0.6835
+# 29   0.420439   9.653104 5.523007  age Fishery_current                   
+#                
+       5     5    0.045605    #    0.094543    0.045605 0.444375     0.4823
+# 71   0.249351 179.181253 4.700242  age          WCGBTS
+#
+   -9999     1    0  # terminator
 #
 1 #_maxlambdaphase
 1 #_sd_offset
