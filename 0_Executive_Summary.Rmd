@@ -81,7 +81,7 @@ was at an unfished equilibrium that year.
 
 \FloatBarrier
 
-## Stock Biomass{-}
+##Stock Biomass{-}
 (Figure \ref{fig:Spawnbio_all} 
 and Table \ref{tab:SpawningDeplete_mod1}). 
 
