@@ -1,13 +1,12 @@
+# Executive Summary{-}
 
-#Executive Summary{-}
-
-##Stock{-}
+## Stock{-}
 This assessment reports the status of the `r spp` (\emph{`r spp.sci`}) resource 
 in U.S. waters off the coast of ... using data 
 through `r LastYR`. 
 
 
-##Catches{-}
+## Catches{-}
 Information on historical landings of `r spp` are available back to xxxx...
 (Table \ref{tab:Exec_catch}). Commercial landings were small during 
 the years of World War II, ranging between `r min(round(Tot.catch.df[Tot.catch.df[,1] >= 1939 & Tot.catch.df[,1] <= 1945,2],0))` to `r max(round(Tot.catch.df[Tot.catch.df[,1] >= 1939 & Tot.catch.df[,1] <= 1945,2],0))` metric  tons (mt) per year.
@@ -65,13 +64,12 @@ Since 2000, annual total landings of `r spp` have ranged between
 
 \newpage
 
-##Data and Assessment{-}
+## Data and Assessment{-}
 
 
 
 
-This a new full assessment for `r spp`, which was last assessed in ... using 
-Stock Synthesis Version xx.  This assessment uses the newest version of Stock Synthesis 
+This the first full assessment for `r spp`, which was last assessed as part of the "Other species" Complex.  This assessment uses the newest version of Stock Synthesis 
 (3.30.xx).  The model begins in `r Dat_start_mod1`, and assumes the stock 
 was at an unfished equilibrium that year. 
 
@@ -83,7 +81,7 @@ was at an unfished equilibrium that year.
 
 \FloatBarrier
 
-##Stock Biomass{-}
+## Stock Biomass{-}
 (Figure \ref{fig:Spawnbio_all} 
 and Table \ref{tab:SpawningDeplete_mod1}). 
 
@@ -123,7 +121,7 @@ asymptotic variance estimates show that the uncertainty in the estimated spawnin
 
 
 
-##Recruitment{-}
+## Recruitment{-}
 Recruitment deviations were estimated from xxxx-xxxx (Figure \ref{fig:Recruits_all} and 
 Table \ref{tab:Recruit_mod1}).
 
@@ -151,7 +149,7 @@ Table \ref{tab:Recruit_mod1}).
 
 
 
-##Exploitation status{-}
+## Exploitation status{-}
 Harvest rates estimated by the base model .....
 management target levels (Table \ref{tab:SPR_Exploit_mod1} and Figure \ref{fig:SPR_all}). 
 
@@ -187,7 +185,7 @@ management target levels (Table \ref{tab:SPR_Exploit_mod1} and Figure \ref{fig:S
 
 
 
-##Ecosystem Considerations{-}
+## Ecosystem Considerations{-}
 In this assessment, ecosystem considerations were not explicitly included in the analysis.  
 This is primarily due to a lack of relevant data and results of analyses (conducted elsewhere) 
 that could contribute ecosystem-related quantitative information for the assessment.
@@ -195,7 +193,7 @@ that could contribute ecosystem-related quantitative information for the assessm
 
 
 
-##Reference Points{-}
+## Reference Points{-}
 
 This stock assessment estimates that `r spp` in the `r mod1_label` is 
 `r ifelse(Deplete_mod1[nrow(Deplete_mod1),2]-MT>0,"above","below")` the biomass 
@@ -230,7 +228,7 @@ harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt (Figure 
 
 
 
-##Management Performance{-}
+## Management Performance{-}
 
 Table \ref{tab:mnmgt_perform}
 
@@ -246,7 +244,7 @@ Table \ref{tab:mnmgt_perform}
 <!-- ***********END EXECUTIVE SUMMARY MANAGEMENT PERFORMANCE TABLE********* -->
 
 
-##Unresolved Problems and Major Uncertainties{-}
+## Unresolved Problems and Major Uncertainties{-}
 
 
 \FloatBarrier
@@ -254,7 +252,7 @@ Table \ref{tab:mnmgt_perform}
 
 
 
-##Decision Table{-}    
+## Decision Table{-}    
 
 
 
@@ -307,7 +305,7 @@ Table \ref{tab:mnmgt_perform}
 
 \newpage
 
-##Research and Data Needs{-}
+## Research and Data Needs{-}
 We recommend the following research be conducted before the next assessment:
 
 

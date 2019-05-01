@@ -1,8 +1,8 @@
 <!-- ***********INTRODUCTION SECTION*************************************** -->
 
-#Introduction
+# Introduction
 
-##Distribution and Life History
+## Distribution and Life History
 
 Big Skate (*Raja binoculata*) is the largest of the skate species in North America with a documented maximum length of 244 cm total length and a maximum weight of 91 kg (Eschmeyer, et al. 1983).  The species name “binoculata” (two-eyed) refers to the prominent ocellus at the base of each pectoral fin. Big skate range from the Bering Sea to Cedros Island in Baja California, but are uncommon south of Pt. Conception. Big skate have a shallow depth distribution of 3-800 m, but are most common in the 3-110 m depth zone. Big Skate are observed in progressively shallower water in the northern parts of its range.  They occur in coastal bays, estuaries, and over the continental shelf, usually on sandy or muddy bottoms, but occasionally on low strands of kelp.
 
@@ -23,21 +23,21 @@ comprise a slightly greater percentage of the diet of younger individuals. A kno
 ## Early Life History
 
 
-##Map
+## Map
 A map showing the scope of the assessment and depicting boundaries for fisheries or 
 data collection strata is provided in Figure \ref{fig:boundary_map}.
 
-##Ecosystem Considerations
+## Ecosystem Considerations
 In this assessment, ecosystem considerations were not explicitly included in the analysis. 
 This is primarily due to a lack of relevant data and results of analyses (conducted elsewhere) 
 that could contribute ecosystem-related quantitative information for the assessment.
 
 
-##Fishery Information
+## Fishery Information
 
 
 
-##Stock Status and Management History
+## Stock Status and Management History
 
 Big Skate are caught in commercial and recreational fisheries on the West Coast using line and
 trawl gears. They are commercially utilized to a limited extent by removing the pectoral fins
@@ -55,10 +55,10 @@ Bottom Trawl Survey. This survey-based biomass estimate is likely underestimated
 
 There has been consideration for managing Big Skate in a complex with Longnose Skate, the other actively-managed West Coast skate species, but the two species have disparate distributions and fishery interactions (Longnose Skate is much more deeply distributed than Big Skate) and that option was not endorsed. The Council has chosen to set the Annual Catch Limit (ACL) equal to the Allowable Biological Catch (ABC) with a buffer for management uncertainty (P* of 0.45).
 
-##Management Performance
+## Management Performance
 
 Table \ref{tab:mnmgt_perform}
 
 
-##Fisheries Off Mexico or Canada
+## Fisheries Off Mexico or Canada
 

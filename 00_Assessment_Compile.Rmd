@@ -1,6 +1,6 @@
 ---
-title: Status of A Fish (*Beringraja binoculata*) Off the U.S. Pacific Coast
-  in 2017
+title: Status of Big Skate (*Beringraja binoculata*) Off the U.S. Pacific Coast
+  in 2019
 author: ''
 date: ''
 output:
@@ -16,11 +16,18 @@ output:
     toc: yes
     toc_depth: 4
   word_document:
+    reference_docx: Word.Styles.Reference.docx
+    highlight: haddock
+    fig_caption: yes
     toc: yes
-    toc_depth: '4'
+    toc_depth: 4
+  html_document:
+    toc: yes
 documentclass: article
 fontsize: 12pt
+footer: ''
 geometry: margin=1in
+header-includes:
 link-citations: yes
 csl: CJFAS.csl
 bibliography: BibFile.bib
@@ -40,20 +47,26 @@ bibliography: BibFile.bib
     # It may take time to edit this file and get it ready for your assessment
     # Make small changes in this file and then try to compile the document
     # Commit when you have a success!
-    # source('./Rcode/Exec_summary_figs_tables.R')
+    source('./Rcode/Exec_summary_figs_tables.R')
 ```
+
 \setlength{\parskip}{5mm plus1mm minus1mm}
 \pagebreak
 
-
-\setcounter{page}{1}
+\pagenumbering{arabic}
+<!--\setcounter{page}{1}-->
 \renewcommand{\thefigure}{\alph{figure}}
 \renewcommand{\thetable}{\alph{table}}
 
 
-# ```{r child = "0_Executive_Summary.Rmd"}
-# ```
+```{r child = "0_Executive_Summary.Rmd"}
+```
+
 \newpage
+\setcounter{page}{1}
+\renewcommand{\thefigure}{\alph{figure}}
+\renewcommand{\thetable}{\alph{table}}
+
 ```{r child = "1_Introduction.Rmd"}
 ```
 \newpage
@@ -64,7 +77,7 @@ bibliography: BibFile.bib
 ```
 \newpage
 ```{r child = "4_Assessment.Rmd"}
-``` 
+```
 \newpage
 ```{r child = "5_HarvestProjections.Rmd"}
 ```
@@ -72,13 +85,23 @@ bibliography: BibFile.bib
 ```{r child = "6_RegionalManagement.Rmd"}
 ```
 \newpage
-```{r child = "7_ResearchNeeds.Rmd"}
+```{r child = "7_ResearchNeeds_Acknowledgements.Rmd"}
 ```
 \newpage
-```{r child = "8_Acknowledgments.Rmd"}
+```{r child = "8_Tables.Rmd"}
 ```
 \newpage
-
+```{r child = "9_1_figures_Intro_FishData.Rmd"}
+```
+\newpage
+```{r child = "9_2_Figures_BioData.Rmd"}
+```
+\newpage
+```{r child = "9_4_Figures_Assessment.Rmd"}
+```
+\newpage
+```{r child = "9_9_Appendices.Rmd"}
+```
 
 
 <!-- ====================================================================== -->
