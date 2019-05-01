@@ -63,9 +63,11 @@ bibliography: BibFile.bib
 ```
 
 \newpage
-\setcounter{page}{1}
-\renewcommand{\thefigure}{\alph{figure}}
-\renewcommand{\thetable}{\alph{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+
 
 ```{r child = "1_Introduction.Rmd"}
 ```
