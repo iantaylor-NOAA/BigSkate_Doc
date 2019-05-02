@@ -16,12 +16,21 @@
 <!-- ********************************************************************** -->
 <!-- **********************Weight-Length FIGURES*************************** --> 
 <!-- ********************************************************************** -->
+![Estimated relationship between length and weight (left) and
+disc-width and length (right) for `r spp`. Colored points show observed values
+and the black line indicates the estimated relationship
+$W = 0.0000074924L^{2.9925}$.\label{fig:weight-length}](Figures/Big Skate bio relationships.png)
 
 
 
 <!-- ********************************************************************** -->
 <!-- **************Sex Ratio, Maturity, FecundityFIGURES******************* --> 
 <!-- ********************************************************************** -->
+
+![Estimated maturity relationship for female `r spp`.
+Gray points indicate average observed functional maturity within each
+length bin with point size proportional to the number of
+samples (indicated by text within each point).\label{fig:maturity}](Figures/BigSkate_maturity.png)
 
 
 <!-- ====================================================================== -->
