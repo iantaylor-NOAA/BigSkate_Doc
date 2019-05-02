@@ -15,14 +15,14 @@ output:
     template: Default_template_modified.tex
     toc: yes
     toc_depth: 4
+  html_document:
+    toc: yes
   word_document:
     reference_docx: Word.Styles.Reference.docx
     highlight: haddock
     fig_caption: yes
     toc: yes
     toc_depth: 4
-  html_document:
-    toc: yes
 documentclass: article
 fontsize: 12pt
 footer: ''
