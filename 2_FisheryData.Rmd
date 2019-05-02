@@ -12,13 +12,41 @@ Descriptions of the data sources are in the following sections.
 ###Commercial Fishery Landings
 
 Catch reconstructions for WA, OR, and CA
+
+**Oregon Commercial Skate Landings Reconstruction**
+
+<!-- IGT: text below from a Word document Ali Whitman provided
+The Calavan et al. 2019 reference is expected to be completed in August to be referenced in the final assessment report.-->
+
+Oregon Department of Fish and Wildlife (ODFW) provided newly reconstructed commercial landings for all observed skate species for the 2019 assessment cycle (1978 -- 2018).
+<!-- More detail on the methodology of the reconstruction is provided in Calavan et al. 2019. -->
+In addition, the methods were reviewed at a pre-assessment workshop.  Historically, skates were landed as a single skate complex in Oregon.  In 2009, longnose skates were separated into their own single-species landing category, and in 2014, big skates were also separated.  The reconstruction methodology differed by these three time blocks in which species composition collections diverged (1978 -- 2008; 2009 -- 2014; 2015 -- 2018).  
+
+Species compositions of skate complexes from commercial port sampling are available throughout this time period but are generally limited, which precluded the use of all strata for reconstructing landings.  Quarter and port were excluded, retaining gear type, PMFC area, and market category for stratifying reconstructed landings within the three time blocks.  Bottom trawl gear types include multiple bottom trawl gears, and account for greater than 98% of skate landings
+<!--  (Calavan et al. 2019) -->.
+Minor gear types include primarily bottom longline gear, but also include mid-water trawl, hook and line, shrimp trawl, pot gear and scallop dredge.  
+
+For bottom trawl gears, trawl logbook areas and adjusted skate catches were matched with strata-specific species compositions. In Time Block 1 (1978 -- 2008), all bottom trawl gear types were aggregated due to a lack of specificity in the gear recorded on the fish tickets. However, in Time Blocks 2 and 3, individual bottom trawl gear types were retained.  Some borrowing of species compositions was required (31% of strata) and when necessary, borrowed from the closest area or from the most similar gear type
+<!--  (Calavan et al. 2019) -->.
+Longline gear landings were reconstructed in a similar fashion as to bottom trawl and required some borrowing among strata as well (25%). <!-- (25% ; Calavan et al. 2019).-->  
+
+Due to insufficient species compositions, mid-water trawl landings were reconstructed using a novel depth-based approach.  Available compositions indicate that the proportion by weight of big skates within a composition drops to zero at approximately 100 fathoms, and an inverse relationship is observed for longnose skate, where the proportion by weight is consistently one beyond 100 -- 150 fathoms
+<!--  (Calavan et al. 2019) -->.
+Complex-level landings were assigned a depth from logbook entries and these species specific depth associations were used to parse out landings by species.  The approach differed somewhat by time block
+<!--  (Calavan et al. 2019) -->.
+Landings from shrimp trawls were handled using a similar methodology. Finally, very minor landings from hook and line, pot gear and scallop dredges were assigned a single aggregated species composition, as they lack any gear-specific composition samples.  Landings from within a time block were apportioned by year using the proportion of the annual ticket landings.   
+
+Results indicate that the species-specific landings from this reconstruction are very similar to those from Oregon's commercial catch reconstruction (Karnowski et al. 2014) during the overlapping years but cover a greater time period with methodology more applicable to skates in particular.  ODFW intends to incorporate reconstructed skate landings into PacFIN in the future (A. Whitman, ODFW; pers. comm.).  
+
+
 Tribal catch in WA
 
 
 ###Commercial Discards
 
-Estimated discards
+Commercial discards of `r spp` are highly uncertain. The method used to estimate discards for Longnose Skate was based on a strong correlation between total mortality of that species, and total mortality of Dover Sole for the years 2009--2017 during which Longnose were landed separately from other skates. In contrast, the sorting requirement for `r spp` occurred too recently to provide an adequate range of years for this type of correlation. Furthermore, there is greater uncertainty in the total mortality for the shallow-water species with which `r spp` most often co-occurs, such as Sand Sole and Starry Flounder, than there is for Dover Sole, which has been the subject of recurring stock assessments.
 
+However, those involved in the fishery for both skate species report that discarding for `r spp` and Longnose Skate in the years prior to 1995 were driven by the same market forced and the discard rates were similar.  primarily lack of margets or fish processors accepting only skate wings that had been separated at-sea, as well as the quantitative have more uncertainty in their own catch estimates have no stock assessment and more uncertain mortality    estimated total mortality and Dover Sole  for which a correlation between relationship   [@Gertseva2019],  
 ###Commercial Fishery Length and Age Data
 
 
@@ -65,7 +93,7 @@ _Data Source 1 Length Composition_
 **Alaska Fisheries Science Center (AFSC) Triennial Shelf Survey**    
 Research surveys have been used since the 1970s to provide fishery-independent information about the abundance, distribution, and biological characteristics of `r spp`.  A coast-wide survey was conducted in 1977 [@Gunderson1980] by the Alaska Fisheries Science Center, and repeated every three years through 2001.  The final year of this survey, 2004, was conducted by the NWFSC according to the AFSC protocol. We refer to this as the **Triennial Survey**.
 
-The survey design used equally-spaced transects from which searches for tows in a specific depth range were initiated. The depth range and latitudinal range was not consistent across years, but all years in the period 1980-2004 included the area from 40$^\circ$ 10'N north to the Canadian border and a depth range that included 55-366 meters, which spans the range where the vast majority of Big Skate encountered in all trawl surveys. Therefore the index was based on this depth range.  The survey as conducted in 1977 had incomplete coverage and is not believe to be comparable to the later years, and is not used in the index.
+The survey design used equally-spaced transects from which searches for tows in a specific depth range were initiated. The depth range and latitudinal range was not consistent across years, but all years in the period 1980-2004 included the area from 40$^\circ$ 10'N north to the Canadian border and a depth range that included 55-366 meters, which spans the range where the vast majority of `r spp` encountered in all trawl surveys. Therefore the index was based on this depth range.  The survey as conducted in 1977 had incomplete coverage and is not believe to be comparable to the later years, and is not used in the index.
 
 An index of abundance was estimated based on the VAST delta-GLMM model as described for the NWFSC Combo Index above. In this case as well, Q-Q plots indicated slightly better performance of the gamma over lognormal models for positive tows (Figure \ref{fig:VAST_QQ}).
 
@@ -73,7 +101,7 @@ An index of abundance was estimated based on the VAST delta-GLMM model as descri
 
 In 2003, the NWFSC took over an ongoing slope survey the AFSC had been conducting, and expanded it spatially to include the continental shelf. This survey, referred to in this document as the **NWFSC Combo Survey**, has been conducted annually since. It uses a random-grid design covering the coastal waters from a depth of 55 m to 1,280 m from late-May to early-October [@Bradburn2011 ; @Keller2017]. Four chartered industry vessels are used each year (with the exception of 2013 when the U.S. federal-government shutdown curtailed the survey). Yellowtail catches in the NWFSC Combo Survey are shown in \ref{fig:assess_region_map2}.
 
-The data from the NWFSC Combo survey was analyzed using a spatio-temporal delta-model [@Thorson2015], implemented as an R package VAST [@Thorson2017] and publicly available online (https://github.com/James-Thorson/VAST).  Spatial and spatio-temporal variation is specifically included in both encounter probability and positive catch rates, a logit-link for encounter probability, and a log-link for positive catch rates.  Vessel-year effects were included for each unique combination of vessel and year in the database.
+The data from the NWFSC Combo survey was analyzed using a spatio-temporal delta-model [@Thorson2015], implemented as an R package VAST [@Thorson2017a] and publicly available online (https://github.com/James-Thorson/VAST).  Spatial and spatio-temporal variation is specifically included in both encounter probability and positive catch rates, a logit-link for encounter probability, and a log-link for positive catch rates.  Vessel-year effects were included for each unique combination of vessel and year in the database.
 
 
 _Data Source 1 Index Standardization_
