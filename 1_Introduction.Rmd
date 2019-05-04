@@ -2,7 +2,14 @@
 
 # Introduction
 
-
+```{r}
+mydf <- data.frame(id = 1:10, var1 = rnorm(10), var2 = runif(10))
+rws <- seq(1, (nrow(mydf)-1), by = 2)
+col <- rep("\\rowcolor[gray]{0.95}", length(rws))
+print(xtable(mydf), booktabs = TRUE,
+      add.to.row = list(pos = as.list(rws), command = col))
+```
+      
 ## Distribution and Life History
 
 Big Skate (*Raja binoculata*) is the largest of the skate species in North America with a documented maximum length of 244 cm total length and a maximum weight of 91 kg [@Eschmeyer1983].  The species name “binoculata” (two-eyed) refers to the prominent ocellus at the base of each pectoral fin. Big skate range from the Bering Sea to Cedros Island in Baja California, but are uncommon south of Pt. Conception. Big skate have a shallow depth distribution of 3-800 m, but are most common in the 3-110 m depth zone. Big Skate are observed in progressively shallower water in the northern parts of its range.  They occur in coastal bays, estuaries, and over the continental shelf, usually on sandy or muddy bottoms, but occasionally on low strands of kelp.

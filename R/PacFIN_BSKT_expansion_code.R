@@ -32,6 +32,12 @@ PacFIN.BSKT.BDS <- PacFIN.BSKT.bds.30.Apr.2019
 PacFIN.BSKT.BDS <- PacFIN.BSKT.BDS[!PacFIN.BSKT.BDS$SAMPLE_NO %in%
                                    c("OR115082", "OR084015", "OR095017", "OR095017"),]
 
+# A couple of NA's
+PacFIN.BSKT.BDS <- PacFIN.BSKT.BDS[!is.na(PacFIN.BSKT.BDS$FISH_LENGTH),]
+
+# One bad record with FISH_LENGTH_TYPE T:
+PacFIN.BSKT.BDS <- PacFIN.BSKT.BDS[-c(which(PacFIN.BSKT.BDS$FISH_LENGTH == 11520.0)),]
+
 #Select data only for one state, line below is for OR. This is for exploration purposes
 #PacFIN.BSKT.BDS <- PacFIN.BSKT.bds.30.Aug.2018[PacFIN.BSKT.bds.30.Aug.2018$SOURCE_AGID %in% 'O',]
 
@@ -47,11 +53,13 @@ PacFIN.BSKT.BDS$FISH_LENGTH[sub] <- 1.3399 * PacFIN.BSKT.BDS$FISH_LENGTH[sub]
 
 # To convert to from interspiracular width to total lengths
 # Females or unsexed (only 2 unsexed fish with interspiracular width)
-sub <- PacFIN.BSKT.BDS$FISH_LENGTH_TYPE %in% "R" & PacFIN.BSKT.BDS$SEX %in% c("F","U")
+sub <- PacFIN.BSKT.BDS$FISH_LENGTH_TYPE %in% "R" & PacFIN.BSKT.BDS$SEX %in% c("F","U") & PacFIN.BSKT.BDS$FISH_LENGTH < 1000
+sub[is.na(sub)] = FALSE
+
 PacFIN.BSKT.BDS$FISH_LENGTH[sub] <- 12.111 + 9.761 * PacFIN.BSKT.BDS$FISH_LENGTH[sub]
 
 # Males
-sub <- PacFIN.BSKT.BDS$FISH_LENGTH_TYPE %in% "R" & PacFIN.BSKT.BDS$SEX %in% "F"
+sub <- PacFIN.BSKT.BDS$FISH_LENGTH_TYPE %in% "R" & PacFIN.BSKT.BDS$SEX %in% "M"
 PacFIN.BSKT.BDS$FISH_LENGTH[sub] <- 3.824 + 10.927 * PacFIN.BSKT.BDS$FISH_LENGTH[sub]
 
 #Check how many samples are in the data
@@ -71,18 +79,18 @@ PacFIN.BSKT.BDS.clean <- cleanPacFIN(PacFIN.BSKT.BDS,
                                      keep_INPFC = c("VUS","CL","VN","COL","NC","SC","EU","CP","EK","MT"))
 ## Removal Report
 
-## Records in input:                  7763 
-## Records not in USINPFC             0 
-## Records not in INPFC_AREA:         0 
-## Records in bad INPFC_AREA:         0 
-## Records in badRecords list:        0 
-## Records with bad SAMPLE_TYPE       2 
-## Records with bad SAMPLE_METHOD     66 
-## Records with no SAMPLE_NO          0 
-## Records with no usable length      20 
-## Records remaining:                 7675
+# Records in input:                  7742 
+# Records not in USINPFC             0 
+# Records not in INPFC_AREA:         0 
+# Records in bad INPFC_AREA:         0 
+# Records in badRecords list:        0 
+# Records with bad SAMPLE_TYPE       2 
+# Records with bad SAMPLE_METHOD     66 
+# Records with no SAMPLE_NO          0 
+# Records with no usable length      0 
+# Records remaining:                 7674
 
-write.csv(PacFIN.BSKT.BDS.clean, file = file.path(pacfin.dir, "PacFIN.BSKT.BDS_cleaned_4-30-2019.csv"))
+write.csv(PacFIN.BSKT.BDS.clean, file = file.path(pacfin.dir, "PacFIN.BSKT.BDS_cleaned_5-4-2019.csv"))
 
 #==============================================================
 #==================  Stratification  ==========================
@@ -103,6 +111,11 @@ PacFIN.BSKT.BDS.clean$stratification <- paste(PacFIN.BSKT.BDS.clean$state,
 table(PacFIN.BSKT.BDS.clean$stratification)
 ## CA.HKL CA.TWL OR.HKL OR.TWL WA.HKL WA.TWL 
 ##     24   1277     91   5005     53   1255 
+# 
+# NOW:
+#   
+# CA.HKL CA.TWL OR.HKL OR.TWL WA.HKL WA.TWL 
+# 24   1277     89   4985     45   1255
 
 #==============================================================
 #=====================  Expansion  ============================
