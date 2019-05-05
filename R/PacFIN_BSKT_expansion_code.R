@@ -9,7 +9,7 @@ library(PacFIN.Utilities)
 
 #Define length and age bins
 
-BSKT.LBINS <- seq(5, 200, by = 5)
+BSKT.LBINS <- seq(20, 200, by = 5)
 BSKT.ABINS <- 0:15
 
 #==============================================================
@@ -26,17 +26,31 @@ if(Sys.info()["user"] == "Ian.Taylor"){
 load(file.path(pacfin.dir, "PacFIN.BSKT.bds.30.Apr.2019.dmp"))
 PacFIN.BSKT.BDS <- PacFIN.BSKT.bds.30.Apr.2019
 
-
 # filter out outliers discovered in the age-length
-# comparison at the bottom of this script
-PacFIN.BSKT.BDS <- PacFIN.BSKT.BDS[!PacFIN.BSKT.BDS$SAMPLE_NO %in%
-                                   c("OR115082", "OR084015", "OR095017", "OR095017"),]
+# comparison at the bottom of this script, all of which have FISH_LENGTH_TYPE == "T"
+nrow(PacFIN.BSKT.BDS)
+## [1] 7785
+outliers <- c(which(PacFIN.BSKT.BDS$FISH_LENGTH == 160 &
+                      PacFIN.BSKT.BDS$FISH_AGE_YEARS_FINAL == 5),
+              which(PacFIN.BSKT.BDS$FISH_LENGTH == 380 &
+                      PacFIN.BSKT.BDS$FISH_AGE_YEARS_FINAL == 5),
+              which(PacFIN.BSKT.BDS$FISH_LENGTH == 1430 &
+                      PacFIN.BSKT.BDS$FISH_AGE_YEARS_FINAL == 4),
+              which(PacFIN.BSKT.BDS$FISH_LENGTH == 840 &
+                      PacFIN.BSKT.BDS$FISH_AGE_YEARS_FINAL == 10))
+
+outliers
+## [1] 2713 1657 2018 2017
+PacFIN.BSKT.BDS <- PacFIN.BSKT.BDS[-outliers, ]
 
 # A couple of NA's
 PacFIN.BSKT.BDS <- PacFIN.BSKT.BDS[!is.na(PacFIN.BSKT.BDS$FISH_LENGTH),]
 
 # One bad record with FISH_LENGTH_TYPE T:
 PacFIN.BSKT.BDS <- PacFIN.BSKT.BDS[-c(which(PacFIN.BSKT.BDS$FISH_LENGTH == 11520.0)),]
+
+nrow(PacFIN.BSKT.BDS)
+## [1] 7760
 
 #Select data only for one state, line below is for OR. This is for exploration purposes
 #PacFIN.BSKT.BDS <- PacFIN.BSKT.bds.30.Aug.2018[PacFIN.BSKT.bds.30.Aug.2018$SOURCE_AGID %in% 'O',]
@@ -53,7 +67,9 @@ PacFIN.BSKT.BDS$FISH_LENGTH[sub] <- 1.3399 * PacFIN.BSKT.BDS$FISH_LENGTH[sub]
 
 # To convert to from interspiracular width to total lengths
 # Females or unsexed (only 2 unsexed fish with interspiracular width)
-sub <- PacFIN.BSKT.BDS$FISH_LENGTH_TYPE %in% "R" & PacFIN.BSKT.BDS$SEX %in% c("F","U") & PacFIN.BSKT.BDS$FISH_LENGTH < 1000
+sub <- PacFIN.BSKT.BDS$FISH_LENGTH_TYPE %in% "R" &
+  PacFIN.BSKT.BDS$SEX %in% c("F","U") &
+  PacFIN.BSKT.BDS$FISH_LENGTH < 1000
 sub[is.na(sub)] = FALSE
 
 PacFIN.BSKT.BDS$FISH_LENGTH[sub] <- 12.111 + 9.761 * PacFIN.BSKT.BDS$FISH_LENGTH[sub]
@@ -66,11 +82,17 @@ PacFIN.BSKT.BDS$FISH_LENGTH[sub] <- 3.824 + 10.927 * PacFIN.BSKT.BDS$FISH_LENGTH
 #table(PacFIN.BSKT.BDS$SAMPLE_NO)
 table(PacFIN.BSKT.BDS$FISH_LENGTH_TYPE)
 ##    A    F    R    T 
-## 1309    2  507 5945 
+## 1299    2  502 5957 
 
 table(PacFIN.BSKT.BDS$SAMPLE_METHOD)
 ##    R    S 
-## 7697   66
+## 7694   66 
+
+# confirm that "S" samples are all from WA in 2009:
+table(PacFIN.BSKT.BDS$SAMPLE_AGENCY[PacFIN.BSKT.BDS$SAMPLE_METHOD == "S"],
+      PacFIN.BSKT.BDS$SAMPLE_YEAR[PacFIN.BSKT.BDS$SAMPLE_METHOD == "S"])
+  ##   2009
+  ## W   66
 
 #Clean PacFIN bds file
 # note that all lengths types have already been converted to total length above
@@ -79,18 +101,18 @@ PacFIN.BSKT.BDS.clean <- cleanPacFIN(PacFIN.BSKT.BDS,
                                      keep_INPFC = c("VUS","CL","VN","COL","NC","SC","EU","CP","EK","MT"))
 ## Removal Report
 
-# Records in input:                  7742 
-# Records not in USINPFC             0 
-# Records not in INPFC_AREA:         0 
-# Records in bad INPFC_AREA:         0 
-# Records in badRecords list:        0 
-# Records with bad SAMPLE_TYPE       2 
-# Records with bad SAMPLE_METHOD     66 
-# Records with no SAMPLE_NO          0 
-# Records with no usable length      0 
-# Records remaining:                 7674
+## Records in input:                  7760 
+## Records not in USINPFC             0 
+## Records not in INPFC_AREA:         0 
+## Records in bad INPFC_AREA:         0 
+## Records in badRecords list:        0 
+## Records with bad SAMPLE_TYPE       2 
+## Records with bad SAMPLE_METHOD     66 
+## Records with no SAMPLE_NO          0 
+## Records with no usable length      0 
+## Records remaining:                 7692 
 
-write.csv(PacFIN.BSKT.BDS.clean, file = file.path(pacfin.dir, "PacFIN.BSKT.BDS_cleaned_5-4-2019.csv"))
+write.csv(PacFIN.BSKT.BDS.clean, file = file.path(pacfin.dir, "PacFIN.BSKT.BDS_cleaned_5-5-2019.csv"))
 
 #==============================================================
 #==================  Stratification  ==========================
@@ -116,6 +138,27 @@ table(PacFIN.BSKT.BDS.clean$stratification)
 #   
 # CA.HKL CA.TWL OR.HKL OR.TWL WA.HKL WA.TWL 
 # 24   1277     89   4985     45   1255
+
+# look at histograms of different groups
+par(mfrow=c(6,1), mar=rep(1,4), oma=c(4,4,1,1))
+hist(subset(PacFIN.BSKT.BDS.clean, FISH_LENGTH_TYPE == "A" & SEX == "F",
+            select = lengthcm)[[1]],
+     breaks = seq(10, 205, 5))
+hist(subset(PacFIN.BSKT.BDS.clean, FISH_LENGTH_TYPE == "A" & SEX == "M",
+            select = lengthcm)[[1]],
+     breaks = seq(10, 205, 5))
+hist(subset(PacFIN.BSKT.BDS.clean, FISH_LENGTH_TYPE == "R" & SEX == "F",
+            select = lengthcm)[[1]],
+     breaks = seq(10, 205, 5))
+hist(subset(PacFIN.BSKT.BDS.clean, FISH_LENGTH_TYPE == "R" & SEX == "M",
+            select = lengthcm)[[1]],
+     breaks = seq(10, 205, 5))
+hist(subset(PacFIN.BSKT.BDS.clean, FISH_LENGTH_TYPE == "T" & SEX == "F",
+            select = lengthcm)[[1]],
+     breaks = seq(10, 205, 5))
+hist(subset(PacFIN.BSKT.BDS.clean, FISH_LENGTH_TYPE == "T" & SEX == "M",
+            select = lengthcm)[[1]],
+     breaks = seq(10, 205, 5))
 
 #==============================================================
 #=====================  Expansion  ============================
@@ -155,7 +198,7 @@ write.csv(PacFIN.BSKT.BDS.exp2, file.path(pacfin.dir, "PacFIN.BSKT.BDS_expanded2
 # Generate Length Comps
 table(PacFIN.BSKT.BDS.exp2$SEX)
 ##    F    M    U 
-## 2832 4863   10
+## 2828 4854   10 
 
 Lcomps <- getComps(PacFIN.BSKT.BDS.exp2, Comps="LEN")
 
@@ -165,11 +208,17 @@ Lcomps = doSexRatio(Lcomps)
 
 # Females and males separately
 
-writeComps(Lcomps, fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_length_comps_4-27-2019.csv"),
+test <- writeComps(Lcomps, fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_length_comps_5-5-2019.csv"),
            lbins = BSKT.LBINS,
-           partition = 2, ageErr = NA, returns = "FthenM",
+           partition = 2, ageErr = 1, returns = "FthenM",
            dummybins = FALSE, sum1 = TRUE,
-           overwrite = FALSE, verbose = TRUE)
+           overwrite = TRUE, verbose = TRUE)
+# apply sample size calculation
+Lcomps.SS.info <-  readLines(file.path(pacfin.dir, "PacFIN.BSKT.BDS_length_comps_5-5-2019.csv"))
+
+Lcomps.SS <- read.csv(file.path(pacfin.dir, "PacFIN.BSKT.BDS_length_comps_5-5-2019.csv"),
+                      skip = grep("Females then males", Lcomps.SS.info))
+Lcomps.SS
 
 #==============================================================
 #========  AGES  =========
@@ -183,7 +232,7 @@ PacFIN.BSKT.BDS.clean.ages <- cleanPacFIN(PacFIN.BSKT.BDS,
                                           keep_sample_method = c("R", "S"))
 ## Removal Report
 
-## Records in input:                  7763 
+## Records in input:                  7760 
 ## Records not in USINPFC             0 
 ## Records not in INPFC_AREA:         0 
 ## Records in bad INPFC_AREA:         0 
@@ -191,17 +240,17 @@ PacFIN.BSKT.BDS.clean.ages <- cleanPacFIN(PacFIN.BSKT.BDS,
 ## Records with bad SAMPLE_TYPE       2 
 ## Records with bad SAMPLE_METHOD     0 
 ## Records with no SAMPLE_NO          0 
-## Records with no usable length      20 
-## Records remaining:                 7741
+## Records with no usable length      0 
+## Records remaining:                 7758 
 
 PacFIN.BSKT.BDS.ages <- cleanAges(PacFIN.BSKT.BDS.clean.ages, minAge = 0,
                                   keep_age_methods=c(4,"X"))
 ## Removal report
 
-## Records in input:                   7741 
-## Records with age less than min:     7124 
+## Records in input:                   7758 
+## Records with age less than min:     7123 
 ## Records with bad agemethods:        0 
-## Records remaining:                  617
+## Records remaining:                  635 
 
 PacFIN.BSKT.BDS.ages.exp1 <- getExpansion_1(PacFIN.BSKT.BDS.ages,
                                             maxExp = 0.95,
@@ -213,52 +262,32 @@ PacFIN.BSKT.BDS.ages.exp1 <- getExpansion_1(PacFIN.BSKT.BDS.ages,
 PacFIN.BSKT.BDS.ages.exp1$Final_Sample_Size <-
   PacFIN.BSKT.BDS.ages.exp1$Expansion_Factor_1
 
-table(PacFIN.BSKT.BDS.ages$state)
-##  OR  WA 
-## 449 168 
+table(PacFIN.BSKT.BDS.ages$SAMPLE_YEAR, PacFIN.BSKT.BDS.ages$state)
+##       OR  WA
+## 2004   0  11
+## 2008  79   0
+## 2009  85  65
+## 2010 102   0
+## 2011 201   0
+## 2018   0  92
+
 PacFIN.BSKT.BDS.ages.exp1$stratification <- PacFIN.BSKT.BDS.ages$state
 
-# get state-specific catch estimates
-catch.dir <- 'C:/SS/skates/catch'
-landings <- read.csv(file.path(catch.dir, "Big skate catches for Ian landings.csv"))
-table(PacFIN.BSKT.BDS.ages.exp1$SAMPLE_YEAR)
-## 2004 2008 2009 2010 2011 2018 
-##   11   70  142  102  200   92 
-Catch <- data.frame(Year = 2004:2018,
-                    WA = NA,
-                    OR = NA)
-for(state in c("WA","OR")){
-  for(y in Catch$Year){
-    sub <- landings$Year == y & landings$State == state
-    Catch[Catch$Year == y, state] <- sum(landings$Landings..mt.[sub])
-  }
-}                                          
+# don't do expansion factor 2 because WA samples from 2009 are non-random and
+# should not be included in marginal age comps
 
-### getExpansion_2 
-PacFIN.BSKT.BDS.ages.exp2 <- getExpansion_2(PacFIN.BSKT.BDS.ages.exp1, Catch,
-                                            Convert=TRUE, maxExp = 0.95)
-
-# expansion factors 1 and 2
-PacFIN.BSKT.BDS.ages.exp2$Final_Sample_Size <-
-  PacFIN.BSKT.BDS.ages.exp2$Expansion_Factor_1 *
-     PacFIN.BSKT.BDS.ages.exp2$Expansion_Factor_2
-
-
+PacFIN.BSKT.BDS.ages.exp1 <- subset(PacFIN.BSKT.BDS.ages.exp1,
+                                    SAMPLE_METHOD != "S")
 Acomps.exp1 = getComps(PacFIN.BSKT.BDS.ages.exp1, Comps="AGE")
-Acomps.exp2 = getComps(PacFIN.BSKT.BDS.ages.exp2, Comps="AGE")
 
-# skipping 4 out of 65 unsexed fish for now
+# no unsexed fish
+table(PacFIN.BSKT.BDS.ages.exp1$SEX)
+##   F   M 
+## 169 401 
 ## Acomps = doSexRatio(Acomps)
 
 marginal_ages <- writeComps(Acomps.exp1,
-                            fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_age_comps_4-27-2019.csv"),
-                            abins = BSKT.ABINS,
-                            partition = 2, ageErr = 1, returns = "FthenM",
-                            dummybins = FALSE, sum1 = TRUE,
-                            overwrite = TRUE, verbose = TRUE)
-
-marginal_ages <- writeComps(Acomps.exp2,
-                            fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_age_comps_4-30-2019.csv"),
+                            fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_age_comps_5-5-2019.csv"),
                             abins = BSKT.ABINS,
                             partition = 2, ageErr = 1, returns = "FthenM",
                             dummybins = FALSE, sum1 = TRUE,
@@ -268,22 +297,11 @@ marginal_ages <- writeComps(Acomps.exp2,
 PacFIN.BSKT.BDS.ages$Final_Sample_Size <- 1
 Acomps.nox = getComps(PacFIN.BSKT.BDS.ages, Comps="AGE")
 marginal_ages_nox <- writeComps(Acomps.nox,
-                                fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_age_comps_nox_4-27-2019.csv"),
+                                fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_age_comps_nox_5-5-2019.csv"),
                                 abins = BSKT.ABINS,
                                 partition = 2, ageErr = 1, returns = "FthenM",
                                 dummybins = FALSE, sum1 = TRUE,
                                 overwrite = TRUE, verbose = TRUE)
-
-PacFIN.BSKT.BDS.ages$Final_Sample_Size <- 1
-Acomps.nox = getComps(PacFIN.BSKT.BDS.ages, Comps="AGE")
-marginal_ages_nox <- writeComps(Acomps.nox,
-                                fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_age_comps_nox_4-30-2019.csv"),
-                                abins = BSKT.ABINS,
-                                partition = 2, ageErr = 1, returns = "FthenM",
-                                dummybins = FALSE, sum1 = TRUE,
-                                overwrite = TRUE, verbose = TRUE)
-
-
 
 # Age-at-Length:
 
@@ -297,19 +315,25 @@ ALcomps$lengthcm <- 5*floor(ALcomps$lengthcm / 5)
 #ALcomps <- doSexRatio(ALcomps) 
 
 CAAL_F <- writeComps(ALcomps,
-                     fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_AAL_comps_5-1-2019.csv"),
+                     fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_AAL_comps_Female_5-5-2019.csv"),
                      abins = BSKT.ABINS,
                      lbins = BSKT.LBINS,
                      partition = 2, ageErr = 1, returns = "Fout",
                      dummybins = FALSE, sum1 = FALSE,
                      overwrite = TRUE, verbose = TRUE)
 CAAL_M <- writeComps(ALcomps,
-                     fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_AAL_comps_5-1-2019.csv"),
+                     fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_AAL_comps_Male_5-5-2019.csv"),
                      abins = BSKT.ABINS,
                      lbins = BSKT.LBINS,
                      partition = 2, ageErr = 1, returns = "Mout",
                      dummybins = FALSE, sum1 = FALSE,
                      overwrite = TRUE, verbose = TRUE)
+CAAL_both <- rbind(CAAL_F, CAAL_M)
+# change to preferred format with LbinHi = LbinLo = length at lower bound of bin
+CAAL_both$LbinHi <- CAAL_both$LbinLo
+
+# put in preferred sorting
+CAAL_both <- CAAL_both[order(CAAL_both$fishyr, CAAL_both$LbinLo, CAAL_both$gender),]
 
 marginal_ages2 <- data.frame(marginal_ages[,c(1,2,4:6)],
                             LbinLo = -1, LbinHi = -1,
@@ -317,19 +341,16 @@ marginal_ages2 <- data.frame(marginal_ages[,c(1,2,4:6)],
 # turn off likelihood for marginals
 marginal_ages2$fleet <- -1
 
-names(CAAL_F) <- names(marginal_ages2)
-names(CAAL_M) <- names(marginal_ages2)
+names(CAAL_both) <- names(marginal_ages2)
 all_ages <- rbind(marginal_ages2, CAAL_F, CAAL_M)
 ages_fixed <- data.frame(year = all_ages$fishyr,
                          month = 7,
                          all_ages[,!names(all_ages) %in% c("fishyr", "Ntows")])
-# change to preferred format with LbinHi = LbinLo = length at lower bound of bin
-ages_fixed$LbinHi <- ages_fixed$LbinLo
 names(ages_fixed)[names(ages_fixed) %in% paste0("A",0:15)] <- paste0("F",0:15)
 names(ages_fixed)[names(ages_fixed) %in% paste0("A",0:15,".1")] <- paste0("M",0:15)
-ages_fixed2 <- ages_fixed[order(ages_fixed$year, ages_fixed$fleet, ages_fixed$LbinLo, ages_fixed$gender),]
-write.csv(ages_fixed2,
-          file = file.path(pacfin.dir, "PacFIN.BSKT.BDS_AAL_comps_forSS_5-1-2019.csv"),
+
+write.csv(ages_fixed,
+          file = file.path(pacfin.dir, "PacFIN.BSKT.BDS_AAL_comps_forSS_5-5-2019.csv"),
           row.names=FALSE)
 
 
