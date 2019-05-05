@@ -49,7 +49,7 @@ table(is.na(bio.WCGBTS.BS$Length_cm), is.na(bio.WCGBTS.BS$Width_cm))
 
 # subset to 251 samples that have width but not length
 sub <- is.na(bio.WCGBTS.BS$Length_cm) & !is.na(bio.WCGBTS.BS$Width_cm)
-## table(sub)
+table(sub)
 ## sub
 ## FALSE  TRUE 
 ##  5234   251 
@@ -72,7 +72,7 @@ table(is.na(bio.Tri.BS$Lengths$Length_cm), is.na(bio.Tri.BS$Lengths$Width_cm))
   ## FALSE     6  181
 
 
-len.bins <- seq(5, 200, 5)
+len.bins <- seq(20, 200, 5)
 dir <- 'c:/SS/skates/bio/survey_comps'
 
 # Calculate the effN for WCGBTS
@@ -87,6 +87,12 @@ LFs <- SurveyLFs.fn(dir = file.path(dir, 'WCGBTS_comps'),
                     strat.df = strata, lgthBins = len.bins, gender = 3, 
                     sexRatioStage = 2, sexRatioUnsexed = 0.5, maxSizeUnsexed = 0, 
                     nSamps = n)
+LFs$month <- 7
+LFs$fleet <- 5
+LFs[,-(1:6)] <- round(LFs[,-(1:6)] / 100, 4)
+write.csv(LFs, file=file.path(dir,
+                   'WCGBTS_comps/forSS/WCGBTS_comps_for_SS_5-5-2019.csv'),
+          row.names = FALSE)
 #### did rounding to 2 digits past decimal in Excel
 ## value.columns <- c(paste0("F",len.bins), paste0("M",len.bins))
 ## LFs[,value.columns] <- round(LFs[,value.columns], 2)
@@ -137,6 +143,9 @@ for(y in c(2001,2004)){
     }
   }
 }
+LFs.tri.nox$month <- 7
+LFs.tri.nox$fleet <- 6
+
 write.csv(LFs.tri.nox,
           file=file.path(dir, 'Triennial_comps/forSS', "unexpanded_comps.csv"),
           row.names=FALSE)
@@ -203,11 +212,43 @@ PlotSexRatio.fn(dir = file.path(dir, 'WCGBTS_comps'),
 #============================================================================================
 # Conditional Ages
 #============================================================================================
+
+# 2 fish less than min bin, so artificially adjusting their length to avoid -999 bin
+table(!is.na(bio.WCGBTS.BS$Age) &  bio.WCGBTS.BS$Length_cm < 20)
+## FALSE  TRUE 
+## 5483     2
+bio.adjusted <- bio.WCGBTS.BS
+bio.adjusted$Length_cm[bio.adjusted$Length_cm == 19] <- 20
+
 CAAL.WCGBTS.BS <- SurveyAgeAtLen.fn (dir = file.path(dir, 'WCGBTS_comps'),
-                                     datAL = bio.WCGBTS.BS, datTows = catch.WCGBTS.BS, 
+                                     datAL = bio.adjusted, datTows = catch.WCGBTS.BS, 
                                      strat.df = strata, lgthBins = len.bins,
                                      ageBins = age.bins, partition = 0)
+names(CAAL.WCGBTS.BS$female)[-(1:9)] <- c(paste0("F", age.bins),
+                                          paste0("M", age.bins))
+names(CAAL.WCGBTS.BS$male)[-(1:9)] <- c(paste0("F", age.bins),
+                                        paste0("M", age.bins))
+# zero out opposite sex bins
+CAAL.WCGBTS.BS$female[,names(CAAL.WCGBTS.BS$female) %in% paste0("M", age.bins)] <- 0
+CAAL.WCGBTS.BS$male[,names(CAAL.WCGBTS.BS$male) %in% paste0("F", age.bins)] <- 0
+# round correct sex bins (would be nicer to just use whole numbers)
+CAAL.WCGBTS.BS$female[,names(CAAL.WCGBTS.BS$female) %in% paste0("F", age.bins)] <-
+  round(.01*CAAL.WCGBTS.BS$female[,names(CAAL.WCGBTS.BS$female) %in% paste0("F", age.bins)], 4)
+CAAL.WCGBTS.BS$male[,names(CAAL.WCGBTS.BS$male) %in% paste0("M", age.bins)] <-
+  round(.01*CAAL.WCGBTS.BS$male[,names(CAAL.WCGBTS.BS$male) %in% paste0("M", age.bins)], 4)
 
+CAAL.WCGBTS.BS.forSS <- rbind(CAAL.WCGBTS.BS$female, CAAL.WCGBTS.BS$male)
+CAAL.WCGBTS.BS.forSS$month <- 7
+CAAL.WCGBTS.BS.forSS$Fleet <- 5
+CAAL.WCGBTS.BS.forSS$ageErr <- 1
+
+CAAL.WCGBTS.BS.forSS <- CAAL.WCGBTS.BS.forSS[order(CAAL.WCGBTS.BS.forSS$year,
+                                                   CAAL.WCGBTS.BS.forSS$LbinLo,
+                                                   CAAL.WCGBTS.BS.forSS$gender),]
+
+write.csv(CAAL.WCGBTS.BS.forSS,
+          file = file.path(dir, 'WCGBTS_comps/forSS/WCGBTS_CAAL_5-5-2019.csv'),
+          row.names = FALSE)
 
 ### mean length at age
 meanlen <- data.frame(age = 0:15, meanF = NA, meanM = NA,
