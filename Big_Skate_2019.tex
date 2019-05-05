@@ -232,14 +232,14 @@ Since 2000, annual total landings of Big Skate have ranged between
 
 \begin{figure}
 \centering
-\includegraphics{00_Assessment_Compile_files/figure-latex/unnamed-chunk-15-1.pdf}
+\includegraphics{Big_Skate_2019_files/figure-latex/unnamed-chunk-15-1.pdf}
 \caption{Big Skate catch history for the recreational fleets.
 \label{fig:Exec_catch1}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{00_Assessment_Compile_files/figure-latex/unnamed-chunk-16-1.pdf}
+\includegraphics{Big_Skate_2019_files/figure-latex/unnamed-chunk-16-1.pdf}
 \caption{Stacked line plot of Big Skate catch history for the commercial
 fleets. \label{fig:Exec_catch2}}
 \end{figure}
@@ -737,6 +737,28 @@ assessment:
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
+\begin{verbatim}
+## \begin{table}[ht]
+## \centering
+## \begin{tabular}{rrrr}
+##   \toprule
+##  & id & var1 & var2 \\ 
+##   \midrule
+## 1 &   1 & -0.23 & 1.00 \\ 
+##    \rowcolor[gray]{0.95}2 &   2 & -1.28 & 0.11 \\ 
+##   3 &   3 & -0.71 & 0.77 \\ 
+##    \rowcolor[gray]{0.95}4 &   4 & 0.74 & 0.88 \\ 
+##   5 &   5 & -2.43 & 0.99 \\ 
+##    \rowcolor[gray]{0.95}6 &   6 & 1.73 & 0.46 \\ 
+##   7 &   7 & -0.33 & 0.29 \\ 
+##    \rowcolor[gray]{0.95}8 &   8 & -0.53 & 0.11 \\ 
+##   9 &   9 & -0.86 & 0.63 \\ 
+##    \rowcolor[gray]{0.95}10 &  10 & -1.24 & 0.33 \\ 
+##    \bottomrule
+## \end{tabular}
+## \end{table}
+\end{verbatim}
+
 \hypertarget{distribution-and-life-history}{%
 \subsection{Distribution and Life
 History}\label{distribution-and-life-history}}
@@ -831,7 +853,8 @@ The history of Big Skate (\emph{Raja binoculata}) is not well
 documented. They were used as a food source by the native Coastal and
 Salish Tribes (Batdorf, C \protect\hyperlink{ref-Batdorf1990}{1990})
 long before Europeans settled in the Pacific Northwest and then as
-fertilizer by the settlers ({\textbf{???}}). No directed fishery for Big
+fertilizer by the settlers (Bowers, G. M.
+\protect\hyperlink{ref-Bowers1909}{1909}). No directed fishery for Big
 Skate has been documented; rather, they were taken along with other
 skates and rays as ``scrap fish'' and used for fertilizer, fish meal and
 oil.
@@ -924,15 +947,57 @@ estimate from the catch-MSY results.
 
 \newpage
 
-\#Assessment
+\hypertarget{fishery-data}{%
+\section{Fishery Data}\label{fishery-data}}
 
-\#\#Data Data used in the Big Skate assessment are summarized in Figure
+\hypertarget{data}{%
+\subsection{Data}\label{data}}
+
+Data used in the Big Skate assessment are summarized in Figure
 \ref{fig:data_plot}. Descriptions of the data sources are in the
 following sections.
 
-\#\#\#Commercial Fishery Landings
+\hypertarget{commercial-fishery-landings}{%
+\subsection{Commercial Fishery
+Landings}\label{commercial-fishery-landings}}
 
-Catch reconstructions for WA, OR, and CA
+\hypertarget{catch-reconstructions-for-wa-or-and-ca}{%
+\subsubsection{Catch reconstructions for WA, OR, and
+CA}\label{catch-reconstructions-for-wa-or-and-ca}}
+
+\textbf{\(\color{red}{\text{Washington Commercial Skate Landings Reconstruction}}\)}
+
+Information for Big Skate is very limited, in part because the
+requirement to sort landings of Big Skate in the shore-based Individual
+Fishing Quota fishery from landings in the ``Unidentified Skate''
+category was not implemented until June 2015. The historical catch of
+Big Skate therefore relies on the historical reconstruction of Longnose
+Skate.
+
+For the 2019 assessment, a new approach has been developed for
+estimating the catch history for Longnose Skate based on a linear
+regression model that predicts the catch of Longnose Skate from the
+catch of Dover sole, for which historical catch estimates are available
+(Gertseva, V. \protect\hyperlink{ref-Gertseva2019}{2019}). The dependent
+variable for the linear regression model was the West Coast Groundfish
+Observer Program (WCGOP) annual estimates of the coastwide total catch
+(landings plus discards) of Longnose Skate for the period 2009 to 2017
+and the independent variable was the corresponding WCGOP annual
+estimates of coastwide total catch (landings plus discards) of Dover
+sole. The regression model has good predictive power
+(R\textsuperscript{2} = 95.7\%) over the range of the Dover sole catches
+(6,500 to 12,500 mt).
+
+The discard component of the catch reconstruction for Big Skate may be
+based either on the catch reconstruction for Longnose Skate and the
+assumption that the two species experience similar discard rates
+(discard / total catch) or on a similar analysis with links to species
+that co-occur with big skate. Data from the Pikitch discard study
+(1985-1987) and from WCGOP (2015-2017) support the idea that discard
+rates for the two species are very similar. Also, market demand for
+skates does not seem to distinguish between the two species. There are
+insufficient years of data from the WCGOP to develop a regression model
+for Big Skate as was done for Longnose Skate.
 
 \textbf{Oregon Commercial Skate Landings Reconstruction}
 
@@ -989,9 +1054,47 @@ cover a greater time period with methodology more applicable to skates
 in particular. ODFW intends to incorporate reconstructed skate landings
 into PacFIN in the future (A. Whitman, ODFW; pers. comm.).
 
-Tribal catch in WA
+\textbf{California Catch Reconstruction}
 
-\#\#\#Commercial Discards
+A reconstruction of historical skate landings from California waters was
+developed for the 1916--2017 time period using a combination of
+commercial catch data (spatially explicit block summary catches and port
+sample data from 2009-2017) and fishery-independent survey data
+(Bizzarro, J. \protect\hyperlink{ref-Bizzarro2019}{2019}). Virtually all
+landings in California were of ``unspecified skate'' until
+species-composition sampling of skate market categories began in 2009.
+
+From 2009 through 2017, catch estimates were based on these market
+category species-composition samples, and the average of those
+species-compositions was hindcast to 2002, based on the assumption that
+those data were representative of the era of large area closures in the
+post-2000 period.
+
+For the period from 1936-1980, spatially explicit landings data (the
+California Department of Fisheries and Wildlife (CDFW) block summary
+data) were merged with survey data to provide species-specific
+estimates.
+
+For years 1981-2001, a ``blended'' product of these two approaches was
+taken, in which a linear weighting scheme blended the two sets of catch
+estimates through that period. Landings estimates were also scaled
+upwards by an expansion factor for skates landed as ``dressed'' based on
+fish ticket data. Prior to 1981 these data had not been reported and
+skate landings were scaled by the ``average'' percentage landed as
+dressed in the 1981-1985 time period, but by the late 1980s nearly all
+skates were landed round.
+
+As no spatial information on catch is available from 1916-1930, and the
+block summary data were very sparse in the first few years of the CDFW
+fish ticket program (1931--1934), spatial information from the late
+1930's was used to hindcast to the 1916--1935 time period.
+
+\hypertarget{tribal-catch-in-washington}{%
+\subsubsection{Tribal Catch in
+Washington}\label{tribal-catch-in-washington}}
+
+\hypertarget{commercial-discards}{%
+\subsubsection{Commercial Discards}\label{commercial-discards}}
 
 Commercial discards of Big Skate are highly uncertain. The method used
 to estimate discards for Longnose Skate was based on a strong
@@ -1012,9 +1115,12 @@ similar. primarily lack of margets or fish processors accepting only
 skate wings that had been separated at-sea, as well as the quantitative
 have more uncertainty in their own catch estimates have no stock
 assessment and more uncertain mortality estimated total mortality and
-Dover Sole for which a correlation between relationship
-({\textbf{???}}),\\
-\#\#\#Commercial Fishery Length and Age Data
+Dover Sole for which a correlation between relationship (Gertseva, V.
+\protect\hyperlink{ref-Gertseva2019}{2019}),
+
+\hypertarget{commercial-fishery-length-and-age-data}{%
+\subsubsection{Commercial Fishery Length and Age
+Data}\label{commercial-fishery-length-and-age-data}}
 
 The input sample sizes were calculated via the Stewart Method (Ian
 Stewart, personal communication, IPHC):
@@ -1748,6 +1854,13 @@ Ltd.; Surrey, B.C., Canada.
 Bester, C. 2009. Biological Profiles: Big Skate. Florida Museum of
 Natural History Ichthyology Department.
 
+\leavevmode\hypertarget{ref-Bizzarro2019}{}%
+Bizzarro, J. 2019. Manuscript in preparation.
+
+\leavevmode\hypertarget{ref-Bowers1909}{}%
+Bowers, G. M. 1909. Report of The Commissioner For the Year Ending June
+30, 1909. Part XXVIII. Washington Printing Office.
+
 \leavevmode\hypertarget{ref-Bradburn2011}{}%
 Bradburn, M.J. and Keller, A.A and Horness, B.H. 2011. The 2003 to 2008
 US West Coast bottom trawl surveys of groundfish resources off
@@ -1767,6 +1880,9 @@ skates. Springer. pp. 5--18.
 \leavevmode\hypertarget{ref-Eschmeyer1983}{}%
 Eschmeyer, W.N., and Herald, E.S. 1983. A field guide to pacific coast
 fishes: North america. Houghton Mifflin Harcourt.
+
+\leavevmode\hypertarget{ref-Gertseva2019}{}%
+Gertseva, V. 2019. Manuscript in preparation.
 
 \leavevmode\hypertarget{ref-Gunderson1980}{}%
 Gunderson, Donald Raymond and Sample, Terrance M. 1980. Distribution and

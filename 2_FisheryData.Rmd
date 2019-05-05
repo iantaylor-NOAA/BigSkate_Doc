@@ -1,17 +1,32 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 
 <!-- ************ASSESSMENT SECTION**************************************** -->
-#Assessment
+# Fishery Data
 
-##Data
+## Data
 Data used in the `r spp` assessment are summarized in Figure \ref{fig:data_plot}. 
 Descriptions of the data sources are in the following sections.
 
 
 
 <!-- ************FISHERY-DEPENDENT DATA************************************ -->
-###Commercial Fishery Landings
+## Commercial Fishery Landings
 
-Catch reconstructions for WA, OR, and CA
+### Catch reconstructions for WA, OR, and CA
+
+**$\color{red}{\text{Washington Commercial Skate Landings Reconstruction}}$**
+
+<!-- **Washington Commercial Skate Landings Reconstruction** -->
+
+Information for Big Skate is very limited, in part because the requirement to sort landings of Big Skate in the shore-based Individual Fishing Quota fishery from landings in the  "Unidentified Skate" category was not implemented until June 2015.  The historical catch of Big Skate therefore relies on the historical reconstruction of Longnose Skate.
+
+For the 2019 assessment, a new approach has been developed for estimating the catch history for Longnose Skate based on a linear regression model that predicts the catch of Longnose Skate from the catch of Dover sole, for which historical catch estimates are available [@Gertseva2019].  The dependent variable for the linear regression model was the West Coast Groundfish Observer Program (WCGOP) annual estimates of the coastwide total catch (landings plus discards) of Longnose Skate for the period 2009 to 2017 and the independent variable was the corresponding WCGOP annual estimates of coastwide total catch (landings plus discards) of Dover sole.  The regression model has good predictive power (R^2^ = 95.7%) over the range of the Dover sole catches (6,500 to 12,500 mt).  
+
+The discard component of the catch reconstruction for Big Skate may be based either on the catch reconstruction for Longnose Skate and the assumption that the two species experience similar discard rates (discard / total catch) or on a similar analysis with links to species that co-occur with big skate.  Data from the Pikitch discard study (1985-1987) and from WCGOP (2015-2017) support the idea that discard rates for the two species are very similar.  Also, market demand for skates does not seem to distinguish between the two species.  There are insufficient years of data from the WCGOP to develop a regression model for Big Skate as was done for Longnose Skate.
 
 **Oregon Commercial Skate Landings Reconstruction**
 
@@ -38,16 +53,34 @@ Landings from shrimp trawls were handled using a similar methodology. Finally, v
 
 Results indicate that the species-specific landings from this reconstruction are very similar to those from Oregon's commercial catch reconstruction (Karnowski et al. 2014) during the overlapping years but cover a greater time period with methodology more applicable to skates in particular.  ODFW intends to incorporate reconstructed skate landings into PacFIN in the future (A. Whitman, ODFW; pers. comm.).  
 
+**California Catch Reconstruction**
 
-Tribal catch in WA
+A reconstruction of historical skate landings from California waters was developed for the
+1916–2017 time period using a combination of commercial catch data (spatially explicit block
+summary catches and port sample data from 2009-2017) and fishery-independent survey data [@Bizzarro2019].  Virtually all landings in California were of “unspecified skate” until species-composition sampling of skate market categories began in 2009. 
+
+From 2009 through 2017, catch estimates were based on these market category species-composition samples, and the average of those species-compositions was hindcast to 2002, based on the assumption that those data were representative of the era of large area closures in the post-2000 period. 
+
+For the period from 1936-1980, spatially explicit landings data (the California Department of Fisheries and Wildlife (CDFW) block summary data) were merged with survey data to provide species-specific estimates.
+
+For years 1981-2001, a “blended” product of these two approaches was taken, in which a linear weighting scheme blended the two sets of catch estimates through that period. Landings estimates were also scaled upwards by an expansion factor for skates landed as “dressed” based on fish ticket data.  Prior to 1981 these data had not been reported and skate landings were scaled by the “average” percentage landed as dressed in the 1981-1985 time period, but by the late 1980s nearly all skates were landed round.
+ 
+As no spatial information on catch is available from 1916-1930, and the block
+summary data were very sparse in the first few years of the CDFW fish ticket program
+(1931–1934), spatial information from the late 1930's was used to hindcast to the
+1916–1935 time period.
 
 
-###Commercial Discards
+### Tribal Catch in Washington ###
+
+
+### Commercial Discards
 
 Commercial discards of `r spp` are highly uncertain. The method used to estimate discards for Longnose Skate was based on a strong correlation between total mortality of that species, and total mortality of Dover Sole for the years 2009--2017 during which Longnose were landed separately from other skates. In contrast, the sorting requirement for `r spp` occurred too recently to provide an adequate range of years for this type of correlation. Furthermore, there is greater uncertainty in the total mortality for the shallow-water species with which `r spp` most often co-occurs, such as Sand Sole and Starry Flounder, than there is for Dover Sole, which has been the subject of recurring stock assessments.
 
-However, those involved in the fishery for both skate species report that discarding for `r spp` and Longnose Skate in the years prior to 1995 were driven by the same market forced and the discard rates were similar.  primarily lack of margets or fish processors accepting only skate wings that had been separated at-sea, as well as the quantitative have more uncertainty in their own catch estimates have no stock assessment and more uncertain mortality    estimated total mortality and Dover Sole  for which a correlation between relationship   [@Gertseva2019],  
-###Commercial Fishery Length and Age Data
+However, those involved in the fishery for both skate species report that discarding for `r spp` and Longnose Skate in the years prior to 1995 were driven by the same market forced and the discard rates were similar.  primarily lack of margets or fish processors accepting only skate wings that had been separated at-sea, as well as the quantitative have more uncertainty in their own catch estimates have no stock assessment and more uncertain mortality    estimated total mortality and Dover Sole  for which a correlation between relationship   [@Gertseva2019],
+
+### Commercial Fishery Length and Age Data
 
 
 The input sample sizes were calculated via the Stewart Method (Ian Stewart, personal 
