@@ -21,7 +21,7 @@ require(maps)
 require(mapdata)
 
 # load information on EEZ for U.S. west coast
-source('c:/SS/skates/R/US.Can.boundary.R')
+source('c:/SS/skates/BigSkate_Doc/R/US.Can.boundary.R')
 eez.outer <- read.csv('C:/data/maps/EEZ_polygon_lat_lon.csv')
 
 # make map
@@ -343,6 +343,54 @@ iphc.skate$OtherSkate.prop <- iphc.skate$OtherSkate.Observed / iphc.skate$Hooks.
 ### save data.frames
 save(iphc.US, iphc.skate, file=file.path(iphc.dir, "iphc.data_4-10-2019.Rdata"))
 
+
+### get some stats for the write-up
+
+# stations with at least 1 fish observed across all years
+length(unique(iphc.US$Station[iphc.US$LongnoseSkate.Observed > 0]))
+[1] 81
+length(unique(iphc.US$Station[iphc.US$BigSkate.Observed > 0]))
+[1] 51
+
+# number of stations with each count
+# (e.g. 1 station had 18 years of obs for Longnose,
+# and 7 stations only had 1 year with obs)
+table(table(iphc.US$Station[iphc.US$LongnoseSkate.Observed > 0]))
+## 1  2  3  4  5  6  7  8  9 10 11 12 13 15 16 18 
+## 7  3  5  8  7  7  5  6  6  8  6  3  3  4  2  1 
+table(table(iphc.US$Station[iphc.US$BigSkate.Observed > 0]))
+##  1  2  3  4  5  6  7 10 11 12 
+## 15 10  8  7  5  2  1  1  1  1 
+
+# fraction of station/year combinations with at least one observation
+mean(iphc.US$LongnoseSkate.Observed > 0)
+## [1] 0.3788353
+mean(iphc.US$BigSkate.Observed > 0)
+## [1] 0.1026925
+
+# depth range
+# (depth seems to be in fathoms based on values in this table matching values in file
+# https://iphc.int/uploads/pdf/2017_station_projection_by_region.pdf)
+iphc.US$Avg.Depth_meters <- 1.8288*iphc.US$Avg.Depth
+
+mean(iphc.US$Avg.Depth_meters < 200)
+## [1] 0.7376331
+min(iphc.US$Avg.Depth_meters)
+## [1] 42.0624
+max(iphc.US$Avg.Depth_meters)
+## [1] 530.352
+
+# fraction on stations with at least 1 observation:
+mean(iphc.US$LongnoseSkate.prop[iphc.US$LongnoseSkate.prop > 0], na.rm=TRUE)
+## [1] 0.01533072
+mean(iphc.US$BigSkate.prop[iphc.US$BigSkate.prop > 0], na.rm=TRUE)
+## [1] 0.01310933
+
+# max fraction of each species
+iphc.US[iphc.US$LongnoseSkate.prop== max(iphc.US$LongnoseSkate.prop, na.rm=TRUE),]
+#9 out of 81
+iphc.US[iphc.US$BigSkate.prop== max(iphc.US$BigSkate.prop, na.rm=TRUE),]
+#10 out of 120
 
 ### make map with panel for each year
 for(spec in c("Big Skate","Longnose Skate")){
