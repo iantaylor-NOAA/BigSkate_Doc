@@ -208,17 +208,29 @@ Lcomps = doSexRatio(Lcomps)
 
 # Females and males separately
 
-test <- writeComps(Lcomps, fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_length_comps_5-5-2019.csv"),
-           lbins = BSKT.LBINS,
-           partition = 2, ageErr = 1, returns = "FthenM",
-           dummybins = FALSE, sum1 = TRUE,
-           overwrite = TRUE, verbose = TRUE)
+Lcomps.SS <- writeComps(Lcomps,
+                        fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_length_comps_5-5-2019.csv"),
+                        lbins = BSKT.LBINS,
+                        partition = 2, ageErr = 1, returns = "FthenM",
+                        dummybins = FALSE, sum1 = TRUE,
+                        overwrite = TRUE, verbose = TRUE)
 # apply sample size calculation
-Lcomps.SS.info <-  readLines(file.path(pacfin.dir, "PacFIN.BSKT.BDS_length_comps_5-5-2019.csv"))
+## N_input=N_trips+0.138N_fish          when    N_fish/N_trips <44
+## N_input=7.06N_trips                  when    N_fish/N_trips >=44
+summary(Lcomps.SS$Nsamp / Lcomps.SS$Ntows)
+   ## Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   ## 2.00   10.27   12.85   13.54   16.60   33.17 
+# no need to apply 2nd formula
+Ninput <- Lcomps.SS$Ntows + 0.138 * Lcomps.SS$Nsamp
+Lcomps.SS$Nsamps <- Ninput
+Lcomps.SS <- Lcomps.SS[,!names(Lcomps.SS) %in% c("ageErr", "Ntows")]
+names(Lcomps.SS)[1] <- "Year"
+names(Lcomps.SS)[names(Lcomps.SS) %in% paste0("L",BSKT.LBINS)] <- paste0("F",BSKT.LBINS)
+names(Lcomps.SS)[names(Lcomps.SS) %in% paste0("L",BSKT.LBINS,".1")] <- paste0("M",BSKT.LBINS)
+write.csv(Lcomps.SS,
+          file.path(pacfin.dir, "PacFIN.BSKT.BDS_length_comps_forSS_5-5-2019.csv"),
+          row.names = FALSE)
 
-Lcomps.SS <- read.csv(file.path(pacfin.dir, "PacFIN.BSKT.BDS_length_comps_5-5-2019.csv"),
-                      skip = grep("Females then males", Lcomps.SS.info))
-Lcomps.SS
 
 #==============================================================
 #========  AGES  =========
