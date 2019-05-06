@@ -8,7 +8,7 @@ getbs <- function(n, plot = 0, res=200){
   message("reading model from: ", mod)
   out <- SS_output(file.path(bsdir, mod))
   assign(x=paste0("bs", n), value=out, pos=1)
-  if(plot){
+  if(plot[1] != 0){
     SS_plots(out, plot=plot, res=res)
   }
 }
