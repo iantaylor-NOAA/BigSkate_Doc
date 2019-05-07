@@ -14,23 +14,26 @@ require(SSutils) # package with functions for copying SS input files
 
 # load model output into R
 # read base model from each area
-mod <- 'bigskate14_share_k'
+mod <- 'bigskate51_fix_catch'
 dir.mod <- file.path(dir.outer, mod)
 # read model without printing stuff (assuming it's already been looked at)
 out <- SS_output(dir.mod, verbose=FALSE, printstats=FALSE)
 
 # estimated log(R0) value
 out$parameters["SR_LN(R0)","Value"]
+## 8.03426
 
 # estimated M value
 out$parameters["NatM_p_1_Fem_GP_1","Value"]
+## 0.380586
 
 # fixed h value
 out$parameters["SR_BH_steep","Value"]
+## 0.4
 
 # vectors of log(R0) spanning estimates
 # (going from high to low in case low value cause crashes)
-logR0vec <- seq(10, 8, -.25)
+logR0vec <- seq(9, 7, -.25)
 
 ### vectors below shared across models
 # vectors of M
@@ -47,6 +50,7 @@ if(FALSE){ # don't run all the stuff below if sourcing the file
 
 ##################################################################################
 # log(R0) profiles
+#source('c:/SS/skates/BigSkate_Doc/R/BigSkate_profiles.R')
 dir.profile.R0 <- file.path(dir.mod, "profile.R0")
 copy_SS_inputs(dir.old = dir.mod,
                dir.new = dir.profile.R0,
@@ -68,6 +72,7 @@ SS_profile(dir = dir.profile.R0,
 
 ##################################################################################
 # mortality profile
+#source('c:/SS/skates/BigSkate_Doc/R/BigSkate_profiles.R')
 dir.profile.M <- file.path(dir.mod, "profile.M")
 copy_SS_inputs(dir.old = dir.mod,
                dir.new = dir.profile.M,
@@ -89,6 +94,7 @@ SS_profile(dir = dir.profile.M,
 
 ##################################################################################
 # steepness profile
+#source('c:/SS/skates/BigSkate_Doc/R/BigSkate_profiles.R')
 dir.profile.h <- file.path(dir.mod, "profile.h")
 copy_SS_inputs(dir.old = dir.mod,
                dir.new = dir.profile.h,
@@ -123,14 +129,15 @@ profilemodels <- SSgetoutput(dirvec=dir.profile.R0,
 profilemodels$MLE <- out
 profilesummary <- SSsummarize(profilemodels)
 
-
+goodmodels <- which(profilesummary$likelihoods[1,1:(length(logR0vec)+1)] < 1e5)
 # plot profile using summary created above
 SSplotProfile(profilesummary,           # summary object
               minfraction = 0.0001,
               #models = 1:length(logR0vec), # optionally exclude MLE
+              models = goodmodels,
               sort.by.max.change = FALSE,
               #xlim=c(3.2,4.6),
-              #ymax=25, # modify as required to get reasonable scale to see differences
+              ymax=4, # modify as required to get reasonable scale to see differences
               plotdir = dir.profile.R0,
               print = TRUE,
               profile.string = "R0", # substring of profile parameter
@@ -144,9 +151,9 @@ PinerPlot(profilesummary,           # summary object
           component="Age_like",
           main="Changes in age-composition likelihoods by fleet",
           minfraction = 0.0001,
-          #models=1:length(logR0vec),
+          models=goodmodels,
           #xlim=c(3.2,4.6),
-          #ymax=8,
+          #ymax=4,
           plotdir=dir.profile.R0,
           print=TRUE,
           profile.string = "R0", # substring of profile parameter
@@ -160,9 +167,9 @@ PinerPlot(profilesummary,           # summary object
           component="Surv_like",
           main="Changes in index likelihoods by fleet",
           minfraction = 0.0001,
-          #models=1:length(logR0vec),
+          models=goodmodels,
           #xlim=c(3.2,4.6),
-          #ymax=200,
+          #ymax=4,
           plotdir=dir.profile.R0,
           print=TRUE,
           profile.string = "R0", # substring of profile parameter
@@ -171,43 +178,63 @@ PinerPlot(profilesummary,           # summary object
 file.copy(file.path(dir.profile.R0, 'profile_plot_likelihood.png'),
           file.path(dir.profile.R0, 'profile_indices_logR0.png'), overwrite=TRUE)
 
-SSplotComparisons(profilesummary, subplot=1,
-                  legendlabels=c(paste0("log(R0)=",logR0vec),"Base Model"),
+# Piner Plot showing influence of indices by fleet
+PinerPlot(profilesummary,           # summary object
+          component="Length_like",
+          main="Changes in length-composition likelihoods by fleet",
+          minfraction = 0.0001,
+          models=goodmodels,
+          #xlim=c(3.2,4.6),
+          #ymax=4,
+          plotdir=dir.profile.R0,
+          print=TRUE,
+          profile.string = "R0", # substring of profile parameter
+          profile.label="Log of unfished equilibrium recruitment, log(R0)") # axis label
+# copy plot with generic name to main folder with more specific name
+file.copy(file.path(dir.profile.R0, 'profile_plot_likelihood.png'),
+          file.path(dir.profile.R0, 'profile_len-comp_logR0.png'), overwrite=TRUE)
+
+SSplotComparisons(profilesummary, subplot=1, models=goodmodels,
+                  legendlabels=c(paste0("log(R0)=",logR0vec),"Base Model")[goodmodels],
                   plot=FALSE, png=TRUE, plotdir=file.path(dir.profile.R0),
                   filenameprefix="profile_R0_", legendloc="bottomleft")
 
 ##################################################################################
-# Mortality profile North
-dir.prof.M.N <- file.path(YTdir.profs, "prof.M.N.STAR2")
-profilemodels <- SSgetoutput(dirvec=dir.prof.M.N,
+# Mortality profile
+dir.profile.M <- file.path(dir.mod, "profile.M")
+
+profilemodels <- SSgetoutput(dirvec=dir.profile.M,
                              keyvec=1:length(M.vec), getcovar=FALSE)
 # add MLE to set of models being plotted
 profilemodels$MLE <- out
 
 # summarize output
-good <- c(1:5,8) # which models converged 9 is the MLE
-profilesummary <- SSsummarize(profilemodels[c(good, 9)])
+profilesummary <- SSsummarize(profilemodels)
+# filter models for those with reasonable likelihoods
+goodmodels <- which(profilesummary$likelihoods[1,1:(length(logR0vec)+1)] < 1e5)
 # make plot
 SSplotProfile(profilesummary,           # summary object
               minfraction = 0.001,
               print=TRUE,
-              ymax=30,
+              models=goodmodels,
+              ymax=40,
               sort.by.max.change = FALSE,
-              plotdir=dir.prof.M.N,
+              plotdir=dir.profile.M,
               profile.string = "NatM_p_1_Fem_GP_1", # substring of profile parameter
               profile.label="Female natural mortality (M)") # axis label
 # copy plot with generic name to main folder with more specific name
-file.copy(file.path(dir.prof.M.N, 'profile_plot_likelihood.png'),
-          file.path(dir.prof.M.N, '../profile_M.N.png'), overwrite=TRUE)
+file.copy(file.path(dir.profile.M, 'profile_plot_likelihood.png'),
+          file.path(dir.profile.M, '../profile_M.png'), overwrite=TRUE)
 
 # compare spawning biomass time series
 SSplotComparisons(profilesummary, subplot=1,
-                  legendlabels=c(paste0("M=",M.vec[good]),"Base Model (M ~ 0.145)"),
-                  png=TRUE, plotdir=file.path(YTdir.mods, "profiles"),
-                  filenameprefix="profile_M.N_", legendloc="bottomleft")
+                  models=goodmodels,
+                  legendlabels=c(paste0("M=",M.vec),"Base Model")[goodmodels],
+                  png=TRUE, plotdir=dir.profile.M,
+                  filenameprefix="profile_M_", legendloc="right")
 
 ##################################################################################
-# Steepness profile North
+# Steepness profile
 dir.profile.h <- file.path(dir.mod, "profile.h")
 profilemodels <- SSgetoutput(dirvec=dir.profile.h,
                              keyvec=1:length(h.vec), getcovar=FALSE)
