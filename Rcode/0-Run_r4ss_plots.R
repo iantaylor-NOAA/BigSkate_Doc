@@ -86,13 +86,15 @@ do.call(file.remove, list(list.files(file.path(output.dir, 'plots_mod1'),    ful
 #do.call(file.remove, list(list.files(file.path(output.dir, 'plots_compare'), full.names=TRUE)))
 
 # Run r4ss for each model - **CHANGE DIRECTORY if necessary**
-               mod1 = SS_output(dir = file.path(input.dir,'Base_model1'), forecast=T, covar=T, ncol=1000)
-if(n_models>1){mod2 = SS_output(dir = file.path(input.dir,'Base_model2'), forecast=T, covar=T, ncol=1000)}
-if(n_models>2){mod3 = SS_output(dir = file.path(input.dir,'Base_model3'), forecast=T, covar=T, ncol=1000)}
+               mod1 = SS_output(dir = file.path(input.dir,'Base_model1'))
+if(n_models>1){mod2 = SS_output(dir = file.path(input.dir,'Base_model2'))}
+if(n_models>2){mod3 = SS_output(dir = file.path(input.dir,'Base_model3'))}
 
 # Save the workspace an image
 save.image('./r4ss/SS_output.RData')
 
+# read data file
+mod1dat <- SS_readdat_3.30(file = file.path(input.dir,'Base_model1', mod1_dat))
 
 
 # =============================================================================
