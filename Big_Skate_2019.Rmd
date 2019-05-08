@@ -104,14 +104,15 @@ bibliography: BibFile.bib
 \newpage
 ```{r child = "9_9_Appendices.Rmd"}
 ```
-
+\newpage
 
 <!-- ====================================================================== -->
 <!-- **********REFERENCES - WILL APPEAR AFTER APPENDICES******************* -->
 <!-- ====================================================================== -->
 \color{black}
 
-#References{-}
+# References{-}
+
 \renewcommand{\thepage}{}
 
 <!-- ********************END OF THE DOCUMENT******************************* -->

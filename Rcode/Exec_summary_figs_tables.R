@@ -24,43 +24,43 @@
 # =============================================================================
 # 1. Catch FIGURE(S) ----------------------------------------------------------
 # Required: Read in CSV file, edit this section depending on # of plots!!
-# Read in executive summary catches figure file
-Exec_catch =  read.csv('./txt_files/Exec_catch_for_figs.csv')
-
-# Assign column names
-colnames(Exec_catch) = c('Year',
-                         'Fleet 1',
-                         'Fleet 2',
-                         'Fleet 3',
-                         'Fleet 4',
-                         'Fleet5')
-
-# Split catch by regions -retaning the colunns for each -you'll have to edit
-Exec_region1_catch = Exec_catch[,c(1:2)]
-Exec_region2_catch = Exec_catch[,c(1,3,4)]
-Exec_region3_catch = Exec_catch[,c(1,5,6)]
-
-# Melt data so it can be plotted
-Exec_region1_catch = melt(Exec_region1_catch, id='Year')
-Exec_region2_catch = melt(Exec_region2_catch, id='Year')
-Exec_region3_catch = melt(Exec_region3_catch, id='Year')
-
-# Reassign column names
-colnames(Exec_region1_catch) = c('Year','Fleet','Removals')
-colnames(Exec_region2_catch) = c('Year','Fleet','Removals')
-colnames(Exec_region3_catch) = c('Year','Fleet','Removals')
-
-# Plot catches function
-Plot_catch = function(Catch_df) {
-  ggplot(Catch_df, aes(x=Year, y=Removals,fill=Fleet)) +
-    geom_area(position='stack') +
-    scale_fill_manual(values=c('lightsteelblue3','coral')) +
-    scale_x_continuous(breaks=seq(Dat_start_mod1, Dat_end_mod1, 20)) +
-    ylab('Landings (mt)')
-}
-
-# -----------------------------------------------------------------------------
-# CATCH TABLE(S) --------------------------------------------------------------
+# # Read in executive summary catches figure file
+# Exec_catch =  read.csv('./txt_files/Exec_catch_for_figs.csv')
+# 
+# # Assign column names
+# colnames(Exec_catch) = c('Year',
+#                          'Fleet 1',
+#                          'Fleet 2',
+#                          'Fleet 3',
+#                          'Fleet 4',
+#                          'Fleet5')
+# 
+# # Split catch by regions -retaning the colunns for each -you'll have to edit
+# Exec_region1_catch = Exec_catch[,c(1:2)]
+# Exec_region2_catch = Exec_catch[,c(1,3,4)]
+# Exec_region3_catch = Exec_catch[,c(1,5,6)]
+# 
+# # Melt data so it can be plotted
+# Exec_region1_catch = melt(Exec_region1_catch, id='Year')
+# Exec_region2_catch = melt(Exec_region2_catch, id='Year')
+# Exec_region3_catch = melt(Exec_region3_catch, id='Year')
+# 
+# # Reassign column names
+# colnames(Exec_region1_catch) = c('Year','Fleet','Removals')
+# colnames(Exec_region2_catch) = c('Year','Fleet','Removals')
+# colnames(Exec_region3_catch) = c('Year','Fleet','Removals')
+# 
+# # Plot catches function
+# Plot_catch = function(Catch_df) {
+#   ggplot(Catch_df, aes(x=Year, y=Removals,fill=Fleet)) +
+#     geom_area(position='stack') +
+#     scale_fill_manual(values=c('lightsteelblue3','coral')) +
+#     scale_x_continuous(breaks=seq(Dat_start_mod1, Dat_end_mod1, 20)) +
+#     ylab('Landings (mt)')
+# }
+# 
+# # -----------------------------------------------------------------------------
+# # CATCH TABLE(S) --------------------------------------------------------------
 
 # Read in executive summary catches table
 Exec_catch_summary = read.csv('./txt_files/Exec_catch_summary.csv')
@@ -68,27 +68,16 @@ Exec_catch_summary = read.csv('./txt_files/Exec_catch_summary.csv')
 # Assign column names as they should appear in the table; change the alignment 
 # to match number of columns +1
 colnames(Exec_catch_summary) = c('Year', 
-                                 'Landings 1',
-                                 'Landings 2',
-                                 'Landings 3',
-                                 'Landings 4', 
-                                 'Landings 5',
-                                 'Total')
+                                 'Landings')
 
 # Make executive summary catch xtable
 Exec_catch.table = xtable(Exec_catch_summary, 
-                          caption = c(paste('Recent ',spp,' landings (mt) by 
-                                            fleet.', sep='')), 
+                          caption = c(paste('Recent ',spp,' landings (mt)', sep='')), 
                           label='tab:Exec_catch')
 
 # Add alignment - you will have to adjust based on the number of columns you have
 # and the desired width, remember to add one leading ghost column for row.names
-align(Exec_catch.table) = c('l', 'l', 
-                            '>{\\centering}p{1in}', 
-                            '>{\\centering}p{1in}',
-                            '>{\\centering}p{1in}', 
-                            '>{\\centering}p{.9in}',
-                            '>{\\centering}p{.9in}',
+align(Exec_catch.table) = c('l', 'l',
                             '>{\\centering}p{.6in}')  
 
 
@@ -645,10 +634,12 @@ colnames(mngmnt) = c('Year',
 
 # Create the management performance table
 mngmnt.table = xtable(mngmnt, 
-                      caption=c('Recent trend in total catch and commercial 
-                              landings (mt) relative to the management guidelines. 
-                              Estimated total catch reflect the commercial landings 
-                              plus the model estimated discarded biomass.'), 
+                      caption=c('Recent trend in total catch (mt) relative to the 
+                              management guidelines. Big skate was
+                              managed in the Other Species complex in 2013 and 2014,
+                              designated an Ecosystem Component species in 2015 and
+                              2016, and managed with stock-specific harvest
+                              specifications since 2017.'), 
                       label='tab:mnmgt_perform')  
 # Add alignment
 align(mngmnt.table) = c('l',
