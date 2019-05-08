@@ -23,8 +23,8 @@ if(Sys.info()["user"] == "Ian.Taylor"){
 # Load John Wallace's BDS .dmp file to R console
 ## load(file.path(pacfin.dir, "PacFIN.BSKT.bds.24.Apr.2019.dmp"))
 ## PacFIN.BSKT.BDS <- PacFIN.BSKT.bds.24.Apr.2029
-load(file.path(pacfin.dir, "PacFIN.BSKT.bds.30.Apr.2019.dmp"))
-PacFIN.BSKT.BDS <- PacFIN.BSKT.bds.30.Apr.2019
+## load(file.path(pacfin.dir, "PacFIN.BSKT.bds.30.Apr.2019.dmp"))
+## PacFIN.BSKT.BDS <- PacFIN.BSKT.bds.30.Apr.2019
 # after adding OR ages
 load(file.path(pacfin.dir, "PacFIN.BSKT.bds.08.May.2019b.Rdata"))
 PacFIN.BSKT.BDS <- PacFIN.BSKT.bds.08.May.2019b
