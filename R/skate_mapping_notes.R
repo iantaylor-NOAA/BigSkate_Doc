@@ -2,6 +2,12 @@
 ### notes on making a basic map of the west coast of the U.S. and Canada
 ############################################################################
 
+# plot type option (1 = length bin charts, 2 = age charts)
+if(!exists("bio.WCGBTS.BS")){
+  load(file = 'c:/SS/skates/data/BigSkate_survey_extractions_4-22-2019.Rdata')
+}
+option <- 2
+
 # load packages
 require(maps)
 require(mapdata)
@@ -78,76 +84,151 @@ US.CAN.lat <- c(49.00206,49.00207,48.83122,48.76710,48.69399,48.54871,48.45351,4
                 46.65530,46.64383,46.63236,46.62088,46.60940,46.59791,46.58642,46.57494,
                 46.56344,46.55195,46.54045,46.52966)
 
+if(option == 1){
+  size.breaks <- c(0,40,65,100,200) # approximately 10%, 50%, and 90% quantiles for Big Skate
 
-size.breaks <- c(0,40,65,100,200) # approximately 10%, 50%, and 90% quantiles for Big Skate
-
-species <- "BS"
-if(species=="BS"){
-  bio.combo <- bio.combo.BS
-  catch.combo <- bio.combo.BS
-}
-if(species=="LN"){
-  bio.combo <- bio.combo.LN
-  catch.combo <- bio.combo.LN
-}
+  species <- "BS"
+  if(species=="BS"){
+    bio.WCGBTS <- bio.WCGBTS.BS
+    catch.WCGBTS <- bio.WCGBTS.BS
+  }
+  if(species=="LN"){
+    bio.WCGBTS <- bio.WCGBTS.LN
+    catch.WCGBTS <- bio.WCGBTS.LN
+  }
 
 
-for(ibreak in 1:(length(size.breaks) - 1)){
-  lo.break <- size.breaks[ibreak]
-  hi.break <- size.breaks[ibreak+1]
- 
-  png(paste0('c:/SS/skates/maps/skate_map_bigskate_',lo.break,'-',hi.break,'cm.png'),
-      res=300, units='in', width=5, height=8)
-  ## png(paste0('c:/SS/skates/maps/skate_map_longnose_',lo.break,'-',hi.break,'cm.png'),
-  ##     res=300, units='in', width=5, height=8)
-  # create map 
-  map('worldHires', #regions=c("Canada","Mexico"),
-      xlim = c(-130, -116.8), ylim = c(32, 49.5),
-      col='grey', fill=TRUE, interior=TRUE, , lwd=1)
+  for(ibreak in 1:(length(size.breaks) - 1)){
+    lo.break <- size.breaks[ibreak]
+    hi.break <- size.breaks[ibreak+1]
+    
+    png(paste0('c:/SS/skates/maps/skate_map_bigskate_',lo.break,'-',hi.break,'cm.png'),
+        res=300, units='in', width=5, height=8)
+    ## png(paste0('c:/SS/skates/maps/skate_map_longnose_',lo.break,'-',hi.break,'cm.png'),
+    ##     res=300, units='in', width=5, height=8)
+    # create map 
+    map('worldHires', #regions=c("Canada","Mexico"),
+        xlim = c(-130, -116.8), ylim = c(32, 49.5),
+        col='grey', fill=TRUE, interior=TRUE, , lwd=1)
 
-  # add US/Canada boundary
-  lines(US.CAN.lon, US.CAN.lat, lty=2)
+    # add US/Canada boundary
+    lines(US.CAN.lon, US.CAN.lat, lty=2)
 
-  # add some text
-  text(-120, 50, "Canada")
-  text(-120, 48, "U.S.")
+    # add some text
+    text(-120, 50, "Canada")
+    text(-120, 48, "U.S.")
 
-  # add axes
-  axis(2, at=seq(30,55,5), lab=paste0(seq(30,55,5), "°N"), las=1)
-  axis(1, at=seq(-135,-115,5), lab=paste0(abs(seq(-135,-115,5)), "°W"))
-  box()
+    # add axes
+    axis(2, at=seq(30,55,5), lab=paste0(seq(30,55,5), "°N"), las=1)
+    axis(1, at=seq(-135,-115,5), lab=paste0(abs(seq(-135,-115,5)), "°W"))
+    box()
 
-  colvec <- c(rgb(1,0,0,alpha=0.1),
-              rgb(0,0,1,alpha=0.1))
-  sub <- bio.combo$Length_cm >= lo.break & bio.combo$Length_cm < hi.break 
-  points(bio.combo$Longitude_dd[sub], bio.combo$Latitude_dd[sub], 
-         pch=16, cex=2, col=colvec[(bio.combo$Sex=="M") + 1])
-  dev.off()
-} # end loop over size breaks
+    colvec <- c(rgb(1,0,0,alpha=0.1),
+                rgb(0,0,1,alpha=0.1))
+    sub <- bio.WCGBTS$Length_cm >= lo.break & bio.WCGBTS$Length_cm < hi.break 
+    points(bio.WCGBTS$Longitude_dd[sub], bio.WCGBTS$Latitude_dd[sub], 
+           pch=16, cex=2, col=colvec[(bio.WCGBTS$Sex=="M") + 1])
+    dev.off()
+  } # end loop over size breaks
 
-for(ibreak in 1:(length(size.breaks) - 1)){
-  lo.break <- size.breaks[ibreak]
-  hi.break <- size.breaks[ibreak+1]
- 
-  png(paste0('c:/SS/skates/maps/skate_depth_chart_bigskate_',lo.break,'-',hi.break,'cm.png'),
-      res=300, units='in', width=5, height=8)
-  # create chart
-  plot(0, xlim=c(500, 0), ylim = c(32, 49.5),
-       axes=FALSE, xlab="Depth (m)", ylab="Latitude")
+  for(ibreak in 1:(length(size.breaks) - 1)){
+    lo.break <- size.breaks[ibreak]
+    hi.break <- size.breaks[ibreak+1]
+    
+    png(paste0('c:/SS/skates/maps/skate_depth_chart_bigskate_',lo.break,'-',hi.break,'cm.png'),
+        res=300, units='in', width=5, height=8)
+    # create chart
+    ## confirm depth range of samples with ages
+    range(bio.WCGBTS.BS$Depth_m[!is.na(bio.WCGBTS.BS$Age)])
+    # [1]  56.6 332.4
+    dmax <- 333
+    plot(0, xlim=c(dmax, 0), ylim = c(32, 49.5),
+         axes=FALSE, xlab="Depth (m)", ylab="Latitude")
 
-  # add some text
-  text(-120, 50, "Canada")
-  text(-120, 48, "U.S.")
+    # add some text
+    text(-120, 50, "Canada")
+    text(-120, 48, "U.S.")
 
-  # add axes
-  axis(2, at=seq(30,55,5), lab=paste0(seq(30,55,5), "°N"), las=1)
-  axis(1, at=seq(500,0,-100))
-  box()
-  grid()
-  colvec <- c(rgb(1,0,0,alpha=0.1),
-              rgb(0,0,1,alpha=0.1))
-  sub <- bio.combo$Length_cm >= lo.break & bio.combo$Length_cm < hi.break 
-  points(bio.combo$Depth_m[sub], bio.combo$Latitude_dd[sub], 
-         pch=16, cex=2, col=colvec[(bio.combo$Sex=="M") + 1])
-  dev.off()
-} # end loop over size breaks
+    # add axes
+    axis(2, at=seq(30,55,5), lab=paste0(seq(30,55,5), "°N"), las=1)
+    axis(1, at=seq(500,0,-100))
+    box()
+    grid()
+    colvec <- c(rgb(1,0,0,alpha=0.1),
+                rgb(0,0,1,alpha=0.1))
+    sub <- bio.WCGBTS$Length_cm >= lo.break & bio.WCGBTS$Length_cm < hi.break 
+    points(bio.WCGBTS$Depth_m[sub], bio.WCGBTS$Latitude_dd[sub], 
+           pch=16, cex=2, col=colvec[(bio.WCGBTS$Sex=="M") + 1])
+    dev.off()
+  } # end loop over size breaks
+} # end option 1 (size break distributions)
+
+
+
+if(option == 2){
+  ages <- c(0:10) 
+
+  species <- "BS"
+  if(species=="BS"){
+    bio.WCGBTS <- bio.WCGBTS.BS
+    catch.WCGBTS <- bio.WCGBTS.BS
+  }
+  ## if(species=="LN"){
+  ##   bio.WCGBTS <- bio.WCGBTS.LN
+  ##   catch.WCGBTS <- bio.WCGBTS.LN
+  ## }
+
+  for(age in ages){
+    
+    png(paste0('c:/SS/skates/maps/skate_map_bigskate_age',age,'.png'),
+        res=300, units='in', width=5, height=8)
+    # create map 
+    map('worldHires', #regions=c("Canada","Mexico"),
+        xlim = c(-130, -116.8), ylim = c(32, 49.5),
+        col='grey', fill=TRUE, interior=TRUE, , lwd=1)
+
+    # add US/Canada boundary
+    lines(US.CAN.lon, US.CAN.lat, lty=2)
+
+    # add some text
+    text(-120, 50, "Canada")
+    text(-120, 48, "U.S.")
+
+    # add axes
+    axis(2, at=seq(30,55,5), lab=paste0(seq(30,55,5), "°N"), las=1)
+    axis(1, at=seq(-135,-115,5), lab=paste0(abs(seq(-135,-115,5)), "°W"))
+    box()
+
+    colvec <- c(rgb(1,0,0,alpha=0.1),
+                rgb(0,0,1,alpha=0.1))
+    sub <- bio.WCGBTS$Age == age
+    points(bio.WCGBTS$Longitude_dd[sub], bio.WCGBTS$Latitude_dd[sub], 
+           pch=16, cex=2, col=colvec[(bio.WCGBTS$Sex=="M") + 1])
+    dev.off()
+  } # end loop over ages
+
+  for(age in ages){
+    
+    png(paste0('c:/SS/skates/maps/skate_depth_chart_bigskate_age',age,'.png'),
+        res=300, units='in', width=5, height=8)
+    # create chart
+    plot(0, xlim=c(500, 0), ylim = c(32, 49.5),
+         axes=FALSE, xlab="Depth (m)", ylab="Latitude")
+
+    # add some text
+    text(-120, 50, "Canada")
+    text(-120, 48, "U.S.")
+
+    # add axes
+    axis(2, at=seq(30,55,5), lab=paste0(seq(30,55,5), "°N"), las=1)
+    axis(1, at=seq(500,0,-100))
+    box()
+    grid()
+    colvec <- c(rgb(1,0,0,alpha=0.1),
+                rgb(0,0,1,alpha=0.1))
+    sub <- bio.WCGBTS$Age == age
+    points(bio.WCGBTS$Depth_m[sub], bio.WCGBTS$Latitude_dd[sub], 
+           pch=16, cex=2, col=colvec[(bio.WCGBTS$Sex=="M") + 1])
+    dev.off()
+  } # end loop over size breaks
+} # end option 2 (age distributions)

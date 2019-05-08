@@ -25,3 +25,13 @@ SSinput
 ## 1 2014     7     7   1    2     16  0  0  0  0  0  0  0  0  0   0   0   0   2   0   0   0   2   2   0   0   2   0   2   2   0   0   0   0   0   0   0   0   0   2   0   0   2   0   0
 ## 2 2014     7     7   2    2     30  0  0  0  0  0  0  0  0  0   0   0   0   0   2   2   0   4   0   5   0   5   1   4   1   4   0   0   2   0   0   0   0   0   0   0   0   0   0   0
 options(width=80)
+
+
+### sample sizes
+Nfish <- sum(!is.na(iphc.lens$TOTAL.LENGTH) & iphc.lens$AREA == "WC")
+Nsets <- length(unique(iphc.lens$SET[!is.na(iphc.lens$TOTAL.LENGTH) &
+                                       iphc.lens$AREA == "WC"]))
+Nfish
+## [1] 54
+Nsets
+## [1] 14

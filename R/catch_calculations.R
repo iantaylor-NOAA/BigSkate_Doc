@@ -244,3 +244,34 @@ write.csv(rbind(landings.table, discards.table, discards.table2, landings.table.
 lines1 <- readLines(con = file.path(catch.dir, 'catch_for_SS_5-06-2019.csv'))
 lines1[grep("3yr", lines1)] <- paste("#", lines1[grep("3yr", lines1)])
 writeLines(lines1, con = file.path(catch.dir, 'catch_for_SS_commented_5-06-2019.csv'))
+
+
+
+# landings table for document
+catch.table.doc <- data.frame(Year = 1916:2018, CA = NA, OR = NA, WA = NA,
+                              Tribal = NA, total=NA)
+for(y in 1916:2018){
+  catch.table.doc[catch.table.doc$Year == y, "CA"] <-
+    round(sum(landings$Landings..mt.[landings$State=="CA" &
+                                 landings$Year == y]), 1)
+  catch.table.doc[catch.table.doc$Year == y, "CA"] <-
+    round(sum(landings$Landings..mt.[landings$State=="CA" &
+                                 landings$Year == y]), 1)
+  catch.table.doc[catch.table.doc$Year == y, "OR"] <-
+    round(sum(landings$Landings..mt.[landings$State=="OR" &
+                                 landings$Year==y]), 1)
+  catch.table.doc[catch.table.doc$Year == y, "WA"] <-
+    round(sum(landings$Landings..mt.[landings$State=="WA" &
+                                 landings$Year==y &
+                                   landings$Fishery=="Commercial"]), 1)
+  catch.table.doc[catch.table.doc$Year == y, "Tribal"] <-
+    round(sum(landings$Landings..mt.[landings$State=="WA" &
+                                 landings$Year==y &
+                                   landings$Fishery!="Commercial"]), 1)
+  catch.table.doc[catch.table.doc$Year == y, "total"] <-
+    round(sum(landings$Landings..mt.[landings$Year==y]), 1)
+}
+write.csv(catch.table.doc,
+          file=file.path(catch.dir, '../BigSkate_Doc/txt_files/data_summaries',
+                         'reconstructed_landings_by_state.csv'))
+

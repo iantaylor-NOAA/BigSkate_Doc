@@ -205,15 +205,71 @@ Lcomps <- getComps(PacFIN.BSKT.BDS.exp2, Comps="LEN")
 Lcomps = doSexRatio(Lcomps)
 
 # Write length comps into csv. file
-
-# Females and males separately
-
 Lcomps.SS <- writeComps(Lcomps,
                         fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_length_comps_5-5-2019.csv"),
                         lbins = BSKT.LBINS,
                         partition = 2, ageErr = 1, returns = "FthenM",
                         dummybins = FALSE, sum1 = TRUE,
                         overwrite = TRUE, verbose = TRUE)
+
+#### make table of sample sizes for each state
+PacFIN.BSKT.BDS.exp2.WA <- PacFIN.BSKT.BDS.exp2[PacFIN.BSKT.BDS.exp2$state=="WA",]
+PacFIN.BSKT.BDS.exp2.OR <- PacFIN.BSKT.BDS.exp2[PacFIN.BSKT.BDS.exp2$state=="OR",]
+PacFIN.BSKT.BDS.exp2.CA <- PacFIN.BSKT.BDS.exp2[PacFIN.BSKT.BDS.exp2$state=="CA",]
+Lcomps.WA <- getComps(PacFIN.BSKT.BDS.exp2.WA, Comps="LEN")
+Lcomps.OR <- getComps(PacFIN.BSKT.BDS.exp2.OR, Comps="LEN")
+Lcomps.CA <- getComps(PacFIN.BSKT.BDS.exp2.CA, Comps="LEN")
+
+for(s in c("WA","OR","CA")){
+Lcomps.SS <- writeComps(get(paste0("Lcomps.", s)),
+                        fname = file.path(pacfin.dir, paste0("PacFIN.BSKT.BDS_length_comps_", s, "5-7-2019.csv")),
+                        lbins = BSKT.LBINS,
+                        partition = 2, ageErr = 1, returns = "FthenM",
+                        dummybins = FALSE, sum1 = TRUE,
+                        overwrite = TRUE, verbose = TRUE)
+assign(paste0("Lcomps.SS.", s), value=Lcomps.SS)
+}
+SS.table <- data.frame(yr = 1995:2018,
+                       CA.Ntows=0, CA.Nfish=0,
+                       OR.Ntows=0, OR.Nfish=0,
+                       WA.Ntows=0, WA.Nfish=0)
+for(irow in 1:nrow(Lcomps.SS.CA)){
+  y <- Lcomps.SS.CA$fishyr[irow]
+  SS.table$CA.Ntows[SS.table$yr == y] <- Lcomps.SS.CA$Ntows[irow]
+  SS.table$CA.Nfish[SS.table$yr == y] <- Lcomps.SS.CA$Nsamp[irow]
+}
+for(irow in 1:nrow(Lcomps.SS.OR)){
+  y <- Lcomps.SS.OR$fishyr[irow]
+  SS.table$OR.Ntows[SS.table$yr == y] <- Lcomps.SS.OR$Ntows[irow]
+  SS.table$OR.Nfish[SS.table$yr == y] <- Lcomps.SS.OR$Nsamp[irow]
+}
+for(irow in 1:nrow(Lcomps.SS.WA)){
+  y <- Lcomps.SS.WA$fishyr[irow]
+  SS.table$WA.Ntows[SS.table$yr == y] <- Lcomps.SS.WA$Ntows[irow]
+  SS.table$WA.Nfish[SS.table$yr == y] <- Lcomps.SS.WA$Nsamp[irow]
+}
+SS.table$AllLandings.Ntows <- SS.table$CA.Ntows + SS.table$OR.Ntows + SS.table$WA.Ntows
+SS.table$AllLandings.Nfish <- SS.table$CA.Nfish + SS.table$OR.Nfish + SS.table$WA.Nfish
+
+# add discard comps to the table
+discard_comp_dir <- 'C:/SS/skates/bio/WCGOP_comps'
+LF_Sample_Sizes <- read.csv(file.path(discard_comp_dir,
+                                      'BigSkate_WCGOP_Comps_V3_LF_Sample_Sizes.csv'))
+SS.table$Discard.Ntows <- 0
+SS.table$Discard.Nfish <- 0
+for(y in unique(LF_Sample_Sizes$Year)){
+  SS.table$Discard.Ntows[SS.table$yr == y] <-
+    sum(LF_Sample_Sizes$N_unique_Hauls[LF_Sample_Sizes$Year == y])
+  SS.table$Discard.Nfish[SS.table$yr == y] <-
+    sum(LF_Sample_Sizes$N_Fish[LF_Sample_Sizes$Year == y])
+}
+
+write.csv(SS.table,
+          file.path(pacfin.dir, "../../BigSkate_Doc/txt_files/data_summaries",
+                    "PacFIN.sample_sizes_by_state.csv"),
+          row.names = FALSE)
+
+
 # apply sample size calculation
 ## N_input=N_trips+0.138N_fish          when    N_fish/N_trips <44
 ## N_input=7.06N_trips                  when    N_fish/N_trips >=44
