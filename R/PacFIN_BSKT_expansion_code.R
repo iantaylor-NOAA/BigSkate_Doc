@@ -1,7 +1,7 @@
 
 #install.packages("devtools")
 #devtools::install_github("nwfsc-assess/PacFIN.Utilities")
-devtools::install_github("nwfsc-assess/PacFIN.Utilities", ref="ian_suggestions")
+devtools::install_github("nwfsc-assess/PacFIN.Utilities")
 library(PacFIN.Utilities)
 
 #Example file
@@ -25,6 +25,9 @@ if(Sys.info()["user"] == "Ian.Taylor"){
 ## PacFIN.BSKT.BDS <- PacFIN.BSKT.bds.24.Apr.2029
 load(file.path(pacfin.dir, "PacFIN.BSKT.bds.30.Apr.2019.dmp"))
 PacFIN.BSKT.BDS <- PacFIN.BSKT.bds.30.Apr.2019
+# after adding OR ages
+load(file.path(pacfin.dir, "PacFIN.BSKT.bds.08.May.2019b.Rdata"))
+PacFIN.BSKT.BDS <- PacFIN.BSKT.bds.08.May.2019b
 
 # filter out outliers discovered in the age-length
 # comparison at the bottom of this script, all of which have FISH_LENGTH_TYPE == "T"
@@ -300,16 +303,16 @@ PacFIN.BSKT.BDS.clean.ages <- cleanPacFIN(PacFIN.BSKT.BDS,
                                           keep_sample_method = c("R", "S"))
 ## Removal Report
 
-## Records in input:                  7760 
+## Records in input:                  7825 
 ## Records not in USINPFC             0 
-## Records not in INPFC_AREA:         0 
+## Records not in INPFC_AREA:         22 
 ## Records in bad INPFC_AREA:         0 
 ## Records in badRecords list:        0 
 ## Records with bad SAMPLE_TYPE       2 
 ## Records with bad SAMPLE_METHOD     0 
 ## Records with no SAMPLE_NO          0 
-## Records with no usable length      0 
-## Records remaining:                 7758 
+## Records with no usable length      20 
+## Records remaining:                 7781 
 
 PacFIN.BSKT.BDS.ages <- cleanAges(PacFIN.BSKT.BDS.clean.ages, minAge = 0,
                                   keep_age_methods=c(4,"X"))
@@ -319,6 +322,13 @@ PacFIN.BSKT.BDS.ages <- cleanAges(PacFIN.BSKT.BDS.clean.ages, minAge = 0,
 ## Records with age less than min:     7123 
 ## Records with bad agemethods:        0 
 ## Records remaining:                  635 
+
+## Removal report
+
+## Records in input:                   7781 
+## Records with age less than min:     6982 
+## Records with bad agemethods:        0 
+## Records remaining:                  799 
 
 PacFIN.BSKT.BDS.ages.exp1 <- getExpansion_1(PacFIN.BSKT.BDS.ages,
                                             maxExp = 0.95,
@@ -339,6 +349,16 @@ table(PacFIN.BSKT.BDS.ages$SAMPLE_YEAR, PacFIN.BSKT.BDS.ages$state)
 ## 2011 201   0
 ## 2018   0  92
 
+# new ages on May 8
+  ##       OR  WA
+  ## 2004   0  11
+  ## 2008  80   0
+  ## 2009  87  65
+  ## 2010 102   0
+  ## 2011 202   0
+  ## 2012 120   0
+  ## 2018  39  93
+
 PacFIN.BSKT.BDS.ages.exp1$stratification <- PacFIN.BSKT.BDS.ages$state
 
 # don't do expansion factor 2 because WA samples from 2009 are non-random and
@@ -351,11 +371,11 @@ Acomps.exp1 = getComps(PacFIN.BSKT.BDS.ages.exp1, Comps="AGE")
 # no unsexed fish
 table(PacFIN.BSKT.BDS.ages.exp1$SEX)
 ##   F   M 
-## 169 401 
+## 234 500 
 ## Acomps = doSexRatio(Acomps)
 
 marginal_ages <- writeComps(Acomps.exp1,
-                            fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_age_comps_5-5-2019.csv"),
+                            fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_age_comps_5-8-2019.csv"),
                             abins = BSKT.ABINS,
                             partition = 2, ageErr = 1, returns = "FthenM",
                             dummybins = FALSE, sum1 = TRUE,
@@ -365,7 +385,7 @@ marginal_ages <- writeComps(Acomps.exp1,
 PacFIN.BSKT.BDS.ages$Final_Sample_Size <- 1
 Acomps.nox = getComps(PacFIN.BSKT.BDS.ages, Comps="AGE")
 marginal_ages_nox <- writeComps(Acomps.nox,
-                                fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_age_comps_nox_5-5-2019.csv"),
+                                fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_age_comps_nox_5-8-2019.csv"),
                                 abins = BSKT.ABINS,
                                 partition = 2, ageErr = 1, returns = "FthenM",
                                 dummybins = FALSE, sum1 = TRUE,
@@ -410,7 +430,7 @@ marginal_ages2 <- data.frame(marginal_ages[,c(1,2,4:6)],
 marginal_ages2$fleet <- -1
 
 names(CAAL_both) <- names(marginal_ages2)
-all_ages <- rbind(marginal_ages2, CAAL_F, CAAL_M)
+all_ages <- rbind(marginal_ages2, CAAL_both)
 ages_fixed <- data.frame(year = all_ages$fishyr,
                          month = 7,
                          all_ages[,!names(all_ages) %in% c("fishyr", "Ntows")])
@@ -418,8 +438,15 @@ names(ages_fixed)[names(ages_fixed) %in% paste0("A",0:15)] <- paste0("F",0:15)
 names(ages_fixed)[names(ages_fixed) %in% paste0("A",0:15,".1")] <- paste0("M",0:15)
 
 write.csv(ages_fixed,
-          file = file.path(pacfin.dir, "PacFIN.BSKT.BDS_AAL_comps_forSS_5-5-2019.csv"),
+          file = file.path(pacfin.dir, "PacFIN.BSKT.BDS_AAL_comps_forSS_5-8-2019.csv"),
           row.names=FALSE)
+
+
+# brute force calcs of values for sample size table
+length(unique(PacFIN.BSKT.BDS.ages$SAMPLE_NO[PacFIN.BSKT.BDS.ages$fishyr==2012 & PacFIN.BSKT.BDS.ages$state=="OR"]))
+length(unique(PacFIN.BSKT.BDS.ages$SAMPLE_NO[PacFIN.BSKT.BDS.ages$fishyr==2018 & PacFIN.BSKT.BDS.ages$state=="OR"]))
+sum(PacFIN.BSKT.BDS.ages$fishyr==2012 & PacFIN.BSKT.BDS.ages$state=="OR")
+sum(PacFIN.BSKT.BDS.ages$fishyr==2018 & PacFIN.BSKT.BDS.ages$state=="OR")
 
 
 #==============================================================
