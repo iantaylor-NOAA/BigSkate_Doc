@@ -1,33 +1,34 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 <!-- ***********INTRODUCTION SECTION*************************************** -->
 
 # Introduction
 
-```{r}
-mydf <- data.frame(id = 1:10, var1 = rnorm(10), var2 = runif(10))
-rws <- seq(1, (nrow(mydf)-1), by = 2)
-col <- rep("\\rowcolor[gray]{0.95}", length(rws))
-print(xtable(mydf), booktabs = TRUE,
-      add.to.row = list(pos = as.list(rws), command = col))
-```
-      
+
 ## Distribution and Life History
 
-Big Skate (*Raja binoculata*) is the largest of the skate species in North America with a documented maximum length of 244 cm total length and a maximum weight of 91 kg [@Eschmeyer1983].  The species name “binoculata” (two-eyed) refers to the prominent ocellus at the base of each pectoral fin. Big skate range from the Bering Sea to Cedros Island in Baja California, but are uncommon south of Pt. Conception. Big skate have a shallow depth distribution of 3-800 m, but are most common in the 3-110 m depth zone. Big Skate are observed in progressively shallower water in the northern parts of its range.  They occur in coastal bays, estuaries, and over the continental shelf, usually on sandy or muddy bottoms, but occasionally on low strands of kelp.
+Big Skate (*Raja binoculata*) is the largest of the skate species in North America with a documented maximum length of 244 cm total length and a maximum weight of 91 kg [@Eschmeyer1983].  The species name “binoculata” (two-eyed) refers to the prominent ocellus at the base of each pectoral fin. Big skate range from the Bering Sea to Cedros Island in Baja California, but are uncommon south of Pt. Conception. Big skate have a shallow depth distribution; they occur in coastal bays, estuaries, and over the continental shelf, usually on sandy or muddy bottoms, but occasionally on low strands of kelp.
 
-Skates are the largest and most widely distributed group of batoid fish with approximately 245 species ascribed to two families [@Ebert2007biodiversity][@McEachran1990]. Skates are benthic fish that are found in all coastal waters but are most common in cold temperatures and polar waters (Ebert and Compagno 2007).
+Skates are the largest and most widely distributed group of batoid fish with approximately 245 species ascribed to two families [@Ebert2007][@McEachran1990]. Skates are benthic fish that are found in all coastal waters but are most common in cold temperatures and polar waters [@Ebert2007].
 
 There are eleven species of skates in three genera (Amblyraja, Bathyraja, and Raja) present in the Northeast Pacific Ocean off California, Oregon and Washington (Ebert 2003). Of that number, just three species (Longnose Skate, *Raja rhina*; Big Skate, *Raja binoculata*; and Sandpaper Skate, *Bathyraja interrupta*) make up over 95 percent of West Coast Groundfish Bottom Trawl Survey (WCGBTS) catches in terms of biomass and numbers, with the Longnose Skate leading in both categories (with 62 percent of biomass and 56 percent of numbers).
-
-Mating has been observed with distinct pairing with embrace. Big Skate are oviparous and lay horned egg cases up to a foot in length with up to seven embryos per egg case [@Eschmeyer1983]. The female deposits her eggs in pairs on sandy or muddy flats; there is no discrete breedingseason and egg-laying occurs year-round (Ebert 2003). Females may use discrete spawning beds, as large numbers of egg cases have been found in certain localized areas (IUCN/SSC Shark Specialist Group 2005). The young emerge after 9 months and measure 18–23 cm (7–9 in).
-
-Female Big Skates mature at 1.3–1.4 m (4 ft 3 in–4 ft 7 in) long and 12–13 years old, while males mature at 0.9–1.1 m (2 ft 11 in–3 ft 7 in) long and seven to eight years old [@Bester2009]. The growth rate of Big Skates in the Gulf of Alaska are comparable to those off California, but differ from those off British Columbia. The lifespans of big skates off Alaska are up to 15 years, while those off British Columbia are up to 26 years.
 
 Big Skates are usually seen buried in sediment with only their eyes showing. They feed on polychaete worms, mollusks, crustaceans, and small benthic fishes. Polychaetes and mollusks comprise a slightly greater percentage of the diet of younger individuals. The eyespots on the skates' wings are believed to serve as decoys to confuse predators.  A known predator of big skates is the Broadnose Sevengill Shark (*Notorhynchus cepedianus*).  Juvenile Northern Elephant Seals (*Mirounga angustirostris*) are known to consume the egg cases of the Big Skate. Known parasites include the copepod *Lepeophtheirus cuneifer*.
 
 
-## Early Life History
+## Biology
 
-Bizzarro.
+The Big Skate is broadly distributed, occurring from the southeastern Bering Sea [@Mecklenburg2002] to southern Baja California (22.90º N, 110.03º W; [@Castro1993]) and the Gulf of California [@Castro1996]. It has been reported at depths of 2–501 m (min: @Miller1980; max: @Farrugia2016) but is most common on the inner continental shelf (< 100 m; [@Love2011]; [@Bizzarro2015]). Big Skates are highly mobile and capable of long range (> 2000 km) movements ([@KingandMcF2009]; [@Farrugia2016]). 
+
+Big Skate is oviparious, and is one of two skate species that have multiple embryos per egg case [@Ebert2008]. From 1–8 embryos can be contained in a single, large egg capsule, but most have 3–4 [@DeLacy1935; @Hitz1964; @Ford1971]. Eggs are deposited year-round on sand or mud substrates at depths of ~50–150 m [@Hitz1964; @Ebert2007]. Embryos hatch from eggs after 6–20 months, with shorter developmental periods associated with warmer temperatures [@Hoff2007]. In captivity, Big Skate females may produce > 350 eggs/year (average of 2 embryos/egg case; @Chiquillo2014) from long-term sperm storage [@Jang2019]. Size at birth is 18–23 cm TL [@Ebert2003]. Maximum size is 244 cm TL [@Eschmeyer1983, with females growing to larger sizes.
+
+Size at maturity has been variably estimated for Big Skate populations off California, British Columbia, and Alaska. Off central California, Zeiner and Wolf [-@ZeinerWolf1993] reported sizes at first maturity of ~129 cm TL (females) and ~100 cm TL (males).  A similar size at maturity was estimated for females from the Gulf of Alaska (first = 126 cm TL, 50% = 149 cm TL), but male estimates were considerably greater (first = 124 cm TL, 50% = 119 cm TL; @Ebert2008).  Much smaller sizes at first (female = 60 cm TL, male = 50 cm TL) and 50% (female = 90 cm TL, male = 72 cm TL) maturity were generated for the Longnose Skate populations off British Columbia [@McFandKing2006]; however, maturity evaluation criteria were flawed (subadults were considered to be mature), and these results are therefore not considered valid.
+
+Age and growth parameters have been established from California, British Columbia, and the Gulf of Alaska. Maximum ages off central California (females = 12, males = 11; @ZeinerWolf1993) and in the Gulf of Alaska (females = 14, males = 15; Gburski et al. 2007) were similar, but estimates off British Columbia were much greater (females = 26, males = 25; McFarlane and King 2006). It is important to note that age estimates are based on an unvalidated method and geographic differences in size or age may reflect differences in sampling or ageing criteria. In the Gulf of Alaska, Big Skates reach 50% maturity at 10 years and 7 years for females and males, respectively (@Gburski2007, @Ebert2008). Generation length estimates range from 11.5 [@ZeinerWolf1993] to 17 years [@McFandKing2006]. 
+
 
 ## Map
 A map showing the scope of the assessment and depicting boundaries for fisheries or data collection strata is provided in Figure \ref{fig:boundary_map}.
@@ -40,16 +41,15 @@ In this assessment, ecosystem considerations were not explicitly included in the
 
 Big Skate are caught in commercial and recreational fisheries on the West Coast using line and trawl gears. There is a limited market for pectoral fins (skate wings).
 
-The history of Big Skate (*Raja binoculata*) is not well documented.  They were used as a food source by the native Coastal and Salish Tribes [@Batdorf1990] long before Europeans settled in the Pacific Northwest and then as fertilizer by the settlers [@Bowers1909].  No directed fishery for Big Skate has been documented; rather, they were taken along with other skates and rays as "scrap fish" and used for fertilizer, fish meal and oil.
+The history of Big Skate is not well documented.  They were used as a food source by the native Coastal and Salish Tribes [@Batdorf1990] long before Europeans settled in the Pacific Northwest and then as fertilizer by the settlers [@Bowers1909].  No directed fishery for Big Skate has been documented; rather, they were taken along with other skates and rays as "scrap fish" and used for fertilizer, fish meal and oil [@GregLippert].
 
 Skates have been regarded as a predator on desirable market species such as Dungeness crab, and were thought of as nuisance fish with no appeal as a food item save for small local markets. They had been discarded or harvested at a minimal level until their livers became valued along with those of other cartilaginous fishes for the extraction of vitamin A in the 1940s.  Chapman [@Chapman1944] recorded that “At present they are being fished heavily, in common with the other elasmobranchs of the coast, forthe vitamins in their livers. The carcasses are either thrown away at sea or made into fish meal.  Little use is made of the excellent meat of the wings”.
 
-Little information is available about the historic fishery for Big Skate.  In records before 2000, they are lumped together with other skates or in market categories; this necessitates considerable attention to reconstructing the fishery by observing the composition of catches in the modern fishery and applying those to historical records.
-
+Little information is available about the historic Washington fishery for Big Skate.  In records before 2000, they are lumped together with other skates or in market categories [@GregLippert]; this necessitates considerable attention to reconstructing the fishery by observing the composition of skate catches in the modern fishery and applying those to the recently reconstructed historical records.
 
 ## Stock Status and Management History
 
-Big Skate were managed in the Other Fish complex until 2015 when they were designated an Ecosystem Component (EC) species.  Catches of Big Skate are estimated to have averaged 95 mt from 2007–2011, along with large landings of "Unspecified Skate".  Analysis of Oregon port-sampling data indicates that about 98 percent of the recent Unspecified Skate landings in Oregon were comprised of Big Skate. Such large landings indicates targeting of Big Skate has occurred and an EC designation was not warranted. Based on this evidence, Big Skate was redesignated as an actively-managed species in the fishery. Big skate have been managed with stock-specific harvest specifications since 2017.
+Big Skate were managed in the "Other Fish" complex until 2015 when they were designated an Ecosystem Component (EC) species.  Catches of Big Skate are estimated to have averaged 95 mt from 2007–2011, along with large landings of "Unspecified Skate".  Analysis of Oregon port-sampling data indicates that about 98 percent of the recent Unspecified Skate landings in Oregon were comprised of Big Skate. Such large landings indicates targeting of Big Skate has occurred and an EC designation was not warranted. Based on this evidence, Big Skate was redesignated as an actively-managed species in the fishery. Big skate have been managed with stock-specific harvest specifications since 2017.
 
 The recent OFL of 541 mt was calculated by applying approximate MSY harvest rates toestimates of stock biomass from the Northwest Fisheries Science Center (NWFSC) West Coast Groundfish Bottom Trawl Survey. This survey-based biomass estimate is likely underestimated since Big Skate are distributed all the way to the shoreline and no West Coast trawl surveys have been conducted in water shallower than 55 meters. This introduces an extra source of uncertainty to management and suggests that increased precaution is needed to reduce the risk of overfishing the stock. 
 
@@ -60,13 +60,24 @@ There has been consideration for managing Big Skate in a complex with Longnose S
 Table \ref{tab:mnmgt_perform}
 
 
-## Fisheries Off Mexico or Canada
+## Fisheries Off Alaska, Canada and Mexico
 
-Big Skate and Longnose Skate are landed in the commercial trawl and hook-and-line fisheries in the waters off British Columbia.  Assessments of Longnose Skate and Big Skate were conducted by Canada's Division of Fisheries and Oceans in 2015[@King2015].
+** Alaska **
 
-For Big Skate, a Bayesian surplus production model failed to provide plausible results, and two data-limited approaches were investigated: Depletion-Corrected Average Catch Analysis (DCAC), and a Catch-MSY (maximum sustainable yield) Approach.  
+In Alaska, skates were primarily taken as bycatch in both longline and trawl fisheries until 2003, when a directed skate fishery developed in the Gulf of Alaska, where Longnose and Big skates comprise the majority of the skate biomass. 
+
+The Gulf of Alaska (GOA) skate complex is managed as three units. Big skates and Longnose Skates each have separate harvest specifications, with acceptable biological catches (ABCs) specified for each GOA regulatory area (western, central, and eastern). A single gulfwide overfishing level (OFL) is specified for each stock. All remaining skate species are managed as an “Other Skates” group with gulfwide harvest specifications. All GOA skates are managed as Tier 5 stocks, where OFL and ABC are based on survey biomass estimates and natural mortality rate.
+
+In the Bering Sea and Aleutian Islands, skates are assessed as a group rather than as separate species.
+
+** Canada **
+
+In Canada historic information regarding skate catches goes back to the 1950’s. Prior to 1990’s skates were taken mostly as bycatch and landings were reported as part of a skate complex (not by species). As with the West Coast, the trawl fishery is responsible for the largest amount of bycatch.  Skate catches off British Columbia accelerated in the early 1990’s, partly due to emerging Asian markets. Since 1996, longnose skate has been targeted by the B.C. trawl fishery and, as a result, catches have been more accurately reported. 
+
+Assessments of Longnose Skate and Big Skate were conducted by Canada's Division of Fisheries and Oceans in 2015[@King2015].  For Big Skate, a Bayesian surplus production model failed to provide plausible results, and two data-limited approaches were investigated: Depletion-Corrected Average Catch Analysis (DCAC), and a Catch-MSY (maximum sustainable yield) Approach.  
 
 DCAC produced a range of potential yield estimates that were above the long-term average catch, with an upper bound that was three orders of magnitude larger than the long-term average catch. The Catch-MSY approach was found to be quite sensitive to assumptions and was not recommended as the sole basis of advice to managers.
 
-The recommendation for managment for the two skate species was that they should be managed with harvest yeilds based on mean historic catch, with consideration given to survey trends and to the ranges of maximum sustainable yield estimates identified by the Catch-MSY Approach. However, the analysis found no significant trends in abundance indices for Big Skate, and mean historical catches were below the maximum MSY estimate from the catch-MSY results.
+The recommendation for managment for both skate species was that they should be managed with harvest yeilds based on mean historic catch, with consideration given to survey trends and to the ranges of maximum sustainable yield estimates identified by the Catch-MSY Approach. However, the analysis found no significant trends in abundance indices for Big Skate, and mean historical catches were below the maximum MSY estimate from the catch-MSY results.
+
 
