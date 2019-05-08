@@ -18,6 +18,8 @@ There are eleven species of skates in three genera (Amblyraja, Bathyraja, and Ra
 
 Big Skates are usually seen buried in sediment with only their eyes showing. They feed on polychaete worms, mollusks, crustaceans, and small benthic fishes. Polychaetes and mollusks comprise a slightly greater percentage of the diet of younger individuals. The eyespots on the skates' wings are believed to serve as decoys to confuse predators.  A known predator of big skates is the Broadnose Sevengill Shark (*Notorhynchus cepedianus*).  Juvenile Northern Elephant Seals (*Mirounga angustirostris*) are known to consume the egg cases of the Big Skate. Known parasites include the copepod *Lepeophtheirus cuneifer*.
 
+In 2012, the Big Skate was moved from genus *Raja* to the new genus *Beringraja* together with the Mottled Skate (*B. pulchra*) [@Ishihara2012].  These are the only two skates with multiple embryos per egg case, and they are very similar mophologically and genetically [@Bizzarro2019].
+
 
 ## Biology
 
@@ -46,6 +48,8 @@ The history of Big Skate is not well documented.  They were used as a food sourc
 Skates have been regarded as a predator on desirable market species such as Dungeness crab, and were thought of as nuisance fish with no appeal as a food item save for small local markets. They had been discarded or harvested at a minimal level until their livers became valued along with those of other cartilaginous fishes for the extraction of vitamin A in the 1940s.  Chapman [@Chapman1944] recorded that “At present they are being fished heavily, in common with the other elasmobranchs of the coast, forthe vitamins in their livers. The carcasses are either thrown away at sea or made into fish meal.  Little use is made of the excellent meat of the wings”.
 
 Little information is available about the historic Washington fishery for Big Skate.  In records before 2000, they are lumped together with other skates or in market categories [@GregLippert]; this necessitates considerable attention to reconstructing the fishery by observing the composition of skate catches in the modern fishery and applying those to the recently reconstructed historical records.
+
+Very little information is known about the Big Skate historical fishery in Oregon. The information we do have is mainly from historical landing data and species composition samples starting in the mid-nineties. The bulk of the catch is from the bottom trawl and longline fisheries, with smaller amounts as by-catch in mid-water trawl and the shrimp trawl fishery. Big Skate was lumped into the nominal “Skate” category until 2015 when it was separated into its own market category. Species composition data have been vitally important in reconstructing the pre-2015 historical catch [@TedCalavan].
 
 ## Stock Status and Management History
 

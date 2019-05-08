@@ -2,21 +2,24 @@
 
 ## Stock{-}
 This assessment reports the status of the `r spp` (\emph{`r spp.sci`}) resource 
-in U.S. waters off the coast of ... using data 
+in U.S. waters off the West Coast using data 
 through `r LastYR`. 
 
 
 ## Catches{-}
-Information on historical landings of `r spp` are available back to xxxx...
-(Table \ref{tab:Exec_catch}). Commercial landings were small during 
-the years of World War II, ranging between `r min(round(Tot.catch.df[Tot.catch.df[,1] >= 1939 & Tot.catch.df[,1] <= 1945,2],0))` to `r max(round(Tot.catch.df[Tot.catch.df[,1] >= 1939 & Tot.catch.df[,1] <= 1945,2],0))` metric  tons (mt) per year.
+Landings and estimated discards of `r spp` were reconstructed for this assessment from historical records of other species and from species composition data collected in the recent fishery.  These reflect the fishery from 1916-1994.  The current fishery started in 1995.  For records from 1995-2017, Big Skate landings were estimated from species-composition samples and the landings of "Unspecified Skates".  Beginning in 2017, Big Skate have been recorded in species-specific landings.
+
+(Table \ref{tab:Exec_catch}). 
+
+<!-- Commercial landings were small during  -->
+<!-- the years of World War II, ranging between `r min(round(Tot.catch.df[Tot.catch.df[,1] >= 1939 & Tot.catch.df[,1] <= 1945,2],0))` to `r max(round(Tot.catch.df[Tot.catch.df[,1] >= 1939 & Tot.catch.df[,1] <= 1945,2],0))` metric  tons (mt) per year. -->
 
 
 (Figures \ref{fig:Exec_catch1}-\ref{fig:Exec_catch2})  
 (Figure \ref{fig:r4ss_catches}) 
 
-Since 2000, annual total landings of `r spp` have ranged between 
-`r paste0( min(round(Tot.catch.df[Tot.catch.df[,1] > 2000 & Tot.catch.df[,1] <= Dat_end_mod1,2],0)), '-', max(round(Tot.catch.df[Tot.catch.df[,1] > 2000 & Tot.catch.df[,1] <= Dat_end_mod1,2],0)) )` mt, with landings in `r Dat_end_mod1` totaling `r round(Tot.catch.df[Tot.catch.df[,1] == Dat_end_mod1,2],0)` mt.
+In the current fishery (since 1995), annual total landings of `r spp` have ranged between 
+`r paste0( min(round(Tot.catch.df[Tot.catch.df[,1] > 1995 & Tot.catch.df[,1] <= Dat_end_mod1,2],0)), '-', max(round(Tot.catch.df[Tot.catch.df[,1] > 1995 & Tot.catch.df[,1] <= Dat_end_mod1,2],0)) )` mt, with landings in `r Dat_end_mod1` totaling `r round(Tot.catch.df[Tot.catch.df[,1] == Dat_end_mod1,2],0)` mt.
 
 
 
@@ -27,21 +30,21 @@ Since 2000, annual total landings of `r spp` have ranged between
 <!-- ***********This depends on how many plots you need******************** -->
 <!-- ***********Also included is the r4SS plot - keep or remove************ -->
 <!-- ***********CATCH FIGURES********************************************** -->
-```{r, fig.cap= paste(spp, 'catch history for the recreational fleets. \\label{fig:Exec_catch1}',sep=' ')}
-    # CSV: './txt_files/Exec_catch_for_figs.csv'
-    # Note: you cannot have carriage returns in the R options line
-    # Plot washington catches           
-    Plot_catch(Catch_df = Exec_region1_catch)
-```
+<!-- # ```{r, fig.cap= paste(spp, 'catch history for the recreational fleets. \\label{fig:Exec_catch1}',sep=' ')} -->
+<!-- #     # CSV: './txt_files/Exec_catch_for_figs.csv' -->
+<!-- #     # Note: you cannot have carriage returns in the R options line -->
+<!-- #     # Plot washington catches            -->
+<!-- #     Plot_catch(Catch_df = Exec_region1_catch) -->
+<!-- # ``` -->
 
-```{r, fig.cap=paste('Stacked line plot of', spp,' catch history for the commercial fleets. \\label{fig:Exec_catch2}',sep=' ')}
-    # Plot Oregon catches
-    Plot_catch(Catch_df = Exec_region2_catch)
-```
+<!-- ```{r, fig.cap=paste('Stacked line plot of', spp,' catch history for the commercial fleets. \\label{fig:Exec_catch2}',sep=' ')} -->
+<!--     # Plot Oregon catches -->
+<!--     Plot_catch(Catch_df = Exec_region2_catch) -->
+<!-- ``` -->
 
 ```{r, include=F, fig.cap=paste('Stacked line plot of', spp, 'catch history from Pt. Conception to the U.S.-Mexico border and catches from Mexican waters. \\label{fig:Exec_catch3}',sep=' ')}
      # Plot California catches  
-  #    Plot_catch(Catch_df = Exec_region3_catch)
+     # Plot_catch(Catch_df = Exec_region3_catch)
 ```
 
 \FloatBarrier
@@ -51,10 +54,9 @@ Since 2000, annual total landings of `r spp` have ranged between
 
 
 
-
 <!-- ***********CATCH TABLE************************************************ -->
 ```{r, results='asis'}
-    #CSV: './txt_files/Exec_catch_summary.csv'
+    #CSV: './txt_files/Exec_Catch_Big_Skate.csv'
     # Catch table section in R_exec_summary_fig_tables.R
     # Print the table
     print(Exec_catch.table, include.rownames = FALSE, caption.placement = 'top')
@@ -69,21 +71,19 @@ Since 2000, annual total landings of `r spp` have ranged between
 
 
 
-This the first full assessment for `r spp`, which was last assessed as part of the "Other species" Complex.  This assessment uses the newest version of Stock Synthesis 
-(3.30.xx).  The model begins in `r Dat_start_mod1`, and assumes the stock 
-was at an unfished equilibrium that year. 
+This the first full assessment for `r spp`, which was last assessed as part of the "Other Species" complex.  This assessment uses the newest version of Stock Synthesis (3.30.13).  The model begins in `r Dat_start_mod1`, and assumes the stock was at an unfished equilibrium that year. 
 
 
 
 (Figure \ref{fig:assess_region_map}).
 
-![Map depicting the distribution of California scorpionfish out to 600 ft.  The stock assessment is bounded at Pt. Conception in the north to the U.S./Mexico border in the south.  \label{fig:assess_region_map}](Figures/assess_region_map.png)
+![This is NOT the map depicting the distribution of Big Skate out to 600 ft.  The stock assessment is bounded at Pt. Conception in the South to the U.S./Canada border in the north.  \label{fig:assess_region_map}](Figures/assess_region_map.png)
 
 \FloatBarrier
 
-##Stock Biomass{-}
-(Figure \ref{fig:Spawnbio_all} 
-and Table \ref{tab:SpawningDeplete_mod1}). 
+## Stock Biomass{-}
+
+(Figure \ref{fig:Spawnbio_all} and Table \ref{tab:SpawningDeplete_mod1}). 
 
 The `r LastYR` estimated spawning biomass relative to unfished 
 equilibrium spawning biomass is above the target of 40% of unfished spawning biomass at `r Depl_mod1` 
@@ -122,7 +122,7 @@ asymptotic variance estimates show that the uncertainty in the estimated spawnin
 
 
 ## Recruitment{-}
-Recruitment deviations were estimated from xxxx-xxxx (Figure \ref{fig:Recruits_all} and 
+Recruitment deviations were estimated from 1916-2018 (Figure \ref{fig:Recruits_all} and 
 Table \ref{tab:Recruit_mod1}).
 
 
@@ -150,7 +150,7 @@ Table \ref{tab:Recruit_mod1}).
 
 
 ## Exploitation status{-}
-Harvest rates estimated by the base model .....
+Harvest rates estimated by the base model.
 management target levels (Table \ref{tab:SPR_Exploit_mod1} and Figure \ref{fig:SPR_all}). 
 
 
