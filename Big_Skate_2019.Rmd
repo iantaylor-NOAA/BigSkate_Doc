@@ -48,6 +48,10 @@ bibliography: BibFile.bib
     # Make small changes in this file and then try to compile the document
     # Commit when you have a success!
     source('./Rcode/Exec_summary_figs_tables.R')
+    #
+    # Andi added to create multi-line headings for tables.  From the internet, somewhere.
+    #
+    source("./Rcode/MultiHeader.R")
 ```
 
 \setlength{\parskip}{5mm plus1mm minus1mm}

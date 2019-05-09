@@ -5,7 +5,7 @@ output:
 ---
 
 <!-- ****************************RESEARCH NEEDS**************************** -->
-#Research Needs
+# Research Needs
 There are a number of areas of research that could improve the stock 
 assessment for `r spp`.  Below are issues identified by the STAT team 
 and the STAR panel:
@@ -28,7 +28,7 @@ and the STAR panel:
 
 
 <!-- ***************************ACKNOWLEDGEMENTS*************************** -->
-#Acknowledgments
+# Acknowledgments
 
 
 

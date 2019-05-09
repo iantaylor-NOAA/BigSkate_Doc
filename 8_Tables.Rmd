@@ -1,16 +1,134 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 <!-- ====================================================================== -->
 <!-- ****************************            ****************************** --> 
 <!-- ****************************BEGIN TABLES****************************** --> 
 <!-- ****************************             ***************************** --> 
 <!-- ======================================================================--> 
-
-\FloatBarrier
+# Tables
 
 <!-- ********************************************************************** --> 
 <!-- *********************Commercial landings TABLES*********************** --> 
 <!-- ********************************************************************** --> 
 
+```{r, results = 'asis'}
+
+############### Reconstructed Landings by Source
+
+Catch_by_State = read.csv("./txt_files/data_summaries/reconstructed_landings_by_state.csv")
+
+caption = "Landings by source.  Landings are reconstructed histories 1916-1995."
+
+colnames(Catch_by_State) = c("Year","CA (mt)","OR (mt)","WA (mt)","Tribal (mt)","Total (mt)")
+
+byState_catch.table = xtable(Catch_by_State, 
+                             caption = caption,
+                             label = 'tab:Reconstructed_Landings_byState')
+
+addtorow          <- list()
+addtorow$pos      <- list()
+addtorow$pos[[1]] <- c(0)
+addtorow$command  <- c(paste("\\hline \n",
+                             "\\endhead \n",
+                             "\\hline \n",
+                             "\\multicolumn{3}{l}",
+                             "{\\footnotesize Continued on next page} \n",
+                             "\\endfoot \n",
+                             "\\endlastfoot \n",sep=""))
+# Print
+print(byState_catch.table, 
+      include.rownames = FALSE,
+      caption.placement = 'top',
+      tabular.environment = 'longtable',
+      sanitize.colnames.function=function(x){x},
+      add.to.row = addtorow)
+
+```
+
+     
+     
+*********************************
+
+
 \FloatBarrier
+\newpage
+
+```{r, results = 'asis'}
+
+Indices = read.csv("./txt_files/data_summaries/table_of_index_inputs.csv")
+
+colnames(Indices) = c("Year","Obs","se_log","Obs","se_log","Obs","se_log")
+
+a_header <- construct_header(
+  # the data.frame or matrix that should be plotted
+  Indices,
+  # the labels of the groups that we want to insert
+  grp_names = c("", "WCGBTS", "Triennial","IPHC"),
+  # the number of columns each group spans
+  span = c(1, 2, 2,2),
+  # the alignment of each group, can be a single character (lcr) or a vector
+  align = "c"
+)
+
+index.table = xtable(Indices,
+                    caption = caption,
+                    label = 'tab:index_inputs')
+
+ align(index.table) = c('l', 'l',
+                               '>{\\centering}p{0.6in}',
+                               '>{\\centering}p{0.6in}',
+                               '>{\\centering}p{0.6in}',
+                               '>{\\centering}p{0.6in}',
+                               '>{\\centering}p{0.6in}',
+                               '>{\\centering}p{0.6in}')
+
+caption = "Index inputs."
+
+print(index.table, add.to.row = a_header, 
+      caption.placement = "top", 
+      include.rownames = F, hline.after = F)
+
+
+```
+
+
+\FloatBarrier
+\newpage
+
+
+```{r, results = 'asis'}
+
+PacFIN = read.csv("./txt_files/data_summaries/PacFIN.sample_sizes_by_state_with_ages.csv")
+
+
+colnames(PacFIN) = c("Year", rep(c("Ntows","Nfish"),5))
+
+a_header <- construct_header(
+  # the data.frame or matrix that should be plotted
+  PacFIN,
+  # the labels of the groups that we want to insert
+  grp_names = c("", "CA","OR","WA","All Landings","Discards"),
+  # the number of columns each group spans
+  span = c(1, 2,2,2,2,2),
+  # the alignment of each group, can be a single character (lcr) or a vector
+  align = "c"
+)
+
+
+caption = "PacFIN Samples."
+
+PacFIN.table = xtable(PacFIN,
+                             caption = caption,
+                             label = 'tab:PacFIN_Samples')
+
+
+print(PacFIN.table, add.to.row = a_header, 
+      caption.placement = "top", 
+      include.rownames = F, hline.after = F)
+```
 
 
 
@@ -18,6 +136,43 @@
 
 \FloatBarrier
 \newpage
+
+```{r, results = 'asis'}
+
+SurveySamples = read.csv("./txt_files/data_summaries/survey_sample_sizes.csv")
+
+caption = "Samples from the surveys."
+
+a_header <- construct_header(
+  # the data.frame or matrix that should be plotted
+  SurveySamples,
+  # the labels of the groups that we want to insert
+  grp_names = c("", "Triennial","WCGBTS","IPHC"),
+  # the number of columns each group spans
+  span = c(1, 2,2,2),
+  # the alignment of each group, can be a single character (lcr) or a vector
+  align = "c"
+)
+
+
+SurveySamples.table = xtable(SurveySamples,
+                             caption = caption,
+                             label = 'tab:Survey_Samples')
+
+print(SurveySamples.table, add.to.row = a_header, 
+      caption.placement = "top", 
+      include.rownames = F, hline.after = F)
+
+
+```
+
+
+
+
+
+\FloatBarrier
+\newpage
+
 <!-- ********************************************************************** --> 
 <!-- ***********Recreational Landings and discards TABLE******************* --> 
 <!-- ********************************************************************** --> 
