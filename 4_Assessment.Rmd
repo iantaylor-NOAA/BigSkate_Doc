@@ -1,15 +1,16 @@
 
+# Assessment
 
 <!-- ***********HISTORY AND CURRENT ASSESSMENT***************************** -->
-##Previous Assessments
+## Previous Assessments
 
-###History of Modeling Approaches Used for this Stock
+### History of Modeling Approaches Used for this Stock
 
 Deriving estimates of OFL for species in the “Other Fish” complex or potential alternative complexes
 
 The current “Other Fish” complex and proposed alternatives include a number of species for which estimates of OFL contributions are not available from stock assessments or data-poor methods. Four of the species had OFL contributions for the 2013–2014 management cycle calculated by applying approximate MSY harvest rates to estimates of stock biomass from the NWFSC West Coast Bottom Trawl Survey (Bradburn et al., 2012). This approach is described in detail in Cope et al. (2012). 
 
-###yyyy Assessment Recommendations
+### yyyy Assessment Recommendations
 
 \begin{description}[style=unboxed]
 
@@ -32,14 +33,14 @@ The current “Other Fish” complex and proposed alternatives include a number 
 
 
 <!-- ************************MODEL DESCRIPTION***************************** -->
-##Model Description
+## Model Description
 
 
-###Transition to the Current Stock Assessment
+### Transition to the Current Stock Assessment
 
 
 
-###Summary of Data for Fleets and Areas
+### Summary of Data for Fleets and Areas
 There are xxx fleets in the base model.  They include:
 
 *Commercial*: The commercial fleets include ...
@@ -51,17 +52,17 @@ There are xxx fleets in the base model.  They include:
 ###Other Specifications
 
 
-###Modeling Software
+### Modeling Software
 The STAT team used Stock Synthesis 3 version 3.30.05.03 by Dr. Richard Methot at 
 the NWFSC. This most recent version was used, since it included 
 improvements and corrections to older versions.  The r4SS package 
 (GitHub release number v1.27.0) was used to post-processing output data from Stock
 Synthesis. 
 
-###Data Weighting
+### Data Weighting
 
 
-###Priors
+### Priors
 The log-normal prior for female natural mortality were based on a meta-analysis 
 completed by Hamel [-@Hamel2015], as described under “Natural Mortality.” Female 
 natural mortality was fixed at the median of the prior, 0.xxx for an assumed
@@ -75,7 +76,7 @@ Steepness is fixed in the base model at the mean of the prior. The priors were a
 
 
 
-###Estimated and Fixed Parameters
+### Estimated and Fixed Parameters
 A full list of all estimated and fixed parameters is provided in Tables 
 \ref{tab:model_params}. 
 
@@ -104,17 +105,17 @@ _Other Fixed Parameters._
 
 
 
-##Model Selection and Evaluation
-###Key Assumptions and Structural Choices
+## Model Selection and Evaluation
+### Key Assumptions and Structural Choices
 
 
-###Alternate Models Considered
+### Alternate Models Considered
 
 
-###Convergence
+### Convergence
 
 
-##Response to the Current STAR Panel Requests
+## Response to the Current STAR Panel Requests
 
 \begin{description}[style=sameline]
 
@@ -160,7 +161,7 @@ _Other Fixed Parameters._
 \end{description}
 
 <!-- *********************MODEL 1 RESULTS********************************** -->
-##Base Case Model Results 
+## Base Case Model Results 
 The following description of the model results reflects a base model that 
 incorporates all of the changes made during the STAR panel (see previous section). 
 The base model parameter estimates and their approximate asymptotic standard errors 
@@ -171,7 +172,7 @@ Time-series of estimated stock size over time are shown in Table \ref{tab:Timese
 
 
 
-###Parameter Estimates
+### Parameter Estimates
 
 The additional survey variability (process error added directly to each year's input 
 variability) for all surveys was estimated within the model.  
@@ -183,12 +184,12 @@ variability) for all surveys was estimated within the model.
 The stock-recruit curve ... Figure \ref{fig:SR_curve2} with estimated recruitments also 
 shown. 
 
-###Fits to the Data
+### Fits to the Data
 Model fits to the indices of abundance, fishery length composition, survey length 
 composition, and conditional age-at-length observations are all discussed below.  
 
 
-###Uncertainty and Sensitivity Analyses
+### Uncertainty and Sensitivity Analyses
 A number of sensitivity analyses were conducted, including:
 
 \begin{enumerate}
@@ -210,15 +211,15 @@ A number of sensitivity analyses were conducted, including:
 
 
 
-###Retrospective Analysis
+### Retrospective Analysis
 
 
 
-###Likelihood Profiles
+### Likelihood Profiles
 
 
 
-###Reference Points
+### Reference Points
 Reference points were calculated using the estimated selectivities and catch distribution 
 among fleets in the most recent year of the model, (`r LastYR - 1`). Sustainable total 
 yield (landings plus discards) were `r Ref_pts_mod1[15,2]` mt when using an $SPR_{50\%}$ 

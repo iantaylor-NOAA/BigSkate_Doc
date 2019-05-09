@@ -1,7 +1,7 @@
 
 
 <!--************BIOLOGICAL DATA*********************************************-->
-###Biological Parameters and Data
+### Biological Parameters and Data
 
 **Measurement Details and Conversion Factors**
 
@@ -97,7 +97,7 @@ If it needs to be fixed, it should be set to M = 5.4/max age = 5.4/15 = 0.36
 \vspace{.5cm}
 
 
-###Environmental or Ecosystem Data Included in the Assessment
+### Environmental or Ecosystem Data Included in the Assessment
 In this assessment, neither environmental nor ecosystem considerations were explicitly included in the analysis.  This is primarily due to a lack of relevant data and results of analyses (conducted elsewhere) 
 that could contribute ecosystem-related quantitative information for the assessment.
 

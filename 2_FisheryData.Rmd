@@ -95,13 +95,13 @@ Input effN = $7.06 * N_{\text{trips}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is 
 \end{centering}
 
 
-###Sport Fishery Removals and Discards
+### Sport Fishery Removals and Discards
 
 
 
 Biological samples from the recreational fleets are described in the sections below.
 
-###Fishery-Dependent Indices of Abundance
+### Fishery-Dependent Indices of Abundance
 
 **Data Source 1**
 
@@ -121,7 +121,7 @@ _Data Source 1 Length Composition_
 
 <!-- ************FISHERY-INDPENDENT DATA*********************************** -->
 
-###Fishery-Independent Data Sources
+### Fishery-Independent Data Sources
 
 **Alaska Fisheries Science Center (AFSC) Triennial Shelf Survey**    
 Research surveys have been used since the 1970s to provide fishery-independent information about the abundance, distribution, and biological characteristics of `r spp`.  A coast-wide survey was conducted in 1977 [@Gunderson1980] by the Alaska Fisheries Science Center, and repeated every three years through 2001.  The final year of this survey, 2004, was conducted by the NWFSC according to the AFSC protocol. We refer to this as the **Triennial Survey**.
