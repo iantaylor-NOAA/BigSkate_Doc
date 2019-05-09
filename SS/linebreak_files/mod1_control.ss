@@ -426,8 +426,8 @@
         0         -4          0          0          0          0          0
           0          0  #  SzSel_Male_Ascend_Fishery_current(1)
             -5             5             0             0            99     
-        0         4          0          0          0          0          0 
-         0          0  #  SzSel_Male_Descend_Fishery_current(1)
+        0         -4          0          0          0          0          0
+          0          0  #  SzSel_Male_Descend_Fishery_current(1)
             -5             5             0             0            99     
         0         -4          0          0          0          0          0
           0          0  #  SzSel_Male_Final_Fishery_current(1)

@@ -254,7 +254,7 @@
 # female offset alternative 2 (parameter offsets)
            -50            50             0             0            99             0         4          0          0          0          0          0          0          0  #  SzSel_Male_Peak_Fishery_current(1)
             -5             5             0             0            99             0         -4          0          0          0          0          0          0          0  #  SzSel_Male_Ascend_Fishery_current(1)
-            -5             5             0             0            99             0         4          0          0          0          0          0          0          0  #  SzSel_Male_Descend_Fishery_current(1)
+            -5             5             0             0            99             0         -4          0          0          0          0          0          0          0  #  SzSel_Male_Descend_Fishery_current(1)
             -5             5             0             0            99             0         -4          0          0          0          0          0          0          0  #  SzSel_Male_Final_Fishery_current(1)
            0.5           1.5           1.0           1.0            99             0         4          0          0          0          0          0          0          0  #  SzSel_Male_Scale_Fishery_current(1)
 # 6   Triennial LenSelex
