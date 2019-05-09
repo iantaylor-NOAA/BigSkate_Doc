@@ -54,6 +54,8 @@ PacFIN.BSKT.BDS <- PacFIN.BSKT.BDS[-c(which(PacFIN.BSKT.BDS$FISH_LENGTH == 11520
 
 nrow(PacFIN.BSKT.BDS)
 ## [1] 7760
+# after new ages
+## [1] 7800
 
 #Select data only for one state, line below is for OR. This is for exploration purposes
 #PacFIN.BSKT.BDS <- PacFIN.BSKT.bds.30.Aug.2018[PacFIN.BSKT.bds.30.Aug.2018$SOURCE_AGID %in% 'O',]
@@ -303,7 +305,7 @@ PacFIN.BSKT.BDS.clean.ages <- cleanPacFIN(PacFIN.BSKT.BDS,
                                           keep_sample_method = c("R", "S"))
 ## Removal Report
 
-## Records in input:                  7825 
+## Records in input:                  7800 
 ## Records not in USINPFC             0 
 ## Records not in INPFC_AREA:         22 
 ## Records in bad INPFC_AREA:         0 
@@ -311,24 +313,17 @@ PacFIN.BSKT.BDS.clean.ages <- cleanPacFIN(PacFIN.BSKT.BDS,
 ## Records with bad SAMPLE_TYPE       2 
 ## Records with bad SAMPLE_METHOD     0 
 ## Records with no SAMPLE_NO          0 
-## Records with no usable length      20 
-## Records remaining:                 7781 
+## Records with no usable length      0 
+## Records remaining:                 7776 
 
 PacFIN.BSKT.BDS.ages <- cleanAges(PacFIN.BSKT.BDS.clean.ages, minAge = 0,
                                   keep_age_methods=c(4,"X"))
 ## Removal report
 
-## Records in input:                   7758 
-## Records with age less than min:     7123 
+## Records in input:                   7776 
+## Records with age less than min:     6981 
 ## Records with bad agemethods:        0 
-## Records remaining:                  635 
-
-## Removal report
-
-## Records in input:                   7781 
-## Records with age less than min:     6982 
-## Records with bad agemethods:        0 
-## Records remaining:                  799 
+## Records remaining:                  795
 
 PacFIN.BSKT.BDS.ages.exp1 <- getExpansion_1(PacFIN.BSKT.BDS.ages,
                                             maxExp = 0.95,
@@ -341,24 +336,15 @@ PacFIN.BSKT.BDS.ages.exp1$Final_Sample_Size <-
   PacFIN.BSKT.BDS.ages.exp1$Expansion_Factor_1
 
 table(PacFIN.BSKT.BDS.ages$SAMPLE_YEAR, PacFIN.BSKT.BDS.ages$state)
-##       OR  WA
-## 2004   0  11
-## 2008  79   0
-## 2009  85  65
-## 2010 102   0
-## 2011 201   0
-## 2018   0  92
-
 # new ages on May 8
   ##       OR  WA
   ## 2004   0  11
-  ## 2008  80   0
-  ## 2009  87  65
+  ## 2008  79   0
+  ## 2009  85  65
   ## 2010 102   0
-  ## 2011 202   0
+  ## 2011 201   0
   ## 2012 120   0
   ## 2018  39  93
-
 PacFIN.BSKT.BDS.ages.exp1$stratification <- PacFIN.BSKT.BDS.ages$state
 
 # don't do expansion factor 2 because WA samples from 2009 are non-random and
@@ -371,7 +357,7 @@ Acomps.exp1 = getComps(PacFIN.BSKT.BDS.ages.exp1, Comps="AGE")
 # no unsexed fish
 table(PacFIN.BSKT.BDS.ages.exp1$SEX)
 ##   F   M 
-## 234 500 
+## 233 497 
 ## Acomps = doSexRatio(Acomps)
 
 marginal_ages <- writeComps(Acomps.exp1,
@@ -382,8 +368,10 @@ marginal_ages <- writeComps(Acomps.exp1,
                             overwrite = TRUE, verbose = TRUE)
 
 # unexpanded ages
-PacFIN.BSKT.BDS.ages$Final_Sample_Size <- 1
-Acomps.nox = getComps(PacFIN.BSKT.BDS.ages, Comps="AGE")
+PacFIN.BSKT.BDS.ages.nox <- subset(PacFIN.BSKT.BDS.ages,
+                                   SAMPLE_METHOD != "S")
+PacFIN.BSKT.BDS.ages.nox$Final_Sample_Size <- 1
+Acomps.nox = getComps(PacFIN.BSKT.BDS.ages.nox, Comps="AGE")
 marginal_ages_nox <- writeComps(Acomps.nox,
                                 fname = file.path(pacfin.dir, "PacFIN.BSKT.BDS_age_comps_nox_5-8-2019.csv"),
                                 abins = BSKT.ABINS,
@@ -429,8 +417,14 @@ marginal_ages2 <- data.frame(marginal_ages[,c(1,2,4:6)],
 # turn off likelihood for marginals
 marginal_ages2$fleet <- -1
 
+marginal_ages2_nox <- data.frame(marginal_ages_nox[,c(1,2,4:6)],
+                            LbinLo = -1, LbinHi = -1,
+                             marginal_ages_nox[,-(1:6)])
+# turn off likelihood for marginals
+marginal_ages2_nox$fleet <- -1
+
 names(CAAL_both) <- names(marginal_ages2)
-all_ages <- rbind(marginal_ages2, CAAL_both)
+all_ages <- rbind(marginal_ages2, marginal_ages2_nox, CAAL_both)
 ages_fixed <- data.frame(year = all_ages$fishyr,
                          month = 7,
                          all_ages[,!names(all_ages) %in% c("fishyr", "Ntows")])
