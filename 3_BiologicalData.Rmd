@@ -51,7 +51,7 @@ composition data are in the above section for each fleet or survey.
 **Age Structures**
 
 
-von Bertalanffy growth curve [@vonBertalanffy1938], $L_i = L_{\infty}e^{(-k[t-t_0])}$, 
+von Bertalanffy growth curve [@VonB], $L_i = L_{\infty}e^{(-k[t-t_0])}$, 
 where $L_i$ is the length (cm) at age $i$, $t$ is age in years, $k$ is rate of 
 increase in growth, $t_0$ is the intercept, and $L_{\infty}$ is the asymptotic length.
 

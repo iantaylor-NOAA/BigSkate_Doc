@@ -298,7 +298,68 @@ SSplotComparisons(sens.sum_bio_and_misc,
                   filenameprefix = "sens.bio_and_misc_",
                   legendlabels = sens.names_bio_and_misc,
                   plotdir = dir.sensitivities)
- mortality M vs F
+
+#### catch sensitivities
+
+getbs(72, sensname="catch1")
+getbs(72, sensname="catch2")
+getbs(72, sensname="catch3")
+
+sens.sum_catch <- SSsummarize(list(bs72, bs72catch1, bs72catch2, bs72catch3))
+sens.names_catch <- c("Base model",
+                          "Discards based on 3yr averages",
+                          "Discard mortality = 0.4",
+                          "Discard mortality = 0.6")
+thingnames = c("Recr_Virgin", "R0", "NatM", "Linf",
+    "LnQ_base_WCGBTS",
+    "SSB_Virg", "SSB_2019",
+    "Bratio_2019", "SPRratio_2018", "Ret_Catch_MSY", "Dead_Catch_MSY")
+
+sens.table_catch <-
+    SStableComparisons(sens.sum_catch,
+                       modelnames=sens.names_catch,
+                       names=thingnames,
+                       csv=TRUE,
+                       csvdir = dir.sensitivities,
+                       csvfile = "comparison_table_sens.72.csv"
+                       )
+# create a new column of labels for each quantity
+newlabel <- sens.table_catch$Label
+newlabel <- gsub("p_1_", "", newlabel)
+newlabel <- gsub("GP_1", "", newlabel)
+newlabel <- gsub("SR_LN", "log", newlabel)
+newlabel <- gsub("_", " ", newlabel)
+newlabel <- gsub("LnQ base WCGBTS(5)", "Q WCGBTS", newlabel, fixed=TRUE)
+newlabel <- gsub("Fem", "Female", newlabel)
+newlabel <- gsub("Mal", "Male", newlabel)
+# convert some things to new units (non-log or non-offset)
+# Q to non-log space
+sens.table_catch[grep("LnQ", sens.table_catch$Label), -1] <-
+  exp(sens.table_catch[grep("LnQ", sens.table_catch$Label), -1])
+# male M offset
+sens.table_catch[grep("NatM_p_1_Mal", sens.table_catch$Label), -1] <-
+  sens.table_catch[grep("NatM_p_1_Fem", sens.table_catch$Label), -1] *
+    exp(sens.table_catch[grep("NatM_p_1_Mal", sens.table_catch$Label), -1])
+# male Linf offset
+sens.table_catch[grep("Linf_Mal", sens.table_catch$Label), -1] <-
+  sens.table_catch[grep("Linf_Fem", sens.table_catch$Label), -1] *
+    exp(sens.table_catch[grep("Linf_Mal", sens.table_catch$Label), -1])
+
+sens.table_catch$Label <- newlabel
+write.csv(sens.table_catch,
+          file = file.path(dir.sensitivities, 'Sensitivities_catch.csv'),
+          row.names = FALSE)
+
+SSplotComparisons(sens.sum_catch,
+                  print = TRUE,
+                  filenameprefix = "sens.catch_",
+                  legendlabels = sens.names_catch,
+                  plotdir = dir.sensitivities)
+
+
+
+
+## mortality M vs F
 ## Alternative catch or discard assumptions
 ## Data weighting (Francis, vs. M-I vs. Dirichlet-Multinomial)
 ## Prior on Q: on, wider, off
