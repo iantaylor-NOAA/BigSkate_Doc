@@ -12,7 +12,7 @@ and the STAR panel:
 
 \begin{enumerate}
 
-\item \textbf{xxxx}: 
+\item \textbf{Data!}: 
 
 \item \textbf{xxxx}:
 
@@ -30,7 +30,7 @@ and the STAR panel:
 <!-- ***************************ACKNOWLEDGEMENTS*************************** -->
 # Acknowledgments
 
-
+The authors gratefully acknowledge the time and effort reviewers Stacey Miller, Jim Hastie and Owen Hamel put into making this a polished document.
 
 
 \newpage

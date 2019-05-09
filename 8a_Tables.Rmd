@@ -1,4 +1,6 @@
 
+## Model Results Tables
+
 \FloatBarrier
 
 <!-- ====================================================================== -->
@@ -277,24 +279,23 @@
 ```{r, results = 'asis'}
     
     # Read in/organize sensitivity file, change column names, caption
-    Sens_model1 = read.csv('./txt_files/Sensitivities_model1.csv')
-    colnames(Sens_model1) = c('Label', 
-                              'Base (Francis weights)',
-                              'Default weights',
-                              'Harmonic mean weights',
-                              'Estimate equal M',
-                              'Estimate equal M and h',
-                              'Drop PR data',
-                              'Drop PC data',
-                              'Drop RecDD data')
+    Sens_model1 = read.csv('./txt_files/Sensitivities_Sel_and_Q.csv')
+    # colnames(Sens_model1) = c('Label', 
+    #                           'Base (Francis weights)',
+    #                           'Default weights',
+    #                           'Harmonic mean weights',
+    #                           'Estimate equal M',
+    #                           'Estimate equal M and h',
+    #                           'Drop PR data',
+    #                           'Drop PC data',
+    #                           'Drop RecDD data')
 
     # Create sensitivities table
     Sens_model1.table = xtable(Sens_model1, 
                                caption = c('Sensitivity of the base model 
-                                          to dropping or down-weighting data 
-                                          sources and alternative assumptions 
-                                          about growth.'),
-                               label = 'tab:Sensitivity_model1', digits = 2)    
+                                          to assumptions about selectivity and
+                                          catchability.'),
+                               label = 'tab:Sensitivity_Sel_and_Q', digits = 2)    
   
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
     # You can change this easily to have variable columns width after you know how many
