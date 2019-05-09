@@ -131,13 +131,10 @@ landings.BS$total_mean_catch_mean_rate_mt[yrs.sub] <-
 summary(landings.BS$total_mean_catch_mean_rate_mt)
 landings.BS$discard_mean_catch_mean_rate_mt[yrs.sub] <-
   mean.landings / (1 - mean.discard.rate.LN) - mean.landings
-summary(landings.BS$discard_mean_catch_mean_rate_mt)
-# old values with tribal catch included
-  ##  Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-  ## 775.7   775.7   775.7   775.7   775.7   775.7      57
-# new values without tribal catch
-  ##  Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-  ## 774.9   774.9   774.9   774.9   774.9   774.9      57 
+# get new total
+landings.BS$total_mean_catch_mean_rate_mt[yrs.sub] <-
+  landings.BS$discard_mean_catch_mean_rate_mt[yrs.sub] +
+    landings.BS$Landings_mt[yrs.sub]
 
 # 3-year moving averages
 landings.BS$Landings_3yr_avg <- NA
@@ -160,7 +157,6 @@ landings.BS$discard_annual_catch_annual_rate_mt <-
   landings.BS$total_annual_catch_annual_rate_mt - landings.BS$Landings_mt
 landings.BS$discard_3yr_catch_3yr_rate_mt <-
   landings.BS$total_3yr_catch_3yr_rate_mt - landings.BS$Landings_mt
-
 
 
 ## # linear ramp to 1950 (old method with discards only)
@@ -191,31 +187,66 @@ landings.BS$discard_mean_catch_mean_rate_mt[sub] <-
   landings.BS$total_mean_catch_mean_rate_mt[sub] - landings.BS$Landings_mt[sub]
 
 
+
 # plot landings and rates
+png(file.path(catch.dir, '../BigSkate_Doc/Figures/discard_calculations.png'),
+    res=300, units='in', width=6.5, height=5, pointsize=9)
+#
+par(mar=c(3,5,1,5))
 plot(landings.BS[,c("Year","Landings_mt")],
-                 type='h', lwd=6, lend=3, ylim=c(0,3000), yaxs='i', col=4)
-abline(lm.landings, col=3)
-abline(h = mean(landings.BS$Landings_mt[yrs.sub]), col=2)
-
-lines(discards$Year, 1000*discards$discard.rate, col=2, lwd=2)
-abline(h = 1000, lty=3, col=2)
-abline(a = 1000*lm.discard.rate$coeff[1],
-       b = 1000*lm.discard.rate$coeff[2], col=3)
-abline(h = 1000*mean.discard.rate.LN,
-       col=2)
-
-lines(landings.BS$Year, landings.BS$total_mean_catch_mean_rate_mt,
-      lwd=2, col=1)
+     ylab = "Landings, discards, or total catch (t)",
+     type='h', lwd=5, lend=3, ylim=c(0,3200), yaxs='i', col='gray30')
+#abline(lm.landings, col=3)
+#abline(h = mean(landings.BS$Landings_mt[yrs.sub]), col=2)
+#
+scale <- 3200
+#### linear fit to rates
+## abline(a = scale*lm.discard.rate$coeff[1],
+##        b = scale*lm.discard.rate$coeff[2], col=3)
+lines(discards$Year, scale*discards$discard.rate, col='green3', lwd=2)
+lines(x=c(1950,1995), y=rep(scale*mean.discard.rate.LN, 2),
+      col='green3', lty=3)
+axis(4, at=scale*seq(0,1,.2), lab=seq(0,1,.2), col.ticks=1, col=1)
+axis(4, at=scale*mean.discard.rate.LN,
+     lab=round(mean.discard.rate.LN, 3), col.ticks=1, col=1)
+mtext(side=4, line=3, "Discard rate", col='green3')
+#
 lines(landings.BS$Year, landings.BS$total_annual_catch_annual_rate_mt,
-      lwd=2, col=4)
-lines(landings.BS$Year, landings.BS$Landings_mt +
-        landings.BS$discard_3yr_catch_3yr_rate_mt,
-      lwd=2, col=5)
+      lwd=1, lty=1, col=2)
+lines(landings.BS$Year, landings.BS$total_3yr_catch_3yr_rate_mt,
+      lwd=2, col='purple')
+lines(landings.BS$Year, landings.BS$discard_3yr_catch_3yr_rate_mt,
+      lwd=1, lty=3, col='purple')
+lines(landings.BS$Year, landings.BS$total_mean_catch_mean_rate_mt,
+      lwd=3, col=4)
 lines(landings.BS$Year, landings.BS$discard_mean_catch_mean_rate_mt,
-      lwd=2, col=6)
-lines(landings.BS$Year, landings.BS$Landings_mt +
-        landings.BS$discard_mean_catch_mean_rate_mt,
-      lwd=2, col=6)
+      lwd=1, lty=2, col=4)
+par(lend=2) # make the lines squarer
+legend(x=1916,
+       y=2750,
+       bty='n',
+       lty=c(1,1,3,1,1,1,2,3),
+       lwd=c(5,2,1,3,2,1,1,1),
+       col=c("grey30", "green3", "green3", "blue","purple","red","blue","purple"),
+       legend=c("Reconstructed landings",
+           "Annual Longnose Skate discard rate",
+           "Mean Longnose Skate discard rate (1950-1995)",
+           "Total catch (based on 1950-1995 means)",
+           "Total catch (3-yr moving average)",
+           "Total catch (annual values)",
+           "Discards (based on 1950-1995 means)",
+           "Discards (3-yr moving average)"))
+par(lend=0)
+dev.off()
+
+## lines(landings.BS$Year, landings.BS$Landings_mt +
+##         landings.BS$discard_3yr_catch_3yr_rate_mt,
+##       lwd=2, col=2)
+## lines(landings.BS$Year, landings.BS$discard_mean_catch_mean_rate_mt,
+##       lwd=2, col=3)
+## lines(landings.BS$Year, landings.BS$Landings_mt +
+##         landings.BS$discard_mean_catch_mean_rate_mt,
+##       lwd=2, col=6)
 sum(landings.BS$total_mean_catch_mean_rate_mt[yrs.sub])
 ## [1] 38549.23
 sum(landings.BS$total_annual_catch_annual_rate_mt[yrs.sub])
@@ -316,6 +347,9 @@ write.csv(catch.table.doc,
           file=file.path(catch.dir, '../BigSkate_Doc/txt_files/data_summaries',
               'reconstructed_landings_by_state.csv'),
           row.names = FALSE)
-# save table for use elsewhere
-save(landings.BS, file=file.path(catch.dir, "landings.BS.RData"))
+### save table for use elsewhere
+#save(landings.BS, file=file.path(catch.dir, "landings.BS.RData"))
+
+### read saved table
+#load(file=file.path(catch.dir, "landings.BS.RData"))
 
