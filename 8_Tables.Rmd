@@ -10,6 +10,8 @@ output:
 <!-- ======================================================================--> 
 # Tables
 
+## Data Tables
+
 <!-- ********************************************************************** --> 
 <!-- *********************Commercial landings TABLES*********************** --> 
 <!-- ********************************************************************** --> 
@@ -73,6 +75,8 @@ a_header <- construct_header(
   align = "c"
 )
 
+caption = "Index inputs."
+
 index.table = xtable(Indices,
                     caption = caption,
                     label = 'tab:index_inputs')
@@ -85,7 +89,6 @@ index.table = xtable(Indices,
                                '>{\\centering}p{0.6in}',
                                '>{\\centering}p{0.6in}')
 
-caption = "Index inputs."
 
 print(index.table, add.to.row = a_header, 
       caption.placement = "top", 
@@ -102,7 +105,6 @@ print(index.table, add.to.row = a_header,
 ```{r, results = 'asis'}
 
 PacFIN = read.csv("./txt_files/data_summaries/PacFIN.sample_sizes_by_state_with_ages.csv")
-
 
 colnames(PacFIN) = c("Year", rep(c("Ntows","Nfish"),5))
 

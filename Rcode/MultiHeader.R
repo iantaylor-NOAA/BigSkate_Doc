@@ -1,3 +1,11 @@
+#########################################################################
+#
+# Someone named David posted this on Stack Overflow.  Works brilliantly!
+#
+# Added by Andi for Big Skate, 2019.
+#
+#########################################################################
+#
 #' Constructs a header i.e., groups for an xtable
 #'
 #' @param df a data.frame or matrix

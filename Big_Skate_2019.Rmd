@@ -97,6 +97,9 @@ bibliography: BibFile.bib
 ```{r child = "8_Tables.Rmd"}
 ```
 \newpage
+```{r child = "8a_Tables.Rmd"}
+```
+\newpage
 ```{r child = "9_1_figures_Intro_FishData.Rmd"}
 ```
 \newpage
