@@ -105,7 +105,7 @@ Coast in 2019}
 \RequirePackage[l2tabu, orthodox]{nag}                            % checks packages related to the accessibility?
 \usepackage[inline]{showlabels}                                   % show table and figure labels; comment out for final
 %\RequirePackage[tagged]{accessibilityMeta}
-
+\usepackage{pdflscape}                                            % For horizontal format
 
 \linenumbers                                                      % specify use of line numbers
 
@@ -518,9 +518,8 @@ Table \ref{tab:mnmgt_perform}
 
 \begin{table}[ht]
 \centering
-\caption{Recent trend in total catch and commercial 
-                              landings (mt) relative to the management guidelines. 
-                              Big skate was
+\caption{Recent trend in total catch (mt) relative to the 
+                              management guidelines. Big skate was
                               managed in the Other Species complex in 2013 and 2014,
                               designated an Ecosystem Component species in 2015 and
                               2016, and managed with stock-specific harvest
@@ -740,21 +739,10 @@ assessment:
 \subsection{Distribution and Life
 History}\label{distribution-and-life-history}}
 
-Big Skate (\emph{Raja binoculata}) is the largest of the skate species
-in North America with a documented maximum length of 244 cm total length
-and a maximum weight of 91 kg (Eschmeyer and Herald
-\protect\hyperlink{ref-Eschmeyer1983}{1983}). The species name
-``binoculata'' (two-eyed) refers to the prominent ocellus at the base of
-each pectoral fin. Big skate range from the Bering Sea to Cedros Island
-in Baja California, but are uncommon south of Pt. Conception. Big skate
-have a shallow depth distribution; they occur in coastal bays,
-estuaries, and over the continental shelf, usually on sandy or muddy
-bottoms, but occasionally on low strands of kelp.
-
 Skates are the largest and most widely distributed group of batoid fish
 with approximately 245 species ascribed to two families (Ebert and
-Compagno \protect\hyperlink{ref-Ebert2007}{2007})(McEachran and Miyake
-\protect\hyperlink{ref-McEachran1990}{1990}). Skates are benthic fish
+Compagno (\protect\hyperlink{ref-Ebert2007}{2007}), McEachran and Miyake
+(\protect\hyperlink{ref-McEachran1990}{1990})). Skates are benthic fish
 that are found in all coastal waters but are most common in cold
 temperatures and polar waters (Ebert and Compagno
 \protect\hyperlink{ref-Ebert2007}{2007}).
@@ -769,22 +757,90 @@ catches in terms of biomass and numbers, with the Longnose Skate leading
 in both categories (with 62 percent of biomass and 56 percent of
 numbers).
 
-Big Skates are usually seen buried in sediment with only their eyes
-showing. They feed on polychaete worms, mollusks, crustaceans, and small
-benthic fishes. Polychaetes and mollusks comprise a slightly greater
-percentage of the diet of younger individuals. The eyespots on the
-skates' wings are believed to serve as decoys to confuse predators. A
-known predator of big skates is the Broadnose Sevengill Shark
-(\emph{Notorhynchus cepedianus}). Juvenile Northern Elephant Seals
-(\emph{Mirounga angustirostris}) are known to consume the egg cases of
-the Big Skate. Known parasites include the copepod \emph{Lepeophtheirus
-cuneifer}.
+Big Skate (\emph{Raja binoculata}) is the largest of the skate species
+in North America with a documented maximum length of 244 cm total length
+and a maximum weight of 91 kg (Eschmeyer and Herald
+\protect\hyperlink{ref-Eschmeyer1983}{1983}). The species name
+``binoculata'' (two-eyed) refers to the prominent ocellus at the base of
+each pectoral fin. Big Skates are usually seen buried in sediment with
+only their eyes showing.
+
+The Big Skate is most common in soft-sediment habitats in coastal waters
+of the continental shelf (Bizzarro, JJ and Broms, KM and Logsdon, MG and
+Ebert, DA and Yoklavich, MM and Kuhnz, LA and Summers, AP
+(\protect\hyperlink{ref-Bizzarro2014}{2014}), Farrugia et al.
+(\protect\hyperlink{ref-Farrugia2016}{2016})). Use of mixed substrate
+(e.g., mud with boulders) increases with ontogeny but hard substrates
+are largely avoided (Bizzarro
+(\protect\hyperlink{ref-Bizzarro2015}{2015})). In the GOA, the Big Skate
+is the most commonly encountered skate species in continental shelf
+waters at 100--200 m depth, and is most abundant in the central and
+western areas of the GOA (Stevenson, DE and Orr, JW and Hoff, GR and
+McEachran, JD (\protect\hyperlink{ref-Stevenson2008}{2008}); Bizzarro,
+JJ and Broms, KM and Logsdon, MG and Ebert, DA and Yoklavich, MM and
+Kuhnz, LA and Summers, AP (\protect\hyperlink{ref-Bizzarro2014}{2014})).
+Off the U.S. Pacific Coast, the Big Skate is most densely distributed on
+the inner continental shelf (\textless{} 100 m; Bizzarro, JJ and Broms,
+KM and Logsdon, MG and Ebert, DA and Yoklavich, MM and Kuhnz, LA and
+Summers, AP (\protect\hyperlink{ref-Bizzarro2014}{2014})). Eggs are
+mainly deposited between 70--90 m on sand or mud substrates (Hitz
+(\protect\hyperlink{ref-Hitz1964}{1964}); NMFS-NWFSC-FRAM, unpub. data).
+Juveniles typically occur in shallower waters than adults (Bizzarro
+(\protect\hyperlink{ref-Bizzarro2015}{2015})). Core habitat regions of
+Big Skate off the U.S. Pacific Coast and in the Gulf of Alaska are
+spatially segregated from those of other species (Bizzarro, JJ and
+Broms, KM and Logsdon, MG and Ebert, DA and Yoklavich, MM and Kuhnz, LA
+and Summers, AP (\protect\hyperlink{ref-Bizzarro2014}{2014})).
+
+Big Skates are highly mobile and capable of long range (\textgreater{}
+2000 km) movements (KingandMcF2010; Farrugia et al.
+(\protect\hyperlink{ref-Farrugia2016}{2016})). For example, in British
+Columbia, a study revealed that \textasciitilde{}75\% of tagged
+individuals were recaptured within 21 km of the tagging locations, but
+15 of the tagged individuals (0.1\%) moved over 1,000 km (max = 2340 km;
+King, JR and McFarlane, GA
+(\protect\hyperlink{ref-KingandMcF2010}{2010})). In the Gulf of Alaska,
+a year of satellite tag data showed that six of twelve tagged
+individuals moved over 100 km, with one skate moving \textgreater{}
+2,000 km (Farrugia et al.~2016). Although primarily benthic, Big Skates
+utilize the entire water column including surface waters (Farrugia et
+al. (\protect\hyperlink{ref-Farrugia2016}{2016})). They have broad
+thermal tolerances 2--19º C that enable their occurrence from boreal to
+subtropical latitudes (Love, Milton S
+(\protect\hyperlink{ref-Love2011}{2011}); Farrugia et al.
+(\protect\hyperlink{ref-Farrugia2016}{2016})).
+
+Big Skates are opportunistic, generalist mesopredators with highly
+variable spatio-temporal trophic roles (Ebert and Compagno
+(\protect\hyperlink{ref-Ebert2007}{2007}); Bizzarro
+(\protect\hyperlink{ref-Bizzarro2015}{2015})). Off central California,
+diet of Big Skates is composed mainly of fishes, shrimps, and crabs (in
+descending order), with larger skates incorporating more fishes
+(({\textbf{???}})); however, in the Gulf of Alaska, Big Skate diet
+consists mainly of crabs (esp.~Tanner Crabs) throughout ontogeny, with
+relatively small portions of fishes and shrimps (Bizzarro
+(\protect\hyperlink{ref-Bizzarro2015}{2015})). Correspondingly, trophic
+level and general diet composition estimates differ significantly
+between California and Gulf of Alaska Big Skate populations (Bizzarro
+(\protect\hyperlink{ref-Bizzarro2015}{2015})).
+
+Big Skates and their egg cases are preyed upon by a variety of
+vertebrates and invertebrates. Snails and other molluscs bore holes in
+egg cases to feed on developing embryos and especially their protein
+rich yolk-sacs (Bizzarro, pers. obs; Hoff, GR
+(\protect\hyperlink{ref-Hoff2009}{2009})). Sevengill Sharks, Brown
+Rockfish, and Stellar Sea Lions are known predators of juvenile and
+adult Big Skates (Ebert (\protect\hyperlink{ref-Ebert2003}{2003}), Love,
+Milton S (\protect\hyperlink{ref-Love2011}{2011})). Northern Sea Lions
+consume free-living Big Skates and their egg cases (Ebert
+(\protect\hyperlink{ref-Ebert2003}{2003}), Love, Milton S
+(\protect\hyperlink{ref-Love2011}{2011})).
 
 In 2012, the Big Skate was moved from genus \emph{Raja} to the new genus
 \emph{Beringraja} together with the Mottled Skate (\emph{B. pulchra})
 (Ishihara et al. \protect\hyperlink{ref-Ishihara2012}{2012}). These are
 the only two skates with multiple embryos per egg case, and they are
-very similar mophologically and genetically (Bizzarro
+very similar mophologically and genetically (Bizzarro, J.
 \protect\hyperlink{ref-Bizzarro2019}{2019}).
 
 \hypertarget{biology}{%
@@ -817,7 +873,7 @@ on sand or mud substrates at depths of \textasciitilde{}50--150 m (Hitz
 \protect\hyperlink{ref-Hitz1964}{1964}, Ebert and Compagno
 \protect\hyperlink{ref-Ebert2007}{2007}). Embryos hatch from eggs after
 6--20 months, with shorter developmental periods associated with warmer
-temperatures (Hoff \protect\hyperlink{ref-Hoff2007}{2007}). In
+temperatures (Hoff, GR \protect\hyperlink{ref-Hoff2009}{2009}). In
 captivity, Big Skate females may produce \textgreater{} 350 eggs/year
 (average of 2 embryos/egg case; Chiquillo, Kelcie L and Ebert, David A
 and Slager, Christina J and Crow, Karen D
@@ -838,10 +894,9 @@ TL, 50\% = 119 cm TL; Ebert et al.
 (\protect\hyperlink{ref-Ebert2008}{2008})). Much smaller sizes at first
 (female = 60 cm TL, male = 50 cm TL) and 50\% (female = 90 cm TL, male =
 72 cm TL) maturity were generated for the Longnose Skate populations off
-British Columbia (McFarlane GA and King JR
-\protect\hyperlink{ref-McFandKing2006}{2006}); however, maturity
-evaluation criteria were flawed (subadults were considered to be
-mature), and these results are therefore not considered valid.
+British Columbia ({\textbf{???}}); however, maturity evaluation criteria
+were flawed (subadults were considered to be mature), and these results
+are therefore not considered valid.
 
 Age and growth parameters have been established from California, British
 Columbia, and the Gulf of Alaska. Maximum ages off central California
@@ -853,12 +908,16 @@ estimates off British Columbia were much greater (females = 26, males =
 are based on an unvalidated method and geographic differences in size or
 age may reflect differences in sampling or ageing criteria. In the Gulf
 of Alaska, Big Skates reach 50\% maturity at 10 years and 7 years for
-females and males, respectively (Gburski, C.M. and Gaichas, S.K. and
-Kimura, D.K. (\protect\hyperlink{ref-Gburski2007}{2007}), Ebert et al.
+females and males, respectively (({\textbf{???}}), Ebert et al.
 (\protect\hyperlink{ref-Ebert2008}{2008})). Generation length estimates
 range from 11.5 (Zeiner, S.J. and P. Wolf.
-\protect\hyperlink{ref-ZeinerWolf1993}{1993}) to 17 years (McFarlane GA
-and King JR \protect\hyperlink{ref-McFandKing2006}{2006}).
+\protect\hyperlink{ref-ZeinerWolf1993}{1993}) to 17 years
+({\textbf{???}}).
+
+\begin{landscape}
+
+
+\end{landscape}
 
 \hypertarget{map}{%
 \subsection{Map}\label{map}}
@@ -889,14 +948,14 @@ in the Pacific Northwest and then as fertilizer by the settlers (Bowers,
 G. M. \protect\hyperlink{ref-Bowers1909}{1909}). No directed fishery for
 Big Skate has been documented; rather, they were taken along with other
 skates and rays as ``scrap fish'' and used for fertilizer, fish meal and
-oil (Lippert \protect\hyperlink{ref-GregLippert}{2019}).
+oil ({\textbf{???}}).
 
 Skates have been regarded as a predator on desirable market species such
 as Dungeness crab, and were thought of as nuisance fish with no appeal
 as a food item save for small local markets. They had been discarded or
 harvested at a minimal level until their livers became valued along with
 those of other cartilaginous fishes for the extraction of vitamin A in
-the 1940s. Chapman (Chapman, WM
+the 1940s. Chapman (Chapman, W.M.
 \protect\hyperlink{ref-Chapman1944}{1944}) recorded that ``At present
 they are being fished heavily, in common with the other elasmobranchs of
 the coast, forthe vitamins in their livers. The carcasses are either
@@ -905,8 +964,7 @@ excellent meat of the wings''.
 
 Little information is available about the historic Washington fishery
 for Big Skate. In records before 2000, they are lumped together with
-other skates or in market categories (Lippert
-\protect\hyperlink{ref-GregLippert}{2019}); this necessitates
+other skates or in market categories ({\textbf{???}}); this necessitates
 considerable attention to reconstructing the fishery by observing the
 composition of skate catches in the modern fishery and applying those to
 the recently reconstructed historical records.
@@ -919,8 +977,7 @@ smaller amounts as by-catch in mid-water trawl and the shrimp trawl
 fishery. Big Skate was lumped into the nominal ``Skate'' category until
 2015 when it was separated into its own market category. Species
 composition data have been vitally important in reconstructing the
-pre-2015 historical catch (Calavan
-\protect\hyperlink{ref-TedCalavan}{2019}).
+pre-2015 historical catch ({\textbf{???}}).
 
 \hypertarget{stock-status-and-management-history}{%
 \subsection{Stock Status and Management
@@ -979,8 +1036,9 @@ regulatory area (western, central, and eastern). A single gulfwide
 overfishing level (OFL) is specified for each stock. All remaining skate
 species are managed as an ``Other Skates'' group with gulfwide harvest
 specifications. All GOA skates are managed as Tier 5 stocks, where OFL
-and ABC are based on survey biomass estimates and natural mortality
-rate.
+and ABC are based on survey biomass estimates and natural mortality rate
+(Alaska Fisheries Science Center
+\protect\hyperlink{ref-AFSC2018}{2018}).
 
 In the Bering Sea and Aleutian Islands, skates are assessed as a group
 rather than as separate species.
@@ -1133,7 +1191,7 @@ A reconstruction of historical skate landings from California waters was
 developed for the 1916--2017 time period using a combination of
 commercial catch data (spatially explicit block summary catches and port
 sample data from 2009-2017) and fishery-independent survey data
-(Bizzarro \protect\hyperlink{ref-Bizzarro2019}{2019}). Virtually all
+(Bizzarro, J. \protect\hyperlink{ref-Bizzarro2019}{2019}). Virtually all
 landings in California were of ``unspecified skate'' until
 species-composition sampling of skate market categories began in 2009.
 
@@ -1985,6 +2043,11 @@ sample size used in the McAllister\_Iannelli tuning method.
 \renewcommand{\thepage}{}
 
 \hypertarget{refs}{}
+\leavevmode\hypertarget{ref-AFSC2018}{}%
+Alaska Fisheries Science Center. 2018. Assessment of the skate stock
+complex in the Gulf of Alaska. Available from
+\href{\%7B\%7Bhttps://www.afsc.noaa.gov/REFM/Docs/2018/GOA/GOAskate.pdf\%7D\%7D}{\{\{https://www.afsc.noaa.gov/REFM/Docs/2018/GOA/GOAskate.pdf\}\}}.
+
 \leavevmode\hypertarget{ref-Batdorf1990}{}%
 Batdorf, C. 1990. Northwest Native Harvest. Hancock House Publishers
 Ltd.; Surrey, B.C., Canada.
@@ -1995,8 +2058,12 @@ pacific skates (rajiformes: Rajidae) with applications for
 ecosystem-based fisheries management. WA: University of Washington.
 
 \leavevmode\hypertarget{ref-Bizzarro2019}{}%
-Bizzarro, J. 2019. National Marine Fisheries Service; UC Santa Cruz;
-Personal Communication, Santa Cruz, CA, USA.
+Bizzarro, J. 2019. Manuscript in preparation.
+
+\leavevmode\hypertarget{ref-Bizzarro2014}{}%
+Bizzarro, JJ and Broms, KM and Logsdon, MG and Ebert, DA and Yoklavich,
+MM and Kuhnz, LA and Summers, AP. 2014. Spatial segregation in eastern
+north Pacific skate assemblages. PloS one \textbf{9}(10).
 
 \leavevmode\hypertarget{ref-Bowers1909}{}%
 Bowers, G. M. 1909. Report of The Commissioner For the Year Ending June
@@ -2009,12 +2076,8 @@ Washington, Oregon, and California: estimates of distribution,
 abundance, length, and age composition. NOAA Technical Memorandum NMFS
 NOAA-TM-NMFS-NWFSC-114: 323 pp.
 
-\leavevmode\hypertarget{ref-TedCalavan}{}%
-Calavan, T. 2019. Oregon Department of Fisheries; Wildlife; Personal
-Communication, Newport, OR, USA.
-
 \leavevmode\hypertarget{ref-Castro1996}{}%
-Castro-Aguirre, J., and Pérez, H. 1996. Catálogo sistemático de las
+Castro-Aguirre, J.L., and Pérez, H.E. 1996. Catálogo sistemático de las
 rayas y especies afines de méxico: Chondrichthyes: Elasmobranchii:
 Rajiformes: Batoideiomorpha. Unam.
 
@@ -2026,7 +2089,7 @@ considerations ~'o gicas y evoluutivas. \emph{In} Anales de la escuela
 nacional de ciencias biol ~'o gicas, m é xico. pp. 75--102.
 
 \leavevmode\hypertarget{ref-Chapman1944}{}%
-Chapman, WM. 1944. The Latent Fisheries of Washington and Alaska.
+Chapman, W.M. 1944. The Latent Fisheries of Washington and Alaska.
 Washington State Department of Fisheries.
 
 \leavevmode\hypertarget{ref-Chiquillo2014}{}%
@@ -2052,9 +2115,9 @@ skates. Springer. pp. 5--18.
 
 \leavevmode\hypertarget{ref-Ebert2008}{}%
 Ebert, D.A., Smith, W.D., and Cailliet, G.M. 2008. Reproductive biology
-of two commercially exploited skates, (\emph{Raja binoculata}) and
-(\emph{Raja rhina}), in the western gulf of alaska. Fisheries Research
-\textbf{94}(1): 48--57. Elsevier.
+of two commercially exploited skates, raja binoculata and r. Rhina, in
+the western gulf of alaska. Fisheries Research \textbf{94}(1): 48--57.
+Elsevier.
 
 \leavevmode\hypertarget{ref-Eschmeyer1983}{}%
 Eschmeyer, W.N., and Herald, E.S. 1983. A field guide to pacific coast
@@ -2063,19 +2126,13 @@ fishes: North america. Houghton Mifflin Harcourt.
 \leavevmode\hypertarget{ref-Farrugia2016}{}%
 Farrugia, T.J., Goldman, K.J., Tribuzio, C., and Seitz, A.C. 2016. First
 use of satellite tags to examine movement and habitat use of big skates
-(\emph{Beringraja binoculata} in the gulf of alaska. Marine Ecology
-Progress Series \textbf{556}: 209--221.
+beringraja binoculata in the gulf of alaska. Marine Ecology Progress
+Series \textbf{556}: 209--221.
 
 \leavevmode\hypertarget{ref-Ford1971}{}%
 Ford, P. 1971. Differential growth rate in the tail of the pacific big
 skate, (\emph{Raja binoculata}). Journal of the Fisheries Board of
 Canada \textbf{28}(1): 95--98. NRC Research Press.
-
-\leavevmode\hypertarget{ref-Gburski2007}{}%
-Gburski, C.M. and Gaichas, S.K. and Kimura, D.K. 2007. Age and growth of
-big skate (\emph{Raja binoculata}) and longnose skate (\emph{Raja
-rhina}) in the Gulf of Alaska. \emph{In} Biology of Skates. Springer,
-Dordrecht.
 
 \leavevmode\hypertarget{ref-Gertseva2019}{}%
 Gertseva, V. 2019. Manuscript in preparation.
@@ -2095,14 +2152,13 @@ ICES Journal of Marine Science: Journal du Conseil \textbf{72}(1):
 \href{https://doi.org/\%7B10.1093/icesjms/fsu131\%7D}{\{10.1093/icesjms/fsu131\}}.
 
 \leavevmode\hypertarget{ref-Hitz1964}{}%
-Hitz, C. 1964. Observations on egg cases of the big skate (\emph{Raja
-binoculata girard}) found in oregon coastal waters. Journal of the
+Hitz, C.R. 1964. Observations on egg cases of the big skate (raja
+binoculata girard) found in oregon coastal waters. Journal of the
 Fisheries Board of Canada \textbf{21}(4): 851--854. NRC Research Press.
 
-\leavevmode\hypertarget{ref-Hoff2007}{}%
-Hoff, G.R. 2007. Reproductive biology of the alaska skate, bathyraja
-parmifera, with regard to nursery sites, embryo development, and
-predation. PhD thesis, University of Washington.
+\leavevmode\hypertarget{ref-Hoff2009}{}%
+Hoff, GR. 2009. Skate Bathyraja spp. egg predation in the eastern Bering
+Sea. J. Fish. Biol. \textbf{74}: 250--269.
 
 \leavevmode\hypertarget{ref-Ishihara2012}{}%
 Ishihara, H., Treloar, M., Bor, P., Senou, H., and Jeong, C. 2012. The
@@ -2123,13 +2179,13 @@ georgia spiny dogfish (squalus acanthias) longline survey, october
 
 \leavevmode\hypertarget{ref-King2015}{}%
 King, J.R., Surry, A.M., Garcia, S., and P.J. Starr. 2015. Big skate
-(\emph{Raja binoculata}) and longnose skate (\emph{Raja rhina}) stock
-assessments for British Columbia. Ottawa : Canadian Science Advisory
-Secretariat.
+(Raja binoculata) and longnose skate (R. rhina) stock assessments for
+British Columbia. Ottawa : Canadian Science Advisory Secretariat.
 
-\leavevmode\hypertarget{ref-GregLippert}{}%
-Lippert, G. 2019. Washington Department of Fisheries; Wildlife; Personal
-Communication, Olympia, Washington, USA.
+\leavevmode\hypertarget{ref-KingandMcF2010}{}%
+King, JR and McFarlane, GA. 2010. Movement patterns and growth estimates
+of big skate (\emph{Raja binoculata}) based on tag-recapture data. Fish.
+Res. \textbf{101}: 50--59.
 
 \leavevmode\hypertarget{ref-Love2011}{}%
 Love, Milton S. 2011. Certainly more than you want to know about the
@@ -2148,11 +2204,6 @@ skates (chondrichthyes, rajidae). Elasmobranchs as living resources.
 Advances in biology, Ecology, Systematics and the status of the
 fisheries: 305--326.
 
-\leavevmode\hypertarget{ref-McFandKing2006}{}%
-McFarlane GA and King JR. 2006. Age and growth of big skate (\emph{Raja
-binoculata}) and longnose skate (\emph{Raja rhina}) in British Columbia
-waters. Fisheries Research \textbf{May 1 (2-3)}: 169--78.
-
 \leavevmode\hypertarget{ref-Mecklenburg2002}{}%
 Mecklenburg, CW and Mecklenburg, TA and Thorsteinson, LK. 2002. Fishes
 of Alaska. American Fisheries Society, Bethesda, Maryland.
@@ -2162,6 +2213,12 @@ Miller, B.S., Cross, J.N., Steinfort, S.N., Fresh, K.L., and Simenstad,
 C.A. 1980. Nearshore fish and macroinvertebrate assemblages along the
 strait of juan de fuca including food habits of the common nearshore
 fish.
+
+\leavevmode\hypertarget{ref-Stevenson2008}{}%
+Stevenson, DE and Orr, JW and Hoff, GR and McEachran, JD. 2008. Emerging
+patterns of species richness, diversity, population density, and
+distribution in the skates (Rajidae) of Alaska. Fish Bull \textbf{106}:
+24--39.
 
 \leavevmode\hypertarget{ref-Thorson2017a}{}%
 Thorson, James T. and Barnett, Lewis A. K. 2017. Comparing estimates of

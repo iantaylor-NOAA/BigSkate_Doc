@@ -10,27 +10,75 @@ output:
 
 ## Distribution and Life History
 
-Big Skate (*Raja binoculata*) is the largest of the skate species in North America with a documented maximum length of 244 cm total length and a maximum weight of 91 kg [@Eschmeyer1983].  The species name “binoculata” (two-eyed) refers to the prominent ocellus at the base of each pectoral fin. Big skate range from the Bering Sea to Cedros Island in Baja California, but are uncommon south of Pt. Conception. Big skate have a shallow depth distribution; they occur in coastal bays, estuaries, and over the continental shelf, usually on sandy or muddy bottoms, but occasionally on low strands of kelp.
-
-Skates are the largest and most widely distributed group of batoid fish with approximately 245 species ascribed to two families [@Ebert2007][@McEachran1990]. Skates are benthic fish that are found in all coastal waters but are most common in cold temperatures and polar waters [@Ebert2007].
+Skates are the largest and most widely distributed group of batoid fish with approximately 245 species ascribed to two families (@Ebert2007, @McEachran1990). Skates are benthic fish that are found in all coastal waters but are most common in cold temperatures and polar waters [@Ebert2007].
 
 There are eleven species of skates in three genera (Amblyraja, Bathyraja, and Raja) present in the Northeast Pacific Ocean off California, Oregon and Washington (Ebert 2003). Of that number, just three species (Longnose Skate, *Raja rhina*; Big Skate, *Raja binoculata*; and Sandpaper Skate, *Bathyraja interrupta*) make up over 95 percent of West Coast Groundfish Bottom Trawl Survey (WCGBTS) catches in terms of biomass and numbers, with the Longnose Skate leading in both categories (with 62 percent of biomass and 56 percent of numbers).
 
-Big Skates are usually seen buried in sediment with only their eyes showing. They feed on polychaete worms, mollusks, crustaceans, and small benthic fishes. Polychaetes and mollusks comprise a slightly greater percentage of the diet of younger individuals. The eyespots on the skates' wings are believed to serve as decoys to confuse predators.  A known predator of big skates is the Broadnose Sevengill Shark (*Notorhynchus cepedianus*).  Juvenile Northern Elephant Seals (*Mirounga angustirostris*) are known to consume the egg cases of the Big Skate. Known parasites include the copepod *Lepeophtheirus cuneifer*.
+Big Skate (*Raja binoculata*) is the largest of the skate species in North America with a documented maximum length of 244 cm total length and a maximum weight of 91 kg [@Eschmeyer1983].  The species name “binoculata” (two-eyed) refers to the prominent ocellus at the base of each pectoral fin.  Big Skates are usually seen buried in sediment with only their eyes showing.
+
+The Big Skate is most common in soft-sediment habitats in coastal waters of the continental shelf (@Bizzarro2014, @Farrugia2016). Use of mixed substrate (e.g., mud with boulders) increases with ontogeny but hard substrates are largely avoided (@Bizzarro2015).  In the GOA, the Big Skate is the most commonly encountered skate species in continental shelf waters at 100–200 m depth, and is most abundant in the central and western areas of the GOA (@Stevenson2008; @Bizzarro2014). Off the U.S. Pacific Coast, the Big Skate is most densely distributed on the inner continental shelf (< 100 m; @Bizzarro2014). Eggs are mainly deposited between 70–90 m on sand or mud substrates (@Hitz1964; NMFS-NWFSC-FRAM, unpub. data). Juveniles typically occur in shallower waters than adults (@Bizzarro2015). Core habitat regions of Big Skate off the U.S. Pacific Coast and in the Gulf of Alaska are spatially segregated from those of other species (@Bizzarro2014).
+
+Big Skates are highly mobile and capable of long range (> 2000 km) movements (KingandMcF2010; @Farrugia2016). For example, in British Columbia, a study revealed that ~75% of tagged individuals were recaptured within 21 km of the tagging locations, but 15 of the tagged individuals (0.1%) moved over 1,000 km (max = 2340 km; @KingandMcF2010). In the Gulf of Alaska, a year of satellite tag data showed that six of twelve tagged individuals moved over 100 km, with one skate moving > 2,000 km (Farrugia et al.  2016). Although primarily benthic, Big Skates utilize the entire water column including surface waters (@Farrugia2016). They have broad thermal tolerances 2–19º C that enable their occurrence from boreal to subtropical latitudes (@Love2011; @Farrugia2016).
+
+Big Skates are opportunistic, generalist mesopredators with highly variable spatio-temporal trophic roles (@Ebert2007; @Bizzarro2015). Off central California, diet of Big Skates is composed mainly of fishes, shrimps, and crabs (in descending order), with larger skates incorporating more fishes (@Bizzarro2007); however, in the Gulf of Alaska, Big Skate diet consists mainly of crabs (esp. Tanner Crabs) throughout ontogeny, with relatively small portions of fishes and shrimps (@Bizzarro2015). Correspondingly, trophic level and general diet composition estimates differ significantly between California and Gulf of Alaska Big Skate populations (@Bizzarro2015). 
+
+Big Skates and their egg cases are preyed upon by a variety of vertebrates and invertebrates. Snails and other molluscs bore holes in egg cases to feed on developing embryos and especially their protein rich yolk-sacs (Bizzarro, pers. obs; @Hoff2009). Sevengill Sharks, Brown Rockfish, and Stellar Sea Lions are known predators of juvenile and adult Big Skates (@Ebert2003, @Love2011). Northern Sea Lions consume free-living Big Skates and their egg cases (@Ebert2003, @Love2011).
 
 In 2012, the Big Skate was moved from genus *Raja* to the new genus *Beringraja* together with the Mottled Skate (*B. pulchra*) [@Ishihara2012].  These are the only two skates with multiple embryos per egg case, and they are very similar mophologically and genetically [@Bizzarro2019].
-
 
 ## Biology
 
 The Big Skate is broadly distributed, occurring from the southeastern Bering Sea [@Mecklenburg2002] to southern Baja California (22.90º N, 110.03º W; [@Castro1993]) and the Gulf of California [@Castro1996]. It has been reported at depths of 2–501 m (min: @Miller1980; max: @Farrugia2016) but is most common on the inner continental shelf (< 100 m; [@Love2011]; [@Bizzarro2015]). Big Skates are highly mobile and capable of long range (> 2000 km) movements ([@KingandMcF2009]; [@Farrugia2016]). 
 
-Big Skate is oviparious, and is one of two skate species that have multiple embryos per egg case [@Ebert2008]. From 1–8 embryos can be contained in a single, large egg capsule, but most have 3–4 [@DeLacy1935; @Hitz1964; @Ford1971]. Eggs are deposited year-round on sand or mud substrates at depths of ~50–150 m [@Hitz1964; @Ebert2007]. Embryos hatch from eggs after 6–20 months, with shorter developmental periods associated with warmer temperatures [@Hoff2007]. In captivity, Big Skate females may produce > 350 eggs/year (average of 2 embryos/egg case; @Chiquillo2014) from long-term sperm storage [@Jang2019]. Size at birth is 18–23 cm TL [@Ebert2003]. Maximum size is 244 cm TL [@Eschmeyer1983, with females growing to larger sizes.
+Big Skate is oviparious, and is one of two skate species that have multiple embryos per egg case [@Ebert2008]. From 1–8 embryos can be contained in a single, large egg capsule, but most have 3–4 [@DeLacy1935; @Hitz1964; @Ford1971]. Eggs are deposited year-round on sand or mud substrates at depths of ~50–150 m [@Hitz1964; @Ebert2007]. Embryos hatch from eggs after 6–20 months, with shorter developmental periods associated with warmer temperatures [@Hoff2009]. In captivity, Big Skate females may produce > 350 eggs/year (average of 2 embryos/egg case; @Chiquillo2014) from long-term sperm storage [@Jang2019]. Size at birth is 18–23 cm TL [@Ebert2003]. Maximum size is 244 cm TL [@Eschmeyer1983, with females growing to larger sizes.
 
 Size at maturity has been variably estimated for Big Skate populations off California, British Columbia, and Alaska. Off central California, Zeiner and Wolf [-@ZeinerWolf1993] reported sizes at first maturity of ~129 cm TL (females) and ~100 cm TL (males).  A similar size at maturity was estimated for females from the Gulf of Alaska (first = 126 cm TL, 50% = 149 cm TL), but male estimates were considerably greater (first = 124 cm TL, 50% = 119 cm TL; @Ebert2008).  Much smaller sizes at first (female = 60 cm TL, male = 50 cm TL) and 50% (female = 90 cm TL, male = 72 cm TL) maturity were generated for the Longnose Skate populations off British Columbia [@McFandKing2006]; however, maturity evaluation criteria were flawed (subadults were considered to be mature), and these results are therefore not considered valid.
 
 Age and growth parameters have been established from California, British Columbia, and the Gulf of Alaska. Maximum ages off central California (females = 12, males = 11; @ZeinerWolf1993) and in the Gulf of Alaska (females = 14, males = 15; Gburski et al. 2007) were similar, but estimates off British Columbia were much greater (females = 26, males = 25; McFarlane and King 2006). It is important to note that age estimates are based on an unvalidated method and geographic differences in size or age may reflect differences in sampling or ageing criteria. In the Gulf of Alaska, Big Skates reach 50% maturity at 10 years and 7 years for females and males, respectively (@Gburski2007, @Ebert2008). Generation length estimates range from 11.5 [@ZeinerWolf1993] to 17 years [@McFandKing2006]. 
 
+\begin{landscape}
+
+```{r, results='asis'}
+#
+Life_History = read.csv('./txt_files/BigSkate_LifeHistory.csv')
+
+colnames(Life_History) = c("Region","Sex",
+                           "1st Maturity (TL cm)",
+                           "50% Maturity (TL cm)",
+                           "Max Age (year)",
+                           "1st Maturity (year)",
+                           "50% Maturity (year)"
+                           )
+
+Life_History.table = xtable(Life_History,
+                          caption = c("Regional comparison of life history parameter estimates."),
+                          label='tab:Life_Hist')
+
+# Add alignment - you will have to adjust based on the number of columns you have
+# and the desired width, remember to add one leading ghost column for row.names
+align(Life_History.table) = c('l', 'l',
+                              '>{\\centering}p{0.8in}',
+                              '>{\\centering}p{0.8in}',
+                              '>{\\centering}p{0.8in}',
+                              '>{\\centering}p{0.8in}',
+                              '>{\\centering}p{0.8in}',
+                              '>{\\centering}p{0.8in}')
+    # CSV: './txt_files/BigSkate_LifeHistory.csv'
+    # Catch table section in R_exec_summary_fig_tables.R
+    # Print the table sideways
+
+
+ # print(Life_History.table,
+ #        include.rownames = FALSE,
+ #        caption.placement = 'top',
+ # #       floating.environment = 'sidewaystable',
+ #        sanitize.text.function = function(x){x},
+ #        scalebox = .6,
+ #        align = TRUE,
+ #        hline.after = c(-1, 0, nrow(Life_History.table)))
+
+```
+\end{landscape}
 
 ## Map
 A map showing the scope of the assessment and depicting boundaries for fisheries or data collection strata is provided in Figure \ref{fig:boundary_map}.
@@ -70,7 +118,7 @@ Table \ref{tab:mnmgt_perform}
 
 In Alaska, skates were primarily taken as bycatch in both longline and trawl fisheries until 2003, when a directed skate fishery developed in the Gulf of Alaska, where Longnose and Big skates comprise the majority of the skate biomass. 
 
-The Gulf of Alaska (GOA) skate complex is managed as three units. Big skates and Longnose Skates each have separate harvest specifications, with acceptable biological catches (ABCs) specified for each GOA regulatory area (western, central, and eastern). A single gulfwide overfishing level (OFL) is specified for each stock. All remaining skate species are managed as an “Other Skates” group with gulfwide harvest specifications. All GOA skates are managed as Tier 5 stocks, where OFL and ABC are based on survey biomass estimates and natural mortality rate.
+The Gulf of Alaska (GOA) skate complex is managed as three units. Big skates and Longnose Skates each have separate harvest specifications, with acceptable biological catches (ABCs) specified for each GOA regulatory area (western, central, and eastern). A single gulfwide overfishing level (OFL) is specified for each stock. All remaining skate species are managed as an “Other Skates” group with gulfwide harvest specifications. All GOA skates are managed as Tier 5 stocks, where OFL and ABC are based on survey biomass estimates and natural mortality rate [@AFSC2018].
 
 In the Bering Sea and Aleutian Islands, skates are assessed as a group rather than as separate species.
 
