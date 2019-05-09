@@ -161,14 +161,34 @@ landings.BS$discard_annual_catch_annual_rate_mt <-
 landings.BS$discard_3yr_catch_3yr_rate_mt <-
   landings.BS$total_3yr_catch_3yr_rate_mt - landings.BS$Landings_mt
 
-# linear ramp to 1950
-landings.BS$discard_mean_catch_mean_rate_mt[landings.BS$Year < 1950] <- 
+
+
+## # linear ramp to 1950 (old method with discards only)
+## landings.BS$discard_mean_catch_mean_rate_mt[landings.BS$Year < 1950] <- 
+##   (landings.BS$Year[landings.BS$Year < 1950] - 1916) / (1950 - 1916) *
+##     landings.BS$discard_mean_catch_mean_rate_mt[landings.BS$Year == 1950]
+## # linear ramp to 1950 for 3yr avg
+## landings.BS$discard_3yr_catch_3yr_rate_mt[landings.BS$Year < 1950] <- 
+##   (landings.BS$Year[landings.BS$Year < 1950] - 1916) / (1950 - 1916) *
+##     landings.BS$discard_3yr_catch_3yr_rate_mt[landings.BS$Year == 1950]
+
+
+# linear ramp to 1950 (matching longnose, ramping total catch)
+landings.BS$total_mean_catch_mean_rate_mt[landings.BS$Year < 1950] <- 
   (landings.BS$Year[landings.BS$Year < 1950] - 1916) / (1950 - 1916) *
-    landings.BS$discard_mean_catch_mean_rate_mt[landings.BS$Year == 1950]
+    landings.BS$total_mean_catch_mean_rate_mt[landings.BS$Year == 1950]
 # linear ramp to 1950 for 3yr avg
-landings.BS$discard_3yr_catch_3yr_rate_mt[landings.BS$Year < 1950] <- 
+landings.BS$total_3yr_catch_3yr_rate_mt[landings.BS$Year < 1950] <- 
   (landings.BS$Year[landings.BS$Year < 1950] - 1916) / (1950 - 1916) *
-    landings.BS$discard_3yr_catch_3yr_rate_mt[landings.BS$Year == 1950]
+    landings.BS$total_3yr_catch_3yr_rate_mt[landings.BS$Year == 1950]
+
+# assume California catch before 1939 are no good so all earlier catch is discards
+landings.BS$Landings_mt[landings.BS$Year < 1939] <- 0
+sub <- landings.BS$Year < 1950
+landings.BS$discard_3yr_catch_3yr_rate_mt[sub] <-
+  landings.BS$total_3yr_catch_3yr_rate_mt[sub] - landings.BS$Landings_mt[sub]
+landings.BS$discard_mean_catch_mean_rate_mt[sub] <- 
+  landings.BS$total_mean_catch_mean_rate_mt[sub] - landings.BS$Landings_mt[sub]
 
 
 # plot landings and rates
@@ -231,19 +251,40 @@ discards.table <- data.frame(yr = landings.BS$Year,
 discards.table2 <- data.frame(yr = landings.BS$Year,
                               seas = 1,
                               fleet = 2,
-                              catch = round(disc_mort *
+                              catch = round((1-disc_mort) *
                                               landings.BS$discard_3yr_catch_3yr_rate_mt, 1),
                               catch_se = 0.01,
                               note = "#_estimated_discards_from_3yr_moving_avg")
 
+disc_mort <- 0.4
+discards.table0.4 <- data.frame(yr = landings.BS$Year,
+                             seas = 1,
+                             fleet = 2,
+                             catch = round((1-disc_mort) *
+                                             landings.BS$discard_mean_catch_mean_rate_mt, 1),
+                             catch_se = 0.01,
+                             note = "#_estimated_discards_from_mean_values_with_mort=0.4")
+disc_mort <- 0.6
+discards.table0.6 <- data.frame(yr = landings.BS$Year,
+                             seas = 1,
+                             fleet = 2,
+                             catch = round((1-disc_mort) *
+                                             landings.BS$discard_mean_catch_mean_rate_mt, 1),
+                             catch_se = 0.01,
+                             note = "#_estimated_discards_from_mean_values_with_mort=0.6")
+
 discards.table <- discards.table[discards.table$yr < 1995,]
 discards.table2 <- discards.table2[discards.table2$yr < 1995,]
-write.csv(rbind(landings.table, discards.table, discards.table2, landings.table.tribal),
-          file = file.path(catch.dir, 'catch_for_SS_5-06-2019.csv'), row.names=FALSE)
+discards.table0.4 <- discards.table0.4[discards.table0.4$yr < 1995,]
+discards.table0.6 <- discards.table0.6[discards.table0.6$yr < 1995,]
+# write file
+write.csv(rbind(landings.table, discards.table, discards.table2, discards.table0.4, discards.table0.6, landings.table.tribal),
+          file = file.path(catch.dir, 'catch_for_SS_5-08-2019.csv'), row.names=FALSE)
 # comment out alternative discard estimates
-lines1 <- readLines(con = file.path(catch.dir, 'catch_for_SS_5-06-2019.csv'))
+lines1 <- readLines(con = file.path(catch.dir, 'catch_for_SS_5-08-2019.csv'))
 lines1[grep("3yr", lines1)] <- paste("#", lines1[grep("3yr", lines1)])
-writeLines(lines1, con = file.path(catch.dir, 'catch_for_SS_commented_5-06-2019.csv'))
+lines1[grep("with_mort", lines1)] <- paste("#", lines1[grep("with_mort", lines1)])
+writeLines(lines1, con = file.path(catch.dir, 'catch_for_SS_commented_5-08-2019.csv'))
 
 
 
@@ -273,5 +314,8 @@ for(y in 1916:2018){
 }
 write.csv(catch.table.doc,
           file=file.path(catch.dir, '../BigSkate_Doc/txt_files/data_summaries',
-                         'reconstructed_landings_by_state.csv'))
+              'reconstructed_landings_by_state.csv'),
+          row.names = FALSE)
+# save table for use elsewhere
+save(landings.BS, file=file.path(catch.dir, "landings.BS.RData"))
 
