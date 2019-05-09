@@ -105,9 +105,24 @@ out.dir.mod1 = file.path(output.dir,'plots_mod1')
 #out.dir.mod2 = file.path(output.dir,'plots_mod2')
 #out.dir.mod3 = file.path(output.dir,'plots_mod3')
 
+# fleetnames for catch plot
+fleetnames_catch <- c("Fishery (current)",
+                      "Discard (historical)",
+                      "Fishery (historical)",
+                      "Fishery (tribal)",
+                      "Triennial",
+                      "WCGBTS")
+# fleetnames for all other plots
+fleetnames1 <- c("Fishery",
+                 "Discard (historical)",
+                 "Fishery (historical)",
+                 "Fishery (tribal)",
+                 "Triennial Survey",
+                 "WCGBT Survey")
 
 # Model 1
 SS_plots(mod1,
+         fleetnames = fleetnames1,
          png = TRUE,
          html = FALSE,
          datplot = TRUE,
@@ -119,35 +134,18 @@ SS_plots(mod1,
          printfolder = '', 
          dir = out.dir.mod1)
 
-# Model2
-if(n_models > 1){
-  SS_plots(mod2,
-           png = TRUE,
-           html = FALSE,
-           datplot = TRUE,
-           uncertainty = TRUE,
-           maxrows = 6, 
-           maxcols = 6, 
-           maxrows2 = 4, 
-           maxcols2 = 4, 
-           printfolder = '', 
-           dir = out.dir.mod2)
-}
+# rename catch plots
+SS_plots(mod1,
+         fleetnames = fleetnames_catch,
+         plot = 7,
+         png = TRUE,
+         html = FALSE,
+         printfolder = '', 
+         dir = out.dir.mod1)
 
-# Model3
-if(n_models > 2){
-  SS_plots(mod3,
-           png = TRUE,
-           html = FALSE,
-           datplot = TRUE,
-           uncertainty = TRUE,
-           maxrows = 6, 
-           maxcols = 6, 
-           maxrows2 = 4, 
-           maxcols2 = 4, 
-           printfolder = '', 
-           dir = out.dir.mod3)
-}
+# rename file to match expectation
+file.copy(from = file.path(out.dir.mod1, 'ts9_unfished_with_95_asymptotic_intervals_intervals.png'),
+          to = file.path(out.dir.mod1, 'ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png'))
 
 # -----------------------------------------------------------------------------
 

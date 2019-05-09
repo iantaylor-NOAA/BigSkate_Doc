@@ -12,7 +12,7 @@ BSKT2019_control.ss
 1 # detailed output (0=minimal for data-limited, 1=high (w/ wtatage.ss_new)
 # , 2=brief) 
 0 # write 1st iteration details to echoinput.sso file (0,1) 
-0 # write parm values to ParmTrace.sso (0=no,1=good,active; 2=good,all; 3=e
+3 # write parm values to ParmTrace.sso (0=no,1=good,active; 2=good,all; 3=e
 # very_iter,all_parms; 4=every,active)
 0 # write to cumreport.sso (0=no,1=like&timeseries; 2=add survey fits)
 0 # Include prior_like for non-estimated parameters (0,1) 

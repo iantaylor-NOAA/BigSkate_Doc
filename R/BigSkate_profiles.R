@@ -14,7 +14,7 @@ require(SSutils) # package with functions for copying SS input files
 
 # load model output into R
 # read base model from each area
-mod <- 'bigskate51_fix_catch'
+mod <- 'bigskate72_share_dome'
 dir.mod <- file.path(dir.outer, mod)
 # read model without printing stuff (assuming it's already been looked at)
 out <- SS_output(dir.mod, verbose=FALSE, printstats=FALSE)
@@ -178,7 +178,7 @@ PinerPlot(profilesummary,           # summary object
 file.copy(file.path(dir.profile.R0, 'profile_plot_likelihood.png'),
           file.path(dir.profile.R0, 'profile_indices_logR0.png'), overwrite=TRUE)
 
-# Piner Plot showing influence of indices by fleet
+# Piner Plot showing influence of length comp by fleet
 PinerPlot(profilesummary,           # summary object
           component="Length_like",
           main="Changes in length-composition likelihoods by fleet",
@@ -231,11 +231,21 @@ SSplotComparisons(profilesummary, subplot=1,
                   models=goodmodels,
                   legendlabels=c(paste0("M=",M.vec),"Base Model")[goodmodels],
                   png=TRUE, plotdir=dir.profile.M,
-                  filenameprefix="profile_M_", legendloc="right")
+                  filenameprefix="profile_M_", legendloc="topright")
 
 ##################################################################################
 # Steepness profile
 dir.profile.h <- file.path(dir.mod, "profile.h")
+# ironic problem with convergence for the h = 0.4 case
+file.copy(file.path(dir.profile.h, "../Report.sso"),
+          file.path(dir.profile.h, "Report2.sso"),
+          overwrite = TRUE)
+file.copy(file.path(dir.profile.h, "../CompReport.sso"),
+          file.path(dir.profile.h, "CompReport2.sso"),
+          overwrite = TRUE)
+file.copy(file.path(dir.profile.h, "../covar.sso"),
+          file.path(dir.profile.h, "covar2.sso"),
+          overwrite = TRUE)
 profilemodels <- SSgetoutput(dirvec=dir.profile.h,
                              keyvec=1:length(h.vec), getcovar=FALSE)
 # summarize output
@@ -259,5 +269,6 @@ SSplotComparisons(profilesummary, subplot=1,
                   legendlabels=labels,
                   png=TRUE, plotdir=dir.profile.h,
                   filenameprefix="profile_h_", legendloc="bottomleft")
+
 
 } # end if(FALSE) section that doesn't get sourced
