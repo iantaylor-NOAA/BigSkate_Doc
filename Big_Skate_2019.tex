@@ -98,7 +98,7 @@ Coast in 2019}
 \usepackage{fancyvrb}                                             % verbatim in a box
 %\usepackage{draftwatermark}                                      % places Draft watermark in background; comment out for final
 \usepackage{textcomp}                                             % fixes error with packages interfering
-\usepackage{lscape}                                               % rotate pages - to allow for landscape longtables
+\usepackage{pdflscape}                                               % rotate pages - to allow for landscape longtables
 %\pdfinterwordspaceon                                             % fix loss of inter word spacing
 \usepackage{cmap}                                                 % fix mapping characters to unicode
 \RequirePackage[linewidth = 1]{pdfcomment}                        % pdf comments
@@ -106,6 +106,7 @@ Coast in 2019}
 %\usepackage[inline]{showlabels}                                   % show table and figure labels; comment out for final
 %\RequirePackage[tagged]{accessibilityMeta}
 \usepackage{booktabs}                                             % For multi-header tables
+\usepackage{geometry}                                             % For landscape display
 
 \linenumbers                                                      % specify use of line numbers
 
@@ -142,8 +143,9 @@ Coast in 2019}
 
 Ian G. Taylor\textsuperscript{1}\\
 Vladlena Gertseva\textsuperscript{1}\\
-Joseph Bizzarro\textsuperscript{2}\\
-Andi Stephens\textsuperscript{3}\\
+Andi Stephens\textsuperscript{2}\\
+Joseph Bizzarro\textsuperscript{3}\\
+
 
 \vspace{.7cm}
 
@@ -153,11 +155,11 @@ Andi Stephens\textsuperscript{3}\\
 
 \vspace{.3cm}
 
-\textsuperscript{2}Southwest Fisheries Science Center, U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Marine Fisheries Service, 110 Shaffer Road, Santa Cruz, California 95060\\
+\textsuperscript{2}Northwest Fisheries Science Center, U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Marine Fisheries Service, 2032 S.E. OSU Drive Newport, Oregon 97365
 
 \vspace{.3cm}
 
-\textsuperscript{3}Northwest Fisheries Science Center, U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Marine Fisheries Service, 2032 S.E. OSU Drive Newport, Oregon 97365
+\textsuperscript{3}Southwest Fisheries Science Center, U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Marine Fisheries Service, 110 Shaffer Road, Santa Cruz, California 95060\\
 
 
 \vspace{.5cm}
@@ -180,7 +182,7 @@ represent any agency determination or policy.
 \begin{flushleft}
 This report may be cited as:
 
-Taylor, I.G., Gertseva, V., Bizzarro, J., and Stephens, A. Status of Big Skate (\emph{Beringraja binoculata}) Off the U.S. West Coast, 2019. Pacific Fishery Management Council, Portland, OR. Available from http://www.pcouncil.org/groundfish/stock-assessments/
+Taylor, I.G., Gertseva, V., Stephens, A. and Bizzarro, J. Status of Big Skate (\emph{Beringraja binoculata}) Off the U.S. West Coast, 2019. Pacific Fishery Management Council, Portland, OR. Available from http://www.pcouncil.org/groundfish/stock-assessments/
 \end{flushleft}
 
 \maketitle
@@ -271,23 +273,11 @@ Year & Landings \\
 \subsection*{Data and Assessment}\label{data-and-assessment}}
 \addcontentsline{toc}{subsection}{Data and Assessment}
 
-This the first full assessment for Big Skate, which was last assessed as
-part of the ``Other Species'' complex. This assessment uses the newest
+This the first full assessment for Big Skate. It is currently managed
+using an OFL which was based on a proxy for \(F_{MSY}\) and a 3-year
+recent average of survey biomass. This assessment uses the newest
 version of Stock Synthesis (3.30.13). The model begins in 1916, and
 assumes the stock was at an unfished equilibrium that year.
-
-\FloatBarrier
-
-\begin{figure}
-\centering
-\includegraphics{Figures/assess_region_map.png}
-\caption{This is a map depicting the distribution of Big Skate out to
-600 ft. The data for this stock assessment are from Pt. Conception in
-the South to the U.S./Canada border in the north, as very few Big Skate
-are encountered south of Pt. Conception. \label{fig:assess_region_map}}
-\end{figure}
-
-\FloatBarrier
 
 \hypertarget{stock-biomass}{%
 \subsection*{Stock Biomass}\label{stock-biomass}}
@@ -350,8 +340,10 @@ confidence intervals (dashed lines) for the base case assessment model.
 \subsection*{Recruitment}\label{recruitment}}
 \addcontentsline{toc}{subsection}{Recruitment}
 
-Recruitment deviations were estimated from 1916-2018 (Figure
-\ref{fig:Recruits_all} and Table \ref{tab:Recruit_mod1}).
+Recruitment was assumed to follow the Beverton-Holt stock recruit curve,
+so uncertainty in estimated recruitment is due to uncertainty in
+spawning biomass and the unfished equilibrium recruitment \(R_0\)
+(Figure \ref{fig:Recruits_all} and Table \ref{tab:Recruit_mod1}).
 
 \begin{table}[ht]
 \centering
@@ -391,21 +383,22 @@ base-case model with 95\% confidence or credibility intervals.
 \subsection*{Exploitation status}\label{exploitation-status}}
 \addcontentsline{toc}{subsection}{Exploitation status}
 
-Harvest rates estimated by the base model. management target levels
-(Table \ref{tab:SPR_Exploit_mod1} and Figure \ref{fig:SPR_all}).
+Harvest rates estimated by the base model indicate catch levels have
+been below the limits that would be associated with the SPR = 50\%
+target (Table \ref{tab:SPR_Exploit_mod1} and Figure \ref{fig:SPR_all}).
 
 \FloatBarrier
 
 \begin{table}[ht]
 \centering
 \caption{Recent trend in spawning potential 
-                                        ratio and exploitation for Big Skate in the model.  Fishing intensity is (1-SPR) 
+                                        ratio and exploitation for Big Skate in the model.  Relative fishing intensity is (1-SPR) 
                                         divided by 50\% (the SPR target) and exploitation 
-                                        is F divided by F\textsubscript{SPR}.} 
+                                        is catch divided by age 2+ biomass.} 
 \label{tab:SPR_Exploit_mod1}
 \begin{tabular}{l>{\centering}p{1in}>{\centering}p{1.2in}>{\centering}p{1in}>{\centering}p{1.2in}}
   \hline
-Year & Fishing intensity & \~{} 95\% confidence interval & Exploitation rate & \~{} 95\% confidence interval \\ 
+Year & Relative fishing intensity & \~{} 95\% confidence interval & Exploitation rate & \~{} 95\% confidence interval \\ 
   \hline
 2009 & 0.23 & (0.12-0.34) & 0.01 & (0.01-0.02) \\ 
   2010 & 0.22 & (0.11-0.32) & 0.01 & (0.01-0.02) \\ 
@@ -645,7 +638,12 @@ Year & OFL \\
 }
 \end{table}
 
-\begin{sidewaystable}[ht]
+\newgeometry{hmargin=1in,vmargin=1in}
+
+\begin{landscape}
+
+
+\begin{table}[ht]
 \centering
 \caption{Base case results summary.} 
 \label{tab:base_summary}
@@ -675,7 +673,10 @@ Recruits & 3435.91 & 3450.01 & 3457.92 & 3466.77 & 3488.68 & 3488.86 & 3492.63 &
    \hline
 \end{tabular}
 }
-\end{sidewaystable}
+\end{table}
+
+\end{landscape}
+\restoregeometry
 
 \begin{figure}
 \centering
@@ -727,10 +728,6 @@ assessment:
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-\hypertarget{distribution-and-life-history}{%
-\subsection{Distribution and Life
-History}\label{distribution-and-life-history}}
-
 Skates are the largest and most widely distributed group of batoid fish
 with approximately 245 species ascribed to two families (Ebert and
 Compagno (\protect\hyperlink{ref-Ebert2007}{2007}), McEachran and Miyake
@@ -757,103 +754,8 @@ and a maximum weight of 91 kg (Eschmeyer and Herald
 each pectoral fin. Big Skates are usually seen buried in sediment with
 only their eyes showing.
 
-The Big Skate is most common in soft-sediment habitats in coastal waters
-of the continental shelf (Bizzarro, JJ and Broms, KM and Logsdon, MG and
-Ebert, DA and Yoklavich, MM and Kuhnz, LA and Summers, AP
-(\protect\hyperlink{ref-Bizzarro2014}{2014}), Farrugia et al.
-(\protect\hyperlink{ref-Farrugia2016}{2016})). Use of mixed substrate
-(e.g., mud with boulders) increases with ontogeny but hard substrates
-are largely avoided (Bizzarro
-(\protect\hyperlink{ref-Bizzarro2015}{2015})). In the GOA, the Big Skate
-is the most commonly encountered skate species in continental shelf
-waters at 100--200 m depth, and is most abundant in the central and
-western areas of the GOA (Stevenson, DE and Orr, JW and Hoff, GR and
-McEachran, JD (\protect\hyperlink{ref-Stevenson2008}{2008}); Bizzarro,
-JJ and Broms, KM and Logsdon, MG and Ebert, DA and Yoklavich, MM and
-Kuhnz, LA and Summers, AP (\protect\hyperlink{ref-Bizzarro2014}{2014})).
-Off the U.S. Pacific Coast, the Big Skate is most densely distributed on
-the inner continental shelf (\textless{} 100 m; Bizzarro, JJ and Broms,
-KM and Logsdon, MG and Ebert, DA and Yoklavich, MM and Kuhnz, LA and
-Summers, AP (\protect\hyperlink{ref-Bizzarro2014}{2014})). Eggs are
-mainly deposited between 70--90 m on sand or mud substrates (Hitz
-(\protect\hyperlink{ref-Hitz1964}{1964}); NMFS-NWFSC-FRAM, unpub. data).
-Juveniles typically occur in shallower waters than adults (Bizzarro
-(\protect\hyperlink{ref-Bizzarro2015}{2015})). Core habitat regions of
-Big Skate off the U.S. Pacific Coast and in the Gulf of Alaska are
-spatially segregated from those of other species (Bizzarro, JJ and
-Broms, KM and Logsdon, MG and Ebert, DA and Yoklavich, MM and Kuhnz, LA
-and Summers, AP (\protect\hyperlink{ref-Bizzarro2014}{2014})).
-
-Big Skates are highly mobile and capable of long range (\textgreater{}
-2000 km) movements (KingandMcF2010; Farrugia et al.
-(\protect\hyperlink{ref-Farrugia2016}{2016})). For example, in British
-Columbia, a study revealed that \textasciitilde{}75\% of tagged
-individuals were recaptured within 21 km of the tagging locations, but
-15 of the tagged individuals (0.1\%) moved over 1,000 km (max = 2340 km;
-King, JR and McFarlane, GA
-(\protect\hyperlink{ref-KingandMcF2010}{2010})). In the Gulf of Alaska,
-a year of satellite tag data showed that six of twelve tagged
-individuals moved over 100 km, with one skate moving \textgreater{}
-2,000 km (Farrugia et al.~2016). Although primarily benthic, Big Skates
-utilize the entire water column including surface waters (Farrugia et
-al. (\protect\hyperlink{ref-Farrugia2016}{2016})). They have broad
-thermal tolerances 2--19º C that enable their occurrence from boreal to
-subtropical latitudes (Love, Milton S
-(\protect\hyperlink{ref-Love2011}{2011}); Farrugia et al.
-(\protect\hyperlink{ref-Farrugia2016}{2016})).
-
-Big Skates are opportunistic, generalist mesopredators with highly
-variable spatio-temporal trophic roles (Ebert and Compagno
-(\protect\hyperlink{ref-Ebert2007}{2007}); Bizzarro
-(\protect\hyperlink{ref-Bizzarro2015}{2015})). Off central California,
-diet of Big Skates is composed mainly of fishes, shrimps, and crabs (in
-descending order), with larger skates incorporating more fishes
-(Bizzarro et al. (\protect\hyperlink{ref-Bizzarro2007}{2007})); however,
-in the Gulf of Alaska, Big Skate diet consists mainly of crabs
-(esp.~Tanner Crabs) throughout ontogeny, with relatively small portions
-of fishes and shrimps (Bizzarro
-(\protect\hyperlink{ref-Bizzarro2015}{2015})). Correspondingly, trophic
-level and general diet composition estimates differ significantly
-between California and Gulf of Alaska Big Skate populations (Bizzarro
-(\protect\hyperlink{ref-Bizzarro2015}{2015})).
-
-Big Skates and their egg cases are preyed upon by a variety of
-vertebrates and invertebrates. Snails and other molluscs bore holes in
-egg cases to feed on developing embryos and especially their protein
-rich yolk-sacs (Bizzarro, pers. obs; Hoff, GR
-(\protect\hyperlink{ref-Hoff2009}{2009})). Sevengill Sharks, Brown
-Rockfish, and Stellar Sea Lions are known predators of juvenile and
-adult Big Skates (Ebert (\protect\hyperlink{ref-Ebert2003}{2003}), Love,
-Milton S (\protect\hyperlink{ref-Love2011}{2011})). Northern Sea Lions
-consume free-living Big Skates and their egg cases (Ebert
-(\protect\hyperlink{ref-Ebert2003}{2003}), Love, Milton S
-(\protect\hyperlink{ref-Love2011}{2011})).
-
-In 2012, the Big Skate was moved from genus \emph{Raja} to the new genus
-\emph{Beringraja} together with the Mottled Skate (\emph{B. pulchra})
-(Ishihara et al. \protect\hyperlink{ref-Ishihara2012}{2012}). These are
-the only two skates with multiple embryos per egg case, and they are
-very similar mophologically and genetically (Bizzarro, J.
-\protect\hyperlink{ref-Bizzarro2019}{2019}).
-
 \hypertarget{biology}{%
 \subsection{Biology}\label{biology}}
-
-The Big Skate is broadly distributed, occurring from the southeastern
-Bering Sea (Mecklenburg, CW and Mecklenburg, TA and Thorsteinson, LK
-\protect\hyperlink{ref-Mecklenburg2002}{2002}) to southern Baja
-California (22.90º N, 110.03º W; (Castro-Aguirre et al.
-\protect\hyperlink{ref-Castro1993}{1993})) and the Gulf of California
-(Castro-Aguirre and Pérez \protect\hyperlink{ref-Castro1996}{1996}). It
-has been reported at depths of 2--501 m (min: Miller et al.
-(\protect\hyperlink{ref-Miller1980}{1980}); max: Farrugia et al.
-(\protect\hyperlink{ref-Farrugia2016}{2016})) but is most common on the
-inner continental shelf (\textless{} 100 m; (Love, Milton S
-\protect\hyperlink{ref-Love2011}{2011}); (Bizzarro
-\protect\hyperlink{ref-Bizzarro2015}{2015})). Big Skates are highly
-mobile and capable of long range (\textgreater{} 2000 km) movements
-((King and McFarlane \protect\hyperlink{ref-KingandMcF2009}{2009});
-(Farrugia et al. \protect\hyperlink{ref-Farrugia2016}{2016})).
 
 Big Skate is oviparious, and is one of two skate species that have
 multiple embryos per egg case (Ebert et al.
@@ -934,15 +836,121 @@ California & Male & 100 & None &  11 &  10 & None \\
 \newpage
 \FloatBarrier
 
+\hypertarget{distribution-and-life-history}{%
+\subsection{Distribution and Life
+History}\label{distribution-and-life-history}}
+
+The Big Skate is most common in soft-sediment habitats in coastal waters
+of the continental shelf (Bizzarro, JJ and Broms, KM and Logsdon, MG and
+Ebert, DA and Yoklavich, MM and Kuhnz, LA and Summers, AP
+(\protect\hyperlink{ref-Bizzarro2014}{2014}), Farrugia et al.
+(\protect\hyperlink{ref-Farrugia2016}{2016})). Use of mixed substrate
+(e.g., mud with boulders) increases with ontogeny but hard substrates
+are largely avoided (Bizzarro
+(\protect\hyperlink{ref-Bizzarro2015}{2015})). In the GOA, the Big Skate
+is the most commonly encountered skate species in continental shelf
+waters at 100--200 m depth, and is most abundant in the central and
+western areas of the GOA (Stevenson, DE and Orr, JW and Hoff, GR and
+McEachran, JD (\protect\hyperlink{ref-Stevenson2008}{2008}); Bizzarro,
+JJ and Broms, KM and Logsdon, MG and Ebert, DA and Yoklavich, MM and
+Kuhnz, LA and Summers, AP (\protect\hyperlink{ref-Bizzarro2014}{2014})).
+Off the U.S. Pacific Coast, the Big Skate is most densely distributed on
+the inner continental shelf (\textless{} 100 m; Bizzarro, JJ and Broms,
+KM and Logsdon, MG and Ebert, DA and Yoklavich, MM and Kuhnz, LA and
+Summers, AP (\protect\hyperlink{ref-Bizzarro2014}{2014})). Eggs are
+mainly deposited between 70--90 m on sand or mud substrates (Hitz
+(\protect\hyperlink{ref-Hitz1964}{1964}); NMFS-NWFSC-FRAM, unpub. data).
+Juveniles typically occur in shallower waters than adults (Bizzarro
+(\protect\hyperlink{ref-Bizzarro2015}{2015})). Core habitat regions of
+Big Skate off the U.S. Pacific Coast and in the Gulf of Alaska are
+spatially segregated from those of other species (Bizzarro, JJ and
+Broms, KM and Logsdon, MG and Ebert, DA and Yoklavich, MM and Kuhnz, LA
+and Summers, AP (\protect\hyperlink{ref-Bizzarro2014}{2014})).
+
+Big Skates are highly mobile and capable of long range (\textgreater{}
+2000 km) movements (KingandMcF2010; Farrugia et al.
+(\protect\hyperlink{ref-Farrugia2016}{2016})). For example, in British
+Columbia, a study revealed that \textasciitilde{}75\% of tagged
+individuals were recaptured within 21 km of the tagging locations, but
+15 of the tagged individuals (0.1\%) moved over 1,000 km (max = 2340 km;
+King, JR and McFarlane, GA
+(\protect\hyperlink{ref-KingandMcF2010}{2010})). In the Gulf of Alaska,
+a year of satellite tag data showed that six of twelve tagged
+individuals moved over 100 km, with one skate moving \textgreater{}
+2,000 km (Farrugia et al.~2016). Although primarily benthic, Big Skates
+utilize the entire water column including surface waters (Farrugia et
+al. (\protect\hyperlink{ref-Farrugia2016}{2016})). They have broad
+thermal tolerances 2--19º C that enable their occurrence from boreal to
+subtropical latitudes (Love, Milton S
+(\protect\hyperlink{ref-Love2011}{2011}); Farrugia et al.
+(\protect\hyperlink{ref-Farrugia2016}{2016})).
+
+The Big Skate is broadly distributed, occurring from the southeastern
+Bering Sea (Mecklenburg, CW and Mecklenburg, TA and Thorsteinson, LK
+\protect\hyperlink{ref-Mecklenburg2002}{2002}) to southern Baja
+California (22.90º N, 110.03º W; (Castro-Aguirre et al.
+\protect\hyperlink{ref-Castro1993}{1993})) and the Gulf of California
+(Castro-Aguirre and Pérez \protect\hyperlink{ref-Castro1996}{1996}). It
+has been reported at depths of 2--501 m (min: Miller et al.
+(\protect\hyperlink{ref-Miller1980}{1980}); max: Farrugia et al.
+(\protect\hyperlink{ref-Farrugia2016}{2016})) but is most common on the
+inner continental shelf (\textless{} 100 m; (Love, Milton S
+\protect\hyperlink{ref-Love2011}{2011}); (Bizzarro
+\protect\hyperlink{ref-Bizzarro2015}{2015})). Big Skates are highly
+mobile and capable of long range (\textgreater{} 2000 km) movements
+((King and McFarlane \protect\hyperlink{ref-KingandMcF2009}{2009});
+(Farrugia et al. \protect\hyperlink{ref-Farrugia2016}{2016})).
+
+In 2012, the Big Skate was moved from genus \emph{Raja} to the new genus
+\emph{Beringraja} together with the Mottled Skate (\emph{B. pulchra})
+(Ishihara et al. \protect\hyperlink{ref-Ishihara2012}{2012}). These are
+the only two skates with multiple embryos per egg case, and they are
+very similar mophologically and genetically (Bizzarro, J.
+\protect\hyperlink{ref-Bizzarro2019}{2019}).
+
 \hypertarget{map}{%
 \subsection{Map}\label{map}}
 
-A map showing the scope of the assessment and depicting boundaries for
-fisheries or data collection strata is provided in Figure
-\ref{fig:boundary_map}.
+A map showing the area of the U.S. West Coast Exclusive Economic Zone
+covered by this stock assessment is provided in Figure
+\ref{fig:assess_region_map.png}.
+
+\begin{figure}
+\centering
+\includegraphics{Figures/assess_region_map.png}
+\caption{U.S. West Coast Exclusive Economic zone covering the area in
+which this stock assessment is focused. \label{fig:assess_region_map}}
+\end{figure}
 
 \hypertarget{ecosystem-considerations-1}{%
 \subsection{Ecosystem Considerations}\label{ecosystem-considerations-1}}
+
+Big Skates are opportunistic, generalist mesopredators with highly
+variable spatio-temporal trophic roles (Ebert and Compagno
+(\protect\hyperlink{ref-Ebert2007}{2007}); Bizzarro
+(\protect\hyperlink{ref-Bizzarro2015}{2015})). Off central California,
+diet of Big Skates is composed mainly of fishes, shrimps, and crabs (in
+descending order), with larger skates incorporating more fishes
+(Bizzarro et al. (\protect\hyperlink{ref-Bizzarro2007}{2007})); however,
+in the Gulf of Alaska, Big Skate diet consists mainly of crabs
+(esp.~Tanner Crabs) throughout ontogeny, with relatively small portions
+of fishes and shrimps (Bizzarro
+(\protect\hyperlink{ref-Bizzarro2015}{2015})). Correspondingly, trophic
+level and general diet composition estimates differ significantly
+between California and Gulf of Alaska Big Skate populations (Bizzarro
+(\protect\hyperlink{ref-Bizzarro2015}{2015})).
+
+Big Skates and their egg cases are preyed upon by a variety of
+vertebrates and invertebrates. Snails and other molluscs bore holes in
+egg cases to feed on developing embryos and especially their protein
+rich yolk-sacs (Bizzarro, pers. obs; Hoff, GR
+(\protect\hyperlink{ref-Hoff2009}{2009})). Sevengill Sharks, Brown
+Rockfish, and Stellar Sea Lions are known predators of juvenile and
+adult Big Skates (Ebert (\protect\hyperlink{ref-Ebert2003}{2003}), Love,
+Milton S (\protect\hyperlink{ref-Love2011}{2011})). Northern Sea Lions
+consume free-living Big Skates and their egg cases (Ebert
+(\protect\hyperlink{ref-Ebert2003}{2003}), Love, Milton S
+(\protect\hyperlink{ref-Love2011}{2011})).
 
 In this assessment, ecosystem considerations were not explicitly
 included in the analysis. This is primarily due to a lack of relevant
@@ -1012,7 +1020,7 @@ redesignated as an actively-managed species in the fishery. Big skate
 have been managed with stock-specific harvest specifications since 2017.
 
 The recent OFL of 541 mt was calculated by applying approximate MSY
-harvest rates toestimates of stock biomass from the Northwest Fisheries
+harvest rates to estimates of stock biomass from the Northwest Fisheries
 Science Center (NWFSC) West Coast Groundfish Bottom Trawl Survey. This
 survey-based biomass estimate is likely underestimated since Big Skate
 are distributed all the way to the shoreline and no West Coast trawl
@@ -1034,7 +1042,8 @@ Biological Catch (ABC) with a buffer for management uncertainty (P*) of
 \subsection{Fisheries Off Alaska, Canada and
 Mexico}\label{fisheries-off-alaska-canada-and-mexico}}
 
-\textbf{Alaska}
+\hypertarget{alaska}{%
+\subsubsection{Alaska}\label{alaska}}
 
 In Alaska, skates were primarily taken as bycatch in both longline and
 trawl fisheries until 2003, when a directed skate fishery developed in
@@ -1055,7 +1064,8 @@ and ABC are based on survey biomass estimates and natural mortality rate
 In the Bering Sea and Aleutian Islands, skates are assessed as a group
 rather than as separate species.
 
-\textbf{Canada}
+\hypertarget{canada}{%
+\subsubsection{Canada}\label{canada}}
 
 In Canada historic information regarding skate catches goes back to the
 1950's. Prior to 1990's skates were taken mostly as bycatch and landings
@@ -1080,19 +1090,20 @@ magnitude larger than the long-term average catch. The Catch-MSY
 approach was found to be quite sensitive to assumptions and was not
 recommended as the sole basis of advice to managers.
 
-The recommendation for managment for both skate species was that they
-should be managed with harvest yeilds based on mean historic catch, with
+The recommendation for management for both skate species was that they
+should be managed with harvest yields based on mean historic catch, with
 consideration given to survey trends and to the ranges of maximum
 sustainable yield estimates identified by the Catch-MSY Approach.
 However, the analysis found no significant trends in abundance indices
 for Big Skate, and mean historical catches were below the maximum MSY
 estimate from the catch-MSY results.
 
-\textbf{Mexico}
+\hypertarget{mexico}{%
+\subsubsection{Mexico}\label{mexico}}
 
 No information is available on any fishery for Big Skate in Mexican
-waters, however to the extent that they do occur, which is rarely, they
-may be taken in the artisanal fishery.
+waters, where they rarely occur, however they may be taken in the
+artisanal fishery.
 
 \newpage
 
@@ -1117,8 +1128,8 @@ category was not implemented until June 2015. The historical catch of
 Big Skate therefore relies on the historical reconstruction of the
 landings of all skates as well as an analysis of discards of Longnose
 Skate. The estimated landings for each state and the tribal fishery are
-are provided in Table \ref{tab:Reconstructed_Landings_byState} and shown
-in Figure \ref{fig:catch_by_state}.
+provided in Table \ref{tab:Reconstructed_Landings_byState} and shown in
+Figure \ref{fig:catch_by_state}.
 
 \hypertarget{washington-commercial-skate-landings-reconstruction}{%
 \subsubsection{Washington Commercial Skate Landings
@@ -1126,9 +1137,10 @@ Reconstruction}\label{washington-commercial-skate-landings-reconstruction}}
 
 Estimates of landings of Big Skate in Washington state were estimated as
 a fraction of total skate landings as described in (Gertseva, V.
-\protect\hyperlink{ref-Gertseva2019}{2019}). The approached relied on
-trawl survey estimates of depth distributions for each species, combined
-with logbook estimates of fishing depths in each year.
+\protect\hyperlink{ref-Gertseva2019}{2019}\protect\hyperlink{ref-Gertseva2019}{a}).
+The approached relied on trawl survey estimates of depth distributions
+for each species, combined with logbook estimates of fishing depths in
+each year.
 
 The WCGBT Survey data was used to estimate proportions of longnose and
 big skates by depth (aggregated into 100m bins) and year for the period
@@ -1139,7 +1151,7 @@ haul as well depth of catch. The proportion of Big Skate for each depth
 bin was assigned to the skate catch for each haul within those depth
 bins and summed to get a total for each year. When survey skate
 information was available (2003-2018), survey skate proportions were
-applied by depth and year to account for interannual variability in
+applied by depth and year to account for inter-annual variability in
 those proportions. Prior to 2003, average proportions from 2003-2007
 within each depth bin were applied.
 
@@ -1307,28 +1319,32 @@ after. The use of the 3-year moving average dampened this variability
 and these estimates were retained for a sensitivity analysis (Figure
 \ref{fig:Discard_calculations}).
 
-\hypertarget{fishery-length-and-age-data}{%
-\subsubsection{Fishery Length and Age
-Data}\label{fishery-length-and-age-data}}
+A discard mortality rate of 50 percent was assumed for all discards,
+following the assumption used for the Longnose Skate assessment
+conducted for the U.S. West Coast in 2007 ({\textbf{???}}) The same rate
+has been used for skates in the trawl fishery in British Columbia, based
+on an approximate average of these reported rates. In 2015, PFMC's
+Groundfish Management Team (GMT) conducted a comprehensive literature
+review of skate discard mortality, and concluded that the current
+assumption regarding Big Skate discard mortality is consistent with
+existing reported rates for other similar species.
 
-Fishery length composition data was available from PacFIN were available
-for the years 1995--2018 (with the exception of 2000) as shown in Table
-\ref{tab:PacFIN_Samples}. Ages were available from only 2004, 2008-2012,
-and 2018. These were all represented as conditioned on length in order
-to provide more detailed information about the relationship between age
-and length, to reduce any influence of size-based selectivity on the age
-composition, and to ensure independence from the length samples.
+Estimation of discard rates (discards amount relative to total catch)
+during the period of the West Coast Groundfish Observer Program (WCGOP),
+which began in 2002, was hindered by the landings of Big Skate primarily
+occurring in the ``unspecified skate'' category prior to 2015.
+Therefore, a discard rate was computed using the combination of Big
+Skate and unspecified skate under the assumption that the vast majority
+of the unspecified skates were Big Skate. A coefficient of variation was
+calculated for the by bootstrapping vessels within ports because the
+observer program randomly chooses vessels within ports to be observed.
+For the years after the catch share program was implemented in 2011, the
+trawl fishery was subject to 100\% observer coverage and discarding is
+assumed to be known with minimal error (CV = 0.01).
 
-The input sample sizes for the length compositions were calculated via
-the Stewart Method (Ian Stewart, personal communication, IPHC):
-
-\begin{centering}
-
-Input N = $N_{\text{trips}} + 0.138 * N_{\text{fish}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is $<$ 44
-
-Input N = $7.06 * N_{\text{trips}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is $\geq$ 44
-
-\end{centering}
+The mean body weight of discarded Big Skates, calculated from the weight
+and count of baskets of discarded Big Skate, was available for the years
+2002--2017.
 
 \hypertarget{fishery-independent-data-sources}{%
 \section{Fishery-Independent Data
@@ -1381,11 +1397,12 @@ chartered industry vessels are used each year (with the exception of
 
 The index standardization methods for the two bottom trawl surveys
 matched that used for Longnose Skate and additional detail is provided
-in (Gertseva, V. \protect\hyperlink{ref-Gertseva2019}{2019}). The data
-from both surveys was analyzed using a spatio-temporal delta-model
-(Thorson, J. T. and Shelton, A. O. and Ward, E. J. and Skaug, H. J.
-\protect\hyperlink{ref-Thorson2015}{2015}), implemented as an R package
-VAST (Thorson, James T. and Barnett, Lewis A. K.
+in (Gertseva, V.
+\protect\hyperlink{ref-Gertseva2019}{2019}\protect\hyperlink{ref-Gertseva2019}{a}).
+The data from both surveys was analyzed using a spatio-temporal
+delta-model (Thorson, J. T. and Shelton, A. O. and Ward, E. J. and
+Skaug, H. J. \protect\hyperlink{ref-Thorson2015}{2015}), implemented as
+an R package VAST (Thorson, James T. and Barnett, Lewis A. K.
 \protect\hyperlink{ref-Thorson2017a}{2017}) and publicly available
 online (\url{https://github.com/James-Thorson/VAST}). Spatial and
 spatio-temporal variation is specifically included in both encounter
@@ -1400,16 +1417,6 @@ Spatial patterns in the survey estimates show Big Skate widely
 distributed along the coast, with higher densities in the central and
 more northern areas and closer to shore
 \ref{fig:VAST_Yearly_Dens_Triennial}.
-
-\hypertarget{survey-length-composition-data}{%
-\subsubsection{Survey length composition
-data}\label{survey-length-composition-data}}
-
-Lengths of Big Skate were only collected form the Triennial survey in
-1998, 2001, and 2004, but 1998 had only 3 samples and were excluded from
-this analysis. Length compositions were available for all years of the
-WCGBT Survey. Sample sizes for both surveys are provided in Table
-\ref{tab:Survey_Samples}
 
 \hypertarget{internation-pacific-halibut-commission-longline-survey}{%
 \subsubsection{Internation Pacific Halibut Commission Longline
@@ -1466,87 +1473,117 @@ binomial error structure was considered logical, given the binary nature
 of capturing (or not) a Longnose Skate on each longline hook. The
 modeling approach is identical to that which has been applied in the
 past for Yelloweye Rockfish ({\textbf{???}}), and Spiny Dogfish
-({\textbf{???}}). MCMC sampling of the GLM parameters was used to
-estimate the variability around each index estimate. The median index
-estimates themselves were approximately equal to the observed mean catch
-rate in each year (Figure Y). In recent years, the IPHC standardization
-of the index of halibut abundance has included an adjustment to account
-for missing baits on hooks returned empty in an effort to account for
-reduced catchability of the gear that may result from the lost bait.
-This adjustment was not included in the analysis for Big Skate although
-it could be considered in future years. \newpage
+(Gertseva, V.
+\protect\hyperlink{ref-Gertseva2011}{2019}\protect\hyperlink{ref-Gertseva2011}{b}).
+MCMC sampling of the GLM parameters was used to estimate the variability
+around each index estimate. The median index estimates themselves were
+approximately equal to the observed mean catch rate in each year (Figure
+Y). In recent years, the IPHC standardization of the index of halibut
+abundance has included an adjustment to account for missing baits on
+hooks returned empty in an effort to account for reduced catchability of
+the gear that may result from the lost bait. This adjustment was not
+included in the analysis for Big Skate although it could be considered
+in future years. \newpage
 
 \hypertarget{biological-parameters-and-data}{%
-\subsubsection{Biological Parameters and
+\subsection{Biological Parameters and
 Data}\label{biological-parameters-and-data}}
 
-\textbf{Measurement Details and Conversion Factors}
+\hypertarget{measurement-details-and-conversion-factors}{%
+\subsubsection{Measurement Details and Conversion
+Factors}\label{measurement-details-and-conversion-factors}}
 
-Disc width to total length (estimated by Ian on Apr 15, similar to Ebert
-2008 estimates for Alaska) L = 1.3399 * W estimated from 95 samples from
-WCGBTS where both measurements collected (R-squared = 0.9983). Little
-sex difference observed, so using single relationship for both sexes.
-Inter-spiracle width to total length from Downs \& Cheng (2013): L =
-12.111 + 9.761\emph{ISW (females) L = 3.824 + 10.927}ISW (males)
+Some size measurements were taken as either disc width or inter-spiracle
+width rather than total length. A conversion from disc width to total
+length was estimated as \(L = 1.3399 * W\) based on from 95 samples from
+WCGBT Survey where both measurements collected (R-squared = 0.9983).
+Little sex difference observed, so using single relationship for both
+sexes. This estimate is similar to the conversion estimated by Ebert
+(\protect\hyperlink{ref-Ebert2008}{2008}) for Big Skate in Alaska. The
+inter-spiracle width to total length was converted based on estimates
+from Downs \& Cheng ({\textbf{???}}):
 
-Love et al.~(\protect\hyperlink{ref-Love1987}{1987})
+\begin{centering}
 
-\textbf{Length and Age Compositions}
+$L = 12.111 + 9.761*ISW$ (females),
 
-Length comps (some based on widths)
+$L = 3.824 + 10.927*ISW$ (males).
 
-WCGBTS Lengths from all years except 2006 and 2007 Widths in 2006 and
-2007
+\end{centering}
 
-Triennial Survey Sample sizes: 3 in 1998 (all widths), 84 in 2001 (3
-widths, 81 lengths), 100 in 2004 (all lengths) Triennial survey About
-90+ samples in each of 2001 and 2004 Only 3 unsexed fish from 1998
+\hypertarget{fishery-dependent-length-and-age-composition-data}{%
+\subsubsection{Fishery dependent length and age composition
+data}\label{fishery-dependent-length-and-age-composition-data}}
 
-Commercial fisheries In process Discard comps from 2010-2015
+Fishery length composition data was available from PacFIN were available
+for the years 1995--2018 (with the exception of 2000) as shown in Table
+\ref{tab:PacFIN_Samples}. Ages were available from only 2004, 2008-2012,
+and 2018. These were all represented as conditioned on length in order
+to provide more detailed information about the relationship between age
+and length, to reduce any influence of size-based selectivity on the age
+composition, and to ensure independence from the length samples.
+Furthermore, the samples from Washington in 2009 were sampled using a
+length-stratified system, so should only be treated as conditioned on
+length.
 
-Length compositions were provided from the following sources:
+Length compositions of Big Skate discarded in commercial fisheries
+measured by the West Coast Groundfish Observer program were available
+for the years 2010--2017.
 
-\begin{itemize}[noitemsep,nolistsep,topsep=0pt]
-  \item Source 1 (\emph{type, e.g., commercial dead fish, research, recreational}, yyyy-yyyy)    
-  \item Source 2 (\emph{type}, yyyy-yyyy)    
-  \item Source 3 (\emph{research}, yyyy, yyyy, yyyy, yyyy) 
-\end{itemize}
+The input sample sizes for the length compositions were calculated via
+the Stewart Method (Ian Stewart, personal communication, IPHC):
 
-The length composition of all fisheries aggregated across time by fleet
-is in Figure \ref{fig:comp_lendat_aggregated_across_time}. Descriptions
-and details of the length composition data are in the above section for
-each fleet or survey.
+\begin{centering}
+
+Input N = $N_{\text{hauls}} + 0.138 * N_{\text{fish}}$ if $N_{\text{fish}}/N_{\text{hauls}}$ is $<$ 44,
+
+Input N = $7.06 * N_{\text{hauls}}$ if $N_{\text{fish}}/N_{\text{hauls}}$ is $\geq$ 44.
+
+\end{centering}
+
+However, no haul had greater than 44 Big Skate sampled, so only the
+first formula was used.
+
+\hypertarget{survey-length-and-age-composition-data}{%
+\subsubsection{Survey length and age composition
+data}\label{survey-length-and-age-composition-data}}
+
+Lengths of Big Skate were only collected form the Triennial survey in
+1998, 2001, and 2004, but 1998 had only 3 samples and were excluded from
+this analysis. Length compositions were available for all years of the
+WCGBT Survey. Sample sizes for both surveys are provided in Table
+\ref{tab:Survey_Samples}. The WCGBT Survey used disc width for the years
+2006 and 2007 and total length in all other years. Those samples where
+only disc width was measured were converted to total length using the
+formula above.
+
+The length compositions from the fishery and each of the two surveys
+aggregated across all years is shown in Figure
+\ref{fig:comp_lendat_aggregated_across_time}.
+
+Ages were available from the WCGBT Survey in the years 2009, 2010, 2016,
+2017, and 2018. No ages were available from the Triennial Survey.
 
 \vspace{.5cm}
 
-\textbf{Age Structures}
+\textbf{Ageing Precision and Bias}
 
-von Bertalanffy growth curve (von Bertalanffy, L
-\protect\hyperlink{ref-VonB}{1938}),
-\(L_i = L_{\infty}e^{(-k[t-t_0])}\), where \(L_i\) is the length (cm) at
-age \(i\), \(t\) is age in years, \(k\) is rate of increase in growth,
-\(t_0\) is the intercept, and \(L_{\infty}\) is the asymptotic length.
-
-Ages WCGBTS Currently only 333 ages from 2010 present in data warehouse
-as of Apr 15 Patrick submitting an 300 additional ages from 2016 and
-2017 to Beth on Apr 2 and promised further additions during the week of
-Apr 15.
-
-Triennial Survey No ages
-
-Commercial fisheries 2009 samples from WA were stratified by length, so
-should be treated as conditionals
-
-\vspace{.5cm}
-
-\textbf{Aging Precision and Bias}
+Ages of Big Skate were all estimated based on growth band counts of
+sectioned vertebrae. Ageing precision and bias were estimated using
+double-reads of 518 Big Skate vertebrae using the approach of Punt et
+al.~({\textbf{???}}). The results showed strong agreement among readers
+(Figure \ref{fig:ageing_comparison}), with a standard deviation of the
+ageing error increasing from about 0.4 at age 0 to 1.6 years at age 15
+(Figure \ref{fig:ageing_imprecision}).
 
 \vspace{.5cm}
 
 \textbf{Weight-Length}
 
-Estimated by Ian based on WCGBT samples (n = 1159)
-\(Weight = 0.0000074924 * Length ^ 2.9925\) (Figure
+The mean weight as a function of length was estimated from 1159 samples
+from the WCGBT Survey using a linear regression on a log-log scale. Sex
+was not found to be a significant predictor, so a single relationship
+was estimated: \(Weight = 0.0000074924 * Length ^ 2.9925\) (Figure
 \ref{fig:weight-length}).
 
 \vspace{.5cm}
@@ -1556,21 +1593,10 @@ Estimated by Ian based on WCGBT samples (n = 1159)
 The female maturity relationship was based on visual maturity estimates
 from port samplers (n = 278, of which 241 were from Oregon and 37 from
 Washington, with 24 mature specimens) as well as 55 samples from the
-WCGBTS (of which 4 were mature). The resulting relationship was
+WCGBT Survey (of which 4 were mature). The resulting relationship was
 \(L_{50\%} = 148.2453\) with a slope parameter of \(Beta = -0.13155\) in
 the relationship \(M = (1 + Beta(L - L_{50\%}))^{-1}\) (Figure
 \ref{fig:maturity}).
-
-\vspace{.5cm}
-
-\textbf{Natural Mortality}
-
-The Hamel prior for M is lognormal(ln(5.4/max age),.438), which based on
-1 age-15 fish out of 1034 observed in the WCGBTS results in lognormal(
--1.021651, 0.438)
-
-If it needs to be fixed, it should be set to M = 5.4/max age = 5.4/15 =
-0.36
 
 \vspace{.5cm}
 
@@ -1580,9 +1606,8 @@ Assessment}\label{environmental-or-ecosystem-data-included-in-the-assessment}}
 
 In this assessment, neither environmental nor ecosystem considerations
 were explicitly included in the analysis. This is primarily due to a
-lack of relevant data and results of analyses (conducted elsewhere) that
-could contribute ecosystem-related quantitative information for the
-assessment.
+lack of relevant data or results of analyses that could contribute
+ecosystem-related quantitative information for the assessment.
 
 \newpage
 
@@ -1596,89 +1621,119 @@ assessment.
 \subsubsection{History of Modeling Approaches Used for this
 Stock}\label{history-of-modeling-approaches-used-for-this-stock}}
 
-Deriving estimates of OFL for species in the ``Other Fish'' complex or
-potential alternative complexes
-
-The current ``Other Fish'' complex and proposed alternatives include a
-number of species for which estimates of OFL contributions are not
-available from stock assessments or data-poor methods. Four of the
-species had OFL contributions for the 2013--2014 management cycle
-calculated by applying approximate MSY harvest rates to estimates of
-stock biomass from the NWFSC West Coast Bottom Trawl Survey (Bradburn et
-al., 2012). This approach is described in detail in Cope et al.~(2012).
-
-\hypertarget{yyyy-assessment-recommendations}{%
-\subsubsection{yyyy Assessment
-Recommendations}\label{yyyy-assessment-recommendations}}
-
-\begin{description}[style=unboxed]
-
-  \item[Recommendation 1: ] \hfill \\
-
-   STAT response: xxxxx
-
-\item[Recommendation 2: ] \hfill \\
-
-  STAT response: xxxxx
-
-\item[Recommendation 3: ] \hfill \\
-
-  STAT response: xxxx
-
-  
-\end{description}
+No previous stock assessment has been conducted for Big Skate. The
+current management is based on an OFL estimate calculated from a proxy
+for \(F_{MSY}\) and average survey biomass from the WCGBT Survey during
+the years 2010--2012 ({\textbf{???}}). The \(F_{MSY}\) estimate was
+based on the product of an assumed \(F_{MSY}/M\) ratio and an \(M\)
+estimate of 0.162 based on the maximum age of 26 reported by McFarlane
+and King (McFarlane GA and King JR
+\protect\hyperlink{ref-McFandKing2006}{2006}). Values were sampled from
+an assumed distribution around all these quantities to develop a measure
+of uncertainty around the OFL estimate.
 
 \hypertarget{model-description}{%
 \subsection{Model Description}\label{model-description}}
 
-\hypertarget{transition-to-the-current-stock-assessment}{%
-\subsubsection{Transition to the Current Stock
-Assessment}\label{transition-to-the-current-stock-assessment}}
+\hypertarget{modeling-software}{%
+\subsubsection{Modeling Software}\label{modeling-software}}
+
+The STAT team used Stock Synthesis version 3.30.13 (Methot, Richard D.
+and Wetzel, Chantell R. (\protect\hyperlink{ref-Methot2013}{2013}),
+({\textbf{???}})). The r4ss package version 1.35.1 (Taylor et al.
+\protect\hyperlink{ref-Taylor2019}{2019}) was used to post-process the
+output data from Stock Synthesis.
 
 \hypertarget{summary-of-data-for-fleets-and-areas}{%
 \subsubsection{Summary of Data for Fleets and
 Areas}\label{summary-of-data-for-fleets-and-areas}}
 
-There are xxx fleets in the base model. They include:
+Catch is divided among 4 fleets in the base model: \emph{Fishery
+(current)} combines all non-tribal sources of catch for the years 1995
+onward, \emph{Discard (historical)} includes the estimated discard
+amount calculated from the estimated Longnose Skate discard rate as
+described above. The input catch for this fleet was 50\% of the total
+estimate to account for the assumed 50\% discard mortality rate. This
+data covers the period 1916--1994. \emph{Fishery (historical)} includes
+the reconstructed landings estimates from each of the three states for
+1916--1994. \emph{Tribal} includes the estimates of catch of Big Skate
+by treaty tribes.
 
-\emph{Commercial}: The commercial fleets include \ldots{}
+\hypertarget{other-specifications}{%
+\subsubsection{Other Specifications}\label{other-specifications}}
 
-\emph{Recreational}: The recreational fleets include \ldots{}
+This assessment covers the U.S. West Coast stock of Big Skate in off the
+coasts of Washington, Oregon and California, the area bounded by the
+U.S.-Canada border to the north, and the U.S.-Mexico border to the
+south. The population is treated as a single coastwide stock with no net
+movement in or out of the area. Females and males are modeled separately
+as there is evidence for differences in growth based on both the age and
+length data, as well as patterns in the sex ratios associated with the
+length composition data. Natural Mortality is estimated within the model
+using natural mortality prior developed by Hamel (2015). A Beverton-Holt
+stock-recruit function is assumed with no deviations from the
+spawner-recruit curve estimated.
 
-\emph{Research}: There are xx sources of fishery-independent data
-available \ldots{}
-
-\#\#\#Other Specifications
-
-\hypertarget{modeling-software}{%
-\subsubsection{Modeling Software}\label{modeling-software}}
-
-The STAT team used Stock Synthesis 3 version 3.30.05.03 by Dr.~Richard
-Methot at the NWFSC. This most recent version was used, since it
-included improvements and corrections to older versions. The r4SS
-package (GitHub release number v1.27.0) was used to post-processing
-output data from Stock Synthesis.
+The length composition data are stratified into 37 5-cm bins, ranging
+between 20 and 200 cm and the age data are stratified into ages 0--15+,
+conditioned on the same length bin structure. The population dynamics
+are computed over a larger range of lengths age ages, with the 5-cm
+length bins extending up to 250 cm and the numbers-at-age computed up to
+age 20.
 
 \hypertarget{data-weighting}{%
 \subsubsection{Data Weighting}\label{data-weighting}}
 
+The Francis (\protect\hyperlink{ref-Francis2011}{2011}) data weighting
+method ``TA1.8'' as implemented in the r4ss package was used for all
+length and age composition data.
+
 \hypertarget{priors}{%
 \subsubsection{Priors}\label{priors}}
 
-The log-normal prior for female natural mortality were based on a
-meta-analysis completed by Hamel
-(\protect\hyperlink{ref-Hamel2015}{2015}), as described under ``Natural
-Mortality.'' Female natural mortality was fixed at the median of the
-prior, 0.xxx for an assumed maximum age of xx. An uninformative prior
-was used for the male offset natural mortality, which was estimated.
+\emph{Natural mortality}
 
-The prior for steepness (\emph{h}) assumes a beta distribution with
-parameters based on an update for the Thorson-Dorn rockfish prior (Dorn,
-M. and Thorson, J., pers. comm.), which was endorsed by the Science and
-Statistical Committee in 2018. The prior is a beta distribution with
-\(mu\)=0.xxx and \(sigma\)=0.xxx. Steepness is fixed in the base model
-at the mean of the prior. The priors were applied in sensitivity
-analyses where these parameters were estimated.
+A log-normal prior for natural mortality was based on a meta-analysis
+completed by Hamel (\protect\hyperlink{ref-Hamel2015}{2015}). The Hamel
+prior for M is lognormal(ln(5.4/max age), .438), which based on the
+single 15-year-old fish observed out of 1034 ages from the WCGBT Survey.
+This results in lognormal(log(0.36)=-1.021651, 0.438) prior.
+
+\vspace{.5cm}
+
+\emph{Survey catchability}
+
+The lack of contrast in the data resulted in unstable model results
+under a variety of configurations. To keep biomass estimates within a
+plausibel range, a prior was applied to the catchability parameter
+(\(q\)) for the WCGBT Survey. This same prior was developed for the 2007
+Longnose Skate assessment ({\textbf{???}}) and is being used for the
+current Longnose Skate assessment (Gertseva, V.
+\protect\hyperlink{ref-Gertseva2019}{2019}\protect\hyperlink{ref-Gertseva2019}{a}).
+The prior for the WCGBT Survey was derived as follows.
+
+The WCGBT Survey covers the full latitudinal range of longnose skate
+modeled in the assessment, and thus, the latitudinal availability factor
+was assumed to be one (complete latitudinal coverage). The survey
+coverage exceeds the maximum depth distribution of longnose skate but
+may not fully cover the shallow end of the skate distribution. A range
+of 95 to 100 percent was assumed for the depth availability. A range of
+75 to 95 percent was assumed for vertical availability on the basis that
+longnose skate are known to bury in the mud and therefore some may be
+unavailable to the bottom trawl gear. The largest bounds were placed on
+the probability of capture, given a fish is in the net path. It is known
+that flatfish can be herded by trawl gear, and it is possible that this
+could also occur for skates. However, it is also possible that skate
+could avoid the trawl nets. For capture probability, a range of 75 to
+150 percent was assumed. Best estimates for each factors were set at the
+midpoint of the range for individual factors, except for the probability
+of capture, which was given a value of one. The overall estimate for the
+survey catchability was thus estimated to be 0.83 and the consequent
+bounds on catch, and the best assumption are: (0.53, 1.43) and 0.83
+respectively. The best estimate was equated to the median of a lognormal
+distribution and the bounds to 99 percent of that distribution. This
+resulted in a normal prior on \(log(q)\), with a mean of -0.188, and
+standard deviation of 0.187.
 
 \hypertarget{estimated-and-fixed-parameters}{%
 \subsubsection{Estimated and Fixed
@@ -1687,14 +1742,17 @@ Parameters}\label{estimated-and-fixed-parameters}}
 A full list of all estimated and fixed parameters is provided in Tables
 \ref{tab:model_params}.
 
-The base model has a total of xxx estimated parameters in the following
+The base model has a total of 44 estimated parameters in the following
 categories:
 
 \begin{itemize}
-  \item xxx,
-  \item xxx
-  \item xxx, and
-  \item xxx selectivity parameters
+  \item 1 natural mortality parameter,
+  \item 6 parameters related to female growth and the variability in length age age,
+  \item 2 parameters related to male growth relative to female growth,
+  \item 1 stock-recruit parameter ($log(R_0)$ controlling equilibrium recruitment)
+  \item 3 catchability parameters (1 for the WCGBT Survey and 1 each for the early and late periods of the Triennial Survey)
+  \item 2 extra standard deviation parameters (1 for each survey), and
+  \item 29 selectivity parameters, including 16 related to time-varying retention rate
 \end{itemize}
 
 The estimated parameters are described in greater detail below and a
@@ -1703,13 +1761,55 @@ full list of all estimated and parameters is provided in Table
 
 \emph{Growth.}
 
+Examination of patterns of age-at-length and length-at-age indicated
+unusual patterns of growth for Big Skate, including almost linear growth
+for the early years during which both sexes appeared to have similar
+average size, followed by strong differences in size at older ages. This
+led to the choice to model growth using the ``growth cessation model''
+recently developed by Maunder et
+al.~(\protect\hyperlink{ref-maunder2018growth}{2018}). This model
+provided two key advantages over the more common von Bertalanffy growth
+model in the case of Big Skate: it allowed essentially linear growth for
+the early years and it allowed growth for the earlier ages to be similar
+between females and males while diverging at older ages. The growth
+cessation model also improve the negative log likelihood by 45 units
+relative to the von Bertalanffy growth model.
+
 \emph{Natural Mortality.}
 
+Male natural mortality was assumed equal to the value estimated for
+females. Sensitivity analyses were used to test the impact of both the
+the prior on natural mortality and the assumption of equal natural
+mortality for both sexes.
+
 \emph{Selectivity.}
+
+A double-normal selectivity function was used for all fleets to allow
+consideration of both asymptotic and dome-shaped patterns. For the
+fishery and the Triennial survey, the difference in likelihood between
+dome-shaped and asymptotic patterns was very small and in the case of
+the Triennial survey, the dome-shape occurred at a length beyond almost
+all observations, indicating that this shape was likely driven by fit to
+other data sources, such as the index, rather than the length
+composition data. The WCGBT Survey was allowed to remain dome-shaped as
+this survey had the selectivity peak at a smaller length than the other
+fleets and the likelihood was improved by the dome-shape. The WCGBT
+Survey also has the shortest hauls, with 15 minutes or less of bottom
+contact, so larger skates may be better able to escape the net.
+
+In order to fit a strong skew in the sex ratios toward males for the
+length bins in which the majority of the samples were found, it was
+necessary to estimate a sex-specific offset of selectivity. Two offset
+parameters were estimated for all fleets, one for the difference in
+length at peak selectivity and another for the maximum selectivity. The
+ascending slope was assumed equal in all cases, as was the descending
+slope for the WCGBT Survey.
 
 \emph{Other Estimated Parameters.}
 
 \emph{Other Fixed Parameters.}
+
+Steepness was fixed at 0.4.
 
 \hypertarget{model-selection-and-evaluation}{%
 \subsection{Model Selection and
@@ -1719,12 +1819,18 @@ Evaluation}\label{model-selection-and-evaluation}}
 \subsubsection{Key Assumptions and Structural
 Choices}\label{key-assumptions-and-structural-choices}}
 
+\textbf{\(\color{red}{\text{To be added}}\)}
+
 \hypertarget{alternate-models-considered}{%
 \subsubsection{Alternate Models
 Considered}\label{alternate-models-considered}}
 
+\textbf{\(\color{red}{\text{To be added}}\)}
+
 \hypertarget{convergence}{%
 \subsubsection{Convergence}\label{convergence}}
+
+\textbf{\(\color{red}{\text{To be added}}\)}
 
 \hypertarget{response-to-the-current-star-panel-requests}{%
 \subsection{Response to the Current STAR Panel
@@ -1803,8 +1909,36 @@ estimated recruitments also shown.
 \subsubsection{Fits to the Data}\label{fits-to-the-data}}
 
 Model fits to the indices of abundance, fishery length composition,
-survey length composition, and conditional age-at-length observations
-are all discussed below.
+survey length composition, discard rates, mean body weight, and
+conditional age-at-length observations are all discussed below.
+
+The observed indices show much more variability than the model
+expectation, with the fit to the WCGBT Survey essentially a flat line
+(Figure \ref{fig:index2_cpuefit_WCGBTS}) and the fit to the Triennial
+Survey only showing a noticeable change over time due to the separate
+catchability parameter estimated for the early and late periods (Figure
+\ref{fig:index2_cpuefit_Triennial}).
+
+The fits to the length data are much better thanks to the combination of
+the growth cessation model and the sex-specific offsets to selectivity
+(Figures
+\ref{fig:comp_lenfit_aggregated_across_time}--\ref{fig:comp_lenfit__multi-fleet_comparison}).
+
+The conditional age-at-length data is likewise fit reasonably well, with
+some patterns in residuals showing variability among years, but no clear
+pattern that is consistent across years (Figures
+\ref{fig:age_fit_fishery} and \ref{fig:age_fit_WCGBTS}).
+
+Sex ratio data is not included in the likelihood as such, but a part of
+the length composition likelihood in which the proportions of females
+and males are included in a single vector comapred to the model
+expectations in the multinomial likelihood. The patterns in sex ratio by
+length bin show fewer females than males for the middle range of sizes
+(70--120 cm), with a shift to almost 100\% females for the largest size
+bins (over 130 cm). The use of sex-specific growth curves was adequate
+to fit the ratios for the largest bins, but ratio skews toward males at
+lengths where the mean ages are similar for females and males. The fit
+to this part of the sex ratio pattern required an offset is selectivity.
 
 \hypertarget{uncertainty-and-sensitivity-analyses}{%
 \subsubsection{Uncertainty and Sensitivity
@@ -1814,24 +1948,56 @@ A number of sensitivity analyses were conducted, including:
 
 \begin{enumerate}
 
-  \item Sensitivity 1
+  \item Setting all selectivity curves to be asymptotic
   
-  \item Sensitivity 2
+  \item Setting all selectivity curves to be dome-shaped
+
+  \item Removing the sex-specific offset on the selectivity curves
   
-  \item Sensitivity 3
+  \item Removing the prior on catchability for the WCGBT Survey
   
-  \item Sensitivity 4
+  \item Estimating a single catchability for all years in the Triennial Survey
   
-  \item Sensitivity 5, etc/
+  \item Estimating separate natural mortality parameters for males and females
   
+  \item Removing the prior on natural mortality
+  
+  \item Using the von Bertalanffy growth model
+
+  \item Using the Richards growth model
+
+  \item Tuning the sample sizes using the McAllister-Ianelli method
+  
+  \item Estimating historic discards based on 3yr average of discard rates and landings
+  
+  \item Changeing discard mortality from 0.5 to 0.4
+  
+  \item Changeing discard mortality from 0.5 to 0.6
   
 \end{enumerate}
+
+Results of these sensitivities are shown in Figures
+\ref{fig:Sensitivity_sel_and_Q} to \ref{fig:Sensitivity_bio_and_misc},
+and Tables \ref{tab:Sensitivity_sel_and_Q} to
+\ref{tab:Sensitivity_bio_and_misc}.
+
+\textbf{\(\color{red}{\text{Additional text to be added}}\)}
 
 \hypertarget{retrospective-analysis}{%
 \subsubsection{Retrospective Analysis}\label{retrospective-analysis}}
 
+\textbf{\(\color{red}{\text{To be added}}\)}
+
 \hypertarget{likelihood-profiles}{%
 \subsubsection{Likelihood Profiles}\label{likelihood-profiles}}
+
+Likelihood profiles were conducted over \(log(R_0)\), stock-recruit
+steepness (\(h\)) and natural mortality (\(M\)).
+
+Results of these profiles are shown in Figures \ref{fig:profile_logR0}
+to \ref{fig:profile_M_compare1_spawnbio}.
+
+\textbf{\(\color{red}{\text{Additional text to be added}}\)}
 
 \hypertarget{reference-points-1}{%
 \subsubsection{Reference Points}\label{reference-points-1}}
@@ -2466,16 +2632,18 @@ Year & Total biomass (mt) & Spawning biomass (mt) & Depletion & Age-0 recruits &
 
 \FloatBarrier
 
-\begin{sidewaystable}[ht]
+\begin{landscape}
+
+\begin{table}[ht]
 \centering
 \caption{Sensitivity of the base model 
                                           to assumptions about selectivity and
                                           catchability.} 
-\label{tab:Sensitivity_Sel_and_Q}
+\label{tab:Sensitivity_sel_and_Q}
 \scalebox{0.9}{
 \begin{tabular}{l>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}}
   \hline
-Label & Base.model & Sel.all.asymptotic & Sel.all.domed & Sel.no.sex.offset & Q.no.prior.on.WCGBTS & Q.no.offset.on.triennial \\ 
+Label & Base model & Sel all asymptotic & Sel all domed & Sel no sex offset & Q no prior on WCGBTS & Q no offset on triennial \\ 
   \hline
 TOTAL like & 441.63 & 441.41 & 441.63 & 441.63 & 441.13 & 444.19 \\ 
   Survey like & -9.78 & -9.78 & -9.78 & -9.78 & -10.06 & -8.37 \\ 
@@ -2499,21 +2667,23 @@ TOTAL like & 441.63 & 441.41 & 441.63 & 441.63 & 441.13 & 444.19 \\
    \hline
 \end{tabular}
 }
-\end{sidewaystable}
-
+\end{table}
+\end{landscape}
 \FloatBarrier
 
 \newpage
 
-\begin{sidewaystable}[ht]
+\begin{landscape}
+
+\begin{table}[ht]
 \centering
 \caption{Sensitivity of the base model 
                                           to assumptions about catches.} 
-\label{tab:Sensitivity_Sel_and_Q}
+\label{tab:Sensitivity_catch}
 \scalebox{0.9}{
 \begin{tabular}{l>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}}
   \hline
-Label & Base.model & Discards.based.on.3yr.averages & Discard.mortality...0.4 & Discard.mortality...0.6 \\ 
+Label & Base model & Discards based on 3yr averages & Discard mortality   0 4 & Discard mortality   0 6 \\ 
   \hline
 TOTAL like & 441.63 & 440.89 & 441.18 & 442.05 \\ 
   Survey like & -9.78 & -10.00 & -10.08 & -9.50 \\ 
@@ -2537,21 +2707,24 @@ TOTAL like & 441.63 & 440.89 & 441.18 & 442.05 \\
    \hline
 \end{tabular}
 }
-\end{sidewaystable}
+\end{table}
+\end{landscape}
 
 \FloatBarrier
 
 \newpage
 
-\begin{sidewaystable}[ht]
+\begin{landscape}
+
+\begin{table}[ht]
 \centering
 \caption{Sensitivity of the base model 
                                           to assumptions about biology and misc.} 
-\label{tab:Sensitivity_Sel_and_Q}
+\label{tab:Sensitivity_bio_and_misc}
 \scalebox{0.9}{
 \begin{tabular}{l>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}}
   \hline
-Label & Base.model & Bio.separate.M.by.sex & Bio.no.M.prior & Bio.von.bertalanffy.growth & Bio.Richards.growth & Misc..McAllister.Ianelli.tuning \\ 
+Label & Base model & Bio separate M by sex & Bio no M prior & Bio von bertalanffy growth & Bio Richards growth & Misc  McAllister Ianelli tuning \\ 
   \hline
 TOTAL like & 441.63 & 441.14 & 437.95 & 486.39 & 497.09 & 1132.64 \\ 
   Survey like & -9.78 & -9.86 & -9.71 & -9.80 & -9.73 & -9.76 \\ 
@@ -2575,35 +2748,10 @@ TOTAL like & 441.63 & 441.14 & 437.95 & 486.39 & 497.09 & 1132.64 \\
    \hline
 \end{tabular}
 }
-\end{sidewaystable}
-
-\FloatBarrier
-
-\newpage
-
-\begin{landscape}
-\begin{table}[ht]
-\centering
-\caption{Summary of the biomass/abundance
-                                              time series used in the stock
-                                              assessment.} 
-\label{tab:Index_summary}
-\begin{tabular}{>{\centering}p{.3in}>{\centering}p{1in}>{\centering}p{2.5in}>{\centering}p{.3in}>{\centering}p{2in}>{\centering}p{1.2in}>{\centering}p{.5in}}
-  \hline
-Fleet & Years & Name & Fishery ind. & Filtering & Method & Endorsed \\ 
-  \hline
-4 & 2004-2016 & Recreational PR dockside CPUE & No & trip, area, regulations, Stephens-MacCall & delta-GLM (bin-lognormal) & SSC \\ 
-  5 & 1980-2016 & CPFV logbook CPUE & No & trip, gear, effort, species, depth, sample size & negative binomial & SSC \\ 
-  6 & 2002-2016 & Onboard observer discard catch CPUE & No & habitat ,regulations, effort, boats & delta-GLM (bin-lognormal) & SSC \\ 
-  7 & 1970-2016 & Sanitation district CPUE & Yes & sample size, depth, tow times & delta-GLM (bin-lognormal) & SSC \\ 
-  8 & 2003-2016 & NWFSC trawl survey CPUE & Yes & depth, area & VAST & SSC \\ 
-  9 & 1995-2008 & CSUN/VRG Gillnet survey CPUE & Yes & gear, site, month & delta-GLM (bin-lognormal) & SSC \\ 
-  11 & 1994; 1998; 2003; 2008; 2013 & Southern California Bight trawl survey CPUE & Yes & depth, area & delta-GLM (bin-lognormal) & SSC \\ 
-  12 & 2002-2016 & Onboard observer retained catch CPUE & No & habitat, regulations, effort, boats & delta-GLM (bin-lognormal) & SSC \\ 
-   \hline
-\end{tabular}
 \end{table}
 \end{landscape}
+
+\FloatBarrier
 
 \newpage
 
@@ -2783,9 +2931,10 @@ Yr & OFL contribution (mt) & ACL landings (mt) & Age 5+ biomass (mt) & Spawning 
 
 \begin{figure}
 \centering
-\includegraphics{Figures/assess_region_map.png}
-\caption{Map showing the U.S. Exclusive Economic Zone covered by this
-stock assessment. \label{fig:boundary_map}}
+\includegraphics{Figures/survey_hauls_map.png}
+\caption{Map showing the distribution of Big Skate within the area
+covered by the West Coast Groundfish Bottom Trawl Survey aggregated over
+the years 2003--2018. \label{fig:boundary_map}}
 \end{figure}
 
 \begin{figure}
@@ -2798,8 +2947,8 @@ stock assessment. \label{fig:boundary_map}}
 \begin{figure}
 \centering
 \includegraphics{Figures/catch_by_source.png}
-\caption{Catch by area. Tribal catch was all landed in Washington State.
-\label{fig:catch_by_state}}
+\caption{Reconstructed landings by area. Tribal catch was all landed in
+Washington. \label{fig:catch_by_state}}
 \end{figure}
 
 \begin{figure}
@@ -2859,10 +3008,39 @@ Pacific Halibut Commission longline survey. \label{fig:IPHC_map}}
 \begin{figure}
 \centering
 \includegraphics{r4ss/plots_mod1/comp_lendat__aggregated_across_time.png}
-\caption{Length comp data, aggregated across time by fleet. Labels
-`retained' and `discard' indicate discarded or retained sampled for each
-fleet. Panels without this designation represent the whole catch.
+\caption{Length comp data, aggregated across time by fleet.
 \label{fig:comp_lendat_aggregated_across_time}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lendat__multi-fleet_comparison.png}
+\caption{Length comp data for all years and fleets. Bubble size
+indicates the observed proportions, with females in red and males in
+blue. \label{fig:comp_lendat__multi-fleet_comparison}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_condAALdat_bubflt1mkt2.png}
+\caption{Conditional age-at-length data from the fishery.
+\label{fig:age_dat_fishery}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_condAALdat_bubflt5mkt0.png}
+\caption{Conditional age-at-length data from the WCGBT Survey.
+\label{fig:age_dat_fishery}}
+\end{figure}
+
+\includegraphics{Figures/Reader 1 vs Reader 2.png} Reader 1 vs Reader
+2.png
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/numbers10_ageerror_matrix_1.png}
+\caption{Estimated ageing imprecision.\label{fig:ageing_imprecision}}
 \end{figure}
 
 \begin{figure}
@@ -2904,89 +3082,89 @@ text within each point).\label{fig:maturity}}
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png}
-\caption{Estimated time-series of recruitment for Big Skate.
-\label{fig:ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals}}
+\includegraphics{r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png}
+\caption{Fit to index data for WCGBT Survey. Lines indicate 95\%
+uncertainty interval around index values. Thicker lines indicate input
+uncertainty before addition of estimated additional uncertainty
+parameter. The blue line indicates the model
+estimate.\label{fig:index2_cpuefit_WCGBTS}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/SR_curve2.png}
-\caption{Estimated recruitment (red circles) and the assumed
-stock-recruit relationship (black line) for Big Skate. The green line
-shows the effect of the bias correction for the lognormal distribution.
-\label{fig:SR_curve2}}
-\end{figure}
-
-\FloatBarrier
-
-\begin{figure}
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_condAALfit_Andre_plotsflt1mkt2_page1.png}
-\caption{Conditional AAL plot, retained, Fishery (plot 1 of 3) These
-plots show mean age and std. dev. in conditional AAL. Left plots are
-mean AAL by size\_class (obs. and pred.) with 90\% CIs based on adding
-1.64 SE of mean to the data. Right plots in each pair are SE of mean AAL
-(obs. and pred.) with 90\% CIs based on the chi\_square distribution.
-\label{fig:mod1_4_comp_condAALfit_Andre_plotsflt1mkt2_page1}}
-\end{figure}
-
-\includegraphics{./r4ss/plots_mod1/comp_condAALfit_Andre_plotsflt1mkt2_page2.png}
-
-\begin{center} 
-
-              Figure continued from previous page 
-
-             \end{center}
-
-\includegraphics{./r4ss/plots_mod1/comp_condAALfit_Andre_plotsflt1mkt2_page3.png}
-
-\begin{center} 
-
-              Figure continued from previous page 
-
-             \end{center}
-
-\begin{figure}
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_condAALfit_data_weighting_TA1.8_condAgeTriennial Survey.png}
-\caption{Mean age from conditional data (aggregated across length bins)
-for Triennial Survey with 95\% confidence intervals based on current
-samples sizes. Francis data weighting method TA1.8: thinner intervals
-(with capped ends) show result of further adjusting sample sizes based
-on suggested multiplier (with 95\% interval) for conditional
-age\_at\_length data from Triennial Survey: 1.0013 (0.5403\_106.6286)
-For more info, see Francis, R.I.C.C. (2011). Data weighting in
-statistical fisheries stock assessment models. Can. J. Fish. Aquat. Sci.
-68: 1124\_1138.
-\label{fig:mod1_7_comp_condAALfit_data_weighting_TA1.8_condAgeTriennial Survey}}
+\includegraphics{r4ss/plots_mod1/index2_cpuefit_Triennial Survey.png}
+\caption{Fit to index data for Triennial Survey. Lines indicate 95\%
+uncertainty interval around index values. Thicker lines indicate input
+uncertainty before addition of estimated additional uncertainty
+parameter. The blue line indicates the model estimate with a change
+between 1992 and 1995 associated with the estimated change in
+catchability.\label{fig:index2_cpuefit_Triennial}}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics{./r4ss/plots_mod1/comp_condAALfit_Andre_plotsflt5mkt0_page1.png}
-\caption{Conditional AAL plot, whole catch, Triennial Survey (plot 1 of
-2) These plots show mean age and std. dev. in conditional AAL. Left
-plots are mean AAL by size\_class (obs. and pred.) with 90\% CIs based
-on adding 1.64 SE of mean to the data. Right plots in each pair are SE
-of mean AAL (obs. and pred.) with 90\% CIs based on the chi\_square
-distribution.
-\label{fig:mod1_8_comp_condAALfit_Andre_plotsflt5mkt0_page1}}
+\includegraphics{r4ss/plots_mod1/comp_lenfit__aggregated_across_time.png}
+\caption{Fits to length comp data, aggregated across time by fleet.
+\label{fig:comp_lenfit_aggregated_across_time}}
 \end{figure}
 
-\includegraphics{./r4ss/plots_mod1/comp_condAALfit_Andre_plotsflt5mkt0_page2.png}
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_lenfit__multi-fleet_comparison.png}
+\caption{Pearson residuals for length comp data for all years and
+fleets, with females in red and males in blue.
+\label{fig:comp_lenfit__multi-fleet_comparison}}
+\end{figure}
 
-\begin{center} 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_condAALfit_residsflt1mkt2.png}
+\caption{Pearson residuals for the fit to conditional age-at-length data
+from the fishery. \label{fig:age_fit_fishery}}
+\end{figure}
 
-              Figure continued from previous page 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/comp_condAALfit_residsflt5mkt0.png}
+\caption{Pearson residuals for the fit to conditional age-at-length data
+from the WCGBT Survey. \label{fig:age_fit_WCGBTS}}
+\end{figure}
 
-             \end{center}
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/sexratio_len_flt1mkt2.png}
+\caption{Observed sex ratios (points) from the fishery length comp data
+with 75\% intervals (vertical lines) calculated as a Jeffreys interval
+based on the adjusted input sample size. The model expectation is shown
+in the blue line.\label{fig:sexratio_len_flt1mkt2}}
+\end{figure}
 
-\FloatBarrier
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/sexratio_len_flt5mkt0.png}
+\caption{Observed sex ratios (points) from the WCGBT Survey length comp
+data with 75\% intervals (vertical lines) calculated as a Jeffreys
+interval based on the adjusted input sample size. The model expectation
+is shown in the blue line.\label{fig:sexratio_len_flt5mkt0}}
+\end{figure}
 
-\FloatBarrier
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/discard_fitFishery.png}
+\caption{Fit to the discard fraction estimates. Points are model
+estimates with 95\% uncertainty intervals. The model estimate is shown
+in the blue lines.\label{fig:discard_fitFishery}}
+\end{figure}
 
-\FloatBarrier
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/bodywt_fit_fltFishery.png}
+\caption{Fit to the mean weight of the discards. Points are model
+estimates with 95\% uncertainty intervals. The model estimate is shown
+in the blue lines.\label{fig:bodywt_fit_fltFishery}}
+\end{figure}
+
+file:
 
 \FloatBarrier
 
@@ -3005,6 +3183,120 @@ asymptotic intervals.
 intervals.
 \label{fig:ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals}}
 \end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png}
+\caption{Estimated time-series of recruitment for Big Skate.
+\label{fig:ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/SR_curve2.png}
+\caption{Estimated recruitment and the assumed stock-recruit
+relationship. \label{fig:SR_curve2}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/catch5 total catch (including discards) stacked.png}
+\caption{Estimated total catch including discards estimated within the
+model. The historical discards shown in green have been scaled to
+account for an assumed 50\% discard mortality but the discards in the
+recent period show both live and dead discards.
+\label{fig:catch_total_plot}}
+\end{figure}
+
+\hypertarget{sensitivity-analyses-for-model}{%
+\subsubsection{Sensitivity analyses for
+model}\label{sensitivity-analyses-for-model}}
+
+\begin{figure}
+\centering
+\includegraphics{Figures/sens.sel_and_Q_compare1_spawnbio.png}
+\caption{Time series of spawning output estimated in sensitivity
+analyses related to selectivity and catchability.
+\label{fig:Sensitivity_sel_and_Q}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{Figures/sens.catch_compare1_spawnbio.png}
+\caption{Time series of spawning output estimated in sensitivity
+analyses related to historic catch and discards.
+\label{fig:Sensitivity_catch}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{Figures/sens.bio_and_misc_compare1_spawnbio.png}
+\caption{Time series of spawning output estimated in sensitivity
+analyses related to biology and other assumptions.
+\label{fig:Sensitivity_bio_and_misc}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{Figures/growth_curve_comparison.png}
+\caption{Comparison of the estimated growth curves from the
+sensitivities analyses.\label{fig:growth_curve_comparison}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{Figures/profile_logR0.png}
+\caption{Likelihood profile over the log of equilibrium recruitment
+(\(R_0\)).\label{fig:profile_logR0}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{Figures/profile_R0_compare1_spawnbio.png}
+\caption{Time series of spawning output estimated for the models
+included in the profile over the log of equilibrium recruitment
+(\(R_0\)).\label{fig:profile_R0_compare1_spawnbio}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{Figures/profile_h.png}
+\caption{Likelihood profile over stock-recruit steepness (\(h\)).
+\label{fig:profile_h}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{Figures/profile_h_compare1_spawnbio.png}
+\caption{Time series of spawning output estimated for the models
+included in the profile over stock-recruit steepness (\(h\)).
+\label{fig:profile_h_compare1_spawnbio}}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+\centering
+\includegraphics{Figures/profile_M.png}
+\caption{Likelihood profile over natural mortality (\(M\)).
+\label{fig:profile_M}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{Figures/profile_M_compare1_spawnbio.png}
+\caption{Time series of spawning output estimated for the models
+included in the profile over natural mortality (\(M\)).
+\label{fig:profile_M_compare1_spawnbio}}
+\end{figure}
+
+\FloatBarrier
+
+\FloatBarrier
 
 \begin{figure}
 \centering
@@ -3048,19 +3340,19 @@ effective sample size used in the McAllister\_Iannelli tuning method.
 \begin{figure}
 \centering
 \includegraphics{./r4ss/plots_mod1/comp_lenfit_flt5mkt0.png}
-\caption{Length comps, whole catch, Triennial Survey. `N adj.' is the
-input sample size after data\_weighting adjustment. N eff. is the
-calculated effective sample size used in the McAllister\_Iannelli tuning
-method. \label{fig:mod1_3_comp_lenfit_flt5mkt0}}
+\caption{Length comps, whole catch, WCGBT Survey. `N adj.' is the input
+sample size after data\_weighting adjustment. N eff. is the calculated
+effective sample size used in the McAllister\_Iannelli tuning method.
+\label{fig:mod1_3_comp_lenfit_flt5mkt0}}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics{./r4ss/plots_mod1/comp_lenfit_flt6mkt0.png}
-\caption{Length comps, whole catch, WCGBT Survey. `N adj.' is the input
-sample size after data\_weighting adjustment. N eff. is the calculated
-effective sample size used in the McAllister\_Iannelli tuning method.
-\label{fig:mod1_4_comp_lenfit_flt6mkt0}}
+\caption{Length comps, whole catch, Triennial Survey. `N adj.' is the
+input sample size after data\_weighting adjustment. N eff. is the
+calculated effective sample size used in the McAllister\_Iannelli tuning
+method. \label{fig:mod1_4_comp_lenfit_flt6mkt0}}
 \end{figure}
 
 \newpage
@@ -3174,6 +3466,11 @@ Ford, P. 1971. Differential growth rate in the tail of the pacific big
 skate, (\emph{Raja binoculata}). Journal of the Fisheries Board of
 Canada \textbf{28}(1): 95--98. NRC Research Press.
 
+\leavevmode\hypertarget{ref-Francis2011}{}%
+Francis, R.I.C.C. 2011. Data weighting in statistical fisheries stock
+assessment models. Canadian Journal of Fisheries and Aquatic Sciencies
+\textbf{68}: 1124--1138.
+
 \leavevmode\hypertarget{ref-Gburski2007}{}%
 Gburski, C.M. and Gaichas, S.K. and Kimura, D.K. 2007. Age and growth of
 big skate (\emph{Raja binoculata}) and longnose skate (\emph{Raja
@@ -3181,7 +3478,10 @@ rhina}) in the Gulf of Alaska. \emph{In} Biology of Skates. Springer,
 Dordrecht.
 
 \leavevmode\hypertarget{ref-Gertseva2019}{}%
-Gertseva, V. 2019. Manuscript in preparation.
+Gertseva, V. 2019a. Manuscript in preparation.
+
+\leavevmode\hypertarget{ref-Gertseva2011}{}%
+Gertseva, V. 2019b. Manuscript in preparation.
 
 \leavevmode\hypertarget{ref-Gunderson1980}{}%
 Gunderson, Donald Raymond and Sample, Terrance M. 1980. Distribution and
@@ -3241,12 +3541,12 @@ Communication, Olympia, Washington, USA.
 Love, Milton S. 2011. Certainly more than you want to know about the
 fishes of the Pacific Coast: a postmodern experience. Really Big Press.
 
-\leavevmode\hypertarget{ref-Love1987}{}%
-Love, Milton S and Axell, Brita and Morris, Pamela and Collins, Robson
-and Brooks, Andrew. 1987. Life history and fishery of the California
-scorpionfish,\\
-emphScorpaena guttata, within the Southern California Bight. Fishery
-Bulletin \textbf{85}: 99--116.
+\leavevmode\hypertarget{ref-maunder2018growth}{}%
+Maunder, M.N., Deriso, R.B., Schaefer, K.M., Fuller, D.W.,
+Aires-da-Silva, A.M., Minte-Vera, C.V., and Campana, S.E. 2018. The
+growth cessation model: A growth model for species showing a near
+cessation in growth with application to bigeye tuna (thunnus obesus).
+Marine biology \textbf{165}(4): 76. Springer.
 
 \leavevmode\hypertarget{ref-McEachran1990}{}%
 McEachran, J., and Miyake, T. 1990. 1990. Zoogeography and bathymetry of
@@ -3263,6 +3563,11 @@ waters. Fisheries Research \textbf{May 1 (2-3)}: 169--78.
 Mecklenburg, CW and Mecklenburg, TA and Thorsteinson, LK. 2002. Fishes
 of Alaska. American Fisheries Society, Bethesda, Maryland.
 
+\leavevmode\hypertarget{ref-Methot2013}{}%
+Methot, Richard D. and Wetzel, Chantell R. 2013. Stock synthesis: A
+biological and statistical framework for fish stock assessment and
+fishery management. Fisheries Research \textbf{142}: 86--99.
+
 \leavevmode\hypertarget{ref-Miller1980}{}%
 Miller, B.S., Cross, J.N., Steinfort, S.N., Fresh, K.L., and Simenstad,
 C.A. 1980. Nearshore fish and macroinvertebrate assemblages along the
@@ -3274,6 +3579,15 @@ Stevenson, DE and Orr, JW and Hoff, GR and McEachran, JD. 2008. Emerging
 patterns of species richness, diversity, population density, and
 distribution in the skates (Rajidae) of Alaska. Fish Bull \textbf{106}:
 24--39.
+
+\leavevmode\hypertarget{ref-Taylor2019}{}%
+Taylor, I.G., Stewart, I.J., Hicks, A.C., Garrison, T.M., Punt, A.E.,
+Wallace, J.R., Wetzel, C.R., Thorson, J.T., Takeuchi, Y., Ono, K.,
+Monnahan, C.C., Stawitz, C.C., A'mar, Z.T., Whitten, A.R., Johnson,
+K.F., Emmet, R.L., Anderson, S.C., Lambert, G.I., Stachura, M.M.,
+Cooper, A.B., Stephens, A., Klaer, N.L., McGilliard, C.R., Iwasaki,
+W.M., Doering, K., and Havron, A.M. 2019. R4ss: R code for stock
+synthesis. Available from \url{https://github.com/r4ss}.
 
 \leavevmode\hypertarget{ref-Thorson2017a}{}%
 Thorson, James T. and Barnett, Lewis A. K. 2017. Comparing estimates of
@@ -3288,10 +3602,6 @@ Geostatistical delta-generalized linear mixed models improve precision
 for estimated abundance indices for West Coast groundfishes. ICES
 Journal of Marine Science \textbf{72}(5): 1297--1310. doi:
 \href{https://doi.org/\%7B10.1093/icesjms/fsu243\%7D}{\{10.1093/icesjms/fsu243\}}.
-
-\leavevmode\hypertarget{ref-VonB}{}%
-von Bertalanffy, L. 1938. A quantitative theory of organic growth. Human
-Biology \textbf{10}: 181--213.
 
 \leavevmode\hypertarget{ref-ZeinerWolf1993}{}%
 Zeiner, S.J. and P. Wolf. 1993. Growth characteristics and estimates of

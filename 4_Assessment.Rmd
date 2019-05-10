@@ -6,7 +6,7 @@
 
 ### History of Modeling Approaches Used for this Stock
 
-No previous stock assessment has been conducted for Big Skate. The current management is based on an OFL estimate calculated from a proxy for $F_{MSY}$ and average survey biomass from the WCGBT Survey during the years 2010--2012 [@Taylor2013]. The $F_{MSY}$ estimate was based on the product of an assumed $F_{MSY}/M$ ratio and an $M$ estimate of 0.162 based on the maximum age of 26 reported by McFarlane and King [@McFarlane2006]. Values were sampled from an assumed distribution around all these quantities to develop a measure of uncertainty around the OFL estimate.
+No previous stock assessment has been conducted for Big Skate. The current management is based on an OFL estimate calculated from a proxy for $F_{MSY}$ and average survey biomass from the WCGBT Survey during the years 2010--2012 [@Taylor2013]. The $F_{MSY}$ estimate was based on the product of an assumed $F_{MSY}/M$ ratio and an $M$ estimate of 0.162 based on the maximum age of 26 reported by McFarlane and King [@McFandKing2006]. Values were sampled from an assumed distribution around all these quantities to develop a measure of uncertainty around the OFL estimate.
 
 <!-- ************************MODEL DESCRIPTION***************************** -->
 ## Model Description

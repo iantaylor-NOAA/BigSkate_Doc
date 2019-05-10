@@ -287,6 +287,7 @@ output:
 \FloatBarrier
 
 <!-- *********** Sensitivity to Sel and Q ******************************* --> 
+\begin{landscape}
 
 ```{r, results = 'asis'}
     
@@ -302,6 +303,8 @@ output:
     #                           'Drop PC data',
     #                           'Drop RecDD data')
 
+    colnames(Sens_model1) <- gsub(pattern=".", replacement=" ", x=colnames(Sens_model1), fixed=TRUE)
+    
     # Create sensitivities table
     Sens_model1.table = xtable(Sens_model1, 
                                caption = c('Sensitivity of the base model 
@@ -319,16 +322,18 @@ output:
     print(Sens_model1.table, 
           include.rownames = FALSE,             
           caption.placement = 'top',
-          floating.environment = 'sidewaystable',
+          #floating.environment = 'sidewaystable',
           scalebox = .9)
 
 ```
-
+\end{landscape}
 \FloatBarrier
 
 \newpage
 
 <!-- *********** Sensitivity to catch ******************************* -->
+
+\begin{landscape}
 
 ```{r, results = 'asis'}
     
@@ -344,6 +349,7 @@ output:
     #                           'Drop PC data',
     #                           'Drop RecDD data')
 
+    colnames(Sens_model1) <- gsub(pattern=".", replacement=" ", x=colnames(Sens_model1), fixed=TRUE)
     # Create sensitivities table
     Sens_model1.table = xtable(Sens_model1, 
                                caption = c('Sensitivity of the base model 
@@ -360,10 +366,11 @@ output:
     print(Sens_model1.table, 
           include.rownames = FALSE,             
           caption.placement = 'top',
-          floating.environment = 'sidewaystable',
+          #floating.environment = 'sidewaystable',
           scalebox = .9)
 
 ```
+\end{landscape}
 
 
 \FloatBarrier
@@ -371,6 +378,8 @@ output:
 \newpage
 
 <!-- *********** Sensitivity to Biological and other assumptions ******************************* --> 
+
+\begin{landscape}
 
 ```{r, results = 'asis'}
     
@@ -386,6 +395,8 @@ output:
     #                           'Drop PC data',
     #                           'Drop RecDD data')
 
+    colnames(Sens_model1) <- gsub(pattern=".", replacement=" ", x=colnames(Sens_model1), fixed=TRUE)
+    
     # Create sensitivities table
     Sens_model1.table = xtable(Sens_model1, 
                                caption = c('Sensitivity of the base model 
@@ -402,55 +413,17 @@ output:
     print(Sens_model1.table, 
           include.rownames = FALSE,             
           caption.placement = 'top',
-          floating.environment = 'sidewaystable',
+          #floating.environment = 'sidewaystable',
           scalebox = .9)
 
 ```
+\end{landscape}
 
 
 \FloatBarrier
 
 \newpage
 
-<!-- ***********Indices of abundance summary table************************* -->
-\begin{landscape}
-```{r, results = 'asis'}
-    Index_summary = read.csv('./txt_files/Index_summary.csv')
-      colnames(Index_summary) = c('Fleet',
-                                  'Years',	
-                                  'Name',
-                                  'Fishery ind.',
-                                  'Filtering',
-                                  'Method',	
-                                  'Endorsed')
-
-   # Index of abundance summary, create table   
-     Index_summary.table = xtable(Index_summary, 
-                                  caption = c('Summary of the biomass/abundance
-                                              time series used in the stock
-                                              assessment.'),
-                                 label = 'tab:Index_summary',
-                                 digits = 0)    
-    # Add alignment  
-      align(Index_summary.table) = c('l',
-                                    '>{\\centering}p{.3in}',
-                                     '>{\\centering}p{1in}',
-                                     '>{\\centering}p{2.5in}',
-                                     '>{\\centering}p{.3in}', 
-                                     '>{\\centering}p{2in}',
-                                     '>{\\centering}p{1.2in}',
-                                     '>{\\centering}p{.5in}')  
-    
-    # Print index summary table
-      print(Index_summary.table, 
-            include.rownames=FALSE, 
-            caption.placement='top',
-            sanitize.text.function = function(x){x})
-```
-\end{landscape}
-<!-- ---------------------------------------------------------------------- -->
-
-\newpage
 
 <!-- ***********Retrospective table*********************************** -->
 \begin{landscape}
