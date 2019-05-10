@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 
 ## Model Results Tables
 
@@ -66,6 +71,12 @@
                              'Status',
                              'SD',
                              'Prior (Exp.Val, SD) ')
+    
+    mod_params$Parameter = gsub("Fishery_current(1)_BLK2repl", "", mod_params$Parameter, fixed=T)
+    
+    mod_params$Parameter = gsub("Fishery_current", "", mod_params$Parameter, fixed=T)
+    mod_params$Parameter = gsub("BLK1repl", "", mod_params$Parameter, fixed=T)
+
 
     # Model 1 model parameters
     mod_params.table = xtable(mod_params, 
@@ -82,7 +93,7 @@
                               digits = c(0,0,0,3,0,3,0,3,0))  
 
     # Add alignment  
-    align(mod_params.table) = c('lrlrrcccl')
+    align(mod_params.table) = c('l','l','p{2.5in}','l','r','c','c','c','l')
         
  
     # Add "continued on next page"" footnote   
@@ -275,7 +286,8 @@
 
 \FloatBarrier
 
-<!-- ***********MODEL 1 SENSITIVITY TABLE(S)******************************* --> 
+<!-- *********** Sensitivity to Sel and Q ******************************* --> 
+
 ```{r, results = 'asis'}
     
     # Read in/organize sensitivity file, change column names, caption
@@ -316,10 +328,89 @@
 
 \newpage
 
+<!-- *********** Sensitivity to catch ******************************* -->
+
+```{r, results = 'asis'}
+    
+    # Read in/organize sensitivity file, change column names, caption
+    Sens_model1 = read.csv('./txt_files/Sensitivities_catch.csv')
+    # colnames(Sens_model1) = c('Label', 
+    #                           'Base (Francis weights)',
+    #                           'Default weights',
+    #                           'Harmonic mean weights',
+    #                           'Estimate equal M',
+    #                           'Estimate equal M and h',
+    #                           'Drop PR data',
+    #                           'Drop PC data',
+    #                           'Drop RecDD data')
+
+    # Create sensitivities table
+    Sens_model1.table = xtable(Sens_model1, 
+                               caption = c('Sensitivity of the base model 
+                                          to assumptions about catches.'),
+                               label = 'tab:Sensitivity_Sel_and_Q', digits = 2)    
+  
+    # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
+    # You can change this easily to have variable columns width after you know how many
+    # colunns your final table has
+    align(Sens_model1.table) = c('l','l', rep('>{\\centering}p{.8in}', dim(Sens_model1)[2]-1))
 
 
+    # Print model 1 sensitivity table
+    print(Sens_model1.table, 
+          include.rownames = FALSE,             
+          caption.placement = 'top',
+          floating.environment = 'sidewaystable',
+          scalebox = .9)
+
+```
 
 
+\FloatBarrier
+
+\newpage
+
+<!-- *********** Sensitivity to Biological and other assumptions ******************************* --> 
+
+```{r, results = 'asis'}
+    
+    # Read in/organize sensitivity file, change column names, caption
+    Sens_model1 = read.csv('./txt_files/Sensitivities_bio_and_misc.csv')
+    # colnames(Sens_model1) = c('Label', 
+    #                           'Base (Francis weights)',
+    #                           'Default weights',
+    #                           'Harmonic mean weights',
+    #                           'Estimate equal M',
+    #                           'Estimate equal M and h',
+    #                           'Drop PR data',
+    #                           'Drop PC data',
+    #                           'Drop RecDD data')
+
+    # Create sensitivities table
+    Sens_model1.table = xtable(Sens_model1, 
+                               caption = c('Sensitivity of the base model 
+                                          to assumptions about biology and misc.'),
+                               label = 'tab:Sensitivity_Sel_and_Q', digits = 2)    
+  
+    # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
+    # You can change this easily to have variable columns width after you know how many
+    # colunns your final table has
+    align(Sens_model1.table) = c('l','l', rep('>{\\centering}p{.8in}', dim(Sens_model1)[2]-1))
+
+
+    # Print model 1 sensitivity table
+    print(Sens_model1.table, 
+          include.rownames = FALSE,             
+          caption.placement = 'top',
+          floating.environment = 'sidewaystable',
+          scalebox = .9)
+
+```
+
+
+\FloatBarrier
+
+\newpage
 
 <!-- ***********Indices of abundance summary table************************* -->
 \begin{landscape}
