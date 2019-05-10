@@ -291,7 +291,7 @@ output:
 ```{r, results = 'asis'}
     
     # Read in/organize sensitivity file, change column names, caption
-    Sens_model1 = read.csv('./txt_files/Sensitivities_Sel_and_Q.csv')
+    Sens_model1 = read.csv('./txt_files/Sensitivities_sel_and_Q.csv')
     # colnames(Sens_model1) = c('Label', 
     #                           'Base (Francis weights)',
     #                           'Default weights',
@@ -307,7 +307,7 @@ output:
                                caption = c('Sensitivity of the base model 
                                           to assumptions about selectivity and
                                           catchability.'),
-                               label = 'tab:Sensitivity_Sel_and_Q', digits = 2)    
+                               label = 'tab:Sensitivity_sel_and_Q', digits = 2)    
   
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
     # You can change this easily to have variable columns width after you know how many
@@ -348,7 +348,7 @@ output:
     Sens_model1.table = xtable(Sens_model1, 
                                caption = c('Sensitivity of the base model 
                                           to assumptions about catches.'),
-                               label = 'tab:Sensitivity_Sel_and_Q', digits = 2)    
+                               label = 'tab:Sensitivity_catch', digits = 2)    
   
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
     # You can change this easily to have variable columns width after you know how many
@@ -390,7 +390,7 @@ output:
     Sens_model1.table = xtable(Sens_model1, 
                                caption = c('Sensitivity of the base model 
                                           to assumptions about biology and misc.'),
-                               label = 'tab:Sensitivity_Sel_and_Q', digits = 2)    
+                               label = 'tab:Sensitivity_bio_and_misc', digits = 2)    
   
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
     # You can change this easily to have variable columns width after you know how many
