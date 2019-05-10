@@ -76,16 +76,6 @@ In the current fishery (since 1995), annual total landings of `r spp` have range
 This the first full assessment for `r spp`. It is currently managed using an OFL which was based on a proxy for $F_{MSY}$ and a 3-year recent average of survey biomass. This assessment uses the newest version of Stock Synthesis (3.30.13).  The model begins in `r Dat_start_mod1`, and assumes the stock was at an unfished equilibrium that year. 
 
 
-\FloatBarrier
-
-<!-- (Figure \ref{fig:assess_region_map}). -->
-
-![U.S. West Coast Exclusive Economic zone covering the area in which this stock assessment is focused.  \label{fig:assess_region_map}](Figures/assess_region_map.png)
-
-<!-- { height=40%, width=40% }   Andi look up "out" values! -->
-
-\FloatBarrier
-
 ## Stock Biomass{-}
 
 <!-- (Figure \ref{fig:Spawnbio_all} and Table \ref{tab:SpawningDeplete_mod1}).  -->
@@ -280,9 +270,13 @@ harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt (Figure 
 ```
 <!-- ***********END EXECUTIVE SUMMARY OFL AND DECISION TABLES************** -->
 
-
-
 <!-- ***********BEGIN EXECUTIVE SUMMARY RESULTS SUMMARY TABLE --> 
+
+\newgeometry{hmargin=1in,vmargin=1in}
+<!-- \thispagestyle{lscape} -->
+\begin{landscape}
+
+
 ```{r, results='asis'}
    # Print the results summary table, will have to edit the R code and input file 
    # depending on the stock structure
@@ -292,13 +286,16 @@ harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt (Figure 
  print(base_summary.table, 
        include.rownames = FALSE, 
        caption.placement = 'top',
-       floating.environment = 'sidewaystable', 
+   #    floating.environment = 'sidewaystable', 
        sanitize.text.function = function(x){x}, 
        scalebox = .6, 
        align = TRUE, 
        hline.after = c(-1, 0, 4, 5, 7, 9, 11, nrow(base_summary.table)))
 ```
 
+\end{landscape}
+\restoregeometry
+<!-- \pagestyle{fancy} -->
 
 ![Equilibrium yield curve for the base case model. Values are based on the `r Dat_end_mod1` fishery selectivity and with steepness fixed at 0.718. \label{fig:Yield_all}](r4ss/plots_mod1/yield1_yield_curve.png)
 

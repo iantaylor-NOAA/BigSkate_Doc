@@ -7,22 +7,11 @@ output:
 
 # Introduction
 
-
-## Distribution and Life History
-
 Skates are the largest and most widely distributed group of batoid fish with approximately 245 species ascribed to two families (@Ebert2007, @McEachran1990). Skates are benthic fish that are found in all coastal waters but are most common in cold temperatures and polar waters [@Ebert2007].
 
 There are eleven species of skates in three genera (Amblyraja, Bathyraja, and Raja) present in the Northeast Pacific Ocean off California, Oregon and Washington (Ebert 2003). Of that number, just three species (Longnose Skate, *Raja rhina*; Big Skate, *Raja binoculata*; and Sandpaper Skate, *Bathyraja interrupta*) make up over 95 percent of West Coast Groundfish Bottom Trawl Survey (WCGBTS) catches in terms of biomass and numbers, with the Longnose Skate leading in both categories (with 62 percent of biomass and 56 percent of numbers).
 
 Big Skate (*Raja binoculata*) is the largest of the skate species in North America with a documented maximum length of 244 cm total length and a maximum weight of 91 kg [@Eschmeyer1983].  The species name “binoculata” (two-eyed) refers to the prominent ocellus at the base of each pectoral fin.  Big Skates are usually seen buried in sediment with only their eyes showing.
-
-The Big Skate is most common in soft-sediment habitats in coastal waters of the continental shelf (@Bizzarro2014, @Farrugia2016). Use of mixed substrate (e.g., mud with boulders) increases with ontogeny but hard substrates are largely avoided (@Bizzarro2015).  In the GOA, the Big Skate is the most commonly encountered skate species in continental shelf waters at 100–200 m depth, and is most abundant in the central and western areas of the GOA (@Stevenson2008; @Bizzarro2014). Off the U.S. Pacific Coast, the Big Skate is most densely distributed on the inner continental shelf (< 100 m; @Bizzarro2014). Eggs are mainly deposited between 70–90 m on sand or mud substrates (@Hitz1964; NMFS-NWFSC-FRAM, unpub. data). Juveniles typically occur in shallower waters than adults (@Bizzarro2015). Core habitat regions of Big Skate off the U.S. Pacific Coast and in the Gulf of Alaska are spatially segregated from those of other species (@Bizzarro2014).
-
-Big Skates are highly mobile and capable of long range (> 2000 km) movements (KingandMcF2010; @Farrugia2016). For example, in British Columbia, a study revealed that ~75% of tagged individuals were recaptured within 21 km of the tagging locations, but 15 of the tagged individuals (0.1%) moved over 1,000 km (max = 2340 km; @KingandMcF2010). In the Gulf of Alaska, a year of satellite tag data showed that six of twelve tagged individuals moved over 100 km, with one skate moving > 2,000 km (Farrugia et al.  2016). Although primarily benthic, Big Skates utilize the entire water column including surface waters (@Farrugia2016). They have broad thermal tolerances 2–19º C that enable their occurrence from boreal to subtropical latitudes (@Love2011; @Farrugia2016).
-
-The Big Skate is broadly distributed, occurring from the southeastern Bering Sea [@Mecklenburg2002] to southern Baja California (22.90º N, 110.03º W; [@Castro1993]) and the Gulf of California [@Castro1996]. It has been reported at depths of 2–501 m (min: @Miller1980; max: @Farrugia2016) but is most common on the inner continental shelf (< 100 m; [@Love2011]; [@Bizzarro2015]). Big Skates are highly mobile and capable of long range (> 2000 km) movements ([@KingandMcF2009]; [@Farrugia2016]). 
-
-In 2012, the Big Skate was moved from genus *Raja* to the new genus *Beringraja* together with the Mottled Skate (*B. pulchra*) [@Ishihara2012].  These are the only two skates with multiple embryos per egg case, and they are very similar mophologically and genetically [@Bizzarro2019].
 
 ## Biology
 
@@ -80,9 +69,27 @@ align(Life_History.table) = c('l', 'l',
 
 \newpage
 \FloatBarrier
+## Distribution and Life History
+
+The Big Skate is most common in soft-sediment habitats in coastal waters of the continental shelf (@Bizzarro2014, @Farrugia2016). Use of mixed substrate (e.g., mud with boulders) increases with ontogeny but hard substrates are largely avoided (@Bizzarro2015).  In the GOA, the Big Skate is the most commonly encountered skate species in continental shelf waters at 100–200 m depth, and is most abundant in the central and western areas of the GOA (@Stevenson2008; @Bizzarro2014). Off the U.S. Pacific Coast, the Big Skate is most densely distributed on the inner continental shelf (< 100 m; @Bizzarro2014). Eggs are mainly deposited between 70–90 m on sand or mud substrates (@Hitz1964; NMFS-NWFSC-FRAM, unpub. data). Juveniles typically occur in shallower waters than adults (@Bizzarro2015). Core habitat regions of Big Skate off the U.S. Pacific Coast and in the Gulf of Alaska are spatially segregated from those of other species (@Bizzarro2014).
+
+Big Skates are highly mobile and capable of long range (> 2000 km) movements (KingandMcF2010; @Farrugia2016). For example, in British Columbia, a study revealed that ~75% of tagged individuals were recaptured within 21 km of the tagging locations, but 15 of the tagged individuals (0.1%) moved over 1,000 km (max = 2340 km; @KingandMcF2010). In the Gulf of Alaska, a year of satellite tag data showed that six of twelve tagged individuals moved over 100 km, with one skate moving > 2,000 km (Farrugia et al.  2016). Although primarily benthic, Big Skates utilize the entire water column including surface waters (@Farrugia2016). They have broad thermal tolerances 2–19º C that enable their occurrence from boreal to subtropical latitudes (@Love2011; @Farrugia2016).
+
+The Big Skate is broadly distributed, occurring from the southeastern Bering Sea [@Mecklenburg2002] to southern Baja California (22.90º N, 110.03º W; [@Castro1993]) and the Gulf of California [@Castro1996]. It has been reported at depths of 2–501 m (min: @Miller1980; max: @Farrugia2016) but is most common on the inner continental shelf (< 100 m; [@Love2011]; [@Bizzarro2015]). Big Skates are highly mobile and capable of long range (> 2000 km) movements ([@KingandMcF2009]; [@Farrugia2016]). 
+
+In 2012, the Big Skate was moved from genus *Raja* to the new genus *Beringraja* together with the Mottled Skate (*B. pulchra*) [@Ishihara2012].  These are the only two skates with multiple embryos per egg case, and they are very similar mophologically and genetically [@Bizzarro2019].
+
+
+
 
 ## Map
-A map showing the area of the U.S. West Coast Exclusive Economic Zone covered by this stock assessment is provided in Figure \ref{fig:boundary_map}.
+A map showing the area of the U.S. West Coast Exclusive Economic Zone covered by this stock assessment is provided in Figure \ref{fig:assess_region_map.png}.
+
+<!-- (Figure \ref{fig:assess_region_map}). -->
+
+![U.S. West Coast Exclusive Economic zone covering the area in which this stock assessment is focused.  \label{fig:assess_region_map}](Figures/assess_region_map.png)
+
+<!-- { height=40%, width=40% }   Andi look up "out" values! -->
 
 ## Ecosystem Considerations
 
@@ -138,7 +145,7 @@ DCAC produced a range of potential yield estimates that were above the long-term
 
 The recommendation for management for both skate species was that they should be managed with harvest yields based on mean historic catch, with consideration given to survey trends and to the ranges of maximum sustainable yield estimates identified by the Catch-MSY Approach. However, the analysis found no significant trends in abundance indices for Big Skate, and mean historical catches were below the maximum MSY estimate from the catch-MSY results.
 
-**Mexico**
+### Mexico
 
-No information is available on any fishery for Big Skate in Mexican waters, however to the extent that they do occur, which is rarely, they may be taken in the artisanal fishery.
+No information is available on any fishery for Big Skate in Mexican waters, where they rarely occur, however they may be taken in the artisanal fishery.
 
