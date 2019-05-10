@@ -69,10 +69,7 @@ In the current fishery (since 1995), annual total landings of `r spp` have range
 ## Data and Assessment{-}
 
 
-
-
 This the first full assessment for `r spp`, which was last assessed as part of the "Other Species" complex.  This assessment uses the newest version of Stock Synthesis (3.30.13).  The model begins in `r Dat_start_mod1`, and assumes the stock was at an unfished equilibrium that year. 
-
 
 
 (Figure \ref{fig:assess_region_map}).
@@ -122,8 +119,7 @@ asymptotic variance estimates show that the uncertainty in the estimated spawnin
 
 
 ## Recruitment{-}
-Recruitment deviations were estimated from 1916-2018 (Figure \ref{fig:Recruits_all} and 
-Table \ref{tab:Recruit_mod1}).
+Recruitment was assumed to follow the Beverton-Holt stock recruit curve, so uncertainty in estimated recruitment is due to uncertainty in spawning biomass and the unfished equilibrium recruitment $R_0$ (Figure \ref{fig:Recruits_all} and Table \ref{tab:Recruit_mod1}).
 
 
 
@@ -150,8 +146,8 @@ Table \ref{tab:Recruit_mod1}).
 
 
 ## Exploitation status{-}
-Harvest rates estimated by the base model.
-management target levels (Table \ref{tab:SPR_Exploit_mod1} and Figure \ref{fig:SPR_all}). 
+Harvest rates estimated by the base model indicate catch levels have been well below the limits that would be associated with the SPR = 50% target.
+(Table \ref{tab:SPR_Exploit_mod1} and Figure \ref{fig:SPR_all}). 
 
 
 

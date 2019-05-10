@@ -20,15 +20,11 @@ The Big Skate is most common in soft-sediment habitats in coastal waters of the 
 
 Big Skates are highly mobile and capable of long range (> 2000 km) movements (KingandMcF2010; @Farrugia2016). For example, in British Columbia, a study revealed that ~75% of tagged individuals were recaptured within 21 km of the tagging locations, but 15 of the tagged individuals (0.1%) moved over 1,000 km (max = 2340 km; @KingandMcF2010). In the Gulf of Alaska, a year of satellite tag data showed that six of twelve tagged individuals moved over 100 km, with one skate moving > 2,000 km (Farrugia et al.  2016). Although primarily benthic, Big Skates utilize the entire water column including surface waters (@Farrugia2016). They have broad thermal tolerances 2–19º C that enable their occurrence from boreal to subtropical latitudes (@Love2011; @Farrugia2016).
 
-Big Skates are opportunistic, generalist mesopredators with highly variable spatio-temporal trophic roles (@Ebert2007; @Bizzarro2015). Off central California, diet of Big Skates is composed mainly of fishes, shrimps, and crabs (in descending order), with larger skates incorporating more fishes (@Bizzarro2007); however, in the Gulf of Alaska, Big Skate diet consists mainly of crabs (esp. Tanner Crabs) throughout ontogeny, with relatively small portions of fishes and shrimps (@Bizzarro2015). Correspondingly, trophic level and general diet composition estimates differ significantly between California and Gulf of Alaska Big Skate populations (@Bizzarro2015). 
-
-Big Skates and their egg cases are preyed upon by a variety of vertebrates and invertebrates. Snails and other molluscs bore holes in egg cases to feed on developing embryos and especially their protein rich yolk-sacs (Bizzarro, pers. obs; @Hoff2009). Sevengill Sharks, Brown Rockfish, and Stellar Sea Lions are known predators of juvenile and adult Big Skates (@Ebert2003, @Love2011). Northern Sea Lions consume free-living Big Skates and their egg cases (@Ebert2003, @Love2011).
+The Big Skate is broadly distributed, occurring from the southeastern Bering Sea [@Mecklenburg2002] to southern Baja California (22.90º N, 110.03º W; [@Castro1993]) and the Gulf of California [@Castro1996]. It has been reported at depths of 2–501 m (min: @Miller1980; max: @Farrugia2016) but is most common on the inner continental shelf (< 100 m; [@Love2011]; [@Bizzarro2015]). Big Skates are highly mobile and capable of long range (> 2000 km) movements ([@KingandMcF2009]; [@Farrugia2016]). 
 
 In 2012, the Big Skate was moved from genus *Raja* to the new genus *Beringraja* together with the Mottled Skate (*B. pulchra*) [@Ishihara2012].  These are the only two skates with multiple embryos per egg case, and they are very similar mophologically and genetically [@Bizzarro2019].
 
 ## Biology
-
-The Big Skate is broadly distributed, occurring from the southeastern Bering Sea [@Mecklenburg2002] to southern Baja California (22.90º N, 110.03º W; [@Castro1993]) and the Gulf of California [@Castro1996]. It has been reported at depths of 2–501 m (min: @Miller1980; max: @Farrugia2016) but is most common on the inner continental shelf (< 100 m; [@Love2011]; [@Bizzarro2015]). Big Skates are highly mobile and capable of long range (> 2000 km) movements ([@KingandMcF2009]; [@Farrugia2016]). 
 
 Big Skate is oviparious, and is one of two skate species that have multiple embryos per egg case [@Ebert2008]. From 1–8 embryos can be contained in a single, large egg capsule, but most have 3–4 [@DeLacy1935; @Hitz1964; @Ford1971]. Eggs are deposited year-round on sand or mud substrates at depths of ~50–150 m [@Hitz1964; @Ebert2007]. Embryos hatch from eggs after 6–20 months, with shorter developmental periods associated with warmer temperatures [@Hoff2009]. In captivity, Big Skate females may produce > 350 eggs/year (average of 2 embryos/egg case; @Chiquillo2014) from long-term sperm storage [@Jang2019]. Size at birth is 18–23 cm TL [@Ebert2003]. Maximum size is 244 cm TL [@Eschmeyer1983, with females growing to larger sizes.
 
@@ -81,9 +77,14 @@ align(Life_History.table) = c('l', 'l',
 \end{landscape}
 
 ## Map
-A map showing the scope of the assessment and depicting boundaries for fisheries or data collection strata is provided in Figure \ref{fig:boundary_map}.
+A map showing the area of the U.S. West Coast Exclusive Economic Zone covered by this stock assessment is provided in Figure \ref{fig:boundary_map}.
 
 ## Ecosystem Considerations
+
+Big Skates are opportunistic, generalist mesopredators with highly variable spatio-temporal trophic roles (@Ebert2007; @Bizzarro2015). Off central California, diet of Big Skates is composed mainly of fishes, shrimps, and crabs (in descending order), with larger skates incorporating more fishes (@Bizzarro2007); however, in the Gulf of Alaska, Big Skate diet consists mainly of crabs (esp. Tanner Crabs) throughout ontogeny, with relatively small portions of fishes and shrimps (@Bizzarro2015). Correspondingly, trophic level and general diet composition estimates differ significantly between California and Gulf of Alaska Big Skate populations (@Bizzarro2015). 
+
+Big Skates and their egg cases are preyed upon by a variety of vertebrates and invertebrates. Snails and other molluscs bore holes in egg cases to feed on developing embryos and especially their protein rich yolk-sacs (Bizzarro, pers. obs; @Hoff2009). Sevengill Sharks, Brown Rockfish, and Stellar Sea Lions are known predators of juvenile and adult Big Skates (@Ebert2003, @Love2011). Northern Sea Lions consume free-living Big Skates and their egg cases (@Ebert2003, @Love2011).
+
 In this assessment, ecosystem considerations were not explicitly included in the analysis.  This is primarily due to a lack of relevant data and results of analyses (conducted elsewhere) that could contribute ecosystem-related quantitative information for the assessment.
 
 
@@ -103,7 +104,7 @@ Very little information is known about the Big Skate historical fishery in Orego
 
 Big Skate were managed in the "Other Fish" complex until 2015 when they were designated an Ecosystem Component (EC) species.  Catches of Big Skate are estimated to have averaged 95 mt from 2007–2011, along with large landings of "Unspecified Skate".  Analysis of Oregon port-sampling data indicates that about 98 percent of the recent Unspecified Skate landings in Oregon were comprised of Big Skate. Such large landings indicates targeting of Big Skate has occurred and an EC designation was not warranted. Based on this evidence, Big Skate was redesignated as an actively-managed species in the fishery. Big skate have been managed with stock-specific harvest specifications since 2017.
 
-The recent OFL of 541 mt was calculated by applying approximate MSY harvest rates toestimates of stock biomass from the Northwest Fisheries Science Center (NWFSC) West Coast Groundfish Bottom Trawl Survey. This survey-based biomass estimate is likely underestimated since Big Skate are distributed all the way to the shoreline and no West Coast trawl surveys have been conducted in water shallower than 55 meters. This introduces an extra source of uncertainty to management and suggests that increased precaution is needed to reduce the risk of overfishing the stock. 
+The recent OFL of 541 mt was calculated by applying approximate MSY harvest rates to estimates of stock biomass from the Northwest Fisheries Science Center (NWFSC) West Coast Groundfish Bottom Trawl Survey. This survey-based biomass estimate is likely underestimated since Big Skate are distributed all the way to the shoreline and no West Coast trawl surveys have been conducted in water shallower than 55 meters. This introduces an extra source of uncertainty to management and suggests that increased precaution is needed to reduce the risk of overfishing the stock. 
 
 There has been consideration for managing Big Skate in a complex with Longnose Skate, the other actively-managed West Coast skate species, but the two species have disparate distributions and fishery interactions (Longnose Skate is much more deeply distributed than Big Skate) and that option was not endorsed. The Pacific Fishery Management Council has chosen to set the Annual Catch Limit (ACL) equal to the Allowable Biological Catch (ABC) with a buffer for management uncertainty (P*) of 0.45.
 
@@ -114,7 +115,7 @@ Table \ref{tab:mnmgt_perform}
 
 ## Fisheries Off Alaska, Canada and Mexico
 
-** Alaska **
+### Alaska
 
 In Alaska, skates were primarily taken as bycatch in both longline and trawl fisheries until 2003, when a directed skate fishery developed in the Gulf of Alaska, where Longnose and Big skates comprise the majority of the skate biomass. 
 
@@ -122,7 +123,7 @@ The Gulf of Alaska (GOA) skate complex is managed as three units. Big skates and
 
 In the Bering Sea and Aleutian Islands, skates are assessed as a group rather than as separate species.
 
-** Canada **
+### Canada
 
 In Canada historic information regarding skate catches goes back to the 1950’s. Prior to 1990’s skates were taken mostly as bycatch and landings were reported as part of a skate complex (not by species). As with the West Coast, the trawl fishery is responsible for the largest amount of bycatch.  Skate catches off British Columbia accelerated in the early 1990’s, partly due to emerging Asian markets. Since 1996, longnose skate has been targeted by the B.C. trawl fishery and, as a result, catches have been more accurately reported. 
 
@@ -130,6 +131,6 @@ Assessments of Longnose Skate and Big Skate were conducted by Canada's Division 
 
 DCAC produced a range of potential yield estimates that were above the long-term average catch, with an upper bound that was three orders of magnitude larger than the long-term average catch. The Catch-MSY approach was found to be quite sensitive to assumptions and was not recommended as the sole basis of advice to managers.
 
-The recommendation for managment for both skate species was that they should be managed with harvest yeilds based on mean historic catch, with consideration given to survey trends and to the ranges of maximum sustainable yield estimates identified by the Catch-MSY Approach. However, the analysis found no significant trends in abundance indices for Big Skate, and mean historical catches were below the maximum MSY estimate from the catch-MSY results.
+The recommendation for management for both skate species was that they should be managed with harvest yields based on mean historic catch, with consideration given to survey trends and to the ranges of maximum sustainable yield estimates identified by the Catch-MSY Approach. However, the analysis found no significant trends in abundance indices for Big Skate, and mean historical catches were below the maximum MSY estimate from the catch-MSY results.
 
 

@@ -12,6 +12,10 @@
 <!-- ****************Aging Precision and Bias FIGURES********************** --> 
 <!-- ********************************************************************** -->
 
+![Comparison of reads from each of two age readers for `r spp`. Sample sizes associated with each combination of ages are shown by the size circles and the within them. The blue histograms show the distribution of ages estimated by each reader.\label{fig:ageing_comparison}](Figures/Reader 1 vs Reader 2.png)
+Reader 1 vs Reader 2.png
+
+![Estimated ageing imprecision.\label{fig:ageing_imprecision}](r4ss/plots_mod1/numbers10_ageerror_matrix_1.png)
 
 <!-- ********************************************************************** -->
 <!-- **********************Weight-Length FIGURES*************************** --> 

@@ -1,84 +1,64 @@
 
 
 <!--************BIOLOGICAL DATA*********************************************-->
-### Biological Parameters and Data
+## Biological Parameters and Data
 
-**Measurement Details and Conversion Factors**
+### Measurement Details and Conversion Factors
 
-Disc width to total length (estimated by Ian on Apr 15, similar to Ebert 2008 estimates for Alaska)
-L = 1.3399 * W estimated from 95 samples from WCGBTS where both measurements collected (R-squared = 0.9983). Little sex difference observed, so using single relationship for both sexes.
-Inter-spiracle width to total length from Downs & Cheng (2013): 
-L = 12.111 + 9.761*ISW (females)
-L = 3.824 + 10.927*ISW (males)
+Some size measurements  were taken as either disc width or inter-spiracle width rather than total length. A conversion from disc width to total length was estimated as $L = 1.3399 * W$ based on from 95 samples from WCGBT Survey where both measurements collected (R-squared = 0.9983). Little sex difference observed, so using single relationship for both sexes. This estimate is similar to the conversion estimated by Ebert [-@Ebert2008] for Big Skate in Alaska. The inter-spiracle width to total length was converted based on estimates from Downs & Cheng [-@Downs2013]:
 
+\begin{centering}
 
- Love et al.  [-@Love1987]
+$L = 12.111 + 9.761*ISW$ (females),
 
-**Length and Age Compositions**
+$L = 3.824 + 10.927*ISW$ (males).
 
-Length comps (some based on widths)
-
-WCGBTS
-Lengths from all years except 2006 and 2007
-Widths in 2006 and 2007
-
-Triennial Survey
-Sample sizes: 3 in 1998 (all widths), 84 in 2001 (3 widths, 81 lengths), 100 in 2004 (all lengths)
-Triennial survey
-About 90+ samples in each of 2001 and 2004 
-Only 3 unsexed fish from 1998
-
-Commercial fisheries
-In process
-Discard comps from 2010-2015
+\end{centering}
 
 
-Length compositions were provided from the following sources:
+<!--
+Not sure why this is here:
+Love et al.  [-@Love1987] -->
 
-\begin{itemize}[noitemsep,nolistsep,topsep=0pt]
-  \item Source 1 (\emph{type, e.g., commercial dead fish, research, recreational}, yyyy-yyyy)    
-  \item Source 2 (\emph{type}, yyyy-yyyy)    
-  \item Source 3 (\emph{research}, yyyy, yyyy, yyyy, yyyy) 
-\end{itemize}
+### Fishery dependent length and age composition data
+
+Fishery length composition data was available from PacFIN were available for the years 1995--2018 (with the exception of 2000) as shown in Table \ref{tab:PacFIN_Samples}. Ages were available from only 2004, 2008-2012, and 2018. These were all represented as conditioned on length in order to provide more detailed information about the relationship between age and length, to reduce any influence of size-based selectivity on the age composition, and to ensure independence from the length samples. Furthermore, the samples from Washington in 2009 were sampled using a length-stratified system, so should only be treated as conditioned on length.
+
+Length compositions of Big Skate discarded in commercial fisheries measured by the West Coast Groundfish Observer program were available for the years 2010--2017.
+
+The input sample sizes for the length compositions were calculated via the Stewart Method (Ian Stewart, personal 
+communication, IPHC):
+
+\begin{centering}
+
+Input N = $N_{\text{hauls}} + 0.138 * N_{\text{fish}}$ if $N_{\text{fish}}/N_{\text{hauls}}$ is $<$ 44,
+
+Input N = $7.06 * N_{\text{hauls}}$ if $N_{\text{fish}}/N_{\text{hauls}}$ is $\geq$ 44.
+
+\end{centering}
+
+However, no haul had greater than 44 Big Skate sampled, so only the first formula was used.
 
 
-The length composition of all fisheries aggregated across time by fleet is in Figure
-\ref{fig:comp_lendat_aggregated_across_time}.  Descriptions and details of the length
-composition data are in the above section for each fleet or survey.
+### Survey length and age composition data
+Lengths of Big Skate were only collected form the Triennial survey in 1998, 2001, and 2004, but 1998 had only 3 samples and were excluded from this analysis. Length compositions were available for all years of the WCGBT Survey. Sample sizes for both surveys are provided in Table \ref{tab:Survey_Samples}. The WCGBT Survey used disc width for the years 2006 and 2007 and total length in all other years. Those samples where only disc width was measured were converted to total length using the formula above.
 
+The length compositions from the fishery and each of the two surveys aggregated across all years is shown in Figure
+\ref{fig:comp_lendat_aggregated_across_time}.
 
-\vspace{.5cm}
-**Age Structures**
-
-
-von Bertalanffy growth curve [@VonB], $L_i = L_{\infty}e^{(-k[t-t_0])}$, 
-where $L_i$ is the length (cm) at age $i$, $t$ is age in years, $k$ is rate of 
-increase in growth, $t_0$ is the intercept, and $L_{\infty}$ is the asymptotic length.
-
-Ages
-WCGBTS
-Currently only 333 ages from 2010 present in data warehouse as of Apr 15
-Patrick submitting an 300 additional ages from 2016 and 2017 to Beth on Apr 2 and promised further additions during the week of Apr 15.
-
-Triennial Survey 
-No ages
-
-Commercial fisheries
-2009 samples from WA were stratified by length, so should be treated as conditionals
-
+Ages were available from the WCGBT Survey in the years 2009, 2010, 2016, 2017, and 2018. No ages were available from the Triennial Survey.
 
 
 \vspace{.5cm}
 **Aging Precision and Bias**
-
+Ages of Big Skate were all estimated based on growth band counts of sectioned vertebrae. Ageing precision and bias were estimated using double-reads of 518 Big Skate vertebrae using the approach of Punt et al. [-@Punt2008]. The results showed strong agreement among readers (Figure \ref{fig:ageing_comparison}), with a standard deviation of the ageing error increasing from about 0.4 at age 0 to 1.6 years at age 15 (Figure \ref{fig:ageing_imprecision}).
 
 
 
 \vspace{.5cm}
 **Weight-Length**
 
-Estimated by Ian based on WCGBT samples (n = 1159)
-$Weight = 0.0000074924  * Length ^ 2.9925$ (Figure \ref{fig:weight-length}).
+The mean weight as a function of length was estimated from 1159 samples from the WCGBT Survey using a linear regression on a log-log scale. Sex was not found to be a significant predictor, so a single relationship was estimated: $Weight = 0.0000074924  * Length ^ 2.9925$ (Figure \ref{fig:weight-length}).
 
 
 \vspace{.5cm}
@@ -89,17 +69,16 @@ The female maturity relationship was based on visual maturity estimates from por
 \vspace{.5cm}
 **Natural Mortality**
 
-The Hamel prior for M is lognormal(ln(5.4/max age),.438), which based on 1 age-15 fish out of 1034 observed in the WCGBTS results in lognormal( -1.021651, 0.438)
+The Hamel prior for M is lognormal(ln(5.4/max age),.438), which based on 1 age-15 fish out of 1034 observed in the WCGBTS results in lognormal( -1.021651, 0.438).
 
-If it needs to be fixed, it should be set to M = 5.4/max age = 5.4/15 = 0.36
+<!--If it needs to be fixed, it should be set to M = 5.4/max age = 5.4/15 = 0.36 -->
 
 
 \vspace{.5cm}
 
 
 ### Environmental or Ecosystem Data Included in the Assessment
-In this assessment, neither environmental nor ecosystem considerations were explicitly included in the analysis.  This is primarily due to a lack of relevant data and results of analyses (conducted elsewhere) 
-that could contribute ecosystem-related quantitative information for the assessment.
+In this assessment, neither environmental nor ecosystem considerations were explicitly included in the analysis.  This is primarily due to a lack of relevant data or results of analyses that could contribute ecosystem-related quantitative information for the assessment.
 
 
 
