@@ -31,7 +31,6 @@
 ![Catch by area. Tribal catch was all landed in Washington State. \label{fig:catch_by_state}](Figures/catch_by_source.png)
 
 ![Estimated total catch using different assumptions for discards. \label{fig:discard_calculations}](Figures/discard_calculations.png)
-[6] "discard_calculations.png"                
 
 ![Catch data input to the model under assumed fleet structure. The historical discards shown in green have been scaled to account for an assumed 50% discard mortality. Discards during the period from 1995 onward are not represented here as they are estimated within the model. \label{fig:catch_input_plot}](r4ss/plots_mod1/catch2 landings stacked.png)
 
@@ -44,6 +43,11 @@
 <!-- ****************Fleet xx Index FIGURES************************* -->
 <!-- ********************************************************************** --> 
 
+![Map of estimated density by year for Big Skate in the Triennial survey. \label{fig:VAST_Yearly_Dens_Triennial}](Figures/VAST_Yearly_Dens_Triennial.png)
+
+![Map of estimated density by year for Big Skate in the WCGBT Survey. \label{fig:VAST_Yearly_Dens_Triennial}](Figures/VAST_Yearly_Dens_WCGBTS.png)
+
+![Map of catch rates by year for Big Skate in the International Pacific Halibut Commission longline survey. \label{fig:IPHC_map}](Figures/IPHC_BigSkate_map.png)
 
 
 \FloatBarrier

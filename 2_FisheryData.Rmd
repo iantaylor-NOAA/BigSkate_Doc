@@ -14,21 +14,20 @@ Descriptions of the data sources are in the following sections.
 
 
 <!-- ************FISHERY-DEPENDENT DATA************************************ -->
-## Commercial Fishery Landings
+## Fishery Landings and discards
 
-### Catch reconstructions for WA, OR, and CA
+Catch information for Big Skate is very limited, in part because the requirement to sort landings of Big Skate in the shore-based Individual Fishing Quota fishery from landings in the  "Unidentified Skate" category was not implemented until June 2015.  The historical catch of Big Skate therefore relies on the historical reconstruction of the landings of all skates as well as an analysis of discards of Longnose Skate. The estimated landings for each state and the tribal fishery are are provided in Table \ref{tab:Reconstructed_Landings_byState} and shown in Figure \ref{fig:catch_by_state}.
 
-**$\color{red}{\text{Washington Commercial Skate Landings Reconstruction}}$**
+### Washington Commercial Skate Landings Reconstruction
 
-<!-- **Washington Commercial Skate Landings Reconstruction** -->
+<!-- text in this section is a shortened version of what's in the Longnose document -->
+Estimates of landings of Big Skate in Washington state were estimated as a fraction of total skate landings as described in [@Gerstseva2019]. The approached relied on trawl survey estimates of depth distributions for each species, combined with logbook estimates of fishing depths in each year.
 
-Information for Big Skate is very limited, in part because the requirement to sort landings of Big Skate in the shore-based Individual Fishing Quota fishery from landings in the  "Unidentified Skate" category was not implemented until June 2015.  The historical catch of Big Skate therefore relies on the historical reconstruction of Longnose Skate.
+The WCGBT Survey data was used to estimate proportions of longnose and big skates by depth (aggregated into 100m bins) and year for the period of the survey (between 2003 and 2018). Big Skate were primarily found in the 0--100m and 100--200m. Trawl logbook data include information on the amount of retained catch of skate (all species combined) within each haul as well depth of catch. The proportion of Big Skate for each depth bin was assigned to the skate catch for each haul within those depth bins and summed to get a total for each year. When survey skate information was available (2003-2018), survey skate proportions were applied by depth and year to account for interannual variability in those proportions. Prior to 2003, average proportions from 2003-2007 within each depth bin were applied. 
 
-For the 2019 assessment, a new approach has been developed for estimating the catch history for Longnose Skate based on a linear regression model that predicts the catch of Longnose Skate from the catch of Dover sole, for which historical catch estimates are available [@Gertseva2019].  The dependent variable for the linear regression model was the West Coast Groundfish Observer Program (WCGOP) annual estimates of the coastwide total catch (landings plus discards) of Longnose Skate for the period 2009 to 2017 and the independent variable was the corresponding WCGOP annual estimates of coastwide total catch (landings plus discards) of Dover sole.  The regression model has good predictive power (R^2^ = 95.7%) over the range of the Dover sole catches (6,500 to 12,500 mt).  
+These estimated annual proportion of Big Skate relative to all skates from the logbook analysis was then applied to total Washington skate landings by year (provided by WDFW) to account for landings that weren't included in the available logbook data. Prior to 1987 (when no logbook data were available), the average proportion Big Skate within the combined skate category, calculated from 1987-1992 logbook data, was applied to total skate landings in Washington. Estimated Big Skate landings provided by WDFW were used for the period from 2004 forward.
 
-The discard component of the catch reconstruction for Big Skate may be based either on the catch reconstruction for Longnose Skate and the assumption that the two species experience similar discard rates (discard / total catch) or on a similar analysis with links to species that co-occur with big skate.  Data from the Pikitch discard study (1985-1987) and from WCGOP (2015-2017) support the idea that discard rates for the two species are very similar.  Also, market demand for skates does not seem to distinguish between the two species.  There are insufficient years of data from the WCGOP to develop a regression model for Big Skate as was done for Longnose Skate.
-
-**Oregon Commercial Skate Landings Reconstruction**
+### Oregon Commercial Skate Landings Reconstruction
 
 <!-- IGT: text below from a Word document Ali Whitman provided
 The Calavan et al. 2019 reference is expected to be completed in August to be referenced in the final assessment report.-->
@@ -53,11 +52,9 @@ Landings from shrimp trawls were handled using a similar methodology. Finally, v
 
 Results indicate that the species-specific landings from this reconstruction are very similar to those from Oregon's commercial catch reconstruction (Karnowski et al. 2014) during the overlapping years but cover a greater time period with methodology more applicable to skates in particular.  ODFW intends to incorporate reconstructed skate landings into PacFIN in the future (A. Whitman, ODFW; pers. comm.).  
 
-**California Catch Reconstruction**
+### California Catch Reconstruction
 
-A reconstruction of historical skate landings from California waters was developed for the
-1916–2017 time period using a combination of commercial catch data (spatially explicit block
-summary catches and port sample data from 2009-2017) and fishery-independent survey data [@Bizzarro2019].  Virtually all landings in California were of “unspecified skate” until species-composition sampling of skate market categories began in 2009. 
+A reconstruction of historical skate landings from California waters was developed for the 1916–2017 time period using a combination of commercial catch data (spatially explicit block summary catches and port sample data from 2009-2017) and fishery-independent survey data [@Bizzarro2019].  Virtually all landings in California were of “unspecified skate” until species-composition sampling of skate market categories began in 2009. 
 
 From 2009 through 2017, catch estimates were based on these market category species-composition samples, and the average of those species-compositions was hindcast to 2002, based on the assumption that those data were representative of the era of large area closures in the post-2000 period. 
 
@@ -68,87 +65,64 @@ For years 1981-2001, a “blended” product of these two approaches was taken, 
 As no spatial information on catch is available from 1916-1930, and the block
 summary data were very sparse in the first few years of the CDFW fish ticket program
 (1931–1934), spatial information from the late 1930's was used to hindcast to the
-1916–1935 time period.
+1916–1935 time period. However, since Washington and Oregon did not have catch estimates for this year period, the California estimates of catch prior to 1938 were not used as they were subsumed into an estimated of the total catch across all states increasing linearly from 1916 to 1950.
 
+### Tribal Catch in Washington
+Tribal catch of Big Skate was provided by WDFW as all landings took place in Washington State. The landings were estimated from limited state sampling of species compositions in combined skate category. Anecdotal evidence suggest that most of the catch in tribal fishery is retained, and discard is minimal.
 
-### Tribal Catch in Washington ###
+### Fishery Discards
 
+Fishery discards of `r spp` are highly uncertain. The method used to estimate discards for Longnose Skate was based on a strong correlation (R^2^ = 95.7%) between total mortality of that species, and total mortality of Dover Sole for the years 2009--2017 during which Longnose were landed separately from other skates. In contrast, the sorting requirement for `r spp` occurred too recently to provide an adequate range of years for this type of correlation. Furthermore, there is greater uncertainty in the total mortality for the shallow-water species with which `r spp` most often co-occurs, such as Sand Sole and Starry Flounder, than there is for Dover Sole, which has been the subject of recurring stock assessments.
 
-### Commercial Discards
+Both what discard rate information is available and anecdotal information from those involved in the fishery for both skate species indicate that discarding for `r spp` and Longnose Skate in the years prior to 1995 were driven by the same market forced and the discard rates were similar. Therefore, the discard rate for Longnose Skate was used as a proxy for the discards of Big Skate in order to estimate Big Skate discards.
 
-Commercial discards of `r spp` are highly uncertain. The method used to estimate discards for Longnose Skate was based on a strong correlation between total mortality of that species, and total mortality of Dover Sole for the years 2009--2017 during which Longnose were landed separately from other skates. In contrast, the sorting requirement for `r spp` occurred too recently to provide an adequate range of years for this type of correlation. Furthermore, there is greater uncertainty in the total mortality for the shallow-water species with which `r spp` most often co-occurs, such as Sand Sole and Starry Flounder, than there is for Dover Sole, which has been the subject of recurring stock assessments.
+The reconstructed landings of Big Skate for the period 1950--1995 had a mean of 63.1 t with no significant trend (a linear model fit to the data increased from 62.8 t in 1950 to 63.5 in 1995. The estimated tribal catch prior to 1995 averaged less than 1 t and was not included in this analysis of Big Skate discards for the years prior to 1995.
 
-However, those involved in the fishery for both skate species report that discarding for `r spp` and Longnose Skate in the years prior to 1995 were driven by the same market forced and the discard rates were similar.  primarily lack of margets or fish processors accepting only skate wings that had been separated at-sea, as well as the quantitative have more uncertainty in their own catch estimates have no stock assessment and more uncertain mortality    estimated total mortality and Dover Sole  for which a correlation between relationship   [@Gertseva2019],
+The mean discard rate for LN was 92.46%, also with no significant linear trend (the linear fit decreased from 92.8% in 1950 to 92.1% in 1995). An estimate of the mean annual discard amount can therefore be calculated as from the mean discard rate and the mean landings as $\bar{L} / (1 - \bar{d})$ where $\bar{L}$ is the mean landings across that time period and $\bar{d}$ is the mean discards (Figure \ref{fig:Discard_calculations.png}).
 
-### Commercial Fishery Length and Age Data
+Two alternative methods were used to estimate the mean annual discard amount: applying the annual LN discard rates to the annual BS catch, and applying 3-year moving averages of these two quantities. The use of the annual values resulted in an implausibly high degree of annual variability among the estimates, with the most extreme being a spike of 2146.4 in 1979 compared to 1032.7 t the year before and 654.0 the year after. The use of the 3-year moving average dampened this variability and these estimates were retained for a sensitivity analysis (Figure \ref{fig:Discard_calculations}).
 
+### Fishery Length and Age Data
 
-The input sample sizes were calculated via the Stewart Method (Ian Stewart, personal 
+Fishery length composition data was available from PacFIN were available for the years 1995--2018 (with the exception of 2000) as shown in Table \ref{tab:PacFIN_Samples}. Ages were available from only 2004, 2008-2012, and 2018. These were all represented as conditioned on length in order to provide more detailed information about the relationship between age and length, to reduce any influence of size-based selectivity on the age composition, and to ensure independence from the length samples.
+
+The input sample sizes for the length compositions were calculated via the Stewart Method (Ian Stewart, personal 
 communication, IPHC):
 
 \begin{centering}
 
-Input effN = $N_{\text{trips}} + 0.138 * N_{\text{fish}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is $<$ 44
+Input N = $N_{\text{trips}} + 0.138 * N_{\text{fish}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is $<$ 44
 
-Input effN = $7.06 * N_{\text{trips}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is $\geq$ 44
+Input N = $7.06 * N_{\text{trips}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is $\geq$ 44
 
 \end{centering}
 
 
-### Sport Fishery Removals and Discards
+<!-- ************FISHERY-INDEPENDENT DATA*********************************** -->
 
+# Fishery-Independent Data Sources
 
+## Indices of abundance
 
-Biological samples from the recreational fleets are described in the sections below.
-
-### Fishery-Dependent Indices of Abundance
-
-**Data Source 1**
-
-_Data Source 1 Index Standardization_
-
-
-_Data Source 1 Length Composition_
-
-
-**Data Source 2**
-
-
-**Data Source 3**
-
-
-
-
-<!-- ************FISHERY-INDPENDENT DATA*********************************** -->
-
-### Fishery-Independent Data Sources
-
-**Alaska Fisheries Science Center (AFSC) Triennial Shelf Survey**    
+### Alaska Fisheries Science Center (AFSC) Triennial Shelf Survey
 Research surveys have been used since the 1970s to provide fishery-independent information about the abundance, distribution, and biological characteristics of `r spp`.  A coast-wide survey was conducted in 1977 [@Gunderson1980] by the Alaska Fisheries Science Center, and repeated every three years through 2001.  The final year of this survey, 2004, was conducted by the NWFSC according to the AFSC protocol. We refer to this as the **Triennial Survey**.
 
 The survey design used equally-spaced transects from which searches for tows in a specific depth range were initiated. The depth range and latitudinal range was not consistent across years, but all years in the period 1980-2004 included the area from 40$^\circ$ 10'N north to the Canadian border and a depth range that included 55-366 meters, which spans the range where the vast majority of `r spp` encountered in all trawl surveys. Therefore the index was based on this depth range.  The survey as conducted in 1977 had incomplete coverage and is not believe to be comparable to the later years, and is not used in the index.
 
-An index of abundance was estimated based on the VAST delta-GLMM model as described for the NWFSC Combo Index above. In this case as well, Q-Q plots indicated slightly better performance of the gamma over lognormal models for positive tows (Figure \ref{fig:VAST_QQ}).
+### Northwest Fisheries Science Center West Coast Groundfish Bottom Trawl Survey
 
-**Northwest Fisheries Science Center West Coast Groundfish Bottom Trawl Survey**
+In 2003, the NWFSC took over an ongoing slope survey the AFSC had been conducting, and expanded it spatially to include the continental shelf. This survey, referred to in this document as the "WCGBT Survey" or "WCGBTS", is conducted annually. It uses a random-grid design covering the coastal waters from a depth of 55 m to 1,280 m from late-May to early-October [@Bradburn2011 ; @Keller2017]. Four chartered industry vessels are used each year (with the exception of 2013 when the U.S. federal-government shutdown curtailed the survey).
+<!-- Yellowtail catches in the NWFSC Combo Survey are shown in \ref{fig:assess_region_map2}.-->
 
-In 2003, the NWFSC took over an ongoing slope survey the AFSC had been conducting, and expanded it spatially to include the continental shelf. This survey, referred to in this document as the **NWFSC Combo Survey**, has been conducted annually since. It uses a random-grid design covering the coastal waters from a depth of 55 m to 1,280 m from late-May to early-October [@Bradburn2011 ; @Keller2017]. Four chartered industry vessels are used each year (with the exception of 2013 when the U.S. federal-government shutdown curtailed the survey). Yellowtail catches in the NWFSC Combo Survey are shown in \ref{fig:assess_region_map2}.
+### Index Standardization
+The index standardization methods for the two bottom trawl surveys matched that used for Longnose Skate and additional detail is provided in [@Gertseva2019]. The data from both surveys was analyzed using a spatio-temporal delta-model [@Thorson2015], implemented as an R package VAST [@Thorson2017a] and publicly available online (https://github.com/James-Thorson/VAST).  Spatial and spatio-temporal variation is specifically included in both encounter probability and positive catch rates, a logit-link for encounter probability, and a log-link for positive catch rates.  Vessel-year effects were included for each unique combination of vessel and year in the database for the WCGBT Survey but not the Triennial survey. Further details regarding model structure are available in the user manual (https://github.com/James-Thorson/VAST/blob/master/examples/VAST_user_manual.pdf).
 
-The data from the NWFSC Combo survey was analyzed using a spatio-temporal delta-model [@Thorson2015], implemented as an R package VAST [@Thorson2017a] and publicly available online (https://github.com/James-Thorson/VAST).  Spatial and spatio-temporal variation is specifically included in both encounter probability and positive catch rates, a logit-link for encounter probability, and a log-link for positive catch rates.  Vessel-year effects were included for each unique combination of vessel and year in the database.
+Spatial patterns in the survey estimates show Big Skate widely distributed along the coast, with higher densities in the central and more northern areas and closer to shore \ref{fig:VAST_Yearly_Dens_Triennial}.
 
+### Survey length composition data
+Lengths of Big Skate were only collected form the Triennial survey in 1998, 2001, and 2004, but 1998 had only 3 samples and were excluded from this analysis. Length compositions were available for all years of the WCGBT Survey. Sample sizes for both surveys are provided in Table \ref{tab:Survey_Samples}
 
-_Data Source 1 Index Standardization_
-VAST
-
-
-_Data Source 1 Length Composition_
-
-
-**Triennial Survey**
-_Data Source 2 Index Standardization_
-VAST
-
-**Internation Pacific Halibut Commission Longline Survey**
+### Internation Pacific Halibut Commission Longline Survey
 
 The IPHC has conducted an annual longline survey for Pacific Halibut off the coast of Oregon and Washington since 1997 (no surveys were performed in 1998 or 2000). Beginning in 1999, this has been a fixed station design, with 84 locations in this area (station locations differed in 1997, and are therefore not comparable with subsequent surveys). 400 to 800 hooks have been deployed at each station in 100-hook groups (typically called “skates” although that term will be avoided here to avoid confusion). The gear used to conduct the survey was designed to efficiently sample Pacific Halibut and used 16/0 (#3) circle hooks baited with Chum Salmon.
 
@@ -156,4 +130,4 @@ In some years from 2011 onward, additional stations were added to the survey to 
 
 In most years, bycatch of non-halibut species has been recorded during this survey on the first 20 hooks of each 100-hook group, although in 2003 only 10\% of the hooks were observed for bycatch, and starting in 2012, some stations had 100\% of the hooks observed for bycatch. Combining these observation pattern with the number of hooks deployed each year, resulted in most stations having 80, 100, 120, 140, or 160 hooks observed, with a mean of 144 hooks and a maximum of 800 hooks observed. The depth range of the 84 stations considered was 42—530 m, thus extending beyond the range of Big Skate, but 74\% of the stations were shallower than 200 m. Big Skate have been observed at 51 of the 84 the standard stations that were retained for this analysis, but no station had Big Skates observed in more than 12 out of the 19 years of survey data, and only 10\% of the station/year combinations had at least one observed Big Skate (Figure X). Of those station/year combinations with at least one Big Skate observed, the Big Skates were observed on an average of 1.3\% of the hooks observed. The highest proportion was 10 Big Skates out of 81 hooks observed at one station.
 
-The IPHC longline survey catch data were standardized using a Generalized Linear Model (GLM) with binomial error structure. Catch-per-hook was modeled, rather than catch per station due to the variability in the number of hooks deployed and observed each year. The binomial error structure was considered logical, given the binary nature of capturing (or not) a Longnose Skate on each longline hook. The modeling approach is identical to that which has been applied in the past for Yelloweye Rockfish (*Stewart et al. 2009*), and Spiny Dogfish (*Gertseva et al., 2011*). MCMC sampling of the GLM parameters was used to estimate the variability around each index estimate. The median index estimates themselves were approximately equal to the observed mean catch rate in each year (Figure Y). In recent years, the IPHC standardization of the index of halibut abundance has included an adjustment to account for missing baits on hooks returned empty in an effort to account for reduced catchability of the gear that may result from the lost bait. This adjustment was not included in the analysis for Big Skate although it could be considered in future years.
+The IPHC longline survey catch data were standardized using a Generalized Linear Model (GLM) with binomial error structure. Catch-per-hook was modeled, rather than catch per station due to the variability in the number of hooks deployed and observed each year. The binomial error structure was considered logical, given the binary nature of capturing (or not) a Longnose Skate on each longline hook. The modeling approach is identical to that which has been applied in the past for Yelloweye Rockfish [@Stewart2009], and Spiny Dogfish [@Gertseva2011]. MCMC sampling of the GLM parameters was used to estimate the variability around each index estimate. The median index estimates themselves were approximately equal to the observed mean catch rate in each year (Figure Y). In recent years, the IPHC standardization of the index of halibut abundance has included an adjustment to account for missing baits on hooks returned empty in an effort to account for reduced catchability of the gear that may result from the lost bait. This adjustment was not included in the analysis for Big Skate although it could be considered in future years.
