@@ -21,9 +21,9 @@ Size at maturity has been variably estimated for Big Skate populations off Calif
 
 Age and growth parameters have been established from California, British Columbia, and the Gulf of Alaska. Maximum ages off central California (females = 12, males = 11; @ZeinerWolf1993) and in the Gulf of Alaska (females = 14, males = 15; Gburski et al. 2007) were similar, but estimates off British Columbia were much greater (females = 26, males = 25; McFarlane and King 2006). It is important to note that age estimates are based on an unvalidated method and geographic differences in size or age may reflect differences in sampling or ageing criteria. In the Gulf of Alaska, Big Skates reach 50% maturity at 10 years and 7 years for females and males, respectively (@Gburski2007, @Ebert2008). Generation length estimates range from 11.5 [@ZeinerWolf1993] to 17 years [@McFandKing2006]. 
 
+\vspace{.5cm}
 \FloatBarrier
-\newpage
-\begin{landscape}
+
 
 ```{r, results='asis'}
 #
@@ -32,14 +32,16 @@ Life_History = read.csv('./txt_files/BigSkate_LifeHistory.csv', as.is=T)
 colnames(Life_History) = Life_History[1,]
 Life_History = Life_History[-1,]
 
+LH1 = c("1st Maturity (TL cm)",
+       "50% Maturity (TL cm)",
+       "Max Age (year)",
+       "1st Maturity (year)",
+       "50% Maturity (year)"
+)
 
-rownames(Life_History) = c("Sex",
-                           "1st Maturity (TL cm)",
-                           "50% Maturity (TL cm)",
-                           "Max Age (year)",
-                           "1st Maturity (year)",
-                           "50% Maturity (year)"
-                           )
+Life_History = cbind(LH1, Life_History)
+colnames(Life_History)[1] = ""
+
 
 a_header <- construct_header(
   # the data.frame or matrix that should be plotted
@@ -47,7 +49,7 @@ a_header <- construct_header(
   # the labels of the groups that we want to insert
   grp_names = c("", "California", "British Columbia","Gulf of Alaska"),
   # the number of columns each group spans
-  span = c(1, 2,2,2),
+  span = c(1,2,2,2),
   # the alignment of each group, can be a single character (lcr) or a vector
   align = "c"
 )
@@ -58,38 +60,21 @@ Life_History.table = xtable(Life_History,
                           label='tab:Life_Hist')
 
 
-# Add alignment - you will have to adjust based on the number of columns you have
-# and the desired width, remember to add one leading ghost column for row.names
-# align(Life_History.table) = c('l', 'l',
-#                               '>{\\centering}p{0.8in}',
-#                               '>{\\centering}p{0.8in}',
-#                               '>{\\centering}p{0.8in}',
-#                               '>{\\centering}p{0.8in}',
-#                               '>{\\centering}p{0.8in}',
-#                               '>{\\centering}p{0.8in}')
-    # CSV: './txt_files/BigSkate_LifeHistory.csv'
-    # Catch table section in R_exec_summary_fig_tables.R
-    # Print the table sideways
-
-
- print(Life_History.table,
-       add.to.row = a_header,
-        include.rownames = TRUE,
-        caption.placement = 'top',
- #       floating.environment = 'sidewaystable',
- #       sanitize.text.function = function(x){x},
- #       scalebox = .6,
- #       align = TRUE,
-        hline.after = c(-1, 0, nrow(Life_History.table)))
+ align(Life_History.table) = c('l', 'l',
+                               '>{\\centering}p{0.6in}',
+                               '>{\\centering}p{0.6in}',
+                               '>{\\centering}p{0.6in}',
+                               '>{\\centering}p{0.6in}',
+                               '>{\\centering}p{0.6in}',
+                               '>{\\centering}p{0.6in}')
  
-print(index.table, add.to.row = a_header, 
+print(Life_History.table, add.to.row = a_header, 
       caption.placement = "top", 
       include.rownames = F, hline.after = F)
 
 ```
-\end{landscape}
 
-\newpage
+
 \FloatBarrier
 ## Distribution and Life History
 
