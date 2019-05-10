@@ -10,6 +10,14 @@
 #Test_figures_tables.tex
 *.docx
 
+# stuff Ian added to try to compile the PDF
+*.sty
+
+# files that get updated when compiling that we don't need in the repo
+Big_Skate_2019.tex
+Big_Skate_2019.log
+Big_Skate_2019.html
+
 **/list_of_dataframes.csv
 **/mod_structure.csv
 
