@@ -110,15 +110,15 @@ fleetnames_catch <- c("Fishery (current)",
                       "Discard (historical)",
                       "Fishery (historical)",
                       "Fishery (tribal)",
-                      "Triennial",
-                      "WCGBTS")
+                      "WCGBTS",
+                      "Triennial")
 # fleetnames for all other plots
 fleetnames1 <- c("Fishery",
                  "Discard (historical)",
                  "Fishery (historical)",
                  "Fishery (tribal)",
-                 "Triennial Survey",
-                 "WCGBT Survey")
+                 "WCGBT Survey",
+                 "Triennial Survey")
 
 # Model 1
 SS_plots(mod1,
@@ -127,8 +127,8 @@ SS_plots(mod1,
          html = FALSE,
          datplot = TRUE,
          uncertainty = TRUE,
-         maxrows = 6, 
-         maxcols = 6, 
+         maxrows = 5, 
+         maxcols = 5, 
          maxrows2 = 4, 
          maxcols2 = 4, 
          printfolder = '', 
