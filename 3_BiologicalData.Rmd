@@ -50,7 +50,8 @@ Ages were available from the WCGBT Survey in the years 2009, 2010, 2016, 2017, a
 
 
 \vspace{.5cm}
-**Aging Precision and Bias**
+**Ageing Precision and Bias**
+
 Ages of Big Skate were all estimated based on growth band counts of sectioned vertebrae. Ageing precision and bias were estimated using double-reads of 518 Big Skate vertebrae using the approach of Punt et al. [-@Punt2008]. The results showed strong agreement among readers (Figure \ref{fig:ageing_comparison}), with a standard deviation of the ageing error increasing from about 0.4 at age 0 to 1.6 years at age 15 (Figure \ref{fig:ageing_imprecision}).
 
 
@@ -64,15 +65,7 @@ The mean weight as a function of length was estimated from 1159 samples from the
 \vspace{.5cm}
 **Sex Ratio, Maturity, and Fecundity**
 
-The female maturity relationship was based on visual maturity estimates from port samplers (n = 278, of which 241 were from Oregon and 37 from Washington, with 24 mature specimens) as well as 55 samples from the WCGBTS (of which 4 were mature). The resulting relationship was $L_{50\%} = 148.2453$ with a slope parameter of $Beta = -0.13155$ in the relationship $M = (1 + Beta(L - L_{50\%}))^{-1}$ (Figure \ref{fig:maturity}).
-
-\vspace{.5cm}
-**Natural Mortality**
-
-The Hamel prior for M is lognormal(ln(5.4/max age),.438), which based on 1 age-15 fish out of 1034 observed in the WCGBTS results in lognormal( -1.021651, 0.438).
-
-<!--If it needs to be fixed, it should be set to M = 5.4/max age = 5.4/15 = 0.36 -->
-
+The female maturity relationship was based on visual maturity estimates from port samplers (n = 278, of which 241 were from Oregon and 37 from Washington, with 24 mature specimens) as well as 55 samples from the WCGBT Survey (of which 4 were mature). The resulting relationship was $L_{50\%} = 148.2453$ with a slope parameter of $Beta = -0.13155$ in the relationship $M = (1 + Beta(L - L_{50\%}))^{-1}$ (Figure \ref{fig:maturity}).
 
 \vspace{.5cm}
 
