@@ -27,9 +27,13 @@ Age and growth parameters have been established from California, British Columbi
 
 ```{r, results='asis'}
 #
-Life_History = read.csv('./txt_files/BigSkate_LifeHistory.csv')
+Life_History = read.csv('./txt_files/BigSkate_LifeHistory.csv', as.is=T)
 
-colnames(Life_History) = c("Region","Sex",
+colnames(Life_History) = Life_History[1,]
+Life_History = Life_History[-1,]
+
+
+rownames(Life_History) = c("Sex",
                            "1st Maturity (TL cm)",
                            "50% Maturity (TL cm)",
                            "Max Age (year)",
@@ -37,32 +41,50 @@ colnames(Life_History) = c("Region","Sex",
                            "50% Maturity (year)"
                            )
 
+a_header <- construct_header(
+  # the data.frame or matrix that should be plotted
+  Life_History,
+  # the labels of the groups that we want to insert
+  grp_names = c("", "California", "British Columbia","Gulf of Alaska"),
+  # the number of columns each group spans
+  span = c(1, 2,2,2),
+  # the alignment of each group, can be a single character (lcr) or a vector
+  align = "c"
+)
+
+
 Life_History.table = xtable(Life_History,
                           caption = c("Regional comparison of life history parameter estimates."),
                           label='tab:Life_Hist')
 
+
 # Add alignment - you will have to adjust based on the number of columns you have
 # and the desired width, remember to add one leading ghost column for row.names
-align(Life_History.table) = c('l', 'l',
-                              '>{\\centering}p{0.8in}',
-                              '>{\\centering}p{0.8in}',
-                              '>{\\centering}p{0.8in}',
-                              '>{\\centering}p{0.8in}',
-                              '>{\\centering}p{0.8in}',
-                              '>{\\centering}p{0.8in}')
+# align(Life_History.table) = c('l', 'l',
+#                               '>{\\centering}p{0.8in}',
+#                               '>{\\centering}p{0.8in}',
+#                               '>{\\centering}p{0.8in}',
+#                               '>{\\centering}p{0.8in}',
+#                               '>{\\centering}p{0.8in}',
+#                               '>{\\centering}p{0.8in}')
     # CSV: './txt_files/BigSkate_LifeHistory.csv'
     # Catch table section in R_exec_summary_fig_tables.R
     # Print the table sideways
 
 
  print(Life_History.table,
-        include.rownames = FALSE,
+       add.to.row = a_header,
+        include.rownames = TRUE,
         caption.placement = 'top',
  #       floating.environment = 'sidewaystable',
  #       sanitize.text.function = function(x){x},
  #       scalebox = .6,
  #       align = TRUE,
         hline.after = c(-1, 0, nrow(Life_History.table)))
+ 
+print(index.table, add.to.row = a_header, 
+      caption.placement = "top", 
+      include.rownames = F, hline.after = F)
 
 ```
 \end{landscape}
