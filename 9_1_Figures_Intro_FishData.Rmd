@@ -16,7 +16,7 @@
 <!-- *********************INTRODUCTION FIGURES***************************** --> 
 <!-- ====================================================================== --> 
 
-![Map showing the state boundary lines for management of the recreational fishing fleets \label{fig:boundary_map}](Figures/boundary_map.png)
+![Map showing the U.S. Exclusive Economic Zone covered by this stock assessment. \label{fig:boundary_map}](Figures/assess_region_map.png)
 
 
 
@@ -28,6 +28,12 @@
 
 ![Summary of data sources used in the `r mod1_label`. \label{fig:data_plot}](r4ss/plots_mod1/data_plot.png)
 
+![Catch by area. Tribal catch was all landed in Washington State. \label{fig:catch_by_state}](Figures/catch_by_source.png)
+
+![Estimated total catch using different assumptions for discards. \label{fig:discard_calculations}](Figures/discard_calculations.png)
+[6] "discard_calculations.png"                
+
+![Catch data input to the model under assumed fleet structure. The historical discards shown in green have been scaled to account for an assumed 50% discard mortality. Discards during the period from 1995 onward are not represented here as they are estimated within the model. \label{fig:catch_input_plot}](r4ss/plots_mod1/catch2 landings stacked.png)
 
 
 

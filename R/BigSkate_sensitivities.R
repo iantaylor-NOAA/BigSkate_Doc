@@ -270,7 +270,7 @@ sens.table_bio_and_misc[grep("Linf", sens.table_bio_and_misc$Label),
                         1 + grep("Richards", sens.names_bio_and_misc)] <- 
                           bs72bio4$Growth_Parameters$Linf
 sens.table_bio_and_misc[grep("Linf", sens.table_bio_and_misc$Label),
-                        1 + grep("von B", sens.names_bio_and_misc)] <- 
+                        1 + grep("von", sens.names_bio_and_misc)] <- 
                           bs72bio3$Growth_Parameters$Linf
 
 sens.table_bio_and_misc[grep("LnQ", sens.table_bio_and_misc$Label), -1] <-
@@ -280,9 +280,9 @@ sens.table_bio_and_misc[grep("NatM_p_1_Mal", sens.table_bio_and_misc$Label), -1]
   sens.table_bio_and_misc[grep("NatM_p_1_Fem", sens.table_bio_and_misc$Label), -1] *
     exp(sens.table_bio_and_misc[grep("NatM_p_1_Mal", sens.table_bio_and_misc$Label), -1])
 # male Linf offset
-sens.table_bio_and_misc[grep("Linf_Mal", sens.table_bio_and_misc$Label), -1] <-
-  sens.table_bio_and_misc[grep("Linf_Fem", sens.table_bio_and_misc$Label), -1] *
-    exp(sens.table_bio_and_misc[grep("Linf_Mal", sens.table_bio_and_misc$Label), -1])
+## sens.table_bio_and_misc[grep("Linf_Mal", sens.table_bio_and_misc$Label), -1] <-
+##   sens.table_bio_and_misc[grep("Linf_Fem", sens.table_bio_and_misc$Label), -1] *
+##     exp(sens.table_bio_and_misc[grep("Linf_Mal", sens.table_bio_and_misc$Label), -1])
 
 sens.table_bio_and_misc$Label <- newlabel
 
