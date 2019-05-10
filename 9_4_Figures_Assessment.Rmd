@@ -10,7 +10,7 @@ output:
 \FloatBarrier
 
 <!-- ********************************************************************** -->
-<!-- ***********History of modelleing approaches FIGURES******************* --> 
+<!-- ***********History of modeling approaches FIGURES******************* --> 
 <!-- ********************************************************************** -->
 
 
@@ -65,20 +65,23 @@ output:
 \FloatBarrier
 
 
-<!--![Estimated time-series of recruitment deviations for `r spp` with 95% intervals. \label{fig:recdevs2_withbars}](r4ss/plots_mod1/recdevs2_withbars.png) -->
-
-
-
-![Estimated time-series of recruitment for `r spp`. \label{fig:ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals}](r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png)
-
-
-![Estimated recruitment (red circles) and the assumed stock-recruit relationship (black line) for `r spp`.  The green line shows the effect of the bias correction for the lognormal distribution. \label{fig:SR_curve2}](r4ss/plots_mod1/SR_curve2.png)
-
-
 <!-- ***********Fits to the data********************************* --> 
 
+![Fit to index data for WCGBT Survey. Lines indicate 95% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate.\label{fig:index2_cpuefit_WCGBTS}](r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png)
+
+![Fit to index data for Triennial Survey. Lines indicate 95% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate with a change between 1992 and 1995 associated with the estimated change in catchability.\label{fig:index2_cpuefit_Triennial}](r4ss/plots_mod1/index2_cpuefit_Triennial Survey.png)
 
 
+
+![Fits to length comp data, aggregated across time by fleet. \label{fig:comp_lenfit_aggregated_across_time}](r4ss/plots_mod1/comp_lenfit__aggregated_across_time.png)
+
+![Pearson residuals for length comp data for all years and fleets, with females in red and males in blue. \label{fig:comp_lenfit__multi-fleet_comparison}](r4ss/plots_mod1/comp_lenfit__multi-fleet_comparison.png)
+
+![Pearson residuals for the fit to conditional age-at-length data from the fishery. \label{fig:age_fit_fishery}](r4ss/plots_mod1/comp_condAALfit_residsflt1mkt2.png)
+
+![Pearson residuals for the fit to conditional age-at-length data from the WCGBT Survey. \label{fig:age_fit_WCGBTS}](r4ss/plots_mod1/comp_condAALfit_residsflt5mkt0.png)
+
+<!-- 
 \FloatBarrier
 
 
@@ -102,13 +105,46 @@ output:
     cat('\n![', AALComp_mod1[i,caption_col], ' \\label{fig:mod1_', i, '_', AALComp_mod1[i, label_col], '}](', AALComp_mod1[i, path_col], ')\n', sep='')
  } }
 ```
+-->
+
+<!-- ***********Implied fits to the sex ratios ************************** --> 
+
+![Observed sex ratios (points) from the fishery length comp data with 75% intervals (vertical lines) calculated as a Jeffreys interval based on the adjusted input sample size. The model expectation is shown in the blue line.\label{fig:sexratio_len_flt1mkt2}](r4ss/plots_mod1/sexratio_len_flt1mkt2.png)
+
+![Observed sex ratios (points) from the WCGBT Survey length comp data with 75% intervals (vertical lines) calculated as a Jeffreys interval based on the adjusted input sample size. The model expectation is shown in the blue line.\label{fig:sexratio_len_flt5mkt0}](r4ss/plots_mod1/sexratio_len_flt5mkt0.png)
+
+<!-- ***********Fits to the discards and mean body weight *************** --> 
+![Fit to the discard fraction estimates. Points are model estimates with 95% uncertainty intervals. The model estimate is shown in the blue lines.\label{fig:discard_fitFishery}](r4ss/plots_mod1/discard_fitFishery.png)
+
+![Fit to the mean weight of the discards. Points are model estimates with 95% uncertainty intervals. The model estimate is shown in the blue lines.\label{fig:bodywt_fit_fltFishery}](r4ss/plots_mod1/bodywt_fit_fltFishery.png)
 
 
+file: 
+
+
+<!-- ********************************************************************** -->
+<!-- ****************Time series FIGURES******************* -->
+<!-- ********************************************************************** -->
 
 
 
 \FloatBarrier
 
+![Estimated spawning biomass (mt) with approximate 95% asymptotic intervals. \label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}](r4ss/plots_mod1/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png)
+
+
+![Estimated spawning depletion with approximate 95% asymptotic intervals. \label{fig:ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals}](r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png)
+
+
+<!--![Estimated time-series of recruitment deviations for `r spp` with 95% intervals. \label{fig:recdevs2_withbars}](r4ss/plots_mod1/recdevs2_withbars.png) -->
+
+
+![Estimated time-series of recruitment for `r spp`. \label{fig:ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals}](r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png)
+
+
+![Estimated recruitment and the assumed stock-recruit relationship. \label{fig:SR_curve2}](r4ss/plots_mod1/SR_curve2.png)
+
+![Estimated total catch including discards estimated within the model. The historical discards shown in green have been scaled to account for an assumed 50% discard mortality but the discards in the recent period show both live and dead discards. \label{fig:catch_total_plot}](r4ss/plots_mod1/catch5 total catch (including discards) stacked.png)
 
 
 <!-- ********************************************************************** -->
@@ -121,7 +157,15 @@ output:
 <!-- ***********MODEL 1 Uncertainty and Sensitivity FIGURES**************** --> 
 
 
+### Sensitivity analyses for `r mod1_label`
 
+![Time series of spawning output estimated in sensitivity analyses related to selectivity and catchability. \label{fig:Sensitivity_sel_and_Q}](Figures/sens.sel_and_Q_compare1_spawnbio.png)
+
+![Time series of spawning output estimated in sensitivity analyses related to historic catch and discards. \label{fig:Sensitivity_catch}](Figures/sens.catch_compare1_spawnbio.png)
+
+![Time series of spawning output estimated in sensitivity analyses related to biology and other assumptions. \label{fig:Sensitivity_bio_and_misc}](Figures/sens.bio_and_misc_compare1_spawnbio.png)
+
+![Comparison of the estimated growth curves from the sensitivities analyses.\label{fig:growth_curve_comparison}](Figures/growth_curve_comparison.png)
 
 \FloatBarrier
 
@@ -152,16 +196,32 @@ output:
 
 <!-- ***********R0 Likelihood profile FIGURES****************************** --> 
 
+![Likelihood profile over the log of equilibrium recruitment ($R_0$).\label{fig:profile_logR0}](Figures/profile_logR0.png)
 
-  
+![Time series of spawning output estimated for the models included in the profile over the log of equilibrium recruitment ($R_0$).\label{fig:profile_R0_compare1_spawnbio}](Figures/profile_R0_compare1_spawnbio.png)
 
 
 
 \FloatBarrier
+
 <!-- ***********h Likelihood profile FIGURES******************************* -->
 
+![Likelihood profile over stock-recruit steepness ($h$). \label{fig:profile_h}](Figures/profile_h.png)
+
+![Time series of spawning output estimated for the models included in the profile over stock-recruit steepness ($h$). \label{fig:profile_h_compare1_spawnbio}](Figures/profile_h_compare1_spawnbio.png)
+
+
+\FloatBarrier
 
 <!-- ***********M Likelihood profile FIGURES******************************* -->
+
+![Likelihood profile over natural mortality ($M$). \label{fig:profile_M}](Figures/profile_M.png)
+
+![Time series of spawning output estimated for the models included in the profile over natural mortality ($M$). \label{fig:profile_M_compare1_spawnbio}](Figures/profile_M_compare1_spawnbio.png)
+
+\FloatBarrier
+
+
 
 
 
@@ -173,10 +233,6 @@ output:
 <!-- ***********MODEL 1 REFERENCE POINTS FIGURES*************************** --> 
 
 
-![Estimated spawning biomass (mt) with approximate 95% asymptotic intervals. \label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}](r4ss/plots_mod1/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png)
-
-
-![Estimated spawning depletion with approximate 95% asymptotic intervals. \label{fig:ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals}](r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png)
 
 
 
