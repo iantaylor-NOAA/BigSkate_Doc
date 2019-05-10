@@ -14,8 +14,9 @@
 *.sty
 
 # files that get updated when compiling that we don't need in the repo
-*.tex
-*.log
+Big_Skate_2019.tex
+Big_Skate_2019.log
+Big_Skate_2019.html
 
 **/list_of_dataframes.csv
 **/mod_structure.csv
