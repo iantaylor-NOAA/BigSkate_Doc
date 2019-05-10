@@ -21,7 +21,7 @@ Catch information for Big Skate is very limited, in part because the requirement
 ### Washington Commercial Skate Landings Reconstruction
 
 <!-- text in this section is a shortened version of what's in the Longnose document -->
-Estimates of landings of Big Skate in Washington state were estimated as a fraction of total skate landings as described in [@Gerstseva2019]. The approached relied on trawl survey estimates of depth distributions for each species, combined with logbook estimates of fishing depths in each year.
+Estimates of landings of Big Skate in Washington state were estimated as a fraction of total skate landings as described in [@Gertseva2019]. The approached relied on trawl survey estimates of depth distributions for each species, combined with logbook estimates of fishing depths in each year.
 
 The WCGBT Survey data was used to estimate proportions of longnose and big skates by depth (aggregated into 100m bins) and year for the period of the survey (between 2003 and 2018). Big Skate were primarily found in the 0--100m and 100--200m. Trawl logbook data include information on the amount of retained catch of skate (all species combined) within each haul as well depth of catch. The proportion of Big Skate for each depth bin was assigned to the skate catch for each haul within those depth bins and summed to get a total for each year. When survey skate information was available (2003-2018), survey skate proportions were applied by depth and year to account for interannual variability in those proportions. Prior to 2003, average proportions from 2003-2007 within each depth bin were applied. 
 

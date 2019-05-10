@@ -36,6 +36,8 @@ Size at maturity has been variably estimated for Big Skate populations off Calif
 
 Age and growth parameters have been established from California, British Columbia, and the Gulf of Alaska. Maximum ages off central California (females = 12, males = 11; @ZeinerWolf1993) and in the Gulf of Alaska (females = 14, males = 15; Gburski et al. 2007) were similar, but estimates off British Columbia were much greater (females = 26, males = 25; McFarlane and King 2006). It is important to note that age estimates are based on an unvalidated method and geographic differences in size or age may reflect differences in sampling or ageing criteria. In the Gulf of Alaska, Big Skates reach 50% maturity at 10 years and 7 years for females and males, respectively (@Gburski2007, @Ebert2008). Generation length estimates range from 11.5 [@ZeinerWolf1993] to 17 years [@McFandKing2006]. 
 
+\FloatBarrier
+\newpage
 \begin{landscape}
 
 ```{r, results='asis'}
@@ -68,17 +70,20 @@ align(Life_History.table) = c('l', 'l',
     # Print the table sideways
 
 
- # print(Life_History.table,
- #        include.rownames = FALSE,
- #        caption.placement = 'top',
- # #       floating.environment = 'sidewaystable',
- #        sanitize.text.function = function(x){x},
- #        scalebox = .6,
- #        align = TRUE,
- #        hline.after = c(-1, 0, nrow(Life_History.table)))
+ print(Life_History.table,
+        include.rownames = FALSE,
+        caption.placement = 'top',
+ #       floating.environment = 'sidewaystable',
+ #       sanitize.text.function = function(x){x},
+ #       scalebox = .6,
+ #       align = TRUE,
+        hline.after = c(-1, 0, nrow(Life_History.table)))
 
 ```
 \end{landscape}
+
+\newpage
+\FloatBarrier
 
 ## Map
 A map showing the scope of the assessment and depicting boundaries for fisheries or data collection strata is provided in Figure \ref{fig:boundary_map}.
@@ -107,14 +112,14 @@ The recent OFL of 541 mt was calculated by applying approximate MSY harvest rate
 
 There has been consideration for managing Big Skate in a complex with Longnose Skate, the other actively-managed West Coast skate species, but the two species have disparate distributions and fishery interactions (Longnose Skate is much more deeply distributed than Big Skate) and that option was not endorsed. The Pacific Fishery Management Council has chosen to set the Annual Catch Limit (ACL) equal to the Allowable Biological Catch (ABC) with a buffer for management uncertainty (P*) of 0.45.
 
-## Management Performance
+<!-- ## Management Performance -->
 
-Table \ref{tab:mnmgt_perform}
+<!-- Table \ref{tab:mnmgt_perform} -->
 
 
 ## Fisheries Off Alaska, Canada and Mexico
 
-** Alaska **
+**Alaska**
 
 In Alaska, skates were primarily taken as bycatch in both longline and trawl fisheries until 2003, when a directed skate fishery developed in the Gulf of Alaska, where Longnose and Big skates comprise the majority of the skate biomass. 
 
@@ -122,7 +127,7 @@ The Gulf of Alaska (GOA) skate complex is managed as three units. Big skates and
 
 In the Bering Sea and Aleutian Islands, skates are assessed as a group rather than as separate species.
 
-** Canada **
+**Canada**
 
 In Canada historic information regarding skate catches goes back to the 1950’s. Prior to 1990’s skates were taken mostly as bycatch and landings were reported as part of a skate complex (not by species). As with the West Coast, the trawl fishery is responsible for the largest amount of bycatch.  Skate catches off British Columbia accelerated in the early 1990’s, partly due to emerging Asian markets. Since 1996, longnose skate has been targeted by the B.C. trawl fishery and, as a result, catches have been more accurately reported. 
 
@@ -132,4 +137,7 @@ DCAC produced a range of potential yield estimates that were above the long-term
 
 The recommendation for managment for both skate species was that they should be managed with harvest yeilds based on mean historic catch, with consideration given to survey trends and to the ranges of maximum sustainable yield estimates identified by the Catch-MSY Approach. However, the analysis found no significant trends in abundance indices for Big Skate, and mean historical catches were below the maximum MSY estimate from the catch-MSY results.
 
+**Mexico**
+
+No information is available on any fishery for Big Skate in Mexican waters, however to the extent that they do occur, which is rarely, they may be taken in the artisanal fishery.
 

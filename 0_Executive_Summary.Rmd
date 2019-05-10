@@ -14,14 +14,14 @@ through `r LastYR`.
 ## Catches{-}
 Landings and estimated discards of `r spp` were reconstructed for this assessment from historical records of other species and from species composition data collected in the recent fishery.  These reflect the fishery from 1916-1994.  The current fishery started in 1995.  For records from 1995-2017, Big Skate landings were estimated from species-composition samples and the landings of "Unspecified Skates".  Beginning in 2017, Big Skate have been recorded in species-specific landings.
 
-(Table \ref{tab:Exec_catch}). 
+<!-- (Table \ref{tab:Exec_catch}).  -->
 
 <!-- Commercial landings were small during  -->
 <!-- the years of World War II, ranging between `r min(round(Tot.catch.df[Tot.catch.df[,1] >= 1939 & Tot.catch.df[,1] <= 1945,2],0))` to `r max(round(Tot.catch.df[Tot.catch.df[,1] >= 1939 & Tot.catch.df[,1] <= 1945,2],0))` metric  tons (mt) per year. -->
 
 
-(Figures \ref{fig:Exec_catch1}-\ref{fig:Exec_catch2})  
-(Figure \ref{fig:r4ss_catches}) 
+<!-- (Figures \ref{fig:Exec_catch1}-\ref{fig:Exec_catch2})   -->
+<!-- (Figure \ref{fig:r4ss_catches})  -->
 
 In the current fishery (since 1995), annual total landings of `r spp` have ranged between 
 `r paste0( min(round(Tot.catch.df[Tot.catch.df[,1] > 1995 & Tot.catch.df[,1] <= Dat_end_mod1,2],0)), '-', max(round(Tot.catch.df[Tot.catch.df[,1] > 1995 & Tot.catch.df[,1] <= Dat_end_mod1,2],0)) )` mt, with landings in `r Dat_end_mod1` totaling `r round(Tot.catch.df[Tot.catch.df[,1] == Dat_end_mod1,2],0)` mt.
@@ -73,15 +73,12 @@ In the current fishery (since 1995), annual total landings of `r spp` have range
 
 ## Data and Assessment{-}
 
-
-
-
 This the first full assessment for `r spp`, which was last assessed as part of the "Other Species" complex.  This assessment uses the newest version of Stock Synthesis (3.30.13).  The model begins in `r Dat_start_mod1`, and assumes the stock was at an unfished equilibrium that year. 
 
 
 \FloatBarrier
 
-(Figure \ref{fig:assess_region_map}).
+<!-- (Figure \ref{fig:assess_region_map}). -->
 
 ![This is a map depicting the distribution of Big Skate out to 600 ft.  The data for this stock assessment are from Pt. Conception in the South to the U.S./Canada border in the north, as very few Big Skate are encountered south of Pt. Conception.  \label{fig:assess_region_map}](Figures/assess_region_map.png)
 
@@ -91,7 +88,7 @@ This the first full assessment for `r spp`, which was last assessed as part of t
 
 ## Stock Biomass{-}
 
-(Figure \ref{fig:Spawnbio_all} and Table \ref{tab:SpawningDeplete_mod1}). 
+<!-- (Figure \ref{fig:Spawnbio_all} and Table \ref{tab:SpawningDeplete_mod1}).  -->
 
 The `r LastYR` estimated spawning biomass relative to unfished 
 equilibrium spawning biomass is above the target of 40% of unfished spawning biomass at `r Depl_mod1` 
@@ -238,7 +235,7 @@ harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt (Figure 
 
 ## Management Performance{-}
 
-Table \ref{tab:mnmgt_perform}
+<!-- Table \ref{tab:mnmgt_perform} -->
 
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY MANAGEMENT PERFORMANCE TABLE******* --> 
@@ -251,6 +248,7 @@ Table \ref{tab:mnmgt_perform}
 ```
 <!-- ***********END EXECUTIVE SUMMARY MANAGEMENT PERFORMANCE TABLE********* -->
 
+\FloatBarrier
 
 ## Unresolved Problems and Major Uncertainties{-}
 
@@ -263,8 +261,6 @@ Table \ref{tab:mnmgt_perform}
 ## Decision Table{-}    
 
 
-
-              
 
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY OFL AND DECISION TABLES************ -->
@@ -319,7 +315,7 @@ We recommend the following research be conducted before the next assessment:
 
 \begin{enumerate}
 
-\item \textbf{xxxx}: 
+\item \textbf{Data!}: 
 
 \item \textbf{xxxx}:
 

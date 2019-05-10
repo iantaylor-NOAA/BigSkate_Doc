@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 
 ## Model Results Tables
 
@@ -68,6 +73,10 @@
                              'Prior (Exp.Val, SD) ')
     
     mod_params$Parameter = gsub("Fishery_current(1)_BLK2repl", "", mod_params$Parameter, fixed=T)
+    
+    mod_params$Parameter = gsub("Fishery_current", "", mod_params$Parameter, fixed=T)
+    mod_params$Parameter = gsub("BLK1repl", "", mod_params$Parameter, fixed=T)
+
 
     # Model 1 model parameters
     mod_params.table = xtable(mod_params, 
@@ -84,7 +93,7 @@
                               digits = c(0,0,0,3,0,3,0,3,0))  
 
     # Add alignment  
-    align(mod_params.table) = c('l','>{\\centering}p{.3in}','l','r','r','c','c','c','l')
+    align(mod_params.table) = c('l','l','p{2.5in}','l','r','c','c','c','l')
         
  
     # Add "continued on next page"" footnote   
