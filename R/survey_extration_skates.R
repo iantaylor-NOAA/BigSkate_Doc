@@ -23,8 +23,10 @@ save(catch.WCGBTS.BS, bio.WCGBTS.BS,
 
 
 # WGBTS for Longnose Skate
-catch.combo.LN <- PullCatch.fn(Name = "longnose skate", SurveyName = "NWFSC.Combo")
-bio.combo.LN   <- PullBio.fn(Name = "longnose skate", SurveyName = "NWFSC.Combo")
+catch.WCGBTS.LN <- PullCatch.fn(Name = "longnose skate", SurveyName = "NWFSC.Combo")
+bio.WCGBTS.LN   <- PullBio.fn(Name = "longnose skate", SurveyName = "NWFSC.Combo")
+save(catch.WCGBTS.LN,
+     file = 'c:/SS/skates/data/LSKT_survey_catch_5-09-2019.Rdata')
 
 catch.tri.CA <- PullCatch.fn(Name = "California skate", SurveyName = "Triennial")
 catch.combo.CA <- PullCatch.fn(Name = "California skate", SurveyName = "NWFSC.Combo")

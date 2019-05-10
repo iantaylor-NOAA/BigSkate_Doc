@@ -403,7 +403,7 @@ for (model in 1:n_models) {
   
   SPRratiotab$Year = as.factor(SPRratiotab$Year)
   
-  colnames(SPRratiotab) = c('Year', 'Fishing intensity', '~ 95% confidence interval')
+  colnames(SPRratiotab) = c('Year', 'Relative fishing intensity', '~ 95% confidence interval')
   
   assign(paste('SPRratio_Exploit_', mod_area, sep=''), cbind(SPRratiotab, Exploittab))
   
@@ -416,9 +416,9 @@ for (model in 1:n_models) {
 SPRratio_Exploit_mod1.table = xtable(SPRratio_Exploit_mod1, 
                                      caption=c(paste('Recent trend in spawning potential 
                                         ratio and exploitation for ', spp, ' in the ', 
-                                                     mod1_label, '.  Fishing intensity is (1-SPR) 
+                                                     mod1_label, '.  Relative fishing intensity is (1-SPR) 
                                         divided by 50\\% (the SPR target) and exploitation 
-                                        is F divided by F\\textsubscript{SPR}.', sep='')), 
+                                        is catch divided by age 2+ biomass.', sep='')), 
                                      label='tab:SPR_Exploit_mod1')  
 
 align(SPRratio_Exploit_mod1.table) = c('l','l',
@@ -432,9 +432,9 @@ if (n_models >= 2) {
   SPRratio_Exploit_mod2.table = xtable(SPRratio_Exploit_mod2, 
                                        caption=c(paste('Recent trend in spawning potential 
                                         ratio and exploitation for ', spp, ' in the ', 
-                                                       mod2_label, '. Fishing intensity is (1-SPR) 
+                                                       mod2_label, '. Relative fishing intensity is (1-SPR) 
                                         divided by 50\\% (the SPR target) and exploitation 
-                                        is F divided by F\\textsubscript{SPR}.', sep='')), 
+                                        is catch divided by age 2+ biomass.', sep='')), 
                                        label='tab:SPR_Exploit_mod2')  
   
   align(SPRratio_Exploit_mod2.table) = c('l','l',
@@ -450,9 +450,9 @@ if (n_models == 3) {
   SPRratio_Exploit_mod3.table = xtable(SPRratio_Exploit_mod3, 
                                        caption=c(paste('Recent trend in spawning potential 
                                         ratio and exploitation for ', spp, ' in the ', 
-                                                       mod3_label,'.  Fishing intensity is (1-SPR) 
+                                                       mod3_label,'.  Relative fishing intensity is (1-SPR) 
                                         divided by 50\\% (the SPR target) and exploitation 
-                                        is F divided by F\\textsubscript{SPR}.',sep='')), 
+                                        is catch divided by age 2+ biomass.',sep='')), 
                                        label='tab:SPR_Exploit_mod3')  
   
   align(SPRratio_Exploit_mod3.table) = c('l','l',
