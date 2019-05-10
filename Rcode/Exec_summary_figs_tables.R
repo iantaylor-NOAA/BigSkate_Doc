@@ -656,14 +656,14 @@ align(mngmnt.table) = c('l',
 project = read.csv('./txt_files/Exec_basemodel_summary.csv')
 
 colnames(project) = c('Year',
-                     'Landings (mt)',  
-                     'Estimated total mortality (mt)', 
-                     'OFL (mt)', 
+            'Landings (mt)',  
+            'Estimated total mortality (mt)', 
+            'OFL (mt)', 
             'ACL (mt)')
 project$Buffer <- c(1.0, 1.0, 0.874, 0.865, 0.857, 0.849,
                     0.841, 0.833, 0.826, 0.818, 0.810, 0.803)
 OFL.table = xtable(project,
-    caption=c('Projections of landings, total mortality, OFL, and ABC values
+    caption=c('Projections of landings, total mortality, OFL, and ACL values
               based on an SPR target of 50%, a P* of 0.45, and a time-varying
               Category 2 Sigma which creates the buffer shown in the right-hand
               column.'),
