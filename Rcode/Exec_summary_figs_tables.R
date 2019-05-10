@@ -652,76 +652,47 @@ align(mngmnt.table) = c('l',
 
 # =============================================================================
 # OFL projection --------------------------------------------------------------
-## In scorp I raed this from a file - check on this
 
-#For 1 model:
-if (n_models == 1) {
-  # Extract OFLs for next 10 years for each model
-  OFL_mod1 = mod1$derived_quants[grep('OFLCatch',mod1$derived_quants$Label),]
-  OFL_mod1 = OFL_mod1[, 2]    
-  
-  #Turn into a dataframe and get the total
-  OFL = as.data.frame(OFL_mod1)
-  OFL$Year=seq(Project_firstyr,Project_lastyr, 1)
-  OFL$Year = as.factor(OFL$Year)
-  OFL = OFL[,c(2, 1)]
-  colnames(OFL) = c('Year','OFL') 
-  
-  # Create the table
-  OFL.table = xtable(OFL, caption=c('Projections of potential OFL (mt) for 
-                                        each model, using the base model forecast.'),
-                     label = 'tab:OFL_projection')
-}
+project = read.csv('./txt_files/Exec_basemodel_summary.csv')
 
-# For 2 models:
-if (n_models == 2) {
-  # Extract predicted OFLs for each model
-  OFL_mod1 = mod1$derived_quants[grep('OFLCatch',mod1$derived_quants$Label),]
-  OFL_mod1 = OFL_mod1[, 2]
-  
-  OFL_mod2 = mod2$derived_quants[grep('OFLCatch',mod2$derived_quants$Label),]
-  OFL_mod2 = OFL_mod2[, 2]
-  
-  # Turn into a dataframe and get the total
-  OFL = as.data.frame(cbind(OFL_mod1, OFL_mod2))
-  OFL$Total = rowSums(OFL)
-  OFL$Year=seq(Project_firstyr,Project_lastyr,1)
-  OFL$Year = as.factor(OFL$Year)
-  OFL = OFL[,c(4,1,2,3)]
-  colnames(OFL) = c('Year','Model 1','Model 2','Total') 
-  
-  # Create the table
-  OFL.table = xtable(OFL, caption=c('Projections of potential OFL (mt) for each model, using the base model forecast.'),
-                     label = 'tab:OFL_projection')     
-}           
+colnames(project) = c('Year',
+                     'Landings (mt)',  
+                     'Estimated total mortality (mt)', 
+                     'OFL (mt)', 
+            'ACL (mt)')
+project$Buffer <- c(1.0, 1.0, 0.874, 0.865, 0.857, 0.849,
+                    0.841, 0.833, 0.826, 0.818, 0.810, 0.803)
+OFL.table = xtable(project,
+    caption=c('Projections of landings, total mortality, OFL, and ABC values
+              based on an SPR target of 50%, a P* of 0.45, and a time-varying
+              Category 2 Sigma which creates the buffer shown in the right-hand
+              column.'),
+    label = 'tab:OFL_projection')
 
 
-#For 3 models:
-if (n_models == 3) {
-  # Extract OFLs for next 10 years for each model
-  OFL_mod1 = mod1$derived_quants[grep('OFLCatch',mod1$derived_quants$Label),]
-  OFL_mod1 = OFL_mod1[, 2]
+##   OFL.table = xtable(OFL, caption=c('Projections of potential OFL (mt) for 
+##                                         each model, using the base model forecast.'),
+##                      label = 'tab:OFL_projection')
+
+## #For 1 model:
+## if (n_models == 1) {
+##   # Extract OFLs for next 10 years for each model
+##   OFL_mod1 = mod1$derived_quants[grep('OFLCatch',mod1$derived_quants$Label),]
+##   OFL_mod1 = OFL_mod1[, 2]    
   
-  OFL_mod2 = mod2$derived_quants[grep('OFLCatch',mod2$derived_quants$Label),]
-  OFL_mod2 = OFL_mod2[, 2]
+##   #Turn into a dataframe and get the total
+##   OFL = as.data.frame(OFL_mod1)
+##   OFL$Year=seq(Project_firstyr,Project_lastyr, 1)
+##   OFL$Year = as.factor(OFL$Year)
+##   OFL = OFL[,c(2, 1)]
+##   colnames(OFL) = c('Year','OFL') 
   
-  OFL_mod3 = mod3$derived_quants[grep('OFLCatch',mod3$derived_quants$Label),]
-  OFL_mod3 = OFL_mod3[, 2]
-  
-  #Turn into a dataframe and get the total
-  OFL = as.data.frame(cbind(OFL_mod1, OFL_mod2, OFL_mod3))
-  OFL$Total = rowSums(OFL)
-  OFL$Year=seq(Project_firstyr,Project_lastyr,1)
-  OFL$Year = as.factor(OFL$Year)
-  OFL = OFL[,c(5,1,2,3,4)]
-  colnames(OFL) = c('Year','North','Central','South','Total') 
-  
-  # Create the table
-  OFL.table = xtable(OFL, caption=c('Projections of potential OFL (mt) for 
-                                        each model, using the base model forecast.'),
-                     label = 'tab:OFL_projection')     
-  
-}      
+##   # Create the table
+##   OFL.table = xtable(OFL, caption=c('Projections of potential OFL (mt) for 
+##                                         each model, using the base model forecast.'),
+##                      label = 'tab:OFL_projection')
+## }
+
 
 # =============================================================================
 # Decision Table(s) -----------------------------------------------------------
