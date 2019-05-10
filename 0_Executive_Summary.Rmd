@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Executive Summary{-}
 
 ## Stock{-}
@@ -74,10 +79,13 @@ In the current fishery (since 1995), annual total landings of `r spp` have range
 This the first full assessment for `r spp`, which was last assessed as part of the "Other Species" complex.  This assessment uses the newest version of Stock Synthesis (3.30.13).  The model begins in `r Dat_start_mod1`, and assumes the stock was at an unfished equilibrium that year. 
 
 
+\FloatBarrier
 
 (Figure \ref{fig:assess_region_map}).
 
-![This is NOT the map depicting the distribution of Big Skate out to 600 ft.  The stock assessment is bounded at Pt. Conception in the South to the U.S./Canada border in the north.  \label{fig:assess_region_map}](Figures/assess_region_map.png)
+![This is a map depicting the distribution of Big Skate out to 600 ft.  The data for this stock assessment are from Pt. Conception in the South to the U.S./Canada border in the north, as very few Big Skate are encountered south of Pt. Conception.  \label{fig:assess_region_map}](Figures/assess_region_map.png)
+
+<!-- { height=40%, width=40% }   Andi look up "out" values! -->
 
 \FloatBarrier
 

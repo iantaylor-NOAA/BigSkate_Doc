@@ -103,9 +103,8 @@ Coast in 2019}
 \usepackage{cmap}                                                 % fix mapping characters to unicode
 \RequirePackage[linewidth = 1]{pdfcomment}                        % pdf comments
 \RequirePackage[l2tabu, orthodox]{nag}                            % checks packages related to the accessibility?
-\usepackage[inline]{showlabels}                                   % show table and figure labels; comment out for final
+%\usepackage[inline]{showlabels}                                   % show table and figure labels; comment out for final
 %\RequirePackage[tagged]{accessibilityMeta}
-\usepackage{pdflscape}                                            % For horizontal format
 \usepackage{booktabs}                                             % For multi-header tables
 
 \linenumbers                                                      % specify use of line numbers
@@ -282,15 +281,17 @@ part of the ``Other Species'' complex. This assessment uses the newest
 version of Stock Synthesis (3.30.13). The model begins in 1916, and
 assumes the stock was at an unfished equilibrium that year.
 
+\FloatBarrier
+
 (Figure \ref{fig:assess_region_map}).
 
 \begin{figure}
 \centering
 \includegraphics{Figures/assess_region_map.png}
-\caption{This is NOT the map depicting the distribution of Big Skate out
-to 600 ft. The stock assessment is bounded at Pt. Conception in the
-South to the U.S./Canada border in the north.
-\label{fig:assess_region_map}}
+\caption{This is a map depicting the distribution of Big Skate out to
+600 ft. The data for this stock assessment are from Pt. Conception in
+the South to the U.S./Canada border in the north, as very few Big Skate
+are encountered south of Pt. Conception. \label{fig:assess_region_map}}
 \end{figure}
 
 \FloatBarrier
@@ -817,9 +818,10 @@ variable spatio-temporal trophic roles (Ebert and Compagno
 (\protect\hyperlink{ref-Bizzarro2015}{2015})). Off central California,
 diet of Big Skates is composed mainly of fishes, shrimps, and crabs (in
 descending order), with larger skates incorporating more fishes
-(({\textbf{???}})); however, in the Gulf of Alaska, Big Skate diet
-consists mainly of crabs (esp.~Tanner Crabs) throughout ontogeny, with
-relatively small portions of fishes and shrimps (Bizzarro
+(Bizzarro et al. (\protect\hyperlink{ref-Bizzarro2007}{2007})); however,
+in the Gulf of Alaska, Big Skate diet consists mainly of crabs
+(esp.~Tanner Crabs) throughout ontogeny, with relatively small portions
+of fishes and shrimps (Bizzarro
 (\protect\hyperlink{ref-Bizzarro2015}{2015})). Correspondingly, trophic
 level and general diet composition estimates differ significantly
 between California and Gulf of Alaska Big Skate populations (Bizzarro
@@ -2150,7 +2152,7 @@ Returned to base case & - & - & - \\
 \end{table}
 
 \begin{landscape}
-\begin{longtable}{rlrrcccl}
+\begin{longtable}{>{\centering}p{.3in}lrrcccl}
 \caption{List of parameters used in
                                               the base model, including estimated 
                                               values and standard deviations (SD), 
@@ -2243,19 +2245,19 @@ No. & Parameter & Value & Phase & Bounds & Status & SD & Prior (Exp.Val, SD)  \\
   121 & SzSel\_Fem\_Descend\_Triennial(6) & 0.000 & -4 & (-5, 5) &  &  & None \\ 
   122 & SzSel\_Fem\_Final\_Triennial(6) & 0.000 & -4 & (-5, 5) &  &  & None \\ 
   123 & SzSel\_Fem\_Scale\_Triennial(6) & 0.600 & 4 & (0.5, 1.5) & OK & 0.128 & None \\ 
-  124 & Retain\_L\_asymptote\_logit\_Fishery\_current(1)\_BLK2repl\_2005 & 2.325 & 4 & (-10, 20) & OK & 0.562 & None \\ 
-  125 & Retain\_L\_asymptote\_logit\_Fishery\_current(1)\_BLK2repl\_2006 & 3.330 & 4 & (-10, 20) & OK & 1.315 & None \\ 
-  126 & Retain\_L\_asymptote\_logit\_Fishery\_current(1)\_BLK2repl\_2007 & 4.000 & 4 & (-10, 20) & OK & 2.027 & None \\ 
-  127 & Retain\_L\_asymptote\_logit\_Fishery\_current(1)\_BLK2repl\_2008 & 11.158 & 4 & (-10, 20) & OK & 111.095 & None \\ 
-  128 & Retain\_L\_asymptote\_logit\_Fishery\_current(1)\_BLK2repl\_2009 & 4.991 & 4 & (-10, 20) & OK & 3.975 & None \\ 
-  129 & Retain\_L\_asymptote\_logit\_Fishery\_current(1)\_BLK2repl\_2010 & 13.248 & 4 & (-10, 20) & OK & 88.075 & None \\ 
-  130 & Retain\_L\_asymptote\_logit\_Fishery\_current(1)\_BLK2repl\_2011 & 14.665 & 4 & (-10, 20) & OK & 73.786 & None \\ 
-  131 & Retain\_L\_asymptote\_logit\_Fishery\_current(1)\_BLK2repl\_2012 & 13.918 & 4 & (-10, 20) & OK & 81.260 & None \\ 
-  132 & Retain\_L\_asymptote\_logit\_Fishery\_current(1)\_BLK2repl\_2013 & 3.475 & 4 & (-10, 20) & OK & 0.337 & None \\ 
-  133 & Retain\_L\_asymptote\_logit\_Fishery\_current(1)\_BLK2repl\_2014 & 3.653 & 4 & (-10, 20) & OK & 0.279 & None \\ 
-  134 & Retain\_L\_asymptote\_logit\_Fishery\_current(1)\_BLK2repl\_2015 & 3.430 & 4 & (-10, 20) & OK & 0.263 & None \\ 
-  135 & Retain\_L\_asymptote\_logit\_Fishery\_current(1)\_BLK2repl\_2016 & 2.901 & 4 & (-10, 20) & OK & 0.193 & None \\ 
-  136 & Retain\_L\_asymptote\_logit\_Fishery\_current(1)\_BLK2repl\_2017 & 2.822 & 4 & (-10, 20) & OK & 0.192 & None \\ 
+  124 & Retain\_L\_asymptote\_logit\_\_2005 & 2.325 & 4 & (-10, 20) & OK & 0.562 & None \\ 
+  125 & Retain\_L\_asymptote\_logit\_\_2006 & 3.330 & 4 & (-10, 20) & OK & 1.315 & None \\ 
+  126 & Retain\_L\_asymptote\_logit\_\_2007 & 4.000 & 4 & (-10, 20) & OK & 2.027 & None \\ 
+  127 & Retain\_L\_asymptote\_logit\_\_2008 & 11.158 & 4 & (-10, 20) & OK & 111.095 & None \\ 
+  128 & Retain\_L\_asymptote\_logit\_\_2009 & 4.991 & 4 & (-10, 20) & OK & 3.975 & None \\ 
+  129 & Retain\_L\_asymptote\_logit\_\_2010 & 13.248 & 4 & (-10, 20) & OK & 88.075 & None \\ 
+  130 & Retain\_L\_asymptote\_logit\_\_2011 & 14.665 & 4 & (-10, 20) & OK & 73.786 & None \\ 
+  131 & Retain\_L\_asymptote\_logit\_\_2012 & 13.918 & 4 & (-10, 20) & OK & 81.260 & None \\ 
+  132 & Retain\_L\_asymptote\_logit\_\_2013 & 3.475 & 4 & (-10, 20) & OK & 0.337 & None \\ 
+  133 & Retain\_L\_asymptote\_logit\_\_2014 & 3.653 & 4 & (-10, 20) & OK & 0.279 & None \\ 
+  134 & Retain\_L\_asymptote\_logit\_\_2015 & 3.430 & 4 & (-10, 20) & OK & 0.263 & None \\ 
+  135 & Retain\_L\_asymptote\_logit\_\_2016 & 2.901 & 4 & (-10, 20) & OK & 0.193 & None \\ 
+  136 & Retain\_L\_asymptote\_logit\_\_2017 & 2.822 & 4 & (-10, 20) & OK & 0.192 & None \\ 
    \hline
 \hline
 \label{tab:model_params}
@@ -2438,6 +2440,82 @@ TOTAL like & 441.63 & 441.41 & 441.63 & 441.63 & 441.13 & 444.19 \\
   SPRratio 2018 & 0.19 & 0.19 & 0.19 & 0.19 & 0.31 & 0.25 \\ 
   Ret Catch MSY & 517.36 & 513.43 & 517.36 & 517.36 & 380.95 & 425.03 \\ 
   Dead Catch MSY & 559.33 & 555.07 & 559.33 & 559.33 & 410.59 & 458.73 \\ 
+   \hline
+\end{tabular}
+}
+\end{sidewaystable}
+
+\FloatBarrier
+
+\newpage
+
+\begin{sidewaystable}[ht]
+\centering
+\caption{Sensitivity of the base model 
+                                          to assumptions about catches.} 
+\label{tab:Sensitivity_Sel_and_Q}
+\scalebox{0.9}{
+\begin{tabular}{l>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}}
+  \hline
+Label & Base.model & Discards.based.on.3yr.averages & Discard.mortality...0.4 & Discard.mortality...0.6 \\ 
+  \hline
+TOTAL like & 441.63 & 440.89 & 441.18 & 442.05 \\ 
+  Survey like & -9.78 & -10.00 & -10.08 & -9.50 \\ 
+  Length comp like & 366.25 & 365.86 & 366.41 & 366.12 \\ 
+  Age comp like & 110.51 & 110.53 & 110.46 & 110.54 \\ 
+  Parm priors like & 1.12 & 1.13 & 1.06 & 1.17 \\ 
+  Size at age like & 0.00 & 0.00 & 0.00 & 0.00 \\ 
+  Recr Virgin millions & 4.00 & 3.91 & 4.02 & 4.01 \\ 
+  log(R0) & 8.29 & 8.27 & 8.30 & 8.30 \\ 
+  NatM Female  & 0.38 & 0.38 & 0.38 & 0.38 \\ 
+  NatM Male  & 0.38 & 0.38 & 0.38 & 0.38 \\ 
+  Linf Female  & 176.00 & 176.08 & 176.04 & 175.95 \\ 
+  Linf Male  & 120.24 & 120.24 & 120.25 & 120.24 \\ 
+  Q WCGBTS & 0.87 & 0.90 & 0.88 & 0.85 \\ 
+  SSB Virgin thousand mt & 1.53 & 1.49 & 1.55 & 1.51 \\ 
+  SSB 2019 thousand mt & 1.11 & 1.03 & 1.09 & 1.13 \\ 
+  Bratio 2019 & 0.72 & 0.69 & 0.70 & 0.75 \\ 
+  SPRratio 2018 & 0.19 & 0.20 & 0.19 & 0.19 \\ 
+  Ret Catch MSY & 517.36 & 505.17 & 532.98 & 506.35 \\ 
+  Dead Catch MSY & 559.33 & 545.81 & 567.38 & 555.88 \\ 
+   \hline
+\end{tabular}
+}
+\end{sidewaystable}
+
+\FloatBarrier
+
+\newpage
+
+\begin{sidewaystable}[ht]
+\centering
+\caption{Sensitivity of the base model 
+                                          to assumptions about biology and misc.} 
+\label{tab:Sensitivity_Sel_and_Q}
+\scalebox{0.9}{
+\begin{tabular}{l>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}}
+  \hline
+Label & Base.model & Bio.separate.M.by.sex & Bio.no.M.prior & Bio.von.bertalanffy.growth & Bio.Richards.growth & Misc..McAllister.Ianelli.tuning \\ 
+  \hline
+TOTAL like & 441.63 & 441.14 & 437.95 & 486.39 & 497.09 & 1132.64 \\ 
+  Survey like & -9.78 & -9.86 & -9.71 & -9.80 & -9.73 & -9.76 \\ 
+  Length comp like & 366.25 & 364.91 & 365.51 & 404.62 & 387.88 & 572.70 \\ 
+  Age comp like & 110.51 & 111.02 & 108.63 & 117.88 & 144.80 & 594.48 \\ 
+  Parm priors like & 1.12 & 1.45 & 0.01 & 0.04 & 0.01 & 4.59 \\ 
+  Size at age like & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\ 
+  Recr Virgin millions & 4.00 & 3.47 & 6.29 & 3.26 & 0.00 & 4.82 \\ 
+  log(R0) & 8.29 & 8.15 & 8.75 & 8.09 & 8.02 & 8.48 \\ 
+  NatM Female  & 0.38 & 0.39 & 0.45 & 0.36 & 0.36 & 0.41 \\ 
+  NatM Male  & 0.38 & 0.36 & 0.45 & 0.36 & 0.36 & 0.41 \\ 
+  Linf Female  & 176.00 & 176.07 & 175.91 &  & 2666.88 & 177.98 \\ 
+  Linf Male  & 120.24 & 119.90 & 120.98 &  & 1125023214066379947866242002828280860820402682608662622008802420.00 & 120.30 \\ 
+  Q WCGBTS & 0.87 & 0.88 & 0.81 & 0.83 & 0.85 & 0.87 \\ 
+  SSB Virgin thousand mt & 1.53 & 1.28 & 1.12 & 1.37 & 0.00 & 1.42 \\ 
+  SSB 2019 thousand mt & 1.11 & 0.86 & 0.84 & 0.90 & 0.00 & 1.04 \\ 
+  Bratio 2019 & 0.72 & 0.67 & 0.75 & 0.65 & 0.00 & 0.73 \\ 
+  SPRratio 2018 & 0.19 & 0.23 & 0.17 & 0.24 & 0.89 & 0.19 \\ 
+  Ret Catch MSY & 517.36 & 456.10 & 564.75 & 446.68 & 0.00 & 530.89 \\ 
+  Dead Catch MSY & 559.33 & 492.46 & 610.56 & 482.14 & 0.00 & 573.72 \\ 
    \hline
 \end{tabular}
 }
@@ -2639,10 +2717,6 @@ Yr & OFL contribution (mt) & ACL landings (mt) & Age 5+ biomass (mt) & Spawning 
    \hline
 \end{tabular}
 \end{table}
-
-\FloatBarrier
-
-\newpage
 
 \FloatBarrier
 
@@ -2902,7 +2976,7 @@ effective sample size used in the McAllister\_Iannelli tuning method.
 \leavevmode\hypertarget{ref-AFSC2018}{}%
 Alaska Fisheries Science Center. 2018. Assessment of the skate stock
 complex in the Gulf of Alaska. Available from
-\href{\%7B\%7Bhttps://www.afsc.noaa.gov/REFM/Docs/2018/GOA/GOAskate.pdf\%7D\%7D}{\{\{https://www.afsc.noaa.gov/REFM/Docs/2018/GOA/GOAskate.pdf\}\}}.
+\href{\%7Bhttps://www.afsc.noaa.gov/REFM/Docs/2018/GOA/GOAskate.pdf\%7D}{\{https://www.afsc.noaa.gov/REFM/Docs/2018/GOA/GOAskate.pdf\}}.
 
 \leavevmode\hypertarget{ref-Batdorf1990}{}%
 Batdorf, C. 1990. Northwest Native Harvest. Hancock House Publishers
@@ -2920,6 +2994,11 @@ Bizzarro, J. 2019. Manuscript in preparation.
 Bizzarro, JJ and Broms, KM and Logsdon, MG and Ebert, DA and Yoklavich,
 MM and Kuhnz, LA and Summers, AP. 2014. Spatial segregation in eastern
 north Pacific skate assemblages. PloS one \textbf{9}(10).
+
+\leavevmode\hypertarget{ref-Bizzarro2007}{}%
+Bizzarro, J., Robinson, H., Rinewalt, C., and Ebert, D. 2007.
+Comparative feeding ecology of four sympatric skate species off central
+California, USA. \emph{In} Biology of skates. Springer. pp. 91--114.
 
 \leavevmode\hypertarget{ref-Bowers1909}{}%
 Bowers, G. M. 1909. Report of The Commissioner For the Year Ending June
@@ -2943,10 +3022,10 @@ Rajiformes: Batoideiomorpha. Unam.
 
 \leavevmode\hypertarget{ref-Castro1993}{}%
 Castro-Aguirre, J., Schmitter, J., Balart, E., and Torres-Orozco, R.
-1993. On the geographical distribution of some bent ~'o nicos from the
-west coast of baja california sur, m é xico, with ecological
-considerations ~'o gicas y evoluutivas. \emph{In} Anales de la escuela
-nacional de ciencias biol ~'o gicas, m é xico. pp. 75--102.
+1993. Sobre la distribución geográfica de algunos peces bentónicos de la
+costa oeste de baja california sur, méxico, con consideraciones
+ecológicas y evolutivas. \emph{In} Anales de la escuela nacional de
+ciencias biológicas, méxico. pp. 75--102.
 
 \leavevmode\hypertarget{ref-Chapman1944}{}%
 Chapman, W.M. 1944. The Latent Fisheries of Washington and Alaska.
