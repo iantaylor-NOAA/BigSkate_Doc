@@ -847,6 +847,8 @@ if (n_models == 3) {
 # Collect the data from all the tables
 # Read in the management table
 mngmt = read.csv('./txt_files/Exec_basemodel_summary.csv')
+mngmt = mngmt[1:10,]
+
 mngmt = mngmt[,-1]
 
 # Model 1
