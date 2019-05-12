@@ -52,6 +52,9 @@ MSST = 0.25  # minimum stock size threshold; 0.25 for rockfish
 fecund = mod1$SpawnOutputUnits  
 # Fecundity text depending on the input value above (can change this line if you like)
 if(fecund == 'numbers'){fecund_unit='million eggs'} else {fecund_unit = 'mt'}
+# IGT: 5/11/2019
+# overriding test above because the SS setup was wrong
+fecund_unit <- 'mt'
 
 # Change these years either here or in the table code if you need to
 

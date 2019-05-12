@@ -50,9 +50,7 @@ output:
 \FloatBarrier
 
 
-
-
-
+![Estimated length-at-age for female and male `r spp` (top left panel). Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.\label{fig:growth}](r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png)
 
 
 \FloatBarrier
