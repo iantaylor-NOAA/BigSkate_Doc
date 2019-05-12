@@ -15,7 +15,7 @@ output:
 \newpage
 
 <!-- ************************************DATA FILE(S)************************************************--> 
-#Appendix A. Detailed fits to length composition data {-}
+# Appendix A. Detailed fits to length composition data {-}
 \renewcommand{\thepage}{A-\arabic{page}}
 \renewcommand{\thefigure}{A\arabic{figure}}
 \setcounter{page}{1}
