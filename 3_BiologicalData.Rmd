@@ -5,7 +5,7 @@
 
 ### Measurement Details and Conversion Factors
 
-Some size measurements  were taken as either disc width or inter-spiracle width rather than total length. A conversion from disc width to total length was estimated as $L = 1.3399 * W$ based on from 95 samples from WCGBT Survey where both measurements collected (R-squared = 0.9983). Little sex difference observed, so using single relationship for both sexes. This estimate is similar to the conversion estimated by Ebert [-@Ebert2008] for Big Skate in Alaska. The inter-spiracle width to total length was converted based on estimates from Downs & Cheng [-@Downs2013]:
+Some size measurements  were taken as either disc width or inter-spiracle width rather than total length. A conversion from disc width to total length was estimated as $L = 1.3399 * W$ based on from 95 samples from WCGBT Survey where both measurements collected (R-squared = 0.9983). Little sex difference observed, so using single relationship for both sexes (Figure \ref{fig:weight-length}). This estimate is similar to the conversion estimated by Ebert [-@Ebert2008] for Big Skate in Alaska. The inter-spiracle width to total length was converted based on estimates from Downs & Cheng [-@Downs2013]:
 
 \begin{centering}
 

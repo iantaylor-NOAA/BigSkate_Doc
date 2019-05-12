@@ -58,7 +58,7 @@ A full list of all estimated and fixed parameters is provided in Tables
 The base model has a total of 44 estimated parameters in the following categories:
 
 \begin{itemize}
-  \item 1 natural mortality parameter,
+  \item 1 natural mortality parameter applied to both sexes,
   \item 6 parameters related to female growth and the variability in length age age,
   \item 2 parameters related to male growth relative to female growth,
   \item 1 stock-recruit parameter ($log(R_0)$ controlling equilibrium recruitment)
@@ -72,7 +72,7 @@ all estimated and parameters is provided in Table \ref{tab:model_params}.
 
 _Growth._ 
 
-Examination of patterns of age-at-length and length-at-age indicated unusual patterns of growth for Big Skate, including almost linear growth for the early years during which both sexes appeared to have similar average size, followed by strong differences in size at older ages. This led to the choice to model growth using the "growth cessation model" recently developed by Maunder et al. [-@maunder2018growth]. This model provided two key advantages over the more common von Bertalanffy growth model in the case of Big Skate: it allowed essentially linear growth for the early years and it allowed growth for the earlier ages to be similar between females and males while diverging at older ages. The growth cessation model also improve the negative log likelihood by 45 units relative to the von Bertalanffy growth model.
+Examination of patterns of age-at-length and length-at-age indicated unusual patterns of growth for Big Skate, including almost linear growth for the early years during which both sexes appeared to have similar average size, followed by strong differences in size at older ages. This led to the choice to model growth using the "growth cessation model" recently developed by Maunder et al. [-@maunder2018growth]. The estimated growth curves are shown in Figure \ref{fig:growth}. This model provided two key advantages over the more common von Bertalanffy growth model in the case of Big Skate: it allowed essentially linear growth for the early years and it allowed growth for the earlier ages to be similar between females and males while diverging at older ages. The growth cessation model also improve the negative log likelihood by 45 units relative to the von Bertalanffy growth model.
 
 _Natural Mortality._
 
