@@ -162,7 +162,7 @@ for (model in 1:n_models) {
   
   Depletiontab = subset(Depletionyrs, select=c('Value', 'CI'))
   
-  colnames(Depletiontab) = c('Estimated depletion', '~ 95% confidence interval')
+  colnames(Depletiontab) = c('Estimated %unfished', '~ 95% confidence interval')
   
   # Bind the spawning output and depletion data together 
   Spawn_Deplete = cbind(SpawningBtab, Depletiontab)
@@ -170,7 +170,7 @@ for (model in 1:n_models) {
   colnames(Spawn_Deplete) = c('Year', 
                               paste('Spawning Output (', fecund_unit, ')', sep = ''), 
                               '~ 95% confidence interval',
-                              'Estimated depletion',
+                              'Estimated %unfished',
                               '~ 95% confidence interval')
   
   # Assign a model number to the Spawn_deplete table, if you do cbind within this step
@@ -199,9 +199,10 @@ for (model in 1:n_models) {
 # Create Spawning/Depletion tables for the correct number of models
 # Model 1 table ---------------------------------------------------------------
 Spawn_Deplete_mod1.table = xtable(SpawnDepletemod1, 
-                                  caption = c(paste('Recent trend in beginning of the 
-                                      year spawning output and depletion for
-                                      the ', mod1_label, ' for ', spp, '.',sep='')), 
+                                  caption = 'Recent trend in beginning of the 
+                                      year spawning output and %unfished
+                                      (spawning biomass relative to unfished
+                                      equilibrum spawning biomass)', 
                                   label='tab:SpawningDeplete_mod1',digits=3)  
 
 # Add column spacing    
@@ -733,9 +734,9 @@ addtorow$pos[[2]] <- -1
 addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{} 
                                & \\multicolumn{2}{c}{\\textbf{States of nature}} 
                                & \\multicolumn{2}{c}{} \\\\\n', 
-                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{Low M 0.05} 
-                               & \\multicolumn{2}{c}{Base M 0.07} 
-                               &  \\multicolumn{2}{c}{High M 0.09} \\\\\n')
+                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{Low State} 
+                               & \\multicolumn{2}{c}{Base State} 
+                               &  \\multicolumn{2}{c}{High State} \\\\\n')
 
 
 # Model 2

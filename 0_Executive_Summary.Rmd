@@ -75,6 +75,15 @@ In the current fishery (since 1995), annual total landings of `r spp` have range
 
 This the first full assessment for `r spp`. It is currently managed using an OFL which was based on a proxy for $F_{MSY}$ and a 3-year recent average of survey biomass. This assessment uses the newest version of Stock Synthesis (3.30.13).  The model begins in `r Dat_start_mod1`, and assumes the stock was at an unfished equilibrium that year. 
 
+The assessment relies on two bottom trawl survey indices of abundance, the Triennial Survey from an index covering the period 1980--2004 was used here and the West Coast Groundifish Bottom Trawl (WCGBT) Survey, which began in 2003 and for which data is available through 2018. The triennial survey shows an increasing trend over the 25 year period it covers, which the model is not able to fit as this includes the peak period of the fishery when the stock would have been expected to be declining. The WCGBT Survey also shows an increasing trend, with the 5 most recent observations (2014--2018) all falling in the top 6 ever observed (2004 was the 5th highest observation). The most estimates an increasing trend during this period but the slope is more gradual than the trend in the survey. The misfit to these survey indices could be due to some combination of incorrect estimation of the catch history, variability in recruitment which is not modeled here, or biological or ecological changes for which data are not available.
+
+Length composition data from the fishery is available starting in 1995 but is sparse until the past decade. Most of the ages are also from 2008 onward. This limits the ability of the model to estimate any changes composition of the population during the majority of the history of the fishery. Estimates of discard rates and mean body weight of discards are available for the years 2002 onward and discard length compositions are available starting in 2010.
+
+The age and length data provide evidence for growth patterns and sex-specific differences in selectivity that are unusual among groundfish stocks that have been assessed within the U.S. West Coast and are not found in Longnose Skate where the data show little difference between the sexes. Growth appears to be almost linear and similar between females and males up to about age 7 or over 100 cm at which point male growth appears to stabilize while females continue to grow. However, in spite of the similar growth pattern for ages prior to 7, males are observed more frequently, with the 70--100 cm length bins often showing 60% males. Sex-specific differences in selectivity were included in the model in order to better match patterns in the sex ratios in the length composition data. The length and age data do not cover enough years or show enough evidence of distinct cohorts to reliably estimate deviations in recruitment around the stock-recruit curve.
+
+The scale of the population is not reliably informed by the data due to the combination of surveys that show trends which can't be matched by the structure of the model and length and age data which inform growth and selectivity but provide relatively little information about changes in stock structure over time. Therefore, a prior on catchability of the WCGBT Survey (centered at 0.83) was applied in order to provide more stable results.
+
+Although the assessment model requires numerous simplifying assumptions, it represents an improvement over the simplistic status-quo method of setting management limits, which relies on average survey biomass and an assumption about $F_{MSY}$. The use of an age-structured model with estimated growth, selectivity, and natural mortality likely provide a better estimate of past dynamics and the impacts of fishing in the future.
 
 ## Stock Biomass{-}
 
@@ -84,7 +93,7 @@ The `r LastYR` estimated spawning biomass relative to unfished
 equilibrium spawning biomass is above the target of 40% of unfished spawning biomass at `r Depl_mod1` 
 (95% asymptotic interval: $\pm$ `r Depl_mod1_CI`) (Figure \ref{fig:RelDeplete_all}). 
 Approximate confidence intervals based on the 
-asymptotic variance estimates show that the uncertainty in the estimated spawning biomass is high.
+asymptotic variance estimates show that the uncertainty in the estimated spawning biomass is high, although even the lower range of the 95% interval for %unfished is above the 40% reference point, and all sensitivity analyses explore also show the stock to be at a high level.
 
 \FloatBarrier
 
@@ -97,7 +106,7 @@ asymptotic variance estimates show that the uncertainty in the estimated spawnin
       spawn.file  = ifelse(fecund=='numbers',
                            'r4ss/plots_mod1/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png',
                            'r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png')
-      Bratio.file = 'r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png' 
+      Bratio.file = 'r4ss/plots_mod1/ts9_unfished_with_95_asymptotic_intervals_intervals.png' 
 ```
 
 \FloatBarrier
@@ -105,12 +114,12 @@ asymptotic variance estimates show that the uncertainty in the estimated spawnin
 
 ![Time series of spawning biomass trajectory (circles and line: median; light broken lines: 95% credibility intervals) for the base case assessment model.  \label{fig:Spawnbio_all}](`r spawn.file`)
 
-![Estimated relative depletion with approximate 95\% asymptotic confidence intervals (dashed lines) for the base case assessment model. \label{fig:RelDeplete_all}](`r Bratio.file`)
+![Estimated relative %unfished with approximate 95\% asymptotic confidence intervals (dashed lines) for the base case assessment model. \label{fig:RelDeplete_all}](`r Bratio.file`)
 
 <!-- ***********END  EXECUTIVE SUMMARY SPAWNING BIOMASS AND**************** -->
 
 
-<!-- ***********DEPLETION TABLES AND FIGURES******************************* -->
+<!-- *********** %UNFISHED TABLES AND FIGURES******************************* -->
 
 \FloatBarrier
 
@@ -192,7 +201,7 @@ that could contribute ecosystem-related quantitative information for the assessm
 This stock assessment estimates that `r spp` in the `r mod1_label` is 
 `r ifelse(Deplete_mod1[nrow(Deplete_mod1),2]-MT>0,"above","below")` the biomass 
 target ($SB_{40\%}$), and well `r ifelse(Deplete_mod1[nrow(Deplete_mod1),2]-MSST>0,"above","below")` 
-the minimum stock size threshold ($SB_{25\%}$). The estimated relative depletion level for the base 
+the minimum stock size threshold ($SB_{25\%}$). The estimated %unfished level for the base 
 model in `r LastYR+1` is 
 `r Depl_mod1` (95% asymptotic interval: $\pm$ `r Depl_mod1_CI`, corresponding 
 to an unfished spawning biomass of `r paste(Spawn_mod1, fecund_unit,sep=' ')` 
@@ -241,6 +250,8 @@ harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt (Figure 
 
 ## Unresolved Problems and Major Uncertainties{-}
 
+**$\color{red}{\text{To be added}}$**
+
 
 \FloatBarrier
 
@@ -249,6 +260,7 @@ harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt (Figure 
 
 ## Decision Table{-}    
 
+**$\color{red}{\text{Template in Table h and associated discussion to be filled in later}}$**
 
 
 
@@ -306,6 +318,7 @@ harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt (Figure 
 \newpage
 
 ## Research and Data Needs{-}
+
 We recommend the following research be conducted before the next assessment:
 
 
@@ -323,6 +336,7 @@ We recommend the following research be conducted before the next assessment:
 
 \end{enumerate}
 
+**$\color{red}{\text{To be continued}}$**
 
 
 
