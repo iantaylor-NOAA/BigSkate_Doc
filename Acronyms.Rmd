@@ -1,0 +1,23 @@
+
+\pagestyle{empty}
+
+# Acronyms Used in this Document{-}
+
+```{r, results='asis'}
+#
+Acronyms = read.csv('./txt_files/Acronyms.csv', as.is=T)
+
+Acronyms.table = xtable(Acronyms,
+                    caption = "",
+                    label = 'tab:Acronyms')
+
+ align(Acronyms.table) = c('l', 'l', 'l')
+
+ print(Acronyms.table, 
+      include.rownames = FALSE,
+      include.colnames = FALSE,
+      only.contents = TRUE,
+      print.results = TRUE,
+      sanitize.colnames.function=function(x){x})
+
+```
