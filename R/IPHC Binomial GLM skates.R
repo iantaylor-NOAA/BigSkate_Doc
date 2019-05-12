@@ -174,15 +174,23 @@ iphc.bin.LN$Station <- as.factor(as.character(iphc.bin.LN$Station))
 ## range(Q.MCMC.LN/Q.MCMC.LN.HS2 )
 ## ## [1] 0.9962408 1.0170049
 
+species <- "BS"
 
+if(species == "LN"){
+  # running again with 1 million samples longer series:
+  MCMC.IPHC.Cat.1mil.LN <- MCMClogit(catch ~ Year, data=iphc.bin.LN,
+                                     mcmc=1e6, burnin=1e3, thin=1e3,
+                                     tune= 0.75, verbose=1000)
+  save(MCMC.IPHC.Cat.1mil.LN, file=file.path(iphc.dir, 'MCMC.IPHC.Cat.1mil.LN.Rdata'))
+}
 
-# running again with 1 million samples longer series:
-MCMC.IPHC.Cat.1mil.LN <- MCMClogit(catch ~ Year, data=iphc.bin.LN,
-                                   mcmc=1e6, burnin=1e3, thin=1e3,
-                                   tune= 0.75, verbose=1000)
-MCMC.IPHC.Cat.1mil.BS <- MCMClogit(catch ~ Year, data=iphc.bin.BS,
-                                   mcmc=1e6, burnin=1e3, thin=1e3,
-                                   tune= 0.75, verbose=1000)
+if(species == "BS"){
+  MCMC.IPHC.Cat.1mil.BS <- MCMClogit(catch ~ Year, data=iphc.bin.BS,
+                                     mcmc=1e6, burnin=1e3, thin=1e3,
+                                     tune= 0.75, verbose=1000)
+  save(MCMC.IPHC.Cat.1mil.BS, file=file.path(iphc.dir, 'MCMC.IPHC.Cat.1mil.BS.Rdata'))
+}
+
 
 Q.MCMC_1mil.LN <-  skate.MCMC.Index.quants.f(MCMC.IPHC.Cat.1mil.LN)[[1]]
 Q.MCMC_1mil.BS <-  skate.MCMC.Index.quants.f(MCMC.IPHC.Cat.1mil.BS)[[1]]
@@ -193,53 +201,59 @@ BS2 <- skate.MCMC.Index.quants.f(MCMC.IPHC.Cat.1mil.BS)
 index.BS2 <- data.frame(Year=yrs, Seas=7, Fleet=999, Index=BS2$Index[1,], SD.of.log=BS2$SD.of.log)
 rownames(index.BS2) <- 1:nrow(index.BS2)
 write.csv(index.BS2,
-          file = file.path(iphc.dir, 'IPHC.index.BigSkate_4-22-2019.csv'),
+          file = file.path(iphc.dir, 'IPHC.index.BigSkate_5-11-2019.csv'),
           row.names = FALSE)
 
 LN2 <- skate.MCMC.Index.quants.f(MCMC.IPHC.Cat.1mil.LN)
 index.LN2 <- data.frame(Year=yrs, Month=7, Fleet=999, Index=LN2$Index[1,], SD.of.log=LN2$SD.of.log)
 rownames(index.LN2) <- 1:nrow(index.LN2)
 write.csv(index.LN2,
-          file = file.path(iphc.dir, 'IPHC.index.longnose_4-22-2019.csv'),
+          file = file.path(iphc.dir, 'IPHC.index.longnose_5-11-2019.csv'),
           row.names = FALSE)
 
 # check model diagnostics
 library(coda)
-heidel.diag(MCMC.IPHC.Cat.100k.BS)
+#heidel.diag(MCMC.IPHC.Cat.100k.BS)
 heidel.diag(MCMC.IPHC.Cat.1mil.BS)
 
-heidel.diag(MCMC.IPHC.Cat.100k.LN)
+#heidel.diag(MCMC.IPHC.Cat.100k.LN)
 heidel.diag(MCMC.IPHC.Cat.1mil.LN)
 
 
 
 # make plot for LN
-png(file.path(iphc.dir, 'IPHC index for Longnose Skate (4-22-2019).png'), width=6.5, height=5,
+png(file.path(iphc.dir, 'plots/IPHC index for Longnose Skate (5-11-2019).png'), width=6.5, height=5,
     units='in', res=300)
 plot(yrs, Q.MCMC_1mil.LN[1,], type='o',ylim=range(0,1.1*Q.MCMC_1mil.LN),
-     pch=16, xlab="Year",ylab="Index", lwd=3, yaxs='i')
+     pch=16, xlab="Year",ylab="Index", lwd=3, yaxs='i', axes=FALSE)
+axis(1, at=yrs)
+axis(2)
+box()
 arrows(yrs, Q.MCMC_1mil.LN[2,],
        yrs, Q.MCMC_1mil.LN[3,],
        code=3, angle=90, length=0.02)
 meancatch <- aggregate(iphc.bin.LN$catch, by=list(iphc.bin.LN$Year), FUN=mean)
-lines(as.numeric(as.character(meancatch$Group.1)), meancatch$x, col=2, lty=2, lwd=2)
-legend('topright', col=1:2, lwd=3,
-       legend=c("Standardized index", "Mean catch rate"),
-       bty='n', lty=c(1,2))
+#lines(as.numeric(as.character(meancatch$Group.1)), meancatch$x, col=2, lty=2, lwd=2)
+## legend('topright', col=1:2, lwd=3,
+##        legend=c("Standardized index", "Mean catch rate"),
+##        bty='n', lty=c(1,2))
 dev.off()
 
 
 # make plot for BS
-png(file.path(iphc.dir, 'IPHC index for Big Skate (4-22-2019).png'), width=6.5, height=5,
+png(file.path(iphc.dir, 'plots/IPHC index for Big Skate (5-11-2019).png'), width=6.5, height=5,
     units='in', res=300)
 plot(yrs, Q.MCMC_1mil.BS[1,], type='o',ylim=range(0,1.1*Q.MCMC_1mil.BS),
-     pch=16, xlab="Year",ylab="Index", lwd=3, yaxs='i')
+     pch=16, xlab="Year",ylab="Index", lwd=3, yaxs='i', axes=FALSE)
+axis(1, at=yrs)
+axis(2)
+box()
 arrows(yrs, Q.MCMC_1mil.BS[2,],
        yrs, Q.MCMC_1mil.BS[3,],
        code=3, angle=90, length=0.02)
 meancatch <- aggregate(iphc.bin.BS$catch, by=list(iphc.bin.BS$Year), FUN=mean)
-lines(as.numeric(as.character(meancatch$Group.1)), meancatch$x, col=2, lty=2, lwd=2)
-legend('topright', col=1:2, lwd=3,
-       legend=c("Standardized index", "Mean catch rate"),
-       bty='n', lty=c(1,2))
+## lines(as.numeric(as.character(meancatch$Group.1)), meancatch$x, col=2, lty=2, lwd=2)
+## legend('topright', col=1:2, lwd=3,
+##        legend=c("Standardized index", "Mean catch rate"),
+##        bty='n', lty=c(1,2))
 dev.off()
