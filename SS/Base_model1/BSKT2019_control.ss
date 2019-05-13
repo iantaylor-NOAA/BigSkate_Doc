@@ -22,7 +22,7 @@
 # blocks for retention rate
 2005 2005 2006 2006 2007 2007
 2008 2008 2009 2009 2010 2010 2011 2011 2012 2012 2013 2013
-2014 2014 2015 2015 2016 2016 2017 2018
+2014 2014 2015 2015 2016 2016 2017 2030
 #
 # controls for all timevary parameters
 1 #_env/block/dev_adjust_method for all time-vary parms (1=warn relative to base parm bounds; 3=no bound check)
@@ -52,12 +52,12 @@
 #_LO    HI      INIT    PRIOR   PR_SD   PR_type PHASE   env_var&link    dev_link        dev_minyr       dev_maxyr       dev_PH  Block   Block_Fxn
 # Sex: 1  BioPattern: 1  NatMort
 # lognormal Hamel prior has meanlog = ln(5.4/maxage) using maxage = 15
-0.01    0.8     0.378578        -1.02165 0.0438 3       1       0       0       0       0       0.5     0       0       #       NatM_p_1_Fem_GP_1       
+0.1     0.6    0.378578 -1.02165 0.438  3       3       0       0       0       0       0.5     0       0       #       NatM_p_1_Fem_GP_1       
 # Sex: 1  BioPattern: 1  Growth
 10      40      20.322  20      99      0       2       0       0       0       0       0.5     0       0       #       L_at_Amin_Fem_GP_1      
 100     300     178.398 200     99      0       2       0       0       0       0       0.5     0       0       #       Linf_Fem_GP_1   
 0.005   30      11.9546 0.15    99      0       1       0       0       0       0       0.5     0       0       #       VonBert_K_Fem_GP_1      
-0.1     5.0     2.5     1       99      0       3       0       0       0       0       0.5     0       0       #       Cessation_Fem_GP_1      
+0.1     10.0    2.5     1       99      0       3       0       0       0       0       0.5     0       0       #       Cessation_Fem_GP_1      
 1       20      5.68435 0.1     99      0       5       0       0       0       0       0.5     0       0       #       SD_young_Fem_GP_1       
 1       20      7.86676 0.1     99      0       5       0       0       0       0       0.5     0       0       #       SD_old_Fem_GP_1 
 # Sex: 1  BioPattern: 1  WtLen
@@ -103,7 +103,7 @@
 0  # 0/1 to use steepness in initial equ recruitment calculation
 0  #  future feature:  0/1 to make realized sigmaR a function of SR curvature
 #_LO            HI          INIT         PRIOR         PR_SD       PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_PH      Block    Blk_Fxn #  parm_name
-   5            15       7.93855          11.1            10             0          1          0          0          0          0          0          0          0 # SR_LN(R0)
+   5            15             9          11.1            10             0          3          0          0          0          0          0          0          0 # SR_LN(R0)
  0.2             1           0.4           0.6           0.2             0         -3          0          0          0          0          0          0          0 # SR_BH_steep
    0           0.4           0.3           0.3           0.8             0         -2          0          0          0          0          0          0          0 # SR_sigmaR
   -2             2             0             0            99             0         -1          0          0          0          0          0          0          0 # SR_regime
@@ -161,9 +161,9 @@
 #            -2             2             0        -0.188         0.187             0          1          0          0          0          0          0          0          0  #  LnQ_base_WCGBTS(5)
 # Q prior from 2007 Longnose review
             -2             2             0        -0.188         0.187             6          1          0          0          0          0          0          0          0  #  LnQ_base_WCGBTS(5)
-             0             2           0.1          0.01            99             0          5          0          0          0          0          0          0          0  #  Q_extraSD_WCGBTS(5)
+             0             2           0.1          0.01            99             0          1          0          0          0          0          0          0          0  #  Q_extraSD_WCGBTS(5)
            -10             2             0             0            99             0          1          0          0          0          0          0          1          2  #  LnQ_base_Triennial(6)
-             0             2           0.1          0.01            99             0          5          0          0          0          0          0          0          0  #  Q_extraSD_Triennial(6)
+             0             2           0.1          0.01            99             0          1          0          0          0          0          0          0          0  #  Q_extraSD_Triennial(6)
 #           -20             5      -13.6036             0            99             0          1          0          0          0          0          0          0          0  #  LnQ_base_IPHC(7)
 #             0             2      0.331424          0.01            99             0          5          0          0          0          0          0          0          0  #  Q_extraSD_IPHC(7)
 # timevary Q parameters
@@ -259,11 +259,11 @@
            0.5           1.5           1.0           1.0            99             0         4          0          0          0          0          0          0          0  #  SzSel_Male_Scale_Fishery_current(1)
 # 6   Triennial LenSelex
 #_          LO            HI          INIT         PRIOR PR_SD PR_type    PHASE  #  parm_name
-            50           180       176.434            75    99       0          4          0          0          0          0          0          0          0  #  Size_DblN_peak_Triennial(6)
+            50           200       176.434            75    99       0          4          0          0          0          0          0          0          0  #  Size_DblN_peak_Triennial(6)
            -15             4           -15           -15    99       0         -5          0          0          0          0          0          0          0  #  Size_DblN_top_logit_Triennial(6)
             -1             9       8.93782             9    99       0          4          0          0          0          0          0          0          0  #  Size_DblN_ascend_se_Triennial(6)
-# forcing slope more gently
-            -1            20            20           7.2    99       0         -5          0          0          0          0          0          0          0  #  Size_DblN_descend_se_Triennial(6)
+# descending slope parameterforcing slope more gently
+           -1            20            20           7.2    99       0         -5          0          0          0          0          0          0          0  #  Size_DblN_descend_se_Triennial(6)
           -15             9            -5          -5    99       0         4          0          0          0          0          0          0          0  #  Size_DblN_start_logit_Triennial(6)
           -999             9          -999          -999    99       0         -5          0          0          0          0          0          0          0  #  Size_DblN_end_logit_Triennial(6)
 # female offset alternative 2 (parameter offsets)
@@ -324,12 +324,12 @@
  #_5=mult_by_agecomp_N
  #_6=mult_by_size-at-age_N
  #_7=mult_by_generalized_sizecomp
-#Factor Fleet New_Var_adj hash Old_Var_adj New_Francis New_MI Francis_mult Francis_lo Francis_hi MI_mult Type Name Note
-4 1 0.264555 # 0.259232 0.264555 0.108953 1.020534 0.643052 2.113684 0.420291 len Fishery_current 
-4 5 0.069113 # 0.068048 0.069113 0.65241 1.015653 0.697794 2.087728 9.587497 len WCGBTS 
-4 6 1.0      # 1 1.160464 0.87019 1.160464 1.160464 Inf 0.87019 len Triennial 
-5 1 0.093542 # 0.095389 0.093542 0.407774 0.980639 0.570976 4.751361 4.274853 age Fishery_current 
-5 5 0.060676 # 0.056158 0.060676 0.40493 1.080453 0.625659 101.916517 7.210549 age WCGBTS 
+ #Factor Fleet New_Var_adj hash Old_Var_adj New_Francis   New_MI Francis_mult Francis_lo Francis_hi  MI_mult Type            Name Note
+       4     1    0.239885    #    0.239306    0.239885 0.107201     1.002417   0.626243   2.196601 0.447966  len Fishery_current     
+       4     5    0.067420    #    0.067406    0.067420 0.636988     1.000201   0.700591   1.898897 9.450019  len          WCGBTS     
+       4     6    1.0         #    1.124690    1.143926 0.873653     1.017104   1.017104        Inf 0.776794  len       Triennial     
+       5     1    0.084412    #    0.085554    0.084412 0.409546     0.986655   0.601544   5.476192 4.786988  age Fishery_current     
+       5     5    0.053605    #    0.053874    0.053605 0.403566     0.995008   0.536543 133.968516 7.490923  age          WCGBTS     
 #
   -9999     1    0  # terminator
 #
@@ -344,53 +344,22 @@
 7          5      1      0      99 # turn off likelihood for mean length at age
 -9999      1      1      1      1  #  terminator
 #
-# lambdas (for info only; columns are phases)
-#  1 #_CPUE/survey:_1
-#  0 #_CPUE/survey:_2
-#  1 #_CPUE/survey:_3
-#  0 #_CPUE/survey:_4
-#  1 #_CPUE/survey:_5
-#  0 #_CPUE/survey:_6
-#  1 #_CPUE/survey:_7
-#  1 #_CPUE/survey:_8
-#  1 #_CPUE/survey:_9
-#  1 #_CPUE/survey:_10
-#  1 #_CPUE/survey:_11
-#  1 #_CPUE/survey:_12
-#  1 #_lencomp:_1
-#  1 #_lencomp:_2
-#  1 #_lencomp:_3
-#  1 #_lencomp:_4
-#  1 #_lencomp:_5
-#  1 #_lencomp:_6
-#  1 #_lencomp:_7
-#  1 #_lencomp:_8
-#  1 #_lencomp:_9
-#  1 #_lencomp:_10
-#  1 #_lencomp:_11
-#  1 #_lencomp:_12
-#  1 #_agecomp:_1
-#  1 #_agecomp:_2
-#  1 #_agecomp:_3
-#  1 #_agecomp:_4
-#  1 #_agecomp:_5
-#  1 #_agecomp:_6
-#  0 #_agecomp:_7
-#  0 #_agecomp:_8
-#  1 #_agecomp:_9
-#  0 #_agecomp:_10
-#  1 #_agecomp:_11
-#  0 #_agecomp:_12
-#  1 #_init_equ_catch
-#  1 #_recruitments
-#  1 #_parameter-priors
-#  1 #_parameter-dev-vectors
-#  1 #_crashPenLambda
-#  1 # F_ballpark_lambda
 0 # (0/1) read specs for more stddev reporting
- # 0 1 -1 5 1 5 1 -1 5 # placeholder for selex type, len/age, year, N selex bins, Growth pattern, N growth ages, NatAge_area(-1 for all), NatAge_yr, N Natages
- # placeholder for vector of selex bins to be reported
- # placeholder for vector of growth ages to be reported
- # placeholder for vector of NatAges ages to be reported
+
+## 1  # selex type
+## 1  # len/age
+## 2018 # year
+## 19 # N selex bins
+## 1 # Growth pattern
+## 15 # N growth ages
+## 1 # NatAge_area(-1 for all), NatAge_yr, N Natages
+## -1 # NatAge_yr
+## 3 #  N Natages
+## # placeholder for vector of selex bins to be reported
+## 20  30  40  50  60  70  80  90 100 110 120 130 140 150 160 170 180 190 200
+##  # placeholder for vector of growth ages to be reported
+## 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+## # placeholder for vector of NatAges ages to be reported
+## 1 5 10
 999
 

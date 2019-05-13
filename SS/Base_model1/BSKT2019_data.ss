@@ -759,7 +759,7 @@
 
 
 # Triennial length comps
-# from \bio\survey_comps\forSS\Survey_Gender3_Bins_5_200_LengthComps.csv
+# from \bio\survey_comps\forSS\Survey_Gender3_Bins_20_200_LengthComps.csv
 # as processed by \R\survey_comps.R
 #### unexpanded comps
 #year   month   fleet   gender  part    Nsamp   F20     F25     F30     F35     F40     F45     F50     F55     F60     F65     F70     F75     F80     F85     F90     F95     F100    F105    F110    F115    F120    F125    F130    F135    F140    F145    F150    F155    F160    F165    F170    F175    F180    F185    F190    F195    F200    M20     M25     M30     M35     M40     M45     M50     M55     M60     M65     M70     M75     M80     M85     M90     M95     M100    M105    M110    M115    M120    M125    M130    M135    M140    M145    M150    M155    M160    M165    M170    M175    M180    M185    M190    M195    M200
