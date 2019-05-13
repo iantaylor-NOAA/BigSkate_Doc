@@ -131,10 +131,10 @@ output:
 
 \FloatBarrier
 
-![Estimated spawning biomass (mt) with approximate 95% asymptotic intervals. \label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}](r4ss/plots_mod1/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png)
+![Estimated spawning biomass (mt) with approximate 95% asymptotic intervals. \label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}](r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png)
 
 
-![Estimated spawning depletion with approximate 95% asymptotic intervals. \label{fig:ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals}](r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png)
+![Estimated spawning depletion with approximate 95% asymptotic intervals. \label{fig:ts9_unfished_with_95_asymptotic_intervals_intervals}](r4ss/plots_mod1/ts9_unfished_with_95_asymptotic_intervals_intervals.png)
 
 
 <!--![Estimated time-series of recruitment deviations for `r spp` with 95% intervals. \label{fig:recdevs2_withbars}](r4ss/plots_mod1/recdevs2_withbars.png) -->
@@ -160,11 +160,11 @@ output:
 
 ### Sensitivity Analyses and Retrospectives
 
-![Time series of spawning output estimated in sensitivity analyses related to selectivity and catchability. \label{fig:Sensitivity_sel_and_Q}](Figures/sens.sel_and_Q_compare1_spawnbio.png)
+![Time series of spawning biomass (mt) estimated in sensitivity analyses related to selectivity and catchability. \label{fig:Sensitivity_sel_and_Q}](Figures/sens.sel_and_Q_compare1_spawnbio.png)
 
-![Time series of spawning output estimated in sensitivity analyses related to historic catch and discards. \label{fig:Sensitivity_catch}](Figures/sens.catch_compare1_spawnbio.png)
+![Time series of spawning biomass (mt) estimated in sensitivity analyses related to historic catch and discards. \label{fig:Sensitivity_catch}](Figures/sens.catch_compare1_spawnbio.png)
 
-![Time series of spawning output estimated in sensitivity analyses related to biology and other assumptions. \label{fig:Sensitivity_bio_and_misc}](Figures/sens.bio_and_misc_compare1_spawnbio.png)
+![Time series of spawning biomass (mt) estimated in sensitivity analyses related to biology and other assumptions. \label{fig:Sensitivity_bio_and_misc}](Figures/sens.bio_and_misc_compare1_spawnbio.png)
 
 ![Comparison of the estimated growth curves from the sensitivities analyses.\label{fig:growth_curve_comparison}](Figures/growth_curve_comparison.png)
 
@@ -200,7 +200,7 @@ output:
 
 ![Likelihood profile over the log of equilibrium recruitment ($R_0$).\label{fig:profile_logR0}](Figures/profile_logR0.png)
 
-![Time series of spawning output estimated for the models included in the profile over the log of equilibrium recruitment ($R_0$).\label{fig:profile_R0_compare1_spawnbio}](Figures/profile_R0_compare1_spawnbio.png)
+![Time series of spawning biomass (mt) estimated for the models included in the profile over the log of equilibrium recruitment ($R_0$).\label{fig:profile_R0_compare1_spawnbio}](Figures/profile_R0_compare1_spawnbio.png)
 
 
 
@@ -210,7 +210,7 @@ output:
 
 ![Likelihood profile over stock-recruit steepness ($h$). \label{fig:profile_h}](Figures/profile_h.png)
 
-![Time series of spawning output estimated for the models included in the profile over stock-recruit steepness ($h$). \label{fig:profile_h_compare1_spawnbio}](Figures/profile_h_compare1_spawnbio.png)
+![Time series of spawning biomass (mt) estimated for the models included in the profile over stock-recruit steepness ($h$). \label{fig:profile_h_compare1_spawnbio}](Figures/profile_h_compare1_spawnbio.png)
 
 
 \FloatBarrier
@@ -219,7 +219,7 @@ output:
 
 ![Likelihood profile over natural mortality ($M$). \label{fig:profile_M}](Figures/profile_M.png)
 
-![Time series of spawning output estimated for the models included in the profile over natural mortality ($M$). \label{fig:profile_M_compare1_spawnbio}](Figures/profile_M_compare1_spawnbio.png)
+![Time series of spawning biomass (mt) estimated for the models included in the profile over natural mortality ($M$). \label{fig:profile_M_compare1_spawnbio}](Figures/profile_M_compare1_spawnbio.png)
 
 \FloatBarrier
 
@@ -238,7 +238,7 @@ output:
 
 
 
-![Equilibrium yield curve for the base case model. Values are based on the `r Dat_end_mod1` fishery selectivity and with steepness fixed at 0.718. \label{fig:yield1_yield_curve}](r4ss/plots_mod1/yield1_yield_curve.png)
+![Equilibrium yield curve for the base case model. Values are based on the fishery selectivity and with steepness fixed at 0.4. \label{fig:yield1_yield_curve}](r4ss/plots_mod1/yield1_yield_curve.png)
 
 
 \FloatBarrier
