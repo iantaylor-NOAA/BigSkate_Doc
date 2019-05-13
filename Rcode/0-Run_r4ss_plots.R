@@ -18,6 +18,11 @@
 rm(list=ls(all=TRUE))
 
 
+# define directory on a specific computer
+if(Sys.info()["user"] == "Ian.Taylor"){
+  setwd('c:/SS/skates/BigSkate_Doc/')
+}
+
 # SECTION1: Run r4ss, parse plotInfoTable.csv file, & add linebreaks to SS files
 
 # stop("\n  This file should not be sourced!") # note to stop from accidental sourcing
@@ -64,11 +69,6 @@ mod2_ctrl = ''
 mod3_ctrl = ''
 
 # =============================================================================
-
-# define directory on a specific computer
-if(Sys.info()["user"] == "Ian.Taylor"){
-  setwd('c:/SS/skates/BigSkate_Doc/')
-}
 
 # set input and output directories
 input.dir = file.path(getwd(), 'SS')
@@ -152,6 +152,14 @@ SS_plots(mod1,
 file.copy(from = file.path(out.dir.mod1, 'ts9_unfished_with_95_asymptotic_intervals_intervals.png'),
           to = file.path(out.dir.mod1, 'ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png'))
 
+png('Figures/fit_to_priors.png', width=6.5, height=4, units='in',
+    res=300, pointsize=10)
+par(mfrow=c(1,2))
+SSplotPars(mod1,
+           strings=c("NatM","LnQ_base_WCGBTS"), nrows=1, ncols=2,
+           newheader=c("Natural mortality (M)", "WCGBT Survey catchability (Q)"),
+           new=FALSE)
+dev.off()
 # -----------------------------------------------------------------------------
 
 # Run the code to parse the plotInfoTable files
