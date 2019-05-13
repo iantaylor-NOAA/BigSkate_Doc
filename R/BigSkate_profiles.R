@@ -14,7 +14,7 @@ require(SSutils) # package with functions for copying SS input files
 
 # load model output into R
 # read base model from each area
-mod <- 'bigskate72_share_dome'
+mod <- 'bigskate74_spawnbio_3.30.13.02' 
 dir.mod <- file.path(dir.outer, mod)
 # read model without printing stuff (assuming it's already been looked at)
 out <- SS_output(dir.mod, verbose=FALSE, printstats=FALSE)
@@ -31,16 +31,23 @@ out$parameters["NatM_p_1_Fem_GP_1","Value"]
 out$parameters["SR_BH_steep","Value"]
 ## 0.4
 
-# vectors of log(R0) spanning estimates
+# estimated Q value
+out$parameters["LnQ_base_WCGBTS(5)","Value"]
+## -0.143787
+
+# vector of log(R0) spanning estimates
 # (going from high to low in case low value cause crashes)
 logR0vec <- seq(9, 7, -.25)
 
-### vectors below shared across models
-# vectors of M
+# vector of M
 M.vec <- seq(0.2, 0.6, 0.05)
 
-# vectors of steepness
+# vector of steepness
 h.vec <- seq(0.3, 0.9, 0.1)
+
+# vector of LnQ_base_WCGBTS
+Q.vec <- seq(0.25, 2.5, 0.25)
+lnQ.vec <- log(Q.vec)
 
 if(FALSE){ # don't run all the stuff below if sourcing the file
 
@@ -114,6 +121,27 @@ SS_profile(dir = dir.profile.h,
            #extras = "-nohess -nox")
            extras = "-nox")
 
+##################################################################################
+# Q profile
+#source('c:/SS/skates/BigSkate_Doc/R/BigSkate_profiles.R')
+dir.profile.Q <- file.path(dir.mod, "profile.Q")
+copy_SS_inputs(dir.old = dir.mod,
+               dir.new = dir.profile.Q,
+               use_ss_new = TRUE,
+               copy_exe = TRUE,
+               copy_par = TRUE)
+start <- SS_readstarter(file = file.path(dir.profile.Q, "starter.ss"),
+                        verbose = FALSE)
+start$ctlfile <- "control_modified.ss"
+start$prior_like <- 1 # include prior likelihood for non-estimated parameters
+SS_writestarter(start, dir = dir.profile.Q, overwrite = TRUE)
+SS_profile(dir = dir.profile.Q,
+           masterctlfile = "BSKT2019_control.ss",
+           newctlfile = "control_modified.ss",
+           string = "steep",
+           profilevec = h.vec,
+           #extras = "-nohess -nox")
+           extras = "-nox")
 
 
 

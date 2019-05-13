@@ -14,7 +14,8 @@ require(SSutils) # package with functions for copying SS input files
 
 # load model output into R
 # read base model from each area
-mod <- 'bigskate72_share_dome'
+#mod <- 'bigskate72_share_dome'
+mod <- 'bigskate74_spawnbio_3.30.13.02' 
 dir.mod <- file.path(dir.outer, mod)
 
 # run retrospectives
@@ -59,5 +60,11 @@ copy_SS_inputs(dir.old = dir.mod,
                copy_exe = TRUE,
                copy_par = TRUE)
 
+
+##### jitter
+# switch to allow file to be sourced for running the retros only
+runjitter <- FALSE
 # run jitter
-SS_RunJitter(dir.jit, Njitter=100)
+if(runjitter){
+  SS_RunJitter(dir.jit, Njitter=100)
+}
