@@ -260,9 +260,9 @@ that could contribute ecosystem-related quantitative information for the assessm
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY OFL AND DECISION TABLES************ -->
 \FloatBarrier
-## OFL Projections {-}
+## Projected Landings, OFLs and Time-varying ACLs {-}
 
-Potential OFLs projected by the model are shown in Table \ref{tab:OFLs}.  These values are based on an SPR target of 50%, a P* of 0.45, and a time-varying Category 2 Sigma which creates the buffer (the ACLs) shown in the right-hand column.
+Potential OFLs projected by the model are shown in Table \ref{tab:OFL_projection}.  These values are based on an SPR target of 50%, a P* of 0.45, and a time-varying Category 2 Sigma which creates the buffer shown in the right-hand column.
 
 ```{r, results='asis'}   
     # Print OFL table 

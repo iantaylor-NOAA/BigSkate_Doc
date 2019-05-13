@@ -666,6 +666,13 @@ OFL.table = xtable(project,
     caption=c('Projections of landings, total mortality, OFL, and ACL values.'),
     label = 'tab:OFL_projection')
 
+align(OFL.table) = c('l', 'l',
+                       '>{\\centering}p{0.8in}',
+                       '>{\\centering}p{1.2in}',
+                       '>{\\centering}p{0.8in}',
+                       '>{\\centering}p{0.8in}',
+                       '>{\\centering}p{0.8in}')
+
 
 ##   OFL.table = xtable(OFL, caption=c('Projections of potential OFL (mt) for 
 ##                                         each model, using the base model forecast.'),
