@@ -5,7 +5,9 @@ output:
 ---
 
 <!-- ****************************RESEARCH NEEDS**************************** -->
+
 # Research Needs
+
 There are a number of areas of research that could improve the stock 
 assessment for `r spp`.  Below are issues identified by the STAT team 
 and the STAR panel:
@@ -25,13 +27,11 @@ and the STAR panel:
 \end{enumerate}
 
 
-
-
 <!-- ***************************ACKNOWLEDGEMENTS*************************** -->
+
 # Acknowledgments
 
 The authors gratefully acknowledge the time and effort reviewers Stacey Miller, Jim Hastie and Owen Hamel put into making this a polished document.
-
 
 \newpage
 \FloatBarrier

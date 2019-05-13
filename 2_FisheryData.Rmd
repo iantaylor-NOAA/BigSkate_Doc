@@ -14,7 +14,7 @@ Descriptions of the data sources are in the following sections.
 
 
 <!-- ************FISHERY-DEPENDENT DATA************************************ -->
-## Fishery Landings and discards
+## Fishery Landings and Discards
 
 Catch information for Big Skate is very limited, in part because the requirement to sort landings of Big Skate in the shore-based Individual Fishing Quota fishery from landings in the  "Unidentified Skate" category was not implemented until June 2015.  The historical catch of Big Skate therefore relies on the historical reconstruction of the landings of all skates as well as an analysis of discards of Longnose Skate. The estimated landings for each state and the tribal fishery are provided in Table \ref{tab:Reconstructed_Landings_byState} and shown in Figure \ref{fig:catch_by_state}.
 
@@ -96,6 +96,7 @@ The mean body weight of discarded Big Skates, calculated from the weight and cou
 ## Indices of abundance
 
 ### Alaska Fisheries Science Center (AFSC) Triennial Shelf Survey
+
 Research surveys have been used since the 1970s to provide fishery-independent information about the abundance, distribution, and biological characteristics of `r spp`.  A coast-wide survey was conducted in 1977 [@Gunderson1980] by the Alaska Fisheries Science Center, and repeated every three years through 2001.  The final year of this survey, 2004, was conducted by the NWFSC according to the AFSC protocol. We refer to this as the **Triennial Survey**.
 
 The survey design used equally-spaced transects from which searches for tows in a specific depth range were initiated. The depth range and latitudinal range was not consistent across years, but all years in the period 1980-2004 included the area from 40$^\circ$ 10'N north to the Canadian border and a depth range that included 55-366 meters, which spans the range where the vast majority of `r spp` encountered in all trawl surveys. Therefore the index was based on this depth range.  The survey as conducted in 1977 had incomplete coverage and is not believe to be comparable to the later years, and is not used in the index.
@@ -106,6 +107,7 @@ In 2003, the NWFSC took over an ongoing slope survey the AFSC had been conductin
 <!-- Yellowtail catches in the NWFSC Combo Survey are shown in \ref{fig:assess_region_map2}.-->
 
 ### Index Standardization
+
 The index standardization methods for the two bottom trawl surveys matched that used for Longnose Skate and additional detail is provided in [@Gertseva2019]. The data from both surveys was analyzed using a spatio-temporal delta-model [@Thorson2015], implemented as an R package VAST [@Thorson2017a] and publicly available online (https://github.com/James-Thorson/VAST).  Spatial and spatio-temporal variation is specifically included in both encounter probability and positive catch rates, a logit-link for encounter probability, and a log-link for positive catch rates.  Vessel-year effects were included for each unique combination of vessel and year in the database for the WCGBT Survey but not the Triennial survey. Further details regarding model structure are available in the user manual (https://github.com/James-Thorson/VAST/blob/master/examples/VAST_user_manual.pdf).
 
 Spatial patterns in the survey estimates show Big Skate widely distributed along the coast, with higher densities in the central and more northern areas and closer to shore \ref{fig:VAST_Yearly_Dens_Triennial}.

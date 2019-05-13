@@ -41,6 +41,7 @@ However, no haul had greater than 44 Big Skate sampled, so only the first formul
 
 
 ### Survey length and age composition data
+
 Lengths of Big Skate were only collected form the Triennial survey in 1998, 2001, and 2004, but 1998 had only 3 samples and were excluded from this analysis. Length compositions were available for all years of the WCGBT Survey. Sample sizes for both surveys are provided in Table \ref{tab:Survey_Samples}. The WCGBT Survey used disc width for the years 2006 and 2007 and total length in all other years. Those samples where only disc width was measured were converted to total length using the formula above.
 
 The length compositions from the fishery and each of the two surveys aggregated across all years is shown in Figure
@@ -48,29 +49,29 @@ The length compositions from the fishery and each of the two surveys aggregated 
 
 Ages were available from the WCGBT Survey in the years 2009, 2010, 2016, 2017, and 2018. No ages were available from the Triennial Survey.
 
-
 \vspace{.5cm}
+
 **Ageing Precision and Bias**
 
 Ages of Big Skate were all estimated based on growth band counts of sectioned vertebrae. Ageing precision and bias were estimated using double-reads of 518 Big Skate vertebrae using the approach of Punt et al. [-@Punt2008]. The results showed strong agreement among readers (Figure \ref{fig:ageing_comparison}), with a standard deviation of the ageing error increasing from about 0.4 at age 0 to 1.6 years at age 15 (Figure \ref{fig:ageing_imprecision}).
 
 
-
 \vspace{.5cm}
+
 **Weight-Length**
 
 The mean weight as a function of length was estimated from 1159 samples from the WCGBT Survey using a linear regression on a log-log scale. Sex was not found to be a significant predictor, so a single relationship was estimated: $Weight = 0.0000074924  * Length ^ 2.9925$ (Figure \ref{fig:weight-length}).
 
-
 \vspace{.5cm}
+
 **Sex Ratio, Maturity, and Fecundity**
 
 The female maturity relationship was based on visual maturity estimates from port samplers (n = 278, of which 241 were from Oregon and 37 from Washington, with 24 mature specimens) as well as 55 samples from the WCGBT Survey (of which 4 were mature). The resulting relationship was $L_{50\%} = 148.2453$ with a slope parameter of $Beta = -0.13155$ in the relationship $M = (1 + Beta(L - L_{50\%}))^{-1}$ (Figure \ref{fig:maturity}).
 
 \vspace{.5cm}
 
-
 ### Environmental or Ecosystem Data Included in the Assessment
+
 In this assessment, neither environmental nor ecosystem considerations were explicitly included in the analysis.  This is primarily due to a lack of relevant data or results of analyses that could contribute ecosystem-related quantitative information for the assessment.
 
 
