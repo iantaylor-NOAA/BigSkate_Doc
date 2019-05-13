@@ -92,12 +92,13 @@ In 2012, the Big Skate was moved from genus *Raja* to the new genus *Beringraja*
 ## Map
 A map showing the area of the U.S. West Coast Exclusive Economic Zone covered by this stock assessment is provided in Figure \ref{fig:assess_region_map.png}.
 
-<!-- (Figure \ref{fig:assess_region_map}). -->
+<!-- [H] to control floating -->
 
 \begin{figure}[H]
-\centering
+\begin{centering}
 \includegraphics{Figures/assess_region_map.png}
 \caption{U.S. West Coast Exclusive Economic zone covering the area in which this stock assessment is focused.}\label{fig:assess_region_map}
+\end{centering}
 \end{figure}
 
 <!-- ![U.S. West Coast Exclusive Economic zone covering the area in which this stock assessment is focused.  \label{fig:assess_region_map}](Figures/assess_region_map.png) -->
