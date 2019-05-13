@@ -90,23 +90,23 @@ _Other Estimated Parameters._
 
 _Other Fixed Parameters._ 
 
-Steepness was fixed at 0.4.
+The steepness of the Beverton-Holt stock-recruit curve was fixed at 0.4. The same value was used in the 2007 Longnose Skate assessment [@Gertseva2007] as is being considered for the ongoing 2019 Longnose Skate assessment to reflect a K-type reproductive strategy associated with elasmobranchs in general. The influence of the assumption of $h=0.4$ on model output was explored via a likelihood profile analysis.
 
 ## Model Selection and Evaluation
 
 ### Key Assumptions and Structural Choices
 
-**$\color{red}{\text{To be added}}$**
+**$\color{red}{\text{To be added prior to May 20 CIE pre-review deadline.}}$**
 
 
 ### Alternate Models Considered
 
-**$\color{red}{\text{To be added}}$**
+**$\color{red}{\text{To be added prior to May 20 CIE pre-review deadline.}}$**
 
 
 ### Convergence
 
-**$\color{red}{\text{To be added}}$**
+One hundred sets of jittered starting values were generated using the jitter function built into Stock Synthesis, with used with jitter input = 0.1. The same likelihood as the base model was returned by 54 out of the 100 returned the same likelihood while the others all had worse total likelihood.
 
 
 ## Response to the Current STAR Panel Requests
