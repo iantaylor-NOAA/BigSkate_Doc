@@ -65,6 +65,11 @@ mod3_ctrl = ''
 
 # =============================================================================
 
+# define directory on a specific computer
+if(Sys.info()["user"] == "Ian.Taylor"){
+  setwd('c:/SS/skates/BigSkate_Doc/')
+}
+
 # set input and output directories
 input.dir = file.path(getwd(), 'SS')
 output.dir = file.path(getwd(), 'r4ss')
