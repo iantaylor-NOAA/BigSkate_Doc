@@ -185,17 +185,6 @@ Harvest rates estimated by the base model indicate catch levels have been below 
 
 \FloatBarrier
 
-
-
-
-## Ecosystem Considerations{-}
-In this assessment, ecosystem considerations were not explicitly included in the analysis.  
-This is primarily due to a lack of relevant data and results of analyses (conducted elsewhere) 
-that could contribute ecosystem-related quantitative information for the assessment.
-
-
-
-
 ## Reference Points{-}
 
 This stock assessment estimates that `r spp` in the `r mod1_label` is 
@@ -228,6 +217,11 @@ harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt (Figure 
 
 \FloatBarrier
 
+
+## Ecosystem Considerations{-}
+In this assessment, ecosystem considerations were not explicitly included in the analysis.  
+This is primarily due to a lack of relevant data and results of analyses (conducted elsewhere) 
+that could contribute ecosystem-related quantitative information for the assessment.
 
 
 
@@ -265,6 +259,11 @@ harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt (Figure 
 
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY OFL AND DECISION TABLES************ -->
+\FloatBarrier
+## Projected Landings, OFLs and Time-varying ACLs {-}
+
+Potential OFLs projected by the model are shown in Table \ref{tab:OFL_projection}.  These values are based on an SPR target of 50%, a P* of 0.45, and a time-varying Category 2 Sigma which creates the buffer shown in the right-hand column.
+
 ```{r, results='asis'}   
     # Print OFL table 
       print(OFL.table, include.rownames = FALSE, caption.placement = 'top')
@@ -280,6 +279,8 @@ harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt (Figure 
           hline.after = c(-1, 0, 10, 20, 30, nrow(decision_mod1.table)), 
           scalebox = .85)
 ```
+\FloatBarrier
+
 <!-- ***********END EXECUTIVE SUMMARY OFL AND DECISION TABLES************** -->
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY RESULTS SUMMARY TABLE --> 

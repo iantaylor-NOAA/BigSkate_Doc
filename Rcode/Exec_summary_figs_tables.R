@@ -315,7 +315,7 @@ Recruit_mod1.table = xtable(Recruittab_mod1,
 align(Recruit_mod1.table) = c('l',
                               '>{\\centering}p{.8in}',
                               '>{\\centering}p{1.6in}',
-                              '>{\\centering}p{1.3in}')
+                              '>{\\centering}p{2in}')
 
 # Model 2
 if (n_models >= 2) {
@@ -643,9 +643,8 @@ mngmnt.table = xtable(mngmnt,
                               specifications since 2017.'), 
                       label='tab:mnmgt_perform')  
 # Add alignment
-align(mngmnt.table) = c('l',
-                        '>{\\raggedleft}p{1in}',
-                        '>{\\centering}p{1in}',
+align(mngmnt.table) = c('l','l',
+                        '>{\\centering}p{1.2in}',
                         '>{\\centering}p{1in}',
                         '>{\\centering}p{1in}', 
                         '>{\\centering}p{1in}')  
@@ -664,11 +663,15 @@ colnames(project) = c('Year',
 project$Buffer <- c(1.0, 1.0, 0.874, 0.865, 0.857, 0.849,
                     0.841, 0.833, 0.826, 0.818, 0.810, 0.803)
 OFL.table = xtable(project,
-    caption=c('Projections of landings, total mortality, OFL, and ACL values
-              based on an SPR target of 50%, a P* of 0.45, and a time-varying
-              Category 2 Sigma which creates the buffer shown in the right-hand
-              column.'),
+    caption=c('Projections of landings, total mortality, OFL, and ACL values.'),
     label = 'tab:OFL_projection')
+
+align(OFL.table) = c('l', 'l',
+                       '>{\\centering}p{0.8in}',
+                       '>{\\centering}p{1.2in}',
+                       '>{\\centering}p{0.8in}',
+                       '>{\\centering}p{0.8in}',
+                       '>{\\centering}p{0.8in}')
 
 
 ##   OFL.table = xtable(OFL, caption=c('Projections of potential OFL (mt) for 

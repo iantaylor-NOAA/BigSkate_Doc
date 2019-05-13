@@ -44,6 +44,7 @@ addtorow$command  <- c(paste("\\hline \n",
 # Print
 print(byState_catch.table, 
       include.rownames = FALSE,
+      floating = FALSE,
       caption.placement = 'top',
       tabular.environment = 'longtable',
       sanitize.colnames.function=function(x){x},
