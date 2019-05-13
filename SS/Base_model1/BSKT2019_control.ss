@@ -66,7 +66,7 @@
 # Sex: 1  BioPattern: 1  Maturity&Fecundity
 10      140     148.245 148.245 99      0       -3      0       0       0       0       0.5     0       0       #       Mat50%_Fem_GP_1 
 -0.09   -0.05 -0.13155 -0.13155 99      0       -3      0       0       0       0       0.5     0       0       #       Mat_slope_Fem_GP_1      
--3      3       0.5     1       99      0       -3      0       0       0       0       0.5     0       0       #       Eggs/kg_inter_Fem_GP_1  
+-3      3       1       1       99      0       -3      0       0       0       0       0.5     0       0       #       Eggs/kg_inter_Fem_GP_1  
 -3      3       0       0       99      0       -3      0       0       0       0       0.5     0       0       #       Eggs/kg_slope_wt_Fem_GP_1       
 # Sex: 2  BioPattern: 1  NatMort
 -3      3       0       0       99      0       -2      0       0       0       0       0       0       0       #       NatM_p_1_Mal_GP_1       

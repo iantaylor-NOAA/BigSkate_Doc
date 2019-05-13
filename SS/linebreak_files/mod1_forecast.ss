@@ -13,7 +13,7 @@
 #_Bmark_years: beg_bio, end_bio, beg_selex, end_selex, beg_relF, end_relF, 
 # beg_recr_dist, end_recr_dist, beg_SRparm, end_SRparm (enter actual year, 
 # or values of 0 or -integer to be rel. endyr)
-0 0 0 0 0 0 0 0 0 0
+1916 1916 0 0 0 0 0 0 0 0
 1 #Bmark_relF_Basis: 1 = use year range; 2 = set relF same as forecast belo
 # w
 #
@@ -33,8 +33,24 @@
 0.4 # Control rule Biomass level for constant F (as frac of Bzero, e.g. 0.4
 # 0); (Must be > the no F level below) 
 0.1 # Control rule Biomass level for no F (as frac of Bzero, e.g. 0.10) 
-1 # Control rule target as fraction of Flimit (e.g. 0.75), negative value i
-# nvokes list of [year, scalar] with filling from year to YrMax 
+-1 # Control rule target as fraction of Flimit (e.g. 0.75), negative value 
+# invokes list of [year, scalar] with filling from year to YrMax
+# buffer values below based on Category 2 Sigma with P* = 0.45
+#Yr    buffer
+2019   1.0
+2020   1.0
+2021   0.874  
+2022   0.865  
+2023   0.857  
+2024   0.849  
+2025   0.841  
+2026   0.833  
+2027   0.826  
+2028   0.818  
+2029   0.810  
+2030   0.803
+-9999  0
+#
 3 #_N forecast loops (1=OFL only; 2=ABC; 3=get F from forecast ABC catch wi
 # th allocations applied)
 3 #_First forecast loop with stochastic recruitment
@@ -43,7 +59,7 @@
 # control to get constant recruitment in MCMC)
 1 # value is ignored 
 0 #_Forecast loop control #5 (reserved for future bells&whistles) 
-2019  #FirstYear for caps and allocations (should be after years with fixed
+2050  #FirstYear for caps and allocations (should be after years with fixed
 #  inputs) 
 0 # stddev of log(realized catch/target catch) in forecast (set value>0.0 t
 # o cause active impl_error)
@@ -76,10 +92,15 @@
 # list sequentially because read values fill to end of N forecast
 # terminate with -9999 in year field 
 # no allocation groups
-2 # basis for input Fcast catch: -1=read basis with each obs; 2=dead catch;
+3 # basis for input Fcast catch: -1=read basis with each obs; 2=dead catch;
 #  3=retained catch; 99=input Hrate(F)
 #enter list of Fcast catches; terminate with line having year=-9999
 #_Yr Seas Fleet Catch(or_F)
--9999 1 1 0 
+2019 1    1     258.4
+2019 1    4      54.76
+2020 1    1     258.4
+2020 1    4      54.76
+#
+-9999 1    1       0 
 #
 999 # verify end of input 
