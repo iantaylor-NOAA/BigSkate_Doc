@@ -288,7 +288,7 @@ harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt (Figure 
 <!-- \thispagestyle{lscape} -->
 \begin{landscape}
 
-
+\renewcommand{\arraystretch}{1.2}
 ```{r, results='asis'}
    # Print the results summary table, will have to edit the R code and input file 
    # depending on the stock structure
@@ -304,7 +304,7 @@ harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt (Figure 
        align = TRUE, 
        hline.after = c(-1, 0, 4, 5, 7, 9, 11, nrow(base_summary.table)))
 ```
-
+\renewcommand{\arraystretch}{1}
 \end{landscape}
 \restoregeometry
 <!-- \pagestyle{fancy} -->

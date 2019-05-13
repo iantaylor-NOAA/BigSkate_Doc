@@ -94,7 +94,13 @@ A map showing the area of the U.S. West Coast Exclusive Economic Zone covered by
 
 <!-- (Figure \ref{fig:assess_region_map}). -->
 
-![U.S. West Coast Exclusive Economic zone covering the area in which this stock assessment is focused.  \label{fig:assess_region_map}](Figures/assess_region_map.png)
+\begin{figure}[H]
+\centering
+\includegraphics{Figures/assess_region_map.png}
+\caption{U.S. West Coast Exclusive Economic zone covering the area in which this stock assessment is focused.}\label{fig:assess_region_map}
+\end{figure}
+
+<!-- ![U.S. West Coast Exclusive Economic zone covering the area in which this stock assessment is focused.  \label{fig:assess_region_map}](Figures/assess_region_map.png) -->
 
 <!-- { height=40%, width=40% }   Andi look up "out" values! -->
 
