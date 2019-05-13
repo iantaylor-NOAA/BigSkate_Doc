@@ -7,6 +7,9 @@ output:
 <!-- ***********FIGURES: Model results ********************************** --> 
 <!-- ********************************************************************** -->
 
+
+## Model Results Figures
+
 \FloatBarrier
 
 <!-- ********************************************************************** -->
@@ -43,7 +46,7 @@ output:
 <!-- ***********MODEL 1 BASE MODEL FIGURES********************************* --> 
  
 
-
+### Growth and Selectivity
 
 
 
@@ -64,6 +67,8 @@ output:
 
 
 <!-- ***********Fits to the data********************************* --> 
+
+### Fits to the Data
 
 ![Fit to index data for WCGBT Survey. Lines indicate 95% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate.\label{fig:index2_cpuefit_WCGBTS}](r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png)
 
@@ -117,13 +122,11 @@ output:
 ![Fit to the mean weight of the discards. Points are model estimates with 95% uncertainty intervals. The model estimate is shown in the blue lines.\label{fig:bodywt_fit_fltFishery}](r4ss/plots_mod1/bodywt_fit_fltFishery.png)
 
 
-file: 
-
-
 <!-- ********************************************************************** -->
 <!-- ****************Time series FIGURES******************* -->
 <!-- ********************************************************************** -->
 
+### Time Series Figures
 
 
 \FloatBarrier
@@ -155,7 +158,7 @@ file:
 <!-- ***********MODEL 1 Uncertainty and Sensitivity FIGURES**************** --> 
 
 
-### Sensitivity analyses for `r mod1_label`
+### Sensitivity Analyses and Retrospectives
 
 ![Time series of spawning output estimated in sensitivity analyses related to selectivity and catchability. \label{fig:Sensitivity_sel_and_Q}](Figures/sens.sel_and_Q_compare1_spawnbio.png)
 
@@ -187,6 +190,7 @@ file:
 
 
 
+### Likelihood Profiles
 
 <!-- ********************************************************************** -->
 <!-- ******************Likelihood profile FIGURES************************** --> 
@@ -221,7 +225,7 @@ file:
 
 
 
-
+### Reference Points and Forecasts
 
 \FloatBarrier
 <!-- ********************************************************************** -->

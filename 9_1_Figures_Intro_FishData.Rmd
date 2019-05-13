@@ -14,7 +14,7 @@
 ![Map showing the distribution of Big Skate within the area covered by the West Coast Groundfish Bottom Trawl Survey aggregated over the years 2003--2018. \label{fig:boundary_map}](Figures/survey_hauls_map.png)
 
 
-
+## Data Figures
 
 
 <!-- ********************************************************************** --> 

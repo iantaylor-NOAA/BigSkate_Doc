@@ -5,6 +5,9 @@
 <!-- *****************                            ************************ -->
 <!-- ====================================================================== -->
 
+
+## Biology Figures
+
 ![Length comp data, aggregated across time by fleet. \label{fig:comp_lendat_aggregated_across_time}](r4ss/plots_mod1/comp_lendat__aggregated_across_time.png)
 
 ![Length comp data for all years and fleets. Bubble size indicates the observed proportions, with females in red and males in blue. \label{fig:comp_lendat__multi-fleet_comparison}](r4ss/plots_mod1/comp_lendat__multi-fleet_comparison.png)
