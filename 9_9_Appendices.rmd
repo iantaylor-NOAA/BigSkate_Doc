@@ -14,8 +14,10 @@ output:
 \FloatBarrier
 \newpage
 
-<!-- ************************************DATA FILE(S)************************************************--> 
+<!-- ************************************DATAFILE(S)************************************************--> 
+
 # Appendix A. Detailed fits to length composition data {-}
+
 \renewcommand{\thepage}{A-\arabic{page}}
 \renewcommand{\thefigure}{A\arabic{figure}}
 \setcounter{page}{1}

@@ -114,7 +114,7 @@ asymptotic variance estimates show that the uncertainty in the estimated spawnin
 
 ![Time series of spawning biomass trajectory (circles and line: median; light broken lines: 95% credibility intervals) for the base case assessment model.  \label{fig:Spawnbio_all}](`r spawn.file`)
 
-![Estimated relative %unfished with approximate 95\% asymptotic confidence intervals (dashed lines) for the base case assessment model. \label{fig:RelDeplete_all}](`r Bratio.file`)
+<!-- ![Estimated relative %unfished with approximate 95\% asymptotic confidence intervals (dashed lines) for the base case assessment model. \label{fig:RelDeplete_all}](`r Bratio.file`) -->
 
 <!-- ***********END  EXECUTIVE SUMMARY SPAWNING BIOMASS AND**************** -->
 
@@ -152,7 +152,7 @@ Recruitment was assumed to follow the Beverton-Holt stock recruit curve, so unce
 
 
 
-## Exploitation status{-}
+## Exploitation Status{-}
 Harvest rates estimated by the base model indicate catch levels have been below the limits that would be associated with the SPR = 50% target
 (Table \ref{tab:SPR_Exploit_mod1} and Figure \ref{fig:SPR_all}). 
 

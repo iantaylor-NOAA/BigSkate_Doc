@@ -1,3 +1,4 @@
 
 <!-- **************************REGIONAL MANAGEMENT************************* -->
+
 # Regional Management Considerations
