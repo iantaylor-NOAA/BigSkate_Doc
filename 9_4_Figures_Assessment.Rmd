@@ -7,6 +7,7 @@ output:
 <!-- ***********FIGURES: Model results ********************************** --> 
 <!-- ********************************************************************** -->
 
+\newpage
 
 ## Model Results Figures
 
@@ -51,9 +52,18 @@ output:
 
 
 \FloatBarrier
+<!-- [H] to control floating -->
 
+\begin{figure}[H]
+\begin{centering}
+\includegraphics{r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png}
+\caption{Estimated length-at-age for female and male `r spp` (top left panel). Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.}\label{fig:growth}
+\end{centering}
+\end{figure}
 
-![Estimated length-at-age for female and male `r spp` (top left panel). Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.\label{fig:growth}](r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png)
+\newpage
+
+<!-- ![Estimated length-at-age for female and male `r spp` (top left panel). Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.\label{fig:growth}](r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png) -->
 
 
 \FloatBarrier
@@ -70,7 +80,20 @@ output:
 
 ### Fits to the Data
 
-![Fit to index data for WCGBT Survey. Lines indicate 95% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate.\label{fig:index2_cpuefit_WCGBTS}](r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png)
+\FloatBarrier
+
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics{r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png}
+\caption{Fit to index data for WCGBT Survey. Lines indicate 95% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate.}\label{fig:index2_cpuefit_WCGBTS}
+\end{centering}
+\end{figure}
+
+\newpage
+
+
+<!-- ![Fit to index data for WCGBT Survey. Lines indicate 95% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate.\label{fig:index2_cpuefit_WCGBTS}](r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png) -->
 
 ![Fit to index data for Triennial Survey. Lines indicate 95% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate with a change between 1992 and 1995 associated with the estimated change in catchability.\label{fig:index2_cpuefit_Triennial}](r4ss/plots_mod1/index2_cpuefit_Triennial Survey.png)
 
@@ -121,15 +144,29 @@ output:
 
 ![Fit to the mean weight of the discards. Points are model estimates with 95% uncertainty intervals. The model estimate is shown in the blue lines.\label{fig:bodywt_fit_fltFishery}](r4ss/plots_mod1/bodywt_fit_fltFishery.png)
 
+\FloatBarrier
 
 <!-- ********************************************************************** -->
 <!-- ****************Time series FIGURES******************* -->
 <!-- ********************************************************************** -->
 
+\newpage
+
 ### Time Series Figures
 
 
 \FloatBarrier
+
+<!-- [H] to control floating -->
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics{r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png}
+\caption{Estimated spawning biomass (mt) with approximate 95% asymptotic intervals.}\label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}
+\end{centering}
+\end{figure}
+
+\newpage
 
 ![Estimated spawning biomass (mt) with approximate 95% asymptotic intervals. \label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}](r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png)
 
@@ -147,6 +184,7 @@ output:
 
 ![Estimated total catch including discards estimated within the model. The historical discards shown in green have been scaled to account for an assumed 50% discard mortality but the discards in the recent period show both live and dead discards. \label{fig:catch_total_plot}](r4ss/plots_mod1/catch5 total catch (including discards) stacked.png)
 
+\FloatBarrier
 
 <!-- ********************************************************************** -->
 <!-- ****************Uncertainty and Sensitivity FIGURES******************* -->
@@ -157,10 +195,25 @@ output:
 
 <!-- ***********MODEL 1 Uncertainty and Sensitivity FIGURES**************** --> 
 
+\newpage
 
 ### Sensitivity Analyses and Retrospectives
 
-![Time series of spawning biomass (mt) estimated in sensitivity analyses related to selectivity and catchability. \label{fig:Sensitivity_sel_and_Q}](Figures/sens.sel_and_Q_compare1_spawnbio.png)
+\FloatBarrier
+
+<!-- [H] to control floating -->
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics{Figures/sens.sel_and_Q_compare1_spawnbio.png}
+\caption{Time series of spawning biomass (mt) estimated in sensitivity analyses related to selectivity and catchability.}\label{fig:Sensitivity_sel_and_Q}
+\end{centering}
+\end{figure}
+
+\newpage
+
+
+<!-- ![Time series of spawning biomass (mt) estimated in sensitivity analyses related to selectivity and catchability. \label{fig:Sensitivity_sel_and_Q}](Figures/sens.sel_and_Q_compare1_spawnbio.png) -->
 
 ![Time series of spawning biomass (mt) estimated in sensitivity analyses related to historic catch and discards. \label{fig:Sensitivity_catch}](Figures/sens.catch_compare1_spawnbio.png)
 
@@ -189,14 +242,28 @@ output:
 
 
 
+\newpage
 
 ### Likelihood Profiles
+
+\FloatBarrier
 
 <!-- ********************************************************************** -->
 <!-- ******************Likelihood profile FIGURES************************** --> 
 <!-- ********************************************************************** -->
 
 <!-- ***********R0 Likelihood profile FIGURES****************************** --> 
+
+<!-- [H] to control floating -->
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics{Figures/profile_logR0.png}
+\caption{Likelihood profile over the log of equilibrium recruitment ($R_0$).}\label{fig:profile_logR0}
+\end{centering}
+\end{figure}
+
+\newpage
 
 ![Likelihood profile over the log of equilibrium recruitment ($R_0$).\label{fig:profile_logR0}](Figures/profile_logR0.png)
 
@@ -235,10 +302,19 @@ output:
 <!-- ***********MODEL 1 REFERENCE POINTS FIGURES*************************** --> 
 
 
+<!-- [H] to control floating -->
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics{r4ss/plots_mod1/yield1_yield_curve.png}
+\caption{Equilibrium yield curve for the base case model. Values are based on the fishery selectivity and with steepness fixed at 0.4.}\label{fig:yield1_yield_curve}
+\end{centering}
+\end{figure}
+
+\newpage
 
 
-
-![Equilibrium yield curve for the base case model. Values are based on the fishery selectivity and with steepness fixed at 0.4. \label{fig:yield1_yield_curve}](r4ss/plots_mod1/yield1_yield_curve.png)
+<!-- ![Equilibrium yield curve for the base case model. Values are based on the fishery selectivity and with steepness fixed at 0.4. \label{fig:yield1_yield_curve}](r4ss/plots_mod1/yield1_yield_curve.png) -->
 
 
 \FloatBarrier

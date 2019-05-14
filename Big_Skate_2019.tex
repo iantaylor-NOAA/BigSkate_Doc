@@ -143,8 +143,8 @@ Coast in 2019}
 
 Ian G. Taylor\textsuperscript{1}\\
 Vladlena Gertseva\textsuperscript{1}\\
-Joseph Bizzarro\textsuperscript{2}\\
-Andi Stephens\textsuperscript{3}\\
+Andi Stephens\textsuperscript{2}\\
+Joseph Bizzarro\textsuperscript{3}\\
 
 \vspace{.7cm}
 
@@ -154,11 +154,12 @@ Andi Stephens\textsuperscript{3}\\
 
 \vspace{.3cm}
 
-\textsuperscript{2}Southwest Fisheries Science Center, U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Marine Fisheries Service, 110 Shaffer Road, Santa Cruz, California 95060\\
+\textsuperscript{2}Northwest Fisheries Science Center, U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Marine Fisheries Service, 2032 S.E. OSU Drive Newport, Oregon 97365
 
 \vspace{.3cm}
 
-\textsuperscript{3}Northwest Fisheries Science Center, U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Marine Fisheries Service, 2032 S.E. OSU Drive Newport, Oregon 97365
+\textsuperscript{3}Southwest Fisheries Science Center, U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Marine Fisheries Service, 110 Shaffer Road, Santa Cruz, California 95060\\
+
 
 
 \vspace{.5cm}
@@ -181,8 +182,58 @@ represent any agency determination or policy.
 \begin{flushleft}
 This report may be cited as:
 
-Taylor, I.G., Gertseva, V., Bizzarro, J., and Stephens, A. Status of Big Skate (\emph{Beringraja binoculata}) Off the U.S. West Coast, 2019. Pacific Fishery Management Council, Portland, OR. Available from http://www.pcouncil.org/groundfish/stock-assessments/
+Taylor, I.G., Gertseva, V., Stephens, A. and Bizzarro, J. Status of Big Skate (\emph{Beringraja binoculata}) Off the U.S. West Coast, 2019. Pacific Fishery Management Council, Portland, OR. Available from http://www.pcouncil.org/groundfish/stock-assessments/
 \end{flushleft}
+
+\newpage{\thispagestyle{empty}}
+
+% Create this table using the instructions in Acronyms.Rmd
+
+
+\begin{flushleft}
+\large{\textbf{Acronyms used in this Document}}
+\end{flushleft}
+
+\vspace{.5cm}
+
+\renewcommand{\arraystretch}{1.2}
+
+\begin{table}[ht]
+% \centering
+\begin{tabular}{rll}
+     & ABC & Allowable Biological Catch  \\ 
+     & ACL  & Annual Catch Limit \\ 
+     & ADFG & Alaska Department of Fish and Game \\ 
+     & AFSC & Alaska Fisheries Science Center \\ 
+     & A-SHOP & At-Sea Hake Observer Program  \\ 
+     & CalCOM & California Cooperative Groundfish Survey  \\ 
+     & CDFW & California Department of Fish and Wildlife  \\ 
+     & CPFV & Commercial Passenger Fishing Vessel \\ 
+     & CRFS & California Recreational Fisheries Survey \\ 
+     & DFO & Canada’s Department of Fisheries and Oceans  \\ 
+     & IFQ & Individual Fishing Quota \\ 
+     & IPHC & International Pacific Halibut Commission \\ 
+     & MRFSS & Marine Recreational Fisheries Statistics Survey  \\ 
+     & NMFS & National Marine Fisheries Service  \\ 
+     & NORPAC & the North Pacific Database Program \\ 
+     & NWFSC & Northwest Fisheries Science Center  \\ 
+     & ODFW & Oregon Department of Fish and Wildlife  \\ 
+     & OFL & Overfishing Limit \\ 
+     & ORBS & Oregon Recreational Boat Survey  \\ 
+     & OY & Optimum Yield \\ 
+     & PacFIN & Pacific Fisheries Information Network \\ 
+     & PFMC & Pacific Fishery Management Council \\ 
+     & PSMFC & Pacific States Marine Fisheries Commission  \\ 
+     & RecFIN & Recreational Fisheries Information Network \\ 
+     & SPR & Spawning Potential Ratio \\ 
+     & SSC & Scientific and Statistical Committee \\ 
+     & SWFSC & Southwest Fisheries Science Center  \\ 
+     & WCGOP & West Coast Groundfish Observer Program  \\ 
+     & WDFW & Washington Department of Fish and Wildlife  \\ 
+\end{tabular}
+\end{table}
+
+\renewcommand{\arraystretch}{1}
 
 \maketitle
 
@@ -212,7 +263,16 @@ Taylor, I.G., Gertseva, V., Bizzarro, J., and Stephens, A. Status of Big Skate (
 
 This assessment reports the status of the Big Skate
 (\emph{Beringraja binoculata}) resource in U.S. waters off the West
-Coast using data through 2018.
+Coast using data through 2018. A map showing the area of the U.S. West
+Coast Exclusive Economic Zone covered by this stock assessment is
+provided in Figure \ref{fig:assess_region_map}.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics{Figures/assess_region_map.png}
+\caption{U.S. West Coast Exclusive Economic zone covering the area in which this stock assessment is focused.}\label{fig:assess_region_map}
+\end{centering}
+\end{figure}
 
 \hypertarget{catches}{%
 \subsection*{Catches}\label{catches}}
@@ -230,22 +290,15 @@ landings.
 In the current fishery (since 1995), annual total landings of Big Skate
 have ranged between 135-528 mt, with landings in 2018 totaling 173 mt.
 
-\FloatBarrier
+\vspace{.5cm}
 
 \FloatBarrier
-
-\begin{figure}
-\centering
-\includegraphics{r4ss/plots_mod1/catch2 landings stacked.png}
-\caption{Catch history of Big Skate in the model.
-\label{fig:r4ss_catches}}
-\end{figure}
 
 \begin{table}[ht]
 \centering
 \caption{Recent Big Skate landings (mt)} 
 \label{tab:Exec_catch}
-\begin{tabular}{l>{\centering}p{.6in}}
+\begin{tabular}{>{\centering}p{1in}>{\centering}p{1in}}
   \hline
 Year & Landings \\ 
   \hline
@@ -266,6 +319,15 @@ Year & Landings \\
 
 \FloatBarrier
 
+\begin{figure}
+\centering
+\includegraphics{r4ss/plots_mod1/catch2 landings stacked.png}
+\caption{Catch history of Big Skate in the model.
+\label{fig:r4ss_catches}}
+\end{figure}
+
+\FloatBarrier
+
 \newpage
 
 \hypertarget{data-and-assessment}{%
@@ -278,39 +340,101 @@ recent average of survey biomass. This assessment uses the newest
 version of Stock Synthesis (3.30.13). The model begins in 1916, and
 assumes the stock was at an unfished equilibrium that year.
 
+The assessment relies on two bottom trawl survey indices of abundance,
+the Triennial Survey from an index covering the period 1980--2004 was
+used here and the West Coast Groundifish Bottom Trawl (WCGBT) Survey,
+which began in 2003 and for which data is available through 2018. The
+triennial survey shows an increasing trend over the 25 year period it
+covers, which the model is not able to fit as this includes the peak
+period of the fishery when the stock would have been expected to be
+declining. The WCGBT Survey also shows an increasing trend, with the 5
+most recent observations (2014--2018) all falling in the top 6 ever
+observed (2004 was the 5th highest observation). The most estimates an
+increasing trend during this period but the slope is more gradual than
+the trend in the survey. The misfit to these survey indices could be due
+to some combination of incorrect estimation of the catch history,
+variability in recruitment which is not modeled here, or biological or
+ecological changes for which data are not available.
+
+Length composition data from the fishery is available starting in 1995
+but is sparse until the past decade. Most of the ages are also from 2008
+onward. This limits the ability of the model to estimate any changes
+composition of the population during the majority of the history of the
+fishery. Estimates of discard rates and mean body weight of discards are
+available for the years 2002 onward and discard length compositions are
+available starting in 2010.
+
+The age and length data provide evidence for growth patterns and
+sex-specific differences in selectivity that are unusual among
+groundfish stocks that have been assessed within the U.S. West Coast and
+are not found in Longnose Skate where the data show little difference
+between the sexes. Growth appears to be almost linear and similar
+between females and males up to about age 7 or over 100 cm at which
+point male growth appears to stabilize while females continue to grow.
+However, in spite of the similar growth pattern for ages prior to 7,
+males are observed more frequently, with the 70--100 cm length bins
+often showing 60\% males. Sex-specific differences in selectivity were
+included in the model in order to better match patterns in the sex
+ratios in the length composition data. The length and age data do not
+cover enough years or show enough evidence of distinct cohorts to
+reliably estimate deviations in recruitment around the stock-recruit
+curve.
+
+The scale of the population is not reliably informed by the data due to
+the combination of surveys that show trends which can't be matched by
+the structure of the model and length and age data which inform growth
+and selectivity but provide relatively little information about changes
+in stock structure over time. Therefore, a prior on catchability of the
+WCGBT Survey (centered at 0.83) was applied in order to provide more
+stable results.
+
+Although the assessment model requires numerous simplifying assumptions,
+it represents an improvement over the simplistic status-quo method of
+setting management limits, which relies on average survey biomass and an
+assumption about \(F_{MSY}\). The use of an age-structured model with
+estimated growth, selectivity, and natural mortality likely provide a
+better estimate of past dynamics and the impacts of fishing in the
+future.
+
 \hypertarget{stock-biomass}{%
 \subsection*{Stock Biomass}\label{stock-biomass}}
 \addcontentsline{toc}{subsection}{Stock Biomass}
 
 The 2018 estimated spawning biomass relative to unfished equilibrium
 spawning biomass is above the target of 40\% of unfished spawning
-biomass at 72.5\% (95\% asymptotic interval: \(\pm\) 55.2\%-89.7\%)
+biomass at 75.0\% (95\% asymptotic interval: \(\pm\) 63.9\%-86.0\%)
 (Figure \ref{fig:RelDeplete_all}). Approximate confidence intervals
 based on the asymptotic variance estimates show that the uncertainty in
-the estimated spawning biomass is high.
+the estimated spawning biomass is high, although even the lower range of
+the 95\% interval for \%unfished is above the 40\% reference point, and
+all sensitivity analyses explore also show the stock to be at a high
+level.
+
+\vspace{.5cm}
 
 \FloatBarrier
 
 \begin{table}[ht]
 \centering
 \caption{Recent trend in beginning of the 
-                                      year spawning output and depletion for
-                                      the model for Big Skate.} 
+                                      year spawning output and %unfished
+                                      (spawning biomass relative to unfished
+                                      equilibrum spawning biomass)} 
 \label{tab:SpawningDeplete_mod1}
 \begin{tabular}{l>{\centering}p{1.3in}>{\centering}p{1.2in}>{\centering}p{1in}>{\centering}p{1.2in}}
   \hline
-Year & Spawning Output (million eggs) & \~{} 95\% confidence interval & Estimated depletion & \~{} 95\% confidence interval \\ 
+Year & Spawning Output (mt) & \~{} 95\% confidence interval & Estimated \%unfished & \~{} 95\% confidence interval \\ 
   \hline
-2010 & 1059.250 & (425.78-1692.72) & 0.694 & (0.552-0.837) \\ 
-  2011 & 1068.670 & (434.08-1703.26) & 0.700 & (0.56-0.841) \\ 
-  2012 & 1073.990 & (438.95-1709.03) & 0.704 & (0.564-0.843) \\ 
-  2013 & 1079.980 & (444.55-1715.41) & 0.708 & (0.57-0.846) \\ 
-  2014 & 1094.970 & (458.25-1731.69) & 0.718 & (0.583-0.852) \\ 
-  2015 & 1095.100 & (458.91-1731.29) & 0.718 & (0.583-0.852) \\ 
-  2016 & 1097.700 & (461.69-1733.71) & 0.719 & (0.586-0.853) \\ 
-  2017 & 1093.720 & (458.52-1728.92) & 0.717 & (0.583-0.851) \\ 
-  2018 & 1097.080 & (461.78-1732.38) & 0.719 & (0.586-0.852) \\ 
-  2019 & 1106.070 & (504.33-1707.81) & 0.725 & (0.552-0.897) \\ 
+2010 & 1603.690 & (726.67-2480.71) & 0.721 & (0.6-0.842) \\ 
+  2011 & 1617.560 & (738.18-2496.94) & 0.727 & (0.608-0.847) \\ 
+  2012 & 1625.610 & (745.16-2506.06) & 0.731 & (0.613-0.849) \\ 
+  2013 & 1634.790 & (753.17-2516.41) & 0.735 & (0.618-0.852) \\ 
+  2014 & 1657.340 & (772.22-2542.46) & 0.745 & (0.631-0.859) \\ 
+  2015 & 1657.020 & (772.35-2541.69) & 0.745 & (0.632-0.859) \\ 
+  2016 & 1659.820 & (774.79-2544.85) & 0.746 & (0.634-0.859) \\ 
+  2017 & 1652.180 & (768.4-2535.96) & 0.743 & (0.63-0.856) \\ 
+  2018 & 1655.400 & (770.86-2539.94) & 0.744 & (0.632-0.857) \\ 
+  2019 & 1667.190 & (780.42-2553.96) & 0.750 & (0.639-0.86) \\ 
    \hline
 \end{tabular}
 \end{table}
@@ -319,18 +443,10 @@ Year & Spawning Output (million eggs) & \~{} 95\% confidence interval & Estimate
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png}
+\includegraphics{r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png}
 \caption{Time series of spawning biomass trajectory (circles and line:
 median; light broken lines: 95\% credibility intervals) for the base
 case assessment model. \label{fig:Spawnbio_all}}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics{r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png}
-\caption{Estimated relative depletion with approximate 95\% asymptotic
-confidence intervals (dashed lines) for the base case assessment model.
-\label{fig:RelDeplete_all}}
 \end{figure}
 
 \FloatBarrier
@@ -344,24 +460,26 @@ so uncertainty in estimated recruitment is due to uncertainty in
 spawning biomass and the unfished equilibrium recruitment \(R_0\)
 (Figure \ref{fig:Recruits_all} and Table \ref{tab:Recruit_mod1}).
 
+\vspace{.5cm}
+
 \begin{table}[ht]
 \centering
 \caption{Recent recruitment for the model.} 
 \label{tab:Recruit_mod1}
-\begin{tabular}{>{\centering}p{.8in}>{\centering}p{1.6in}>{\centering}p{1.3in}}
+\begin{tabular}{>{\centering}p{.8in}>{\centering}p{1.6in}>{\centering}p{2in}}
   \hline
 Year & Estimated Recruitment (1,000s) & \~{} 95\% confidence interval \\ 
   \hline
-2010 & 3435.91 & (2128.69 - 5545.9) \\ 
-  2011 & 3450.01 & (2142.11 - 5556.47) \\ 
-  2012 & 3457.92 & (2149.79 - 5562.03) \\ 
-  2013 & 3466.77 & (2158.45 - 5568.12) \\ 
-  2014 & 3488.68 & (2179.48 - 5584.31) \\ 
-  2015 & 3488.86 & (2180.18 - 5583.09) \\ 
-  2016 & 3492.63 & (2184.26 - 5584.72) \\ 
-  2017 & 3486.86 & (2179.33 - 5578.88) \\ 
-  2018 & 3491.73 & (2184.37 - 5581.57) \\ 
-  2019 & 3504.69 & (2186.12 - 5618.57) \\ 
+2010 & 5393.54 & (2966.19 - 9807.3) \\ 
+  2011 & 5414.62 & (2982.16 - 9831.17) \\ 
+  2012 & 5426.77 & (2991.46 - 9844.65) \\ 
+  2013 & 5440.55 & (3002 - 9859.94) \\ 
+  2014 & 5474.01 & (3027.33 - 9898.09) \\ 
+  2015 & 5473.54 & (3027.82 - 9894.77) \\ 
+  2016 & 5477.66 & (3031.98 - 9896.09) \\ 
+  2017 & 5466.40 & (3024.88 - 9878.58) \\ 
+  2018 & 5471.15 & (3029.62 - 9880.26) \\ 
+  2019 & 5488.48 & (3043.55 - 9897.46) \\ 
    \hline
 \end{tabular}
 \end{table}
@@ -379,12 +497,14 @@ base-case model with 95\% confidence or credibility intervals.
 \FloatBarrier
 
 \hypertarget{exploitation-status}{%
-\subsection*{Exploitation status}\label{exploitation-status}}
-\addcontentsline{toc}{subsection}{Exploitation status}
+\subsection*{Exploitation Status}\label{exploitation-status}}
+\addcontentsline{toc}{subsection}{Exploitation Status}
 
 Harvest rates estimated by the base model indicate catch levels have
 been below the limits that would be associated with the SPR = 50\%
 target (Table \ref{tab:SPR_Exploit_mod1} and Figure \ref{fig:SPR_all}).
+
+\vspace{.5cm}
 
 \FloatBarrier
 
@@ -399,16 +519,16 @@ target (Table \ref{tab:SPR_Exploit_mod1} and Figure \ref{fig:SPR_all}).
   \hline
 Year & Relative fishing intensity & \~{} 95\% confidence interval & Exploitation rate & \~{} 95\% confidence interval \\ 
   \hline
-2009 & 0.23 & (0.12-0.34) & 0.01 & (0.01-0.02) \\ 
-  2010 & 0.22 & (0.11-0.32) & 0.01 & (0.01-0.02) \\ 
-  2011 & 0.29 & (0.15-0.42) & 0.02 & (0.01-0.02) \\ 
-  2012 & 0.29 & (0.15-0.42) & 0.02 & (0.01-0.02) \\ 
-  2013 & 0.15 & (0.08-0.22) & 0.01 & (0-0.01) \\ 
-  2014 & 0.39 & (0.22-0.56) & 0.02 & (0.01-0.03) \\ 
-  2015 & 0.35 & (0.19-0.5) & 0.02 & (0.01-0.03) \\ 
-  2016 & 0.43 & (0.24-0.61) & 0.02 & (0.01-0.04) \\ 
-  2017 & 0.30 & (0.16-0.44) & 0.02 & (0.01-0.02) \\ 
-  2018 & 0.19 & (0.1-0.28) & 0.01 & (0.01-0.01) \\ 
+2009 & 0.21 & (0.12-0.3) & 0.01 & (0.01-0.02) \\ 
+  2010 & 0.20 & (0.11-0.29) & 0.01 & (0.01-0.02) \\ 
+  2011 & 0.26 & (0.15-0.38) & 0.01 & (0.01-0.02) \\ 
+  2012 & 0.26 & (0.15-0.38) & 0.01 & (0.01-0.02) \\ 
+  2013 & 0.14 & (0.08-0.2) & 0.01 & (0-0.01) \\ 
+  2014 & 0.36 & (0.21-0.5) & 0.02 & (0.01-0.03) \\ 
+  2015 & 0.32 & (0.19-0.45) & 0.02 & (0.01-0.03) \\ 
+  2016 & 0.39 & (0.23-0.55) & 0.02 & (0.01-0.03) \\ 
+  2017 & 0.28 & (0.16-0.39) & 0.02 & (0.01-0.02) \\ 
+  2018 & 0.18 & (0.1-0.25) & 0.01 & (0.01-0.01) \\ 
    \hline
 \end{tabular}
 \end{table}
@@ -428,32 +548,23 @@ rate. The last year in the time series is 2018. \label{fig:SPR_all}}
 
 \FloatBarrier
 
-\hypertarget{ecosystem-considerations}{%
-\subsection*{Ecosystem Considerations}\label{ecosystem-considerations}}
-\addcontentsline{toc}{subsection}{Ecosystem Considerations}
-
-In this assessment, ecosystem considerations were not explicitly
-included in the analysis.\\
-This is primarily due to a lack of relevant data and results of analyses
-(conducted elsewhere) that could contribute ecosystem-related
-quantitative information for the assessment.
-
 \hypertarget{reference-points}{%
 \subsection*{Reference Points}\label{reference-points}}
 \addcontentsline{toc}{subsection}{Reference Points}
 
 This stock assessment estimates that Big Skate in the model is above the
 biomass target (\(SB_{40\%}\)), and well above the minimum stock size
-threshold (\(SB_{25\%}\)). The estimated relative depletion level for
-the base model in 2019 is 72.5\% (95\% asymptotic interval: \(\pm\)
-55.2\%-89.7\%, corresponding to an unfished spawning biomass of 1106.07
-million eggs (95\% asymptotic interval: 504.33-1707.81 million eggs) of
-spawning biomass in the base model (Table \ref{tab:Ref_pts_mod1}).
-Unfished age 1+ biomass was estimated to be 2,426 mt in the base case
-model. The target spawning biomass (\(SB_{40\%}\)) is 610 million eggs,
-which corresponds with an equilibrium yield of 558 mt. Equilibrium yield
-at the proxy \(F_{MSY}\) harvest rate corresponding to \(SPR_{50\%}\) is
-466 mt (Figure \ref{fig:Yield_all}).
+threshold (\(SB_{25\%}\)). The estimated \%unfished level for the base
+model in 2019 is 75.0\% (95\% asymptotic interval: \(\pm\)
+63.9\%-86.0\%, corresponding to an unfished spawning biomass of 1667.19
+mt (95\% asymptotic interval: 780.42-2553.96 mt) of spawning biomass in
+the base model (Table \ref{tab:Ref_pts_mod1}). Unfished age 1+ biomass
+was estimated to be 2,523 mt in the base case model. The target spawning
+biomass (\(SB_{40\%}\)) is 890 mt, which corresponds with an equilibrium
+yield of 602 mt. Equilibrium yield at the proxy \(F_{MSY}\) harvest rate
+corresponding to \(SPR_{50\%}\) is 507 mt (Figure \ref{fig:Yield_all}).
+
+\vspace{.5cm}
 
 \FloatBarrier
 
@@ -467,32 +578,43 @@ at the proxy \(F_{MSY}\) harvest rate corresponding to \(SPR_{50\%}\) is
   \hline
 \textbf{Quantity} & \textbf{Estimate} & \textbf{Low 2.5\%  limit} & \textbf{High 2.5\%  limit} \\ 
   \hline
-Unfished spawning output (million eggs) & 1,526 & 891 & 2,161 \\ 
-  Unfished age 1+ biomass (mt) & 2,426 & 1,583 & 3,269 \\ 
-  Unfished recruitment ($R_{0}$) & 4,004 & 2,395 & 5,612 \\ 
-  Spawning output(2018 million eggs) & 1,097 & 462 & 1,732 \\ 
-  Depletion (2018) & 0.719 & 0.586 & 0.852 \\ 
+Unfished spawning output (mt) & 2,224 & 1,246 & 3,202 \\ 
+  Unfished age 1+ biomass (mt) & 2,523 & 1,705 & 3,341 \\ 
+  Unfished recruitment ($R_{0}$) & 6,176 & 2,760 & 9,592 \\ 
+  Spawning output(2018 mt) & 1,655 & 771 & 2,540 \\ 
+  Depletion (2018) & 0.744 & 0.632 & 0.857 \\ 
   \textbf{$\text{Reference points based on } \mathbf{SB_{40\%}}$} &  &  &  \\ 
-  Proxy spawning output ($B_{40\%}$) & 610 & 373 & 848 \\ 
+  Proxy spawning output ($B_{40\%}$) & 890 & 498 & 1,281 \\ 
   SPR resulting in $B_{40\%}$ ($SPR_{B40\%}$) & 0.625 & 0.625 & 0.625 \\ 
-  Exploitation rate resulting in $B_{40\%}$ & 0.047 & 0.043 & 0.051 \\ 
-  Yield with $SPR_{B40\%}$ at $B_{40\%}$ (mt) & 558 & 362 & 754 \\ 
+  Exploitation rate resulting in $B_{40\%}$ & 0.048 & 0.042 & 0.055 \\ 
+  Yield with $SPR_{B40\%}$ at $B_{40\%}$ (mt) & 602 & 395 & 810 \\ 
   \textbf{\textit{Reference points based on SPR proxy for MSY}} &  &  &  \\ 
-  Spawning output & 305 & 187 & 424 \\ 
+  Spawning output & 445 & 249 & 640 \\ 
   $SPR_{proxy}$ & 0.5 &  &  \\ 
-  Exploitation rate corresponding to $SPR_{proxy}$ & 0.069 & 0.063 & 0.075 \\ 
-  Yield with $SPR_{proxy}$ at $SB_{SPR}$ (mt) & 466 & 303 & 629 \\ 
+  Exploitation rate corresponding to $SPR_{proxy}$ & 0.071 & 0.061 & 0.08 \\ 
+  Yield with $SPR_{proxy}$ at $SB_{SPR}$ (mt) & 507 & 333 & 681 \\ 
   \textbf{\textit{Reference points based on estimated MSY values}} &  &  &  \\ 
-  Spawning output at $MSY$ ($SB_{MSY}$) & 578 & 352 & 804 \\ 
-  $SPR_{MSY}$ & 0.612 & 0.608 & 0.615 \\ 
-  Exploitation rate at $MSY$ & 0.049 & 0.045 & 0.053 \\ 
-  Dead Catch $MSY$ (mt) & 559 & 363 & 755 \\ 
-  Retained Catch $MSY$ (mt) & 517 & 337 & 698 \\ 
+  Spawning output at $MSY$ ($SB_{MSY}$) & 833 & 458 & 1,207 \\ 
+  $SPR_{MSY}$ & 0.609 & 0.604 & 0.614 \\ 
+  Exploitation rate at $MSY$ & 0.051 & 0.045 & 0.057 \\ 
+  Dead Catch $MSY$ (mt) & 604 & 396 & 812 \\ 
+  Retained Catch $MSY$ (mt) & 559 & 367 & 750 \\ 
    \hline
 \end{tabular}
 \end{table}
 
 \FloatBarrier
+
+\newpage
+
+\hypertarget{ecosystem-considerations}{%
+\subsection*{Ecosystem Considerations}\label{ecosystem-considerations}}
+\addcontentsline{toc}{subsection}{Ecosystem Considerations}
+
+In this assessment, neither environmental nor ecosystem considerations
+were explicitly included in the analysis. This is primarily due to a
+lack of relevant data or results of analyses that could contribute
+ecosystem-related quantitative information for the assessment.
 
 \hypertarget{management-performance}{%
 \subsection*{Management Performance}\label{management-performance}}
@@ -508,7 +630,7 @@ Unfished spawning output (million eggs) & 1,526 & 891 & 2,161 \\
                               specifications since 2017.} 
 \label{tab:mnmgt_perform}
 \scalebox{0.9}{
-\begin{tabular}{>{\raggedleft}p{1in}>{\centering}p{1in}>{\centering}p{1in}>{\centering}p{1in}>{\centering}p{1in}}
+\begin{tabular}{l>{\centering}p{1.2in}>{\centering}p{1in}>{\centering}p{1in}>{\centering}p{1in}}
   \hline
 Year & OFL (mt; ABC prior to 2011) & ABC (mt) & ACL (mt; OY prior to 2011) & Estimated total catch (mt) \\ 
   \hline
@@ -537,20 +659,34 @@ Uncertainties}\label{unresolved-problems-and-major-uncertainties}}
 \addcontentsline{toc}{subsection}{Unresolved Problems and Major
 Uncertainties}
 
+\textbf{\(\color{red}{\text{To be added}}\)}
+
 \FloatBarrier
 
 \hypertarget{decision-table}{%
 \subsection*{Decision Table}\label{decision-table}}
 \addcontentsline{toc}{subsection}{Decision Table}
 
+\textbf{\(\color{red}{\text{Template in Table h and associated discussion to be filled in later}}\)}
+
+\FloatBarrier
+
+\hypertarget{projected-landings-ofls-and-time-varying-acls}{%
+\subsection*{Projected Landings, OFLs and Time-varying
+ACLs}\label{projected-landings-ofls-and-time-varying-acls}}
+\addcontentsline{toc}{subsection}{Projected Landings, OFLs and
+Time-varying ACLs}
+
+Potential OFLs projected by the model are shown in Table
+\ref{tab:OFL_projection}. These values are based on an SPR target of
+50\%, a P* of 0.45, and a time-varying Category 2 Sigma which creates
+the buffer shown in the right-hand column.
+
 \begin{table}[ht]
 \centering
-\caption{Projections of landings, total mortality, OFL, and ACL values
-              based on an SPR target of 50%, a P* of 0.45, and a time-varying
-              Category 2 Sigma which creates the buffer shown in the right-hand
-              column.} 
+\caption{Projections of landings, total mortality, OFL, and ACL values.} 
 \label{tab:OFL_projection}
-\begin{tabular}{rrrrrr}
+\begin{tabular}{l>{\centering}p{0.8in}>{\centering}p{1.2in}>{\centering}p{0.8in}>{\centering}p{0.8in}>{\centering}p{0.8in}}
   \hline
 Year & Landings (mt) & Estimated total mortality (mt) & OFL (mt) & ACL (mt) & Buffer \\ 
   \hline
@@ -585,17 +721,17 @@ Year & Landings (mt) & Estimated total mortality (mt) & OFL (mt) & ACL (mt) & Bu
    \multicolumn{3}{c}{}  &  \multicolumn{2}{c}{} 
                                & \multicolumn{2}{c}{\textbf{States of nature}} 
                                & \multicolumn{2}{c}{} \\
-  \multicolumn{3}{c}{}  &  \multicolumn{2}{c}{Low M 0.05} 
-                               & \multicolumn{2}{c}{Base M 0.07} 
-                               &  \multicolumn{2}{c}{High M 0.09} \\
+  \multicolumn{3}{c}{}  &  \multicolumn{2}{c}{Low State} 
+                               & \multicolumn{2}{c}{Base State} 
+                               &  \multicolumn{2}{c}{High State} \\
  \hline
  & Year & Catch & Spawning Output & Depletion & Spawning Output & Depletion & Spawning Output & Depletion \\ 
   \hline
  & 2019 & - & - & - & - & - & - & - \\ 
    & 2020 & - & - & - & - & - & - & - \\ 
    & 2021 & - & - & - & - & - & - & - \\ 
-  40-10 Rule,  & 2022 & - & - & - & - & - & - & - \\ 
-  Low M & 2023 & - & - & - & - & - & - & - \\ 
+  Default harvest,  & 2022 & - & - & - & - & - & - & - \\ 
+  for Low State & 2023 & - & - & - & - & - & - & - \\ 
    & 2024 & - & - & - & - & - & - & - \\ 
    & 2025 & - & - & - & - & - & - & - \\ 
    & 2026 & - & - & - & - & - & - & - \\ 
@@ -605,8 +741,8 @@ Year & Landings (mt) & Estimated total mortality (mt) & OFL (mt) & ACL (mt) & Bu
  & 2019 & - & - & - & - & - & - & - \\ 
    & 2020 & - & - & - & - & - & - & - \\ 
    & 2021 & - & - & - & - & - & - & - \\ 
-  40-10 Rule & 2022 & - & - & - & - & - & - & - \\ 
-   & 2023 & - & - & - & - & - & - & - \\ 
+  Default harvest,  & 2022 & - & - & - & - & - & - & - \\ 
+  for Base State & 2023 & - & - & - & - & - & - & - \\ 
    & 2024 & - & - & - & - & - & - & - \\ 
    & 2025 & - & - & - & - & - & - & - \\ 
    & 2026 & - & - & - & - & - & - & - \\ 
@@ -616,8 +752,8 @@ Year & Landings (mt) & Estimated total mortality (mt) & OFL (mt) & ACL (mt) & Bu
  & 2019 & - & - & - & - & - & - & - \\ 
    & 2020 & - & - & - & - & - & - & - \\ 
    & 2021 & - & - & - & - & - & - & - \\ 
-  40-10 Rule, & 2022 & - & - & - & - & - & - & - \\ 
-  High M & 2023 & - & - & - & - & - & - & - \\ 
+  Default harvest,  & 2022 & - & - & - & - & - & - & - \\ 
+  for High State & 2023 & - & - & - & - & - & - & - \\ 
    & 2024 & - & - & - & - & - & - & - \\ 
    & 2025 & - & - & - & - & - & - & - \\ 
    & 2026 & - & - & - & - & - & - & - \\ 
@@ -638,12 +774,13 @@ Year & Landings (mt) & Estimated total mortality (mt) & OFL (mt) & ACL (mt) & Bu
 \end{tabular}
 }
 \end{table}
+\FloatBarrier
 
 \newgeometry{hmargin=1in,vmargin=1in}
 
 \begin{landscape}
 
-
+\renewcommand{\arraystretch}{1.2}
 \begin{table}[ht]
 \centering
 \caption{Base case results summary.} 
@@ -658,24 +795,24 @@ Landings (mt) &  313.160 &  313.160 & 1042.228 &  987.509 &  942.796 &  906.409 
   OFL (mt) &  541.00 &  541.00 & 1275.51 & 1222.62 & 1179.51 & 1145.41 & 1118.21 & 1095.36 & 1075.04 & 1056.06 \\ 
   ACL (mt) &  494.000 &  494.000 & 1119.750 & 1062.580 & 1015.910 &  977.592 &  945.643 &  917.762 &  893.393 &  869.365 \\ 
    \hline
-(1-$SPR$)(1-$SPR_{50\%}$) & 0.22 & 0.29 & 0.29 & 0.15 & 0.39 & 0.35 & 0.43 & 0.30 & 0.19 &  \\ 
+(1-$SPR$)(1-$SPR_{50\%}$) & 0.20 & 0.26 & 0.26 & 0.14 & 0.36 & 0.32 & 0.39 & 0.28 & 0.18 &  \\ 
    \hline
-Exploitation rate & 0.01 & 0.02 & 0.02 & 0.01 & 0.02 & 0.02 & 0.02 & 0.02 & 0.01 &  \\ 
-  Age 1+ biomass (mt) & 17752.6 & 17914.2 & 18070.4 & 18140.7 & 18203.3 & 18389.4 & 18320.0 & 18306.6 & 18214.4 & 18273.9 \\ 
+Exploitation rate & 0.01 & 0.01 & 0.01 & 0.01 & 0.02 & 0.02 & 0.02 & 0.02 & 0.01 &  \\ 
+  Age 1+ biomass (mt) & 18810.9 & 18968.2 & 19113.5 & 19171.0 & 19221.9 & 19394.4 & 19315.6 & 19300.1 & 19211.4 & 19275.8 \\ 
    \hline
-Spawning Output & 1059.2 & 1068.7 & 1074.0 & 1080.0 & 1095.0 & 1095.1 & 1097.7 & 1093.7 & 1097.1 & 1106.1 \\ 
-  ~95\% CI & (425.78-1692.72) & (434.08-1703.26) & (438.95-1709.03) & (444.55-1715.41) & (458.25-1731.69) & (458.91-1731.29) & (461.69-1733.71) & (458.52-1728.92) & (461.78-1732.38) & (504.33-1707.81) \\ 
+Spawning Output & 1603.7 & 1617.6 & 1625.6 & 1634.8 & 1657.3 & 1657.0 & 1659.8 & 1652.2 & 1655.4 & 1667.2 \\ 
+  ~95\% CI & (726.67-2480.71) & (738.18-2496.94) & (745.16-2506.06) & (753.17-2516.41) & (772.22-2542.46) & (772.35-2541.69) & (774.79-2544.85) & (768.4-2535.96) & (770.86-2539.94) & (780.42-2553.96) \\ 
    \hline
 Depletion & 0.7 & 0.7 & 0.7 & 0.7 & 0.7 & 0.7 & 0.7 & 0.7 & 0.7 & 0.7 \\ 
-  ~95\% CI & (0.552-0.837) & (0.56-0.841) & (0.564-0.843) & (0.57-0.846) & (0.583-0.852) & (0.583-0.852) & (0.586-0.853) & (0.583-0.851) & (0.586-0.852) & (0.552-0.897) \\ 
+  ~95\% CI & (0.6-0.842) & (0.608-0.847) & (0.613-0.849) & (0.618-0.852) & (0.631-0.859) & (0.632-0.859) & (0.634-0.859) & (0.63-0.856) & (0.632-0.857) & (0.639-0.86) \\ 
    \hline
-Recruits & 3435.91 & 3450.01 & 3457.92 & 3466.77 & 3488.68 & 3488.86 & 3492.63 & 3486.86 & 3491.73 & 3504.69 \\ 
-  ~95\% CI & (2128.69 - 5545.9) & (2142.11 - 5556.47) & (2149.79 - 5562.03) & (2158.45 - 5568.12) & (2179.48 - 5584.31) & (2180.18 - 5583.09) & (2184.26 - 5584.72) & (2179.33 - 5578.88) & (2184.37 - 5581.57) & (2186.12 - 5618.57) \\ 
+Recruits & 5393.54 & 5414.62 & 5426.77 & 5440.55 & 5474.01 & 5473.54 & 5477.66 & 5466.40 & 5471.15 & 5488.48 \\ 
+  ~95\% CI & (2966.19 - 9807.3) & (2982.16 - 9831.17) & (2991.46 - 9844.65) & (3002 - 9859.94) & (3027.33 - 9898.09) & (3027.82 - 9894.77) & (3031.98 - 9896.09) & (3024.88 - 9878.58) & (3029.62 - 9880.26) & (3043.55 - 9897.46) \\ 
    \hline
 \end{tabular}
 }
 \end{table}
-
+\renewcommand{\arraystretch}{1}
 \end{landscape}
 \restoregeometry
 
@@ -712,6 +849,8 @@ assessment:
 
 \end{enumerate}
 
+\textbf{\(\color{red}{\text{To be continued}}\)}
+
 \FloatBarrier
 
 \newpage
@@ -740,7 +879,7 @@ following sections.
 
 \hypertarget{fishery-landings-and-discards}{%
 \subsection{Fishery Landings and
-discards}\label{fishery-landings-and-discards}}
+Discards}\label{fishery-landings-and-discards}}
 
 Catch information for Big Skate is very limited, in part because the
 requirement to sort landings of Big Skate in the shore-based Individual
@@ -758,10 +897,9 @@ Reconstruction}\label{washington-commercial-skate-landings-reconstruction}}
 
 Estimates of landings of Big Skate in Washington state were estimated as
 a fraction of total skate landings as described in (Gertseva, V.
-\protect\hyperlink{ref-Gertseva2019}{2019}\protect\hyperlink{ref-Gertseva2019}{a}).
-The approached relied on trawl survey estimates of depth distributions
-for each species, combined with logbook estimates of fishing depths in
-each year.
+\protect\hyperlink{ref-Gertseva2019}{2019}). The approached relied on
+trawl survey estimates of depth distributions for each species, combined
+with logbook estimates of fishing depths in each year.
 
 The WCGBT Survey data was used to estimate proportions of longnose and
 big skates by depth (aggregated into 100m bins) and year for the period
@@ -928,7 +1066,7 @@ linear trend (the linear fit decreased from 92.8\% in 1950 to 92.1\% in
 calculated as from the mean discard rate and the mean landings as
 \(\bar{L} / (1 - \bar{d})\) where \(\bar{L}\) is the mean landings
 across that time period and \(\bar{d}\) is the mean discards (Figure
-\ref{fig:Discard_calculations.png}).
+\ref{fig:discard_calculations.png}).
 
 Two alternative methods were used to estimate the mean annual discard
 amount: applying the annual LN discard rates to the annual BS catch, and
@@ -938,17 +1076,18 @@ variability among the estimates, with the most extreme being a spike of
 2146.4 in 1979 compared to 1032.7 t the year before and 654.0 the year
 after. The use of the 3-year moving average dampened this variability
 and these estimates were retained for a sensitivity analysis (Figure
-\ref{fig:Discard_calculations}).
+\ref{fig:discard_calculations}).
 
 A discard mortality rate of 50 percent was assumed for all discards,
 following the assumption used for the Longnose Skate assessment
-conducted for the U.S. West Coast in 2007 ({\textbf{???}}) The same rate
-has been used for skates in the trawl fishery in British Columbia, based
-on an approximate average of these reported rates. In 2015, PFMC's
-Groundfish Management Team (GMT) conducted a comprehensive literature
-review of skate discard mortality, and concluded that the current
-assumption regarding Big Skate discard mortality is consistent with
-existing reported rates for other similar species.
+conducted for the U.S. West Coast in 2007 (Gertseva, V and Schrippa, MJ
+\protect\hyperlink{ref-Gertseva2007}{2007}) The same rate has been used
+for skates in the trawl fishery in British Columbia, based on an
+approximate average of these reported rates. In 2015, PFMC's Groundfish
+Management Team (GMT) conducted a comprehensive literature review of
+skate discard mortality, and concluded that the current assumption
+regarding Big Skate discard mortality is consistent with existing
+reported rates for other similar species.
 
 Estimation of discard rates (discards amount relative to total catch)
 during the period of the West Coast Groundfish Observer Program (WCGOP),
@@ -1018,12 +1157,11 @@ chartered industry vessels are used each year (with the exception of
 
 The index standardization methods for the two bottom trawl surveys
 matched that used for Longnose Skate and additional detail is provided
-in (Gertseva, V.
-\protect\hyperlink{ref-Gertseva2019}{2019}\protect\hyperlink{ref-Gertseva2019}{a}).
-The data from both surveys was analyzed using a spatio-temporal
-delta-model (Thorson, J. T. and Shelton, A. O. and Ward, E. J. and
-Skaug, H. J. \protect\hyperlink{ref-Thorson2015}{2015}), implemented as
-an R package VAST (Thorson, James T. and Barnett, Lewis A. K.
+in (Gertseva, V. \protect\hyperlink{ref-Gertseva2019}{2019}). The data
+from both surveys was analyzed using a spatio-temporal delta-model
+(Thorson, J. T. and Shelton, A. O. and Ward, E. J. and Skaug, H. J.
+\protect\hyperlink{ref-Thorson2015}{2015}), implemented as an R package
+VAST (Thorson, James T. and Barnett, Lewis A. K.
 \protect\hyperlink{ref-Thorson2017a}{2017}) and publicly available
 online (\url{https://github.com/James-Thorson/VAST}). Spatial and
 spatio-temporal variation is specifically included in both encounter
@@ -1093,25 +1231,25 @@ variability in the number of hooks deployed and observed each year. The
 binomial error structure was considered logical, given the binary nature
 of capturing (or not) a Longnose Skate on each longline hook. The
 modeling approach is identical to that which has been applied in the
-past for Yelloweye Rockfish ({\textbf{???}}), and Spiny Dogfish
-(Gertseva, V.
-\protect\hyperlink{ref-Gertseva2011}{2019}\protect\hyperlink{ref-Gertseva2011}{b}).
-MCMC sampling of the GLM parameters was used to estimate the variability
-around each index estimate. The median index estimates themselves were
-approximately equal to the observed mean catch rate in each year (Figure
-Y). In recent years, the IPHC standardization of the index of halibut
-abundance has included an adjustment to account for missing baits on
-hooks returned empty in an effort to account for reduced catchability of
-the gear that may result from the lost bait. This adjustment was not
-included in the analysis for Big Skate although it could be considered
-in future years. \newpage
+past for Yelloweye Rockfish (Stewart et al.
+\protect\hyperlink{ref-Stewart2009}{2009}), and Spiny Dogfish (Gertseva
+and Taylor \protect\hyperlink{ref-Gertseva2011}{2011}). MCMC sampling of
+the GLM parameters was used to estimate the variability around each
+index estimate. The median index estimates themselves were approximately
+equal to the observed mean catch rate in each year (Figure Y). In recent
+years, the IPHC standardization of the index of halibut abundance has
+included an adjustment to account for missing baits on hooks returned
+empty in an effort to account for reduced catchability of the gear that
+may result from the lost bait. This adjustment was not included in the
+analysis for Big Skate although it could be considered in future years.
+\newpage
 
 \hypertarget{biological-parameters-and-data}{%
-\subsection{Biological Parameters and
+\section{Biological Parameters and
 Data}\label{biological-parameters-and-data}}
 
 \hypertarget{measurement-details-and-conversion-factors}{%
-\subsubsection{Measurement Details and Conversion
+\subsection{Measurement Details and Conversion
 Factors}\label{measurement-details-and-conversion-factors}}
 
 Some size measurements were taken as either disc width or inter-spiracle
@@ -1119,10 +1257,11 @@ width rather than total length. A conversion from disc width to total
 length was estimated as \(L = 1.3399 * W\) based on from 95 samples from
 WCGBT Survey where both measurements collected (R-squared = 0.9983).
 Little sex difference observed, so using single relationship for both
-sexes. This estimate is similar to the conversion estimated by Ebert
-(\protect\hyperlink{ref-Ebert2008}{2008}) for Big Skate in Alaska. The
-inter-spiracle width to total length was converted based on estimates
-from Downs \& Cheng ({\textbf{???}}):
+sexes (Figure \ref{fig:weight-length}). This estimate is similar to the
+conversion estimated by Ebert (\protect\hyperlink{ref-Ebert2008}{2008})
+for Big Skate in Alaska. The inter-spiracle width to total length was
+converted based on estimates from Downs \& Cheng
+(\protect\hyperlink{ref-Downs2013}{2013}):
 
 \begin{centering}
 
@@ -1133,7 +1272,7 @@ $L = 3.824 + 10.927*ISW$ (males).
 \end{centering}
 
 \hypertarget{fishery-dependent-length-and-age-composition-data}{%
-\subsubsection{Fishery dependent length and age composition
+\subsection{Fishery dependent length and age composition
 data}\label{fishery-dependent-length-and-age-composition-data}}
 
 Fishery length composition data was available from PacFIN were available
@@ -1166,7 +1305,7 @@ However, no haul had greater than 44 Big Skate sampled, so only the
 first formula was used.
 
 \hypertarget{survey-length-and-age-composition-data}{%
-\subsubsection{Survey length and age composition
+\subsection{Survey length and age composition
 data}\label{survey-length-and-age-composition-data}}
 
 Lengths of Big Skate were only collected form the Triennial survey in
@@ -1192,10 +1331,10 @@ Ages were available from the WCGBT Survey in the years 2009, 2010, 2016,
 Ages of Big Skate were all estimated based on growth band counts of
 sectioned vertebrae. Ageing precision and bias were estimated using
 double-reads of 518 Big Skate vertebrae using the approach of Punt et
-al.~({\textbf{???}}). The results showed strong agreement among readers
-(Figure \ref{fig:ageing_comparison}), with a standard deviation of the
-ageing error increasing from about 0.4 at age 0 to 1.6 years at age 15
-(Figure \ref{fig:ageing_imprecision}).
+al.~(\protect\hyperlink{ref-Punt2008}{2008}). The results showed strong
+agreement among readers (Figure \ref{fig:ageing_comparison}), with a
+standard deviation of the ageing error increasing from about 0.4 at age
+0 to 1.6 years at age 15 (Figure \ref{fig:ageing_imprecision}).
 
 \vspace{.5cm}
 
@@ -1222,7 +1361,7 @@ the relationship \(M = (1 + Beta(L - L_{50\%}))^{-1}\) (Figure
 \vspace{.5cm}
 
 \hypertarget{environmental-or-ecosystem-data-included-in-the-assessment}{%
-\subsubsection{Environmental or Ecosystem Data Included in the
+\subsection{Environmental or Ecosystem Data Included in the
 Assessment}\label{environmental-or-ecosystem-data-included-in-the-assessment}}
 
 In this assessment, neither environmental nor ecosystem considerations
@@ -1238,14 +1377,11 @@ ecosystem-related quantitative information for the assessment.
 \hypertarget{previous-assessments}{%
 \subsection{Previous Assessments}\label{previous-assessments}}
 
-\hypertarget{history-of-modeling-approaches-used-for-this-stock}{%
-\subsubsection{History of Modeling Approaches Used for this
-Stock}\label{history-of-modeling-approaches-used-for-this-stock}}
-
 No previous stock assessment has been conducted for Big Skate. The
 current management is based on an OFL estimate calculated from a proxy
 for \(F_{MSY}\) and average survey biomass from the WCGBT Survey during
-the years 2010--2012 ({\textbf{???}}). The \(F_{MSY}\) estimate was
+the years 2010--2012 (Taylor IG and Cope, J and Hamel O and Thorson, J
+\protect\hyperlink{ref-Taylor2013}{2013}). The \(F_{MSY}\) estimate was
 based on the product of an assumed \(F_{MSY}/M\) ratio and an \(M\)
 estimate of 0.162 based on the maximum age of 26 reported by McFarlane
 and King (McFarlane GA and King JR
@@ -1261,24 +1397,23 @@ of uncertainty around the OFL estimate.
 
 The STAT team used Stock Synthesis version 3.30.13 (Methot, Richard D.
 and Wetzel, Chantell R. (\protect\hyperlink{ref-Methot2013}{2013}),
-({\textbf{???}})). The r4ss package version 1.35.1 (Taylor et al.
-\protect\hyperlink{ref-Taylor2019}{2019}) was used to post-process the
-output data from Stock Synthesis.
+Methot, RD Jr. and Wetzel, CR and Taylor, IG
+(\protect\hyperlink{ref-Methot2019}{2019})). The r4ss package version
+1.35.1 (Taylor et al. \protect\hyperlink{ref-Taylor2019}{2019}) was used
+to post-process the output data from Stock Synthesis.
 
 \hypertarget{summary-of-data-for-fleets-and-areas}{%
 \subsubsection{Summary of Data for Fleets and
 Areas}\label{summary-of-data-for-fleets-and-areas}}
 
-Catch is divided among 4 fleets in the base model: \emph{Fishery
-(current)} combines all non-tribal sources of catch for the years 1995
-onward, \emph{Discard (historical)} includes the estimated discard
-amount calculated from the estimated Longnose Skate discard rate as
-described above. The input catch for this fleet was 50\% of the total
-estimate to account for the assumed 50\% discard mortality rate. This
-data covers the period 1916--1994. \emph{Fishery (historical)} includes
-the reconstructed landings estimates from each of the three states for
-1916--1994. \emph{Tribal} includes the estimates of catch of Big Skate
-by treaty tribes.
+Catch is divided among 4 fleets in the base model:
+
+\begin{itemize}
+\item *Fishery (current)* combines all non-tribal sources of catch for the years 1995 onward,
+\item *Discard (historical)* includes the estimated discard amount calculated from the estimated Longnose Skate discard rate as described above. The input catch for this fleet was 50% of the total estimate to account for the assumed 50% discard mortality rate. This data covers the period 1916--1994.
+\item *Fishery (historical)* includes the reconstructed landings estimates from each of the three states for 1916--1994.
+\item*Tribal* includes the estimates of catch of Big Skate by treaty tribes.
+\end{itemize}
 
 \hypertarget{other-specifications}{%
 \subsubsection{Other Specifications}\label{other-specifications}}
@@ -1312,53 +1447,52 @@ length and age composition data.
 \hypertarget{priors}{%
 \subsubsection{Priors}\label{priors}}
 
-\emph{Natural mortality}
-
-A log-normal prior for natural mortality was based on a meta-analysis
-completed by Hamel (\protect\hyperlink{ref-Hamel2015}{2015}). The Hamel
-prior for M is lognormal(ln(5.4/max age), .438), which based on the
-single 15-year-old fish observed out of 1034 ages from the WCGBT Survey.
-This results in lognormal(log(0.36)=-1.021651, 0.438) prior.
+\emph{Natural Mortality} A log-normal prior for natural mortality was
+based on a meta-analysis completed by Hamel
+(\protect\hyperlink{ref-Hamel2015}{2015}). The Hamel prior for M is
+lognormal(ln(5.4/max age), .438), which based on the single 15-year-old
+fish observed out of 1034 ages from the WCGBT Survey. This results in
+lognormal(log(0.36) = --1.021651, 0.438) prior.
 
 \vspace{.5cm}
 
-\emph{Survey catchability}
+\emph{Survey Catchability} The lack of contrast in the data resulted in
+unstable model results under a variety of configurations. To keep
+biomass estimates within a plausable range, the assessment uses a prior
+on the WCGBTS survey catchability parameter (\(q\)) that was originally
+developed for the 2007 Longnose Skate assessment (Gertseva, V and
+Schrippa, MJ \protect\hyperlink{ref-Gertseva2007}{2007}), and is being
+used for the concurrent Longnose Skate assessment (Gertseva, V.
+\protect\hyperlink{ref-Gertseva2019}{2019}). The prior for the WCGBT
+Survey was derived as follows.
 
-The lack of contrast in the data resulted in unstable model results
-under a variety of configurations. To keep biomass estimates within a
-plausibel range, a prior was applied to the catchability parameter
-(\(q\)) for the WCGBT Survey. This same prior was developed for the 2007
-Longnose Skate assessment ({\textbf{???}}) and is being used for the
-current Longnose Skate assessment (Gertseva, V.
-\protect\hyperlink{ref-Gertseva2019}{2019}\protect\hyperlink{ref-Gertseva2019}{a}).
-The prior for the WCGBT Survey was derived as follows.
+Several factors inform catchability in the survey. The WCGBT Survey
+covers the full latitudinal range of Longnose Skate modeled in the
+assessment, and thus, the latitudinal availability factor was assumed to
+be one (complete latitudinal coverage). The survey coverage exceeds the
+maximum depth distribution of Longnose Skates but doesn't fully cover
+the shallow end of the skate distribution. A range of 95 to 100 percent
+was assumed for the depth availability. A range of 75 to 95 percent was
+assumed for vertical availability on the basis that skates are known to
+bury in the mud, and therefore some may be unavailable to the bottom
+trawl gear.
 
-The WCGBT Survey covers the full latitudinal range of longnose skate
-modeled in the assessment, and thus, the latitudinal availability factor
-was assumed to be one (complete latitudinal coverage). The survey
-coverage exceeds the maximum depth distribution of longnose skate but
-may not fully cover the shallow end of the skate distribution. A range
-of 95 to 100 percent was assumed for the depth availability. A range of
-75 to 95 percent was assumed for vertical availability on the basis that
-longnose skate are known to bury in the mud and therefore some may be
-unavailable to the bottom trawl gear. The largest bounds were placed on
-the probability of capture, given a fish is in the net path. It is known
-that flatfish can be herded by trawl gear, and it is possible that this
-could also occur for skates. However, it is also possible that skate
-could avoid the trawl nets. For capture probability, a range of 75 to
-150 percent was assumed. Best estimates for each factors were set at the
-midpoint of the range for individual factors, except for the probability
-of capture, which was given a value of one. The overall estimate for the
-survey catchability was thus estimated to be 0.83 and the consequent
-bounds on catch, and the best assumption are: (0.53, 1.43) and 0.83
-respectively. The best estimate was equated to the median of a lognormal
+The largest bounds were placed on the probability of capture, given that
+a fish is in the net path. It is known that flatfish can be herded by
+trawl gear, and it is possible that this could also occur for skates.
+However, it is also possible that skate could avoid the trawl nets. For
+capture probability, a range of 75 to 150 percent was assumed. The best
+estimates for each of these factors were set at the midpoint of the
+range for individual factors, except for the probability of capture,
+which was given a value of one. The overall estimate for the survey
+catchability was thus estimated to be 0.83 with bounds of (0.53, 1.43).
+The best estimate was converted to the median of a lognormal
 distribution and the bounds to 99 percent of that distribution. This
-resulted in a normal prior on \(log(q)\), with a mean of -0.188, and
+resulted in a normal prior on \(log(q)\), with a mean of --0.188, and
 standard deviation of 0.187.
 
-\hypertarget{estimated-and-fixed-parameters}{%
-\subsubsection{Estimated and Fixed
-Parameters}\label{estimated-and-fixed-parameters}}
+\hypertarget{estimated-parameters}{%
+\subsubsection{Estimated Parameters}\label{estimated-parameters}}
 
 A full list of all estimated and fixed parameters is provided in Tables
 \ref{tab:model_params}.
@@ -1367,12 +1501,12 @@ The base model has a total of 44 estimated parameters in the following
 categories:
 
 \begin{itemize}
-  \item 1 natural mortality parameter,
-  \item 6 parameters related to female growth and the variability in length age age,
+  \item 1 natural mortality parameter applied to both sexes,
+  \item 6 parameters related to female growth and the variability in **$\color{red}{\text{length age age,}}$**
   \item 2 parameters related to male growth relative to female growth,
   \item 1 stock-recruit parameter ($log(R_0)$ controlling equilibrium recruitment)
   \item 3 catchability parameters (1 for the WCGBT Survey and 1 each for the early and late periods of the Triennial Survey)
-  \item 2 extra standard deviation parameters (1 for each survey), and
+  \item 2 extra standard deviation parameters (1 for each survey)
   \item 29 selectivity parameters, including 16 related to time-varying retention rate
 \end{itemize}
 
@@ -1380,31 +1514,27 @@ The estimated parameters are described in greater detail below and a
 full list of all estimated and parameters is provided in Table
 \ref{tab:model_params}.
 
-\emph{Growth.}
-
-Examination of patterns of age-at-length and length-at-age indicated
-unusual patterns of growth for Big Skate, including almost linear growth
-for the early years during which both sexes appeared to have similar
-average size, followed by strong differences in size at older ages. This
-led to the choice to model growth using the ``growth cessation model''
-recently developed by Maunder et
-al.~(\protect\hyperlink{ref-maunder2018growth}{2018}). This model
-provided two key advantages over the more common von Bertalanffy growth
-model in the case of Big Skate: it allowed essentially linear growth for
-the early years and it allowed growth for the earlier ages to be similar
+\emph{Growth.} Examination of patterns of age-at-length and
+length-at-age indicated unusual patterns of growth for Big Skate. The
+youngest fish show near-linear growth, and average size for both sexes
+is similar. However, older fish show considerable sex-based differences
+in size. This led to the choice to model growth using the ``growth
+cessation model'' recently developed by Maunder et
+al.~(\protect\hyperlink{ref-maunder2018growth}{2018}). The estimated
+growth curves are shown in Figure \ref{fig:growth}. This model provided
+two key advantages over the more common von Bertalanffy growth model in
+the case of Big Skate: it allowed essentially linear growth for the
+early years and it allowed growth for the earlier ages to be similar
 between females and males while diverging at older ages. The growth
 cessation model also improve the negative log likelihood by 45 units
 relative to the von Bertalanffy growth model.
 
-\emph{Natural Mortality.}
+\emph{Natural Mortality.} Male natural mortality was assumed equal to
+the value estimated for females. Sensitivity analyses were used to test
+the impact of both the the prior on natural mortality and the assumption
+of equal natural mortality for both sexes.
 
-Male natural mortality was assumed equal to the value estimated for
-females. Sensitivity analyses were used to test the impact of both the
-the prior on natural mortality and the assumption of equal natural
-mortality for both sexes.
-
-\emph{Selectivity.}
-
+\emph{Selectivity.}\\
 A double-normal selectivity function was used for all fleets to allow
 consideration of both asymptotic and dome-shaped patterns. For the
 fishery and the Triennial survey, the difference in likelihood between
@@ -1426,11 +1556,16 @@ length at peak selectivity and another for the maximum selectivity. The
 ascending slope was assumed equal in all cases, as was the descending
 slope for the WCGBT Survey.
 
-\emph{Other Estimated Parameters.}
+\hypertarget{fixed-parameters}{%
+\subsubsection{Fixed Parameters}\label{fixed-parameters}}
 
-\emph{Other Fixed Parameters.}
-
-Steepness was fixed at 0.4.
+The steepness of the Beverton-Holt stock-recruit curve was fixed at 0.4.
+The same value was used in the 2007 Longnose Skate assessment (Gertseva,
+V and Schrippa, MJ \protect\hyperlink{ref-Gertseva2007}{2007}) ans is
+being considered for the ongoing 2019 Longnose Skate assessment. This
+value reflects a K-type reproductive strategy associated with
+elasmobranchs in general. The influence of the assumption of \(h=0.4\)
+on model output was explored via a likelihood profile analysis.
 
 \hypertarget{model-selection-and-evaluation}{%
 \subsection{Model Selection and
@@ -1440,18 +1575,21 @@ Evaluation}\label{model-selection-and-evaluation}}
 \subsubsection{Key Assumptions and Structural
 Choices}\label{key-assumptions-and-structural-choices}}
 
-\textbf{\(\color{red}{\text{To be added}}\)}
+\textbf{\(\color{red}{\text{To be added prior to May 20 CIE pre-review deadline.}}\)}
 
 \hypertarget{alternate-models-considered}{%
 \subsubsection{Alternate Models
 Considered}\label{alternate-models-considered}}
 
-\textbf{\(\color{red}{\text{To be added}}\)}
+\textbf{\(\color{red}{\text{To be added prior to May 20 CIE pre-review deadline.}}\)}
 
 \hypertarget{convergence}{%
 \subsubsection{Convergence}\label{convergence}}
 
-\textbf{\(\color{red}{\text{To be added}}\)}
+One hundred sets of jittered starting values were generated using the
+jitter function built into Stock Synthesis, with used with jitter input
+= 0.1. The same likelihood as the base model was returned by 54 out of
+the 100 runs, while the others all had worse total likelihood.
 
 \hypertarget{response-to-the-current-star-panel-requests}{%
 \subsection{Response to the Current STAR Panel
@@ -1495,8 +1633,6 @@ Requests}\label{response-to-the-current-star-panel-requests}}
 \textbf{Rationale:} xxx
   
 \textbf{STAT Response:} xxx  
-    
-
 
 \end{description}
 
@@ -1523,43 +1659,40 @@ model.
 (Figure
 \ref{fig:ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals} ).
 
-The stock-recruit curve \ldots{} Figure \ref{fig:SR_curve2} with
-estimated recruitments also shown.
+\textbf{\(\color{red}{\text{}}\)}The stock-recruit curve \ldots{} Figure
+\ref{fig:SR_curve2} with estimated recruitments also shown. \}\}\$**
 
 \hypertarget{fits-to-the-data}{%
 \subsubsection{Fits to the Data}\label{fits-to-the-data}}
 
-Model fits to the indices of abundance, fishery length composition,
-survey length composition, discard rates, mean body weight, and
-conditional age-at-length observations are all discussed below.
+\emph{Indices.} The observed indices show much more variability than the
+model expectation, with the fit to the WCGBT Survey essentially a flat
+line (Figure \ref{fig:index2_cpuefit_WCGBTS}) and the fit to the
+Triennial Survey only showing a noticeable change over time due to the
+separate catchability parameter estimated for the early and late periods
+(Figure \ref{fig:index2_cpuefit_Triennial}).
 
-The observed indices show much more variability than the model
-expectation, with the fit to the WCGBT Survey essentially a flat line
-(Figure \ref{fig:index2_cpuefit_WCGBTS}) and the fit to the Triennial
-Survey only showing a noticeable change over time due to the separate
-catchability parameter estimated for the early and late periods (Figure
-\ref{fig:index2_cpuefit_Triennial}).
-
-The fits to the length data are much better thanks to the combination of
-the growth cessation model and the sex-specific offsets to selectivity
-(Figures
+\emph{Length Data.} The fits to the length data are much better thanks
+to the combination of the growth cessation model and the sex-specific
+offsets to selectivity (Figures
 \ref{fig:comp_lenfit_aggregated_across_time}--\ref{fig:comp_lenfit__multi-fleet_comparison}).
 
-The conditional age-at-length data is likewise fit reasonably well, with
-some patterns in residuals showing variability among years, but no clear
-pattern that is consistent across years (Figures
-\ref{fig:age_fit_fishery} and \ref{fig:age_fit_WCGBTS}).
+\emph{Conditional Age-at-Length.} The conditional age-at-length data is
+likewise fit reasonably well, with some patterns in residuals showing
+variability among years, but no clear pattern that is consistent across
+years (Figures \ref{fig:age_fit_fishery} and \ref{fig:age_fit_WCGBTS}).
 
-Sex ratio data is not included in the likelihood as such, but a part of
-the length composition likelihood in which the proportions of females
-and males are included in a single vector comapred to the model
-expectations in the multinomial likelihood. The patterns in sex ratio by
-length bin show fewer females than males for the middle range of sizes
-(70--120 cm), with a shift to almost 100\% females for the largest size
-bins (over 130 cm). The use of sex-specific growth curves was adequate
-to fit the ratios for the largest bins, but ratio skews toward males at
-lengths where the mean ages are similar for females and males. The fit
-to this part of the sex ratio pattern required an offset is selectivity.
+\emph{Sex Ratios.} Sex ratio data is not included in the likelihood as
+such, but as a part of the length composition likelihood. The
+proportions of females and males are compiled into a single vector that
+is compared to the model expectations in the multinomial likelihood. The
+patterns in sex ratio by length bin show fewer females than males for
+the middle range of sizes (70--120 cm), with a shift to almost 100\%
+females for the largest size bins (over 130 cm). The use of sex-specific
+growth curves was adequate to fit the ratios for the largest bins, but
+ratio skews toward males at lengths where the mean ages are similar for
+females and males. The fit to this part of the sex ratio pattern
+required an offset in selectivity.
 
 \hypertarget{uncertainty-and-sensitivity-analyses}{%
 \subsubsection{Uncertainty and Sensitivity
@@ -1625,11 +1758,11 @@ to \ref{fig:profile_M_compare1_spawnbio}.
 
 Reference points were calculated using the estimated selectivities and
 catch distribution among fleets in the most recent year of the model,
-(2017). Sustainable total yield (landings plus discards) were 466 mt
+(2017). Sustainable total yield (landings plus discards) were 507 mt
 when using an \(SPR_{50\%}\) reference harvest rate and with a 95\%
-confidence interval of 303 mt based on estimates of uncertainty. The
+confidence interval of 333 mt based on estimates of uncertainty. The
 spawning biomass equivalent to 40\% of the unfished level
-(\(SB_{40\%}\)) was 610 mt.
+(\(SB_{40\%}\)) was 890 mt.
 
 (Figure
 \ref{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}
@@ -2013,23 +2146,23 @@ No. & Parameter & Value & Phase & Bounds & Status & SD & Prior (Exp.Val, SD)  \\
 \endfoot 
 \endlastfoot 
  \hline
-1 & NatM\_p\_1\_Fem\_GP\_1 & 0.384 & 1 & (0.01, 0.8) & OK & 0.014 & Log\_Norm (-1.02165, 0.0438) \\ 
-  2 & L\_at\_Amin\_Fem\_GP\_1 & 20.393 & 2 & (10, 40) & OK & 1.020 & None \\ 
-  3 & Linf\_Fem\_GP\_1 & 176.000 & 2 & (100, 300) & OK & 3.927 & None \\ 
-  4 & VonBert\_K\_Fem\_GP\_1 & 11.994 & 1 & (0.005, 30) & OK & 0.312 & None \\ 
-  5 & Cessation\_Fem\_GP\_1 & 3.877 & 3 & (0.1, 5) & OK & 6.181 & None \\ 
-  6 & SD\_young\_Fem\_GP\_1 & 5.683 & 5 & (1, 20) & OK & 0.916 & None \\ 
-  7 & SD\_old\_Fem\_GP\_1 & 7.378 & 5 & (1, 20) & OK & 0.886 & None \\ 
+1 & NatM\_p\_1\_Fem\_GP\_1 & 0.445 & 3 & (0.1, 0.6) & OK & 0.030 & Log\_Norm (-1.02165, 0.438) \\ 
+  2 & L\_at\_Amin\_Fem\_GP\_1 & 20.094 & 2 & (10, 40) & OK & 1.033 & None \\ 
+  3 & Linf\_Fem\_GP\_1 & 175.671 & 2 & (100, 300) & OK & 4.012 & None \\ 
+  4 & VonBert\_K\_Fem\_GP\_1 & 12.137 & 1 & (0.005, 30) & OK & 0.359 & None \\ 
+  5 & Cessation\_Fem\_GP\_1 & 5.652 & 3 & (0.1, 10) & OK & 12.041 & None \\ 
+  6 & SD\_young\_Fem\_GP\_1 & 5.706 & 5 & (1, 20) & OK & 0.903 & None \\ 
+  7 & SD\_old\_Fem\_GP\_1 & 7.085 & 5 & (1, 20) & OK & 0.921 & None \\ 
   8 & Wtlen\_1\_Fem\_GP\_1 & 0.000 & -3 & (0, 3) &  &  & None \\ 
   9 & Wtlen\_2\_Fem\_GP\_1 & 2.993 & -3 & (2, 4) &  &  & None \\ 
   10 & Mat50\%\_Fem\_GP\_1 & 148.245 & -3 & (10, 140) &  &  & None \\ 
   11 & Mat\_slope\_Fem\_GP\_1 & -0.132 & -3 & (-0.09, -0.05) &  &  & None \\ 
-  12 & Eggs/kg\_inter\_Fem\_GP\_1 & 0.500 & -3 & (-3, 3) &  &  & None \\ 
+  12 & Eggs/kg\_inter\_Fem\_GP\_1 & 1.000 & -3 & (-3, 3) &  &  & None \\ 
   13 & Eggs/kg\_slope\_wt\_Fem\_GP\_1 & 0.000 & -3 & (-3, 3) &  &  & None \\ 
   14 & NatM\_p\_1\_Mal\_GP\_1 & 0.000 & -2 & (-3, 3) &  &  & None \\ 
   15 & L\_at\_Amin\_Mal\_GP\_1 & 0.000 & -2 & (-1, 1) &  &  & None \\ 
-  16 & Linf\_Mal\_GP\_1 & -0.381 & 2 & (-1, 1) & OK & 0.025 & None \\ 
-  17 & VonBert\_K\_Mal\_GP\_1 & 0.109 & 3 & (-10, 20) & OK & 0.032 & None \\ 
+  16 & Linf\_Mal\_GP\_1 & -0.373 & 2 & (-1, 1) & OK & 0.025 & None \\ 
+  17 & VonBert\_K\_Mal\_GP\_1 & 0.101 & 3 & (-10, 20) & OK & 0.034 & None \\ 
   18 & Cessation\_Mal\_GP\_1 & 0.200 & -3 & (-3, 3) &  &  & None \\ 
   19 & SD\_young\_Mal\_GP\_1 & 0.000 & -5 & (-1, 1) &  &  & None \\ 
   20 & SD\_old\_Mal\_GP\_1 & 0.000 & -5 & (-1, 1) &  &  & None \\ 
@@ -2037,70 +2170,70 @@ No. & Parameter & Value & Phase & Bounds & Status & SD & Prior (Exp.Val, SD)  \\
   22 & Wtlen\_2\_Mal\_GP\_1 & 2.993 & -3 & (2, 4) &  &  & None \\ 
   23 & CohortGrowDev & 1.000 & -5 & (0, 2) &  &  & None \\ 
   24 & FracFemale\_GP\_1 & 0.500 & -99 & (0.001, 0.999) &  &  & None \\ 
-  25 & SR\_LN(R0) & 8.295 & 1 & (5, 15) & OK & 0.205 & None \\ 
+  25 & SR\_LN(R0) & 8.728 & 3 & (5, 15) & OK & 0.282 & None \\ 
   26 & SR\_BH\_steep & 0.400 & -3 & (0.2, 1) &  &  & None \\ 
   27 & SR\_sigmaR & 0.300 & -2 & (0, 0.4) &  &  & None \\ 
   28 & SR\_regime & 0.000 & -1 & (-2, 2) &  &  & None \\ 
   29 & SR\_autocorr & 0.000 & -99 & (0, 0) &  &  & None \\ 
-  78 & LnQ\_base\_WCGBTS(5) & -0.144 & 1 & (-2, 2) & OK & 0.187 & Normal (-0.188, 0.187) \\ 
-  79 & Q\_extraSD\_WCGBTS(5) & 0.161 & 5 & (0, 2) & OK & 0.057 & None \\ 
-  80 & LnQ\_base\_Triennial(6) & -1.382 & 1 & (-10, 2) & OK & 0.559 & None \\ 
-  81 & Q\_extraSD\_Triennial(6) & 0.365 & 5 & (0, 2) & OK & 0.146 & None \\ 
-  82 & LnQ\_base\_Triennial(6)\_\_1995 & -1.065 & 1 & (-7, 0) & OK & 0.559 & None \\ 
-  83 & Size\_DblN\_peak\_(1) & 86.826 & 4 & (80, 150) & OK & 4.112 & None \\ 
+  78 & LnQ\_base\_WCGBTS(5) & -0.209 & 1 & (-2, 2) & OK & 0.184 & Normal (-0.188, 0.187) \\ 
+  79 & Q\_extraSD\_WCGBTS(5) & 0.162 & 1 & (0, 2) & OK & 0.057 & None \\ 
+  80 & LnQ\_base\_Triennial(6) & -1.046 & 1 & (-10, 2) & OK & 0.694 & None \\ 
+  81 & Q\_extraSD\_Triennial(6) & 0.365 & 1 & (0, 2) & OK & 0.146 & None \\ 
+  82 & LnQ\_base\_Triennial(6)\_\_1995 & -0.731 & 1 & (-7, 0) & OK & 0.693 & None \\ 
+  83 & Size\_DblN\_peak\_(1) & 94.092 & 4 & (80, 150) & OK & 4.912 & None \\ 
   84 & Size\_DblN\_top\_logit\_(1) & -15.000 & -5 & (-15, 4) &  &  & None \\ 
-  85 & Size\_DblN\_ascend\_se\_(1) & 7.064 & 4 & (-1, 9) & OK & 0.126 & None \\ 
+  85 & Size\_DblN\_ascend\_se\_(1) & 7.156 & 4 & (-1, 9) & OK & 0.118 & None \\ 
   86 & Size\_DblN\_descend\_se\_(1) & 20.000 & -5 & (-1, 20) &  &  & None \\ 
   87 & Size\_DblN\_start\_logit\_(1) & -999.000 & -4 & (-999, 9) &  &  & None \\ 
   88 & Size\_DblN\_end\_logit\_(1) & -999.000 & -5 & (-999, 9) &  &  & None \\ 
-  89 & Retain\_L\_infl\_(1) & 66.645 & 2 & (15, 150) & OK & 0.629 & None \\ 
-  90 & Retain\_L\_width\_(1) & 4.962 & 2 & (0.1, 10) & OK & 0.350 & None \\ 
-  91 & Retain\_L\_asymptote\_logit\_(1) & 2.111 & 3 & (-10, 20) & OK & 0.352 & None \\ 
+  89 & Retain\_L\_infl\_(1) & 66.219 & 2 & (15, 150) & OK & 0.671 & None \\ 
+  90 & Retain\_L\_width\_(1) & 4.876 & 2 & (0.1, 10) & OK & 0.354 & None \\ 
+  91 & Retain\_L\_asymptote\_logit\_(1) & 2.048 & 3 & (-10, 20) & OK & 0.359 & None \\ 
   92 & Retain\_L\_maleoffset\_(1) & 0.000 & -3 & (0, 0) &  &  & None \\ 
   93 & DiscMort\_L\_infl\_(1) & 5.000 & -4 & (5, 15) &  &  & None \\ 
   94 & DiscMort\_L\_width\_(1) & 0.000 & -4 & (0.001, 10) &  &  & None \\ 
   95 & DiscMort\_L\_level\_old\_(1) & 0.500 & -5 & (0, 1) &  &  & None \\ 
   96 & DiscMort\_L\_male\_offset\_(1) & 0.000 & -5 & (0, 0) &  &  & None \\ 
-  97 & SzSel\_Fem\_Peak\_(1) & -4.986 & 4 & (-50, 50) & OK & 2.038 & None \\ 
+  97 & SzSel\_Fem\_Peak\_(1) & -5.537 & 4 & (-50, 50) & OK & 2.174 & None \\ 
   98 & SzSel\_Fem\_Ascend\_(1) & 0.000 & -4 & (-5, 5) &  &  & None \\ 
   99 & SzSel\_Fem\_Descend\_(1) & 0.000 & -4 & (-5, 5) &  &  & None \\ 
   100 & SzSel\_Fem\_Final\_(1) & 0.000 & -4 & (-5, 5) &  &  & None \\ 
-  101 & SzSel\_Fem\_Scale\_(1) & 0.774 & 4 & (0.5, 1.5) & OK & 0.083 & None \\ 
-  102 & Size\_DblN\_peak\_WCGBTS(5) & 72.392 & 4 & (50, 150) & OK & 5.639 & None \\ 
+  101 & SzSel\_Fem\_Scale\_(1) & 0.744 & 4 & (0.5, 1.5) & OK & 0.095 & None \\ 
+  102 & Size\_DblN\_peak\_WCGBTS(5) & 76.187 & 4 & (50, 150) & OK & 6.668 & None \\ 
   103 & Size\_DblN\_top\_logit\_WCGBTS(5) & -15.000 & -5 & (-15, 4) &  &  & None \\ 
-  104 & Size\_DblN\_ascend\_se\_WCGBTS(5) & 6.440 & 4 & (-1, 9) & OK & 0.371 & None \\ 
-  105 & Size\_DblN\_descend\_se\_WCGBTS(5) & 10.061 & 5 & (-1, 20) & OK & 1.621 & None \\ 
+  104 & Size\_DblN\_ascend\_se\_WCGBTS(5) & 6.503 & 4 & (-1, 9) & OK & 0.371 & None \\ 
+  105 & Size\_DblN\_descend\_se\_WCGBTS(5) & 16.488 & 5 & (-1, 20) & OK & 56.568 & None \\ 
   106 & Size\_DblN\_start\_logit\_WCGBTS(5) & -5.000 & -4 & (-999, 9) &  &  & None \\ 
   107 & Size\_DblN\_end\_logit\_WCGBTS(5) & -999.000 & -5 & (-999, 9) &  &  & None \\ 
-  108 & SzSel\_Fem\_Peak\_WCGBTS(5) & -7.134 & 4 & (-50, 50) & OK & 3.982 & None \\ 
+  108 & SzSel\_Fem\_Peak\_WCGBTS(5) & -8.052 & 4 & (-50, 50) & OK & 4.166 & None \\ 
   109 & SzSel\_Fem\_Ascend\_WCGBTS(5) & 0.000 & -4 & (-5, 5) &  &  & None \\ 
   110 & SzSel\_Fem\_Descend\_WCGBTS(5) & 0.000 & -4 & (-5, 5) &  &  & None \\ 
   111 & SzSel\_Fem\_Final\_WCGBTS(5) & 0.000 & -4 & (-5, 5) &  &  & None \\ 
-  112 & SzSel\_Fem\_Scale\_WCGBTS(5) & 0.743 & 4 & (0.5, 1.5) & OK & 0.121 & None \\ 
-  113 & Size\_DblN\_peak\_Triennial(6) & 176.755 & 4 & (50, 180) & OK & 26.076 & None \\ 
+  112 & SzSel\_Fem\_Scale\_WCGBTS(5) & 0.696 & 4 & (0.5, 1.5) & OK & 0.125 & None \\ 
+  113 & Size\_DblN\_peak\_Triennial(6) & 187.722 & 4 & (50, 200) & OK & 34.761 & None \\ 
   114 & Size\_DblN\_top\_logit\_Triennial(6) & -15.000 & -5 & (-15, 4) &  &  & None \\ 
-  115 & Size\_DblN\_ascend\_se\_Triennial(6) & 8.481 & 4 & (-1, 9) & OK & 0.381 & None \\ 
+  115 & Size\_DblN\_ascend\_se\_Triennial(6) & 8.474 & 4 & (-1, 9) & OK & 0.422 & None \\ 
   116 & Size\_DblN\_descend\_se\_Triennial(6) & 20.000 & -5 & (-1, 20) &  &  & None \\ 
-  117 & Size\_DblN\_start\_logit\_Triennial(6) & -4.025 & 4 & (-15, 9) & OK & 0.527 & None \\ 
+  117 & Size\_DblN\_start\_logit\_Triennial(6) & -4.789 & 4 & (-15, 9) & OK & 0.786 & None \\ 
   118 & Size\_DblN\_end\_logit\_Triennial(6) & -999.000 & -5 & (-999, 9) &  &  & None \\ 
   119 & SzSel\_Fem\_Peak\_Triennial(6) & 0.000 & -4 & (-50, 50) &  &  & None \\ 
   120 & SzSel\_Fem\_Ascend\_Triennial(6) & 0.000 & -4 & (-5, 5) &  &  & None \\ 
   121 & SzSel\_Fem\_Descend\_Triennial(6) & 0.000 & -4 & (-5, 5) &  &  & None \\ 
   122 & SzSel\_Fem\_Final\_Triennial(6) & 0.000 & -4 & (-5, 5) &  &  & None \\ 
-  123 & SzSel\_Fem\_Scale\_Triennial(6) & 0.600 & 4 & (0.5, 1.5) & OK & 0.128 & None \\ 
-  124 & Retain\_L\_asymptote\_logit\_\_2005 & 2.325 & 4 & (-10, 20) & OK & 0.562 & None \\ 
-  125 & Retain\_L\_asymptote\_logit\_\_2006 & 3.330 & 4 & (-10, 20) & OK & 1.315 & None \\ 
-  126 & Retain\_L\_asymptote\_logit\_\_2007 & 4.000 & 4 & (-10, 20) & OK & 2.027 & None \\ 
-  127 & Retain\_L\_asymptote\_logit\_\_2008 & 11.158 & 4 & (-10, 20) & OK & 111.095 & None \\ 
-  128 & Retain\_L\_asymptote\_logit\_\_2009 & 4.991 & 4 & (-10, 20) & OK & 3.975 & None \\ 
-  129 & Retain\_L\_asymptote\_logit\_\_2010 & 13.248 & 4 & (-10, 20) & OK & 88.075 & None \\ 
-  130 & Retain\_L\_asymptote\_logit\_\_2011 & 14.665 & 4 & (-10, 20) & OK & 73.786 & None \\ 
-  131 & Retain\_L\_asymptote\_logit\_\_2012 & 13.918 & 4 & (-10, 20) & OK & 81.260 & None \\ 
-  132 & Retain\_L\_asymptote\_logit\_\_2013 & 3.475 & 4 & (-10, 20) & OK & 0.337 & None \\ 
-  133 & Retain\_L\_asymptote\_logit\_\_2014 & 3.653 & 4 & (-10, 20) & OK & 0.279 & None \\ 
-  134 & Retain\_L\_asymptote\_logit\_\_2015 & 3.430 & 4 & (-10, 20) & OK & 0.263 & None \\ 
-  135 & Retain\_L\_asymptote\_logit\_\_2016 & 2.901 & 4 & (-10, 20) & OK & 0.193 & None \\ 
-  136 & Retain\_L\_asymptote\_logit\_\_2017 & 2.822 & 4 & (-10, 20) & OK & 0.192 & None \\ 
+  123 & SzSel\_Fem\_Scale\_Triennial(6) & 0.604 & 4 & (0.5, 1.5) & OK & 0.130 & None \\ 
+  124 & Retain\_L\_asymptote\_logit\_\_2005 & 2.299 & 4 & (-10, 20) & OK & 0.566 & None \\ 
+  125 & Retain\_L\_asymptote\_logit\_\_2006 & 3.304 & 4 & (-10, 20) & OK & 1.305 & None \\ 
+  126 & Retain\_L\_asymptote\_logit\_\_2007 & 3.962 & 4 & (-10, 20) & OK & 1.982 & None \\ 
+  127 & Retain\_L\_asymptote\_logit\_\_2008 & 11.091 & 4 & (-10, 20) & OK & 111.895 & None \\ 
+  128 & Retain\_L\_asymptote\_logit\_\_2009 & 4.917 & 4 & (-10, 20) & OK & 3.735 & None \\ 
+  129 & Retain\_L\_asymptote\_logit\_\_2010 & 13.242 & 4 & (-10, 20) & OK & 88.124 & None \\ 
+  130 & Retain\_L\_asymptote\_logit\_\_2011 & 14.640 & 4 & (-10, 20) & OK & 74.025 & None \\ 
+  131 & Retain\_L\_asymptote\_logit\_\_2012 & 13.890 & 4 & (-10, 20) & OK & 81.550 & None \\ 
+  132 & Retain\_L\_asymptote\_logit\_\_2013 & 3.454 & 4 & (-10, 20) & OK & 0.333 & None \\ 
+  133 & Retain\_L\_asymptote\_logit\_\_2014 & 3.619 & 4 & (-10, 20) & OK & 0.276 & None \\ 
+  134 & Retain\_L\_asymptote\_logit\_\_2015 & 3.404 & 4 & (-10, 20) & OK & 0.261 & None \\ 
+  135 & Retain\_L\_asymptote\_logit\_\_2016 & 2.885 & 4 & (-10, 20) & OK & 0.192 & None \\ 
+  136 & Retain\_L\_asymptote\_logit\_\_2017 & 2.819 & 4 & (-10, 20) & OK & 0.193 & None \\ 
    \hline
 \hline
 \label{tab:model_params}
@@ -2143,110 +2276,110 @@ Year & Total biomass (mt) & Spawning biomass (mt) & Depletion & Age-0 recruits &
                                         rate is $(1-SPR)/(1-SPR_{50\%})$.} \label{tab:Timeseries_mod1} \\ \hline Year & Total biomass (mt) & Spawning biomass (mt) & Depletion & Age-0 recruits & Total catch (mt) & Relative exploitation rate & SPR \\ \hline  \endhead \hline \multicolumn{5}{l}{\textit{Continues next page}} \ 
                                  \endfoot
                                  \endlastfoot \hline
-1916 & 24263 & 1526 & 0.000 & 4004 & 0 & 0.00 & 1.00 \\ 
-  1917 & 24263 & 1526 & 0.000 & 4004 & 12 & 0.00 & 0.99 \\ 
-  1918 & 24251 & 1525 & 0.999 & 4003 & 25 & 0.00 & 0.99 \\ 
-  1919 & 24228 & 1524 & 0.998 & 4001 & 37 & 0.00 & 0.98 \\ 
-  1920 & 24196 & 1521 & 0.997 & 3999 & 49 & 0.00 & 0.98 \\ 
-  1921 & 24156 & 1518 & 0.995 & 3996 & 62 & 0.00 & 0.97 \\ 
-  1922 & 24108 & 1514 & 0.992 & 3992 & 74 & 0.00 & 0.97 \\ 
-  1923 & 24054 & 1510 & 0.989 & 3987 & 86 & 0.00 & 0.96 \\ 
-  1924 & 23994 & 1504 & 0.986 & 3982 & 99 & 0.00 & 0.96 \\ 
-  1925 & 23928 & 1498 & 0.982 & 3976 & 111 & 0.00 & 0.95 \\ 
-  1926 & 23857 & 1492 & 0.977 & 3969 & 123 & 0.01 & 0.95 \\ 
-  1927 & 23780 & 1485 & 0.973 & 3962 & 136 & 0.01 & 0.94 \\ 
-  1928 & 23699 & 1477 & 0.968 & 3954 & 148 & 0.01 & 0.94 \\ 
-  1929 & 23614 & 1469 & 0.963 & 3946 & 160 & 0.01 & 0.93 \\ 
-  1930 & 23524 & 1461 & 0.957 & 3938 & 172 & 0.01 & 0.92 \\ 
-  1931 & 23430 & 1453 & 0.952 & 3929 & 185 & 0.01 & 0.92 \\ 
-  1932 & 23332 & 1444 & 0.946 & 3920 & 197 & 0.01 & 0.91 \\ 
-  1933 & 23231 & 1435 & 0.940 & 3911 & 210 & 0.01 & 0.91 \\ 
-  1934 & 23126 & 1426 & 0.934 & 3901 & 222 & 0.01 & 0.90 \\ 
-  1935 & 23018 & 1416 & 0.928 & 3890 & 234 & 0.01 & 0.90 \\ 
-  1936 & 22907 & 1406 & 0.921 & 3880 & 246 & 0.01 & 0.89 \\ 
-  1937 & 22794 & 1396 & 0.915 & 3868 & 259 & 0.01 & 0.89 \\ 
-  1938 & 22677 & 1386 & 0.908 & 3857 & 271 & 0.01 & 0.88 \\ 
-  1939 & 22558 & 1375 & 0.901 & 3845 & 329 & 0.02 & 0.86 \\ 
-  1940 & 22393 & 1361 & 0.892 & 3830 & 329 & 0.02 & 0.86 \\ 
-  1941 & 22242 & 1348 & 0.884 & 3815 & 363 & 0.02 & 0.84 \\ 
-  1942 & 22069 & 1334 & 0.874 & 3798 & 351 & 0.02 & 0.84 \\ 
-  1943 & 21922 & 1320 & 0.865 & 3783 & 343 & 0.02 & 0.85 \\ 
-  1944 & 21794 & 1308 & 0.857 & 3769 & 350 & 0.02 & 0.84 \\ 
-  1945 & 21669 & 1296 & 0.850 & 3754 & 364 & 0.02 & 0.84 \\ 
-  1946 & 21539 & 1284 & 0.842 & 3740 & 379 & 0.02 & 0.83 \\ 
-  1947 & 21402 & 1272 & 0.834 & 3725 & 394 & 0.02 & 0.82 \\ 
-  1948 & 21258 & 1260 & 0.826 & 3710 & 412 & 0.02 & 0.81 \\ 
-  1949 & 21106 & 1248 & 0.818 & 3694 & 426 & 0.02 & 0.81 \\ 
-  1950 & 20951 & 1235 & 0.809 & 3679 & 424 & 0.02 & 0.81 \\ 
-  1951 & 20808 & 1223 & 0.802 & 3664 & 418 & 0.02 & 0.81 \\ 
-  1952 & 20681 & 1212 & 0.794 & 3650 & 434 & 0.02 & 0.80 \\ 
-  1953 & 20546 & 1201 & 0.787 & 3634 & 515 & 0.03 & 0.76 \\ 
-  1954 & 20341 & 1185 & 0.776 & 3613 & 430 & 0.02 & 0.80 \\ 
-  1955 & 20232 & 1174 & 0.770 & 3599 & 470 & 0.02 & 0.78 \\ 
-  1956 & 20090 & 1162 & 0.762 & 3583 & 434 & 0.02 & 0.79 \\ 
-  1957 & 19992 & 1153 & 0.755 & 3570 & 439 & 0.02 & 0.79 \\ 
-  1958 & 19892 & 1144 & 0.750 & 3558 & 426 & 0.02 & 0.80 \\ 
-  1959 & 19809 & 1136 & 0.745 & 3547 & 435 & 0.02 & 0.79 \\ 
-  1960 & 19720 & 1129 & 0.740 & 3537 & 427 & 0.02 & 0.79 \\ 
-  1961 & 19641 & 1122 & 0.735 & 3528 & 487 & 0.03 & 0.77 \\ 
-  1962 & 19506 & 1113 & 0.729 & 3515 & 465 & 0.03 & 0.77 \\ 
-  1963 & 19401 & 1105 & 0.724 & 3504 & 473 & 0.03 & 0.77 \\ 
-  1964 & 19293 & 1097 & 0.719 & 3492 & 468 & 0.03 & 0.77 \\ 
-  1965 & 19197 & 1090 & 0.714 & 3481 & 438 & 0.02 & 0.78 \\ 
-  1966 & 19136 & 1084 & 0.710 & 3473 & 444 & 0.02 & 0.78 \\ 
-  1967 & 19071 & 1078 & 0.706 & 3464 & 463 & 0.03 & 0.77 \\ 
-  1968 & 18991 & 1071 & 0.702 & 3453 & 497 & 0.03 & 0.76 \\ 
-  1969 & 18881 & 1062 & 0.696 & 3440 & 460 & 0.03 & 0.77 \\ 
-  1970 & 18812 & 1056 & 0.692 & 3432 & 416 & 0.02 & 0.79 \\ 
-  1971 & 18788 & 1054 & 0.690 & 3427 & 409 & 0.02 & 0.79 \\ 
-  1972 & 18770 & 1052 & 0.689 & 3424 & 423 & 0.02 & 0.79 \\ 
-  1973 & 18737 & 1049 & 0.687 & 3420 & 429 & 0.02 & 0.78 \\ 
-  1974 & 18697 & 1046 & 0.686 & 3416 & 415 & 0.02 & 0.79 \\ 
-  1975 & 18671 & 1045 & 0.684 & 3414 & 429 & 0.02 & 0.78 \\ 
-  1976 & 18631 & 1042 & 0.683 & 3410 & 440 & 0.02 & 0.78 \\ 
-  1977 & 18584 & 1039 & 0.681 & 3406 & 452 & 0.03 & 0.77 \\ 
-  1978 & 18527 & 1036 & 0.679 & 3400 & 536 & 0.03 & 0.73 \\ 
-  1979 & 18393 & 1027 & 0.673 & 3387 & 584 & 0.03 & 0.71 \\ 
-  1980 & 18224 & 1015 & 0.665 & 3368 & 444 & 0.03 & 0.77 \\ 
-  1981 & 18202 & 1011 & 0.663 & 3362 & 547 & 0.03 & 0.72 \\ 
-  1982 & 18083 & 1001 & 0.656 & 3346 & 486 & 0.03 & 0.75 \\ 
-  1983 & 18030 & 995 & 0.652 & 3336 & 466 & 0.03 & 0.76 \\ 
-  1984 & 17998 & 991 & 0.649 & 3329 & 420 & 0.02 & 0.78 \\ 
-  1985 & 18008 & 989 & 0.648 & 3327 & 453 & 0.03 & 0.76 \\ 
-  1986 & 17981 & 987 & 0.647 & 3323 & 425 & 0.03 & 0.78 \\ 
-  1987 & 17977 & 987 & 0.647 & 3323 & 431 & 0.03 & 0.77 \\ 
-  1988 & 17965 & 987 & 0.647 & 3324 & 415 & 0.02 & 0.78 \\ 
-  1989 & 17965 & 989 & 0.648 & 3326 & 413 & 0.02 & 0.78 \\ 
-  1990 & 17967 & 991 & 0.649 & 3329 & 422 & 0.02 & 0.78 \\ 
-  1991 & 17960 & 991 & 0.650 & 3330 & 432 & 0.03 & 0.77 \\ 
-  1992 & 17944 & 991 & 0.649 & 3329 & 424 & 0.02 & 0.78 \\ 
-  1993 & 17938 & 990 & 0.649 & 3329 & 438 & 0.03 & 0.77 \\ 
-  1994 & 17921 & 989 & 0.648 & 3326 & 438 & 0.03 & 0.77 \\ 
-  1995 & 17905 & 987 & 0.647 & 3323 & 119 & 0.01 & 0.93 \\ 
-  1996 & 18199 & 1003 & 0.657 & 3348 & 347 & 0.02 & 0.82 \\ 
-  1997 & 18257 & 1006 & 0.659 & 3353 & 594 & 0.03 & 0.71 \\ 
-  1998 & 18075 & 994 & 0.651 & 3334 & 219 & 0.01 & 0.88 \\ 
-  1999 & 18268 & 1004 & 0.658 & 3351 & 318 & 0.02 & 0.83 \\ 
-  2000 & 18354 & 1010 & 0.662 & 3360 & 406 & 0.02 & 0.79 \\ 
-  2001 & 18349 & 1010 & 0.662 & 3361 & 245 & 0.01 & 0.87 \\ 
-  2002 & 18500 & 1021 & 0.669 & 3377 & 239 & 0.01 & 0.87 \\ 
-  2003 & 18643 & 1032 & 0.676 & 3394 & 385 & 0.02 & 0.80 \\ 
-  2004 & 18635 & 1034 & 0.677 & 3397 & 285 & 0.02 & 0.85 \\ 
-  2005 & 18723 & 1042 & 0.683 & 3409 & 347 & 0.02 & 0.82 \\ 
-  2006 & 18747 & 1046 & 0.685 & 3416 & 429 & 0.02 & 0.79 \\ 
-  2007 & 18697 & 1045 & 0.685 & 3414 & 292 & 0.02 & 0.85 \\ 
-  2008 & 18786 & 1051 & 0.689 & 3423 & 387 & 0.02 & 0.81 \\ 
-  2009 & 18783 & 1050 & 0.688 & 3422 & 217 & 0.01 & 0.89 \\ 
-  2010 & 18946 & 1059 & 0.694 & 3436 & 207 & 0.01 & 0.89 \\ 
-  2011 & 19107 & 1069 & 0.700 & 3450 & 282 & 0.02 & 0.86 \\ 
-  2012 & 19180 & 1074 & 0.704 & 3458 & 282 & 0.02 & 0.86 \\ 
-  2013 & 19245 & 1080 & 0.708 & 3467 & 144 & 0.01 & 0.92 \\ 
-  2014 & 19436 & 1095 & 0.718 & 3489 & 397 & 0.02 & 0.81 \\ 
-  2015 & 19370 & 1095 & 0.718 & 3489 & 351 & 0.02 & 0.83 \\ 
-  2016 & 19357 & 1098 & 0.719 & 3493 & 441 & 0.02 & 0.79 \\ 
-  2017 & 19265 & 1094 & 0.717 & 3487 & 297 & 0.02 & 0.85 \\ 
-  2018 & 19324 & 1097 & 0.719 & 3492 & 185 & 0.01 & 0.90 \\ 
-  2019 & 19491 & 1106 & 0.725 & 3505 &  &  &  \\ 
+1916 & 25232 & 2224 & 0.000 & 6176 & 0 & 0.00 & 1.00 \\ 
+  1917 & 25232 & 2224 & 0.000 & 6176 & 12 & 0.00 & 0.99 \\ 
+  1918 & 25221 & 2223 & 0.999 & 6175 & 25 & 0.00 & 0.99 \\ 
+  1919 & 25199 & 2220 & 0.998 & 6172 & 37 & 0.00 & 0.98 \\ 
+  1920 & 25169 & 2217 & 0.997 & 6168 & 49 & 0.00 & 0.98 \\ 
+  1921 & 25131 & 2212 & 0.995 & 6164 & 62 & 0.00 & 0.97 \\ 
+  1922 & 25087 & 2206 & 0.992 & 6157 & 74 & 0.00 & 0.97 \\ 
+  1923 & 25037 & 2200 & 0.989 & 6150 & 86 & 0.00 & 0.96 \\ 
+  1924 & 24981 & 2192 & 0.985 & 6142 & 99 & 0.00 & 0.96 \\ 
+  1925 & 24920 & 2183 & 0.981 & 6132 & 111 & 0.00 & 0.96 \\ 
+  1926 & 24854 & 2173 & 0.977 & 6122 & 123 & 0.01 & 0.95 \\ 
+  1927 & 24783 & 2163 & 0.973 & 6111 & 136 & 0.01 & 0.94 \\ 
+  1928 & 24707 & 2153 & 0.968 & 6100 & 148 & 0.01 & 0.94 \\ 
+  1929 & 24627 & 2142 & 0.963 & 6088 & 160 & 0.01 & 0.93 \\ 
+  1930 & 24544 & 2130 & 0.958 & 6076 & 172 & 0.01 & 0.93 \\ 
+  1931 & 24456 & 2118 & 0.953 & 6063 & 185 & 0.01 & 0.92 \\ 
+  1932 & 24365 & 2106 & 0.947 & 6049 & 197 & 0.01 & 0.92 \\ 
+  1933 & 24271 & 2094 & 0.941 & 6035 & 210 & 0.01 & 0.91 \\ 
+  1934 & 24174 & 2081 & 0.936 & 6020 & 222 & 0.01 & 0.91 \\ 
+  1935 & 24074 & 2067 & 0.929 & 6005 & 234 & 0.01 & 0.90 \\ 
+  1936 & 23971 & 2053 & 0.923 & 5989 & 246 & 0.01 & 0.90 \\ 
+  1937 & 23866 & 2039 & 0.917 & 5973 & 259 & 0.01 & 0.89 \\ 
+  1938 & 23758 & 2025 & 0.910 & 5956 & 271 & 0.01 & 0.89 \\ 
+  1939 & 23648 & 2010 & 0.904 & 5939 & 329 & 0.01 & 0.87 \\ 
+  1940 & 23494 & 1991 & 0.895 & 5916 & 329 & 0.02 & 0.86 \\ 
+  1941 & 23353 & 1972 & 0.887 & 5894 & 363 & 0.02 & 0.85 \\ 
+  1942 & 23193 & 1952 & 0.878 & 5869 & 351 & 0.02 & 0.85 \\ 
+  1943 & 23059 & 1933 & 0.869 & 5846 & 343 & 0.02 & 0.86 \\ 
+  1944 & 22943 & 1917 & 0.862 & 5826 & 350 & 0.02 & 0.85 \\ 
+  1945 & 22829 & 1900 & 0.854 & 5805 & 364 & 0.02 & 0.85 \\ 
+  1946 & 22708 & 1884 & 0.847 & 5784 & 379 & 0.02 & 0.84 \\ 
+  1947 & 22581 & 1868 & 0.840 & 5763 & 394 & 0.02 & 0.83 \\ 
+  1948 & 22447 & 1851 & 0.832 & 5742 & 412 & 0.02 & 0.83 \\ 
+  1949 & 22306 & 1834 & 0.825 & 5720 & 426 & 0.02 & 0.82 \\ 
+  1950 & 22162 & 1818 & 0.817 & 5698 & 424 & 0.02 & 0.82 \\ 
+  1951 & 22032 & 1801 & 0.810 & 5677 & 418 & 0.02 & 0.82 \\ 
+  1952 & 21917 & 1786 & 0.803 & 5656 & 434 & 0.02 & 0.81 \\ 
+  1953 & 21794 & 1771 & 0.796 & 5635 & 515 & 0.03 & 0.78 \\ 
+  1954 & 21603 & 1748 & 0.786 & 5604 & 430 & 0.02 & 0.81 \\ 
+  1955 & 21507 & 1734 & 0.780 & 5584 & 470 & 0.02 & 0.80 \\ 
+  1956 & 21377 & 1718 & 0.772 & 5561 & 434 & 0.02 & 0.81 \\ 
+  1957 & 21290 & 1706 & 0.767 & 5544 & 439 & 0.02 & 0.81 \\ 
+  1958 & 21201 & 1694 & 0.762 & 5527 & 426 & 0.02 & 0.81 \\ 
+  1959 & 21126 & 1685 & 0.757 & 5514 & 435 & 0.02 & 0.81 \\ 
+  1960 & 21045 & 1675 & 0.753 & 5500 & 427 & 0.02 & 0.81 \\ 
+  1961 & 20974 & 1667 & 0.750 & 5489 & 487 & 0.03 & 0.78 \\ 
+  1962 & 20849 & 1655 & 0.744 & 5471 & 465 & 0.02 & 0.79 \\ 
+  1963 & 20754 & 1645 & 0.740 & 5456 & 473 & 0.02 & 0.79 \\ 
+  1964 & 20658 & 1635 & 0.735 & 5440 & 468 & 0.02 & 0.79 \\ 
+  1965 & 20575 & 1624 & 0.730 & 5425 & 438 & 0.02 & 0.80 \\ 
+  1966 & 20525 & 1616 & 0.727 & 5413 & 444 & 0.02 & 0.80 \\ 
+  1967 & 20470 & 1608 & 0.723 & 5401 & 463 & 0.02 & 0.79 \\ 
+  1968 & 20399 & 1599 & 0.719 & 5387 & 497 & 0.03 & 0.78 \\ 
+  1969 & 20299 & 1588 & 0.714 & 5369 & 460 & 0.02 & 0.79 \\ 
+  1970 & 20238 & 1581 & 0.711 & 5358 & 416 & 0.02 & 0.81 \\ 
+  1971 & 20223 & 1578 & 0.710 & 5354 & 409 & 0.02 & 0.81 \\ 
+  1972 & 20211 & 1577 & 0.709 & 5352 & 423 & 0.02 & 0.80 \\ 
+  1973 & 20184 & 1574 & 0.708 & 5348 & 429 & 0.02 & 0.80 \\ 
+  1974 & 20150 & 1571 & 0.706 & 5343 & 415 & 0.02 & 0.81 \\ 
+  1975 & 20130 & 1570 & 0.706 & 5341 & 429 & 0.02 & 0.80 \\ 
+  1976 & 20097 & 1567 & 0.705 & 5337 & 440 & 0.02 & 0.80 \\ 
+  1977 & 20057 & 1564 & 0.703 & 5331 & 452 & 0.02 & 0.79 \\ 
+  1978 & 20010 & 1559 & 0.701 & 5324 & 536 & 0.03 & 0.76 \\ 
+  1979 & 19887 & 1546 & 0.695 & 5304 & 584 & 0.03 & 0.74 \\ 
+  1980 & 19732 & 1529 & 0.688 & 5277 & 444 & 0.02 & 0.79 \\ 
+  1981 & 19724 & 1524 & 0.685 & 5268 & 547 & 0.03 & 0.75 \\ 
+  1982 & 19618 & 1510 & 0.679 & 5246 & 486 & 0.03 & 0.77 \\ 
+  1983 & 19576 & 1502 & 0.676 & 5233 & 466 & 0.03 & 0.78 \\ 
+  1984 & 19551 & 1497 & 0.673 & 5224 & 420 & 0.02 & 0.80 \\ 
+  1985 & 19565 & 1497 & 0.673 & 5224 & 453 & 0.03 & 0.79 \\ 
+  1986 & 19541 & 1495 & 0.672 & 5221 & 425 & 0.02 & 0.80 \\ 
+  1987 & 19539 & 1497 & 0.673 & 5224 & 431 & 0.02 & 0.79 \\ 
+  1988 & 19529 & 1499 & 0.674 & 5228 & 415 & 0.02 & 0.80 \\ 
+  1989 & 19534 & 1502 & 0.676 & 5233 & 413 & 0.02 & 0.80 \\ 
+  1990 & 19541 & 1506 & 0.677 & 5238 & 422 & 0.02 & 0.80 \\ 
+  1991 & 19540 & 1507 & 0.678 & 5240 & 432 & 0.02 & 0.79 \\ 
+  1992 & 19531 & 1506 & 0.677 & 5239 & 424 & 0.02 & 0.80 \\ 
+  1993 & 19534 & 1505 & 0.677 & 5238 & 438 & 0.02 & 0.79 \\ 
+  1994 & 19524 & 1503 & 0.676 & 5234 & 438 & 0.02 & 0.79 \\ 
+  1995 & 19515 & 1500 & 0.675 & 5230 & 120 & 0.01 & 0.94 \\ 
+  1996 & 19808 & 1525 & 0.686 & 5269 & 348 & 0.02 & 0.83 \\ 
+  1997 & 19858 & 1529 & 0.688 & 5277 & 596 & 0.03 & 0.73 \\ 
+  1998 & 19673 & 1512 & 0.680 & 5250 & 220 & 0.01 & 0.89 \\ 
+  1999 & 19862 & 1529 & 0.688 & 5277 & 319 & 0.02 & 0.85 \\ 
+  2000 & 19941 & 1538 & 0.692 & 5291 & 408 & 0.02 & 0.81 \\ 
+  2001 & 19931 & 1539 & 0.692 & 5292 & 245 & 0.01 & 0.88 \\ 
+  2002 & 20076 & 1554 & 0.699 & 5316 & 240 & 0.01 & 0.88 \\ 
+  2003 & 20212 & 1569 & 0.706 & 5340 & 386 & 0.02 & 0.82 \\ 
+  2004 & 20197 & 1571 & 0.707 & 5344 & 286 & 0.02 & 0.86 \\ 
+  2005 & 20281 & 1582 & 0.711 & 5361 & 347 & 0.02 & 0.84 \\ 
+  2006 & 20304 & 1588 & 0.714 & 5369 & 429 & 0.02 & 0.80 \\ 
+  2007 & 20254 & 1585 & 0.713 & 5365 & 292 & 0.02 & 0.86 \\ 
+  2008 & 20344 & 1593 & 0.716 & 5377 & 387 & 0.02 & 0.82 \\ 
+  2009 & 20342 & 1591 & 0.715 & 5374 & 217 & 0.01 & 0.90 \\ 
+  2010 & 20501 & 1604 & 0.721 & 5394 & 207 & 0.01 & 0.90 \\ 
+  2011 & 20652 & 1618 & 0.727 & 5415 & 282 & 0.01 & 0.87 \\ 
+  2012 & 20714 & 1626 & 0.731 & 5427 & 282 & 0.01 & 0.87 \\ 
+  2013 & 20769 & 1635 & 0.735 & 5441 & 144 & 0.01 & 0.93 \\ 
+  2014 & 20947 & 1657 & 0.745 & 5474 & 397 & 0.02 & 0.82 \\ 
+  2015 & 20874 & 1657 & 0.745 & 5474 & 351 & 0.02 & 0.84 \\ 
+  2016 & 20859 & 1660 & 0.746 & 5478 & 441 & 0.02 & 0.80 \\ 
+  2017 & 20770 & 1652 & 0.743 & 5466 & 297 & 0.02 & 0.86 \\ 
+  2018 & 20833 & 1655 & 0.744 & 5471 & 185 & 0.01 & 0.91 \\ 
+  2019 & 0 & 1667 & 0.750 & 5488 &  &  &  \\ 
    \hline
 \hline
 \end{longtable}
@@ -2266,25 +2399,26 @@ Year & Total biomass (mt) & Spawning biomass (mt) & Depletion & Age-0 recruits &
   \hline
 Label & Base model & Sel all asymptotic & Sel all domed & Sel no sex offset & Q no prior on WCGBTS & Q no offset on triennial \\ 
   \hline
-TOTAL like & 441.63 & 441.41 & 441.63 & 441.63 & 441.13 & 444.19 \\ 
-  Survey like & -9.78 & -9.78 & -9.78 & -9.78 & -10.06 & -8.37 \\ 
-  Length comp like & 366.25 & 366.14 & 366.25 & 366.25 & 366.93 & 366.81 \\ 
-  Age comp like & 110.51 & 110.44 & 110.51 & 110.51 & 110.12 & 110.30 \\ 
-  Parm priors like & 1.12 & 1.09 & 1.12 & 1.12 & 0.66 & 1.99 \\ 
-  Size at age like & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\ 
-  Recr Virgin millions & 4.00 & 3.95 & 4.00 & 4.00 & 2.81 & 3.33 \\ 
-  log(R0) & 8.29 & 8.28 & 8.29 & 8.29 & 7.94 & 8.11 \\ 
-  NatM Female  & 0.38 & 0.38 & 0.38 & 0.38 & 0.38 & 0.39 \\ 
-  NatM Male  & 0.38 & 0.38 & 0.38 & 0.38 & 0.38 & 0.39 \\ 
-  Linf Female  & 176.00 & 175.90 & 176.00 & 176.00 & 175.97 & 176.05 \\ 
-  Linf Male  & 120.24 & 120.20 & 120.24 & 120.24 & 120.38 & 120.21 \\ 
-  Q WCGBTS & 0.87 & 0.87 & 0.87 & 0.87 & 1.48 & 1.03 \\ 
-  SSB Virgin thousand mt & 1.53 & 1.52 & 1.53 & 1.53 & 1.16 & 1.22 \\ 
-  SSB 2019 thousand mt & 1.11 & 1.10 & 1.11 & 1.11 & 0.65 & 0.78 \\ 
-  Bratio 2019 & 0.72 & 0.72 & 0.72 & 0.72 & 0.56 & 0.64 \\ 
-  SPRratio 2018 & 0.19 & 0.19 & 0.19 & 0.19 & 0.31 & 0.25 \\ 
-  Ret Catch MSY & 517.36 & 513.43 & 517.36 & 517.36 & 380.95 & 425.03 \\ 
-  Dead Catch MSY & 559.33 & 555.07 & 559.33 & 559.33 & 410.59 & 458.73 \\ 
+TOTAL likelihood & 402.12 & 402.10 & 402.12 & 402.11 & 401.67 & 402.95 \\ 
+  Survey likelihood & -9.72 & -9.71 & -9.72 & -9.72 & -9.31 & -9.38 \\ 
+  Length comp likelihood & 341.44 & 341.39 & 341.44 & 341.44 & 340.46 & 342.01 \\ 
+  Age comp likelihood & 97.14 & 97.16 & 97.14 & 97.14 & 97.08 & 96.99 \\ 
+  Discard likelihood & -22.45 & -22.42 & -22.45 & -22.45 & -22.14 & -22.64 \\ 
+  Mean body wt likelihood & -4.42 & -4.45 & -4.42 & -4.42 & -4.60 & -4.27 \\ 
+  Parm priors likelihood & 0.12 & 0.12 & 0.12 & 0.12 & 0.17 & 0.23 \\ 
+  Recr Virgin millions & 6.18 & 6.13 & 6.18 & 6.18 & 34.78 & 5.94 \\ 
+  log(R0) & 8.73 & 8.72 & 8.73 & 8.73 & 10.46 & 8.69 \\ 
+  NatM Female  & 0.45 & 0.44 & 0.45 & 0.45 & 0.46 & 0.45 \\ 
+  NatM Male  & 0.45 & 0.44 & 0.45 & 0.45 & 0.46 & 0.45 \\ 
+  Linf Female  & 175.67 & 175.62 & 175.67 & 175.67 & 175.61 & 175.40 \\ 
+  Linf Male  & 120.97 & 120.94 & 120.97 & 120.97 & 120.95 & 121.01 \\ 
+  Q WCGBTS & 0.81 & 0.81 & 0.81 & 0.81 & 0.14 & 0.90 \\ 
+  SSB Virgin thousand mt & 2.22 & 2.27 & 2.22 & 2.22 & 9.93 & 1.91 \\ 
+  SSB 2019 thousand mt & 1.67 & 1.71 & 1.67 & 1.67 & 9.50 & 1.37 \\ 
+  Bratio 2019 & 0.75 & 0.75 & 0.75 & 0.75 & 0.96 & 0.72 \\ 
+  SPRratio 2018 & 0.18 & 0.17 & 0.18 & 0.18 & 0.03 & 0.20 \\ 
+  Retained Catch MSY & 558.67 & 562.75 & 558.67 & 558.67 & 2793.89 & 510.57 \\ 
+  Dead Catch MSY & 603.92 & 608.37 & 603.92 & 603.92 & 3030.18 & 551.56 \\ 
    \hline
 \end{tabular}
 }
@@ -2306,25 +2440,26 @@ TOTAL like & 441.63 & 441.41 & 441.63 & 441.63 & 441.13 & 444.19 \\
   \hline
 Label & Base model & Discards based on 3yr averages & Discard mortality   0 4 & Discard mortality   0 6 \\ 
   \hline
-TOTAL like & 441.63 & 440.89 & 441.18 & 442.05 \\ 
-  Survey like & -9.78 & -10.00 & -10.08 & -9.50 \\ 
-  Length comp like & 366.25 & 365.86 & 366.41 & 366.12 \\ 
-  Age comp like & 110.51 & 110.53 & 110.46 & 110.54 \\ 
-  Parm priors like & 1.12 & 1.13 & 1.06 & 1.17 \\ 
-  Size at age like & 0.00 & 0.00 & 0.00 & 0.00 \\ 
-  Recr Virgin millions & 4.00 & 3.91 & 4.02 & 4.01 \\ 
-  log(R0) & 8.29 & 8.27 & 8.30 & 8.30 \\ 
-  NatM Female  & 0.38 & 0.38 & 0.38 & 0.38 \\ 
-  NatM Male  & 0.38 & 0.38 & 0.38 & 0.38 \\ 
-  Linf Female  & 176.00 & 176.08 & 176.04 & 175.95 \\ 
-  Linf Male  & 120.24 & 120.24 & 120.25 & 120.24 \\ 
-  Q WCGBTS & 0.87 & 0.90 & 0.88 & 0.85 \\ 
-  SSB Virgin thousand mt & 1.53 & 1.49 & 1.55 & 1.51 \\ 
-  SSB 2019 thousand mt & 1.11 & 1.03 & 1.09 & 1.13 \\ 
-  Bratio 2019 & 0.72 & 0.69 & 0.70 & 0.75 \\ 
-  SPRratio 2018 & 0.19 & 0.20 & 0.19 & 0.19 \\ 
-  Ret Catch MSY & 517.36 & 505.17 & 532.98 & 506.35 \\ 
-  Dead Catch MSY & 559.33 & 545.81 & 567.38 & 555.88 \\ 
+TOTAL likelihood & 402.12 & 401.58 & 401.85 & 402.36 \\ 
+  Survey likelihood & -9.72 & -9.92 & -9.98 & -9.49 \\ 
+  Length comp likelihood & 341.44 & 341.12 & 341.61 & 341.28 \\ 
+  Age comp likelihood & 97.14 & 97.24 & 97.14 & 97.13 \\ 
+  Discard likelihood & -22.45 & -22.51 & -22.66 & -22.26 \\ 
+  Mean body wt likelihood & -4.42 & -4.46 & -4.39 & -4.45 \\ 
+  Parm priors likelihood & 0.12 & 0.11 & 0.11 & 0.14 \\ 
+  Recr Virgin millions & 6.18 & 6.02 & 6.19 & 6.19 \\ 
+  log(R0) & 8.73 & 8.70 & 8.73 & 8.73 \\ 
+  NatM Female  & 0.45 & 0.44 & 0.44 & 0.45 \\ 
+  NatM Male  & 0.45 & 0.44 & 0.44 & 0.45 \\ 
+  Linf Female  & 175.67 & 175.76 & 175.68 & 175.66 \\ 
+  Linf Male  & 120.97 & 120.95 & 120.96 & 120.98 \\ 
+  Q WCGBTS & 0.81 & 0.83 & 0.82 & 0.80 \\ 
+  SSB Virgin thousand mt & 2.22 & 2.23 & 2.29 & 2.17 \\ 
+  SSB 2019 thousand mt & 1.67 & 1.62 & 1.67 & 1.66 \\ 
+  Bratio 2019 & 0.75 & 0.73 & 0.73 & 0.77 \\ 
+  SPRratio 2018 & 0.18 & 0.18 & 0.18 & 0.18 \\ 
+  Retained Catch MSY & 558.67 & 551.42 & 567.17 & 552.69 \\ 
+  Dead Catch MSY & 603.92 & 595.86 & 612.92 & 597.60 \\ 
    \hline
 \end{tabular}
 }
@@ -2345,27 +2480,28 @@ TOTAL like & 441.63 & 440.89 & 441.18 & 442.05 \\
 \scalebox{0.9}{
 \begin{tabular}{l>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}>{\centering}p{.8in}}
   \hline
-Label & Base model & Bio separate M by sex & Bio no M prior & Bio von bertalanffy growth & Bio Richards growth & Misc  McAllister Ianelli tuning \\ 
+Label & Base model & Bio separate M by sex & Bio no M prior & Bio von Bertalanffy growth & Bio Richards growth & Misc  McAllister Ianelli tuning \\ 
   \hline
-TOTAL like & 441.63 & 441.14 & 437.95 & 486.39 & 497.09 & 1132.64 \\ 
-  Survey like & -9.78 & -9.86 & -9.71 & -9.80 & -9.73 & -9.76 \\ 
-  Length comp like & 366.25 & 364.91 & 365.51 & 404.62 & 387.88 & 572.70 \\ 
-  Age comp like & 110.51 & 111.02 & 108.63 & 117.88 & 144.80 & 594.48 \\ 
-  Parm priors like & 1.12 & 1.45 & 0.01 & 0.04 & 0.01 & 4.59 \\ 
-  Size at age like & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\ 
-  Recr Virgin millions & 4.00 & 3.47 & 6.29 & 3.26 & 0.00 & 4.82 \\ 
-  log(R0) & 8.29 & 8.15 & 8.75 & 8.09 & 8.02 & 8.48 \\ 
-  NatM Female  & 0.38 & 0.39 & 0.45 & 0.36 & 0.36 & 0.41 \\ 
-  NatM Male  & 0.38 & 0.36 & 0.45 & 0.36 & 0.36 & 0.41 \\ 
-  Linf Female  & 176.00 & 176.07 & 175.91 &  & 2666.88 & 177.98 \\ 
-  Linf Male  & 120.24 & 119.90 & 120.98 &  & 137.29 & 120.30 \\ 
-  Q WCGBTS & 0.87 & 0.88 & 0.81 & 0.83 & 0.85 & 0.87 \\ 
-  SSB Virgin thousand mt & 1.53 & 1.28 & 1.12 & 1.37 & 0.00 & 1.42 \\ 
-  SSB 2019 thousand mt & 1.11 & 0.86 & 0.84 & 0.90 & 0.00 & 1.04 \\ 
-  Bratio 2019 & 0.72 & 0.67 & 0.75 & 0.65 & 0.00 & 0.73 \\ 
-  SPRratio 2018 & 0.19 & 0.23 & 0.17 & 0.24 & 0.89 & 0.19 \\ 
-  Ret Catch MSY & 517.36 & 456.10 & 564.75 & 446.68 & 0.00 & 530.89 \\ 
-  Dead Catch MSY & 559.33 & 492.46 & 610.56 & 482.14 & 0.00 & 573.72 \\ 
+TOTAL likelihood & 402.12 & 399.94 & 402.00 & 445.19 & 456.54 & 1116.89 \\ 
+  Survey likelihood & -9.72 & -9.88 & -9.72 & -9.54 & -9.73 & -9.66 \\ 
+  Length comp likelihood & 341.44 & 338.79 & 341.48 & 387.56 & 362.67 & 564.52 \\ 
+  Age comp likelihood & 97.14 & 97.53 & 97.09 & 94.06 & 129.88 & 591.26 \\ 
+  Discard likelihood & -22.45 & -22.79 & -22.47 & -22.39 & -21.98 & -22.34 \\ 
+  Mean body wt likelihood & -4.42 & -3.92 & -4.41 & -5.05 & -4.33 & -7.13 \\ 
+  Parm priors likelihood & 0.12 & 0.21 & 0.01 & 0.53 & 0.01 & 0.24 \\ 
+  Recr Virgin millions & 6.18 & 5.19 & 6.29 & 17.80 & 0.00 & 7.26 \\ 
+  log(R0) & 8.73 & 8.55 & 8.75 & 9.79 & 8.03 & 8.89 \\ 
+  NatM Female  & 0.45 & 0.47 & 0.45 & 0.57 & 0.36 & 0.46 \\ 
+  NatM Male  & 0.45 & 0.40 & 0.45 & 0.57 & 0.36 & 0.46 \\ 
+  Linf Female  & 175.67 & 175.53 & 175.65 & 587.20 & 2595.92 & 176.97 \\ 
+  Linf Male  & 120.97 & 120.15 & 120.99 & 236.34 & 136.91 & 120.50 \\ 
+  Q WCGBTS & 0.81 & 0.81 & 0.81 & 0.84 & 0.85 & 0.77 \\ 
+  SSB Virgin thousand mt & 2.22 & 1.37 & 2.20 & 1.25 & 0.00 & 2.37 \\ 
+  SSB 2019 thousand mt & 1.67 & 0.87 & 1.65 & 1.02 & 0.00 & 1.83 \\ 
+  Bratio 2019 & 0.75 & 0.63 & 0.75 & 0.82 & 0.00 & 0.77 \\ 
+  SPRratio 2018 & 0.18 & 0.26 & 0.18 & 0.13 & 0.89 & 0.16 \\ 
+  Retained Catch MSY & 558.67 & 432.06 & 561.23 & 751.54 & 0.00 & 601.43 \\ 
+  Dead Catch MSY & 603.92 & 465.72 & 606.68 & 812.55 & 0.00 & 650.09 \\ 
    \hline
 \end{tabular}
 }
@@ -2527,18 +2663,18 @@ Female M & 0.22 & 0.26 & 0.30 & 0.35 & 0.40 \\
   \hline
 Yr & OFL contribution (mt) & ACL landings (mt) & Age 5+ biomass (mt) & Spawning Biomass (mt) & Depletion \\ 
   \hline
-2019 & 1274.290 & 1185.906 & 18438.000 & 1106.070 & 0.725 \\ 
-  2020 & 1211.220 & 1125.230 & 17564.900 & 1048.210 & 0.687 \\ 
-  2021 & 1159.120 & 1074.895 & 16847.100 & 993.337 & 0.651 \\ 
-  2022 & 1117.470 & 1034.993 & 16248.300 & 941.818 & 0.617 \\ 
-  2023 & 1083.860 & 1003.371 & 15744.500 & 893.809 & 0.586 \\ 
-  2024 & 1055.150 & 976.699 & 15309.700 & 849.368 & 0.557 \\ 
-  2025 & 1029.120 & 952.644 & 14919.700 & 808.738 & 0.530 \\ 
-  2026 & 1004.390 & 929.838 & 14555.100 & 772.649 & 0.506 \\ 
-  2027 & 980.334 & 907.640 & 14202.800 & 742.174 & 0.486 \\ 
-  2028 & 956.747 & 885.819 & 13859.300 & 717.965 & 0.470 \\ 
-  2029 & 933.761 & 864.469 & 13527.100 & 699.544 & 0.458 \\ 
-  2030 & 911.621 & 843.793 & 13209.600 & 684.888 & 0.449 \\ 
+2019 & 1389.940 & 313.160 & 0.000 & 1667.190 & 0.750 \\ 
+  2020 & 1390.490 & 313.160 & 0.000 & 1664.770 & 0.749 \\ 
+  2021 & 1390.540 & 1136.647 & 0.000 & 1662.950 & 0.748 \\ 
+  2022 & 1327.210 & 1072.121 & 0.000 & 1581.990 & 0.711 \\ 
+  2023 & 1278.000 & 1021.539 & 0.000 & 1507.590 & 0.678 \\ 
+  2024 & 1241.120 & 982.221 & 0.000 & 1438.770 & 0.647 \\ 
+  2025 & 1212.850 & 950.914 & 0.000 & 1374.480 & 0.618 \\ 
+  2026 & 1189.120 & 923.817 & 0.000 & 1314.410 & 0.591 \\ 
+  2027 & 1167.280 & 899.641 & 0.000 & 1259.890 & 0.566 \\ 
+  2028 & 1145.980 & 875.107 & 0.000 & 1213.480 & 0.546 \\ 
+  2029 & 1124.960 & 851.041 & 0.000 & 1177.730 & 0.530 \\ 
+  2030 & 1104.190 & 828.385 & 0.000 & 1152.760 & 0.518 \\ 
    \hline
 \end{tabular}
 \end{table}
@@ -2550,20 +2686,32 @@ Yr & OFL contribution (mt) & ACL landings (mt) & Age 5+ biomass (mt) & Spawning 
 \hypertarget{figures}{%
 \section{Figures}\label{figures}}
 
-\begin{figure}
-\centering
-\includegraphics{Figures/survey_hauls_map.png}
-\caption{Map showing the distribution of Big Skate within the area
-covered by the West Coast Groundfish Bottom Trawl Survey aggregated over
-the years 2003--2018. \label{fig:boundary_map}}
+\hypertarget{data-figures}{%
+\subsection{Data Figures}\label{data-figures}}
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics{r4ss/plots_mod1/data_plot.png}
+\caption{Summary of data sources used in the model.}\label{fig:data_plot}
+\end{centering}
 \end{figure}
 
-\begin{figure}
-\centering
-\includegraphics{r4ss/plots_mod1/data_plot.png}
-\caption{Summary of data sources used in the model.
-\label{fig:data_plot}}
+\newpage
+
+\FloatBarrier
+
+\newpage
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics{Figures/survey_hauls_map.png}
+\caption{Map showing the distribution of Big Skate within the area covered by the West Coast Groundfish Bottom Trawl Survey aggregated over the years 2003--2018.}\label{fig:survey_hauls_map}
+\end{centering}
 \end{figure}
+
+\newpage
+
+\FloatBarrier
 
 \begin{figure}
 \centering
@@ -2576,7 +2724,9 @@ Washington. \label{fig:catch_by_state}}
 \centering
 \includegraphics{Figures/discard_calculations.png}
 \caption{Estimated total catch using different assumptions for discards.
-\label{fig:discard_calculations}}
+The discard rates shown in green lines are relative to the right-hand
+axis while all other values are relative to the left-hand
+axis.\label{fig:discard_calculations}}
 \end{figure}
 
 \begin{figure}
@@ -2626,12 +2776,19 @@ Pacific Halibut Commission longline survey. \label{fig:IPHC_map}}
 
 \newpage
 
-\begin{figure}
-\centering
+\hypertarget{biology-figures}{%
+\subsection{Biology Figures}\label{biology-figures}}
+
+\FloatBarrier
+
+\begin{figure}[H]
+\begin{centering}
 \includegraphics{r4ss/plots_mod1/comp_lendat__aggregated_across_time.png}
-\caption{Length comp data, aggregated across time by fleet.
-\label{fig:comp_lendat_aggregated_across_time}}
+\caption{Length comp data, aggregated across time by fleet.}\label{fig:comp_lendat_aggregated_across_time}
+\end{centering}
 \end{figure}
+
+\FloatBarrier
 
 \begin{figure}
 \centering
@@ -2655,8 +2812,15 @@ blue. \label{fig:comp_lendat__multi-fleet_comparison}}
 \label{fig:age_dat_fishery}}
 \end{figure}
 
-\includegraphics{Figures/Reader 1 vs Reader 2.png} Reader 1 vs Reader
-2.png
+\begin{figure}
+\centering
+\includegraphics{Figures/Reader_1_vs_Reader_2.png}
+\caption{Comparison of reads from each of two age readers for Big Skate.
+Sample sizes associated with each combination of ages are shown by the
+size circles and the within them. The blue histograms show the
+distribution of ages estimated by each
+reader.\label{fig:ageing_comparison}}
+\end{figure}
 
 \begin{figure}
 \centering
@@ -2684,11 +2848,34 @@ text within each point).\label{fig:maturity}}
 
 \newpage
 
-\FloatBarrier
+\newpage
+
+\hypertarget{model-results-figures}{%
+\subsection{Model Results Figures}\label{model-results-figures}}
 
 \FloatBarrier
 
 \FloatBarrier
+
+\hypertarget{growth-and-selectivity}{%
+\subsubsection{Growth and Selectivity}\label{growth-and-selectivity}}
+
+\FloatBarrier
+
+\textbackslash{}begin\{figure\}{[}H{]}
+\textbackslash{}begin\{centering\}
+\includegraphics{r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png}
+\textbackslash{}caption\{Estimated length-at-age for female and male Big
+Skate (top left panel). Shaded areas indicate 95\% intervals for
+distribution of lengths at each age. Values represent beginning-of-year
+growth. Weight (thick line) and maturity (thin line) are shown in the
+top-right and lower-left panels as a function of length and age,
+respectively, where the values-at-age are calculated by mapping the
+length-based relationships through the estimated distribution of length
+at each age.\}\label{fig:growth} \textbackslash{}end\{centering\}
+\textbackslash{}end\{figure\}
+
+\newpage
 
 \FloatBarrier
 
@@ -2701,15 +2888,22 @@ text within each point).\label{fig:maturity}}
 
 \FloatBarrier
 
-\begin{figure}
-\centering
+\hypertarget{fits-to-the-data-1}{%
+\subsubsection{Fits to the Data}\label{fits-to-the-data-1}}
+
+\FloatBarrier
+
+\textbackslash{}begin\{figure\}{[}H{]}
+\textbackslash{}begin\{centering\}
 \includegraphics{r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png}
-\caption{Fit to index data for WCGBT Survey. Lines indicate 95\%
-uncertainty interval around index values. Thicker lines indicate input
-uncertainty before addition of estimated additional uncertainty
-parameter. The blue line indicates the model
-estimate.\label{fig:index2_cpuefit_WCGBTS}}
-\end{figure}
+\textbackslash{}caption\{Fit to index data for WCGBT Survey. Lines
+indicate 95\% uncertainty interval around index values. Thicker lines
+indicate input uncertainty before addition of estimated additional
+uncertainty parameter. The blue line indicates the model
+estimate.\}\label{fig:index2_cpuefit_WCGBTS}
+\textbackslash{}end\{centering\} \textbackslash{}end\{figure\}
+
+\newpage
 
 \begin{figure}
 \centering
@@ -2785,13 +2979,28 @@ estimates with 95\% uncertainty intervals. The model estimate is shown
 in the blue lines.\label{fig:bodywt_fit_fltFishery}}
 \end{figure}
 
-file:
+\FloatBarrier
+
+\newpage
+
+\hypertarget{time-series-figures}{%
+\subsubsection{Time Series Figures}\label{time-series-figures}}
 
 \FloatBarrier
 
+\textbackslash{}begin\{figure\}{[}H{]}
+\textbackslash{}begin\{centering\}
+\includegraphics{r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png}
+\textbackslash{}caption\{Estimated spawning biomass (mt) with
+approximate 95\% asymptotic
+intervals.\}\label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}
+\textbackslash{}end\{centering\} \textbackslash{}end\{figure\}
+
+\newpage
+
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png}
+\includegraphics{r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png}
 \caption{Estimated spawning biomass (mt) with approximate 95\%
 asymptotic intervals.
 \label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}}
@@ -2799,10 +3008,10 @@ asymptotic intervals.
 
 \begin{figure}
 \centering
-\includegraphics{r4ss/plots_mod1/ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png}
+\includegraphics{r4ss/plots_mod1/ts9_unfished_with_95_asymptotic_intervals_intervals.png}
 \caption{Estimated spawning depletion with approximate 95\% asymptotic
 intervals.
-\label{fig:ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals}}
+\label{fig:ts9_unfished_with_95_asymptotic_intervals_intervals}}
 \end{figure}
 
 \begin{figure}
@@ -2829,22 +3038,29 @@ recent period show both live and dead discards.
 \label{fig:catch_total_plot}}
 \end{figure}
 
-\hypertarget{sensitivity-analyses-for-model}{%
-\subsubsection{Sensitivity analyses for
-model}\label{sensitivity-analyses-for-model}}
+\FloatBarrier
 
-\begin{figure}
-\centering
+\newpage
+
+\hypertarget{sensitivity-analyses-and-retrospectives}{%
+\subsubsection{Sensitivity Analyses and
+Retrospectives}\label{sensitivity-analyses-and-retrospectives}}
+
+\FloatBarrier
+
+\begin{figure}[H]
+\begin{centering}
 \includegraphics{Figures/sens.sel_and_Q_compare1_spawnbio.png}
-\caption{Time series of spawning output estimated in sensitivity
-analyses related to selectivity and catchability.
-\label{fig:Sensitivity_sel_and_Q}}
+\caption{Time series of spawning biomass (mt) estimated in sensitivity analyses related to selectivity and catchability.}\label{fig:Sensitivity_sel_and_Q}
+\end{centering}
 \end{figure}
+
+\newpage
 
 \begin{figure}
 \centering
 \includegraphics{Figures/sens.catch_compare1_spawnbio.png}
-\caption{Time series of spawning output estimated in sensitivity
+\caption{Time series of spawning biomass (mt) estimated in sensitivity
 analyses related to historic catch and discards.
 \label{fig:Sensitivity_catch}}
 \end{figure}
@@ -2852,7 +3068,7 @@ analyses related to historic catch and discards.
 \begin{figure}
 \centering
 \includegraphics{Figures/sens.bio_and_misc_compare1_spawnbio.png}
-\caption{Time series of spawning output estimated in sensitivity
+\caption{Time series of spawning biomass (mt) estimated in sensitivity
 analyses related to biology and other assumptions.
 \label{fig:Sensitivity_bio_and_misc}}
 \end{figure}
@@ -2866,6 +3082,22 @@ sensitivities analyses.\label{fig:growth_curve_comparison}}
 
 \FloatBarrier
 
+\newpage
+
+\hypertarget{likelihood-profiles-1}{%
+\subsubsection{Likelihood Profiles}\label{likelihood-profiles-1}}
+
+\FloatBarrier
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics{Figures/profile_logR0.png}
+\caption{Likelihood profile over the log of equilibrium recruitment ($R_0$).}\label{fig:profile_logR0}
+\end{centering}
+\end{figure}
+
+\newpage
+
 \begin{figure}
 \centering
 \includegraphics{Figures/profile_logR0.png}
@@ -2876,7 +3108,7 @@ sensitivities analyses.\label{fig:growth_curve_comparison}}
 \begin{figure}
 \centering
 \includegraphics{Figures/profile_R0_compare1_spawnbio.png}
-\caption{Time series of spawning output estimated for the models
+\caption{Time series of spawning biomass (mt) estimated for the models
 included in the profile over the log of equilibrium recruitment
 (\(R_0\)).\label{fig:profile_R0_compare1_spawnbio}}
 \end{figure}
@@ -2893,7 +3125,7 @@ included in the profile over the log of equilibrium recruitment
 \begin{figure}
 \centering
 \includegraphics{Figures/profile_h_compare1_spawnbio.png}
-\caption{Time series of spawning output estimated for the models
+\caption{Time series of spawning biomass (mt) estimated for the models
 included in the profile over stock-recruit steepness (\(h\)).
 \label{fig:profile_h_compare1_spawnbio}}
 \end{figure}
@@ -2910,23 +3142,28 @@ included in the profile over stock-recruit steepness (\(h\)).
 \begin{figure}
 \centering
 \includegraphics{Figures/profile_M_compare1_spawnbio.png}
-\caption{Time series of spawning output estimated for the models
+\caption{Time series of spawning biomass (mt) estimated for the models
 included in the profile over natural mortality (\(M\)).
 \label{fig:profile_M_compare1_spawnbio}}
 \end{figure}
 
 \FloatBarrier
 
+\hypertarget{reference-points-and-forecasts}{%
+\subsubsection{Reference Points and
+Forecasts}\label{reference-points-and-forecasts}}
+
 \FloatBarrier
 
-\begin{figure}
-\centering
+\begin{figure}[H]
+\begin{centering}
 \includegraphics{r4ss/plots_mod1/yield1_yield_curve.png}
-\caption{Equilibrium yield curve for the base case model. Values are
-based on the 2018 fishery selectivity and with steepness fixed at 0.718.
-\label{fig:yield1_yield_curve}}
+\caption{Equilibrium yield curve for the base case model. Values are based on the fishery selectivity and with steepness fixed at 0.4.}\label{fig:yield1_yield_curve}
+\end{centering}
 \end{figure}
 
+\newpage
+
 \FloatBarrier
 
 \newpage
@@ -2934,9 +3171,13 @@ based on the 2018 fishery selectivity and with steepness fixed at 0.718.
 \FloatBarrier
 \newpage
 
-\#Appendix A. Detailed fits to length composition data \{-\}
+\hypertarget{appendix-a.-detailed-fits-to-length-composition-data}{%
+\section*{Appendix A. Detailed fits to length composition
+data}\label{appendix-a.-detailed-fits-to-length-composition-data}}
+\addcontentsline{toc}{section}{Appendix A. Detailed fits to length
+composition data}
+
 \renewcommand{\thepage}{A-\arabic{page}}
-
 \renewcommand{\thefigure}{A\arabic{figure}}
 \setcounter{page}{1}
 
@@ -2997,6 +3238,13 @@ Washington, Oregon, and California: estimates of distribution,
 abundance, length, and age composition. NOAA Technical Memorandum NMFS
 NOAA-TM-NMFS-NWFSC-114: 323 pp.
 
+\leavevmode\hypertarget{ref-Downs2013}{}%
+Downs, D.E., and Cheng, Y.W. 2013. Length--length and width--length
+conversion of longnose skate and big skate off the pacific coast:
+Implications for the choice of alternative measurement units in
+fisheries stock assessment. North American journal of fisheries
+management \textbf{33}(5): 887--893. Taylor \& Francis.
+
 \leavevmode\hypertarget{ref-Ebert2008}{}%
 Ebert, D.A., Smith, W.D., and Cailliet, G.M. 2008. Reproductive biology
 of two commercially exploited skates, raja binoculata and r. Rhina, in
@@ -3009,10 +3257,19 @@ assessment models. Canadian Journal of Fisheries and Aquatic Sciencies
 \textbf{68}: 1124--1138.
 
 \leavevmode\hypertarget{ref-Gertseva2019}{}%
-Gertseva, V. 2019a. Manuscript in preparation.
+Gertseva, V. 2019. Manuscript in preparation.
+
+\leavevmode\hypertarget{ref-Gertseva2007}{}%
+Gertseva, V and Schrippa, MJ. 2007. Status of the Longnose Skate
+(\emph{Raja rhina}) off the continental US Pacific Coast in 2007.
+Pacific Fishery Management Council, Portland, OR. Available from
+\href{\%7Bhttp://www.pcouncil.org/groundfish/stock-assessments/\%7D}{\{http://www.pcouncil.org/groundfish/stock-assessments/\}}.
 
 \leavevmode\hypertarget{ref-Gertseva2011}{}%
-Gertseva, V. 2019b. Manuscript in preparation.
+Gertseva, V., and Taylor, I. 2011. Status of spiny dogfish shark
+resource off the continental us pacific coast in 2011. PFMC. 2011.
+Pacific Fishery Management Council, Portland, OR. Available from
+\href{\%7Bhttp://www.pcouncil.org/groundfish/stock-assessments/\%7D}{\{http://www.pcouncil.org/groundfish/stock-assessments/\}}.
 
 \leavevmode\hypertarget{ref-Gunderson1980}{}%
 Gunderson, Donald Raymond and Sample, Terrance M. 1980. Distribution and
@@ -3046,10 +3303,28 @@ McFarlane GA and King JR. 2006. Age and growth of big skate (\emph{Raja
 binoculata}) and longnose skate (\emph{Raja rhina}) in British Columbia
 waters. Fisheries Research \textbf{May 1 (2-3)}: 169--78.
 
+\leavevmode\hypertarget{ref-Methot2019}{}%
+Methot, RD Jr. and Wetzel, CR and Taylor, IG. 2019. Stock Synthesis User
+Manual Version 3.30.13. NOAA Fisheries. Seattle, WA. Available from
+\href{\%7Bhttps://vlab.ncep.noaa.gov/web/stock-synthesis\%7D}{\{https://vlab.ncep.noaa.gov/web/stock-synthesis\}}.
+
 \leavevmode\hypertarget{ref-Methot2013}{}%
 Methot, Richard D. and Wetzel, Chantell R. 2013. Stock synthesis: A
 biological and statistical framework for fish stock assessment and
 fishery management. Fisheries Research \textbf{142}: 86--99.
+
+\leavevmode\hypertarget{ref-Punt2008}{}%
+Punt AE and Smith DC and KrusicGolub K and Robertson S. 2008.
+Quantifying age-reading error for use in fisheries stock assessments,
+with application to species in Australia's southern and eastern
+scalefish and shark fishery. Canadian Journal of Fisheries and Aquatic
+Sciences.
+
+\leavevmode\hypertarget{ref-Stewart2009}{}%
+Stewart, I.J., Wallace, J.R., and McGilliard, C. 2009. Status of the us
+yelloweye rockfish resource in 2009. \emph{In} Pacific Fishery
+Management Council, Portland, OR. Available from
+\href{\%7Bhttp://www.pcouncil.org/groundfish/stock-assessments/\%7D}{\{http://www.pcouncil.org/groundfish/stock-assessments/\}}.
 
 \leavevmode\hypertarget{ref-Taylor2019}{}%
 Taylor, I.G., Stewart, I.J., Hicks, A.C., Garrison, T.M., Punt, A.E.,
@@ -3059,6 +3334,13 @@ K.F., Emmet, R.L., Anderson, S.C., Lambert, G.I., Stachura, M.M.,
 Cooper, A.B., Stephens, A., Klaer, N.L., McGilliard, C.R., Iwasaki,
 W.M., Doering, K., and Havron, A.M. 2019. R4ss: R code for stock
 synthesis. Available from \url{https://github.com/r4ss}.
+
+\leavevmode\hypertarget{ref-Taylor2013}{}%
+Taylor IG and Cope, J and Hamel O and Thorson, J. 2013. Deriving
+estimates of OFL for species in the ``Other Fish'' complex or potential
+alternative complexes. Pacific Fishery Management Council, Portland, OR.
+Available from
+\href{\%7Bhttp://www.pcouncil.org/groundfish/stock-assessments/\%7D}{\{http://www.pcouncil.org/groundfish/stock-assessments/\}}.
 
 \leavevmode\hypertarget{ref-Thorson2017a}{}%
 Thorson, James T. and Barnett, Lewis A. K. 2017. Comparing estimates of

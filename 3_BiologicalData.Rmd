@@ -1,9 +1,10 @@
 
 
 <!--************BIOLOGICAL DATA*********************************************-->
-## Biological Parameters and Data
 
-### Measurement Details and Conversion Factors
+# Biological Parameters and Data
+
+## Measurement Details and Conversion Factors
 
 Some size measurements  were taken as either disc width or inter-spiracle width rather than total length. A conversion from disc width to total length was estimated as $L = 1.3399 * W$ based on from 95 samples from WCGBT Survey where both measurements collected (R-squared = 0.9983). Little sex difference observed, so using single relationship for both sexes (Figure \ref{fig:weight-length}). This estimate is similar to the conversion estimated by Ebert [-@Ebert2008] for Big Skate in Alaska. The inter-spiracle width to total length was converted based on estimates from Downs & Cheng [-@Downs2013]:
 
@@ -20,7 +21,7 @@ $L = 3.824 + 10.927*ISW$ (males).
 Not sure why this is here:
 Love et al.  [-@Love1987] -->
 
-### Fishery dependent length and age composition data
+## Fishery dependent length and age composition data
 
 Fishery length composition data was available from PacFIN were available for the years 1995--2018 (with the exception of 2000) as shown in Table \ref{tab:PacFIN_Samples}. Ages were available from only 2004, 2008-2012, and 2018. These were all represented as conditioned on length in order to provide more detailed information about the relationship between age and length, to reduce any influence of size-based selectivity on the age composition, and to ensure independence from the length samples. Furthermore, the samples from Washington in 2009 were sampled using a length-stratified system, so should only be treated as conditioned on length.
 
@@ -40,7 +41,7 @@ Input N = $7.06 * N_{\text{hauls}}$ if $N_{\text{fish}}/N_{\text{hauls}}$ is $\g
 However, no haul had greater than 44 Big Skate sampled, so only the first formula was used.
 
 
-### Survey length and age composition data
+## Survey length and age composition data
 
 Lengths of Big Skate were only collected form the Triennial survey in 1998, 2001, and 2004, but 1998 had only 3 samples and were excluded from this analysis. Length compositions were available for all years of the WCGBT Survey. Sample sizes for both surveys are provided in Table \ref{tab:Survey_Samples}. The WCGBT Survey used disc width for the years 2006 and 2007 and total length in all other years. Those samples where only disc width was measured were converted to total length using the formula above.
 
@@ -54,7 +55,6 @@ Ages were available from the WCGBT Survey in the years 2009, 2010, 2016, 2017, a
 **Ageing Precision and Bias**
 
 Ages of Big Skate were all estimated based on growth band counts of sectioned vertebrae. Ageing precision and bias were estimated using double-reads of 518 Big Skate vertebrae using the approach of Punt et al. [-@Punt2008]. The results showed strong agreement among readers (Figure \ref{fig:ageing_comparison}), with a standard deviation of the ageing error increasing from about 0.4 at age 0 to 1.6 years at age 15 (Figure \ref{fig:ageing_imprecision}).
-
 
 \vspace{.5cm}
 
@@ -70,7 +70,7 @@ The female maturity relationship was based on visual maturity estimates from por
 
 \vspace{.5cm}
 
-### Environmental or Ecosystem Data Included in the Assessment
+## Environmental or Ecosystem Data Included in the Assessment
 
 In this assessment, neither environmental nor ecosystem considerations were explicitly included in the analysis.  This is primarily due to a lack of relevant data or results of analyses that could contribute ecosystem-related quantitative information for the assessment.
 

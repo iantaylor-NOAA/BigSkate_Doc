@@ -6,12 +6,25 @@ output:
 # Executive Summary{-}
 
 ## Stock{-}
-This assessment reports the status of the `r spp` (\emph{`r spp.sci`}) resource 
-in U.S. waters off the West Coast using data 
-through `r LastYR`. 
+This assessment reports the status of the `r spp` (\emph{`r spp.sci`}) resource in U.S. waters off the West Coast using data through `r LastYR`.
+A map showing the area of the U.S. West Coast Exclusive Economic Zone covered by this stock assessment is provided in Figure \ref{fig:assess_region_map}.
+
+<!-- [H] to control floating -->
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics{Figures/assess_region_map.png}
+\caption{U.S. West Coast Exclusive Economic zone covering the area in which this stock assessment is focused.}\label{fig:assess_region_map}
+\end{centering}
+\end{figure}
+
+<!-- ![U.S. West Coast Exclusive Economic zone covering the area in which this stock assessment is focused.  \label{fig:assess_region_map}](Figures/assess_region_map.png) -->
+
+<!-- { height=40%, width=40% }   Andi look up "out" values! -->
 
 
 ## Catches{-}
+
 Landings and estimated discards of `r spp` were reconstructed for this assessment from historical records of other species and from species composition data collected in the recent fishery.  These reflect the fishery from 1916-1994.  The current fishery started in 1995.  For records from 1995-2017, Big Skate landings were estimated from species-composition samples and the landings of "Unspecified Skates".  Beginning in 2017, Big Skate have been recorded in species-specific landings.
 
 <!-- (Table \ref{tab:Exec_catch}).  -->
@@ -26,7 +39,7 @@ Landings and estimated discards of `r spp` were reconstructed for this assessmen
 In the current fishery (since 1995), annual total landings of `r spp` have ranged between 
 `r paste0( min(round(Tot.catch.df[Tot.catch.df[,1] > 1995 & Tot.catch.df[,1] <= Dat_end_mod1,2],0)), '-', max(round(Tot.catch.df[Tot.catch.df[,1] > 1995 & Tot.catch.df[,1] <= Dat_end_mod1,2],0)) )` mt, with landings in `r Dat_end_mod1` totaling `r round(Tot.catch.df[Tot.catch.df[,1] == Dat_end_mod1,2],0)` mt.
 
-
+\vspace{.5cm}
 
 \FloatBarrier
 
@@ -47,18 +60,6 @@ In the current fishery (since 1995), annual total landings of `r spp` have range
 <!--     Plot_catch(Catch_df = Exec_region2_catch) -->
 <!-- ``` -->
 
-```{r, include=F, fig.cap=paste('Stacked line plot of', spp, 'catch history from Pt. Conception to the U.S.-Mexico border and catches from Mexican waters. \\label{fig:Exec_catch3}',sep=' ')}
-     # Plot California catches  
-     # Plot_catch(Catch_df = Exec_region3_catch)
-```
-
-\FloatBarrier
-
-![Catch history of `r spp` in the `r mod1_label`. \label{fig:r4ss_catches}](r4ss/plots_mod1/catch2 landings stacked.png)
-
-
-
-
 <!-- ***********CATCH TABLE************************************************ -->
 ```{r, results='asis'}
     #CSV: './txt_files/Exec_Catch_Big_Skate.csv'
@@ -66,6 +67,19 @@ In the current fishery (since 1995), annual total landings of `r spp` have range
     # Print the table
     print(Exec_catch.table, include.rownames = FALSE, caption.placement = 'top')
 ```
+
+\FloatBarrier
+
+```{r, include=F, fig.cap=paste('Stacked line plot of', spp, 'catch history from Pt. Conception to the U.S.-Mexico border and catches from Mexican waters. \\label{fig:Exec_catch3}',sep=' ')}
+     # Plot California catches  
+     # Plot_catch(Catch_df = Exec_region3_catch)
+```
+
+
+![Catch history of `r spp` in the `r mod1_label`. \label{fig:r4ss_catches}](r4ss/plots_mod1/catch2 landings stacked.png)
+
+
+
 <!-- ***********END EXECUTIVE SUMMARY CATCH FIGURES AND TABLES************* -->
 \FloatBarrier
 
@@ -94,6 +108,8 @@ equilibrium spawning biomass is above the target of 40% of unfished spawning bio
 (95% asymptotic interval: $\pm$ `r Depl_mod1_CI`) (Figure \ref{fig:RelDeplete_all}). 
 Approximate confidence intervals based on the 
 asymptotic variance estimates show that the uncertainty in the estimated spawning biomass is high, although even the lower range of the 95% interval for %unfished is above the 40% reference point, and all sensitivity analyses explore also show the stock to be at a high level.
+
+\vspace{.5cm}
 
 \FloatBarrier
 
@@ -128,6 +144,7 @@ asymptotic variance estimates show that the uncertainty in the estimated spawnin
 ## Recruitment{-}
 Recruitment was assumed to follow the Beverton-Holt stock recruit curve, so uncertainty in estimated recruitment is due to uncertainty in spawning biomass and the unfished equilibrium recruitment $R_0$ (Figure \ref{fig:Recruits_all} and Table \ref{tab:Recruit_mod1}).
 
+\vspace{.5cm}
 
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY RECRUITMENT TABLES AND FIGURES***** -->
@@ -156,7 +173,7 @@ Recruitment was assumed to follow the Beverton-Holt stock recruit curve, so unce
 Harvest rates estimated by the base model indicate catch levels have been below the limits that would be associated with the SPR = 50% target
 (Table \ref{tab:SPR_Exploit_mod1} and Figure \ref{fig:SPR_all}). 
 
-
+\vspace{.5cm}
 
 \FloatBarrier
 
@@ -202,6 +219,7 @@ is `r paste(Ref_pts_mod1[7,2], fecund_unit,sep=' ')`, which corresponds with an
 equilibrium yield of `r Ref_pts_mod1[10,2]` mt. Equilibrium yield at the proxy $F_{MSY}$ 
 harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt (Figure \ref{fig:Yield_all}).
 
+\vspace{.5cm}
 
 \FloatBarrier
 
@@ -217,12 +235,11 @@ harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt (Figure 
 
 \FloatBarrier
 
+\newpage
 
 ## Ecosystem Considerations{-}
-In this assessment, ecosystem considerations were not explicitly included in the analysis.  
-This is primarily due to a lack of relevant data and results of analyses (conducted elsewhere) 
-that could contribute ecosystem-related quantitative information for the assessment.
 
+In this assessment, neither environmental nor ecosystem considerations were explicitly included in the analysis.  This is primarily due to a lack of relevant data or results of analyses that could contribute ecosystem-related quantitative information for the assessment.
 
 
 ## Management Performance{-}
@@ -250,8 +267,6 @@ that could contribute ecosystem-related quantitative information for the assessm
 \FloatBarrier
 
 
-
-
 ## Decision Table{-}    
 
 **$\color{red}{\text{Template in Table h and associated discussion to be filled in later}}$**
@@ -260,6 +275,7 @@ that could contribute ecosystem-related quantitative information for the assessm
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY OFL AND DECISION TABLES************ -->
 \FloatBarrier
+
 ## Projected Landings, OFLs and Time-varying ACLs {-}
 
 Potential OFLs projected by the model are shown in Table \ref{tab:OFL_projection}.  These values are based on an SPR target of 50%, a P* of 0.45, and a time-varying Category 2 Sigma which creates the buffer shown in the right-hand column.

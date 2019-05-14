@@ -77,8 +77,9 @@ Exec_catch.table = xtable(Exec_catch_summary,
 
 # Add alignment - you will have to adjust based on the number of columns you have
 # and the desired width, remember to add one leading ghost column for row.names
-align(Exec_catch.table) = c('l', 'l',
-                            '>{\\centering}p{.6in}')  
+align(Exec_catch.table) = c('l',
+                            '>{\\centering}p{1in}',  
+                            '>{\\centering}p{1in}')  
 
 
 # =============================================================================
