@@ -176,6 +176,35 @@ SSplotPars(mod1,
            newheader=c("Natural mortality (M)", "WCGBT Survey catchability (Q)"),
            new=FALSE)
 dev.off()
+
+tmp <- SSplotSelex(bs82, fleets=1, sizefactors="Ret", years=2002:2018,
+                   subplot=1)
+tmp$infotable$col <- rich.colors.short(15, alpha=0.7)
+tmp$infotable$pch <- NA
+tmp$infotable$lty <- 1
+tmp$infotable$longname <- tmp$infotable$Yr_range
+
+png('Figures/retention.png', width=6.5, height=4, units='in',
+    res=300, pointsize=9)
+par(mfrow=c(1,2), mar=c(4,4,1,1))
+
+SSplotSelex(bs82, fleets=1, sizefactors="Ret", showmain=FALSE,
+            labels = c("Length (cm)", 
+                "Age (yr)", "Year", "Retention", "Retention", "Discard mortality"),
+            years=2002:2018, subplot=1, infotable=tmp$infotable)
+
+sub <- bs82$sizeselex[bs82$sizeselex$Factor=="Ret" & bs82$sizeselex$Fleet==1 &
+                       bs82$sizeselex$Yr <=2018 & bs82$sizeselex$Sex == 1, ]
+plot(sub$Yr, sub$"252.5", xlim=c(2002, 2018.1), ylim=c(0,1), yaxs='r', lwd=2, type='l',
+     pch=16, cex=.8,
+     xlab = "Year", ylab="Asymptotic retention rate", las=1, col='grey70', axes=FALSE)
+abline(h=c(0,1), col='grey')
+points(x = 2004:2018, y = as.numeric(sub[sub$Yr %in% 2004:2018, "252.5"]),
+       col = rich.colors.short(15, alpha=0.9), pch=16)
+axis(1, at=2004:2018)
+axis(2, at=seq(0,1,.2))
+box()
+dev.off()
 # -----------------------------------------------------------------------------
 
 # Run the code to parse the plotInfoTable files

@@ -54,6 +54,9 @@
 
 ![Selectivity at age derived from the combination of selectivity-at-length (shown above) and the estimated distribution of length at each age for all of the fleets in the base model. Female selectivity is shown in the solid lines and males in the dashed lines. \label{fig:sel02_multiple_fleets_age2}](r4ss/plots_mod1/sel02_multiple_fleets_age2.png)
 
+![Female fishery selectivity and retention in 2018 with associated derived quantities. \label{fig:sel09_len_flt1sex1}](r4ss/plots_mod1/sel09_len_flt1sex1.png)
+
+![Time-varying retention for the fishery (left) with the time-series of asymptotic retention rates (right). \label{fig:retention}](Figures/retention.png)
 
 
 
