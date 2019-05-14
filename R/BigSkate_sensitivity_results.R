@@ -63,16 +63,17 @@ likenames = c("TOTAL", "Survey", "Length_comp", "Age_comp",
 #####################
 
 # getbs function from /BigSkate_Doc/R/BigSkate_functions.R
-getbs(82, sensname="sel1")
+#getbs(82, sensname="sel1")
 getbs(82, sensname="sel2")
 getbs(82, sensname="sel3")
 getbs(82, sensname="Q1")
 getbs(82, sensname="Q2")
 
-sens.sum_sel_and_Q <- SSsummarize(list(bs82, bs82sel1, bs82sel2, bs82sel3,
+sens.sum_sel_and_Q <- SSsummarize(list(bs82, #bs82sel1,
+                                       bs82sel2, bs82sel3,
                                        bs82Q1, bs82Q2))
 sens.names_sel_and_Q <- c("Base model",
-                          "Sel all asymptotic",
+                          #"Sel all asymptotic",
                           "Sel all domed",
                           "Sel no sex offset",
                           "Q no prior on WCGBTS",
