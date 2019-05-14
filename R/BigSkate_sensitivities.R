@@ -216,6 +216,13 @@ copy_SS_inputs(dir.old = dir.mod,
                copy_exe = TRUE,
                copy_par = TRUE)
 
+dir.sens <- file.path(dir.sensitivities, "catch4_multiplier")
+copy_SS_inputs(dir.old = dir.mod,
+               dir.new = dir.sens,
+               use_ss_new = FALSE,
+               copy_exe = TRUE,
+               copy_par = TRUE)
+
 dir.sens <- file.path(dir.sensitivities, "misc1_MItuning")
 copy_SS_inputs(dir.old = dir.mod,
                dir.new = dir.sens,

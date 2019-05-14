@@ -2,6 +2,13 @@
 ### which were run using code in /R/BigSkate_sensitivities.R
 ### for 2019 Big Skate assessment
 
+# define directory on a specific computer
+if(Sys.info()["user"] == "Ian.Taylor"){
+  dir.outer <- c('c:/SS/skates/models')
+}
+dir.sensitivities <- file.path(dir.outer, "sensitivity.bigskate82")
+
+
 ################
 ### functions required for table cleanup below
 
@@ -61,9 +68,6 @@ getbs(82, sensname="sel2")
 getbs(82, sensname="sel3")
 getbs(82, sensname="Q1")
 getbs(82, sensname="Q2")
-getbs(82, sensname="catch1")
-getbs(82, sensname="catch2")
-getbs(82, sensname="catch3")
 
 sens.sum_sel_and_Q <- SSsummarize(list(bs82, bs82sel1, bs82sel2, bs82sel3,
                                        bs82Q1, bs82Q2))
@@ -229,16 +233,16 @@ dev.off()
 getbs(82, sensname="catch1")
 getbs(82, sensname="catch2")
 getbs(82, sensname="catch3")
+getbs(82, sensname="catch4")
+getbs(82, sensname="catch5")
 
-sens.sum_catch <- SSsummarize(list(bs82, bs82catch1, bs82catch2, bs82catch3))
+sens.sum_catch <- SSsummarize(list(bs82, bs82catch1, bs82catch2,
+                                   bs82catch3, bs82catch4))
 sens.names_catch <- c("Base model",
-                          "Discards based on 3yr averages",
-                          "Discard mortality = 0.4",
-                          "Discard mortality = 0.6")
-thingnames = c("Recr_Virgin", "R0", "NatM", "Linf",
-    "LnQ_base_WCGBTS",
-    "SSB_Virg", "SSB_2019",
-    "Bratio_2019", "SPRratio_2018", "Ret_Catch_MSY", "Dead_Catch_MSY")
+                      "Discards based on 3yr averages",
+                      "Discard mortality = 0.4",
+                      "Discard mortality = 0.6",
+                      "Multipliers on historical discards")
 
 # make table of model results
 sens.table_catch <-

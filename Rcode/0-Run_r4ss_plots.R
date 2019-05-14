@@ -139,7 +139,7 @@ SS_plots(mod1,
          printfolder = '', 
          dir = out.dir.mod1)
 
-# rename catch plots
+# remake catch plot with alternative names for the fleets
 SS_plots(mod1,
          fleetnames = fleetnames_catch,
          plot = 7,
@@ -148,7 +148,23 @@ SS_plots(mod1,
          printfolder = '', 
          dir = out.dir.mod1)
 
+# remake length-comp residual comparison to be taller
+SS_plots(mod1,
+         fleetnames = fleetnames1,
+         plot = 16,
+         pheight = 6.5,
+         png = TRUE,
+         html = FALSE,
+         printfolder = 'tall_length_comp_plots', 
+         dir = out.dir.mod1)
 # rename file to match expectation
+file.copy(from = file.path(out.dir.mod1,
+              'tall_length_comp_plots/comp_lenfit__multi-fleet_comparison.png'),
+          to = file.path(out.dir.mod1, 'comp_lenfit__multi-fleet_comparison.png'),
+          overwrite = TRUE)
+
+# rename a time series plot to match expected name
+# (probably not necessary any more)
 file.copy(from = file.path(out.dir.mod1, 'ts9_unfished_with_95_asymptotic_intervals_intervals.png'),
           to = file.path(out.dir.mod1, 'ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals.png'))
 

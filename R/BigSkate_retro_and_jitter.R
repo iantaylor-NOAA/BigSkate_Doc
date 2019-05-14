@@ -38,10 +38,18 @@ retro.summary <- SSsummarize(retro.mods)
 endyrvec <- retro.summary$endyrs + 0:-5
 # general timeseries plots
 SSplotComparisons(retro.summary, endyrvec=endyrvec, png=TRUE, indexUncertainty=TRUE,
-                  legendloc=c(0,0.4), spacepoints=10000,
+                  #legendloc=c(0,0.4),
+                  legendloc='top',
+                  spacepoints=10000,
+                  plot=FALSE,
                   plotdir=file.path(dir.mod, 'retrospectives'),
-                  filenameprefix="retro_", 
+                  filenameprefix="retro_",
                   legendlabels=paste("Data",0:-5,"years"))
+file.copy(file.path(dir.mod, 'retrospectives',
+                    "retro_compare2_spawnbio_uncertainty.png"),
+          file.path(dir.mod, '../../BigSkate_Doc/Figures',
+                    "retro_compare2_spawnbio_uncertainty.png"),
+          overwrite=TRUE)
 # fits to indices
 for(index in unique(retro.summary$indices$Fleet)){
   #index <- 5
@@ -53,13 +61,11 @@ for(index in unique(retro.summary$indices$Fleet)){
                     filenameprefix="retro_", 
                     legendlabels=paste("Data",0:-5,"years"))
 }
-
-dir.jit <- file.path(dir.mod, "jitter")
-copy_SS_inputs(dir.old = dir.mod,
-               dir.new = dir.jit,
-               use_ss_new = TRUE,
-               copy_exe = TRUE,
-               copy_par = TRUE)
+file.copy(file.path(dir.mod, 'retrospectives',
+                    "retro_compare11_indices_flt5.png"),
+          file.path(dir.mod, '../../BigSkate_Doc/Figures',
+                    "retro_compare11_indices_flt5.png"),
+          overwrite=TRUE)
 
 
 ##### jitter
@@ -67,5 +73,11 @@ copy_SS_inputs(dir.old = dir.mod,
 runjitter <- FALSE
 # run jitter
 if(runjitter){
-  SS_RunJitter(dir.jit, Njitter=100)
+  dir.jit <- file.path(dir.mod, "jitter")
+  copy_SS_inputs(dir.old = dir.mod,
+                 dir.new = dir.jit,
+                 use_ss_new = TRUE,
+                 copy_exe = TRUE,
+                 copy_par = TRUE)
+  jit.out <- SS_RunJitter(dir.jit, Njitter=100)
 }
