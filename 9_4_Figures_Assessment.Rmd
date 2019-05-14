@@ -1,17 +1,13 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
+
 <!-- ********************************************************************** -->
 <!-- ***********FIGURES: Model results ********************************** --> 
 <!-- ********************************************************************** -->
 
+\FloatBarrier
 \newpage
 
 ## Model Results Figures
 
-\FloatBarrier
 
 <!-- ********************************************************************** -->
 <!-- ***********History of modeling approaches FIGURES******************* --> 
@@ -37,32 +33,28 @@ output:
 
 
 
-
-\FloatBarrier
-
 <!-- ====================================================================== -->
 <!-- *********************BASE MODEL FIGURES******************************* -->
 <!-- ====================================================================== -->
 
 <!-- ***********MODEL 1 BASE MODEL FIGURES********************************* --> 
- 
 
 ### Growth and Selectivity
 
-
+\vspace{.5cm}
 
 \FloatBarrier
+
 <!-- [H] to control floating -->
 
-\begin{figure}[H]
+\begin{figure}[h]
 \begin{centering}
 \includegraphics{r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png}
 \caption{Estimated length-at-age for female and male `r spp` (top left panel). Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.}\label{fig:growth}
 \end{centering}
 \end{figure}
 
-\newpage
-
+\FloatBarrier
 <!-- ![Estimated length-at-age for female and male `r spp` (top left panel). Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.\label{fig:growth}](r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png) -->
 
 
@@ -81,14 +73,17 @@ output:
 ### Fits to the Data
 
 \FloatBarrier
+<!-- [H] to control floating -->
 
-
-\begin{figure}[H]
+\begin{figure}[h]
+\includegraphics{r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png}
 \begin{centering}
 \includegraphics{r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png}
 \caption{Fit to index data for WCGBT Survey. Lines indicate 95% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate.}\label{fig:index2_cpuefit_WCGBTS}
 \end{centering}
 \end{figure}
+
+\FloatBarrier
 
 \newpage
 
@@ -106,32 +101,6 @@ output:
 ![Pearson residuals for the fit to conditional age-at-length data from the fishery. \label{fig:age_fit_fishery}](r4ss/plots_mod1/comp_condAALfit_residsflt1mkt2.png)
 
 ![Pearson residuals for the fit to conditional age-at-length data from the WCGBT Survey. \label{fig:age_fit_WCGBTS}](r4ss/plots_mod1/comp_condAALfit_residsflt5mkt0.png)
-
-<!-- 
-\FloatBarrier
-
-
-```{r, results='asis'}
-#     # Plot all of the timeseries plots
-     for(i in 4:dim(AALComp_mod1)[1]) {
-#         
-#      # find matches to multi-page plots
-      page_test = sapply(multi_page_fig, grepl, AALComp_mod1$label[i])
-#      
-#      # if the plot is page2+ of a series, add the extra caption
-      if(TRUE %in% page_test) {
-        cat('\n![](', AALComp_mod1[i, path_col], ')', sep='')
-#       
-        cat('\\begin{center} \n
-              Figure continued from previous page \n
-             \\end{center}',sep='')
-#        
-      } else {
-#      
-    cat('\n![', AALComp_mod1[i,caption_col], ' \\label{fig:mod1_', i, '_', AALComp_mod1[i, label_col], '}](', AALComp_mod1[i, path_col], ')\n', sep='')
- } }
-```
--->
 
 <!-- ***********Implied fits to the sex ratios ************************** --> 
 
@@ -159,12 +128,14 @@ output:
 
 <!-- [H] to control floating -->
 
-\begin{figure}[H]
+\begin{figure}[h]
 \begin{centering}
 \includegraphics{r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png}
 \caption{Estimated spawning biomass (mt) with approximate 95% asymptotic intervals.}\label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}
 \end{centering}
 \end{figure}
+
+\FloatBarrier
 
 \newpage
 
@@ -203,7 +174,7 @@ output:
 
 <!-- [H] to control floating -->
 
-\begin{figure}[H]
+\begin{figure}[h]
 \begin{centering}
 \includegraphics{Figures/sens.sel_and_Q_compare1_spawnbio.png}
 \caption{Time series of spawning biomass (mt) estimated in sensitivity analyses related to selectivity and catchability.}\label{fig:Sensitivity_sel_and_Q}
@@ -256,7 +227,7 @@ output:
 
 <!-- [H] to control floating -->
 
-\begin{figure}[H]
+\begin{figure}[h]
 \begin{centering}
 \includegraphics{Figures/profile_logR0.png}
 \caption{Likelihood profile over the log of equilibrium recruitment ($R_0$).}\label{fig:profile_logR0}
@@ -304,7 +275,7 @@ output:
 
 <!-- [H] to control floating -->
 
-\begin{figure}[H]
+\begin{figure}[h]
 \begin{centering}
 \includegraphics{r4ss/plots_mod1/yield1_yield_curve.png}
 \caption{Equilibrium yield curve for the base case model. Values are based on the fishery selectivity and with steepness fixed at 0.4.}\label{fig:yield1_yield_curve}
