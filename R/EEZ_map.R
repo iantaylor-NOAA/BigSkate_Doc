@@ -28,8 +28,8 @@ map('state', regions=c("Wash","Oreg","Calif","Idaho",
                  "Montana","Nevada","Arizona","Utah"),
     add=TRUE,
     col='grey', fill=TRUE, interior=TRUE, lwd=1)
-axis(2, at=seq(30,50,2), lab=paste0(seq(30,50,2), "?N"), las=1)
-axis(1, at=seq(-130,-114,4), lab=paste0(abs(seq(-130,-114,4)), "?W"))
+axis(2, at=seq(30,50,2), lab=paste0(seq(30,50,2), "°N"), las=1)
+axis(1, at=seq(-130,-114,4), lab=paste0(abs(seq(-130,-114,4)), "°W"))
 #map.axes()
 
 

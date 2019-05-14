@@ -6,6 +6,7 @@ output:
 # Executive Summary{-}
 
 ## Stock{-}
+
 This assessment reports the status of the `r spp` (\emph{`r spp.sci`}) resource in U.S. waters off the West Coast using data through `r LastYR`.
 A map showing the area of the U.S. West Coast Exclusive Economic Zone covered by this stock assessment is provided in Figure \ref{fig:assess_region_map}.
 
