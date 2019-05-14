@@ -1,9 +1,10 @@
 ############################################################################
 # map showing EEZ for 2019 Big Skate stock assessment
-bsdir <- 'C:/SS/skates/BigSkate_Doc/'
+bsdir <- './'
 
 # define names and colors for each area
-col <- rgb(0.3,0.3,1,1)
+col <- rgb(0,0,1,.5)
+
 # load packages
 require(maps)
 require(mapdata)
@@ -14,7 +15,7 @@ eez <- read.csv(file.path(bsdir, 'txt_files/EEZ_polygon_lat_lon.csv'))
 
 # open PNGfile
 png(file.path(bsdir, 'Figures/assess_region_map.png'),
-    width=6.5, height=8, res=350, units='in')
+    width=4.875, height=6, res=350, units='in')
 par(mar=c(3,3,.1,.1))
 # map with Canada and Mexico (not sure how to add states on this one)
 map('worldHires', regions=c("Canada","Mexico"),
@@ -27,8 +28,8 @@ map('state', regions=c("Wash","Oreg","Calif","Idaho",
                  "Montana","Nevada","Arizona","Utah"),
     add=TRUE,
     col='grey', fill=TRUE, interior=TRUE, lwd=1)
-axis(2, at=seq(30,50,2), lab=paste0(seq(30,50,2), "°N"), las=1)
-axis(1, at=seq(-130,-114,4), lab=paste0(abs(seq(-130,-114,4)), "°W"))
+axis(2, at=seq(30,50,2), lab=paste0(seq(30,50,2), "?N"), las=1)
+axis(1, at=seq(-130,-114,4), lab=paste0(abs(seq(-130,-114,4)), "?W"))
 #map.axes()
 
 

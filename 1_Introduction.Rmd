@@ -86,25 +86,6 @@ The Big Skate is broadly distributed, occurring from the southeastern Bering Sea
 
 In 2012, the Big Skate was moved from genus *Raja* to the new genus *Beringraja* together with the Mottled Skate (*B. pulchra*) [@Ishihara2012].  These are the only two skates with multiple embryos per egg case, and they are very similar mophologically and genetically [@Bizzarro2019].
 
-
-
-
-## Map
-A map showing the area of the U.S. West Coast Exclusive Economic Zone covered by this stock assessment is provided in Figure \ref{fig:assess_region_map.png}.
-
-<!-- [H] to control floating -->
-
-\begin{figure}[H]
-\begin{centering}
-\includegraphics{Figures/assess_region_map.png}
-\caption{U.S. West Coast Exclusive Economic zone covering the area in which this stock assessment is focused.}\label{fig:assess_region_map}
-\end{centering}
-\end{figure}
-
-<!-- ![U.S. West Coast Exclusive Economic zone covering the area in which this stock assessment is focused.  \label{fig:assess_region_map}](Figures/assess_region_map.png) -->
-
-<!-- { height=40%, width=40% }   Andi look up "out" values! -->
-
 ## Ecosystem Considerations
 
 Big Skates are opportunistic, generalist mesopredators with highly variable spatio-temporal trophic roles (@Ebert2007; @Bizzarro2015). Off central California, diet of Big Skates is composed mainly of fishes, shrimps, and crabs (in descending order), with larger skates incorporating more fishes (@Bizzarro2007); however, in the Gulf of Alaska, Big Skate diet consists mainly of crabs (esp. Tanner Crabs) throughout ontogeny, with relatively small portions of fishes and shrimps (@Bizzarro2015). Correspondingly, trophic level and general diet composition estimates differ significantly between California and Gulf of Alaska Big Skate populations (@Bizzarro2015). 
