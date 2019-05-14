@@ -200,7 +200,7 @@
 
 ![Time series of spawning biomass (mt) estimated in sensitivity analyses related to biology and other assumptions. \label{fig:Sensitivity_bio_and_misc}](Figures/sens.bio_and_misc_compare1_spawnbio.png)
 
-![Comparison of the estimated growth curves from the sensitivities analyses.\label{fig:growth_curve_comparison}](Figures/growth_curve_comparison.png)
+![Comparison of the estimated growth curves from the sensitivities analyses. The increase at age 20 in the von Bertalanffy and Richards growth models is an adjustment to account for average size in the plus group based on an assumed exponential decay of the numbers at age beyond age 20.\label{fig:growth_curve_comparison}](Figures/growth_curve_comparison.png)
 
 
 
