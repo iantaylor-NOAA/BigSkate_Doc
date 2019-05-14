@@ -106,7 +106,7 @@ Although the assessment model requires numerous simplifying assumptions, it repr
 
 The `r LastYR` estimated spawning biomass relative to unfished 
 equilibrium spawning biomass is above the target of 40% of unfished spawning biomass at `r Depl_mod1` 
-(95% asymptotic interval: $\pm$ `r Depl_mod1_CI`) (Figure \ref{fig:RelDeplete_all}). 
+(95% asymptotic interval: $\pm$ `r Depl_mod1_CI`) (Figure \ref{fig:ts9_unfished_with_95_asymptotic_intervals_intervals}). 
 Approximate confidence intervals based on the 
 asymptotic variance estimates show that the uncertainty in the estimated spawning biomass is high, although even the lower range of the 95% interval for %unfished is above the 40% reference point, and all sensitivity analyses explore also show the stock to be at a high level.
 
