@@ -78,7 +78,7 @@ The estimated parameters are described in greater detail below and a full list o
 all estimated and parameters is provided in Table \ref{tab:model_params}.
 
 _Growth._ 
-Examination of patterns of age-at-length and length-at-age indicated unusual patterns of growth for Big Skate.  The youngest fish show near-linear growth, and average size for both sexes is similar.  However, older fish show considerable sex-based differences in size. This led to the choice to model growth using the "growth cessation model" recently developed by Maunder et al. [-@maunder2018growth]. The estimated growth curves are shown in Figure \ref{fig:growth}. The growth cessation model provided two key advantages over the more common von Bertalanffy growth model in the case of Big Skate: it allowed essentially linear growth for the early years and it allowed growth for the earlier ages to be similar between females and males while diverging at older ages. The growth cessation model also improve the negative log likelihood by 45 units relative to the von Bertalanffy growth model.
+Examination of patterns of age-at-length and length-at-age indicated unusual patterns of growth for Big Skate.  The youngest fish show near-linear growth, and average size for both sexes is similar.  However, older fish show considerable sex-based differences in size. This led to the choice to model growth using the "growth cessation model" recently developed by Maunder et al. [-@maunder2018growth]. The estimated growth curves are shown in Figure \ref{fig:growth}. The growth cessation model provided two key advantages over the more common von Bertalanffy growth model in the case of Big Skate: it allowed essentially linear growth for the early years and it allowed growth for the earlier ages to be similar between females and males while diverging at older ages. The growth cessation model also improve the negative log-likelihood by 45 units relative to the von Bertalanffy growth model.
 
 _Natural Mortality._
 Male natural mortality was assumed equal to the value estimated for females. Sensitivity analyses were used to test the impact of both the the prior on natural mortality and the assumption of equal natural mortality for both sexes.
@@ -230,7 +230,7 @@ Results of these sensitivities are shown in Figures \ref{fig:Sensitivity_sel_and
 
 **Selectivity and catchability**
 
-Allowing the selectivity for all fleets to be dome-shaped resulted in domed selectivity for all fleets, but only improved the total likelihood by 0.9 units, mostly through a slightly improved fit to the length compositions, although the fit to the surveys was slightly worse (Table \ref{tab:Sensitivity_sel_and_Q}). Removing the offset between female and male selectivity caused the likelihood to be worse by 18.1 units, mostly through a worse fit to the length comps but also a worse fit to the conditional age-at-length compositions. The conditional age data was represented indepdently for each sex, so no sex-ratio information was present in the data, but the growth curves were changed slightly to compensate for the change in fit to the length data, resulting in a less good fit to the age data as well. The scale of the population remained somewhat similar to the base model under both of these sensitivities (Figure \ref{fig:Sensitivity_sel_and_Q}).
+Allowing the selectivity for all fleets to be dome-shaped resulted in domed selectivity for all fleets, but only improved the total negative log-likelihood by 0.9 units, mostly through a slightly improved fit to the length compositions, although the fit to the surveys was slightly worse (Table \ref{tab:Sensitivity_sel_and_Q}). Removing the offset between female and male selectivity caused the negative log-likelihood to be worse by 18.1 units, mostly through a worse fit to the length comps but also a worse fit to the conditional age-at-length compositions. The conditional age data was represented independently for each sex, so no sex-ratio information was present in the data, but the growth curves were changed slightly to compensate for the change in fit to the length data, resulting in a less good fit to the age data as well. The scale of the population remained somewhat similar to the base model under both of these sensitivities (Figure \ref{fig:Sensitivity_sel_and_Q}).
 
 Removing the prior on catchability for the WCGBT Survey had a large change in the estimated scale of the population, with the unfished equilibrium biomass increasing from the 2,224 mt estimated in the base model to 9,932 mt ("Q no prior on WCGBTS" in Figure \ref{fig:Sensitivity_sel_and_Q} and Table \ref{tab:Sensitivity_sel_and_Q}). However, the change in likelihood was relatively small, with the total improving by 0.4 units, of which 0.04 was associated with the prior itself.
 
@@ -259,29 +259,25 @@ Retrospective analyses, in which the final 5 years of data are successively remo
 
 Likelihood profiles were conducted over $log(R_0)$, stock-recruit steepness ($h$) and natural mortality ($M$). Results of these profiles are shown in Figures \ref{fig:profile_logR0} to \ref{fig:profile_M_compare1_spawnbio}.
 
+The profile over $log(R_0)$ shows that the change in likelihood over a broad range of values is relatively small compared to models with more contrast in the data, with a total change in likelihood of less than 4 units over a range of 8.2 to 9.6, corresponding to a range in equilibrium recruitment of 3.6 million to 14.8 million (the $log(R_0)$ parameter is the log of $R_0$ in thousands). Models with $log(R_0) < 8.2$ did not converge. The age data and discard data are best fit at the highest $R_0$ considered while the index and mean body weight data are best fit at the lowest $R_0$. Only the priors and the length data are best fit at intermediate values. The length data was best fit at $log(R_0) = 8.6$, while the separate components of the prior likelihood were also best fit at $log(R_0) = 8.6$ in the case of the prior on the catchability of the WCGBT Survey, and at $log(R_0) = 8.2$ in the case of the prior on natural mortality. The base model estimate balancing all these components was $log(R_0) = 8.728$. The spawning biomass estimates from the models in the profile were all relatively similar as a result of the models with higher $R_0$ also having a higher $M$ estimate, leading to a similar number of fish surviving to maturity (the range was $M = 0.526$ at $log(R_0) = 9.6$ to $M$ = 0.398$ at $log(R_0) = 8.2$).
 
+The profile over steepness of the stock-recruit curve showed less than 0.8 units of likelihood over the range $h = 0.3$ to $h = 0.9$. The best fit occurred at $h = 0.5$, indicating that a model with steepness estimated would have been relatively similar to the base model where $h$ was fixed at 0.4. However, earlier model explorations indicated that models with $h$ estimated sometimes produced unstable results, where small changes in model configuration could cause the parameter to be estimated at either the upper or lower bound of the 0.2--1.0 range on which it's defined for the Beverton-Holt stock-recruit curve.
+
+The profile over natural mortality ($M$) showed that most of the information in the likelihood about $M$ was from the length and age data, with additional information in the discard rates and the mean body weight data. The prior on $M$ provided relatively little contribution to the total likelihood. The length data had the largest change in likelihood over the 0.25--0.55 range of $M$ considered, and was best fit at 0.45, close to the base model estimate of 0.445.
 
 ### Reference Points
 
 Reference points were calculated using the estimated selectivities and catch distribution 
-among fleets in the most recent year of the model, (`r LastYR - 1`). Sustainable total 
+among fleets in the most recent year of the model, (`r LastYR`). Sustainable total 
 yield (landings plus discards) were `r Ref_pts_mod1[15,2]` mt when using an $SPR_{50\%}$ 
 reference harvest rate and with a 95% confidence interval of `r Ref_pts_mod1[15,3]` mt 
-based on estimates of uncertainty. The spawning biomass equivalent to 40% of the unfished 
-level ($SB_{40\%}$) was `r Ref_pts_mod1[7,2]` mt. 
+based on estimates of uncertainty. The spawning biomass equivalent to 40% of the unfished level ($SB_{40\%}$) was `r Ref_pts_mod1[7,2]` mt.
 
+The `r LastYR+1` spawning biomass relative to unfished equilibrium spawning biomass 
+is above the target of 40% of unfished levels (Figure \ref{fig:ts9_unfished_with_95_asymptotic_intervals_intervals}). The relative fishing intensity, $(1-SPR)/(1-SPR_{50\%})$, has been below the management target for the entire time series of the model (Table \ref{tab:Timeseries_mod1}).
 
-(Figure \ref{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}
-
-The `r LastYR` spawning biomass relative to unfished equilibrium spawning biomass 
-is above/below the target of 40% of unfished 
-levels (Figure \ref{fig:ts9_Spawning_depletion_with_95_asymptotic_intervals_intervals}). 
-The relative fishing intensity, $(1-SPR)/(1-SPR_{50\%})$, has been xxx the management target 
-for the entire time series of the model. 
-
-Table \ref{tab:Ref_pts_mod1} shows the full suite of estimated reference points for the base 
-model and Figure \ref{fig:yield1_yield_curve} shows the equilibrium curve based on a 
-steepness value xxx.
+Table \ref{tab:Ref_pts_mod1} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield1_yield_curve} shows the equilibrium curve based on a 
+steepness value of 0.4.
 
 
 
