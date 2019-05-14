@@ -38,6 +38,8 @@ output:
 
 <!-- ***********MODEL 1 PARAMETERS***************************************** --> 
 <!-- ***********Estimated adn Fixed Parameters***************************** --> 
+
+\savegeometry{StdGeom}
 \begin{landscape}
 ```{r, results='asis'}
        # If you use this for more than one model = change mod1 to mod2 or mod3
@@ -120,10 +122,10 @@ output:
 ```
 \end{landscape}
 <!-- ---------------------------------------------------------------------- -->
+\restoregeometry{StdGeom}
+\newpage
 
 \FloatBarrier
-
-
 
 <!-- ***********MODEL 1 Likelihood components******************************* --> 
 

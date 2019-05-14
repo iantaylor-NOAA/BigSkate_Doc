@@ -8,30 +8,17 @@
 
 ## Model Results Figures
 
-
 <!-- ********************************************************************** -->
 <!-- ***********History of modeling approaches FIGURES******************* --> 
 <!-- ********************************************************************** -->
-
-
-
-
 
 <!-- ********************************************************************** -->
 <!-- ****************STAR PANEL Recommendations FIGURES******************** --> 
 <!-- ********************************************************************** -->
 
-
-
-
-
-
-
 <!-- ********************************************************************** -->
 <!-- ****************Model description section FIGURES********************* --> 
 <!-- ********************************************************************** -->
-
-
 
 <!-- ====================================================================== -->
 <!-- *********************BASE MODEL FIGURES******************************* -->
@@ -39,20 +26,22 @@
 
 <!-- ***********MODEL 1 BASE MODEL FIGURES********************************* --> 
 
-### Growth and Selectivity
+<!-- ### Growth and Selectivity -->
 
-\vspace{.5cm}
+\FloatBarrier
 
-<!-- <!-- [H] to control floating -->
+<!-- \vspace{.5cm} -->
 
-<!-- \begin{figure}[h] -->
-<!-- \begin{centering} -->
-<!-- \includegraphics{r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png} -->
-<!-- \caption{Estimated length-at-age for female and male `r spp` (top left panel). Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.}\label{fig:growth} -->
-<!-- \end{centering} -->
-<!-- \end{figure} -->
+<!-- [H] to control floating -->
 
-<!-- \FloatBarrier -->
+\begin{figure}[H]
+\begin{centering}
+\includegraphics{r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png}
+\caption{Estimated length-at-age for female and male `r spp` (top left panel). Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.}\label{fig:growth}
+\end{centering}
+\end{figure}
+
+\FloatBarrier
 
 ![Estimated length-at-age for female and male `r spp` (top left panel). Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.\label{fig:growth}](r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png)
 
@@ -95,7 +84,7 @@
 
 ![Fits to length comp data, aggregated across time by fleet. \label{fig:comp_lenfit_aggregated_across_time}](r4ss/plots_mod1/comp_lenfit__aggregated_across_time.png)
 
-![Pearson residuals for length composition data for all years and fleets, with females in red and males in blue. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected). \label{fig:comp_lenfit__multi-fleet_comparison}](r4ss/plots_mod1/tall_length_comp_plots/comp_lenfit__multi-fleet_comparison.png)
+<!-- ![Pearson residuals for length composition data for all years and fleets, with females in red and males in blue. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected). \label{fig:comp_lenfit__multi-fleet_comparison}](r4ss/plots_mod1/tall_length_comp_plots/comp_lenfit__multi-fleet_comparison.png) -->
 
 ![Pearson residuals for the fit to conditional age-at-length data from the fishery. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected). \label{fig:age_fit_fishery}](r4ss/plots_mod1/comp_condAALfit_residsflt1mkt2.png)
 

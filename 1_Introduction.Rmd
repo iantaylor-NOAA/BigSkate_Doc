@@ -15,7 +15,9 @@ Big Skate (*Raja binoculata*) is the largest of the skate species in North Ameri
 
 ## Biology
 
-Big Skate is oviparious, and is one of two skate species that have multiple embryos per egg case [@Ebert2008]. From 1–8 embryos can be contained in a single, large egg capsule, but most have 3–4 [@DeLacy1935; @Hitz1964; @Ford1971]. Eggs are deposited year-round on sand or mud substrates at depths of ~50–150 m [@Hitz1964; @Ebert2007]. Embryos hatch from eggs after 6–20 months, with shorter developmental periods associated with warmer temperatures [@Hoff2009]. In captivity, Big Skate females may produce > 350 eggs/year (average of 2 embryos/egg case; @Chiquillo2014) from long-term sperm storage [@Jang2019]. Size at birth is 18–23 cm TL [@Ebert2003]. Maximum size is 244 cm TL [@Eschmeyer1983, with females growing to larger sizes.
+Big Skate is oviparious, and is one of two skate species that have multiple embryos per egg case [@Ebert2008]. From 1–8 embryos can be contained in a single, large egg capsule, but most have 3–4 [@DeLacy1935; @Hitz1964; @Ford1971]. Eggs are deposited year-round on sand or mud substrates at depths of ~50–150 m [@Hitz1964; @Ebert2007]. Embryos hatch from eggs after 6–20 months, with shorter developmental periods associated with warmer temperatures [@Hoff2009]. In captivity, Big Skate females may produce > 350 eggs/year (average of 2 embryos/egg case; @Chiquillo2014) from long-term sperm storage . Size at birth is 18–23 cm TL [@Ebert2003]. Maximum size is 244 cm TL [@Eschmeyer1983, with females growing to larger sizes.
+
+<!-- long-term sperm storage [@Jang2009] -->
 
 Size at maturity has been variably estimated for Big Skate populations off California, British Columbia, and Alaska. Off central California, Zeiner and Wolf [-@ZeinerWolf1993] reported sizes at first maturity of ~129 cm TL (females) and ~100 cm TL (males).  A similar size at maturity was estimated for females from the Gulf of Alaska (first = 126 cm TL, 50% = 149 cm TL), but male estimates were considerably greater (first = 124 cm TL, 50% = 119 cm TL; @Ebert2008).  Much smaller sizes at first (female = 60 cm TL, male = 50 cm TL) and 50% (female = 90 cm TL, male = 72 cm TL) maturity were generated for the Longnose Skate populations off British Columbia [@McFandKing2006]; however, maturity evaluation criteria were flawed (subadults were considered to be mature), and these results are therefore not considered valid.
 
@@ -92,8 +94,7 @@ Big Skates are opportunistic, generalist mesopredators with highly variable spat
 
 Big Skates and their egg cases are preyed upon by a variety of vertebrates and invertebrates. Snails and other molluscs bore holes in egg cases to feed on developing embryos and especially their protein rich yolk-sacs (Bizzarro, pers. obs; @Hoff2009). Sevengill Sharks, Brown Rockfish, and Stellar Sea Lions are known predators of juvenile and adult Big Skates (@Ebert2003, @Love2011). Northern Sea Lions consume free-living Big Skates and their egg cases (@Ebert2003, @Love2011).
 
-In this assessment, ecosystem considerations were not explicitly included in the analysis.  This is primarily due to a lack of relevant data and results of analyses (conducted elsewhere) that could contribute ecosystem-related quantitative information for the assessment.
-
+In this assessment, neither environmental nor ecosystem considerations were explicitly included in the analysis. This is primarily due to a lack of relevant data or results of analyses that could contribute ecosystem-related quantitative information for the assessment.
 
 ## Fishery Information
 
@@ -108,6 +109,8 @@ Little information is available about the historic Washington fishery for Big Sk
 Very little information is known about the Big Skate historical fishery in Oregon. The information we do have is mainly from historical landing data and species composition samples starting in the mid-nineties. The bulk of the catch is from the bottom trawl and longline fisheries, with smaller amounts as by-catch in mid-water trawl and the shrimp trawl fishery. Big Skate was lumped into the nominal “Skate” category until 2015 when it was separated into its own market category. Species composition data have been vitally important in reconstructing the pre-2015 historical catch [@TedCalavan].
 
 ## Stock Status and Management History
+
+The history of Big Skate management is documented in [@SAFE2018], reproduced here.
 
 Big Skate were managed in the "Other Fish" complex until 2015 when they were designated an Ecosystem Component (EC) species.  Catches of Big Skate are estimated to have averaged 95 mt from 2007–2011, along with large landings of "Unspecified Skate".  Analysis of Oregon port-sampling data indicates that about 98 percent of the recent Unspecified Skate landings in Oregon were comprised of Big Skate. Such large landings indicates targeting of Big Skate has occurred and an EC designation was not warranted. Based on this evidence, Big Skate was redesignated as an actively-managed species in the fishery. Big skate have been managed with stock-specific harvest specifications since 2017.
 
