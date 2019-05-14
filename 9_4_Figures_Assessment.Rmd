@@ -48,7 +48,11 @@
 
 \FloatBarrier
 
-![Selectivity at length for all of the fleets in the base model. \label{fig:sel01_multiple_fleets_length1}](r4ss/plots_mod1/sel01_multiple_fleets_length1.png)
+![Estimates of natural morality and catchability of the WCGBT Survey with normal approximations to their uncertainty compared to their prior distributions. \label{fig:fit_to_priors}](Figures/fit_to_priors.png)
+
+![Selectivity at length for all of the fleets in the base model. Female selectivity is shown in the solid lines and males in the dashed lines. \label{fig:sel01_multiple_fleets_length1}](r4ss/plots_mod1/sel01_multiple_fleets_length1.png)
+
+![Selectivity at age derived from the combination of selectivity-at-length (shown above) and the estimated distribution of length at each age for all of the fleets in the base model. Female selectivity is shown in the solid lines and males in the dashed lines. \label{fig:sel02_multiple_fleets_age2}](r4ss/plots_mod1/sel02_multiple_fleets_age2.png)
 
 
 
@@ -84,7 +88,7 @@
 
 ![Fits to length comp data, aggregated across time by fleet. \label{fig:comp_lenfit_aggregated_across_time}](r4ss/plots_mod1/comp_lenfit__aggregated_across_time.png)
 
-<!-- ![Pearson residuals for length composition data for all years and fleets, with females in red and males in blue. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected). \label{fig:comp_lenfit__multi-fleet_comparison}](r4ss/plots_mod1/tall_length_comp_plots/comp_lenfit__multi-fleet_comparison.png) -->
+![Pearson residuals for length composition data for all years and fleets, with females in red and males in blue. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected). \label{fig:comp_lenfit__multi-fleet_comparison}](r4ss/plots_mod1/comp_lenfit__multi-fleet_comparison.png)
 
 ![Pearson residuals for the fit to conditional age-at-length data from the fishery. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected). \label{fig:age_fit_fishery}](r4ss/plots_mod1/comp_condAALfit_residsflt1mkt2.png)
 
