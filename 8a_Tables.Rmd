@@ -125,27 +125,11 @@ output:
 
 
 
-
 <!-- ***********MODEL 1 Likelihood components******************************* --> 
 
-```{r, results = 'asis'}
-       Like_comp = read.csv('./txt_files/Likelihood_components.csv')
-       colnames(Like_comp) = c('Likelihood component',
-                               'Value')
-       
-       Like_comp.table = xtable(Like_comp,
-                                caption = c('Likelihood components from the base model.'),
-                                label = 'tab:like_components')
-       
-    # Print likelihood component table
-      print(Like_comp.table, 
-            include.rownames=FALSE, 
-            caption.placement='top',
-            sanitize.text.function = function(x){x})
-```     
+<!-- IGT: Table removed on 5/14/2019, code available in earlier versions of this file --> 
 
-\newpage
- 
+
 <!-- ***********MODEL 1 REFERENCE POINTS TIME SERIES TABLE***************** --> 
 
 ```{r}
@@ -215,6 +199,12 @@ output:
   SPR = mod1$sprseries[, c('Yr', 'SPR')]
   SPRyrs = subset(SPR, Yr > (Dat_start_mod1 - 1) & Yr <= (LastYR + 1))
   
+  # fix %unfished values for first years
+  for(irow in 1:2){
+    if(Depleteyrs$total[irow] == 0){
+      Depleteyrs$total[irow] <- 1.0
+    }
+  }
   
   # Bind all the columns together for the table
   Timeseries = as.data.frame(cbind(seq(Dat_start_mod1, LastYR + 1, 1), 
@@ -230,7 +220,7 @@ output:
  colnames(Timeseries)=c('Yr', 
                         'Total biomass (mt)', 
                         paste0('Spawning biomass', SpawningB_units, ' (mt)'),
-                        'Depletion', 
+                        '%Unfished', 
                         'Age-0 recruits', 
                         'Total catch (mt)',
                         'Relative exploitation rate', 
@@ -426,98 +416,11 @@ output:
 
 
 <!-- ***********Retrospective table*********************************** -->
-\begin{landscape}
-```{r, results = 'asis'}
-   Retro = read.csv('./txt_files/Retrospective.csv')
-   
-# likelihood profiels, create table   
-     Retro.table = xtable(Retro, caption = c('Summaries of key assessment outputs 
-                                              and likelihood values from the retrospective 
-                                              analysis.  Note that male 
-                                              growth parameters are exponential 
-                                              offsets from female parameters, and 
-                                              depletion and SPR ratio are for the year of 2017. 
-                                              The base model includes all of the data.  Retro1 
-                                             removes the last year of data (2016), Retro2 removes the last 
-                                             two years of data, Retro3 removes three years and Retro4 
-                                             removes four years.'),
-                                 label = 'tab:retro')  
-     
-    
+<!-- IGT: Table removed on 5/14/2019, code available in earlier versions of this file -->
 
 
-
-# Print likelihood profile table
-      print(Retro.table, 
-            include.rownames=FALSE, 
-            caption.placement='top',
-            scalebox = .9,
-            sanitize.text.function = function(x){x})
-
-
-
-
-```
-\end{landscape}
-
-\newpage
 <!-- ***********Likelihood profile table*********************************** -->
-\begin{landscape}
-```{r, results = 'asis'}
-   Like_profile1 = read.csv('./txt_files/Profiles.csv')
-
-   Like_profile2 = Like_profile1[,c(1,12:dim(Like_profile1)[2])]
-   
-   Like_profile = Like_profile1[,c(1:11)]
-
-   
-# likelihood profiels, create table   
-     Like_profile.table = xtable(Like_profile, 
-                                  caption = c('Summaries of key assessment outputs 
-                                              and likelihood values from selected 
-                                              likelihood profile runs on virgin 
-                                              recruitment (lnR0) and steepness.  Note that male 
-                                              growth parameters are exponential 
-                                              offsets from female parameters, and 
-                                              depletion and SPR ratio are for the year of 2017.'),
-                                 label = 'tab:like_profiles')  
- 
-  # likelihood profiles 2, create table   
-     Like_profile2.table = xtable(Like_profile2, 
-                                  caption = c('Summaries of key assessment outputs 
-                                              and likelihood values from selected 
-                                              likelihood profile runs on female 
-                                              natural mortality.  Note that male 
-                                              growth parameters are exponential 
-                                              offsets from female parameters, and 
-                                              depletion and SPR ratio are for the year of 2017.'),
-                                 label = 'tab:like_profiles')  
-     
-     align(Like_profile.table) = c('cc|ccccc|ccccc')
-
-     align(Like_profile2.table) = c('cc|ccccc')
-
-# Print likelihood profile table
-      print(Like_profile.table, 
-            include.rownames=FALSE, 
-            caption.placement='top',
-            sanitize.text.function = function(x){x})
-      
-   # Print likelihood profile table 2
-      print(Like_profile2.table, 
-            include.rownames=FALSE, 
-            caption.placement='top',
-            sanitize.text.function = function(x){x})   
-      
-
-```
-\end{landscape}
-
-<!-- ---------------------------------------------------------------------- -->
-
-\FloatBarrier
-
-\newpage
+<!-- IGT: Table removed on 5/14/2019, code available in earlier versions of this file -->
 
 
 
