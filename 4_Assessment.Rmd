@@ -63,8 +63,8 @@ The base model has a total of 44 estimated parameters in the following categorie
 
 \begin{itemize}
   \item 1 natural mortality parameter applied to both sexes,
-  \item 6 parameters related to female growth and the variability in **$\color{red}{\text{length age age,}}$**
-  \item 2 parameters related to male growth relative to female growth,
+  \item 6 parameters related to female growth and the variability in length at age
+  \item 2 parameters relating male growth to female growth,
   \item 1 stock-recruit parameter ($log(R_0)$ controlling equilibrium recruitment)
   \item 3 catchability parameters (1 for the WCGBT Survey and 1 each for the early and late periods of the Triennial Survey)
   \item 2 extra standard deviation parameters (1 for each survey)
@@ -75,7 +75,7 @@ The estimated parameters are described in greater detail below and a full list o
 all estimated and parameters is provided in Table \ref{tab:model_params}.
 
 _Growth._ 
-Examination of patterns of age-at-length and length-at-age indicated unusual patterns of growth for Big Skate.  The youngest fish show near-linear growth, and average size for both sexes is similar.  However, older fish show considerable sex-based differences in size. This led to the choice to model growth using the "growth cessation model" recently developed by Maunder et al. [-@maunder2018growth]. The estimated growth curves are shown in Figure \ref{fig:growth}. This model provided two key advantages over the more common von Bertalanffy growth model in the case of Big Skate: it allowed essentially linear growth for the early years and it allowed growth for the earlier ages to be similar between females and males while diverging at older ages. The growth cessation model also improve the negative log likelihood by 45 units relative to the von Bertalanffy growth model.
+Examination of patterns of age-at-length and length-at-age indicated unusual patterns of growth for Big Skate.  The youngest fish show near-linear growth, and average size for both sexes is similar.  However, older fish show considerable sex-based differences in size. This led to the choice to model growth using the "growth cessation model" recently developed by Maunder et al. [-@maunder2018growth]. The estimated growth curves are shown in Figure \ref{fig:growth}. The growth cessation model provided two key advantages over the more common von Bertalanffy growth model in the case of Big Skate: it allowed essentially linear growth for the early years and it allowed growth for the earlier ages to be similar between females and males while diverging at older ages. The growth cessation model also improve the negative log likelihood by 45 units relative to the von Bertalanffy growth model.
 
 _Natural Mortality._
 Male natural mortality was assumed equal to the value estimated for females. Sensitivity analyses were used to test the impact of both the the prior on natural mortality and the assumption of equal natural mortality for both sexes.
@@ -103,7 +103,7 @@ The steepness of the Beverton-Holt stock-recruit curve was fixed at 0.4. The sam
 
 ### Convergence
 
-One hundred sets of jittered starting values were generated using the jitter function built into Stock Synthesis, with used with jitter input = 0.1. The same likelihood as the base model was returned by 54 out of the 100 runs, while the others all had worse total likelihood.
+One hundred sets of jittered starting values were generated using the jitter function built into Stock Synthesis, with used with jitter input = 0.1. The same likelihood as the base model was returned by 51 out of the 100 runs, while the others all had worse total likelihood.
 
 
 ## Response to the Current STAR Panel Requests
@@ -180,7 +180,7 @@ _Indices._
 The observed indices show much more variability than the model expectation, with the fit to the WCGBT Survey essentially a flat line (Figure \ref{fig:index2_cpuefit_WCGBTS}) and the fit to the Triennial Survey only showing a noticeable change over time due to the separate catchability parameter estimated for the early and late periods (Figure \ref{fig:index2_cpuefit_Triennial}).
 
 _Length Data._
-The fits to the length data are much better thanks to the combination of the growth cessation model and the sex-specific offsets to selectivity (Figures \ref{fig:comp_lenfit_aggregated_across_time}--\ref{fig:comp_lenfit__multi-fleet_comparison}).
+The fits to the length data were reasonably good (Figures \ref{fig:comp_lenfit_aggregated_across_time}--\ref{fig:comp_lenfit__multi-fleet_comparison} and \ref{fig:mod1_1_comp_lenfit_flt1mkt2}--\ref{fig:mod1_4_comp_lenfit_flt6mkt0}). The observed length compositions for males in both the fishery and the WCGBT Survey is bimodal, with modes in the 80 cm and 115 cm length bins for the fishery, and in the 60 cm and 115 cm bins for the survey. The model expectation has modes in similar locations in both cases, where the first mode is close to the estimated peak selectivity value and the second is close to the estimated male L-infinity parameter. However, the second mode in the model expectation is less pronounced than in the observed data (Figure \ref{fig:comp_lenfit_aggregated_across_time}). The residual patterns in the fit to the length compositions don't show strong patterns, with the WCGBT Survey data especially well fit. The residuals in the fit to the fishery length compositions show a few large residuals in the early years as a few years where there were observations of small (under 50 cm) fish in the retained fishery catch which the model expected would have been discarded (Figure \ref{fig:comp_lenfit__multi-fleet_comparison}). The fit to the length data in alternative models that lacked either the growth cessation model or the sex-specific offsets to selectivity were less good.
 
 _Conditional Age-at-Length._
 The conditional age-at-length data is likewise fit reasonably well, with some patterns in residuals showing variability among years, but no clear pattern that is consistent across years (Figures \ref{fig:age_fit_fishery} and \ref{fig:age_fit_WCGBTS}).
@@ -194,9 +194,7 @@ A number of sensitivity analyses were conducted, including:
 
 \begin{enumerate}
 
-  \item Setting all selectivity curves to be asymptotic
-  
-  \item Setting all selectivity curves to be dome-shaped
+  \item Allowing all selectivity curves to be dome-shaped
 
   \item Removing the sex-specific offset on the selectivity curves
   
@@ -216,20 +214,31 @@ A number of sensitivity analyses were conducted, including:
   
   \item Estimating historic discards based on 3yr average of discard rates and landings
   
-  \item Changeing discard mortality from 0.5 to 0.4
+  \item Changing discard mortality from 0.5 to 0.4
   
-  \item Changeing discard mortality from 0.5 to 0.6
+  \item Changing discard mortality from 0.5 to 0.6
+
+  \item Estimating multipliers on historical discards over blocks of time
   
 \end{enumerate}
 
 Results of these sensitivities are shown in Figures \ref{fig:Sensitivity_sel_and_Q} to \ref{fig:Sensitivity_bio_and_misc}, and Tables \ref{tab:Sensitivity_sel_and_Q} to \ref{tab:Sensitivity_bio_and_misc}.
 
-**$\color{red}{\text{Additional text to be added}}$**
+Allowing the selectivity for all fleets to be dome-shaped resulted in domed selectivity for all fleets, but only improved the total likelihood by 0.9 units, mostly through a slightly improved fit to the length compositions, although the fit to the surveys was slightly worse (Table \ref{tab:Sensitivity_sel_and_Q}). Removing the offset between female and male selectivity caused the likelihood to be worse by 18.1 units, mostly through a worse fit to the length comps but also a worse fit to the conditional age-at-length compositions. The conditional age data was represented indepdently for each sex, so no sex-ratio information was present in the data, but the growth curves were changed slightly to compensate for the change in fit to the length data, resulting in a less good fit to the age data as well. The scale of the population remained somewhat similar to the base model under both of these sensitivities (Figure \ref{fig:Sensitivity_sel_and_Q}).
 
+Removing the prior on catchability for the WCGBT Survey had a large change in the estimated scale of the population, with the unfished equilibrium biomass increasing from the 2,224 mt estimated in the base model to 9,932 mt ("Q no prior on WCGBTS" in Figure \ref{fig:Sensitivity_sel_and_Q} and Table \ref{tab:Sensitivity_sel_and_Q}). However, the change in likelihood was relatively small, with the total improving by 0.4 units, of which 0.04 was associated with the prior itself.
+
+The sensitivity analyses related to discard mortality resulted in little change in the scale of the population for any scenario (Figure \ref{fig:Sensitivity_catch} and Table \ref{tab:Sensitivity_catch}). Increasing or descring the discard mortality from 0.5 to 0.4 or 0.6 had the least impact, while the two alternative time series of discards caused the population to fall to a lower level around 1990 and increase faster in the recent period. The discards based on 3-yr average analysis simply used the alternative time series of historical discards described above and shown in Figure \ref{fig:discard_calculations}.
+
+The sensitivity analysis in which multipliers on historical discards were estimated made use of the relatively new "catch multiplier" option in Stock Synthesis. Multiplier parameters controling the ratio of the discards removed from the model relative to the input values were estimated for blocks of time covering the periods 1916--1949, 1950--1959, 1960--1969, 1970--1979, 1980--1989, and 1990--1994. These multiplier parameters were bounded to keep the input catch relative to the estimated total within the range 0.5--1.5 and a weak Beta prior distribution spawning this range was applied to the parameters to keep them from hitting the bounds and cause them to remain at 1.0 in the absence of information in the data.
+
+The resulting pattern of historical discards shows a steadily increasing catch, with higher catch relative to the input values in all the blocks up to a peak in the 1980s, followed by an estimated decrease in the estimated catch for the 1990-1994 period (Figures \ref{fig:catch_multiplier_total_catch} and \ref{fig:catch_multiplier_catch_comparison}). These changes provide a greater contrast in the catch history, causing the estimated time series of spawning biomass to fall to a lower level and then increase faster from the 1990s onward, thus fitting the WCGBT Survey slightly better (Figures \ref{fig:Sensitivity_catch} and {fig:Sensitivity_catch2}). However, the improvement in likelihood for the survey was only 0.3 units (Table \ref{tab:Sensitivity_catch}).
+
+**$\color{red}{\text{Add text about biology and assorted sensitivities}}$**
 
 ### Retrospective Analysis
 
-**$\color{red}{\text{To be added}}$**
+Retrospective analyses, in which the final 5 years of data are successively removed from the model, showed relatively little change in the scale of the estimated population, but the uncertainty about the population size increased (Figure \ref{fig:retro}). The WCGBT Survey observations were underfit for the final 5 years, so removing these points, combined with a prior on catchability lowers the status of the stock, led to a slightly reduced estimated spawning biomass.
 
 ### Likelihood Profiles
 

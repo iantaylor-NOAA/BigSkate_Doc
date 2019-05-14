@@ -95,11 +95,11 @@
 
 ![Fits to length comp data, aggregated across time by fleet. \label{fig:comp_lenfit_aggregated_across_time}](r4ss/plots_mod1/comp_lenfit__aggregated_across_time.png)
 
-![Pearson residuals for length comp data for all years and fleets, with females in red and males in blue. \label{fig:comp_lenfit__multi-fleet_comparison}](r4ss/plots_mod1/comp_lenfit__multi-fleet_comparison.png)
+![Pearson residuals for length composition data for all years and fleets, with females in red and males in blue. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected). \label{fig:comp_lenfit__multi-fleet_comparison}](r4ss/plots_mod1/tall_length_comp_plots/comp_lenfit__multi-fleet_comparison.png)
 
-![Pearson residuals for the fit to conditional age-at-length data from the fishery. \label{fig:age_fit_fishery}](r4ss/plots_mod1/comp_condAALfit_residsflt1mkt2.png)
+![Pearson residuals for the fit to conditional age-at-length data from the fishery. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected). \label{fig:age_fit_fishery}](r4ss/plots_mod1/comp_condAALfit_residsflt1mkt2.png)
 
-![Pearson residuals for the fit to conditional age-at-length data from the WCGBT Survey. \label{fig:age_fit_WCGBTS}](r4ss/plots_mod1/comp_condAALfit_residsflt5mkt0.png)
+![Pearson residuals for the fit to conditional age-at-length data from the WCGBT Survey. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected). \label{fig:age_fit_WCGBTS}](r4ss/plots_mod1/comp_condAALfit_residsflt5mkt0.png)
 
 <!-- ***********Implied fits to the sex ratios ************************** --> 
 
@@ -143,7 +143,7 @@
 ![Estimated spawning biomass (mt) with approximate 95% asymptotic intervals. \label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}](r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png)
 
 
-![Estimated spawning depletion with approximate 95% asymptotic intervals. \label{fig:ts9_unfished_with_95_asymptotic_intervals_intervals}](r4ss/plots_mod1/ts9_unfished_with_95_asymptotic_intervals_intervals.png)
+![Estimated %unfished with approximate 95% asymptotic intervals. \label{fig:ts9_unfished_with_95_asymptotic_intervals_intervals}](r4ss/plots_mod1/ts9_unfished_with_95_asymptotic_intervals_intervals.png)
 
 
 <!--![Estimated time-series of recruitment deviations for `r spp` with 95% intervals. \label{fig:recdevs2_withbars}](r4ss/plots_mod1/recdevs2_withbars.png) -->
@@ -191,9 +191,18 @@
 
 ![Time series of spawning biomass (mt) estimated in sensitivity analyses related to historic catch and discards. \label{fig:Sensitivity_catch}](Figures/sens.catch_compare1_spawnbio.png)
 
+![Fit to the WCGBT Survey estimated in the sensitivity analyses related to historic catch and discards. \label{fig:Sensitivity_catch2}](Figures/sens.catch_compare11_indices_flt5.png)
+
+![Catch by category for the sensitivity analysis where multipliers on historical discards were estimated. The estimated time series including the multipliers is shown in the solid green line and the input values in the base model are shown in the dashed green line. \label{fig:catch_multiplier_catch_comparison}](Figures/catch_multiplier_catch_comparison.png)
+
+![Estimated total catch for the sensitivity analysis where multipliers on historical discards were estimated. The historical discards shown in green have been scaled to account for an assumed 50% discard mortality but the discards in the recent period show both live and dead discards. \label{fig:catch_multiplier_total_catch}](Figures/catch_multiplier_total_catch.png)
+
+
 ![Time series of spawning biomass (mt) estimated in sensitivity analyses related to biology and other assumptions. \label{fig:Sensitivity_bio_and_misc}](Figures/sens.bio_and_misc_compare1_spawnbio.png)
 
 ![Comparison of the estimated growth curves from the sensitivities analyses.\label{fig:growth_curve_comparison}](Figures/growth_curve_comparison.png)
+
+
 
 \FloatBarrier
 
@@ -208,11 +217,7 @@
 <!-- ***********MODEL 1 Retrospective analysis FIGURE********************** --> 
 
 
-
-
-
-
-
+![Time series of spawning biomass (mt) with approximate 95% asymptotic intervals estimated in retrospective analyses in which the final 5 years of data are successively removed from the model.\label{fig:retro}](Figures/retro_compare2_spawnbio_uncertainty.png)
 
 
 

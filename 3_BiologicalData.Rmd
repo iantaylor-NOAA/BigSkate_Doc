@@ -60,13 +60,13 @@ Ages of Big Skate were all estimated based on growth band counts of sectioned ve
 
 **Weight-Length**
 
-The mean weight as a function of length was estimated from 1159 samples from the WCGBT Survey using a linear regression on a log-log scale. Sex was not found to be a significant predictor, so a single relationship was estimated: $Weight = 0.0000074924  * Length ^ 2.9925$ (Figure \ref{fig:weight-length}).
+The mean weight as a function of length was estimated from 1159 samples from the WCGBT Survey using a linear regression on a log-log scale. Sex was not found to be a significant predictor, so a single relationship was estimated: $Weight = 0.00000749  * Length ^ 2.9925$ (Figure \ref{fig:weight-length}).
 
 \vspace{.5cm}
 
 **Sex Ratio, Maturity, and Fecundity**
 
-The female maturity relationship was based on visual maturity estimates from port samplers (n = 278, of which 241 were from Oregon and 37 from Washington, with 24 mature specimens) as well as 55 samples from the WCGBT Survey (of which 4 were mature). The resulting relationship was $L_{50\%} = 148.2453$ with a slope parameter of $Beta = -0.13155$ in the relationship $M = (1 + Beta(L - L_{50\%}))^{-1}$ (Figure \ref{fig:maturity}).
+The female maturity relationship was based on visual maturity estimates from port samplers (n = 278, of which 241 were from Oregon and 37 from Washington, with 24 mature specimens) as well as 55 samples from the WCGBT Survey (of which 4 were mature). The resulting relationship was $L_{50\%} = 148.245$ with a slope parameter of $Beta = -0.13155$ in the relationship $M = (1 + Beta(L - L_{50\%}))^{-1}$ (Figure \ref{fig:maturity}). This result is consistent with the estimated maturity of Big Skate in Alaska (Table \ref{tab:Life_Hist}).
 
 \vspace{.5cm}
 
