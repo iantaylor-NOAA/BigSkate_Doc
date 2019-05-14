@@ -392,7 +392,7 @@ output:
     # Create sensitivities table
     Sens_model1.table = xtable(Sens_model1, 
                                caption = c('Sensitivity of the base model 
-                                          to assumptions about biology and misc.'),
+                                          to assumptions about biology and data weighting'),
                                label = 'tab:Sensitivity_bio_and_misc', digits = 2)    
   
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
