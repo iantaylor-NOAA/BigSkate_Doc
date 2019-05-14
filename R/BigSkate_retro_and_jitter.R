@@ -80,4 +80,5 @@ if(runjitter){
                  copy_exe = TRUE,
                  copy_par = TRUE)
   jit.out <- SS_RunJitter(dir.jit, Njitter=100)
+  save(jit.out, file = file.path(dir.mod, "jitter/jitter_results.Rdata"))
 }

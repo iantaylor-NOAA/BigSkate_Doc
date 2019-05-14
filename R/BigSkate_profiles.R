@@ -160,6 +160,14 @@ profilemodels <- SSgetoutput(dirvec=dir.profile.R0,
 profilemodels$MLE <- out
 profilesummary <- SSsummarize(profilemodels)
 
+if(FALSE){
+  # some explorations contributing to the text
+  plot(as.numeric(profilesummary$pars[profilesummary$pars$Label == "NatM_p_1_Fem_GP_1",1:8]),
+       as.numeric(profilesummary$pars[profilesummary$pars$Label == "SR_LN(R0)",1:8]))
+  cor(as.numeric(profilesummary$pars[profilesummary$pars$Label == "NatM_p_1_Fem_GP_1",1:8]),
+       as.numeric(profilesummary$pars[profilesummary$pars$Label == "SR_LN(R0)",1:8]))
+}
+
 goodmodels <- which(profilesummary$likelihoods[1,1:(length(logR0vec)+1)] < 1e5)
 # plot profile using summary created above
 SSplotProfile(profilesummary,           # summary object

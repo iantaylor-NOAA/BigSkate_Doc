@@ -28,7 +28,7 @@ spp = "Big Skate"
 spp.sci = "Beringraja binoculata"
   
 # minimum vulnerable age class
-min_age = "1+"
+min_age = "2+"
 
 
 # number of independent assessment models to include in the document
