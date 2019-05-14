@@ -234,7 +234,6 @@ getbs(82, sensname="catch1")
 getbs(82, sensname="catch2")
 getbs(82, sensname="catch3")
 getbs(82, sensname="catch4")
-getbs(82, sensname="catch5")
 
 sens.sum_catch <- SSsummarize(list(bs82, bs82catch1, bs82catch2,
                                    bs82catch3, bs82catch4))
@@ -278,15 +277,45 @@ SSplotComparisons(sens.sum_catch,
                   legendlabels = sens.names_catch,
                   plotdir = dir.sensitivities)
 
+SSplotComparisons(sens.sum_catch, subplot=11,
+                  legendloc = 'topleft',
+                  print = TRUE,
+                  indexfleets = 5,
+                  filenameprefix = "sens.catch_",
+                  legendlabels = sens.names_catch,
+                  plotdir = dir.sensitivities)
+
 # copy to document repository
 file.copy(file.path(dir.sensitivities, "sens.catch_compare1_spawnbio.png"),
           file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
                     "sens.catch_compare1_spawnbio.png"),
           overwrite=TRUE)
+file.copy(file.path(dir.sensitivities, "sens.catch_compare11_indices_flt5.png"),
+          file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
+                    "sens.catch_compare11_indices_flt5.png"),
+          overwrite=TRUE)
 
 
+# make catch plot
+fleetnames_catch <- c("Fishery (current)",
+                      "Discard (historical)",
+                      "Fishery (historical)",
+                      "Fishery (tribal)",
+                      "WCGBTS",
+                      "Triennial")
+SS_plots(bs82catch4, plot=7,
+         fleetnames = fleetnames_catch)
+file.copy(file.path(bs82catch4$inputs$dir,
+                    "plots/catch3 observed and expected landings (if different).png"),
+          file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
+                    "catch_multiplier_catch_comparison.png"))
+file.copy(file.path(bs82catch4$inputs$dir,
+                    "plots/catch5 total catch (including discards) stacked.png"),
+          file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
+                    "catch_multiplier_total_catch.png"))
 
-## mortality M vs F
+
+          ## mortality M vs F
 ## Alternative catch or discard assumptions
 ## Data weighting (Francis, vs. M-I vs. Dirichlet-Multinomial)
 ## Prior on Q: on, wider, off
