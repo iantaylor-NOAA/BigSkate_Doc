@@ -159,21 +159,19 @@ One hundred sets of jittered starting values were generated using the jitter fun
 The following description of the model results reflects a base model that 
 incorporates all of the changes made during the STAR panel (see previous section). 
 The base model parameter estimates and their approximate asymptotic standard errors 
-are shown in Table \ref{tab:model_params} and the likelihood components are in 
-Table \ref{tab:like_components}.  Estimates of derived reference points and 
+are shown in Table \ref{tab:model_params}.  Estimates of derived reference points and 
 approximate 95% asymptotic confidence intervals are shown in Table \ref{tab:Ref_pts_mod1}.
 Time-series of estimated stock size over time are shown in Table \ref{tab:Timeseries_mod1}.
 
 
 ### Parameter Estimates
 
+Values of all estimated parameters are provided in Table \ref{tab:model_params}. A few key parameters of note include natural mortality estimated at 0.445, slightly above the 0.36 median of the prior and with much narrower uncertainty than the prior (Figure \ref{fig:fit_to_priors}), L-infinity at 175.67 for females and 120.97 for males (based on an exponential offset of -0.373). The $log(R_0)$ parameter was estimated at 8.728, corresponding to an unfished equilibrium recruitment of 6.18 million.
 
-The additional survey variability (process error added directly to each year's input 
-variability) for all surveys was estimated within the model.  
+Catchability from the WCGBT Survey was estimated at 0.81, close the median of the prior applied to this parameter, with uncertainty estimated as very similar to the uncertainty in the prior (Figure \ref{fig:fit_to_priors}).
 
-(Figure \ref{fig:ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals} ). 
+Selectivity was estimated to be asymptotic for the WCGBT Survey (the only fleet for which it was allowed to be dome-shaped), with the peak selectivity occurring at 76 cm, below the peak of the fishery selectivity at 94 cm (Figure \ref{fig:sel01_multiple_fleets_length1}). These two fleets had a similar estimate for the lower maximum selectivity for females than males, at 0.696 for the survey and 0.744 for the fishery. Selectivity for the Triennial survey was substantially different from the other two, with an additional parameter estimated for the initial selectivity of the smallest sizes necessary to fit the very flat length compositions from the two years of data available, and a peak occurring at 188 cm, far higher than the other two curves. When converted to age, the selectivity peaked at about age-4 for the WCGBT Survey, age-5 for the fishery, and age 7 and 12 for males and females in the Triennial Survey, respectively (Figure \ref{fig:sel02_multiple_fleets_age2}).
 
-**$\color{red}{\text{}}$**The stock-recruit curve ... Figure \ref{fig:SR_curve2} with estimated recruitments also shown. }}$**
 
 ### Fits to the Data
 
