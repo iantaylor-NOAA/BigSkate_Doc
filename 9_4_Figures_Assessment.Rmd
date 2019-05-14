@@ -43,19 +43,18 @@
 
 \vspace{.5cm}
 
-\FloatBarrier
+<!-- <!-- [H] to control floating -->
 
-<!-- [H] to control floating -->
+<!-- \begin{figure}[h] -->
+<!-- \begin{centering} -->
+<!-- \includegraphics{r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png} -->
+<!-- \caption{Estimated length-at-age for female and male `r spp` (top left panel). Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.}\label{fig:growth} -->
+<!-- \end{centering} -->
+<!-- \end{figure} -->
 
-\begin{figure}[h]
-\begin{centering}
-\includegraphics{r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png}
-\caption{Estimated length-at-age for female and male `r spp` (top left panel). Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.}\label{fig:growth}
-\end{centering}
-\end{figure}
+<!-- \FloatBarrier -->
 
-\FloatBarrier
-<!-- ![Estimated length-at-age for female and male `r spp` (top left panel). Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.\label{fig:growth}](r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png) -->
+![Estimated length-at-age for female and male `r spp` (top left panel). Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.\label{fig:growth}](r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png)
 
 
 \FloatBarrier
@@ -73,22 +72,22 @@
 ### Fits to the Data
 
 \FloatBarrier
-<!-- [H] to control floating -->
+<!-- <!-- [H] to control floating -->
 
-\begin{figure}[h]
-\includegraphics{r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png}
-\begin{centering}
-\includegraphics{r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png}
-\caption{Fit to index data for WCGBT Survey. Lines indicate 95% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate.}\label{fig:index2_cpuefit_WCGBTS}
-\end{centering}
-\end{figure}
+<!-- \begin{figure}[h] -->
+<!-- \includegraphics{r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png} -->
+<!-- \begin{centering} -->
+<!-- \includegraphics{r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png} -->
+<!-- \caption{Fit to index data for WCGBT Survey. Lines indicate 95% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate.}\label{fig:index2_cpuefit_WCGBTS} -->
+<!-- \end{centering} -->
+<!-- \end{figure} -->
 
-\FloatBarrier
+<!-- \FloatBarrier -->
 
-\newpage
+<!-- \newpage -->
+\vspace{.5cm}
 
-
-<!-- ![Fit to index data for WCGBT Survey. Lines indicate 95% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate.\label{fig:index2_cpuefit_WCGBTS}](r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png) -->
+![Fit to index data for WCGBT Survey. Lines indicate 95% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate.\label{fig:index2_cpuefit_WCGBTS}](r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png)
 
 ![Fit to index data for Triennial Survey. Lines indicate 95% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate with a change between 1992 and 1995 associated with the estimated change in catchability.\label{fig:index2_cpuefit_Triennial}](r4ss/plots_mod1/index2_cpuefit_Triennial Survey.png)
 
@@ -128,16 +127,18 @@
 
 <!-- [H] to control floating -->
 
-\begin{figure}[h]
-\begin{centering}
-\includegraphics{r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png}
-\caption{Estimated spawning biomass (mt) with approximate 95% asymptotic intervals.}\label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}
-\end{centering}
-\end{figure}
+<!-- \begin{figure}[h] -->
+<!-- \begin{centering} -->
+<!-- \includegraphics{r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png} -->
+<!-- \caption{Estimated spawning biomass (mt) with approximate 95% asymptotic intervals.}\label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals} -->
+<!-- \end{centering} -->
+<!-- \end{figure} -->
 
-\FloatBarrier
+<!-- \FloatBarrier -->
 
-\newpage
+<!-- \newpage -->
+
+\vspace{.5cm}
 
 ![Estimated spawning biomass (mt) with approximate 95% asymptotic intervals. \label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}](r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png)
 
@@ -171,6 +172,8 @@
 ### Sensitivity Analyses and Retrospectives
 
 \FloatBarrier
+
+\vspace{.5cm}
 
 <!-- [H] to control floating -->
 
@@ -218,6 +221,8 @@
 ### Likelihood Profiles
 
 \FloatBarrier
+
+\vspace{.5cm}
 
 <!-- ********************************************************************** -->
 <!-- ******************Likelihood profile FIGURES************************** --> 
@@ -272,6 +277,7 @@
 
 <!-- ***********MODEL 1 REFERENCE POINTS FIGURES*************************** --> 
 
+\vspace{.5cm}
 
 <!-- [H] to control floating -->
 

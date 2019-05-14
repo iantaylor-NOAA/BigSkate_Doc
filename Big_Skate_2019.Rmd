@@ -73,8 +73,8 @@ bibliography: BibFile.bib
 \setcounter{table}{0}
 
 
-<!-- ```{r child = "1_Introduction.Rmd"} -->
-<!-- ``` -->
+```{r child = "1_Introduction.Rmd"}
+```
 \newpage
 ```{r child = "2_FisheryData.Rmd"}
 ```
