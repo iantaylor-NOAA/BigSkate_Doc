@@ -8,7 +8,7 @@
 #/Assessment_template.html
 #Assessment_template.tex
 #Test_figures_tables.tex
-*.docx
+#*.docx
 
 # stuff Ian added to try to compile the PDF
 *.sty

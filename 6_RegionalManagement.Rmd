@@ -2,3 +2,5 @@
 <!-- **************************REGIONAL MANAGEMENT************************* -->
 
 # Regional Management Considerations
+
+Big Skate is not managed to regional specifications.

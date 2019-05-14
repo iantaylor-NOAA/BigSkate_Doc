@@ -13,33 +13,156 @@ output:
 <!-- **REPEAT THIS SECTION AND EDIT AS NEEDED IF YOU HAVE MULTIPLE MODELS** --> 
 <!-- ====================================================================== -->
 
-<!-- ********************MODEL 1 CONVERGENCE TABLE************************* --> 
+\FloatBarrier
 
-<!-- ***********JITTER TABLE*********************************************** --> 
 
-```{r, results = 'asis'}
-    # Replace values in file and read in - values for all models in 1 table  
-      jitter = read.csv('./txt_files/JitterTable.csv') 
-      colnames(jitter) = c('Description',
-                           'Value')
+<!-- ***********MODEL 1 REFERENCE POINTS TIME SERIES TABLE***************** --> 
 
-    # Create model 1 jitter table
-    jitter.table = xtable(jitter, 
-                          caption = c('Results from 100 jitters from the base 
-                                      case model.'),
-                          label = 'tab:jitter')
+```{r}
+    # Total biomass, extract and subset
+    Bio_all = mod1$timeseries[, c('Yr', 'Bio_all')]
+    Bio_allyrs = subset(Bio_all, Yr > (Dat_start_mod1 - 1) & Yr <= (LastYR + 1))
+
+  
+  
+    # Spawning biomass, extract and subset, and turn into scientific notation
+    SpawningB = mod1$derived_quants[grep('SSB', mod1$derived_quants$Label), ]
+    SpawningB = SpawningB[c(-1, -2), ]
+    SpawningByrs = SpawningB[SpawningB$Label >= paste('SSB_', Dat_start_mod1, sep='') &  
+                             SpawningB$Label <= paste('SSB_', LastYR + 1, sep=''), ] 
+        
+        SpawningB_units = ''
+        if(mean(SpawningByrs$Value) > 1000000){
+            SpawningB_units <- "million"
+            SpawningByrs$Value <- SpawningByrs$Value/1000000
+         }
+
     
-    # Print jitter table (all models)    
-    print(jitter.table, 
-          include.rownames = FALSE, 
-          caption.placement = 'top')
+    # Depletion, extract, rename and subset
+    Depl_years = as.data.frame(seq(Dat_start_mod1, LastYR + 1, 1))
+    colnames(Depl_years) = 'Yr'
+    Depl_years$Depl = 0
+    Depletion = mod1$derived_quants[grep('Bratio', mod1$derived_quants$Label), ]
+    Depletionyrs = Depletion[Depletion$Label >= paste0('Bratio_', Dat_start_mod1) &  
+                             Depletion$Label <= paste0('Bratio_', LastYR + 1), ]
+    
+    Depletionyrs$Yr = Depletionyrs$Label1 = substr(Depletionyrs$Label,
+                                                     (nchar(Depletionyrs$Label) + 1) - 4, 
+                                                      nchar(Depletionyrs$Label))
+   # Make sure depletion is numeric and merge ...
+   Depletionyrs$Yr = as.numeric(Depletionyrs$Yr)
+   Depleteyrs = merge(Depl_years, Depletionyrs, all.x=T, all.y=T, by.x='Yr', by.y='Yr')
+   Depleteyrs[is.na(Depleteyrs)] <- 0
+   Depleteyrs$total = Depleteyrs$Depl + Depleteyrs$Value
+    
+   # Recruits, extract and subset
+   Recruit = mod1$derived_quants[grep('Recr', mod1$derived_quants$Label), ]
+   Recruit = Recruit[c(-1, -2), ]
+   Recruityrs = Recruit[Recruit$Label >= paste('Recr_', Dat_start_mod1, sep='') &  
+                        Recruit$Label <= paste('Recr_', LastYR + 1, sep=''), ]  
+    
+    
+   # Landings/total catch, extract and subset years
+   Landings = mod1$sprseries[ , c('Yr','Dead_Catch_B')]
+   Landingsyrs = subset(Landings, Yr > (Dat_start_mod1 - 1) & Yr <= (LastYR + 1))
+    
+  
+    
+   # Relatvie exploitation rate, extract, subset and merge
+   Exploit = mod1$derived_quants[grep('F', mod1$derived_quants$Label), ]
+   Exploit = Exploit[c(-1, -2), ]
+   Exploityrs = Exploit[Exploit$Label >= paste('F_', Dat_start_mod1, sep = '') &  
+                        Exploit$Label <= paste('F_', LastYR + 1, sep = ''), ]  
+   Exploityrs$Yr = Exploityrs$Label1 = substr(Exploityrs$Label, 
+                                               (nchar(Exploityrs$Label) + 1) - 4,
+                                                nchar(Exploityrs$Label))
+   Exploityrs$Yr = as.numeric(Exploityrs$Yr)
+   Exploited = merge(Depl_years, Exploityrs, all.x=T, all.y=T, by.x='Yr', by.y='Yr')
+   Exploited[is.na(Exploited)] <- 0
+   Exploited$total = Exploited$Depl + Exploited$Value
+    
+  # SPR, extract and subset years
+  SPR = mod1$sprseries[, c('Yr', 'SPR')]
+  SPRyrs = subset(SPR, Yr > (Dat_start_mod1 - 1) & Yr <= (LastYR + 1))
+  
+  # fix %unfished values for first years
+  for(irow in 1:2){
+    if(Depleteyrs$total[irow] == 0){
+      Depleteyrs$total[irow] <- 1.0
+    }
+  }
+  
+  # Bind all the columns together for the table
+  Timeseries = as.data.frame(cbind(seq(Dat_start_mod1, LastYR + 1, 1), 
+                                       Bio_allyrs$Bio_all, 
+                                       SpawningByrs$Value,
+                                       Depleteyrs$total,
+                                       Recruityrs$Value, 
+                                       Landingsyrs$Dead_Catch_B, 
+                                       Exploited$total,
+                                       SPRyrs$SPR))
+
+ # Add colulmn names    
+ colnames(Timeseries)=c('Yr', 
+                        'Total biomass (mt)', 
+                        paste0('Spawning biomass', SpawningB_units, ' (mt)'),
+                        '%Unfished', 
+                        'Age-0 recruits', 
+                        'Total catch (mt)',
+                        'Relative exploitation rate', 
+                        'SPR')
+ 
+ # Make year a factor so you don't have a decimal   
+ Timeseries$Yr = as.factor(Timeseries$Yr)
+    
+ # Remove 2015 values for last three columns since year isn't complete
+ Timeseries[nrow(Timeseries), c((ncol(Timeseries) - 2):ncol(Timeseries))] <- NA
 ```
 
+```{r, results='asis'}
+    # Create the time series table
+    Timeseries1 = Timeseries
+    colnames(Timeseries1)[1] = 'Year'
+    Timeseries.table = xtable(Timeseries1, 
+                              caption = c('Time-series of population estimates 
+                                        from the base-case model. Relative exploitation 
+                                        rate is $(1-SPR)/(1-SPR_{50\\%})$.'),
+                              #label='tab:Timeseries_mod1',
+                              digits = c(0,0,0,0,3,0,0,2,2))   
+
+    # Add alignment
+    align(Timeseries.table) = c('l',
+                                'c',
+                                '>{\\centering}p{.6in}',
+                                '>{\\centering}p{.6in}',
+                                '>{\\centering}p{.6in}',
+                                '>{\\centering}p{.6in}',
+                                '>{\\centering}p{.8in}',
+                                '>{\\centering}p{.8in}',
+                                'c')
+
+    # Print timeseries of population estimates table
+    print(Timeseries.table, 
+          include.rownames=FALSE,      
+           caption.placement="top",align=TRUE,tabular.environment="longtable",
+            floating=FALSE,  #sanitize.text.function = function(x){x},
+           add.to.row = list(pos = list(0),command = 
+                        paste("\\hline  \\endfirsthead",  # First caption
+                                "\\caption[]{Time-series of population estimates 
+                                        from the base-case model. Relative exploitation 
+                                        rate is $(1-SPR)/(1-SPR_{50\\%})$.} \\label{tab:Timeseries_mod1} \\\\ \\hline", # Addit. captions
+                                paste(colnames(Timeseries1)[1], paste("&", colnames(Timeseries1)[2:8], collapse=" ")), # Column names
+                                "\\\\ \\hline ",
+                                "\\endhead", 
+                                "\\hline \\multicolumn{5}{l}{\\textit{Continues next page}} \\ 
+                                 \\endfoot
+                                 \\endlastfoot",collapse=" ")))
+```
+<!-- ---------------------------------------------------------------------- -->
 
 <!-- ***********MODEL 1 PARAMETERS***************************************** --> 
-<!-- ***********Estimated adn Fixed Parameters***************************** --> 
+<!-- ***********Estimated and Fixed Parameters***************************** --> 
 
-\savegeometry{StdGeom}
 \begin{landscape}
 ```{r, results='asis'}
        # If you use this for more than one model = change mod1 to mod2 or mod3
@@ -122,14 +245,256 @@ output:
 ```
 \end{landscape}
 <!-- ---------------------------------------------------------------------- -->
-\restoregeometry{StdGeom}
-\newpage
 
 \FloatBarrier
 
 <!-- ***********MODEL 1 Likelihood components******************************* --> 
 
 <!-- IGT: Table removed on 5/14/2019, code available in earlier versions of this file --> 
+
+
+
+
+<!-- *********** Sensitivity to Sel and Q ******************************* --> 
+\begin{landscape}
+
+```{r, results = 'asis'}
+    
+    # Read in/organize sensitivity file, change column names, caption
+    Sens_model1 = read.csv('./txt_files/Sensitivities_sel_and_Q.csv')
+    # colnames(Sens_model1) = c('Label', 
+    #                           'Base (Francis weights)',
+    #                           'Default weights',
+    #                           'Harmonic mean weights',
+    #                           'Estimate equal M',
+    #                           'Estimate equal M and h',
+    #                           'Drop PR data',
+    #                           'Drop PC data',
+    #                           'Drop RecDD data')
+
+    colnames(Sens_model1) <- gsub(pattern=".", replacement=" ", x=colnames(Sens_model1), fixed=TRUE)
+    
+    # Create sensitivities table
+    Sens_model1.table = xtable(Sens_model1, 
+                               caption = c('Sensitivity of the base model 
+                                          to assumptions about selectivity and
+                                          catchability.'),
+                               label = 'tab:Sensitivity_sel_and_Q', digits = 2)    
+  
+    # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
+    # You can change this easily to have variable columns width after you know how many
+    # colunns your final table has
+    align(Sens_model1.table) = c('l','l', rep('>{\\centering}p{.8in}', dim(Sens_model1)[2]-1))
+
+
+    # Print model 1 sensitivity table
+    print(Sens_model1.table, 
+          include.rownames = FALSE,             
+          caption.placement = 'top',
+          #floating.environment = 'sidewaystable',
+          scalebox = .9)
+
+```
+\end{landscape}
+\FloatBarrier
+
+\newpage
+
+<!-- *********** Sensitivity to catch ******************************* -->
+
+\begin{landscape}
+
+```{r, results = 'asis'}
+    
+    # Read in/organize sensitivity file, change column names, caption
+    Sens_model1 = read.csv('./txt_files/Sensitivities_catch.csv')
+    # colnames(Sens_model1) = c('Label', 
+    #                           'Base (Francis weights)',
+    #                           'Default weights',
+    #                           'Harmonic mean weights',
+    #                           'Estimate equal M',
+    #                           'Estimate equal M and h',
+    #                           'Drop PR data',
+    #                           'Drop PC data',
+    #                           'Drop RecDD data')
+
+    colnames(Sens_model1) <- gsub(pattern=".", replacement=" ", x=colnames(Sens_model1), fixed=TRUE)
+    # Create sensitivities table
+    Sens_model1.table = xtable(Sens_model1, 
+                               caption = c('Sensitivity of the base model 
+                                          to assumptions about catches.'),
+                               label = 'tab:Sensitivity_catch', digits = 2)    
+  
+    # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
+    # You can change this easily to have variable columns width after you know how many
+    # colunns your final table has
+    align(Sens_model1.table) = c('l','l', rep('>{\\centering}p{.8in}', dim(Sens_model1)[2]-1))
+
+
+    # Print model 1 sensitivity table
+    print(Sens_model1.table, 
+          include.rownames = FALSE,             
+          caption.placement = 'top',
+          #floating.environment = 'sidewaystable',
+          scalebox = .9)
+
+```
+\end{landscape}
+
+
+\FloatBarrier
+
+\newpage
+
+<!-- *********** Sensitivity to Biological and other assumptions ******************************* --> 
+
+\begin{landscape}
+
+```{r, results = 'asis'}
+    
+    # Read in/organize sensitivity file, change column names, caption
+    Sens_model1 = read.csv('./txt_files/Sensitivities_bio_and_misc.csv')
+    # colnames(Sens_model1) = c('Label', 
+    #                           'Base (Francis weights)',
+    #                           'Default weights',
+    #                           'Harmonic mean weights',
+    #                           'Estimate equal M',
+    #                           'Estimate equal M and h',
+    #                           'Drop PR data',
+    #                           'Drop PC data',
+    #                           'Drop RecDD data')
+
+    colnames(Sens_model1) <- gsub(pattern=".", replacement=" ", x=colnames(Sens_model1), fixed=TRUE)
+    
+    # Create sensitivities table
+    Sens_model1.table = xtable(Sens_model1, 
+                               caption = c('Sensitivity of the base model 
+                                          to assumptions about biology and data weighting'),
+                               label = 'tab:Sensitivity_bio_and_misc', digits = 2)    
+  
+    # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
+    # You can change this easily to have variable columns width after you know how many
+    # colunns your final table has
+    align(Sens_model1.table) = c('l','l', rep('>{\\centering}p{.8in}', dim(Sens_model1)[2]-1))
+
+
+    # Print model 1 sensitivity table
+    print(Sens_model1.table, 
+          include.rownames = FALSE,             
+          caption.placement = 'top',
+          #floating.environment = 'sidewaystable',
+          scalebox = .9)
+
+```
+\end{landscape}
+
+
+\FloatBarrier
+
+\newpage
+
+<!-- ********************MODEL 1 CONVERGENCE TABLE************************* --> 
+
+<!-- ***********JITTER TABLE*********************************************** --> 
+
+```{r, results = 'asis'}
+    # Replace values in file and read in - values for all models in 1 table  
+      jitter = read.csv('./txt_files/JitterTable.csv') 
+      colnames(jitter) = c('Description',
+                           'Value')
+
+    # Create model 1 jitter table
+    jitter.table = xtable(jitter, 
+                          caption = c('Results from 100 jitters from the base 
+                                      case model.'),
+                          label = 'tab:jitter')
+    
+    # Print jitter table (all models)    
+    print(jitter.table, 
+          include.rownames = FALSE, 
+          caption.placement = 'top')
+```
+
+
+<!-- ***********Retrospective table*********************************** -->
+<!-- IGT: Table removed on 5/14/2019, code available in earlier versions of this file -->
+
+
+<!-- ***********Likelihood profile table*********************************** -->
+<!-- IGT: Table removed on 5/14/2019, code available in earlier versions of this file -->
+
+
+
+<!-- ***********MODEL 1 HARVEST PROJECTIONS TABLE************************** --> 
+\newpage
+```{r, results = 'asis'}
+    # Pull OFL contribution and subset years
+    OFLcatch = mod1$derived_quants[grep('OFLCatch', mod1$derived_quants$Label), ]
+    OFLcatchyrs = OFLcatch[OFLcatch$Label >= paste('OFLCatch_', Project_firstyr, sep = '') &
+                           OFLcatch$Label <= paste('OFLCatch_', Project_lastyr, sep = ''), ]
+
+    # Pull forecasted landings and subset years
+    ForecastC = mod1$timeseries[, grepl('Yr|retain[(]B[)]', names(mod1$timeseries))]
+    ForecastC$total = rowSums(ForecastC[, -1])
+    ForecastCyrs = subset(ForecastC, Yr > (Project_firstyr - 1) & Yr < (Project_lastyr + 1))
+
+    # Pull Age 5+ biomass and subset years
+    Age5biomass = mod1$timeseries[, c('Yr', 'Bio_smry')]
+    Age5biomassyrs = subset(Age5biomass, Yr > (Project_firstyr - 1) & Yr < (Project_lastyr + 1))
+
+
+    # Pull spawning biomass and subset years
+    SpawningB = mod1$derived_quants[grep('SSB', mod1$derived_quants$Label), ]
+    SpawningB = SpawningB[c(-1, -2), ]
+    SpawningByrs = SpawningB[SpawningB$Label >= paste('SSB_', Project_firstyr, sep = '') &
+                             SpawningB$Label <= paste('SSB_', Project_lastyr, sep = ''), ]
+
+    # Pull depletion and subset years
+    Depletion = mod1$derived_quants[grep('Bratio', mod1$derived_quants$Label), ]
+    Depletion = Depletion[c(-1, -2), ]
+    Depletionyrs = Depletion[Depletion$Label >= paste('Bratio_', Project_firstyr, sep = '') &
+                             Depletion$Label <= paste('Bratio_', Project_lastyr, sep = ''), ]
+
+    # Combine the data for the forecast table
+    Forecast_mod1 = as.data.frame(cbind(seq(Project_firstyr, Project_lastyr, 1),
+                                        OFLcatchyrs$Value,
+                                        ForecastCyrs$total,
+                                        Age5biomassyrs$Bio_smry,
+                                        SpawningByrs$Value,
+                                        Depletionyrs$Value))
+    # Add column names
+    colnames(Forecast_mod1)=c('Yr',
+                           'OFL contribution (mt)',
+                           'ACL landings (mt)',
+                           'Age 5+ biomass (mt)',
+                           'Spawning Biomass (mt)',
+                           'Depletion')
+
+    # Make sure year is a factor, so you don't get decimals
+    Forecast_mod1$Yr = as.factor(Forecast_mod1$Yr)
+
+    # Create the forecast table
+    Forecast_mod1.table = xtable(Forecast_mod1,
+                              caption = c('Projection of potential
+                                        OFL, spawning biomass, and depletion for the
+                                        base case model.'),
+                              label = 'tab:Forecast_mod1', digits = 3)
+    # Add alignment
+    align(Forecast_mod1.table) = c('l',
+                                   'c',
+                                   '>{\\centering}p{1in}',
+                                   '>{\\centering}p{1in}',
+                                   '>{\\centering}p{1in}',
+                                   '>{\\centering}p{1in}',
+                                   '>{\\centering}p{1in}')
+
+    # Print model 1 forecast table
+    print(Forecast_mod1.table,
+          include.rownames = FALSE,
+          caption.placement = 'top')
+```
+<!-- ---------------------------------------------------------------------- -->
+\FloatBarrier
 
 
 <!-- ***********MODEL 1 REFERENCE POINTS TIME SERIES TABLE***************** --> 
@@ -277,228 +642,6 @@ output:
 <!-- ---------------------------------------------------------------------- -->
 
 \FloatBarrier
-
-<!-- *********** Sensitivity to Sel and Q ******************************* --> 
-\begin{landscape}
-
-```{r, results = 'asis'}
-    
-    # Read in/organize sensitivity file, change column names, caption
-    Sens_model1 = read.csv('./txt_files/Sensitivities_sel_and_Q.csv')
-    # colnames(Sens_model1) = c('Label', 
-    #                           'Base (Francis weights)',
-    #                           'Default weights',
-    #                           'Harmonic mean weights',
-    #                           'Estimate equal M',
-    #                           'Estimate equal M and h',
-    #                           'Drop PR data',
-    #                           'Drop PC data',
-    #                           'Drop RecDD data')
-
-    colnames(Sens_model1) <- gsub(pattern=".", replacement=" ", x=colnames(Sens_model1), fixed=TRUE)
-    
-    # Create sensitivities table
-    Sens_model1.table = xtable(Sens_model1, 
-                               caption = c('Sensitivity of the base model 
-                                          to assumptions about selectivity and
-                                          catchability.'),
-                               label = 'tab:Sensitivity_sel_and_Q', digits = 2)    
-  
-    # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
-    # You can change this easily to have variable columns width after you know how many
-    # colunns your final table has
-    align(Sens_model1.table) = c('l','l', rep('>{\\centering}p{.8in}', dim(Sens_model1)[2]-1))
-
-
-    # Print model 1 sensitivity table
-    print(Sens_model1.table, 
-          include.rownames = FALSE,             
-          caption.placement = 'top',
-          #floating.environment = 'sidewaystable',
-          scalebox = .9)
-
-```
-\end{landscape}
-\FloatBarrier
-
-\newpage
-
-<!-- *********** Sensitivity to catch ******************************* -->
-
-\begin{landscape}
-
-```{r, results = 'asis'}
-    
-    # Read in/organize sensitivity file, change column names, caption
-    Sens_model1 = read.csv('./txt_files/Sensitivities_catch.csv')
-    # colnames(Sens_model1) = c('Label', 
-    #                           'Base (Francis weights)',
-    #                           'Default weights',
-    #                           'Harmonic mean weights',
-    #                           'Estimate equal M',
-    #                           'Estimate equal M and h',
-    #                           'Drop PR data',
-    #                           'Drop PC data',
-    #                           'Drop RecDD data')
-
-    colnames(Sens_model1) <- gsub(pattern=".", replacement=" ", x=colnames(Sens_model1), fixed=TRUE)
-    # Create sensitivities table
-    Sens_model1.table = xtable(Sens_model1, 
-                               caption = c('Sensitivity of the base model 
-                                          to assumptions about catches.'),
-                               label = 'tab:Sensitivity_catch', digits = 2)    
-  
-    # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
-    # You can change this easily to have variable columns width after you know how many
-    # colunns your final table has
-    align(Sens_model1.table) = c('l','l', rep('>{\\centering}p{.8in}', dim(Sens_model1)[2]-1))
-
-
-    # Print model 1 sensitivity table
-    print(Sens_model1.table, 
-          include.rownames = FALSE,             
-          caption.placement = 'top',
-          #floating.environment = 'sidewaystable',
-          scalebox = .9)
-
-```
-\end{landscape}
-
-
-\FloatBarrier
-
-\newpage
-
-<!-- *********** Sensitivity to Biological and other assumptions ******************************* --> 
-
-\begin{landscape}
-
-```{r, results = 'asis'}
-    
-    # Read in/organize sensitivity file, change column names, caption
-    Sens_model1 = read.csv('./txt_files/Sensitivities_bio_and_misc.csv')
-    # colnames(Sens_model1) = c('Label', 
-    #                           'Base (Francis weights)',
-    #                           'Default weights',
-    #                           'Harmonic mean weights',
-    #                           'Estimate equal M',
-    #                           'Estimate equal M and h',
-    #                           'Drop PR data',
-    #                           'Drop PC data',
-    #                           'Drop RecDD data')
-
-    colnames(Sens_model1) <- gsub(pattern=".", replacement=" ", x=colnames(Sens_model1), fixed=TRUE)
-    
-    # Create sensitivities table
-    Sens_model1.table = xtable(Sens_model1, 
-                               caption = c('Sensitivity of the base model 
-                                          to assumptions about biology and data weighting'),
-                               label = 'tab:Sensitivity_bio_and_misc', digits = 2)    
-  
-    # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
-    # You can change this easily to have variable columns width after you know how many
-    # colunns your final table has
-    align(Sens_model1.table) = c('l','l', rep('>{\\centering}p{.8in}', dim(Sens_model1)[2]-1))
-
-
-    # Print model 1 sensitivity table
-    print(Sens_model1.table, 
-          include.rownames = FALSE,             
-          caption.placement = 'top',
-          #floating.environment = 'sidewaystable',
-          scalebox = .9)
-
-```
-\end{landscape}
-
-
-\FloatBarrier
-
-\newpage
-
-
-<!-- ***********Retrospective table*********************************** -->
-<!-- IGT: Table removed on 5/14/2019, code available in earlier versions of this file -->
-
-
-<!-- ***********Likelihood profile table*********************************** -->
-<!-- IGT: Table removed on 5/14/2019, code available in earlier versions of this file -->
-
-
-
-<!-- ***********MODEL 1 HARVEST PROJECTIONS TABLE************************** --> 
-\newpage
-```{r, results = 'asis'}
-    # Pull OFL contribution and subset years
-    OFLcatch = mod1$derived_quants[grep('OFLCatch', mod1$derived_quants$Label), ]
-    OFLcatchyrs = OFLcatch[OFLcatch$Label >= paste('OFLCatch_', Project_firstyr, sep = '') &
-                           OFLcatch$Label <= paste('OFLCatch_', Project_lastyr, sep = ''), ]
-
-    # Pull forecasted landings and subset years
-    ForecastC = mod1$timeseries[, grepl('Yr|retain[(]B[)]', names(mod1$timeseries))]
-    ForecastC$total = rowSums(ForecastC[, -1])
-    ForecastCyrs = subset(ForecastC, Yr > (Project_firstyr - 1) & Yr < (Project_lastyr + 1))
-
-    # Pull Age 5+ biomass and subset years
-    Age5biomass = mod1$timeseries[, c('Yr', 'Bio_smry')]
-    Age5biomassyrs = subset(Age5biomass, Yr > (Project_firstyr - 1) & Yr < (Project_lastyr + 1))
-
-
-    # Pull spawning biomass and subset years
-    SpawningB = mod1$derived_quants[grep('SSB', mod1$derived_quants$Label), ]
-    SpawningB = SpawningB[c(-1, -2), ]
-    SpawningByrs = SpawningB[SpawningB$Label >= paste('SSB_', Project_firstyr, sep = '') &
-                             SpawningB$Label <= paste('SSB_', Project_lastyr, sep = ''), ]
-
-    # Pull depletion and subset years
-    Depletion = mod1$derived_quants[grep('Bratio', mod1$derived_quants$Label), ]
-    Depletion = Depletion[c(-1, -2), ]
-    Depletionyrs = Depletion[Depletion$Label >= paste('Bratio_', Project_firstyr, sep = '') &
-                             Depletion$Label <= paste('Bratio_', Project_lastyr, sep = ''), ]
-
-    # Combine the data for the forecast table
-    Forecast_mod1 = as.data.frame(cbind(seq(Project_firstyr, Project_lastyr, 1),
-                                        OFLcatchyrs$Value,
-                                        ForecastCyrs$total,
-                                        Age5biomassyrs$Bio_smry,
-                                        SpawningByrs$Value,
-                                        Depletionyrs$Value))
-    # Add column names
-    colnames(Forecast_mod1)=c('Yr',
-                           'OFL contribution (mt)',
-                           'ACL landings (mt)',
-                           'Age 5+ biomass (mt)',
-                           'Spawning Biomass (mt)',
-                           'Depletion')
-
-    # Make sure year is a factor, so you don't get decimals
-    Forecast_mod1$Yr = as.factor(Forecast_mod1$Yr)
-
-    # Create the forecast table
-    Forecast_mod1.table = xtable(Forecast_mod1,
-                              caption = c('Projection of potential
-                                        OFL, spawning biomass, and depletion for the
-                                        base case model.'),
-                              label = 'tab:Forecast_mod1', digits = 3)
-    # Add alignment
-    align(Forecast_mod1.table) = c('l',
-                                   'c',
-                                   '>{\\centering}p{1in}',
-                                   '>{\\centering}p{1in}',
-                                   '>{\\centering}p{1in}',
-                                   '>{\\centering}p{1in}',
-                                   '>{\\centering}p{1in}')
-
-    # Print model 1 forecast table
-    print(Forecast_mod1.table,
-          include.rownames = FALSE,
-          caption.placement = 'top')
-```
-<!-- ---------------------------------------------------------------------- -->
-\FloatBarrier
-
-
-
 
 <!-- ====================================================================== --> 
 <!-- *************************          *********************************** --> 
