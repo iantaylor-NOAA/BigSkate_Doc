@@ -33,7 +33,7 @@ and the STAR panel:
 
 The authors gratefully acknowledge the time and effort reviewers John DeVore, Stacey Miller, Jim Hastie and Owen Hamel put into making this a polished document.
 
-We thank the STAR panel Chair, David Sampson, and reviewers: xxx and yyy.
+We thank the STAR panel Chair, David Sampson, and reviewers Robin Cook and Cody Szulwalski.
 
 The Reconstructions of historical catch were critical to this assessment, and there are many people who contributed, among them
 
@@ -45,7 +45,9 @@ our colleagues at the SWFSC:  John Field and Rebecca Miller
 
 and others whose knowledge of the fishery provided context:  Gerry Richter and Todd Phillips
 
-WE NEED TO ADD PEOPLE WHO HELPED WITH DATA:  John Wallace, etc!  Didn't Ole Shelton do something with VAST?
+Our colleagues at NWFWC, including Chantel Wetzel, Kelli Johnson, and John Wallace all provided valuable contributions to the extraction and processing of the survey and fishery data.
+
+Finally, we are deeply grateful to Mellissa Monk of the SWFSC, for creating the RMarkdown template which was used to produce this assessment report.
 
 
 \newpage
