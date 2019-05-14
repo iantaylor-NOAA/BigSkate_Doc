@@ -1196,7 +1196,7 @@ ical # 3
 
 
 # Triennial length comps
-# from \bio\survey_comps\forSS\Survey_Gender3_Bins_5_200_LengthComps.csv
+# from \bio\survey_comps\forSS\Survey_Gender3_Bins_20_200_LengthComps.csv
 # as processed by \R\survey_comps.R
 #### unexpanded comps
 #year   month   fleet   gender  part    Nsamp   F20     F25     F30     F35
