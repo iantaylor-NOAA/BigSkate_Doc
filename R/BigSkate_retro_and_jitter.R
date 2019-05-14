@@ -15,7 +15,8 @@ require(SSutils) # package with functions for copying SS input files
 # load model output into R
 # read base model from each area
 #mod <- 'bigskate72_share_dome'
-mod <- 'bigskate74_spawnbio_3.30.13.02' 
+#mod <- 'bigskate74_spawnbio_3.30.13.02'
+mod <- 'bigskate82_base_May13'
 dir.mod <- file.path(dir.outer, mod)
 
 # run retrospectives

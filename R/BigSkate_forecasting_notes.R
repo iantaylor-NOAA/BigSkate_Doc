@@ -51,20 +51,18 @@
 ## -9999  0
 
 # mean landings for the years 2014:2018:
-mean(bs72$catch$Obs[bs72$catch$Yr %in% 2014:2018 & bs72$catch$Fleet == 1])
+mean(bs82$catch$Obs[bs82$catch$Yr %in% 2014:2018 & bs82$catch$Fleet == 1])
 #[1] 258.4
-mean(bs72$catch$Obs[bs72$catch$Yr %in% 2014:2018 & bs72$catch$Fleet == 4])
+mean(bs82$catch$Obs[bs82$catch$Yr %in% 2014:2018 & bs82$catch$Fleet == 4])
 #[1] 54.76
 
+mod.fore <- bs82
 # resulting fixed input catch for forecast file:
 #_Yr Seas Fleet Catch(or_F)
 ## 2019 1    1     258.4
 ## 2019 1    4      54.76
 ## 2020 1    1     258.4
 ## 2020 1    4      54.76
-
-mod.fore <- SS_output(file.path('c:/SS/skates/models/bigskate72_share_dome/',
-                                'forecasts/default_2yr_fixed_3.30.13.02'))
 
 yrs.forecast <- 2019:2030
 Landings <- (mod.fore$timeseries$"retain(B):_1" +

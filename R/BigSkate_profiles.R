@@ -14,7 +14,9 @@ require(SSutils) # package with functions for copying SS input files
 
 # load model output into R
 # read base model from each area
-mod <- 'bigskate74_spawnbio_3.30.13.02' 
+#mod <- 'bigskate74_spawnbio_3.30.13.02'
+mod <- 'bigskate82_base_May13'
+
 dir.mod <- file.path(dir.outer, mod)
 # read model without printing stuff (assuming it's already been looked at)
 out <- SS_output(dir.mod, verbose=FALSE, printstats=FALSE)
@@ -37,7 +39,8 @@ out$parameters["LnQ_base_WCGBTS(5)","Value"]
 
 # vector of log(R0) spanning estimates
 # (going from high to low in case low value cause crashes)
-logR0vec <- seq(9, 7, -.25)
+#logR0vec <- seq(9, 7, -.25)
+logR0vec <- seq(9.6, 7, -.2)
 
 # vector of M
 M.vec <- seq(0.2, 0.6, 0.05)
@@ -74,8 +77,8 @@ SS_profile(dir = dir.profile.R0,
            newctlfile = "control_modified.ss",
            string = "SR_LN(R0)",
            profilevec = logR0vec,
-           #extras = "-nohess -nox")
-           extras = "-nox")
+           extras = "-nohess -nox")
+           #extras = "-nox")
 
 ##################################################################################
 # mortality profile
@@ -138,8 +141,8 @@ SS_writestarter(start, dir = dir.profile.Q, overwrite = TRUE)
 SS_profile(dir = dir.profile.Q,
            masterctlfile = "BSKT2019_control.ss",
            newctlfile = "control_modified.ss",
-           string = "steep",
-           profilevec = h.vec,
+           string = "LnQ_base_WCGBTS",
+           profilevec = lnQ.vec,
            #extras = "-nohess -nox")
            extras = "-nox")
 
@@ -160,12 +163,13 @@ profilesummary <- SSsummarize(profilemodels)
 goodmodels <- which(profilesummary$likelihoods[1,1:(length(logR0vec)+1)] < 1e5)
 # plot profile using summary created above
 SSplotProfile(profilesummary,           # summary object
-              minfraction = 0.0001,
+              minfraction = 0.01,
               #models = 1:length(logR0vec), # optionally exclude MLE
               models = goodmodels,
               sort.by.max.change = FALSE,
               #xlim=c(3.2,4.6),
               ymax=4, # modify as required to get reasonable scale to see differences
+              legendloc='top',
               plotdir = dir.profile.R0,
               print = TRUE,
               profile.string = "R0", # substring of profile parameter
@@ -239,20 +243,23 @@ profilemodels$MLE <- out
 # summarize output
 profilesummary <- SSsummarize(profilemodels)
 # filter models for those with reasonable likelihoods
-goodmodels <- which(profilesummary$likelihoods[1,1:(length(logR0vec)+1)] < 1e5)
+# and cutting off those below 0.25
+goodmodels <- which(profilesummary$likelihoods[1,1:(length(logR0vec)+1)] < 1e5 &
+                    M.vec >= 0.25)
+
 # make plot
 SSplotProfile(profilesummary,           # summary object
               minfraction = 0.001,
               print=TRUE,
               models=goodmodels,
-              ymax=40,
+              ymax=20,
               sort.by.max.change = FALSE,
               plotdir=dir.profile.M,
               profile.string = "NatM_p_1_Fem_GP_1", # substring of profile parameter
-              profile.label="Female natural mortality (M)") # axis label
+              profile.label="Natural mortality (M)") # axis label
 # copy plot with generic name to main folder with more specific name
 file.copy(file.path(dir.profile.M, 'profile_plot_likelihood.png'),
-          file.path(dir.profile.M, '../profile_M.png'), overwrite=TRUE)
+          file.path(dir.profile.M, 'profile_M.png'), overwrite=TRUE)
 
 # compare spawning biomass time series
 SSplotComparisons(profilesummary, subplot=1,
@@ -264,16 +271,16 @@ SSplotComparisons(profilesummary, subplot=1,
 ##################################################################################
 # Steepness profile
 dir.profile.h <- file.path(dir.mod, "profile.h")
-# ironic problem with convergence for the h = 0.4 case
-file.copy(file.path(dir.profile.h, "../Report.sso"),
-          file.path(dir.profile.h, "Report2.sso"),
-          overwrite = TRUE)
-file.copy(file.path(dir.profile.h, "../CompReport.sso"),
-          file.path(dir.profile.h, "CompReport2.sso"),
-          overwrite = TRUE)
-file.copy(file.path(dir.profile.h, "../covar.sso"),
-          file.path(dir.profile.h, "covar2.sso"),
-          overwrite = TRUE)
+## # ironic problem with convergence for the h = 0.4 case
+## file.copy(file.path(dir.profile.h, "../Report.sso"),
+##           file.path(dir.profile.h, "Report2.sso"),
+##           overwrite = TRUE)
+## file.copy(file.path(dir.profile.h, "../CompReport.sso"),
+##           file.path(dir.profile.h, "CompReport2.sso"),
+##           overwrite = TRUE)
+## file.copy(file.path(dir.profile.h, "../covar.sso"),
+##           file.path(dir.profile.h, "covar2.sso"),
+##           overwrite = TRUE)
 profilemodels <- SSgetoutput(dirvec=dir.profile.h,
                              keyvec=1:length(h.vec), getcovar=FALSE)
 # summarize output
@@ -297,6 +304,44 @@ SSplotComparisons(profilesummary, subplot=1,
                   legendlabels=labels,
                   png=TRUE, plotdir=dir.profile.h,
                   filenameprefix="profile_h_", legendloc="bottomleft")
+
+
+
+##################################################################################
+# Q profile
+dir.profile.Q <- file.path(dir.mod, "profile.Q")
+profilemodels <- SSgetoutput(dirvec=dir.profile.Q,
+                             keyvec=1:length(Q.vec), getcovar=FALSE)
+profilemodels$MLE <- out
+# summarize output
+profilesummary <- SSsummarize(profilemodels)
+# make plot
+goodmodels <- c(which(profilesummary$likelihoods[1,1:length(Q.vec + 1)] < 1e5 &
+                        Q.vec >= 0.5 & Q.vec <= 2),
+                which(names(profilemodels) == "MLE"))
+
+SSplotProfile(profilesummary,           # summary object
+              minfraction = 0.001,
+              print=TRUE,
+              models=goodmodels,
+              ymax=10,
+              legendloc='top',
+              sort.by.max.change = FALSE,
+              plotdir=dir.profile.Q,
+              profile.string = "LnQ_base_WCGBTS", # substring of profile parameter
+              profile.label="Log of WCGBT Survey catchability, log(Q)") # axis label
+# copy plot with generic name to main folder with more specific name
+file.copy(file.path(dir.profile.Q, 'profile_plot_likelihood.png'),
+          file.path(dir.profile.Q, 'profile_Q.png'), overwrite=TRUE)
+# compare spawning biomass time series
+labels <- c(paste0("log(Q)=",round(lnQ.vec,2)," Q=",Q.vec), "Base Model, Q=0.81")
+## lnQ.base <- out$parameters["LnQ_base_WCGBTS", "Value"]
+## labels[lnQ.vec==h.base] <- paste(labels[lnQ.vec==lnQ.base], "(Base Model)")
+SSplotComparisons(profilesummary, subplot=1,
+                  legendlabels=labels[goodmodels],
+                  models=goodmodels,
+                  png=TRUE, plotdir=dir.profile.Q,
+                  filenameprefix="profile_Q_", legendloc="bottomleft")
 
 
 } # end if(FALSE) section that doesn't get sourced
