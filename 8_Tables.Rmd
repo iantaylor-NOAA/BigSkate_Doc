@@ -143,7 +143,10 @@ print(PacFIN.table, add.to.row = a_header,
 
 ```{r, results = 'asis'}
 
-SurveySamples = read.csv("./txt_files/data_summaries/survey_sample_sizes.csv")
+SurveySamples = read.csv("./txt_files/data_summaries/survey_sample_sizes.csv", as.is=T)
+
+colnames(SurveySamples) = SurveySamples[1,]
+SurveySamples = SurveySamples[-1,]
 
 caption = "Samples from the surveys."
 
@@ -158,7 +161,6 @@ a_header <- construct_header(
   align = "c"
 )
 
-
 SurveySamples.table = xtable(SurveySamples,
                              caption = caption,
                              label = 'tab:Survey_Samples')
@@ -166,7 +168,6 @@ SurveySamples.table = xtable(SurveySamples,
 print(SurveySamples.table, add.to.row = a_header, 
       caption.placement = "top", 
       include.rownames = F, hline.after = F)
-
 
 ```
 

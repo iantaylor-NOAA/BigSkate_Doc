@@ -60,7 +60,7 @@ Ages of Big Skate were all estimated based on growth band counts of sectioned ve
 
 **Weight-Length**
 
-The mean weight as a function of length was estimated from 1159 samples from the WCGBT Survey using a linear regression on a log-log scale. Sex was not found to be a significant predictor, so a single relationship was estimated: $Weight = 0.00000749  * Length ^ 2.9925$ (Figure \ref{fig:weight-length}).
+The mean weight as a function of length was estimated from 1159 samples from the WCGBT Survey using a linear regression on a log-log scale. Sex was not found to be a significant predictor, so a single relationship was estimated: $Weight = 0.00000749  * Length ^ {2.9925}$ (Figure \ref{fig:weight-length}).
 
 \vspace{.5cm}
 
