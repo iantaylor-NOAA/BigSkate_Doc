@@ -26,22 +26,22 @@
 
 <!-- ***********MODEL 1 BASE MODEL FIGURES********************************* --> 
 
-<!-- ### Growth and Selectivity -->
+### Growth and Selectivity
 
-\FloatBarrier
+<!-- \FloatBarrier -->
 
-<!-- \vspace{.5cm} -->
+<!-- <!-- \vspace{.5cm} --> -->
 
-<!-- [H] to control floating -->
+<!-- <!-- [H] to control floating --> -->
 
-\begin{figure}[H]
-\begin{centering}
-\includegraphics{r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png}
-\caption{Estimated length-at-age for female and male `r spp` (top left panel). Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.}\label{fig:growth}
-\end{centering}
-\end{figure}
+<!-- \begin{figure}[H] -->
+<!-- \begin{centering} -->
+<!-- \includegraphics{r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png} -->
+<!-- \caption{Estimated length-at-age for female and male `r spp` (top left panel). Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.}\label{fig:growth} -->
+<!-- \end{centering} -->
+<!-- \end{figure} -->
 
-\FloatBarrier
+<!-- \FloatBarrier -->
 
 ![Estimated length-at-age for female and male `r spp` (top left panel). Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.\label{fig:growth}](r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png)
 
@@ -81,7 +81,7 @@
 <!-- \FloatBarrier -->
 
 <!-- \newpage -->
-\vspace{.5cm}
+<!-- \vspace{.5cm} -->
 
 ![Fit to index data for WCGBT Survey. Lines indicate 95% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate.\label{fig:index2_cpuefit_WCGBTS}](r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png)
 
@@ -134,7 +134,7 @@
 
 <!-- \newpage -->
 
-\vspace{.5cm}
+<!-- \vspace{.5cm} -->
 
 ![Estimated spawning biomass (mt) with approximate 95% asymptotic intervals. \label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}](r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png)
 

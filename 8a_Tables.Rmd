@@ -127,7 +127,7 @@ output:
                               caption = c('Time-series of population estimates 
                                         from the base-case model. Relative exploitation 
                                         rate is $(1-SPR)/(1-SPR_{50\\%})$.'),
-                              #label='tab:Timeseries_mod1',
+                              label='tab:Timeseries_mod1',
                               digits = c(0,0,0,0,3,0,0,2,2))   
 
     # Add alignment
@@ -140,23 +140,43 @@ output:
                                 '>{\\centering}p{.8in}',
                                 '>{\\centering}p{.8in}',
                                 'c')
-
-    # Print timeseries of population estimates table
-    print(Timeseries.table, 
-          include.rownames=FALSE,      
-           caption.placement="top",align=TRUE,tabular.environment="longtable",
-            floating=FALSE,  #sanitize.text.function = function(x){x},
-           add.to.row = list(pos = list(0),command = 
-                        paste("\\hline  \\endfirsthead",  # First caption
-                                "\\caption[]{Time-series of population estimates 
-                                        from the base-case model. Relative exploitation 
-                                        rate is $(1-SPR)/(1-SPR_{50\\%})$.} \\label{tab:Timeseries_mod1} \\\\ \\hline", # Addit. captions
-                                paste(colnames(Timeseries1)[1], paste("&", colnames(Timeseries1)[2:8], collapse=" ")), # Column names
-                                "\\\\ \\hline ",
-                                "\\endhead", 
-                                "\\hline \\multicolumn{5}{l}{\\textit{Continues next page}} \\ 
-                                 \\endfoot
-                                 \\endlastfoot",collapse=" ")))
+    
+    addtorow          <- list()
+    addtorow$pos      <- list()
+    addtorow$pos[[1]] <- c(0)
+    addtorow$command  <- c(paste("\\hline \n",
+                                 "\\endhead \n",
+                                 "\\hline \n",
+                                 "\\multicolumn{5}{l}",
+                                 "{\\footnotesize Continued on next page} \n",
+                                 "\\endfoot \n",
+                                 "\\endlastfoot \n",sep=""))
+    
+    
+    # add.to.row$command  =  paste("\\hline  \\endfirsthead",  # First caption
+    #                              "\\caption[]{Time-series of population estimates 
+    #                               from the base-case model. Relative exploitation 
+    #                               rate is $(1-SPR)/(1-SPR_{50\\%})$.} \\label{tab:Timeseries_mod1} \\\\ \\hline", # Addit. captions
+    #                              paste(colnames(Timeseries1)[1], paste("&", colnames(Timeseries1)[2:8], collapse=" ")), # Column names
+    #                              "\\\\ \\hline ",
+    #                              "\\endhead", 
+    #                              "\\hline \\multicolumn{5}{l}{\\textit{Continues next page}} \\ 
+    #                              \\endfoot
+    #                              \\endlastfoot",
+    #                              collapse=" ")
+    
+    
+    
+               # Print timeseries of population estimates table
+               print(Timeseries.table, 
+                     include.rownames=FALSE,      
+                     caption.placement="top",
+                     align=TRUE,
+                     tabular.environment="longtable",
+                     floating=FALSE,  
+                     #sanitize.text.function = function(x){x},
+                     add.to.row = addtorow)
+               
 ```
 <!-- ---------------------------------------------------------------------- -->
 
