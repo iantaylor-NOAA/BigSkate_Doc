@@ -20,6 +20,8 @@ bio.Tri.LN   <- PullBio.fn(Name = "longnose skate", SurveyName = "Triennial")
 save(catch.WCGBTS.BS, bio.WCGBTS.BS,
      catch.Tri.BS,    bio.Tri.BS,
      file = 'c:/SS/skates/data/BigSkate_survey_extractions_4-22-2019.Rdata')
+### load previously extracted values
+# load('c:/SS/skates/data/BigSkate_survey_extractions_4-22-2019.Rdata')
 
 
 # WGBTS for Longnose Skate
