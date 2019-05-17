@@ -30,7 +30,7 @@
 
 \FloatBarrier
 
-\vspace{3cm}
+\vspace{2.5cm}
 
 \noindent
 \begin{minipage}{\linewidth}% to keep image and caption on one page
@@ -70,7 +70,7 @@ Shaded areas indicate 95\% intervals for distribution of lengths at each age. Va
 
 \FloatBarrier
 
-\vspace{3cm}
+\vspace{2.5cm}
 
 \noindent
 \begin{minipage}{\linewidth}% to keep image and caption on one page
@@ -122,7 +122,7 @@ Lines indicate 95\% uncertainty interval around index values. Thicker lines indi
 
 \FloatBarrier
 
-\vspace{3cm}
+\vspace{2.5cm}
 
 \begin{figure}[!h]
 \begin{centering}
@@ -167,7 +167,7 @@ Lines indicate 95\% uncertainty interval around index values. Thicker lines indi
 
 \FloatBarrier
 
-\vspace{3cm}
+\vspace{2.5cm}
 
 \noindent
 \begin{minipage}{\linewidth}% to keep image and caption on one page
@@ -217,7 +217,7 @@ Lines indicate 95\% uncertainty interval around index values. Thicker lines indi
 
 \FloatBarrier
 
-\vspace{3cm}
+\vspace{2.5cm}
 
 \noindent
 \begin{minipage}{\linewidth}% to keep image and caption on one page
@@ -269,7 +269,7 @@ Lines indicate 95\% uncertainty interval around index values. Thicker lines indi
 
 <!-- ***********MODEL 1 REFERENCE POINTS FIGURES*************************** --> 
 
-\vspace{3cm}
+\vspace{2.5cm}
 
 <!-- [h] to control floating -->
 
