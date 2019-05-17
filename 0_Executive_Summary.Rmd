@@ -283,7 +283,7 @@ The fit to the length data was significantly improved by estimating a difference
 
 ## Projected Landings, OFLs and Time-varying ACLs {-}
 
-Potential OFLs projected by the model are shown in Table \ref{tab:OFL_projection}.  These values are based on an SPR target of 50%, a P* of 0.45, and a time-varying Category 2 Sigma which creates the buffer shown in the right-hand column.
+Potential OFLs projected by the model are shown in Table \ref{tab:OFL_projection}.  These values are based on an SPR target of 50%, a P* of 0.45, and a time-varying Category 2 Sigma which creates the buffer shown in the right-hand column. The OFL and ACL values for 2019 and 2020 are the current harvest specifications (also shown in Table \ref{tab:mnmgt_perform}) while the landings for 2019 and 2020 represent the average landings over the most recent 5 years (2014--2018).
 
 ```{r, results='asis'}   
     # Print OFL table 
