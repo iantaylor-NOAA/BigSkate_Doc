@@ -4,14 +4,6 @@ title: Status of Big Skate (*Beringraja binoculata*) Off the U.S. Pacific Coast
 author: ''
 date: ''
 output:
-  word_document:
-    reference_docx: Word.Styles.Reference.docx
-    highlight: haddock
-    fig_caption: yes
-    toc: yes
-    toc_depth: 4
-  html_document:
-    toc: yes
   pdf_document:
     fig_caption: yes
     highlight: haddock
@@ -21,6 +13,14 @@ output:
     keep_tex: yes
     number_sections: yes
     template: Default_template_modified.tex
+    toc: yes
+    toc_depth: 4
+  html_document:
+    toc: yes
+  word_document:
+    reference_docx: Word.Styles.Reference.docx
+    highlight: haddock
+    fig_caption: yes
     toc: yes
     toc_depth: 4
 documentclass: article
