@@ -13,8 +13,17 @@ require(r4ss)
 require(SSutils) # package with functions for copying SS input files
 #devtools::install_github('r4ss/SSutils')
 
+mod <- 'bigskate82_base_May13'
+dir.mod <- file.path(dir.outer, mod)
+dir.sensitivities <- file.path(dir.outer, "sensitivity.bigskate82")
+#dir.create(dir.sensitivities)
 
-## # alternative approach to sensitivities where the change is easy to make,
+if(FALSE){
+################################################################################
+# alternative approach to sensitivities where the change is easy to make
+# standard approach is below, after the commented out stuff
+################################################################################
+
 ## # in which case the files from a previous set of sensitivities are all copied
 ## # for a new model
 
@@ -49,9 +58,6 @@ require(SSutils) # package with functions for copying SS input files
 ## dir.sensitivities.old <- file.path(dir.outer, "sensitivity.bigskate72")
 ## sens.list     <- dir(dir.sensitivities)
 
-
-
-
 ## # base model on May 8
 ## #mod <- 'bigskate74_share_dome'
 ## # new base May 11 (new exe to fix forecast uncertainty and fix fecundity = 0.5) 
@@ -79,17 +85,14 @@ require(SSutils) # package with functions for copying SS input files
 ## dirvec <- file.path(dir.sensitivities, sens.list)
 ## run_SS_models(dirvec=dirvec)
   
-
+################################################################################
 #### standard approach creating one directory at a time
+################################################################################
 
-mod <- 'bigskate82_base_May13'
-dir.mod <- file.path(dir.outer, mod)
 
 # read model without printing stuff (assuming it's already been looked at)
 out <- SS_output(dir.mod, verbose=FALSE, printstats=FALSE)
 
-dir.sensitivities <- file.path(dir.outer, "sensitivity.bigskate82")
-dir.create(dir.sensitivities)
 
 dir.sens <- file.path(dir.sensitivities, "sel1_all_asymptotic")
 copy_SS_inputs(dir.old = dir.mod,
@@ -223,6 +226,13 @@ copy_SS_inputs(dir.old = dir.mod,
                copy_exe = TRUE,
                copy_par = TRUE)
 
+dir.sens <- file.path(dir.sensitivities, "catch5_constantF")
+copy_SS_inputs(dir.old = dir.mod,
+               dir.new = dir.sens,
+               use_ss_new = FALSE,
+               copy_exe = TRUE,
+               copy_par = TRUE)
+
 dir.sens <- file.path(dir.sensitivities, "misc1_MItuning")
 copy_SS_inputs(dir.old = dir.mod,
                dir.new = dir.sens,
@@ -242,3 +252,42 @@ new.ctl.lines <- c(ctl.lines[1:start],
                    ctl.lines[end:length(ctl.lines)])
 writeLines(new.ctl.lines, con = file.path(dir.sens, "BSKT2019_control.ss"))
 
+
+dir.sens <- file.path(dir.sensitivities, "misc2_DMtuning")
+copy_SS_inputs(dir.old = dir.mod,
+               dir.new = dir.sens,
+               use_ss_new = FALSE,
+               copy_exe = TRUE,
+               copy_par = TRUE, overwrite=TRUE)
+
+dir.sens <- file.path(dir.sensitivities, "misc3_DepletionIndex")
+copy_SS_inputs(dir.old = dir.mod,
+               dir.new = dir.sens,
+               use_ss_new = FALSE,
+               copy_exe = TRUE,
+               copy_par = TRUE, overwrite=TRUE)
+
+dir.sens <- file.path(dir.sensitivities, "rec1_recruit_devs")
+copy_SS_inputs(dir.old = dir.mod,
+               dir.new = dir.sens,
+               use_ss_new = FALSE,
+               copy_exe = TRUE,
+               copy_par = TRUE)
+
+dir.sens <- file.path(dir.sensitivities, "rec3_est_h")
+copy_SS_inputs(dir.old = dir.mod,
+               dir.new = dir.sens,
+               use_ss_new = FALSE,
+               copy_exe = TRUE,
+               copy_par = TRUE)
+
+dir.sens <- file.path(dir.sensitivities, "misc4_NoExtraSD")
+copy_SS_inputs(dir.old = dir.mod,
+               dir.new = dir.sens,
+               use_ss_new = FALSE,
+               copy_exe = TRUE,
+               copy_par = TRUE)
+
+
+
+} # end if(FALSE)
