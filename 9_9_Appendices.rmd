@@ -1,13 +1,4 @@
----
-title: ""
-author: ""
-date: ""
-output: 
-  pdf_document:
-     keep_tex: yes
-     includes:
-      in_header: header.tex
----
+
 <!-- ************************************************************************************************--> 
 <!-- **********************************BEGIN APPENDICES**********************************************--> 
 <!-- ************************************************************************************************--> 
@@ -18,16 +9,30 @@ output:
 
 # Appendix A. Detailed fits to length composition data {-}
 
-\renewcommand{\thepage}{A-\arabic{page}}
-\renewcommand{\thefigure}{A\arabic{figure}}
-\setcounter{page}{1}
+<!-- Set up the first plot by hand so as to keep it on the page ------------------------------- -->
 
-<!-- Length Composition (LenComp) r4ss plots ------------------------------- -->
+\vspace{.5cm}
+
+<!-- [H] to control floating -->
+
+\begin{figure}[!h]
+\begin{centering}
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt1mkt2.png}
+\caption{Length comps, retained, Fishery. ‘N adj.’ is the input sample size after data weighting adjustment. N eff. is the calculated effective sample size used in the McAllister Iannelli tuning method.}\label{fig:fig:comp_lenfit_flt1mkt2}
+\end{centering}
+\end{figure}
+
+<!-- The rest of the Length Composition (LenComp) r4ss plots ------------------------------- -->
+
 ```{r, results='asis'}
- ##subset to just the plots of length comp fits
+
+ # Just the plots of length comp fits
+
   len_plots = LenComp_mod1[grep("lenfit_flt",LenComp_mod1$file),]
+
     # Plot all of the length comp plots
-      for(i in 1:dim(len_plots)[1]) { # was previously 1:10 but caused error due to no 10th figure
+
+      for(i in 2:dim(len_plots)[1]) { # was previously 1:10 but caused error due to no 10th figure
        
         # find matches to multi-page plots
         page_test = sapply(multi_page_fig, grepl, len_plots$label[i])

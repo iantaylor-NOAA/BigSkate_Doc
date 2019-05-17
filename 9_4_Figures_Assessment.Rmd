@@ -28,22 +28,23 @@
 
 ### Growth and Selectivity
 
-<!-- \FloatBarrier -->
+\FloatBarrier
 
-<!-- <!-- \vspace{.5cm} --> -->
+\vspace{3cm}
 
-<!-- <!-- [H] to control floating --> -->
+\noindent
+\begin{minipage}{\linewidth}% to keep image and caption on one page
+\makebox[\linewidth]{%        to center the image
+  \includegraphics[keepaspectratio=true,width=6in]{r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png}}
+\captionof{figure}{Estimated length-at-age for female and male Big Skate (top left panel). }\label{fig:growth}%
+\begin{centering}
+Shaded areas indicate 95\% intervals for distribution of lengths at each age. Values represent beginning-of-year growth.  Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.
+\end{centering}
+\end{minipage}
 
-<!-- \begin{figure}[H] -->
-<!-- \begin{centering} -->
-<!-- \includegraphics{r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png} -->
-<!-- \caption{Estimated length-at-age for female and male `r spp` (top left panel). Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.}\label{fig:growth} -->
-<!-- \end{centering} -->
-<!-- \end{figure} -->
+\FloatBarrier
 
-<!-- \FloatBarrier -->
-
-![Estimated length-at-age for female and male `r spp` (top left panel). Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.\label{fig:growth}](r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png)
+<!-- ![Estimated length-at-age for female and male `r spp` (top left panel). Shaded areas indicate 95% intervals for distribution of lengths at each age. Values represent beginning-of-year growth. Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.\label{fig:growth}](r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png) -->
 
 
 \FloatBarrier
@@ -68,22 +69,23 @@
 ### Fits to the Data
 
 \FloatBarrier
-<!-- <!-- [H] to control floating -->
 
-<!-- \begin{figure}[h] -->
-<!-- \includegraphics{r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png} -->
-<!-- \begin{centering} -->
-<!-- \includegraphics{r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png} -->
-<!-- \caption{Fit to index data for WCGBT Survey. Lines indicate 95% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate.}\label{fig:index2_cpuefit_WCGBTS} -->
-<!-- \end{centering} -->
-<!-- \end{figure} -->
+\vspace{3cm}
 
-<!-- \FloatBarrier -->
+\noindent
+\begin{minipage}{\linewidth}% to keep image and caption on one page
+\makebox[\linewidth]{%        to center the image
+  \includegraphics[keepaspectratio=true,width=6in]{r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png}}
+\captionof{figure}{Fit to index data for WCGBT Survey.}\label{fig:index2_cpuefit_WCGBTS}%
+\begin{centering}
+Lines indicate 95\% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate.
+\end{centering}
+\end{minipage}
 
-<!-- \newpage -->
-<!-- \vspace{.5cm} -->
+\FloatBarrier
 
-![Fit to index data for WCGBT Survey. Lines indicate 95% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate.\label{fig:index2_cpuefit_WCGBTS}](r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png)
+
+<!-- ![Fit to index data for WCGBT Survey. Lines indicate 95% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate.\label{fig:index2_cpuefit_WCGBTS}](r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png) -->
 
 ![Fit to index data for Triennial Survey. Lines indicate 95% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate with a change between 1992 and 1995 associated with the estimated change in catchability.\label{fig:index2_cpuefit_Triennial}](r4ss/plots_mod1/index2_cpuefit_Triennial Survey.png)
 
@@ -118,31 +120,27 @@
 
 ### Time Series Figures
 
+\FloatBarrier
+
+\vspace{3cm}
+
+\begin{figure}[!h]
+\begin{centering}
+\includegraphics{r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png}
+\caption{Estimated spawning biomass (mt) with approximate 95\% asymptotic intervals.}\label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}
+\end{centering}
+\end{figure}
 
 \FloatBarrier
 
-<!-- [H] to control floating -->
 
-<!-- \begin{figure}[h] -->
-<!-- \begin{centering} -->
-<!-- \includegraphics{r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png} -->
-<!-- \caption{Estimated spawning biomass (mt) with approximate 95% asymptotic intervals.}\label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals} -->
-<!-- \end{centering} -->
-<!-- \end{figure} -->
-
-<!-- \FloatBarrier -->
-
-<!-- \newpage -->
-
-<!-- \vspace{.5cm} -->
-
-![Estimated spawning biomass (mt) with approximate 95% asymptotic intervals. \label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}](r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png)
+<!-- ![Estimated spawning biomass (mt) with approximate 95% asymptotic intervals. \label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}](r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png) -->
 
 
 ![Estimated %unfished with approximate 95% asymptotic intervals. \label{fig:ts9_unfished_with_95_asymptotic_intervals_intervals}](r4ss/plots_mod1/ts9_unfished_with_95_asymptotic_intervals_intervals.png)
 
 
-<!--![Estimated time-series of recruitment deviations for `r spp` with 95% intervals. \label{fig:recdevs2_withbars}](r4ss/plots_mod1/recdevs2_withbars.png) -->
+<!-- ![Estimated time-series of recruitment deviations for `r spp` with 95% intervals. \label{fig:recdevs2_withbars}](r4ss/plots_mod1/recdevs2_withbars.png) -->
 
 
 ![Estimated time-series of recruitment for `r spp`. \label{fig:ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals}](r4ss/plots_mod1/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png)
@@ -169,19 +167,18 @@
 
 \FloatBarrier
 
-\vspace{.5cm}
+\vspace{3cm}
 
-<!-- [H] to control floating -->
-
-\begin{figure}[h]
-\begin{centering}
-\includegraphics{Figures/sens.sel_and_Q_compare1_spawnbio.png}
-\caption{Time series of spawning biomass (mt) estimated in sensitivity analyses related to selectivity and catchability.}\label{fig:Sensitivity_sel_and_Q}
+\noindent
+\begin{minipage}{\linewidth}% to keep image and caption on one page
+\makebox[\linewidth]{%        to center the image
+  \includegraphics[keepaspectratio=true,width=6in]{Figures/sens.sel_and_Q_compare1_spawnbio.png}}
+\captionof{figure}{Time series of spawning biomass (mt) estimated in sensitivity analyses related to selectivity and catchability.}\label{fig:Sensitivity_sel_and_Q}%
+\begin{centering}.
 \end{centering}
-\end{figure}
+\end{minipage}
 
-\newpage
-
+\FloatBarrier
 
 <!-- ![Time series of spawning biomass (mt) estimated in sensitivity analyses related to selectivity and catchability. \label{fig:Sensitivity_sel_and_Q}](Figures/sens.sel_and_Q_compare1_spawnbio.png) -->
 
@@ -198,13 +195,7 @@
 
 ![Comparison of the estimated growth curves from the sensitivities analyses. The increase at age 20 in the von Bertalanffy and Richards growth models is an adjustment to account for average size in the plus group based on an assumed exponential decay of the numbers at age beyond age 20.\label{fig:growth_curve_comparison}](Figures/growth_curve_comparison.png)
 
-
-
 \FloatBarrier
-
-
-
-
 
 <!-- ********************************************************************** -->
 <!-- *****************Retrospective analysis FIGURES*********************** -->
@@ -215,34 +206,34 @@
 
 ![Time series of spawning biomass (mt) with approximate 95% asymptotic intervals estimated in retrospective analyses in which the final 5 years of data are successively removed from the model.\label{fig:retro}](Figures/retro_compare2_spawnbio_uncertainty.png)
 
-
-
-\newpage
-
-### Likelihood Profiles
-
 \FloatBarrier
-
-\vspace{.5cm}
 
 <!-- ********************************************************************** -->
 <!-- ******************Likelihood profile FIGURES************************** --> 
 <!-- ********************************************************************** -->
 
+
+### Likelihood Profiles
+
+\FloatBarrier
+
+\vspace{3cm}
+
+\noindent
+\begin{minipage}{\linewidth}% to keep image and caption on one page
+\makebox[\linewidth]{%        to center the image
+  \includegraphics[keepaspectratio=true,width=6in]{Figures/profile_logR0.png}}
+\captionof{figure}{Likelihood profile over the log of equilibrium recruitment ($R_0$).}\label{fig:profile_logR0}%
+\begin{centering}.
+\end{centering}
+\end{minipage}
+
+\FloatBarrier
+
 <!-- ***********R0 Likelihood profile FIGURES****************************** --> 
 
-<!-- [H] to control floating -->
 
-\begin{figure}[h]
-\begin{centering}
-\includegraphics{Figures/profile_logR0.png}
-\caption{Likelihood profile over the log of equilibrium recruitment ($R_0$).}\label{fig:profile_logR0}
-\end{centering}
-\end{figure}
-
-\newpage
-
-![Likelihood profile over the log of equilibrium recruitment ($R_0$).\label{fig:profile_logR0}](Figures/profile_logR0.png)
+<!-- ![Likelihood profile over the log of equilibrium recruitment ($R_0$).\label{fig:profile_logR0}](Figures/profile_logR0.png) -->
 
 ![Time series of spawning biomass (mt) estimated for the models included in the profile over the log of equilibrium recruitment ($R_0$).\label{fig:profile_R0_compare1_spawnbio}](Figures/profile_R0_compare1_spawnbio.png)
 
@@ -278,19 +269,16 @@
 
 <!-- ***********MODEL 1 REFERENCE POINTS FIGURES*************************** --> 
 
-\vspace{.5cm}
+\vspace{3cm}
 
-<!-- [H] to control floating -->
+<!-- [h] to control floating -->
 
-\begin{figure}[h]
+\begin{figure}[!h]
 \begin{centering}
 \includegraphics{r4ss/plots_mod1/yield1_yield_curve.png}
 \caption{Equilibrium yield curve for the base case model. Values are based on the fishery selectivity and with steepness fixed at 0.4.}\label{fig:yield1_yield_curve}
 \end{centering}
 \end{figure}
-
-\newpage
-
 
 <!-- ![Equilibrium yield curve for the base case model. Values are based on the fishery selectivity and with steepness fixed at 0.4. \label{fig:yield1_yield_curve}](r4ss/plots_mod1/yield1_yield_curve.png) -->
 

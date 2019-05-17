@@ -15,7 +15,7 @@
 
 <!-- [H] to control floating -->
 
-\begin{figure}[H]
+\begin{figure}[!h]
 \begin{centering}
 \includegraphics{r4ss/plots_mod1/comp_lendat__aggregated_across_time.png}
 \caption{Length comp data, aggregated across time by fleet.}\label{fig:comp_lendat_aggregated_across_time}
