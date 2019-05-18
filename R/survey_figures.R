@@ -146,3 +146,15 @@ legend('topleft', lwd=3, col=col.vec[c(1,2,3)],
            "VAST estimate (gamma)",
            "VAST estimate (lognormal)"), bty='n')
 dev.off()
+
+
+
+###########
+
+
+subset <- VAST_output_gamma$Fleet=="Coastwide"
+vast.bio <- VAST_output_gamma[subset, "Estimate_metric_tons"]
+round(mean(vast.bio))
+## [1] 12184
+round(mean(biomass.WCGBTS$Bio$Value)/1e3)
+## [1] 12143
