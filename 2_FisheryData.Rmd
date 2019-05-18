@@ -65,7 +65,7 @@ For years 1981-2001, a “blended” product of these two approaches was taken, 
 As no spatial information on catch is available from 1916-1930, and the block
 summary data were very sparse in the first few years of the CDFW fish ticket program
 (1931–1934), spatial information from the late 1930's was used to hindcast to the
-1916–1935 time period. However, since Washington and Oregon did not have catch estimates for this year period, the California estimates of catch prior to 1938 were not used as they were subsumed into an estimated of the total catch across all states increasing linearly from 1916 to 1950.
+1916–1935 time period. However, since Washington and Oregon did not have catch estimates for this year period, the California estimates of catch prior to 1939 were not used as they were subsumed into an estimated of the total catch across all states increasing linearly from 1916 to 1950.
 
 ### Tribal Catch in Washington
 Tribal catch of Big Skate was provided by WDFW as all landings took place in Washington State. The landings were estimated from limited state sampling of species compositions in combined skate category. Anecdotal evidence suggest that most of the catch in tribal fishery is retained, and discard is minimal.

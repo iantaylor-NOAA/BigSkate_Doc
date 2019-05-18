@@ -334,7 +334,7 @@
     # Create sensitivities table
     Sens_model1.table = xtable(Sens_model1, 
                                caption = c('Sensitivity of the base model 
-                                          to assumptions about catches.'),
+                                          to assumptions about catches and discards.'),
                                label = 'tab:Sensitivity_catch', digits = 2)    
   
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,

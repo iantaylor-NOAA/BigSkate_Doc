@@ -23,7 +23,7 @@ output:
 
 Catch_by_State = read.csv("./txt_files/data_summaries/reconstructed_landings_by_state.csv")
 
-caption = "Landings by source.  Landings are reconstructed histories 1916-1995."
+caption = "Landings by source.  For detail on the source of the different estimates, see 'Fishery Landings and Discards' above. Values prior to 1939 were not included in the final model and augmented by an estimated linear increase in total catch including discards from 1916 to 1950. Estimated discards are not included in this table."
 
 colnames(Catch_by_State) = c("Year","CA (mt)","OR (mt)","WA (mt)","Tribal (mt)","Total (mt)")
 
@@ -77,7 +77,7 @@ a_header <- construct_header(
   align = "c"
 )
 
-caption = "Index inputs."
+caption = "Index inputs considered for the assessment model. The IPHC index was not used in the final model. The WCGBT and Triennial Surveys were standardized using the VAST geostatistical software and are in units of metric tons. The IPHC index is in units of fish per 1000 hooks."
 
 index.table = xtable(Indices,
                     caption = caption,
@@ -122,7 +122,7 @@ a_header <- construct_header(
 )
 
 
-caption = "PacFIN Samples."
+caption = "PacFIN length and age sample sizes by year and state with the number of unique tows from which Big Skate were sampled as well as the number of individual Big Skates that were measured." Samples from all landings were combined for the fishery length and age compositions, while samples from discards were treated separately.
 
 PacFIN.table = xtable(PacFIN,
                              caption = caption,
@@ -148,7 +148,7 @@ SurveySamples = read.csv("./txt_files/data_summaries/survey_sample_sizes.csv", a
 colnames(SurveySamples) = SurveySamples[1,]
 SurveySamples = SurveySamples[-1,]
 
-caption = "Samples from the surveys."
+caption = "Survey length and age sample sizes by year with the number of unique tows or sets from which Big Skate were sampled as well as the number of individual Big Skates that were measured."
 
 a_header <- construct_header(
   # the data.frame or matrix that should be plotted

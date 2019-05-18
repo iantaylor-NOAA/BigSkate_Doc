@@ -8,7 +8,8 @@ dat <- SS_readdat_3.30(file = file.path(bs66dir, "BSKT2019_data.ss"))
 cpue <- dat$CPUE
 
 # make table
-tab <- data.frame(year = sort(unique(cpue$year)))
+tab <- data.frame(year = sort(as.numeric(unique(cpue$year))),
+                  stringsAsFactors = FALSE)
 # loop over fleets with index
 for(f in sort(unique(as.numeric(cpue$index)))){
   fleetname <- dat$fleetnames[f]
@@ -21,11 +22,17 @@ for(f in sort(unique(as.numeric(cpue$index)))){
   # loop over values within this fleet
   for(irow in 1:nrow(cpue.f)){
     y <- cpue.f$year[irow]
-    tab[tab$year == y, col1name] <- as.numeric(cpue.f$obs[irow])
+    scale <- 1
+    if(f == 7){
+      scale <- 1000
+    }
+    tab[tab$year == y, col1name] <- scale*as.numeric(cpue.f$obs[irow])
     tab[tab$year == y, col2name] <- round(as.numeric(cpue.f$se_log[irow]), 4)
   }
 }
 
+# rename columns to match existing file
+names(tab) <- c("Year","WCGBTS","Log SE", "Triennial", "Log SE", "IPHC", "Log SE")
 write.csv(tab,
           file="C:/SS/skates/BigSkate_Doc/txt_files/data_summaries/table_of_index_inputs.csv",
           row.names=FALSE)
