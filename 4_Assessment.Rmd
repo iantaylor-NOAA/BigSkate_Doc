@@ -48,7 +48,7 @@ completed by Hamel [-@Hamel2015]. The Hamel prior for M is lognormal(ln(5.4/max 
 \vspace{.5cm}
 
 *Survey Catchability*
-The lack of contrast in the data resulted in unstable model results under a variety of configurations. To keep biomass estimates within a plausible range, the assessment uses a prior on the WCGBTS survey catchability parameter ($q$) that was originally developed for the 2007 Longnose Skate assessment [@Gertseva2007, @Dorn2007], and is being used for the concurrent Longnose Skate assessment [@Gertseva2019]. The prior for the WCGBT Survey was derived as follows.
+The lack of contrast in the data resulted in unstable model results under a variety of configurations. To keep biomass estimates within a plausible range, the assessment uses a prior on the WCGBTS survey catchability parameter ($q$) that was originally developed for the 2007 Longnose Skate assessment (@Gertseva2007, @Dorn2007), and is being used for the concurrent Longnose Skate assessment [@Gertseva2019]. The prior for the WCGBT Survey was derived as follows.
 
 The prior is based on consideration of the availability of longnose skate to the survey gear and the probability that a skate in the path of the gear would be caught and retained by the gear. The methodology for developing the prior involves specifying the potential range in the proportion of fish that are available to the gear and the potential range in the vulnerability to the gear, and “best guesses” for the individual probabilities.  These values are translated into a lognormal prior where the median of the lognormal is the “best guess” and the range of plausible values covers 99% of the lognormal
 distribution.
