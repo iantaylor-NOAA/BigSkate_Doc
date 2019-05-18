@@ -108,7 +108,7 @@ The steepness of the Beverton-Holt stock-recruit curve was fixed at 0.4. The sam
 
 ### Convergence
 
-One hundred sets of jittered starting values were generated using the jitter function built into Stock Synthesis, with used with jitter input = 0.1. The same likelihood as the base model was returned by 51 out of the 100 runs, while the others all had worse total likelihood.
+One hundred sets of jittered starting values were generated using the jitter function built into Stock Synthesis, with used with jitter input = 0.1. The same likelihood as the base model was returned by 51 out of the 100 runs, while the others all had worse total likelihood. No analysis was conducted for the starting values associated with those jitter runs which failed to return to the same likelihood as the base model, but throughout the model selection process, models which started with a low $log(R_0)$ parameter or other initial values that led to a crashed population had convergence problems. This was straightforward to resolve during the model selection process but may have been the cause of many of the jittered models failing to reach the best observed likelihood. The 49% failure rate also suggests that the 0.1 jitter input value was high enough to produce a broad range of starting values to test the model, where a very high success rate might 
 
 
 ## Response to the Current STAR Panel Requests

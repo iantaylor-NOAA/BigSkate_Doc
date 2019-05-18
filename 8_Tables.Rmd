@@ -122,7 +122,7 @@ a_header <- construct_header(
 )
 
 
-caption = "PacFIN length and age sample sizes by year and state with the number of unique tows from which Big Skate were sampled as well as the number of individual Big Skates that were measured." Samples from all landings were combined for the fishery length and age compositions, while samples from discards were treated separately.
+caption = "PacFIN length and age sample sizes by year and state with the number of unique tows from which Big Skate were sampled as well as the number of individual Big Skates that were measured. Samples from all landings were combined for the fishery length and age compositions, while samples from discards provided separate annual compositions."
 
 PacFIN.table = xtable(PacFIN,
                              caption = caption,
