@@ -15,7 +15,7 @@ Big Skate (*Raja binoculata*) is the largest of the skate species in North Ameri
 
 ## Biology
 
-Big Skate is oviparious, and is one of two skate species that have multiple embryos per egg case [@Ebert2008]. From 1–8 embryos can be contained in a single, large egg capsule, but most have 3–4 [@DeLacy1935; @Hitz1964; @Ford1971]. Eggs are deposited year-round on sand or mud substrates at depths of ~50–150 m [@Hitz1964; @Ebert2007]. Embryos hatch from eggs after 6–20 months, with shorter developmental periods associated with warmer temperatures [@Hoff2009]. In captivity, Big Skate females may produce > 350 eggs/year (average of 2 embryos/egg case; @Chiquillo2014) from long-term sperm storage . Size at birth is 18–23 cm TL [@Ebert2003]. Maximum size is 244 cm TL [@Eschmeyer1983, with females growing to larger sizes.
+Big Skate is oviparious, and is one of two skate species that have multiple embryos per egg case [@Ebert2008]. From 1–8 embryos can be contained in a single, large egg capsule, but most have 3–4 [@DeLacy1935; @Hitz1964; @Ford1971]. Eggs are deposited year-round on sand or mud substrates at depths of ~50–150 m [@Hitz1964; @Ebert2007]. Embryos hatch from eggs after 6–20 months, with shorter developmental periods associated with warmer temperatures [@Hoff2009]. In captivity, Big Skate females may produce > 350 eggs/year (average of 2 embryos/egg case; @Chiquillo2014) from long-term sperm storage . Size at birth is 18–23 cm TL [@Ebert2003]. Maximum size is 244 cm TL [@Eschmeyer1983], with females growing to larger sizes.
 
 <!-- long-term sperm storage [@Jang2009] -->
 
