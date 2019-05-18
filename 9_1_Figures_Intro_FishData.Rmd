@@ -77,9 +77,17 @@ output:
 <!-- ****************Fleet xx Index FIGURES************************* -->
 <!-- ********************************************************************** --> 
 
-![Map of estimated density by year for Big Skate in the Triennial survey. \label{fig:VAST_Yearly_Dens_Triennial}](Figures/VAST_Yearly_Dens_Triennial.png)
+![Quantile-quantile (Q-Q) plot showing empirical quantiles of the positive catch rate relative to their expected theoretical quantiles within the VAST geostatistical standardization for the two surveys with both Gamma and Lognormal error structures. \label{fig:VAST_QQ_plots}](Figures/VAST_QQ_plots.png)
 
-![Map of estimated density by year for Big Skate in the WCGBT Survey. \label{fig:VAST_Yearly_Dens_Triennial}](Figures/VAST_Yearly_Dens_WCGBTS.png)
+![Index of abundance from the Triennial Survey calculated three ways. \label{fig:Triennial_index_compare}](Figures/Triennial_index_compare.png)
+
+![Index of abundance from the WCGBT Survey calculated three ways. \label{fig:WCGBTS_index_compare}](Figures/WCGBTS_index_compare.png)
+
+![Index of abundance from the International Pacific Halibut Commission longline survey (not used in the assessment model). \label{fig:IPHC_index}](Figures/IPHC index for Big Skate (5-11-2019).png)
+
+![Map of estimated density by year for Big Skate in the Triennial survey calculated using VAST with a Gamma error structure. \label{fig:VAST_Yearly_Dens_Triennial}](Figures/VAST_Yearly_Dens_Triennial.png)
+
+![Map of estimated density by year for Big Skate in the WCGBT Survey calculated using VAST with a Gamma error structure. \label{fig:VAST_Yearly_Dens_WCGBTS}](Figures/VAST_Yearly_Dens_WCGBTS.png)
 
 ![Map of catch rates by year for Big Skate in the International Pacific Halibut Commission longline survey. \label{fig:IPHC_map}](Figures/IPHC_BigSkate_map.png)
 

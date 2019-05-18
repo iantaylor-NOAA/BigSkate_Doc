@@ -148,7 +148,21 @@ SS_plots(mod1,
          printfolder = '', 
          dir = out.dir.mod1)
 
-# remake length-comp residual comparison to be taller
+# remake length-comp multi-fleet plots to be taller
+SS_plots(mod1,
+         fleetnames = fleetnames1,
+         plot = 13,
+         pheight = 6.5,
+         bub.scale.dat = 6,
+         png = TRUE,
+         html = FALSE,
+         printfolder = 'tall_length_comp_plots', 
+         dir = out.dir.mod1)
+# rename file to match expectation
+file.copy(from = file.path(out.dir.mod1,
+              'tall_length_comp_plots/comp_lendat__multi-fleet_comparison.png'),
+          to = file.path(out.dir.mod1, 'comp_lendat__multi-fleet_comparison.png'),
+          overwrite = TRUE)
 SS_plots(mod1,
          fleetnames = fleetnames1,
          plot = 16,

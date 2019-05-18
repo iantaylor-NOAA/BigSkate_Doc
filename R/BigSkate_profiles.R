@@ -328,21 +328,78 @@ goodmodels <- c(which(profilesummary$likelihoods[1,1:length(Q.vec + 1)] < 1e5 &
                         Q.vec >= 0.5 & Q.vec <= 2),
                 which(names(profilemodels) == "MLE"))
 
-SSplotProfile(profilesummary,           # summary object
-              minfraction = 0.001,
-              print=TRUE,
-              models=goodmodels,
-              ymax=10,
-              legendloc='top',
-              sort.by.max.change = FALSE,
-              plotdir=dir.profile.Q,
-              profile.string = "LnQ_base_WCGBTS", # substring of profile parameter
-              profile.label="Log of WCGBT Survey catchability, log(Q)") # axis label
+png('c:/SS/skates/BigSkate_Doc/Figures/profile_Q.png', 
+    width=6.5, height=5, res=300, units='in')
+tmp <- SSplotProfile(profilesummary,           # summary object
+                     minfraction = 0.001,
+                     print=FALSE,
+                     models=goodmodels,
+                     ymax=10,
+                     legendloc='top',
+                     sort.by.max.change = FALSE,
+                     plotdir=dir.profile.Q,
+                     profile.string = "LnQ_base_WCGBTS", # substring of profile parameter
+                     profile.label="Log of WCGBT Survey catchability, log(q)") # axis label
+axis(3, at=log(Q.vec), lab = Q.vec)
+mtext(side = 3, line=2.5, text = "WCGBT Survey catchability, q")
+dev.off()
+
+## # copy plot with generic name to main folder with more specific name
+## file.copy(file.path(dir.profile.Q, 'profile_plot_likelihood.png'),
+##           file.path(dir.profile.Q, 'profile_Q.png'), overwrite=TRUE)
+
+
+### make alternative version with no prior
+profilesummary2 <- profilesummary
+# removing the Q likelihood contributions
+likes <- profilesummary2$likelihoods
+for(imod in 1:length(profilemodels)){
+  # catchability prior likelihood  
+  Pr_Like <- profilemodels[[imod]]$parameters["LnQ_base_WCGBTS(5)","Pr_Like"]
+  likes[likes$Label == "Parm_priors", imod] <-
+    likes[likes$Label == "Parm_priors", imod] - Pr_Like
+  likes[likes$Label == "TOTAL", imod] <-
+    likes[likes$Label == "TOTAL", imod] - Pr_Like
+}
+profilesummary2$likelihoods <- likes
+
+png('c:/SS/skates/BigSkate_Doc/Figures/profile_Q_noprior.png', 
+    width=6.5, height=5, res=300, units='in')
+tmp2 <- SSplotProfile(profilesummary2,           # summary object
+                      minfraction = 0.001,
+                      print=FALSE,
+                      models=goodmodels,
+                      ymax=2,
+                      legendloc='top',
+                      sort.by.max.change = FALSE,
+                      plotdir=dir.profile.Q,
+                      profile.string = "LnQ_base_WCGBTS", # substring of profile parameter
+                      profile.label="Log of WCGBT Survey catchability, log(q)") # axis label
+axis(3, at=log(Q.vec), lab = Q.vec)
+mtext(side = 3, line=2.5, text = "WCGBT Survey catchability, q")
+dev.off()
+
+
+# Piner Plot showing influence of length comp by fleet
+tmp3 <- PinerPlot(profilesummary,           # summary object
+                  component="Length_like",
+                  main="Changes in length-composition likelihoods by fleet",
+                  minfraction = 0.0001,
+                  models=goodmodels,
+                  #xlim=c(3.2,4.6),
+                  #ymax=4,
+                  plotdir=dir.profile.Q,
+                  print=TRUE,
+                  profile.string = "LnQ_base_WCGBTS", # substring of profile parameter
+                  profile.label="Log of WCGBT Survey catchability, log(q)") # axis label
 # copy plot with generic name to main folder with more specific name
 file.copy(file.path(dir.profile.Q, 'profile_plot_likelihood.png'),
-          file.path(dir.profile.Q, 'profile_Q.png'), overwrite=TRUE)
+          file.path(dir.profile.Q, 'profile_len-comp_logQ.png'), overwrite=TRUE)
+
+
+
 # compare spawning biomass time series
-labels <- c(paste0("log(Q)=",round(lnQ.vec,2)," Q=",Q.vec), "Base Model, Q=0.81")
+labels <- c(paste0("log(q)=",round(lnQ.vec,2),", q=",Q.vec), "Base Model, q=0.81")
 ## lnQ.base <- out$parameters["LnQ_base_WCGBTS", "Value"]
 ## labels[lnQ.vec==h.base] <- paste(labels[lnQ.vec==lnQ.base], "(Base Model)")
 SSplotComparisons(profilesummary, subplot=1,
@@ -350,6 +407,22 @@ SSplotComparisons(profilesummary, subplot=1,
                   models=goodmodels,
                   png=TRUE, plotdir=dir.profile.Q,
                   filenameprefix="profile_Q_", legendloc="bottomleft")
+# copy plot with generic name to main folder with more specific name
+file.copy(file.path(dir.profile.Q, 'profile_plot_likelihood.png'),
+          file.path(dir.profile.Q, 'profile_Q.png'), overwrite=TRUE)
+
+plot(exp(as.numeric(profilesummary$pars[profilesummary$pars$Label=="LnQ_base_WCGBTS(5)",1:11])),
+     as.numeric(profilesummary$pars[profilesummary$pars$Label=="SR_LN(R0)",1:11]))
+
+dir.profile.R0 <- file.path(dir.mod, "profile.R0")
+profilemodels.R0 <- SSgetoutput(dirvec=dir.profile.R0,
+                                keyvec=1:length(logR0vec), getcovar=FALSE)
+profilemodels.R0$MLE <- out
+profilesummary.R0 <- SSsummarize(profilemodels.R0)
+
+points(exp(as.numeric(profilesummary.R0$pars[profilesummary.R0$pars$Label=="LnQ_base_WCGBTS(5)",1:11])),
+       as.numeric(profilesummary.R0$pars[profilesummary.R0$pars$Label=="SR_LN(R0)",1:11]),
+       col=2)
 
 
 } # end if(FALSE) section that doesn't get sourced

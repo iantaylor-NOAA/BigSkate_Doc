@@ -19,9 +19,10 @@ bio.Tri.LN   <- PullBio.fn(Name = "longnose skate", SurveyName = "Triennial")
 # save data for offline use
 save(catch.WCGBTS.BS, bio.WCGBTS.BS,
      catch.Tri.BS,    bio.Tri.BS,
-     file = 'c:/SS/skates/data/BigSkate_survey_extractions_4-22-2019.Rdata')
+     file = 'c:/SS/skates/data/BigSkate_survey_extractions_5-17-2019.Rdata')
 ### load previously extracted values
 # load('c:/SS/skates/data/BigSkate_survey_extractions_4-22-2019.Rdata')
+# load('c:/SS/skates/data/BigSkate_survey_extractions_5-17-2019.Rdata')
 
 
 # WGBTS for Longnose Skate
@@ -62,5 +63,3 @@ table(catch.NWFSC.Video.BS$Year, catch.NWFSC.Video.BS$cpue_kg_km2 > 0)
   ##      FALSE TRUE
   ## 2009    27   21
 
-
-          

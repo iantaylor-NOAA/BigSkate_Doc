@@ -215,6 +215,8 @@ Lines indicate 95\% uncertainty interval around index values. Thicker lines indi
 
 ### Likelihood Profiles
 
+<!-- ***********R0 Likelihood profile FIGURES****************************** --> 
+
 \FloatBarrier
 
 \vspace{2.5cm}
@@ -230,13 +232,22 @@ Lines indicate 95\% uncertainty interval around index values. Thicker lines indi
 
 \FloatBarrier
 
-<!-- ***********R0 Likelihood profile FIGURES****************************** --> 
-
-
 <!-- ![Likelihood profile over the log of equilibrium recruitment ($R_0$).\label{fig:profile_logR0}](Figures/profile_logR0.png) -->
 
 ![Time series of spawning biomass (mt) estimated for the models included in the profile over the log of equilibrium recruitment ($R_0$).\label{fig:profile_R0_compare1_spawnbio}](Figures/profile_R0_compare1_spawnbio.png)
 
+
+
+\FloatBarrier
+
+
+<!-- ***********q Likelihood profile FIGURES****************************** --> 
+
+![Likelihood profile over the catchability of the WCGBT survey ($q$) without the addition of the prior likelihood for q (the prior on natural mortality remains).\label{fig:profile_logQ_noprior}](Figures/profile_Q_noprior.png)
+
+![Likelihood profile over the catchability of the WCGBT survey ($q$) including the prior likelihood contribution.\label{fig:profile_logQ}](Figures/profile_Q.png)
+
+![Time series of spawning biomass (mt) estimated for the models included in the profile over the catchability of the WCGBT Survey ($q$).\label{fig:profile_Q_compare1_spawnbio}](Figures/profile_Q_compare1_spawnbio.png)
 
 
 \FloatBarrier
