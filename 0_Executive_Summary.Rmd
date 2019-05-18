@@ -168,7 +168,7 @@ Recruitment was assumed to follow the Beverton-Holt stock recruit curve, so unce
 
 ## Exploitation Status{-}
 Harvest rates estimated by the base model indicate catch levels have been below the limits that would be associated with the SPR = 50% target
-(Table \ref{tab:SPR_Exploit_mod1} and Figure \ref{fig:SPR_all}). 
+(Table \ref{tab:SPR_Exploit_mod1} and Figures \ref{fig:SPR_all} and \ref{fig:phase}). 
 
 \vspace{.5cm}
 
@@ -184,6 +184,7 @@ Harvest rates estimated by the base model indicate catch levels have been below 
    # select the files for the SPR and phase plots depending on the number of models
    
      SPR.file   = 'r4ss/plots_mod1/SPR2_minusSPRseries.png'
+     Phase.file   = 'r4ss/plots_mod1/SPR4_phase.png'
 
    
 ```
@@ -192,6 +193,7 @@ Harvest rates estimated by the base model indicate catch levels have been below 
 
 ![Estimated spawning potential ratio (SPR) for the base-case model. One minus SPR is plotted so that higher exploitation rates occur on the upper portion of the y-axis. The management target is plotted as a red horizontal line and values above this reflect harvests in excess of the overfishing proxy based on the SPR\textsubscript{50\%} harvest rate. The last year in the time series is `r Dat_end_mod1`. \label{fig:SPR_all}](`r SPR.file`)
 
+![Phase plot of biomass vs. fishing intensity. \label{fig:phase}](`r Phase.file`)
 
 
 <!-- ************END EXECUTIVE SUMMARY EXPLOITATION************************ -->

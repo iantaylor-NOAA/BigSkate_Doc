@@ -158,3 +158,77 @@ round(mean(vast.bio))
 ## [1] 12184
 round(mean(biomass.WCGBTS$Bio$Value)/1e3)
 ## [1] 12143
+
+
+
+
+############
+#### script to make table of input values and uncertainty for each index
+#### formerly in /R/table_of_index_inputs.R
+
+# this could point to any model prior to bigskate67 when IPHC index was removed
+bs66dir <- "C:/SS/skates/models//bigskate66_tri_init_fish_asymptotic"
+# read data file
+dat <- SS_readdat_3.30(file = file.path(bs66dir, "BSKT2019_data.ss"))
+# grab CPUE inputs
+cpue <- dat$CPUE
+
+Surv.vals.WCGBTS <- biomass.WCGBTS$Bio[,c("Year","Value","seLogB")]
+Surv.vals.WCGBTS$Value <- Surv.vals.WCGBTS$Value/1000
+
+Surv.vals.Tri <- biomass.Tri$Bio[,c("Year","Value","seLogB")]
+Surv.vals.Tri$Year <- as.numeric(as.character(Surv.vals.Tri$Year))
+# chop of 1977
+Surv.vals.Tri <- Surv.vals.Tri[Surv.vals.Tri$Year > 1977,]
+# why is dividing by 1000 necessary to get them to match,
+# perhaps the estimates are in kg?
+Surv.vals.Tri$Value <- Surv.vals.Tri$Value/1000
+
+# make table
+tab <- data.frame(year = sort(as.numeric(unique(cpue$year))),
+                  stringsAsFactors = FALSE)
+# loop over fleets with index
+for(f in sort(unique(as.numeric(cpue$index)))){
+  fleetname <- dat$fleetnames[f]
+  col1name <- paste0(dat$fleetname[f], ".obs")
+  col2name <- paste0(dat$fleetname[f], ".se_log")
+  tab[[col1name]] <- NA
+  tab[[col2name]] <- NA
+  # subset cpue for this fleet
+  cpue.f <- cpue[cpue$index == f,]
+  # loop over values within this fleet
+  for(irow in 1:nrow(cpue.f)){
+    y <- cpue.f$year[irow]
+    scale <- 1
+    if(f == 7){
+      scale <- 1000
+    }
+    tab[tab$year == y, col1name] <- scale*as.numeric(cpue.f$obs[irow])
+    tab[tab$year == y, col2name] <- round(as.numeric(cpue.f$se_log[irow]), 4)
+  }
+}
+
+### update on 5/18/2019
+# remove IPHC and add design-based values
+tab <- data.frame(tab[,c(1,4,5)], Tri.design=NA, Tri.design.se_log=NA,
+                  tab[,2:3], WCGBTS.design=NA, WCGBTS.design.se_log=NA)
+for(y in seq(1980, 2004, 3)){
+  tab$Tri.design[tab$year == y] <- Surv.vals.Tri$Value[Surv.vals.Tri$Year == y]
+  tab$Tri.design.se_log[tab$year == y] <- Surv.vals.Tri$seLogB[Surv.vals.Tri$Year == y]
+}
+for(y in 2003:2018){
+  tab$WCGBTS.design[tab$year == y] <- Surv.vals.WCGBTS$Value[Surv.vals.WCGBTS$Year == y]
+  tab$WCGBTS.design.se_log[tab$year == y] <- Surv.vals.WCGBTS$seLogB[Surv.vals.WCGBTS$Year == y]
+}
+
+names(tab) <- gsub("Triennial", "Tri.VAST", names(tab))
+names(tab)[6:7] <- gsub("WCGBTS", "WCGBTS.VAST", names(tab)[6:7])
+for(icol in c(2,4,6,8)){
+  tab[,icol] <- round(tab[,icol])
+}
+for(icol in 1+c(2,4,6,8)){
+  tab[,icol] <- round(tab[,icol], 3)
+}
+write.csv(tab,
+          file="C:/SS/skates/BigSkate_Doc/txt_files/data_summaries/table_of_index_inputs_May18.csv",
+          row.names=FALSE)
