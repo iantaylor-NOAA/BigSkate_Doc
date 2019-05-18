@@ -18,7 +18,7 @@
 \begin{figure}[!h]
 \begin{centering}
 \includegraphics{r4ss/plots_mod1/comp_lenfit_flt1mkt2.png}
-\caption{Length comps, retained, Fishery. ‘N adj.’ is the input sample size after data weighting adjustment. N eff. is the calculated effective sample size used in the McAllister Iannelli tuning method.}\label{fig:fig:comp_lenfit_flt1mkt2}
+\caption{Length comps, retained, Fishery. ‘N adj.’ is the input sample size after data weighting adjustment. N eff. is the calculated effective sample size used in the McAllister Iannelli tuning method.}\label{fig:comp_lenfit_flt1mkt2}
 \end{centering}
 \end{figure}
 
