@@ -107,6 +107,7 @@ Coast in 2019}
 %\RequirePackage[tagged]{accessibilityMeta}
 \usepackage{booktabs}                                             % For multi-header tables
 \usepackage{geometry}                                             % For landscape display
+\usepackage{graphicx}
 
 \linenumbers                                                      % specify use of line numbers
 
@@ -339,7 +340,7 @@ assumes the stock was at an unfished equilibrium that year.
 
 The assessment relies on two bottom trawl survey indices of abundance,
 the Triennial Survey from an index covering the period 1980--2004 was
-used here and the West Coast Groundifish Bottom Trawl (WCGBT) Survey,
+used here and the West Coast Groundfish Bottom Trawl (WCGBT) Survey,
 which began in 2003 and for which data is available through 2018. The
 triennial survey shows an increasing trend over the 25 year period it
 covers, which the model is not able to fit as this includes the peak
@@ -400,12 +401,12 @@ future.
 The 2018 estimated spawning biomass relative to unfished equilibrium
 spawning biomass is above the target of 40\% of unfished spawning
 biomass at 75.0\% (95\% asymptotic interval: \(\pm\) 63.9\%-86.0\%)
-(Figure \ref{fig:RelDeplete_all}). Approximate confidence intervals
-based on the asymptotic variance estimates show that the uncertainty in
-the estimated spawning biomass is high, although even the lower range of
-the 95\% interval for \%unfished is above the 40\% reference point, and
-all sensitivity analyses explore also show the stock to be at a high
-level.
+(Figure \ref{fig:ts9_unfished_with_95_asymptotic_intervals_intervals}).
+Approximate confidence intervals based on the asymptotic variance
+estimates show that the uncertainty in the estimated spawning biomass is
+high, although even the lower range of the 95\% interval for \%unfished
+is above the 40\% reference point, and all sensitivity analyses explore
+also show the stock to be at a high level.
 
 \vspace{.5cm}
 
@@ -691,7 +692,11 @@ Time-varying ACLs}
 Potential OFLs projected by the model are shown in Table
 \ref{tab:OFL_projection}. These values are based on an SPR target of
 50\%, a P* of 0.45, and a time-varying Category 2 Sigma which creates
-the buffer shown in the right-hand column.
+the buffer shown in the right-hand column. The OFL and ACL values for
+2019 and 2020 are the current harvest specifications (also shown in
+Table \ref{tab:mnmgt_perform}) while the landings for 2019 and 2020
+represent the average landings over the most recent 5 years
+(2014--2018).
 
 \begin{table}[ht]
 \centering
@@ -1156,7 +1161,7 @@ Unspecified Skate landings in Oregon were comprised of Big Skate. Such
 large landings indicates targeting of Big Skate has occurred and an EC
 designation was not warranted. Based on this evidence, Big Skate was
 redesignated as an actively-managed species in the fishery. Big skate
-have been managed with stock-specific harvest specifications since 2017.
+has been managed with stock-specific harvest specifications since 2017.
 
 The recent OFL of 541 mt was calculated by applying approximate MSY
 harvest rates to estimates of stock biomass from the Northwest Fisheries
@@ -1274,14 +1279,17 @@ Figure \ref{fig:catch_by_state}.
 \subsubsection{Washington Commercial Skate Landings
 Reconstruction}\label{washington-commercial-skate-landings-reconstruction}}
 
-Estimates of landings of Big Skate in Washington state were estimated as
-a fraction of total skate landings as described in (Gertseva, V.
+New estimates of landings in Washington were developed in collaboration
+between NWFSC and Washington Department of Fish and Wildlife (WDFW).
+Landings from 1940--2003 were estimated as a fraction of the total skate
+landings based on ratios of species compositions by depth as described
+in more detail in (Gertseva, V.
 \protect\hyperlink{ref-Gertseva2019}{2019}). The approached relied on
-trawl survey estimates of depth distributions for each species, combined
+trawl survey estimates ratios among all skates by depth bin combined
 with logbook estimates of fishing depths in each year.
 
-The WCGBT Survey data was used to estimate proportions of longnose and
-big skates by depth (aggregated into 100m bins) and year for the period
+The WCGBT Survey data was used to estimate proportions of Longnose and
+Big Skates by depth (aggregated into 100m bins) and year for the period
 of the survey (between 2003 and 2018). Big Skate were primarily found in
 the 0--100m and 100--200m. Trawl logbook data include information on the
 amount of retained catch of skate (all species combined) within each
@@ -1301,6 +1309,8 @@ data were available), the average proportion Big Skate within the
 combined skate category, calculated from 1987-1992 logbook data, was
 applied to total skate landings in Washington. Estimated Big Skate
 landings provided by WDFW were used for the period from 2004 forward.
+This later period had adequate species composition sampling to divide
+the unspecified skate category by species with reasonable accuracy.
 
 \hypertarget{oregon-commercial-skate-landings-reconstruction}{%
 \subsubsection{Oregon Commercial Skate Landings
@@ -1310,11 +1320,11 @@ Oregon Department of Fish and Wildlife (ODFW) provided newly
 reconstructed commercial landings for all observed skate species for the
 2019 assessment cycle (1978 -- 2018). In addition, the methods were
 reviewed at a pre-assessment workshop. Historically, skates were landed
-as a single skate complex in Oregon. In 2009, longnose skates were
-separated into their own single-species landing category, and in 2014,
-big skates were also separated. The reconstruction methodology differed
-by these three time blocks in which species composition collections
-diverged (1978 -- 2008; 2009 -- 2014; 2015 -- 2018).
+as a single skate complex in Oregon. In 2009, Longnose Skate was
+separated into its own single-species landing category, and Big Skate
+was separated in 2014. The reconstruction methodology differed by these
+three time blocks in which species composition collections diverged
+(1978 -- 2008; 2009 -- 2014; 2015 -- 2018).
 
 Species compositions of skate complexes from commercial port sampling
 are available throughout this time period but are generally limited,
@@ -1339,16 +1349,16 @@ strata as well (25\%).
 
 Due to insufficient species compositions, mid-water trawl landings were
 reconstructed using a novel depth-based approach. Available compositions
-indicate that the proportion by weight of big skates within a
-composition drops to zero at approximately 100 fathoms, and an inverse
-relationship is observed for longnose skate, where the proportion by
-weight is consistently one beyond 100 -- 150 fathoms . Complex-level
-landings were assigned a depth from logbook entries and these species
-specific depth associations were used to parse out landings by species.
-The approach differed somewhat by time block . Landings from shrimp
-trawls were handled using a similar methodology. Finally, very minor
-landings from hook and line, pot gear and scallop dredges were assigned
-a single aggregated species composition, as they lack any gear-specific
+indicate that the proportion by weight of Big Skate within a composition
+drops to zero at approximately 100 fathoms, and an inverse relationship
+is observed for Longnose Skate, where the proportion by weight is
+consistently one beyond 100 -- 150 fathoms . Complex-level landings were
+assigned a depth from logbook entries and these species specific depth
+associations were used to parse out landings by species. The approach
+differed somewhat by time block . Landings from shrimp trawls were
+handled using a similar methodology. Finally, very minor landings from
+hook and line, pot gear and scallop dredges were assigned a single
+aggregated species composition, as they lack any gear-specific
 composition samples. Landings from within a time block were apportioned
 by year using the proportion of the annual ticket landings.
 
@@ -1439,27 +1449,27 @@ increased from 62.8 t in 1950 to 63.5 in 1995. The estimated tribal
 catch prior to 1995 averaged less than 1 t and was not included in this
 analysis of Big Skate discards for the years prior to 1995.
 
-The mean discard rate for LN was 92.46\%, also with no significant
-linear trend (the linear fit decreased from 92.8\% in 1950 to 92.1\% in
-1995). An estimate of the mean annual discard amount can therefore be
-calculated as from the mean discard rate and the mean landings as
-\(\bar{L} / (1 - \bar{d})\) where \(\bar{L}\) is the mean landings
-across that time period and \(\bar{d}\) is the mean discards (Figure
-\ref{fig:discard_calculations.png}).
+The mean discard rate for Longnose Skate was 92.46\%, also with no
+significant linear trend (the linear fit decreased from 92.8\% in 1950
+to 92.1\% in 1995). An estimate of the mean annual discard amount can
+therefore be calculated as from the mean discard rate and the mean
+landings as \(\bar{L} / (1 - \bar{d})\) where \(\bar{L}\) is the mean
+landings across that time period and \(\bar{d}\) is the mean discards
+(Figure \ref{fig:discard_calculations}).
 
 Two alternative methods were used to estimate the mean annual discard
-amount: applying the annual LN discard rates to the annual BS catch, and
-applying 3-year moving averages of these two quantities. The use of the
-annual values resulted in an implausibly high degree of annual
-variability among the estimates, with the most extreme being a spike of
-2146.4 in 1979 compared to 1032.7 t the year before and 654.0 the year
-after. The use of the 3-year moving average dampened this variability
-and these estimates were retained for a sensitivity analysis (Figure
-\ref{fig:discard_calculations}).
+amount: applying the annual Longnose Skate discard rates to the annual
+Big Skate catch, and applying 3-year moving averages of these two
+quantities. The use of the annual values resulted in an implausibly high
+degree of annual variability among the estimates, with the most extreme
+being a spike of 2146.4 in 1979 compared to 1032.7 t the year before and
+654.0 the year after. The use of the 3-year moving average dampened this
+variability and these estimates were retained for a sensitivity analysis
+(Figure \ref{fig:discard_calculations}).
 
 A discard mortality rate of 50 percent was assumed for all discards,
 following the assumption used for the Longnose Skate assessment
-conducted for the U.S. West Coast in 2007 (Gertseva, V and Schrippa, MJ
+conducted for the U.S. West Coast in 2007 (Gertseva, V and Schirippa, MJ
 \protect\hyperlink{ref-Gertseva2007}{2007}) The same rate has been used
 for skates in the trawl fishery in British Columbia, based on an
 approximate average of these reported rates. In 2015, PFMC's Groundfish
@@ -1549,27 +1559,34 @@ probability, and a log-link for positive catch rates. Vessel-year
 effects were included for each unique combination of vessel and year in
 the database for the WCGBT Survey but not the Triennial survey. Further
 details regarding model structure are available in the user manual
-(\url{https://github.com/James-Thorson/VAST/blob/master/examples/VAST_user_manual.pdf}).
+(\url{https://github.com/James-Thorson-NOAA/VAST/blob/master/manual/VAST_model_structure.pdf}).
 
 Spatial patterns in the survey estimates show Big Skate widely
 distributed along the coast, with higher densities in the central and
 more northern areas and closer to shore
 \ref{fig:VAST_Yearly_Dens_Triennial}.
 
-\hypertarget{internation-pacific-halibut-commission-longline-survey}{%
-\subsubsection{Internation Pacific Halibut Commission Longline
-Survey}\label{internation-pacific-halibut-commission-longline-survey}}
+\hypertarget{international-pacific-halibut-commission-longline-survey}{%
+\subsubsection{International Pacific Halibut Commission Longline
+Survey}\label{international-pacific-halibut-commission-longline-survey}}
 
 The IPHC has conducted an annual longline survey for Pacific Halibut off
 the coast of Oregon and Washington since 1997 (no surveys were performed
-in 1998 or 2000). Beginning in 1999, this has been a fixed station
-design, with 84 locations in this area (station locations differed in
-1997, and are therefore not comparable with subsequent surveys). 400 to
-800 hooks have been deployed at each station in 100-hook groups
-(typically called ``skates'' although that term will be avoided here to
-avoid confusion). The gear used to conduct the survey was designed to
-efficiently sample Pacific Halibut and used 16/0 (\#3) circle hooks
-baited with Chum Salmon.
+in 1998 or 2000). This survey was considered for inclusion in the
+assessment model but the enounters of Big Skate are relatively
+infrequent compared to Longnose Skate and including the survey in early
+model explorations was found to make little difference in the model
+results. A description of the survey methods and analysis are below for
+consideration in future Big Skate assessments.
+
+Beginning in 1999, this has been a fixed station design, with 84
+locations in this area (station locations differed in 1997, and are
+therefore not comparable with subsequent surveys). 400 to 800 hooks have
+been deployed at each station in 100-hook groups (typically called
+``skates'' although that term will be avoided here to avoid confusion).
+The gear used to conduct the survey was designed to efficiently sample
+Pacific Halibut and used 16/0 (\#3) circle hooks baited with Chum
+Salmon.
 
 In some years from 2011 onward, additional stations were added to the
 survey to sample Yelloweye Rockfish. These stations were excluded from
@@ -1838,10 +1855,10 @@ lognormal(log(0.36) = --1.021651, 0.438) prior.
 
 \emph{Survey Catchability} The lack of contrast in the data resulted in
 unstable model results under a variety of configurations. To keep
-biomass estimates within a plausable range, the assessment uses a prior
+biomass estimates within a plausible range, the assessment uses a prior
 on the WCGBTS survey catchability parameter (\(q\)) that was originally
 developed for the 2007 Longnose Skate assessment (Gertseva, V and
-Schrippa, MJ \protect\hyperlink{ref-Gertseva2007}{2007} p. @Dorn2007),
+Schirippa, MJ \protect\hyperlink{ref-Gertseva2007}{2007} p. @Dorn2007),
 and is being used for the concurrent Longnose Skate assessment
 (Gertseva, V. \protect\hyperlink{ref-Gertseva2019}{2019}). The prior for
 the WCGBT Survey was derived as follows.
@@ -1877,10 +1894,10 @@ range for individual factors, except for the probability of capture,
 which was given a value of one. The overall estimate for the survey
 catchability was the product of the best estimates, 0.83. The bounds on
 catchability are the products of the low and high values for factor
-ranges, respecively, which are 0.53 and 1.43. The best guess was equated
-to the median of a lognormal distribution and the bounds to 99\% of that
-distribution. This gave a normal prior on \(log(q)\), with mean --0.188
-and standard deviation 0.187.
+ranges, respectively, which are 0.53 and 1.43. The best guess was
+equated to the median of a lognormal distribution and the bounds to 99\%
+of that distribution. This gave a normal prior on \(log(q)\), with mean
+--0.188 and standard deviation 0.187.
 
 \hypertarget{estimated-parameters}{%
 \subsubsection{Estimated Parameters}\label{estimated-parameters}}
@@ -1922,16 +1939,20 @@ units relative to the von Bertalanffy growth model.
 
 \emph{Natural Mortality.} Male natural mortality was assumed equal to
 the value estimated for females. Sensitivity analyses were used to test
-the impact of both the the prior on natural mortality and the assumption
-of equal natural mortality for both sexes.
+the impact of both the prior on natural mortality and the assumption of
+equal natural mortality for both sexes.
 
 \emph{Selectivity.}\\
 A double-normal selectivity function was used for all fleets to allow
-consideration of both asymptotic and dome-shaped patterns. For the
-fishery and the Triennial survey, the difference in likelihood between
-dome-shaped and asymptotic patterns was very small and in the case of
-the Triennial survey, the dome-shape occurred at a length beyond almost
-all observations, indicating that this shape was likely driven by fit to
+consideration of both asymptotic and dome-shaped patterns. No length
+compositions data was available for the historical fishery, the
+historical discards, or the tribal fisheyr, so selectivity was assumed
+equal for all fisheries in all time periods, and will be referenced
+simply as ``the fishery'' in many areas below. For the fishery and the
+Triennial survey, the difference in likelihood between dome-shaped and
+asymptotic patterns was very small and in the case of the Triennial
+survey, the dome-shape occurred at a length beyond almost all
+observations, indicating that this shape was likely driven by fit to
 other data sources, such as the index, rather than the length
 composition data. The WCGBT Survey was allowed to remain dome-shaped as
 this survey had the selectivity peak at a smaller length than the other
@@ -1948,12 +1969,26 @@ that peak (allowing one sex to have a maximum of 1.0 at the peak and the
 other to have a maximum less than 1.0). The ascending slope was assumed
 equal in all cases, as was the descending slope for the WCGBT Survey.
 
+Fishery retention was estimated as a logistic function applied to the
+selected catch from 1995 onward to estimate discards within the model.
+Discards prior to 1995 were estimated outside the model and input as the
+historical discard fleet as discussed above. Three retention parameters
+were estimated, the length at 50\% retention, a slope parameter, and the
+asymptotic retention rate. The asymptotic retention rate was estimated
+as time-varying with separate parameters covering 1995--2004, individual
+years from 2005 to 2016, and 2017--onward. The choice of these time
+blocks was made to allow the model to fit well the discard rates during
+the 2005--2016 period with the most information about discard rates,
+while using the first three years with data on discard rates and mean
+body weight of the discarded fish (2002--2004) as the basis for the
+estimate applied to the earlier years without discard data.
+
 \hypertarget{fixed-parameters}{%
 \subsubsection{Fixed Parameters}\label{fixed-parameters}}
 
 The steepness of the Beverton-Holt stock-recruit curve was fixed at 0.4.
 The same value was used in the 2007 Longnose Skate assessment (Gertseva,
-V and Schrippa, MJ \protect\hyperlink{ref-Gertseva2007}{2007}) and is
+V and Schirippa, MJ \protect\hyperlink{ref-Gertseva2007}{2007}) and is
 being considered for the ongoing 2019 Longnose Skate assessment. This
 value reflects a K-type reproductive strategy associated with
 elasmobranchs in general. The influence of the assumption of \(h=0.4\)
@@ -2031,14 +2066,12 @@ Requests}\label{response-to-the-current-star-panel-requests}}
 \hypertarget{base-case-model-results}{%
 \subsection{Base Case Model Results}\label{base-case-model-results}}
 
-The following description of the model results reflects a base model
-that incorporates all of the changes made during the STAR panel (see
-previous section). The base model parameter estimates and their
-approximate asymptotic standard errors are shown in Table
-\ref{tab:model_params}. Estimates of derived reference points and
-approximate 95\% asymptotic confidence intervals are shown in Table
-\ref{tab:Ref_pts_mod1}. Time-series of estimated stock size over time
-are shown in Table \ref{tab:Timeseries_mod1}.
+The base model parameter estimates and their approximate asymptotic
+standard errors are shown in Table \ref{tab:model_params}. Estimates of
+derived reference points and approximate 95\% asymptotic confidence
+intervals are shown in Table \ref{tab:Ref_pts_mod1}. Time-series of
+estimated stock size over time are shown in Table
+\ref{tab:Timeseries_mod1}.
 
 \hypertarget{parameter-estimates}{%
 \subsubsection{Parameter Estimates}\label{parameter-estimates}}
@@ -2078,10 +2111,10 @@ the Triennial Survey, respectively (Figure
 
 \emph{Indices.} The observed indices show much more variability than the
 model expectation, with the fit to the WCGBT Survey essentially a flat
-line (Figure \ref{fig:index2_cpuefit_WCGBTS}) and the fit to the
-Triennial Survey only showing a noticeable change over time due to the
-separate catchability parameter estimated for the early and late periods
-(Figure \ref{fig:index2_cpuefit_Triennial}).
+line (Figure \ref{fig:index2_cpuefit_WCGBTS}). The fit to the Triennial
+Survey showsa noticeable change over time due to the separate
+catchability parameters estimated for the early and late periods (Figure
+\ref{fig:index2_cpuefit_Triennial}).
 
 \emph{Length Data.} The fits to the length data were reasonably good
 (Figures
@@ -2097,14 +2130,14 @@ second is close to the estimated male L-infinity parameter. However, the
 second mode in the model expectation is less pronounced than in the
 observed data (Figure \ref{fig:comp_lenfit_aggregated_across_time}). The
 residual patterns in the fit to the length compositions don't show
-strong patterns, with the WCGBT Survey data especially well fit. The
-residuals in the fit to the fishery length compositions show a few large
-residuals in the early years as a few years where there were
-observations of small (under 50 cm) fish in the retained fishery catch
-which the model expected would have been discarded (Figure
-\ref{fig:comp_lenfit__multi-fleet_comparison}). The fit to the length
-data in alternative models that lacked either the growth cessation model
-or the sex-specific offsets to selectivity were less good.
+strong patterns, with the WCGBT Survey data especially well fit. There
+are a few large residuals over a range of lengths in the early years as
+well as a few years where there were observations of small (under 50 cm)
+fish in the retained fishery catch which the model expected would have
+been discarded (Figure \ref{fig:comp_lenfit__multi-fleet_comparison}).
+The fit to the length data in alternative models that lacked either the
+growth cessation model or the sex-specific offsets to selectivity were
+less good (results not shown).
 
 \emph{Conditional Age-at-Length.} The conditional age-at-length data is
 likewise fit reasonably well, with some patterns in residuals showing
@@ -2120,8 +2153,8 @@ the middle range of sizes (70--120 cm), with a shift to almost 100\%
 females for the largest size bins (over 130 cm). These patterns are
 shown in Figures \ref{fig:sexratio_len_flt1mkt2} and
 \ref{fig:sexratio_len_flt5mkt0}. The approximate uncertainty associated
-with the observed ratios is represnted using a Jeffreys interval (Brown
-et al. \protect\hyperlink{ref-brown2001interval}{2001}) based on the
+with the observed ratios is represented by a Jeffreys interval (Brown et
+al. \protect\hyperlink{ref-brown2001interval}{2001}) based on the
 combination of the proportion of the lengths with each length bin and
 the adjusted input sample size. The use of sex-specific growth curves
 was adequate to fit the ratios for the largest bins, but ratio skews
@@ -2220,8 +2253,8 @@ was associated with the prior itself.
 The sensitivity analyses related to discard mortality resulted in little
 change in the scale of the population for any scenario (Figure
 \ref{fig:Sensitivity_catch} and Table \ref{tab:Sensitivity_catch}).
-Increasing or descring the discard mortality from 0.5 to 0.4 or 0.6 had
-the least impact, while the two alternative time series of discards
+Increasing or decreasing the discard mortality from 0.5 to 0.4 or 0.6
+had the least impact, while the two alternative time series of discards
 caused the population to fall to a lower level around 1990 and increase
 faster in the recent period. The discards based on 3-yr average analysis
 simply used the alternative time series of historical discards described
@@ -2229,8 +2262,8 @@ above and shown in Figure \ref{fig:discard_calculations}.
 
 The sensitivity analysis in which multipliers on historical discards
 were estimated made use of the relatively new ``catch multiplier''
-option in Stock Synthesis. Multiplier parameters controling the ratio of
-the discards removed from the model relative to the input values were
+option in Stock Synthesis. Multiplier parameters controlling the ratio
+of the discards removed from the model relative to the input values were
 estimated for blocks of time covering the periods 1916--1949,
 1950--1959, 1960--1969, 1970--1979, 1980--1989, and 1990--1994. These
 multiplier parameters were bounded to keep the input catch relative to
@@ -2751,11 +2784,13 @@ Lengths &  &  &  &  &  &  \\
                                         rate is $(1-SPR)/(1-SPR_{50\%})$.} \\ 
   \hline
 Year & Total biomass (mt) & Spawning biomass (mt) & \%Unfished & Age-0 recruits & Total catch (mt) & Relative exploitation rate & SPR \\ 
-  \hline  \endfirsthead \caption[]{Time-series of population estimates 
-                                        from the base-case model. Relative exploitation 
-                                        rate is $(1-SPR)/(1-SPR_{50\%})$.} \label{tab:Timeseries_mod1} \\ \hline Year & Total biomass (mt) & Spawning biomass (mt) & %Unfished & Age-0 recruits & Total catch (mt) & Relative exploitation rate & SPR \\ \hline  \endhead \hline \multicolumn{5}{l}{\textit{Continues next page}} \ 
-                                 \endfoot
-                                 \endlastfoot \hline
+  \hline 
+\endhead 
+\hline 
+\multicolumn{5}{l}{\footnotesize Continued on next page} 
+\endfoot 
+\endlastfoot 
+ \hline
 1916 & 25232 & 2224 & 1.000 & 6176 & 0 & 0.00 & 1.00 \\ 
   1917 & 25232 & 2224 & 1.000 & 6176 & 12 & 0.00 & 0.99 \\ 
   1918 & 25221 & 2223 & 0.999 & 6175 & 25 & 0.00 & 0.99 \\ 
@@ -2862,6 +2897,7 @@ Year & Total biomass (mt) & Spawning biomass (mt) & \%Unfished & Age-0 recruits 
   2019 & 0 & 1667 & 0.750 & 5488 &  &  &  \\ 
    \hline
 \hline
+\label{tab:Timeseries_mod1}
 \end{longtable}
 
 \begin{landscape}
@@ -3158,127 +3194,40 @@ Yr & OFL contribution (mt) & ACL landings (mt) & Age 5+ biomass (mt) & Spawning 
 
 \FloatBarrier
 
-\begin{longtable}{c>{\centering}p{.6in}>{\centering}p{.6in}>{\centering}p{.6in}>{\centering}p{.6in}>{\centering}p{.8in}>{\centering}p{.8in}c}
-\caption{Time-series of population estimates 
-                                        from the base-case model. Relative exploitation 
-                                        rate is $(1-SPR)/(1-SPR_{50\%})$.} \\ 
-  \hline
-Year & Total biomass (mt) & Spawning biomass (mt) & \%Unfished & Age-0 recruits & Total catch (mt) & Relative exploitation rate & SPR \\ 
-  \hline  \endfirsthead \caption[]{Time-series of population estimates 
-                                        from the base-case model. Relative exploitation 
-                                        rate is $(1-SPR)/(1-SPR_{50\%})$.} \label{tab:Timeseries_mod1} \\ \hline Year & Total biomass (mt) & Spawning biomass (mt) & %Unfished & Age-0 recruits & Total catch (mt) & Relative exploitation rate & SPR \\ \hline  \endhead \hline \multicolumn{5}{l}{\textit{Continues next page}} \ 
-                                 \endfoot
-                                 \endlastfoot \hline
-1916 & 25232 & 2224 & 1.000 & 6176 & 0 & 0.00 & 1.00 \\ 
-  1917 & 25232 & 2224 & 1.000 & 6176 & 12 & 0.00 & 0.99 \\ 
-  1918 & 25221 & 2223 & 0.999 & 6175 & 25 & 0.00 & 0.99 \\ 
-  1919 & 25199 & 2220 & 0.998 & 6172 & 37 & 0.00 & 0.98 \\ 
-  1920 & 25169 & 2217 & 0.997 & 6168 & 49 & 0.00 & 0.98 \\ 
-  1921 & 25131 & 2212 & 0.995 & 6164 & 62 & 0.00 & 0.97 \\ 
-  1922 & 25087 & 2206 & 0.992 & 6157 & 74 & 0.00 & 0.97 \\ 
-  1923 & 25037 & 2200 & 0.989 & 6150 & 86 & 0.00 & 0.96 \\ 
-  1924 & 24981 & 2192 & 0.985 & 6142 & 99 & 0.00 & 0.96 \\ 
-  1925 & 24920 & 2183 & 0.981 & 6132 & 111 & 0.00 & 0.96 \\ 
-  1926 & 24854 & 2173 & 0.977 & 6122 & 123 & 0.01 & 0.95 \\ 
-  1927 & 24783 & 2163 & 0.973 & 6111 & 136 & 0.01 & 0.94 \\ 
-  1928 & 24707 & 2153 & 0.968 & 6100 & 148 & 0.01 & 0.94 \\ 
-  1929 & 24627 & 2142 & 0.963 & 6088 & 160 & 0.01 & 0.93 \\ 
-  1930 & 24544 & 2130 & 0.958 & 6076 & 172 & 0.01 & 0.93 \\ 
-  1931 & 24456 & 2118 & 0.953 & 6063 & 185 & 0.01 & 0.92 \\ 
-  1932 & 24365 & 2106 & 0.947 & 6049 & 197 & 0.01 & 0.92 \\ 
-  1933 & 24271 & 2094 & 0.941 & 6035 & 210 & 0.01 & 0.91 \\ 
-  1934 & 24174 & 2081 & 0.936 & 6020 & 222 & 0.01 & 0.91 \\ 
-  1935 & 24074 & 2067 & 0.929 & 6005 & 234 & 0.01 & 0.90 \\ 
-  1936 & 23971 & 2053 & 0.923 & 5989 & 246 & 0.01 & 0.90 \\ 
-  1937 & 23866 & 2039 & 0.917 & 5973 & 259 & 0.01 & 0.89 \\ 
-  1938 & 23758 & 2025 & 0.910 & 5956 & 271 & 0.01 & 0.89 \\ 
-  1939 & 23648 & 2010 & 0.904 & 5939 & 329 & 0.01 & 0.87 \\ 
-  1940 & 23494 & 1991 & 0.895 & 5916 & 329 & 0.02 & 0.86 \\ 
-  1941 & 23353 & 1972 & 0.887 & 5894 & 363 & 0.02 & 0.85 \\ 
-  1942 & 23193 & 1952 & 0.878 & 5869 & 351 & 0.02 & 0.85 \\ 
-  1943 & 23059 & 1933 & 0.869 & 5846 & 343 & 0.02 & 0.86 \\ 
-  1944 & 22943 & 1917 & 0.862 & 5826 & 350 & 0.02 & 0.85 \\ 
-  1945 & 22829 & 1900 & 0.854 & 5805 & 364 & 0.02 & 0.85 \\ 
-  1946 & 22708 & 1884 & 0.847 & 5784 & 379 & 0.02 & 0.84 \\ 
-  1947 & 22581 & 1868 & 0.840 & 5763 & 394 & 0.02 & 0.83 \\ 
-  1948 & 22447 & 1851 & 0.832 & 5742 & 412 & 0.02 & 0.83 \\ 
-  1949 & 22306 & 1834 & 0.825 & 5720 & 426 & 0.02 & 0.82 \\ 
-  1950 & 22162 & 1818 & 0.817 & 5698 & 424 & 0.02 & 0.82 \\ 
-  1951 & 22032 & 1801 & 0.810 & 5677 & 418 & 0.02 & 0.82 \\ 
-  1952 & 21917 & 1786 & 0.803 & 5656 & 434 & 0.02 & 0.81 \\ 
-  1953 & 21794 & 1771 & 0.796 & 5635 & 515 & 0.03 & 0.78 \\ 
-  1954 & 21603 & 1748 & 0.786 & 5604 & 430 & 0.02 & 0.81 \\ 
-  1955 & 21507 & 1734 & 0.780 & 5584 & 470 & 0.02 & 0.80 \\ 
-  1956 & 21377 & 1718 & 0.772 & 5561 & 434 & 0.02 & 0.81 \\ 
-  1957 & 21290 & 1706 & 0.767 & 5544 & 439 & 0.02 & 0.81 \\ 
-  1958 & 21201 & 1694 & 0.762 & 5527 & 426 & 0.02 & 0.81 \\ 
-  1959 & 21126 & 1685 & 0.757 & 5514 & 435 & 0.02 & 0.81 \\ 
-  1960 & 21045 & 1675 & 0.753 & 5500 & 427 & 0.02 & 0.81 \\ 
-  1961 & 20974 & 1667 & 0.750 & 5489 & 487 & 0.03 & 0.78 \\ 
-  1962 & 20849 & 1655 & 0.744 & 5471 & 465 & 0.02 & 0.79 \\ 
-  1963 & 20754 & 1645 & 0.740 & 5456 & 473 & 0.02 & 0.79 \\ 
-  1964 & 20658 & 1635 & 0.735 & 5440 & 468 & 0.02 & 0.79 \\ 
-  1965 & 20575 & 1624 & 0.730 & 5425 & 438 & 0.02 & 0.80 \\ 
-  1966 & 20525 & 1616 & 0.727 & 5413 & 444 & 0.02 & 0.80 \\ 
-  1967 & 20470 & 1608 & 0.723 & 5401 & 463 & 0.02 & 0.79 \\ 
-  1968 & 20399 & 1599 & 0.719 & 5387 & 497 & 0.03 & 0.78 \\ 
-  1969 & 20299 & 1588 & 0.714 & 5369 & 460 & 0.02 & 0.79 \\ 
-  1970 & 20238 & 1581 & 0.711 & 5358 & 416 & 0.02 & 0.81 \\ 
-  1971 & 20223 & 1578 & 0.710 & 5354 & 409 & 0.02 & 0.81 \\ 
-  1972 & 20211 & 1577 & 0.709 & 5352 & 423 & 0.02 & 0.80 \\ 
-  1973 & 20184 & 1574 & 0.708 & 5348 & 429 & 0.02 & 0.80 \\ 
-  1974 & 20150 & 1571 & 0.706 & 5343 & 415 & 0.02 & 0.81 \\ 
-  1975 & 20130 & 1570 & 0.706 & 5341 & 429 & 0.02 & 0.80 \\ 
-  1976 & 20097 & 1567 & 0.705 & 5337 & 440 & 0.02 & 0.80 \\ 
-  1977 & 20057 & 1564 & 0.703 & 5331 & 452 & 0.02 & 0.79 \\ 
-  1978 & 20010 & 1559 & 0.701 & 5324 & 536 & 0.03 & 0.76 \\ 
-  1979 & 19887 & 1546 & 0.695 & 5304 & 584 & 0.03 & 0.74 \\ 
-  1980 & 19732 & 1529 & 0.688 & 5277 & 444 & 0.02 & 0.79 \\ 
-  1981 & 19724 & 1524 & 0.685 & 5268 & 547 & 0.03 & 0.75 \\ 
-  1982 & 19618 & 1510 & 0.679 & 5246 & 486 & 0.03 & 0.77 \\ 
-  1983 & 19576 & 1502 & 0.676 & 5233 & 466 & 0.03 & 0.78 \\ 
-  1984 & 19551 & 1497 & 0.673 & 5224 & 420 & 0.02 & 0.80 \\ 
-  1985 & 19565 & 1497 & 0.673 & 5224 & 453 & 0.03 & 0.79 \\ 
-  1986 & 19541 & 1495 & 0.672 & 5221 & 425 & 0.02 & 0.80 \\ 
-  1987 & 19539 & 1497 & 0.673 & 5224 & 431 & 0.02 & 0.79 \\ 
-  1988 & 19529 & 1499 & 0.674 & 5228 & 415 & 0.02 & 0.80 \\ 
-  1989 & 19534 & 1502 & 0.676 & 5233 & 413 & 0.02 & 0.80 \\ 
-  1990 & 19541 & 1506 & 0.677 & 5238 & 422 & 0.02 & 0.80 \\ 
-  1991 & 19540 & 1507 & 0.678 & 5240 & 432 & 0.02 & 0.79 \\ 
-  1992 & 19531 & 1506 & 0.677 & 5239 & 424 & 0.02 & 0.80 \\ 
-  1993 & 19534 & 1505 & 0.677 & 5238 & 438 & 0.02 & 0.79 \\ 
-  1994 & 19524 & 1503 & 0.676 & 5234 & 438 & 0.02 & 0.79 \\ 
-  1995 & 19515 & 1500 & 0.675 & 5230 & 120 & 0.01 & 0.94 \\ 
-  1996 & 19808 & 1525 & 0.686 & 5269 & 348 & 0.02 & 0.83 \\ 
-  1997 & 19858 & 1529 & 0.688 & 5277 & 596 & 0.03 & 0.73 \\ 
-  1998 & 19673 & 1512 & 0.680 & 5250 & 220 & 0.01 & 0.89 \\ 
-  1999 & 19862 & 1529 & 0.688 & 5277 & 319 & 0.02 & 0.85 \\ 
-  2000 & 19941 & 1538 & 0.692 & 5291 & 408 & 0.02 & 0.81 \\ 
-  2001 & 19931 & 1539 & 0.692 & 5292 & 245 & 0.01 & 0.88 \\ 
-  2002 & 20076 & 1554 & 0.699 & 5316 & 240 & 0.01 & 0.88 \\ 
-  2003 & 20212 & 1569 & 0.706 & 5340 & 386 & 0.02 & 0.82 \\ 
-  2004 & 20197 & 1571 & 0.707 & 5344 & 286 & 0.02 & 0.86 \\ 
-  2005 & 20281 & 1582 & 0.711 & 5361 & 347 & 0.02 & 0.84 \\ 
-  2006 & 20304 & 1588 & 0.714 & 5369 & 429 & 0.02 & 0.80 \\ 
-  2007 & 20254 & 1585 & 0.713 & 5365 & 292 & 0.02 & 0.86 \\ 
-  2008 & 20344 & 1593 & 0.716 & 5377 & 387 & 0.02 & 0.82 \\ 
-  2009 & 20342 & 1591 & 0.715 & 5374 & 217 & 0.01 & 0.90 \\ 
-  2010 & 20501 & 1604 & 0.721 & 5394 & 207 & 0.01 & 0.90 \\ 
-  2011 & 20652 & 1618 & 0.727 & 5415 & 282 & 0.01 & 0.87 \\ 
-  2012 & 20714 & 1626 & 0.731 & 5427 & 282 & 0.01 & 0.87 \\ 
-  2013 & 20769 & 1635 & 0.735 & 5441 & 144 & 0.01 & 0.93 \\ 
-  2014 & 20947 & 1657 & 0.745 & 5474 & 397 & 0.02 & 0.82 \\ 
-  2015 & 20874 & 1657 & 0.745 & 5474 & 351 & 0.02 & 0.84 \\ 
-  2016 & 20859 & 1660 & 0.746 & 5478 & 441 & 0.02 & 0.80 \\ 
-  2017 & 20770 & 1652 & 0.743 & 5466 & 297 & 0.02 & 0.86 \\ 
-  2018 & 20833 & 1655 & 0.744 & 5471 & 185 & 0.01 & 0.91 \\ 
-  2019 & 0 & 1667 & 0.750 & 5488 &  &  &  \\ 
-   \hline
-\hline
-\end{longtable}
+\FloatBarrier
 
 \FloatBarrier
 
+\begin{table}[ht]
+\centering
+\caption{Projections of landings, total mortality, OFL, and ACL values.} 
+\label{tab:OFL_projection}
+\begin{tabular}{l>{\centering}p{0.8in}>{\centering}p{1.2in}>{\centering}p{0.8in}>{\centering}p{0.8in}>{\centering}p{0.8in}}
+  \hline
+Year & Landings (mt) & Estimated total mortality (mt) & OFL (mt) & ACL (mt) & Buffer \\ 
+  \hline
+2019 & 313.16 & 336.35 & 541.00 & 494.00 & 1.00 \\ 
+  2020 & 313.16 & 336.32 & 541.00 & 494.00 & 1.00 \\ 
+  2021 & 1042.23 & 1119.74 & 1275.51 & 1119.75 & 0.87 \\ 
+  2022 & 987.51 & 1062.58 & 1222.62 & 1062.58 & 0.86 \\ 
+  2023 & 942.80 & 1015.91 & 1179.51 & 1015.91 & 0.86 \\ 
+  2024 & 906.41 & 977.59 & 1145.41 & 977.59 & 0.85 \\ 
+  2025 & 876.49 & 945.64 & 1118.21 & 945.64 & 0.84 \\ 
+  2026 & 850.59 & 917.76 & 1095.36 & 917.76 & 0.83 \\ 
+  2027 & 828.05 & 893.39 & 1075.04 & 893.39 & 0.83 \\ 
+  2028 & 805.87 & 869.37 & 1056.06 & 869.37 & 0.82 \\ 
+  2029 & 784.60 & 846.33 & 1037.94 & 846.33 & 0.81 \\ 
+  2030 & 764.95 & 825.07 & 1020.44 & 825.07 & 0.80 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+\clearpage
+
+\newpage
+
+\FloatBarrier
 \newpage
 
 \hypertarget{figures}{%
@@ -3287,7 +3236,7 @@ Year & Total biomass (mt) & Spawning biomass (mt) & \%Unfished & Age-0 recruits 
 \hypertarget{data-figures}{%
 \subsection{Data Figures}\label{data-figures}}
 
-\begin{figure}[H]
+\begin{figure}[!h]
 \begin{centering}
 \includegraphics{r4ss/plots_mod1/data_plot.png}
 \caption{Summary of data sources used in the model.}\label{fig:data_plot}
@@ -3300,7 +3249,7 @@ Year & Total biomass (mt) & Spawning biomass (mt) & \%Unfished & Age-0 recruits 
 
 \newpage
 
-\begin{figure}[H]
+\begin{figure}[!h]
 \begin{centering}
 \includegraphics{Figures/survey_hauls_map.png}
 \caption{Map showing the distribution of Big Skate within the area covered by the West Coast Groundfish Bottom Trawl Survey aggregated over the years 2003--2018.}\label{fig:survey_hauls_map}
@@ -3383,7 +3332,7 @@ Pacific Halibut Commission longline survey. \label{fig:IPHC_map}}
 
 \FloatBarrier
 
-\begin{figure}[H]
+\begin{figure}[!h]
 \begin{centering}
 \includegraphics{r4ss/plots_mod1/comp_lendat__aggregated_across_time.png}
 \caption{Length comp data, aggregated across time by fleet.}\label{fig:comp_lendat_aggregated_across_time}
@@ -3403,7 +3352,7 @@ blue. \label{fig:comp_lendat__multi-fleet_comparison}}
 \begin{figure}
 \centering
 \includegraphics{r4ss/plots_mod1/comp_condAALdat_bubflt1mkt2.png}
-\caption{Conditional age-at-length data from the fishery.
+\caption{Conditional age-at-length data from the current fishery.
 \label{fig:age_dat_fishery}}
 \end{figure}
 
@@ -3457,35 +3406,25 @@ text within each point).\label{fig:maturity}}
 \hypertarget{model-results-figures}{%
 \subsection{Model Results Figures}\label{model-results-figures}}
 
-\FloatBarrier
-
-\textbackslash{}begin\{figure\}{[}H{]}
-\textbackslash{}begin\{centering\}
-\includegraphics{r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png}
-\textbackslash{}caption\{Estimated length-at-age for female and male Big
-Skate (top left panel). Shaded areas indicate 95\% intervals for
-distribution of lengths at each age. Values represent beginning-of-year
-growth. Weight (thick line) and maturity (thin line) are shown in the
-top-right and lower-left panels as a function of length and age,
-respectively, where the values-at-age are calculated by mapping the
-length-based relationships through the estimated distribution of length
-at each age.\}\label{fig:growth} \textbackslash{}end\{centering\}
-\textbackslash{}end\{figure\}
+\hypertarget{growth-and-selectivity}{%
+\subsubsection{Growth and Selectivity}\label{growth-and-selectivity}}
 
 \FloatBarrier
 
-\begin{figure}
-\centering
-\includegraphics{r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png}
-\caption{Estimated length-at-age for female and male Big Skate (top left
-panel). Shaded areas indicate 95\% intervals for distribution of lengths
-at each age. Values represent beginning-of-year growth. Weight (thick
-line) and maturity (thin line) are shown in the top-right and lower-left
-panels as a function of length and age, respectively, where the
-values-at-age are calculated by mapping the length-based relationships
-through the estimated distribution of length at each
-age.\label{fig:growth}}
-\end{figure}
+\vspace{2.5cm}
+
+\noindent
+
+\begin{minipage}{\linewidth}% to keep image and caption on one page
+\makebox[\linewidth]{%        to center the image
+  \includegraphics[keepaspectratio=true,width=6in]{r4ss/plots_mod1/bio3_sizeatage_plus_WT_and_MAT.png}}
+\captionof{figure}{Estimated length-at-age for female and male Big Skate (top left panel). }\label{fig:growth}%
+\begin{centering}
+Shaded areas indicate 95\% intervals for distribution of lengths at each age. Values represent beginning-of-year growth.  Weight (thick line) and maturity (thin line) are shown in the top-right and lower-left panels as a function of length and age, respectively, where the values-at-age are calculated by mapping the length-based relationships through the estimated distribution of length at each age.
+\end{centering}
+\end{minipage}
+
+\FloatBarrier
 
 \FloatBarrier
 
@@ -3537,17 +3476,20 @@ time-series of asymptotic retention rates (right).
 
 \FloatBarrier
 
-\vspace{.5cm}
+\vspace{2.5cm}
 
-\begin{figure}
-\centering
-\includegraphics{r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png}
-\caption{Fit to index data for WCGBT Survey. Lines indicate 95\%
-uncertainty interval around index values. Thicker lines indicate input
-uncertainty before addition of estimated additional uncertainty
-parameter. The blue line indicates the model
-estimate.\label{fig:index2_cpuefit_WCGBTS}}
-\end{figure}
+\noindent
+
+\begin{minipage}{\linewidth}% to keep image and caption on one page
+\makebox[\linewidth]{%        to center the image
+  \includegraphics[keepaspectratio=true,width=6in]{r4ss/plots_mod1/index2_cpuefit_WCGBT Survey.png}}
+\captionof{figure}{Fit to index data for WCGBT Survey.}\label{fig:index2_cpuefit_WCGBTS}%
+\begin{centering}
+Lines indicate 95\% uncertainty interval around index values. Thicker lines indicate input uncertainty before addition of estimated additional uncertainty parameter. The blue line indicates the model estimate.
+\end{centering}
+\end{minipage}
+
+\FloatBarrier
 
 \begin{figure}
 \centering
@@ -3638,15 +3580,16 @@ in the blue lines.\label{fig:bodywt_fit_fltFishery}}
 
 \FloatBarrier
 
-\vspace{.5cm}
+\vspace{2.5cm}
 
-\begin{figure}
-\centering
+\begin{figure}[!h]
+\begin{centering}
 \includegraphics{r4ss/plots_mod1/ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals.png}
-\caption{Estimated spawning biomass (mt) with approximate 95\%
-asymptotic intervals.
-\label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}}
+\caption{Estimated spawning biomass (mt) with approximate 95\% asymptotic intervals.}\label{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals}
+\end{centering}
 \end{figure}
+
+\FloatBarrier
 
 \begin{figure}
 \centering
@@ -3690,16 +3633,19 @@ Retrospectives}\label{sensitivity-analyses-and-retrospectives}}
 
 \FloatBarrier
 
-\vspace{.5cm}
+\vspace{2.5cm}
 
-\begin{figure}[h]
-\begin{centering}
-\includegraphics{Figures/sens.sel_and_Q_compare1_spawnbio.png}
-\caption{Time series of spawning biomass (mt) estimated in sensitivity analyses related to selectivity and catchability.}\label{fig:Sensitivity_sel_and_Q}
+\noindent
+
+\begin{minipage}{\linewidth}% to keep image and caption on one page
+\makebox[\linewidth]{%        to center the image
+  \includegraphics[keepaspectratio=true,width=6in]{Figures/sens.sel_and_Q_compare1_spawnbio.png}}
+\captionof{figure}{Time series of spawning biomass (mt) estimated in sensitivity analyses related to selectivity and catchability.}\label{fig:Sensitivity_sel_and_Q}%
+\begin{centering}.
 \end{centering}
-\end{figure}
+\end{minipage}
 
-\newpage
+\FloatBarrier
 
 \begin{figure}
 \centering
@@ -3765,30 +3711,26 @@ final 5 years of data are successively removed from the
 model.\label{fig:retro}}
 \end{figure}
 
-\newpage
+\FloatBarrier
 
 \hypertarget{likelihood-profiles-1}{%
 \subsubsection{Likelihood Profiles}\label{likelihood-profiles-1}}
 
 \FloatBarrier
 
-\vspace{.5cm}
+\vspace{2.5cm}
 
-\begin{figure}[h]
-\begin{centering}
-\includegraphics{Figures/profile_logR0.png}
-\caption{Likelihood profile over the log of equilibrium recruitment ($R_0$).}\label{fig:profile_logR0}
+\noindent
+
+\begin{minipage}{\linewidth}% to keep image and caption on one page
+\makebox[\linewidth]{%        to center the image
+  \includegraphics[keepaspectratio=true,width=6in]{Figures/profile_logR0.png}}
+\captionof{figure}{Likelihood profile over the log of equilibrium recruitment ($R_0$).}\label{fig:profile_logR0}%
+\begin{centering}.
 \end{centering}
-\end{figure}
+\end{minipage}
 
-\newpage
-
-\begin{figure}
-\centering
-\includegraphics{Figures/profile_logR0.png}
-\caption{Likelihood profile over the log of equilibrium recruitment
-(\(R_0\)).\label{fig:profile_logR0}}
-\end{figure}
+\FloatBarrier
 
 \begin{figure}
 \centering
@@ -3840,16 +3782,14 @@ Forecasts}\label{reference-points-and-forecasts}}
 
 \FloatBarrier
 
-\vspace{.5cm}
+\vspace{2.5cm}
 
-\begin{figure}[h]
+\begin{figure}[!h]
 \begin{centering}
 \includegraphics{r4ss/plots_mod1/yield1_yield_curve.png}
 \caption{Equilibrium yield curve for the base case model. Values are based on the fishery selectivity and with steepness fixed at 0.4.}\label{fig:yield1_yield_curve}
 \end{centering}
 \end{figure}
-
-\newpage
 
 \FloatBarrier
 
@@ -3864,17 +3804,13 @@ data}\label{appendix-a.-detailed-fits-to-length-composition-data}}
 \addcontentsline{toc}{section}{Appendix A. Detailed fits to length
 composition data}
 
-\renewcommand{\thepage}{A-\arabic{page}}
-\renewcommand{\thefigure}{A\arabic{figure}}
-\setcounter{page}{1}
+\vspace{.5cm}
 
-\begin{figure}
-\centering
-\includegraphics{./r4ss/plots_mod1/comp_lenfit_flt1mkt2.png}
-\caption{Length comps, retained, Fishery. `N adj.' is the input sample
-size after data\_weighting adjustment. N eff. is the calculated
-effective sample size used in the McAllister\_Iannelli tuning method.
-\label{fig:mod1_1_comp_lenfit_flt1mkt2}}
+\begin{figure}[!h]
+\begin{centering}
+\includegraphics{r4ss/plots_mod1/comp_lenfit_flt1mkt2.png}
+\caption{Length comps, retained, Fishery. ‘N adj.’ is the input sample size after data weighting adjustment. N eff. is the calculated effective sample size used in the McAllister Iannelli tuning method.}\label{fig:fig:comp_lenfit_flt1mkt2}
+\end{centering}
 \end{figure}
 
 \begin{figure}
@@ -4046,7 +3982,7 @@ Dordrecht.
 Gertseva, V. 2019. Manuscript in preparation.
 
 \leavevmode\hypertarget{ref-Gertseva2007}{}%
-Gertseva, V and Schrippa, MJ. 2007. Status of the Longnose Skate
+Gertseva, V and Schirippa, MJ. 2007. Status of the Longnose Skate
 (\emph{Raja rhina}) off the continental US Pacific Coast in 2007.
 Pacific Fishery Management Council, Portland, OR. Available from
 \href{\%7Bhttp://www.pcouncil.org/groundfish/stock-assessments/\%7D}{\{http://www.pcouncil.org/groundfish/stock-assessments/\}}.

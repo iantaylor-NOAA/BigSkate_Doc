@@ -15,7 +15,7 @@
 
 <!-- [H] to control floating -->
 
-\begin{figure}[H]
+\begin{figure}[!h]
 \begin{centering}
 \includegraphics{r4ss/plots_mod1/comp_lendat__aggregated_across_time.png}
 \caption{Length comp data, aggregated across time by fleet.}\label{fig:comp_lendat_aggregated_across_time}
@@ -28,7 +28,7 @@
 
 ![Length comp data for all years and fleets. Bubble size indicates the observed proportions, with females in red and males in blue. \label{fig:comp_lendat__multi-fleet_comparison}](r4ss/plots_mod1/comp_lendat__multi-fleet_comparison.png)
 
-![Conditional age-at-length data from the fishery. \label{fig:age_dat_fishery}](r4ss/plots_mod1/comp_condAALdat_bubflt1mkt2.png)
+![Conditional age-at-length data from the current fishery. \label{fig:age_dat_fishery}](r4ss/plots_mod1/comp_condAALdat_bubflt1mkt2.png)
 
 ![Conditional age-at-length data from the WCGBT Survey. \label{fig:age_dat_fishery}](r4ss/plots_mod1/comp_condAALdat_bubflt5mkt0.png)
 
