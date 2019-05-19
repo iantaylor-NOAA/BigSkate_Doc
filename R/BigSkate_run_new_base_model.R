@@ -4,7 +4,7 @@
 # code is in "BigSkate_profiles.R"          
 # can source the file and then copy block of commands for running the profiles
 
-# re-run retros
+# re-run retros and jitter
 # code is in "BigSkate_retro_and_jitter.R"
 # change runjitter = TRUE/FALSE within this file and then
 source('c:/SS/skates/BigSkate_Doc/R/BigSkate_retro_and_jitter.R')
@@ -13,4 +13,5 @@ source('c:/SS/skates/BigSkate_Doc/R/BigSkate_retro_and_jitter.R')
 # code is in "BigSkate_sensitivities.R"     
 # two options, one more automated than the other
 
-# re-run jitter
+# revise tables for exec summary using code in
+# BigSkate_Doc/R/BigSkate_forecasting_notes.R

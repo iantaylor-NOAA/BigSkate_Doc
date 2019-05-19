@@ -71,7 +71,8 @@ colnames(Exec_catch_summary) = c('Year',
                                  'Landings')
 
 # Make executive summary catch xtable
-Exec_catch.table = xtable(Exec_catch_summary, 
+Exec_catch.table = xtable(Exec_catch_summary,
+                          digits = c(0,0,1),
                           caption = c(paste('Recent ',spp,' landings (mt)', sep='')), 
                           label='tab:Exec_catch')
 
@@ -111,14 +112,15 @@ for (model in 1:n_models) {
                            & SpawningB$Label <= paste('SSB_', LastYR+1,sep=''), ]     
   
   SpawningByrs$YEAR = seq(FirstYR+1, LastYR+1)
-  
+
+  digits <- 1
   SpawningByrs$lowerCI = round(SpawningByrs$Value + 
                                  qnorm(0.025) * SpawningByrs$StdDev, 
-                               digits = 2)
+                               digits = digits)
   
   SpawningByrs$upperCI = round(SpawningByrs$Value - 
                                  qnorm(0.025) * SpawningByrs$StdDev, 
-                               digits = 2)
+                               digits = digits)
   
   # Save individual depletion table before CI combined to character
   assign(paste('SpawnB_', mod_area, sep = ''), SpawningByrs)
@@ -146,7 +148,7 @@ for (model in 1:n_models) {
   
   Depletionyrs$YEAR = seq(FirstYR+1, LastYR+1)
   
-  Depletion$Value = round(Depletion$Value, digits=3)
+  Depletionyrs$Value = round(Depletionyrs$Value, digits=3)
   
   Depletionyrs$lowerCI = round(Depletionyrs$Value + 
                                  qnorm(0.025)*Depletionyrs$StdDev, digits=3)
@@ -190,7 +192,8 @@ for (model in 1:n_models) {
   assign(paste('Spawn_', mod_area, sep=''), SpawnB[nrow(SpawnB), 2])
   
   assign(paste('Spawn_',mod_area,'_CI',sep=''), 
-         paste(SpawnB[nrow(SpawnB), 7], '-', SpawnB[nrow(SpawnB), 8], sep=''))
+         paste(round(SpawnB[nrow(SpawnB), 7]), '-',
+               round(SpawnB[nrow(SpawnB), 8]), sep=''))
   
 } # end model for loop for spawning biomass and depletion
 
@@ -199,12 +202,14 @@ for (model in 1:n_models) {
 # =============================================================================
 # Create Spawning/Depletion tables for the correct number of models
 # Model 1 table ---------------------------------------------------------------
-Spawn_Deplete_mod1.table = xtable(SpawnDepletemod1, 
-                                  caption = 'Recent trend in beginning of the 
+Spawn_Deplete_mod1.table <- xtable(SpawnDepletemod1,
+                                   caption = 'Recent trend in beginning of the 
                                       year spawning output and %unfished
                                       (spawning biomass relative to unfished
                                       equilibrum spawning biomass)', 
-                                  label='tab:SpawningDeplete_mod1',digits=3)  
+                                   label='tab:SpawningDeplete_mod1',
+                                   digits = c(0,0,1,0,3,0))
+
 
 # Add column spacing    
 align(Spawn_Deplete_mod1.table) = c('l', 'l', 
@@ -263,6 +268,8 @@ for (model in 1:n_models) {
       mod=mod3
       mod_area='mod3'
     }}
+
+  digits <- 0
   
   # Pull out recuitment  
   Recruit = mod$derived_quants[grep('Recr',mod$derived_quants$Label),]
@@ -288,10 +295,10 @@ for (model in 1:n_models) {
     Recruityrs$upperCI <- Recruityrs$upperCI/1000
   }
   
-  Recruityrs$CI = paste('(', round(Recruityrs$lowerCI, digits = 2), 
-                        ' - ', round(Recruityrs$upperCI, digits = 2), ')', sep='')
+  Recruityrs$CI = paste('(', round(Recruityrs$lowerCI, digits = digits), 
+                        ' - ', round(Recruityrs$upperCI, digits = digits), ')', sep='')
   
-  Recruityrs$Value = round(Recruityrs$Value, digits = 2)
+  Recruityrs$Value = round(Recruityrs$Value, digits = digits)
   
   Recruittab=subset(Recruityrs, select = c('YEAR', 'Value', 'CI'))
   
@@ -311,7 +318,7 @@ for (model in 1:n_models) {
 Recruit_mod1.table = xtable(Recruittab_mod1, 
                             caption = c(paste('Recent recruitment for the ', 
                                               mod1_label, '.', sep='')),
-                            label = 'tab:Recruit_mod1', digits = 2)   
+                            label = 'tab:Recruit_mod1', digits = digits)   
 
 align(Recruit_mod1.table) = c('l',
                               '>{\\centering}p{.8in}',
@@ -360,6 +367,8 @@ for (model in 1:n_models) {
       mod = mod3
       mod_area = 'mod3'
     }}  
+
+  digits <- 3
   
   # Extract exploitation and SPR ratio values from r4SS output
   Exploit = mod$derived_quants[grep('F',mod$derived_quants$Label),]
@@ -375,10 +384,10 @@ for (model in 1:n_models) {
   Exploityrs$YEAR = seq(FirstYR, LastYR)
   
   Exploityrs$lowerCI = round(Exploityrs$Value +
-                               qnorm(0.025) * Exploityrs$StdDev, digits = 2)
+                               qnorm(0.025) * Exploityrs$StdDev, digits = digits)
   
   Exploityrs$upperCI = round(Exploityrs$Value -
-                               qnorm(0.025) * Exploityrs$StdDev, digits = 2)
+                               qnorm(0.025) * Exploityrs$StdDev, digits = digits)
   
   Exploityrs$CI = paste('(', Exploityrs$lowerCI, '-', Exploityrs$upperCI, ')', sep='')
   
@@ -394,10 +403,10 @@ for (model in 1:n_models) {
   SPRratioyrs$Year = seq(FirstYR, LastYR)
   
   SPRratioyrs$lowerCI = round(SPRratioyrs$Value +
-                                qnorm(0.025) * SPRratioyrs$StdDev, digits = 2)
+                                qnorm(0.025) * SPRratioyrs$StdDev, digits = digits)
   
   SPRratioyrs$upperCI = round(SPRratioyrs$Value -
-                                qnorm(0.025) * SPRratioyrs$StdDev, digits = 2)
+                                qnorm(0.025) * SPRratioyrs$StdDev, digits = digits)
   
   SPRratioyrs$CI = paste('(', SPRratioyrs$lowerCI, '-', SPRratioyrs$upperCI, ')', sep='')
   
@@ -415,13 +424,14 @@ for (model in 1:n_models) {
 # Create the three tables for SPR Ratio and Exploitation
 
 # Model 1 
-SPRratio_Exploit_mod1.table = xtable(SPRratio_Exploit_mod1, 
-                                     caption=c(paste('Recent trend in spawning potential 
+SPRratio_Exploit_mod1.table <- xtable(SPRratio_Exploit_mod1, 
+                                      caption=c(paste('Recent trend in spawning potential 
                                         ratio and exploitation for ', spp, ' in the ', 
-                                                     mod1_label, '.  Relative fishing intensity is (1-SPR) 
+                                          mod1_label, '.  Relative fishing intensity is (1-SPR) 
                                         divided by 50\\% (the SPR target) and exploitation 
                                         is catch divided by age 2+ biomass.', sep='')), 
-                                     label='tab:SPR_Exploit_mod1')  
+                                      label='tab:SPR_Exploit_mod1',
+                                      digits = c(0,0,3,0,3,0))  
 
 align(SPRratio_Exploit_mod1.table) = c('l','l',
                                        '>{\\centering}p{1in}',
@@ -545,21 +555,21 @@ for (model in 1:n_models) {
   
   Quantity = c(paste('Unfished spawning output (', fecund_unit, ')', sep = ''),
                paste('Unfished age ', min_age, ' biomass (mt)', sep = ''),
-               'Unfished recruitment ($R_{0}$)',
-               paste('Spawning output', '(', LastYR, ' ', fecund_unit, ')', sep = ''),
+               'Unfished recruitment ($R_{0}$, thousands)',
+               paste('Spawning output (', LastYR, ' ', fecund_unit, ')', sep = ''),
                paste('Depletion (', LastYR,')',sep=''),
-               '\\textbf{$\\text{Reference points based on } \\mathbf{SB_{40\\%}}$}',
-               'Proxy spawning output ($B_{40\\%}$)',
+               '\\textbf{$\\text{Reference points based on } \\mathbf{B_{40\\%}}$}',
+               'Spawning biomass ($B_{40\\%}$)',
                'SPR resulting in $B_{40\\%}$ ($SPR_{B40\\%}$)',
                'Exploitation rate resulting in $B_{40\\%}$',
                'Yield with $SPR_{B40\\%}$ at $B_{40\\%}$ (mt)',
-               '\\textbf{\\textit{Reference points based on SPR proxy for MSY}}',
-               'Spawning output',
+               '\\textbf{\\textit{Reference points based on $SPR=50\\%$ proxy for MSY}}',
+               'Spawning biomass (mt)',
                '$SPR_{proxy}$',
-               'Exploitation rate corresponding to $SPR_{proxy}$',
-               'Yield with $SPR_{proxy}$ at $SB_{SPR}$ (mt)',
+               'Exploitation rate corresponding to $SPR=50\\%$',
+               'Yield with $SPR=50\\%$ at $B_{$SPR=50\\%}$ (mt)',
                '\\textbf{\\textit{Reference points based on estimated MSY values}}',
-               'Spawning output at $MSY$ ($SB_{MSY}$)',
+               'Spawning biomass at $MSY$ ($B_{MSY}$)',
                '$SPR_{MSY}$',
                'Exploitation rate at $MSY$',
                'Dead Catch $MSY$ (mt)',
@@ -631,8 +641,9 @@ mngmnt = read.csv('./txt_files/Exec_mngmt_performance.csv')
 colnames(mngmnt) = c('Year',
                      'OFL (mt; ABC prior to 2011)',  
                      'ABC (mt)', 
-                     'ACL (mt; OY prior to 2011)', 
-                     'Estimated total catch (mt)')
+                     'ACL (mt; OY prior to 2011)',
+                     'Landings (mt)',
+                     'Estimated total mortality (mt)')
 
 # Create the management performance table
 mngmnt.table = xtable(mngmnt, 
@@ -641,12 +652,16 @@ mngmnt.table = xtable(mngmnt,
                               managed in the Other Species complex in 2013 and 2014,
                               designated an Ecosystem Component species in 2015 and
                               2016, and managed with stock-specific harvest
-                              specifications since 2017.'), 
-                      label='tab:mnmgt_perform')  
+                              specifications since 2017. Estimated total mortality
+                              includes discards estimated in the model with an
+                              assumed mortality rate of 50\\%.'),
+                      label='tab:mnmgt_perform',
+                      digits = c(0,0,1,1,1,1,1))  
 # Add alignment
 align(mngmnt.table) = c('l','l',
                         '>{\\centering}p{1.2in}',
                         '>{\\centering}p{1in}',
+                        '>{\\centering}p{1in}', 
                         '>{\\centering}p{1in}', 
                         '>{\\centering}p{1in}')  
 
@@ -665,7 +680,8 @@ project$Buffer <- c(1.0, 1.0, 0.874, 0.865, 0.857, 0.849,
                     0.841, 0.833, 0.826, 0.818, 0.810, 0.803)
 OFL.table = xtable(project,
     caption=c('Projections of landings, total mortality, OFL, and ACL values.'),
-    label = 'tab:OFL_projection')
+    label = 'tab:OFL_projection_Exec',
+    digits = c(0,0,1,1,1,1,3)) 
 
 align(OFL.table) = c('l', 'l',
                        '>{\\centering}p{0.8in}',
@@ -855,6 +871,7 @@ mngmt = read.csv('./txt_files/Exec_basemodel_summary.csv')
 mngmt = mngmt[1:10,]
 
 mngmt = mngmt[,-1]
+mngmt <- round(mngmt, 1)
 
 # Model 1
 # SPR ratio and exploitation

@@ -222,6 +222,42 @@ axis(1, at=2004:2018)
 axis(2, at=seq(0,1,.2))
 box()
 dev.off()
+
+### write tables of catch for exec summary
+
+yrs.forecast <- 2019:2030
+Landings <- (mod1$timeseries$"retain(B):_1" +
+               mod1$timeseries$"retain(B):_4")[mod1$timeseries$Yr %in% yrs.forecast]
+EstCatch <- (mod1$timeseries$"dead(B):_1" +
+               mod1$timeseries$"dead(B):_4")[mod1$timeseries$Yr %in% yrs.forecast]
+OFL <- mod1$derived_quants[paste0("OFLCatch_", yrs.forecast), "Value"]
+ACL <- mod1$derived_quants[paste0("ForeCatch_", yrs.forecast), "Value"]
+OFL[1:2] <- 541
+ACL[1:2] <- 494
+
+#Stock,Landings,EstCatch,OFL,ACL
+Exec_basemodel_summary <- data.frame(Stock = yrs.forecast,
+                                     Landings = Landings,
+                                     EstCatch = EstCatch,
+                                     OFL = OFL,
+                                     ACL = ACL)
+write.csv(Exec_basemodel_summary, "./txt_files/Exec_basemodel_summary.csv",
+          row.names=FALSE)
+
+### management history
+mngmnt <- read.csv('./txt_files/Exec_mngmt_performance.csv')
+
+yrs <- 2009:2018
+Landings <- (mod1$timeseries$"retain(B):_1" +
+               mod1$timeseries$"retain(B):_4")[mod1$timeseries$Yr %in% yrs]
+EstCatch <- (mod1$timeseries$"dead(B):_1" +
+               mod1$timeseries$"dead(B):_4")[mod1$timeseries$Yr %in% yrs]
+mngmnt$Catch <- c(Landings, NA, NA)
+mngmnt$TotMort <- c(round(EstCatch,1), NA, NA)
+
+write.csv(mngmnt, file='./txt_files/Exec_mngmt_performance.csv', row.names=FALSE)
+###
+
 # -----------------------------------------------------------------------------
 
 # Run the code to parse the plotInfoTable files

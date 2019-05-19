@@ -63,23 +63,3 @@ mod.fore <- bs82
 ## 2019 1    4      54.76
 ## 2020 1    1     258.4
 ## 2020 1    4      54.76
-
-yrs.forecast <- 2019:2030
-Landings <- (mod.fore$timeseries$"retain(B):_1" +
-               mod.fore$timeseries$"retain(B):_4")[mod.fore$timeseries$Yr %in% yrs.forecast]
-EstCatch <- (mod.fore$timeseries$"dead(B):_1" +
-               mod.fore$timeseries$"dead(B):_4")[mod.fore$timeseries$Yr %in% yrs.forecast]
-OFL <- mod.fore$derived_quants[paste0("OFLCatch_", yrs.forecast), "Value"]
-ACL <- mod.fore$derived_quants[paste0("ForeCatch_", yrs.forecast), "Value"]
-OFL[1:2] <- 541
-ACL[1:2] <- 494
-
-#Stock,Landings,EstCatch,OFL,ACL
-Exec_basemodel_summary <- data.frame(Stock = yrs.forecast,
-                                     Landings = Landings,
-                                     EstCatch = EstCatch,
-                                     OFL = OFL,
-                                     ACL = ACL)
-write.csv(Exec_basemodel_summary, "./txt_files/Exec_basemodel_summary.csv",
-          row.names=FALSE)
-
