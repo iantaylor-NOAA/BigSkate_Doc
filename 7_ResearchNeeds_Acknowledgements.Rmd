@@ -20,7 +20,7 @@ We recommend the following research be conducted before the next assessment.
 
 \item \textbf{Conduct studies of mortality of discarded skates in commercial fisheries.} Estimates of discard mortality for skates in general could be improved.
 
-\item \textbf{Improve understanding of catch history and population dynamics of California Skate. California Skate is the third most commonly occurring Skate in California waters after Longnose Skate and Big Skate and the catch reconstruction indicated that the center of abundance for California Skate is centered around San Francisco where the fishery was strongest in the early years. If California Skate is found to be at a low biomass compared to historical levels, that would have implications for the catch reconstruction of the other two species as well as suggesting that management of California Skate should be a higher priority.
+\item \textbf{Improve understanding of catch history and population dynamics of California Skate.} California Skate is the third most commonly occurring Skate in California waters after Longnose Skate and Big Skate and the catch reconstruction indicated that the center of abundance for California Skate is centered around San Francisco where the fishery was strongest in the early years. If California Skate is found to be at a low biomass compared to historical levels it would have implications for the catch reconstruction of the other two species as well as suggesting that management of California Skate should be a higher priority.
 
 \end{enumerate}
 
