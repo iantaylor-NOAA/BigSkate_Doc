@@ -6,23 +6,21 @@ output:
 
 <!-- ****************************RESEARCH NEEDS**************************** -->
 
-# Research Needs
+# Research and Data Needs
 
-There are a number of areas of research that could improve the stock 
-assessment for `r spp`.  Below are issues identified by the STAT team 
-and the STAR panel:
+We recommend the following research be conducted before the next assessment.
 
 \begin{enumerate}
 
-\item \textbf{Data!}: 
+\item \textbf{Extend all ongoing data streams used in this assessment.} A longer fishery-independent index from a continued WCGBT Survey with associated compositions of length and age-at-length will improve understanding of dynamics of the stock. Continued sampling of lengths and ages from the landed catch and lengths, mean body weights, and discard rates from the fishery will be even more valuable for the years ahead now that Big Skate are landed as a separate market category and the estimates will be more precise.
 
-\item \textbf{xxxx}:
+\item \textbf{Pursue additional approaches for estimating historical discards.} The approaches used here were based on averages applied over a period of decades. The catch reconstructions conducted for each state were much more sophisticated, but were applied onto the subset of the catch that was landed. Reconstructed spatial patterns of fishing effort could be used to estimate changes in total mortality over time.
 
-\item \textbf{xxxx}:
+\item \textbf{Improve understanding of links between Big Skate on the U.S. West Coast and other areas.} Tagging studies in Alaska indicated that Big Skate are capable of long distance movements. A better understanding of links through tagging in other areas and genetic studies could highlight strengths or weaknesses of the status-quo approach.
 
-\item \textbf{xxxx}:
+\item \textbf{Conduct studies of mortality of discarded skates in commercial fisheries.} Estimates of discard mortality for skates in general could be improved.
 
-\item \textbf{xxxx}:
+\item \textbf{Improve understanding of catch history and population dynamics of California Skate. California Skate is the third most commonly occurring Skate in California waters after Longnose Skate and Big Skate and the catch reconstruction indicated that the center of abundance for California Skate is centered around San Francisco where the fishery was strongest in the early years. If California Skate is found to be at a low biomass compared to historical levels, that would have implications for the catch reconstruction of the other two species as well as suggesting that management of California Skate should be a higher priority.
 
 \end{enumerate}
 
@@ -31,19 +29,19 @@ and the STAR panel:
 
 # Acknowledgments
 
-The authors gratefully acknowledge the time and effort reviewers John DeVore, Stacey Miller, Jim Hastie and Owen Hamel put into making this a polished document.
+The authors gratefully acknowledge the time and effort Stacey Miller, John DeVore, Owen Hamel, and Jim Hastie put into making this a more polished document.
 
 We thank the STAR panel Chair, David Sampson, and reviewers Robin Cook and Cody Szulwalski.
 
 The Reconstructions of historical catch were critical to this assessment, and there are many people who contributed, among them
 
-our colleagues at WDFW:  Theresa Tsou, Jessi Doerpinghaus and Greg Lippert
+our colleagues at WDFW:  Theresa Tsou, Jessi Doerpinghaus, and Greg Lippert,
 
-our colleagues at ODFW:  Ali Whitman and Ted Calavan
+our colleagues at ODFW:  Ali Whitman, Patrick Mirick, and Ted Calavan,
 
-our colleagues at the SWFSC:  John Field and Rebecca Miller
+our colleagues at the SWFSC:  John Field and Rebecca Miller,
 
-and others whose knowledge of the fishery provided context:  Gerry Richter and Todd Phillips
+and others whose knowledge of the fishery provided context: Gerry Richter and Todd Phillips.
 
 Our colleagues at NWFWC, including Chantel Wetzel, Kelli Johnson, and John Wallace all provided valuable contributions to the extraction and processing of the survey and fishery data.
 
