@@ -186,7 +186,7 @@ Lines indicate 95\% uncertainty interval around index values. Thicker lines indi
 
 ![Comparison of the estimated growth curves from the sensitivities analyses. The increase at age 20 in the von Bertalanffy and Richards growth models is an adjustment to account for average size in the plus group based on an assumed exponential decay of the numbers at age beyond age 20.\label{fig:growth_curve_comparison}](Figures/growth_curve_comparison.png)
 
-![Time series of spawning biomass (mt) estimated in sensitivity analyses related to data weighting and recruitment. \label{fig:Sensitivity_bio}](Figures/sens.bio_compare1_spawnbio.png)
+![Time series of spawning biomass (mt) estimated in sensitivity analyses related to data weighting and recruitment. \label{fig:Sensitivity_misc}](Figures/sens.misc_compare1_spawnbio.png)
 
 ![Time series of spawning biomass (mt) estimated in sensitivity analyses related to historic catch and discards. \label{fig:Sensitivity_catch}](Figures/sens.catch_compare1_spawnbio.png)
 
