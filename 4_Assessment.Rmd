@@ -305,7 +305,7 @@ The sensitivity analysis in which historical catch was adjusted by estimating mu
 
 The resulting pattern of historical discards shows a steadily increasing catch, with higher catch relative to the input values in all the blocks up to a peak in the 1980s, followed by an estimated decrease in the estimated catch for the 1990-1994 period (Figures \ref{fig:catch_multiplier_total_catch} and \ref{fig:catch_multiplier_catch_comparison}). These changes provide a greater contrast in the catch history, causing the estimated time series of spawning biomass to fall to a lower level and then increase faster from the 1990s onward, thus fitting the WCGBT Survey slightly better (Figures \ref{fig:Sensitivity_catch} and {fig:Sensitivity_catch2}). However, the improvement in likelihood for the survey was only 0.3 units (Table \ref{tab:Sensitivity_catch}).
 
-The sensitivity analysis in which historical catch was adjusted to match a time series of fishing mortality for Petrale Sole (IAN, FINISH THIS)
+The sensitivity analysis in which historical catch was adjusted to match a time series of fishing mortality for Petrale Sole for the period 1950--1994 involved multiple steps and simplifying assumption. (IAN, FINISH THIS)
 
 ### Retrospective Analysis
 

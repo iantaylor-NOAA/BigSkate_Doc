@@ -57,3 +57,4 @@ newcatch$note[newcatch$fleet==4] <- "#_fleet4_is_tribal_fishery"
 
 write.csv(newcatch, file='C:/ss/skates/models/sensitivity.bigskate82/catch6_petraleF/newcatch.csv')
 
+ 

@@ -373,6 +373,10 @@ file.copy(file.path(bs82catch4$inputs$dir,
                     "plots/catch5 total catch (including discards) stacked.png"),
           file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
                     "catch_multiplier_total_catch.png"))
+file.copy(file.path(bs82catch4$inputs$dir,
+                    "plots/catch5 total catch (including discards) stacked.png"),
+          file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
+                    "catch_multiplier_total_catch.png"))
 
 
 fleetnames_catch <- c("Fishery (current)",
@@ -411,6 +415,7 @@ cols <- rich.colors.short(7)[-1]
 png(file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
               'adjusted_historic_catch_comparison.png'),
     res=300, units='in', width=6.5, height=5, pointsize=10)
+#par(mar=c(4,4,1,1))
 plot(0, lwd=3, type='n',
      xlab="Year", ylab="Total mortality (mt)",
      xlim = c(1916, 2018), ylim = c(0,1090), yaxs='i')
@@ -425,6 +430,28 @@ legend('topleft', lty=1, lwd=3, col=cols[c(1,5,6)],
        bty='n')
 dev.off()
 
+
+png(file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
+              'F_comparison.png'),
+    res=300, units='in', width=6.5, height=5, pointsize=10)
+#par(mar=c(4,4,1,1))
+F_index2 <- read.csv('C:/ss/skates/models/sensitivity.bigskate82/petrale_F_index2.csv')
+F_est_agg0 <- aggregate(bs82$catch$F, by=list(bs82$catch$Yr), FUN=sum)
+F_est_agg4 <- aggregate(bs82catch4$catch$F, by=list(bs82catch4$catch$Yr), FUN=sum)
+F_est_agg5 <- aggregate(bs82catch5$catch$F, by=list(bs82catch5$catch$Yr), FUN=sum)
+## plot(bs82catch5$catch$Yr[bs82catch5$catch$Fleet==2],
+##      bs82catch5$catch$F[bs82catch5$catch$Fleet==2], type='l')
+plot(F_est_agg0, type='l', lwd=2,
+     xlab="Year", ylab="Instantaneous fishing mortality (F)",
+     xlim = c(1916, 2018), ylim = c(0,0.085), yaxs='i', col=cols[1])
+lines(F_est_agg4, type='l', lwd=2, col=cols[5])
+lines(F_est_agg5, type='l', lwd=2, col=cols[6])
+lines(F_index$F_table.Yr, F_index$obs/bs82catch5$cpue$Calc_Q[1], col='purple', lty=3, lwd=2)
+rect(1950,0,1994,1, col=gray(0,0.1), border=NA)
+legend('topleft', lty=c(1,1,1,3), lwd=3, col=c(cols[c(1,5,6)],'purple'),
+       legend=c(sens.names_catch[c(1,5,6)], 'Petrale Sole time series (scaled by q)'),
+       bty='n')
+dev.off()
           ## mortality M vs F
 ## Alternative catch or discard assumptions
 ## Data weighting (Francis, vs. M-I vs. Dirichlet-Multinomial)
