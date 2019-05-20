@@ -144,3 +144,30 @@ mean((PikDiscardExtCatchBigSkate$DiscWtExt.lb / PikDiscardExtCatchBigSkate$DiscN
 ## [1] 1.264087
 plot(PikDiscardExtCatchBigSkate$DiscNumExt, PikDiscardExtCatchBigSkate$DiscWtExt.lb / PikDiscardExtCatchBigSkate$DiscNumExt)
 
+
+
+# remove deeper water, and non-trawl catch
+OBCatch2 <- OBCatch[OBCatch$AVG_DEPTH < 200 & OBCatch$GEAR_TYPE == "TRAWL" ,]
+# subset for first record of each unique trip
+OBCatch3 <- OBCatch2[!duplicated(OBCatch2$HAUL_ID),]
+OBCatch3$BS_MT <- 0
+OBCatch3$BS_DIS_MT <- 0
+OBCatch3$BS_RET_MT <- 0
+for(irow in 1:nrow(OBCatch3)){
+  if(irow %% 100 == 0){
+    cat(irow, "\n")
+  }
+  HAUL_ID <- OBCatch3$HAUL_ID[irow]
+  records <- which(OBCatch2$HAUL_ID == HAUL_ID & OBCatch2$species == "big skate")
+  OBCatch3$BS_MT[irow] <- sum(OBCatch2$MT[records])
+  OBCatch3$BS_DIS_MT[irow] <- sum(OBCatch2$DIS_MT[records])
+  OBCatch3$BS_RET_MT[irow] <- sum(OBCatch2$RET_MT[records])
+}
+
+
+all_species <- unique(OBCatch$species)
+# list of skate species
+skate_species <- all_species[grep("skate", tolower(all_species))]
+
+# subset big table to list of skate species
+OBCatch_skates <- OBCatch[OBCatch$species %in% skate_species,]

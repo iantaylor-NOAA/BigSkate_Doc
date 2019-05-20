@@ -218,35 +218,66 @@ A number of sensitivity analyses were conducted, including:
 
 \begin{itemize}
 
-  \item Allowing all selectivity curves to be dome-shaped
+  \item Sensitivities to assumptions about selectivity and catchability
 
-  \item Removing the sex-specific offset on the selectivity curves
-  
-  \item Removing the prior on catchability for the WCGBT Survey
-  
-  \item Estimating a single catchability for all years in the Triennial Survey
-  
-  \item Estimating separate natural mortality parameters for males and females
-  
-  \item Removing the prior on natural mortality
-  
-  \item Using the von Bertalanffy growth model
+  \begin{itemize}
 
-  \item Using the Richards growth model
+        \item Allowing all selectivity curves to be dome-shaped
 
-  \item Tuning the sample sizes using the McAllister-Ianelli method
+        \item Removing the sex-specific offset on the selectivity curves
   
-  \item Estimating historic discards based on 3yr average of discard rates and landings
-  
-  \item Changing discard mortality from 0.5 to 0.4
-  
-  \item Changing discard mortality from 0.5 to 0.6
+        \item Removing the prior on catchability for the WCGBT Survey
 
-  \item Estimating multipliers on historical discards over blocks of time
+        \item Estimating a single catchability for all years in the Triennial Survey
+
+  \end{itemize}
+
+  \item Sensitivities to assumptions about biology
   
+  \begin{itemize}
+
+	\item Estimating separate natural mortality parameters for males and females
+	
+	\item Removing the prior on natural mortality
+	
+	\item Using the von Bertalanffy growth model
+	
+	\item Using the Richards growth model
+
+  \end{itemize}
+
+  \item Sensitivities to data weighting and recruitment
+
+  \begin{itemize}
+
+        \item Tuning the sample sizes using the McAllister-Ianelli method
+
+        \item Tuning the sample sizes using the Dirichlet-Multinomial likelihood
+
+        \item Removing the extra standard deviation parameter added to the index uncertainty
+        \item Estimating recruitment deviations around the stock-recuit curve
+
+  \end{itemize}
+
+  \item Sensitivities to historical catch and discards
+
+  \begin{itemize}
+
+	\item Estimating historical discards based on 3yr average of discard rates and landings
+	
+	\item Changing discard mortality from 0.5 to 0.4
+	
+	\item Changing discard mortality from 0.5 to 0.6
+	
+	\item Adjusting historical catch by estimating multipliers on discards over blocks of time
+
+	\item Adjusting historical catch to match a time series of fishing mortality for Petrale Sole
+
+  \end{itemize}
+
 \end{itemize}
 
-Results of these sensitivities are shown in Figures \ref{fig:Sensitivity_sel_and_Q} to \ref{fig:Sensitivity_bio_and_misc}, and Tables \ref{tab:Sensitivity_sel_and_Q} to \ref{tab:Sensitivity_bio_and_misc}.
+Results of these sensitivities are shown in Figures \ref{fig:Sensitivity_sel_and_Q} to \ref{fig:Sensitivity_catch}, and Tables \ref{tab:Sensitivity_sel_and_Q} to \ref{tab:Sensitivity_catch}.
 
 **Selectivity and catchability**
 
@@ -254,23 +285,27 @@ Allowing the selectivity for all fleets to be dome-shaped resulted in domed sele
 
 Removing the prior on catchability for the WCGBT Survey had a large change in the estimated scale of the population, with the unfished equilibrium biomass increasing from the 2,224 mt estimated in the base model to 9,932 mt ("Q no prior on WCGBTS" in Figure \ref{fig:Sensitivity_sel_and_Q} and Table \ref{tab:Sensitivity_sel_and_Q}). However, the change in likelihood was relatively small, with the total improving by 0.4 units, of which 0.04 was associated with the prior itself.
 
-**Catch and discards**
+**Biology**
 
-The sensitivity analyses related to discard mortality resulted in little change in the scale of the population for any scenario (Figure \ref{fig:Sensitivity_catch} and Table \ref{tab:Sensitivity_catch}). Increasing or decreasing the discard mortality from 0.5 to 0.4 or 0.6 had the least impact, while the two alternative time series of discards caused the population to fall to a lower level around 1990 and increase faster in the recent period. The discards based on 3-yr average analysis simply used the alternative time series of historical discards described above and shown in Figure \ref{fig:discard_calculations}.
-
-The sensitivity analysis in which multipliers on historical discards were estimated made use of the relatively new "catch multiplier" option in Stock Synthesis. Multiplier parameters controlling the ratio of the discards removed from the model relative to the input values were estimated for blocks of time covering the periods 1916--1949, 1950--1959, 1960--1969, 1970--1979, 1980--1989, and 1990--1994. These multiplier parameters were bounded to keep the input catch relative to the estimated total within the range 0.5--1.5 and a weak Beta prior distribution spawning this range was applied to the parameters to keep them from hitting the bounds and cause them to remain at 1.0 in the absence of information in the data.
-
-The resulting pattern of historical discards shows a steadily increasing catch, with higher catch relative to the input values in all the blocks up to a peak in the 1980s, followed by an estimated decrease in the estimated catch for the 1990-1994 period (Figures \ref{fig:catch_multiplier_total_catch} and \ref{fig:catch_multiplier_catch_comparison}). These changes provide a greater contrast in the catch history, causing the estimated time series of spawning biomass to fall to a lower level and then increase faster from the 1990s onward, thus fitting the WCGBT Survey slightly better (Figures \ref{fig:Sensitivity_catch} and {fig:Sensitivity_catch2}). However, the improvement in likelihood for the survey was only 0.3 units (Table \ref{tab:Sensitivity_catch}).
-
-**Biology and data weighting**
-
-The sensitivity analyses related to biology and data weighting included assumptions about natural mortality ($M$), growth, and data weighting (Figure \ref{fig:Sensitivity_bio_and_misc} and Table \ref{tab:Sensitivity_bio_and_misc}). Allowing separate estimates of female and male natural mortality led to estimates of 0.475 for females and 0.395 for males, which are nearly symmetric around the 0.445 estimate of the shared mortality parameter in the base model. This difference allows more males to be present in the population and therefore better match the skewed sex ratios in the length composition data. The scale of the unfished equilibrium spawning biomass dropped to 61% of the base model estimate due to the smaller fraction of females living to mature with the higher $M$, but the estimate of total biomass in the unfished population remained at 91% of the base model (Table \ref{tab:Sensitivity_bio_and_misc}). The improvement in likelihood is 2.2 units, which is modest given the extra parameter estimated. Additional explorations (not shown) indicated that a model with differential $M$ and no sex-specific offsets on the selectivity had much worse fit to the data than either the base model or this sensitivity analysis. Therefore, given that the differential selectivity provided a greater improvement in model fit than the sex-specific $M$, only the more influential factor was included in the base model.
+The sensitivity analyses related to biology and data weighting included assumptions about natural mortality ($M$), growth, and data weighting (Figure \ref{fig:Sensitivity_bio} and Table \ref{tab:Sensitivity_bio}). Allowing separate estimates of female and male natural mortality led to estimates of 0.475 for females and 0.395 for males, which are nearly symmetric around the 0.445 estimate of the shared mortality parameter in the base model. This difference allows more males to be present in the population and therefore better match the skewed sex ratios in the length composition data. The scale of the unfished equilibrium spawning biomass dropped to 61% of the base model estimate due to the smaller fraction of females living to mature with the higher $M$, but the estimate of total biomass in the unfished population remained at 91% of the base model (Table \ref{tab:Sensitivity_bio}). The improvement in likelihood is 2.2 units, which is modest given the extra parameter estimated. Additional explorations (not shown) indicated that a model with differential $M$ and no sex-specific offsets on the selectivity had much worse fit to the data than either the base model or this sensitivity analysis. Therefore, given that the differential selectivity provided a greater improvement in model fit than the sex-specific $M$, only the more influential factor was included in the base model.
 
 Removing the prior on $M$ had little impact on the model with $M$ increasing from 0.445 in the base model to 0.448 without the prior.
 
 The use of either von Bertalanffy [-@VonB] or Richards [-@richards1959flexible] growth models provided less good fits to both the conditional age-at-length and length data and higher estimated variability in length-at-age (Figure \ref{fig:growth_curve_comparison}). The increase in variability in length-at-age suggests that the model is using this variability to compensate for lack of fit to the mean length-at-age. The Richards model is a generalization of the von Bertalanffy growth model with an additional parameter allowing a more sigmoidal shape. For females, this additional parameter was hitting the lower bound of 0.1 resulting in linear growth up to age 20. This parameter on the bound led to a bad gradient and a non-positive-definite Hessian matrix, indicated that the model had not converged to the maximum likelihood estimates. In theory the additional parameter in the Richards model should allow it to always provide a better likelihood relative to the von Bertallanfy, but further attempts to search for a converged model with Richards growth has not yet been undertaken.
 
-Tuning the sample sizes using the McAllister-Ianelli method had relatively small impact on the model results, with a lower weight given to the fishery lengths than the status-quo Francis tuning method, and a higher weight given to the WCGBT Survey lengths. The lengths from the Triennial Survey were given similar weight. Ages from both the fishery and the WCGBT Survey were increased in weight by a factor of 4.8 and 7.5, respectively. The likelihoods could not be compared due to these changes in the adjusted sample sizes, but the estimated parameters were all relatively similar to those in the base model (Table \ref{tab:Sensitivity_bio_and_misc}).
+**Data Weighting and recruitment**
+
+The base model sample size adjustments from the Francis method for the length composition data were 0.240 for the fishery lengths, 0.067 for the WCGBT Survey lengths, and 1.0 for the Triennial Survey lengths (constrained to avoid upweighting as the input sample size was already the number of fish for this one source). The sample size adjustments for the age data were 0.084 for the fishery and 0.054 for the WCGBT Survey. Tuning the sample sizes using the McAllister-Ianelli method had relatively small impact on the model results (Figure \ref{fig:Sensitivity_misc} and Table \ref{tab:Sensitivity_misc}), with a lower weight given to the fishery lengths (0.107) than the status-quo Francis tuning method, and a higher weight given to the WCGBT Survey lengths (0.637). The lengths from the Triennial Survey were given similar weight. Ages from both the fishery and the WCGBT Survey were increased to 0.410 and 0.404, respectively. The likelihoods could not be compared due to these changes in the adjusted sample sizes, but the estimated parameters were all relatively similar to those in the base model. Tuning the sample sizes using the Dirichlet-Multinomial likelihood [@Thorson2017c] resulting in higher weights for all length and age data, with sample size adjustments between 0.97 and 1.0 for all of the input length and age data. The scale of the spawning biomass increased with the Dirichlet-Multinomial likelihood (Figure \ref{fig:Sensitivity_misc} and Table \ref{tab:Sensitivity_misc}). Given the relatively good fit of the base model to the length and age data compared to the other inputs, especially the indices, the alternative data-weigthing methods, which in general increased the weight on these composition data, did not seem justified.
+
+**Catch and discards**
+
+The sensitivity analyses related to discard mortality resulted in little change in the scale of the population for any scenario (Figure \ref{fig:Sensitivity_catch} and Table \ref{tab:Sensitivity_catch}). Increasing or decreasing the discard mortality from 0.5 to 0.4 or 0.6 had the least impact, while the two alternative time series of discards caused the population to fall to a lower level around 1990 and increase faster in the recent period. The discards based on 3-yr average analysis simply used the alternative time series of historical discards described above and shown in Figure \ref{fig:discard_calculations}.
+
+The sensitivity analysis in which historical catch was adjusted by estimating multipliers on discards over blocks of time made use of the relatively new "catch multiplier" option in Stock Synthesis. Multiplier parameters controlling the ratio of the discards removed from the model relative to the input values were estimated for blocks of time covering the periods 1916--1949, 1950--1959, 1960--1969, 1970--1979, 1980--1989, and 1990--1994. These multiplier parameters were bounded to keep the input catch relative to the estimated total within the range 0.5--1.5 and a weak Beta prior distribution spanning this range was applied to the parameters to keep them from hitting the bounds and cause them to remain at 1.0 in the absence of information in the data.
+
+The resulting pattern of historical discards shows a steadily increasing catch, with higher catch relative to the input values in all the blocks up to a peak in the 1980s, followed by an estimated decrease in the estimated catch for the 1990-1994 period (Figures \ref{fig:catch_multiplier_total_catch} and \ref{fig:catch_multiplier_catch_comparison}). These changes provide a greater contrast in the catch history, causing the estimated time series of spawning biomass to fall to a lower level and then increase faster from the 1990s onward, thus fitting the WCGBT Survey slightly better (Figures \ref{fig:Sensitivity_catch} and {fig:Sensitivity_catch2}). However, the improvement in likelihood for the survey was only 0.3 units (Table \ref{tab:Sensitivity_catch}).
+
+The sensitivity analysis in which historical catch was adjusted to match a time series of fishing mortality for Petrale Sole (IAN, FINISH THIS)
 
 ### Retrospective Analysis
 

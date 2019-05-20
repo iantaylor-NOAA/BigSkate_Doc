@@ -160,8 +160,6 @@ round(mean(biomass.WCGBTS$Bio$Value)/1e3)
 ## [1] 12143
 
 
-
-
 ############
 #### script to make table of input values and uncertainty for each index
 #### formerly in /R/table_of_index_inputs.R

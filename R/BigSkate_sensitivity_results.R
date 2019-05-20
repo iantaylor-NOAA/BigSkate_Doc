@@ -62,6 +62,8 @@ likenames = c("TOTAL", "Survey", "Length_comp", "Age_comp",
 
 #####################
 
+if(FALSE){
+
 # getbs function from /BigSkate_Doc/R/BigSkate_functions.R
 #getbs(82, sensname="sel1")
 getbs(82, sensname="sel2")
@@ -118,27 +120,80 @@ file.copy(file.path(dir.sensitivities, "sens.sel_and_Q_compare1_spawnbio.png"),
           overwrite=TRUE)
 
 
+############# sensitivities to miscellaneous things
 
-############# sensitivities to biology and miscellaneous things
+getbs(82, sensname="misc1")
+getbs(82, sensname="misc2")
+getbs(82, sensname="misc4")
+getbs(82, sensname="rec2")
+
+sens.sum_misc <- SSsummarize(list(bs82,
+                                  bs82misc1, bs82misc2, bs82misc4,
+                                  bs82rec2))
+sens.names_misc <- c("Base model",
+                     "McAllister-Ianelli tuning",
+                     "Dirichlet-Multinomial tuning",
+                     "No extra index std. dev.",
+                     "Recruitment deviations")
+
+# make table of model results
+sens.table_misc <-
+  SStableComparisons(sens.sum_misc,
+                     modelnames=sens.names_misc,
+                     names=thingnames,
+                     likenames = likenames,
+                     csv=TRUE,
+                     csvdir = dir.sensitivities,
+                     csvfile = "comparison_table_sens.82.csv"
+                     )
+
+# convert some things to new units (non-log or non-offset)
+sens.table_misc <- convert.LnQ(sens.table_misc)
+sens.table_misc <- convert.offsets(sens.table_misc)
+# clean up labels
+sens.table_misc <- clean.labels(sens.table_misc)
+
+# write to CSV file
+write.csv(sens.table_misc,
+          file = file.path(dir.sensitivities, 'Sensitivities_misc.csv'),
+          row.names = FALSE)
+# copy to document repository
+file.copy(file.path(dir.sensitivities, "Sensitivities_misc.csv"),
+          file.path(dir.sensitivities, "../../BigSkate_Doc/txt_files/",
+                    "Sensitivities_misc.csv"),
+          overwrite=TRUE)
+# make comparison plot
+SSplotComparisons(sens.sum_misc,
+                  print = TRUE,
+                  filenameprefix = "sens.misc_",
+                  legendlabels = sens.names_misc,
+                  plotdir = dir.sensitivities)
+file.copy(file.path(dir.sensitivities, "sens.misc_compare1_spawnbio.png"),
+          file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
+                    "sens.misc_compare1_spawnbio.png"),
+          overwrite=TRUE)
+
+
+############# sensitivities to biology things
 getbs(82, sensname="bio1")
 getbs(82, sensname="bio2")
 getbs(82, sensname="bio3")
 getbs(82, sensname="bio4")
-getbs(82, sensname="misc1")
 
-sens.sum_bio_and_misc <- SSsummarize(list(bs82, bs82bio1, bs82bio2, bs82bio3,
-                                          bs82bio4, bs82misc1))
-sens.names_bio_and_misc <- c("Base model",
-                          "Bio separate M by sex",
-                          "Bio no M prior",
-                          "Bio von Bertalanffy growth",
-                          "Bio Richards growth",
-                          "Misc: McAllister-Ianelli tuning")
+
+sens.sum_bio <- SSsummarize(list(bs82, bs82bio1,
+                                 bs82bio2, bs82bio3,
+                                 bs82bio4))
+sens.names_bio <- c("Base model",
+                    "Separate M by sex",
+                    "No M prior",
+                    "von Bertalanffy growth",
+                    "Richards growth")
 
 # make table of model results
-sens.table_bio_and_misc <-
-    SStableComparisons(sens.sum_bio_and_misc,
-                       modelnames=sens.names_bio_and_misc,
+sens.table_bio <-
+    SStableComparisons(sens.sum_bio,
+                       modelnames=sens.names_bio,
                        names=thingnames,
                        likenames = likenames,
                        csv=TRUE,
@@ -147,87 +202,88 @@ sens.table_bio_and_misc <-
                        )
 
 # add in Richards and vonB growth values
-sens.table_bio_and_misc[grep("Linf", sens.table_bio_and_misc$Label),
-                        1 + grep("Richards", sens.names_bio_and_misc)] <- 
+sens.table_bio[grep("Linf", sens.table_bio$Label),
+                        1 + grep("Richards", sens.names_bio)] <- 
                           bs82bio4$Growth_Parameters$Linf
-sens.table_bio_and_misc[grep("Linf", sens.table_bio_and_misc$Label),
-                        1 + grep("von", sens.names_bio_and_misc)] <- 
+sens.table_bio[grep("Linf", sens.table_bio$Label),
+                        1 + grep("von", sens.names_bio)] <- 
                           bs82bio3$Growth_Parameters$Linf
 
 
 # convert some things to new units (non-log or non-offset)
-sens.table_bio_and_misc <- convert.LnQ(sens.table_bio_and_misc)
-sens.table_bio_and_misc <- convert.offsets(sens.table_bio_and_misc)
+sens.table_bio <- convert.LnQ(sens.table_bio)
+sens.table_bio <- convert.offsets(sens.table_bio)
 # clean up labels
-sens.table_bio_and_misc <- clean.labels(sens.table_bio_and_misc)
+sens.table_bio <- clean.labels(sens.table_bio)
 
 # write to CSV file
-write.csv(sens.table_bio_and_misc,
-          file = file.path(dir.sensitivities, 'Sensitivities_bio_and_misc.csv'),
+write.csv(sens.table_bio,
+          file = file.path(dir.sensitivities, 'Sensitivities_bio.csv'),
           row.names = FALSE)
 # copy to document repository
-file.copy(file.path(dir.sensitivities, "Sensitivities_bio_and_misc.csv"),
+file.copy(file.path(dir.sensitivities, "Sensitivities_bio.csv"),
           file.path(dir.sensitivities, "../../BigSkate_Doc/txt_files/",
-                    "Sensitivities_bio_and_misc.csv"),
+                    "Sensitivities_bio.csv"),
           overwrite=TRUE)
 
 # Richards growth didn't converge, so replacing timeseries to get plot
-sens.sum_bio_and_misc$SpawnBio$model5 <- bs82bio4$timeseries$SpawnBio
+sens.sum_bio$SpawnBio$model5 <- bs82bio4$timeseries$SpawnBio
 
-SSplotComparisons(sens.sum_bio_and_misc,
+SSplotComparisons(sens.sum_bio,
                   print = TRUE,
-                  filenameprefix = "sens.bio_and_misc_",
-                  legendlabels = sens.names_bio_and_misc,
+                  filenameprefix = "sens.bio_",
+                  legendlabels = sens.names_bio,
                   plotdir = dir.sensitivities)
-file.copy(file.path(dir.sensitivities, "sens.bio_and_misc_compare1_spawnbio.png"),
+file.copy(file.path(dir.sensitivities, "sens.bio_compare1_spawnbio.png"),
           file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
-                    "sens.bio_and_misc_compare1_spawnbio.png"),
+                    "sens.bio_compare1_spawnbio.png"),
           overwrite=TRUE)
 
 
+plot_growth_curve_comparison <- function(){
+  png(file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
+                'growth_curve_comparison.png'),
+      res=300, units='in', width=8, height=5, pointsize=10)
 
-png(file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
-              'growth_curve_comparison.png'),
-    res=300, units='in', width=8, height=5, pointsize=10)
+  par(mfrow=c(1,3), mar=c(0,0,0,1), oma=c(4,4,1,2), las=1)
+  par(cex=1)
+  # make empty plot for Growth Pattern 1 (to ensure consistent dimensions)
+  plot(0, type='n', xlim=c(0,20), ylim=c(0,277.75), xaxs='i', yaxs='i')
+  mtext(side=1, line=2.5, outer=TRUE, text="Age (yr)")
+  mtext(side=2, line=2.5, outer=TRUE, text="Length (cm)", las=0)
+  # add growth curves
+  SSplotBiology(bs82, subplot=1, add=TRUE, legendloc=FALSE)
+  # add legend, grid, and outer box
+  axis(1)
+  grid()
+  legend('topleft', title="Growth cessation", legend=NA, bty="n", text.font=2, cex=1.5)
+  legend(x=0, y=250, lwd=3, lty=c(1,2), legend=c("Females","Males"), col=c(2,4), bty='n')
+  box()
 
-par(mfrow=c(1,3), mar=c(0,0,0,1), oma=c(4,4,1,2), las=1)
-par(cex=1)
-# make empty plot for Growth Pattern 1 (to ensure consistent dimensions)
-plot(0, type='n', xlim=c(0,20), ylim=c(0,277.75), xaxs='i', yaxs='i')
-mtext(side=1, line=2.5, outer=TRUE, text="Age (yr)")
-mtext(side=2, line=2.5, outer=TRUE, text="Length (cm)", las=0)
-# add growth curves
-SSplotBiology(bs82, subplot=1, add=TRUE, legendloc=FALSE)
-# add legend, grid, and outer box
-axis(1)
-grid()
-legend('topleft', title="Growth cessation", legend=NA, bty="n", text.font=2, cex=1.5)
-legend(x=0, y=250, lwd=3, lty=c(1,2), legend=c("Females","Males"), col=c(2,4), bty='n')
-box()
+  # make empty plot for Growth Pattern 2 (to ensure consistent dimensions)
+  plot(0, type='n', xlim=c(0,20), ylim=c(0,277.75), xaxs='i', yaxs='i', axes=FALSE)
+  # add growth curves 
+  SSplotBiology(bs82bio3, subplot=1, add=TRUE, legendloc=FALSE)
+  # add legend, grid, and outer box
+  axis(1)
+  grid()
+  legend('topleft', title="von Bertalanffy growth", legend=NA, bty="n", text.font=2, cex=1.5)
+  box()
 
-# make empty plot for Growth Pattern 2 (to ensure consistent dimensions)
-plot(0, type='n', xlim=c(0,20), ylim=c(0,277.75), xaxs='i', yaxs='i', axes=FALSE)
-# add growth curves 
-SSplotBiology(bs82bio3, subplot=1, add=TRUE, legendloc=FALSE)
-# add legend, grid, and outer box
-axis(1)
-grid()
-legend('topleft', title="von Bertalanffy growth", legend=NA, bty="n", text.font=2, cex=1.5)
-box()
+  # make empty plot for Growth Pattern 3 (to ensure consistent dimensions)
+  plot(0, type='n', xlim=c(0,20), ylim=c(0,277.75), xaxs='i', yaxs='i', axes=FALSE)
+  # add growth curves 
+  SSplotBiology(bs82bio4, subplot=1, add=TRUE, legendloc=FALSE)
+  # add legend, grid, and outer box
+  axis(1)
+  grid()
+  legend('topleft', title="Richards growth", legend=NA, bty="n", text.font=2, cex=1.5)
+  box()
+  axis(4)
 
-# make empty plot for Growth Pattern 3 (to ensure consistent dimensions)
-plot(0, type='n', xlim=c(0,20), ylim=c(0,277.75), xaxs='i', yaxs='i', axes=FALSE)
-# add growth curves 
-SSplotBiology(bs82bio4, subplot=1, add=TRUE, legendloc=FALSE)
-# add legend, grid, and outer box
-axis(1)
-grid()
-legend('topleft', title="Richards growth", legend=NA, bty="n", text.font=2, cex=1.5)
-box()
-axis(4)
-
-dev.off()
-
+  dev.off()
+}
+plot_growth_curve_comparison()
 
 #### catch sensitivities
 
@@ -235,14 +291,16 @@ getbs(82, sensname="catch1")
 getbs(82, sensname="catch2")
 getbs(82, sensname="catch3")
 getbs(82, sensname="catch4")
+getbs(82, sensname="catch5")
 
 sens.sum_catch <- SSsummarize(list(bs82, bs82catch1, bs82catch2,
-                                   bs82catch3, bs82catch4))
+                                   bs82catch3, bs82catch4, bs82catch5))
 sens.names_catch <- c("Base model",
                       "Discards based on 3yr averages",
                       "Discard mortality = 0.4",
                       "Discard mortality = 0.6",
-                      "Multipliers on historical discards")
+                      "Multipliers on historical discards",
+                      "Trend in F from Petrale Sole")
 
 # make table of model results
 sens.table_catch <-
@@ -282,6 +340,7 @@ SSplotComparisons(sens.sum_catch, subplot=11,
                   legendloc = 'topleft',
                   print = TRUE,
                   indexfleets = 5,
+                  indexUncertainty = TRUE,
                   filenameprefix = "sens.catch_",
                   legendlabels = sens.names_catch,
                   plotdir = dir.sensitivities)
@@ -316,6 +375,24 @@ file.copy(file.path(bs82catch4$inputs$dir,
                     "catch_multiplier_total_catch.png"))
 
 
+fleetnames_catch <- c("Fishery (current)",
+                      "Fishery + Discards (historical)",
+                      "",
+                      "Fishery (tribal)",
+                      "WCGBTS",
+                      "Triennial")
+SS_plots(bs82catch5, plot=7,
+         fleetnames = fleetnames_catch)
+file.copy(file.path(bs82catch5$inputs$dir,
+                    "plots/catch3 observed and expected landings (if different).png"),
+          file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
+                    "catch_petraleF_catch_comparison.png"))
+file.copy(file.path(bs82catch5$inputs$dir,
+                    "plots/catch5 total catch (including discards) stacked.png"),
+          file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
+                    "catch_petraleF_total_catch.png"))
+
+
           ## mortality M vs F
 ## Alternative catch or discard assumptions
 ## Data weighting (Francis, vs. M-I vs. Dirichlet-Multinomial)
@@ -324,3 +401,77 @@ file.copy(file.path(bs82catch4$inputs$dir,
 ## Turn on recruitment devs
 ## Jasons 3-parameter stock-recruit function (if Vlada figures out how to use this and it makes any difference for Longnose)
 ## Exponential logistic selectivity
+
+
+
+
+# getbs function from /BigSkate_Doc/R/BigSkate_functions.R
+#getbs(82, sensname="sel1")
+getbs(82, sensname="sel2")
+getbs(82, sensname="sel3")
+getbs(82, sensname="Q1")
+getbs(82, sensname="Q2")
+
+getbs(82, sensname="catch1")
+getbs(82, sensname="catch2")
+getbs(82, sensname="catch3")
+getbs(82, sensname="catch4")
+
+getbs(82, sensname="bio1")
+getbs(82, sensname="bio2")
+getbs(82, sensname="bio3")
+getbs(82, sensname="bio4")
+
+getbs(82, sensname="misc1")
+getbs(82, sensname="misc2")
+getbs(82, sensname="misc4")
+getbs(82, sensname="rec2")
+
+sens.names_all <- c("Base model",
+
+                    #"Sel all asymptotic",
+                    "Sel all domed",
+                    "Sel no sex offset",
+                    "Q no prior on WCGBTS",
+                    "Q no offset on triennial",
+    
+                    "Discards based on 3yr averages",
+                    "Discard mortality = 0.4",
+                    "Discard mortality = 0.6",
+                    "Multipliers on historical discards",
+
+                    "Bio separate M by sex",
+                    "Bio no M prior",
+                    "Bio von Bertalanffy growth",
+                    "Bio Richards growth",
+                    "Misc: McAllister-Ianelli tuning")
+
+model.summaries <- SSsummarize(list(bs82,
+                                    bs82sel2, bs82sel3, bs82Q1, bs82Q2,
+                                    bs82catch1, bs82catch2, bs82catch3, bs82catch4,
+                                    bs82bio1, bs82bio2, bs82bio3, bs82bio4, bs82misc1))
+                                    
+source('c:/SS/skates/R/SS_Sensi_plot.R')
+
+#Run the sensitivity plot function
+SS_Sensi_plot(model.summaries = model.summaries,
+              Dir = dir.sensitivities,
+              current.year = 2019,
+              mod.names = sens.names_all, #List the names of the sensitivity runs
+              likelihood.out = c(1,1,0),
+              Sensi.RE.out = "Sensi_RE_out.DMP", #Saved file of relative errors
+              CI = 0.95, #Confidence interval box based on the reference model
+              TRP.in = 0.4, #Target relative abundance value
+              LRP.in = 0.25, #Limit relative abundance value
+              sensi_xlab = "Sensitivity scenarios", #X-axis label
+              ylims.in = c(-1,1,-1,1,-1,1,-1,1,-1,1,-1,1), #Y-axis label
+              plot.figs = c(1,1,1,1,1,1) , #Which plots to make/save? 
+              sensi.type.breaks = c(5.5,9.5), #vertical breaks that can separate out types of sensitivities
+              anno.x = c(3,7.5,12.5), # Vertical positioning of the sensitivity types labels
+              anno.y = c(1,1,1), # Horizontal positioning of the sensitivity types labels
+              anno.lab = c("Selectivity &\n Catchability",
+                  "Catch history",
+                  "Biology &\n data-weighting") #Sensitivity types labels
+)
+
+} # end if(FALSE) which allows sourcing the file to get the stuff at the top
