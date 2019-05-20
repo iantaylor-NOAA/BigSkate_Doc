@@ -275,17 +275,14 @@
     
     # Read in/organize sensitivity file, change column names, caption
     Sens_model1 = read.csv('./txt_files/Sensitivities_sel_and_Q.csv')
-    # colnames(Sens_model1) = c('Label', 
-    #                           'Base (Francis weights)',
-    #                           'Default weights',
-    #                           'Harmonic mean weights',
-    #                           'Estimate equal M',
-    #                           'Estimate equal M and h',
-    #                           'Drop PR data',
-    #                           'Drop PC data',
-    #                           'Drop RecDD data')
+    colnames(Sens_model1) = c('Label', 
+                              'Base',
+                              'All selectivity domed',
+                              'No sex-specific selectivity',
+                              'Remove catchability prior',
+                              'No catchability change in Triennial')
 
-    colnames(Sens_model1) <- gsub(pattern=".", replacement=" ", x=colnames(Sens_model1), fixed=TRUE)
+    #colnames(Sens_model1) <- gsub(pattern=".", replacement=" ", x=colnames(Sens_model1), fixed=TRUE)
     
     # Create sensitivities table
     Sens_model1.table = xtable(Sens_model1, 
@@ -313,23 +310,96 @@
 
 \newpage
 
+
+<!-- *********** Sensitivity to biology ******************************* --> 
+
+```{r, results = 'asis'}
+    
+    # Read in/organize sensitivity file, change column names, caption
+    Sens_model1 = read.csv('./txt_files/Sensitivities_bio.csv')
+    colnames(Sens_model1) = c('Label', 
+                              'Base',
+                              'Sex-specific M',
+                              'No prior on M',
+                              'von B growth',
+                              'Richards growth')
+
+    #colnames(Sens_model1) <- gsub(pattern=".", replacement=" ", x=colnames(Sens_model1), fixed=TRUE)
+    
+    # Create sensitivities table
+    Sens_model1.table = xtable(Sens_model1, 
+                               caption = c('Sensitivity of the base model 
+                                          to assumptions about biology'),
+                               label = 'tab:Sensitivity_bio', digits = 2)    
+  
+    # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
+    # You can change this easily to have variable columns width after you know how many
+    # colunns your final table has
+    align(Sens_model1.table) = c('l','l', rep('>{\\centering}p{.8in}', dim(Sens_model1)[2]-1))
+
+
+    # Print model 1 sensitivity table
+    print(Sens_model1.table, 
+          include.rownames = FALSE,             
+          caption.placement = 'top',
+          #floating.environment = 'sidewaystable',
+          scalebox = .9)
+
+```
+
+<!-- *********** Sensitivity to data weighting and recruitment ******************************* --> 
+
+```{r, results = 'asis'}
+    
+    # Read in/organize sensitivity file, change column names, caption
+    Sens_model1 = read.csv('./txt_files/Sensitivities_misc.csv')
+    colnames(Sens_model1) = c('Label', 
+                              'Base',
+                              'McAllister-Ianelli tuning',
+                              'Dirichlet-Multinomial tuning',
+                              'No extra SD on indices',
+                              'Estimate rec. devs.')
+
+    #colnames(Sens_model1) <- gsub(pattern=".", replacement=" ", x=colnames(Sens_model1), fixed=TRUE)
+    
+    # Create sensitivities table
+    Sens_model1.table = xtable(Sens_model1, 
+                               caption = c('Sensitivity of the base model 
+                                          to assumptions about data weighting and recruitment'),
+                               label = 'tab:Sensitivity_misc', digits = 2)    
+  
+    # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
+    # You can change this easily to have variable columns width after you know how many
+    # colunns your final table has
+    align(Sens_model1.table) = c('l','l', rep('>{\\centering}p{.8in}', dim(Sens_model1)[2]-1))
+
+
+    # Print model 1 sensitivity table
+    print(Sens_model1.table, 
+          include.rownames = FALSE,             
+          caption.placement = 'top',
+          #floating.environment = 'sidewaystable',
+          scalebox = .9)
+
+```
+
+
 <!-- *********** Sensitivity to catch ******************************* -->
 
 ```{r, results = 'asis'}
     
     # Read in/organize sensitivity file, change column names, caption
     Sens_model1 = read.csv('./txt_files/Sensitivities_catch.csv')
-    # colnames(Sens_model1) = c('Label', 
-    #                           'Base (Francis weights)',
-    #                           'Default weights',
-    #                           'Harmonic mean weights',
-    #                           'Estimate equal M',
-    #                           'Estimate equal M and h',
-    #                           'Drop PR data',
-    #                           'Drop PC data',
-    #                           'Drop RecDD data')
+    colnames(Sens_model1) = c('Label', 
+                              'Base',
+                              'Discards based on 3yr-avg.',
+                              'Discard mortality = 0.4',
+                              'Discard mortality = 0.6',
+                              'Multipliers on historic discards',
+                              'Fit time series of F from Petrale')
 
-    colnames(Sens_model1) <- gsub(pattern=".", replacement=" ", x=colnames(Sens_model1), fixed=TRUE)
+    #colnames(Sens_model1) <- gsub(pattern=".", replacement=" ", x=colnames(Sens_model1), fixed=TRUE)
+    
     # Create sensitivities table
     Sens_model1.table = xtable(Sens_model1, 
                                caption = c('Sensitivity of the base model 
@@ -354,49 +424,6 @@
 \FloatBarrier
 
 \newpage
-
-<!-- *********** Sensitivity to Biological and other assumptions ******************************* --> 
-
-
-
-```{r, results = 'asis'}
-    
-    # Read in/organize sensitivity file, change column names, caption
-    Sens_model1 = read.csv('./txt_files/Sensitivities_bio_and_misc.csv')
-    # colnames(Sens_model1) = c('Label', 
-    #                           'Base (Francis weights)',
-    #                           'Default weights',
-    #                           'Harmonic mean weights',
-    #                           'Estimate equal M',
-    #                           'Estimate equal M and h',
-    #                           'Drop PR data',
-    #                           'Drop PC data',
-    #                           'Drop RecDD data')
-
-    colnames(Sens_model1) <- gsub(pattern=".", replacement=" ", x=colnames(Sens_model1), fixed=TRUE)
-    
-    # Create sensitivities table
-    Sens_model1.table = xtable(Sens_model1, 
-                               caption = c('Sensitivity of the base model 
-                                          to assumptions about biology and data weighting'),
-                               label = 'tab:Sensitivity_bio_and_misc', digits = 2)    
-  
-    # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
-    # You can change this easily to have variable columns width after you know how many
-    # colunns your final table has
-    align(Sens_model1.table) = c('l','l', rep('>{\\centering}p{.8in}', dim(Sens_model1)[2]-1))
-
-
-    # Print model 1 sensitivity table
-    print(Sens_model1.table, 
-          include.rownames = FALSE,             
-          caption.placement = 'top',
-          #floating.environment = 'sidewaystable',
-          scalebox = .9)
-
-```
-
-
 
 \FloatBarrier
 

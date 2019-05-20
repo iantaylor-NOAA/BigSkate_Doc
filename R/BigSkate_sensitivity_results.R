@@ -392,6 +392,38 @@ file.copy(file.path(bs82catch5$inputs$dir,
           file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
                     "catch_petraleF_total_catch.png"))
 
+catch0 <- SSplotCatch(bs82, print=FALSE, plot=FALSE)
+yrs <- catch0$totcatchmat$Yr
+totcatch0 <- apply(catch0$totcatchmat[,1:4], MARGIN = 1, FUN = sum)
+catch1 <- SSplotCatch(bs82catch1, print=FALSE, plot=FALSE)
+totcatch1 <- apply(catch1$totcatchmat[,1:4], MARGIN = 1, FUN = sum)
+catch2 <- SSplotCatch(bs82catch2, print=FALSE, plot=FALSE)
+totcatch2 <- apply(catch2$totcatchmat[,1:4], MARGIN = 1, FUN = sum)
+catch3 <- SSplotCatch(bs82catch3, print=FALSE, plot=FALSE)
+totcatch3 <- apply(catch3$totcatchmat[,1:4], MARGIN = 1, FUN = sum)
+catch4 <- SSplotCatch(bs82catch4, print=FALSE, plot=FALSE)
+totcatch4 <- apply(catch4$totcatchmat[,1:4], MARGIN = 1, FUN = sum)
+catch5 <- SSplotCatch(bs82catch5, print=FALSE, plot=FALSE)
+totcatch5 <- apply(catch5$totcatchmat[,1:4], MARGIN = 1, FUN = sum)
+
+cols <- rich.colors.short(7)[-1]
+
+png(file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
+              'adjusted_historic_catch_comparison.png'),
+    res=300, units='in', width=6.5, height=5, pointsize=10)
+plot(0, lwd=3, type='n',
+     xlab="Year", ylab="Total mortality (mt)",
+     xlim = c(1916, 2018), ylim = c(0,1090), yaxs='i')
+lines(yrs[-1], totcatch5[-1], col=cols[5+1], lwd=3)
+lines(yrs[-1], totcatch4[-1], col=cols[4+1], lwd=3)
+#lines(yrs[-1], totcatch3[-1], col=cols[3+1], lwd=3)
+#lines(yrs[-1], totcatch2[-1], col=cols[2+1], lwd=3)
+#lines(yrs[-1], totcatch1[-1], col=cols[1+1], lwd=3)
+lines(yrs[-1], totcatch0[-1], col=cols[1], lwd=3)
+legend('topleft', lty=1, lwd=3, col=cols[c(1,5,6)],
+       legend=sens.names_catch[c(1,5,6)],
+       bty='n')
+dev.off()
 
           ## mortality M vs F
 ## Alternative catch or discard assumptions
