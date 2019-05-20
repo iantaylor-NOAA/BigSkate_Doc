@@ -259,6 +259,8 @@
           add.to.row = addtorow)
 ```
 \end{landscape}
+
+\clearpage
 <!-- ---------------------------------------------------------------------- -->
 
 \FloatBarrier
@@ -268,7 +270,6 @@
 <!-- IGT: Table removed on 5/14/2019, code available in earlier versions of this file --> 
 
 <!-- *********** Sensitivity to Sel and Q ******************************* --> 
-\begin{landscape}
 
 ```{r, results = 'asis'}
     
@@ -307,14 +308,12 @@
           scalebox = .9)
 
 ```
-\end{landscape}
+
 \FloatBarrier
 
 \newpage
 
 <!-- *********** Sensitivity to catch ******************************* -->
-
-\begin{landscape}
 
 ```{r, results = 'asis'}
     
@@ -351,8 +350,6 @@
           scalebox = .9)
 
 ```
-\end{landscape}
-
 
 \FloatBarrier
 
@@ -360,7 +357,7 @@
 
 <!-- *********** Sensitivity to Biological and other assumptions ******************************* --> 
 
-\begin{landscape}
+
 
 ```{r, results = 'asis'}
     
@@ -398,7 +395,7 @@
           scalebox = .9)
 
 ```
-\end{landscape}
+
 
 
 \FloatBarrier

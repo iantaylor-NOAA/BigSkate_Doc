@@ -567,7 +567,7 @@ for (model in 1:n_models) {
                'Spawning biomass (mt)',
                '$SPR_{proxy}$',
                'Exploitation rate corresponding to $SPR=50\\%$',
-               'Yield with $SPR=50\\%$ at $B_{$SPR=50\\%}$ (mt)',
+               'Yield with $SPR=50\\%$ at $B_{SPR=50\\%}$ (mt)',
                '\\textbf{\\textit{Reference points based on estimated MSY values}}',
                'Spawning biomass at $MSY$ ($B_{MSY}$)',
                '$SPR_{MSY}$',

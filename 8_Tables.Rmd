@@ -62,28 +62,43 @@ print(byState_catch.table,
 
 ```{r, results = 'asis'}
 
-Indices = read.csv("./txt_files/data_summaries/table_of_index_inputs.csv")
+Indices = read.csv("./txt_files/data_summaries/table_of_index_inputs_May18.csv")
 
-colnames(Indices) = c("Year","Obs","se_log","Obs","se_log","Obs","se_log")
+colnames(Indices) = c("Year","Obs","se_log","Obs","se_log","Obs","se_log","Obs","se_log")
 
 a_header <- construct_header(
   # the data.frame or matrix that should be plotted
   Indices,
   # the labels of the groups that we want to insert
-  grp_names = c("", "WCGBTS", "Triennial","IPHC"),
+  grp_names = c("", "Triennial", "WCGBTS"),
   # the number of columns each group spans
-  span = c(1, 2, 2,2),
+  span = c(1, 4, 4),
   # the alignment of each group, can be a single character (lcr) or a vector
   align = "c"
 )
 
-caption = "Index inputs considered for the assessment model. The IPHC index was not used in the final model. The WCGBT and Triennial Surveys were standardized using the VAST geostatistical software and are in units of metric tons. The IPHC index is in units of fish per 1000 hooks."
+b_header <- construct_header(
+  # the data.frame or matrix that should be plotted
+  Indices,
+  # the labels of the groups that we want to insert
+  grp_names = c("", "VAST", "Design","VAST","Design"),
+  # the number of columns each group spans
+  span = c(1, 2, 2, 2, 2),
+  # the alignment of each group, can be a single character (lcr) or a vector
+  align = "c"
+)
+
+a_header$command = c(a_header$command, b_header$command[2:3])
+a_header$pos = c(a_header$pos, b_header$pos[[2]], b_header$pos[[3]])
+caption = "Modeled and design-based indices for the assessment model. The WCGBT and Triennial Surveys were standardized using the VAST geostatistical software and are in units of metric tons."
 
 index.table = xtable(Indices,
                     caption = caption,
                     label = 'tab:index_inputs')
 
  align(index.table) = c('l', 'l',
+                               '>{\\centering}p{0.6in}',
+                               '>{\\centering}p{0.6in}',
                                '>{\\centering}p{0.6in}',
                                '>{\\centering}p{0.6in}',
                                '>{\\centering}p{0.6in}',

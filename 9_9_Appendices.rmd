@@ -11,7 +11,7 @@
 
 <!-- Set up the first plot by hand so as to keep it on the page ------------------------------- -->
 
-\vspace{.5cm}
+\vspace{2.5cm}
 
 <!-- [H] to control floating -->
 
