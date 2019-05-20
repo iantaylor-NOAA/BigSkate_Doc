@@ -87,7 +87,7 @@ output:
 
 ![Index of abundance from the WCGBT Survey calculated three ways.\label{fig:WCGBTS_index_compare}](Figures/WCGBTS_index_compare.png)
 
-![Index of abundance from the International Pacific Halibut Commission longline survey (not used in the assessment model).\label{fig:IPHC_index}](Figures/IPHC index for Big Skate (5-11-2019).png)
+![Index of abundance from the International Pacific Halibut Commission longline survey (not used in the assessment model).\label{fig:IPHC_index}](Figures/IPHC index for Big Skate.png)
 
 ![Map of estimated density by year for Big Skate in the Triennial survey calculated using VAST with a Gamma error structure.\label{fig:VAST_Yearly_Dens_Triennial}](Figures/VAST_Yearly_Dens_Triennial.png)
 
