@@ -22,7 +22,7 @@ A map showing the area of the U.S. West Coast Exclusive Economic Zone covered by
 
 ## Catches{-}
 
-The majority of Big Skate catch was discarded prior to 1995 when markets for Big Skate and Longnose Skate developed, landings increased, and discarding decreased. The majority of the discards were unrecorded and the landings were in the unspecified skates category. The landings from prior to 1995 were reconstructed separately in each of the three coastal states for this assessment. In general the methods all relied on differences in depth distribution of the different skates species (primarily Big Skate and Longnose Skate). Discards during this period prior to 1995 were estimated outside the model based on an assumption that the average discard rate during the period 1950--1994 was equal to that for Longnose Skate. The current fishery, beginning in 1995, has less uncertainty in landings, lower discard rates, and more data on discards. The discards are estimated within the model for this period using a time-varying retention function. Big Skate have only been landed in their own species category in the past few years (starting in 2015).
+Landings and estimated discards of `r spp` were reconstructed for this assessment from historical records of other species and from species composition data collected in the recent fishery.  These reflect the fishery from 1916-1994.  The current fishery started in 1995.  For records from 1995-2017, Big Skate landings were estimated from species-composition samples and the landings of "Unspecified Skates".  Beginning in 2017, Big Skate have been recorded in species-specific landings.
 
 <!-- (Table \ref{tab:Exec_catch}).  -->
 
@@ -84,15 +84,13 @@ In the current fishery (since 1995), annual total landings of `r spp` have range
 
 ## Data and Assessment{-}
 
-This the first full assessment for `r spp`. It is currently managed using an OFL which was based on a proxy for $F_{MSY}$ and the average survey biomass for the years 2010--2012. This assessment uses the newest version of Stock Synthesis (3.30.13.02).  The model begins in `r Dat_start_mod1`, and assumes the stock was at an unfished equilibrium that year. The choice of 1916 is based on the first year of the Califonia catch reconstruction.
+This the first full assessment for `r spp`. It is currently managed using an OFL which was based on a proxy for $F_{MSY}$ and a 3-year recent average of survey biomass. This assessment uses the newest version of Stock Synthesis (3.30.13).  The model begins in `r Dat_start_mod1`, and assumes the stock was at an unfished equilibrium that year. 
 
-The assessment relies on two bottom trawl survey indices of abundance, the Triennial Survey from which an index covering the period 1980--2004 was used here and the West Coast Groundfish Bottom Trawl (WCGBT) Survey, which began in 2003 and for which data is available through 2018. The triennial survey shows an increasing trend over the 25 year period it covers, which the model is not able to fit as this includes the period when trawl fishing in this area was at its most intense and the stock would is expected to have been declining. The WCGBT Survey also shows an increasing trend, with the 5 most recent observations (2014--2018) all falling in the top 6 ever observed (2004 was the 5th highest observation). The model estimates an increasing trend during this period but the slope is more gradual than the trend in the survey observations. The misfit to these survey indices could be due to some combination of incorrect estimation of the catch history, variability in recruitment which is not modeled here, or biological or ecological changes which are not modeled.
+The assessment relies on two bottom trawl survey indices of abundance, the Triennial Survey from an index covering the period 1980--2004 was used here and the West Coast Groundfish Bottom Trawl (WCGBT) Survey, which began in 2003 and for which data is available through 2018. The triennial survey shows an increasing trend over the 25 year period it covers, which the model is not able to fit as this includes the peak period of the fishery when the stock would have been expected to be declining. The WCGBT Survey also shows an increasing trend, with the 5 most recent observations (2014--2018) all falling in the top 6 ever observed (2004 was the 5th highest observation). The model estimates an increasing trend during this period but the slope is more gradual than the trend in the survey. The misfit to these survey indices could be due to some combination of incorrect estimation of the catch history, variability in recruitment which is not modeled here, or biological or ecological changes for which data are not available.
 
-Length composition data from the fishery is available starting in 1995 but is sparse until the most recent 10 years. Most of the ages are also from 2008 onward. This limits the ability of the model to estimate any changes composition of the population during the majority of the history of the fishery. Estimates of discard rates and mean body weight of discards are available for the years 2002 onward and discard length compositions are available starting in 2010.
+Length composition data from the fishery is available starting in 1995 but is sparse until the past decade. Most of the ages are also from 2008 onward. This limits the ability of the model to estimate any changes composition of the population during the majority of the history of the fishery. Estimates of discard rates and mean body weight of discards are available for the years 2002 onward and discard length compositions are available starting in 2010.
 
-The age and length data provide evidence for growth patterns and sex-specific differences in selectivity that are unusual among groundfish stocks that have been assessed within the U.S. West Coast and are not found in Longnose Skate where the data show little difference between the sexes. Growth appears to be almost linear and similar between females and males up to about age 7 or over 100 cm at which point male growth appears to stabilize while females continue to grow. However, in spite of the similar growth pattern for ages prior to 7, males are observed more frequently in the length bins associated with these ages, with the 70--100 cm length bins showing more than 60% males in many years. Sex-specific differences in selectivity were included in the model in order to better match patterns in the sex ratios in the length composition data and a new "growth cessation model" was used to model growth as it provided much better fits than the von Bertalanffy growth function. The length and age data do not cover enough years or show enough evidence of distinct cohorts to reliably estimate deviations in recruitment around the stock-recruit curve, so recruitment in the final model is based directly on the Beverton-Holt stock-recruit curve. Steepness of this stock-recruit curve was not well-informed by the model so was fixed at the value used in a previous Longnose Skate stock assessment.
-
-The final model has 44 estimated parameters, most of which are related to selectivity (including sex-specific differences), time-varying retention, and growth (including sex-specific differences). The remaining 7 parameters include natural mortality, equilibrium recruitment, an extra survey uncertainty parameter for each of the two surveys, and three catchability parameters, where the Triennial Survey is assumed to have a change in catchability starting in 1995 due to changes in survey design.
+The age and length data provide evidence for growth patterns and sex-specific differences in selectivity that are unusual among groundfish stocks that have been assessed within the U.S. West Coast and are not found in Longnose Skate where the data show little difference between the sexes. Growth appears to be almost linear and similar between females and males up to about age 7 or over 100 cm at which point male growth appears to stabilize while females continue to grow. However, in spite of the similar growth pattern for ages prior to 7, males are observed more frequently, with the 70--100 cm length bins often showing 60% males. Sex-specific differences in selectivity were included in the model in order to better match patterns in the sex ratios in the length composition data. The length and age data do not cover enough years or show enough evidence of distinct cohorts to reliably estimate deviations in recruitment around the stock-recruit curve.
 
 The scale of the population is not reliably informed by the data due to the combination of surveys that show trends which can't be matched by the structure of the model and length and age data which inform growth and selectivity but provide relatively little information about changes in stock structure over time. Therefore, a prior on catchability of the WCGBT Survey (centered at 0.83) was applied in order to provide more stable results.
 
@@ -104,9 +102,9 @@ Although the assessment model requires numerous simplifying assumptions, it repr
 
 The `r LastYR` estimated spawning biomass relative to unfished 
 equilibrium spawning biomass is above the target of 40% of unfished spawning biomass at `r Depl_mod1` 
-(95% asymptotic interval: $\pm$ `r Depl_mod1_CI`) (Figure \ref{fig:Spawnbio_all} and Table \ref{tab:SpawningDeplete_mod1}). 
+(95% asymptotic interval: $\pm$ `r Depl_mod1_CI`) (Figure \ref{fig:ts9_unfished_with_95_asymptotic_intervals_intervals}). 
 Approximate confidence intervals based on the 
-asymptotic variance estimates show that the uncertainty in the estimated spawning biomass is high, although even the lower range of the 95% interval for %unfished is above the 40% reference point, and all sensitivity analyses explore also show the stock to be at a relatively high level.
+asymptotic variance estimates show that the uncertainty in the estimated spawning biomass is high, although even the lower range of the 95% interval for %unfished is above the 40% reference point, and all sensitivity analyses explore also show the stock to be at a high level.
 
 \vspace{.5cm}
 
@@ -141,7 +139,7 @@ asymptotic variance estimates show that the uncertainty in the estimated spawnin
 
 
 ## Recruitment{-}
-Recruitment was assumed to follow the Beverton-Holt stock recruit curve with the steepness parameter fixed at $h=0.4$, so uncertainty in estimated recruitment is due to uncertainty in the estimated unfished equilibrium recruitment $R_0$ as well as uncertainty in growth and mortality (Figure \ref{fig:Recruits_all} and Table \ref{tab:Recruit_mod1}).
+Recruitment was assumed to follow the Beverton-Holt stock recruit curve, so uncertainty in estimated recruitment is due to uncertainty in spawning biomass and the unfished equilibrium recruitment $R_0$ (Figure \ref{fig:Recruits_all} and Table \ref{tab:Recruit_mod1}).
 
 \vspace{.5cm}
 
@@ -169,8 +167,8 @@ Recruitment was assumed to follow the Beverton-Holt stock recruit curve with the
 
 
 ## Exploitation Status{-}
-Harvest rates estimated by the base model indicate catch levels have been below the limits that would be associated with the Spawning Potential Ratio (SPR) = 50% limit (corresponding to a relative fishing intensity of 100%)
-(Table \ref{tab:SPR_Exploit_mod1} and Figures \ref{fig:SPR_all} and \ref{fig:phase}). SPR is calculated as the lifetime spawning potential per recruit at a given fishing level relative to the lifetime spawning potential per recruit with no fishing. The exploitation rate of age 2+ fish has been below 3% over this recent 10-year period.
+Harvest rates estimated by the base model indicate catch levels have been below the limits that would be associated with the SPR = 50% target
+(Table \ref{tab:SPR_Exploit_mod1} and Figure \ref{fig:SPR_all}). 
 
 \vspace{.5cm}
 
@@ -186,16 +184,14 @@ Harvest rates estimated by the base model indicate catch levels have been below 
    # select the files for the SPR and phase plots depending on the number of models
    
      SPR.file   = 'r4ss/plots_mod1/SPR2_minusSPRseries.png'
-     Phase.file   = 'r4ss/plots_mod1/SPR4_phase.png'
 
    
 ```
 
 \FloatBarrier
 
-![Estimated Spawning Potential Ratio (SPR) for the base-case model. One minus SPR is plotted so that higher exploitation rates occur on the upper portion of the y-axis. The management target is plotted as a red horizontal line and values above this reflect harvests in excess of the overfishing proxy based on the SPR\textsubscript{50\%} harvest rate. The last year in the time series is `r Dat_end_mod1`. \label{fig:SPR_all}](`r SPR.file`)
+![Estimated spawning potential ratio (SPR) for the base-case model. One minus SPR is plotted so that higher exploitation rates occur on the upper portion of the y-axis. The management target is plotted as a red horizontal line and values above this reflect harvests in excess of the overfishing proxy based on the SPR\textsubscript{50\%} harvest rate. The last year in the time series is `r Dat_end_mod1`. \label{fig:SPR_all}](`r SPR.file`)
 
-![Phase plot of biomass vs. fishing intensity. \label{fig:phase}](`r Phase.file`)
 
 
 <!-- ************END EXECUTIVE SUMMARY EXPLOITATION************************ -->
@@ -207,18 +203,18 @@ Harvest rates estimated by the base model indicate catch levels have been below 
 
 This stock assessment estimates that `r spp` in the `r mod1_label` is 
 `r ifelse(Deplete_mod1[nrow(Deplete_mod1),2]-MT>0,"above","below")` the biomass 
-target ($B_{40\%}$), and well `r ifelse(Deplete_mod1[nrow(Deplete_mod1),2]-MSST>0,"above","below")` 
-the minimum stock size threshold ($B_{25\%}$). The estimated %unfished level for the base 
+target ($SB_{40\%}$), and well `r ifelse(Deplete_mod1[nrow(Deplete_mod1),2]-MSST>0,"above","below")` 
+the minimum stock size threshold ($SB_{25\%}$). The estimated %unfished level for the base 
 model in `r LastYR+1` is 
 `r Depl_mod1` (95% asymptotic interval: $\pm$ `r Depl_mod1_CI`, corresponding 
-to an unfished spawning biomass of `r paste(round(Spawn_mod1), fecund_unit,sep=' ')` 
+to an unfished spawning biomass of `r paste(Spawn_mod1, fecund_unit,sep=' ')` 
 (95% asymptotic interval: `r paste(Spawn_mod1_CI, fecund_unit, sep=' ')`) of 
 spawning biomass in the base model (Table \ref{tab:Ref_pts_mod1}).  Unfished 
 age `r min_age` biomass was estimated to be `r Ref_pts_mod1[2,2]` mt in the 
-base case model. The target spawning biomass ($B_{40\%}$) 
+base case model. The target spawning biomass ($SB_{40\%}$) 
 is `r paste(Ref_pts_mod1[7,2], fecund_unit,sep=' ')`, which corresponds with an 
 equilibrium yield of `r Ref_pts_mod1[10,2]` mt. Equilibrium yield at the proxy $F_{MSY}$ 
-harvest rate corresponding to $SPR=50\%$ is `r Ref_pts_mod1[15,2]` mt (Figure \ref{fig:Yield_all}).
+harvest rate corresponding to $SPR_{50\%}$ is `r Ref_pts_mod1[15,2]` mt (Figure \ref{fig:Yield_all}).
 
 \vspace{.5cm}
 
@@ -226,11 +222,11 @@ harvest rate corresponding to $SPR=50\%$ is `r Ref_pts_mod1[15,2]` mt (Figure \r
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY REFERENCE POINT TABLES************* -->
 ```{r, results='asis'}
-   # Print reference point tables
-  
-     print(Ref_pts_mod1.table, include.rownames = FALSE, caption.placement = 'top',
+    # Print reference point tables
+
+      print(Ref_pts_mod1.table, include.rownames = FALSE, caption.placement = 'top',
            sanitize.text.function = function(x){x})
-   
+
 ```
 <!-- ***********END EXECUTIVE SUMMARY REFERENCE POINT TABLES*************** --> 
 
@@ -240,14 +236,13 @@ harvest rate corresponding to $SPR=50\%$ is `r Ref_pts_mod1[15,2]` mt (Figure \r
 
 ## Ecosystem Considerations{-}
 
-Big Skate have broad thermal tolerances and are broadly distributed, occurring from the southeastern Bering Sea to southern Baja California and the Gulf of California. They have been reported at depths of 2-501 m but are most common on the inner continental shelf (< 100 m). Big Skates are opportunistic predators with highly variable spatio-temporal trophic roles. 
-
 In this assessment, neither environmental nor ecosystem considerations were explicitly included in the analysis.  This is primarily due to a lack of relevant data or results of analyses that could contribute ecosystem-related quantitative information for the assessment.
 
 
 ## Management Performance{-}
 
-Annual Catch Limits have only been in place for Big Skate in recent years and total catch, including has remained below these limits with the exception of 2014, where in retrospect the catch was above the ACL although still below the Overfishing Limit (Table \ref{tab:mnmgt_perform}).
+<!-- Table \ref{tab:mnmgt_perform} -->
+
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY MANAGEMENT PERFORMANCE TABLE******* --> 
 ```{r, results='asis'}
@@ -284,7 +279,7 @@ The fit to the length data was significantly improved by estimating a difference
 
 ## Projected Landings, OFLs and Time-varying ACLs {-}
 
-Potential OFLs projected by the model are shown in Table \ref{tab:OFL_projection_Exec}.  These values are based on an SPR target of 50%, a P* of 0.45, and a time-varying Category 2 Sigma which creates the buffer shown in the right-hand column. The OFL and ACL values for 2019 and 2020 are the current harvest specifications (also shown in Table \ref{tab:mnmgt_perform}) while the landings for 2019 and 2020 represent the average landings over the most recent 5 years (2014--2018).
+Potential OFLs projected by the model are shown in Table \ref{tab:OFL_projection}.  These values are based on an SPR target of 50%, a P* of 0.45, and a time-varying Category 2 Sigma which creates the buffer shown in the right-hand column. The OFL and ACL values for 2019 and 2020 are the current harvest specifications (also shown in Table \ref{tab:mnmgt_perform}) while the landings for 2019 and 2020 represent the average landings over the most recent 5 years (2014--2018).
 
 ```{r, results='asis'}   
     # Print OFL table 
@@ -332,7 +327,7 @@ Potential OFLs projected by the model are shown in Table \ref{tab:OFL_projection
 \restoregeometry
 <!-- \pagestyle{fancy} -->
 
-![Equilibrium yield curve for the base case model. Values are based on the `r Dat_end_mod1` fishery selectivity and retention with steepness fixed at 0.4. \label{fig:Yield_all}](r4ss/plots_mod1/yield1_yield_curve.png)
+![Equilibrium yield curve for the base case model. Values are based on the `r Dat_end_mod1` fishery selectivity and with steepness fixed at 0.718. \label{fig:Yield_all}](r4ss/plots_mod1/yield1_yield_curve.png)
 
 <!-- ***********END EXECUTIVE SUMMARY RESULTS SUMMARY TABLE AND YIELD CURVE -->
 
@@ -342,21 +337,25 @@ Potential OFLs projected by the model are shown in Table \ref{tab:OFL_projection
 
 ## Research and Data Needs{-}
 
-We recommend the following research be conducted before the next assessment.
+We recommend the following research be conducted before the next assessment:
+
 
 \begin{enumerate}
 
-\item \textbf{Extend all ongoing data streams used in this assessment.} A longer fishery-independent index from a continued WCGBT Survey with associated compositions of length and age-at-length will improve understanding of dynamics of the stock. Continued sampling of lengths and ages from the landed catch and lengths, mean body weights, and discard rates from the fishery will be even more valuable for the years ahead now that Big Skate are landed as a separate market category and the estimates will be more precise.
+\item \textbf{Data!}: 
 
-\item \textbf{Pursue additional approaches for estimating historical discards.} The approaches used here were based on averages applied over a period of decades. The catch reconstructions conducted for each state were much more sophisticated, but were applied onto the subset of the catch that was landed. Reconstructed spatial patterns of fishing effort could be used to estimate changes in total mortality over time.
+\item \textbf{xxxx}:
 
-\item \textbf{Improve understanding of links between Big Skate on the U.S. West Coast and other areas.} Tagging studies in Alaska indicated that Big Skate are capable of long distance movements. A better understanding of links through tagging in other areas and genetic studies could highlight strengths or weaknesses of the status-quo approach.
+\item \textbf{xxxx}:
 
-\item \textbf{Conduct studies of mortality of discarded skates in commercial fisheries.} Estimates of discard mortality for skates in general could be improved.
+\item \textbf{xxxx}:
 
-\item \textbf{Improve understanding of catch history and population dynamics of California Skate.} California Skate is the third most commonly occurring Skate in California waters after Longnose Skate and Big Skate and the catch reconstruction indicated that the center of abundance for California Skate is centered around San Francisco where the fishery was strongest in the early years. If California Skate is found to be at a low biomass compared to historical levels it would have implications for the catch reconstruction of the other two species as well as suggesting that management of California Skate should be a higher priority.
+\item \textbf{xxxx}:
 
 \end{enumerate}
+
+**$\color{red}{\text{To be continued}}$**
+
 
 
 
