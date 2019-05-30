@@ -644,15 +644,6 @@
 
 ```{r, results='asis'}
     # xtable commands repeated from Exec_summary_figs_tables.R to change the label
-    project = read.csv('./txt_files/Exec_basemodel_summary.csv')
-    
-    colnames(project) = c('Year',
-                'Landings (mt)',  
-                'Estimated total mortality (mt)', 
-                'OFL (mt)', 
-                'ACL (mt)')
-    project$Buffer <- c(1.0, 1.0, 0.874, 0.865, 0.857, 0.849,
-                        0.841, 0.833, 0.826, 0.818, 0.810, 0.803)
     
     OFL.table = xtable(project,
         caption=c('Projections of landings, total mortality, OFL, and ACL values.'),
@@ -674,6 +665,30 @@
 \FloatBarrier
 \clearpage
 
+\FloatBarrier
+```{r, results='asis'}
+   # Print reference point tables
+
+Ref_pts_mod1.table2 = xtable(Ref_pts_mod1, 
+                            caption=c(paste('Summary of reference 
+                                      points and management quantities for the 
+                                      base case ', mod1_label, '.',sep = '')), 
+                            label='tab:Ref_pts_mod1V2')  
+# Add alignment      
+align(Ref_pts_mod1.table2) = c('l',
+                              '>{\\raggedright}p{4.1in}',
+                              '>{\\raggedleft}p{.62in}',
+                              '>{\\raggedleft}p{.62in}',
+                              '>{\\raggedleft}p{.62in}')  
+
+
+print(Ref_pts_mod1.table2, include.rownames = FALSE, caption.placement = 'top',
+      sanitize.text.function = function(x){x})
+   
+```
+
+\clearpage
+\FloatBarrier
 <!-- ====================================================================== --> 
 <!-- *************************          *********************************** --> 
 <!-- *************************END TABLES*********************************** --> 

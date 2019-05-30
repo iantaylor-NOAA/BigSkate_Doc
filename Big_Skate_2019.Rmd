@@ -57,7 +57,7 @@ bibliography: BibFile.bib
 \setlength{\parskip}{5mm plus1mm minus1mm}
 \pagebreak
 
-\pagenumbering{arabic}
+\pagenumbering{roman}
 <!--\setcounter{page}{1}-->
 \renewcommand{\thefigure}{\alph{figure}}
 \renewcommand{\thetable}{\alph{table}}
@@ -67,6 +67,8 @@ bibliography: BibFile.bib
 ```
 
 \newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}-->
 \renewcommand{\thefigure}{\arabic{figure}}
 \renewcommand{\thetable}{\arabic{table}}
 \setcounter{figure}{0}
@@ -94,6 +96,12 @@ bibliography: BibFile.bib
 ```{r child = "7_ResearchNeeds_Acknowledgements.Rmd"}
 ```
 \newpage
+
+# References{}
+
+<div id = "refs"></div>
+
+\newpage
 ```{r child = "8_Tables.Rmd"}
 ```
 \newpage
@@ -109,6 +117,16 @@ bibliography: BibFile.bib
 ```{r child = "9_4_Figures_Assessment.Rmd"}
 ```
 \newpage
+
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+
+\newpage
+\setcounter{page}{1}
+\renewcommand{\thepage}{A-\arabic{page}}
+\renewcommand{\thefigure}{A-\arabic{figure}}
 ```{r child = "9_9_Appendices.Rmd"}
 ```
 \newpage
@@ -117,8 +135,6 @@ bibliography: BibFile.bib
 <!-- **********REFERENCES - WILL APPEAR AFTER APPENDICES******************* -->
 <!-- ====================================================================== -->
 \color{black}
-
-# References{-}
 
 \renewcommand{\thepage}{}
 
