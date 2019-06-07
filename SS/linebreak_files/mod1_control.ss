@@ -1,4 +1,5 @@
-#C BSKT control file
+#C Control file Big Skate 2019
+
 0  # 0 means do not read wtatage.ss; 1 means read and use wtatage.ss and al
 # so read and use growth parameters
 1  #_N_Growth_Patterns
@@ -43,12 +44,11 @@
 #
 0               #_natM_type:_0=1Parm; 1=N_breakpoints;_2=Lorenzen;_3=agespe
 # cific;_4=agespec_withseasinterpolate
-#1              #_N_breakpoints
-#3              # age(real) at M breakpoints
 8  # GrowthModel: 1=vonBert with L1&L2; 2=Richards with L1&L2; 3=age_specif
 # ic_K_incr; 4=age_specific_K_decr; 5=age_specific_K_each; 6=NA; 7=NA; 8=gr
 # owth cessation
 0  #_Growth_Age_for_L1
+# note: 999 and -999 settings below required for Growth Cessation model
 999 #_Growth_Age_for_L2 (999 to use as Linf)
 -999 #0.36  #_exponential decay for growth above maxage (fixed at 0.2 in 3.
 # 24; value should approx initial Z; -999 replicates 3.24)
@@ -68,8 +68,8 @@
 # -GP1, 3=like SS2 V1.x)
 #
 #_growth_parms
-#_LO    HI      INIT    PRIOR   PR_SD   PR_type PHASE   env_var&link    dev
-# _link        dev_minyr       dev_maxyr       dev_PH  Block   Block_Fxn
+#_LO    HI      INIT    PRIOR   PR_SD   PR_type PHASE   env   dev_link devm
+# inyr devmaxyr dev_PH Block  Block_Fxn
 # Sex: 1  BioPattern: 1  NatMort
 # lognormal Hamel prior has meanlog = ln(5.4/maxage) using maxage = 15
 0.1     0.6    0.378578 -1.02165 0.438  3       3       0       0       0  
@@ -102,6 +102,8 @@
 -3      3       0       0       99      0       -3      0       0       0  
      0       0.5     0       0       #       Eggs/kg_slope_wt_Fem_GP_1     
 #   
+#_LO    HI      INIT    PRIOR   PR_SD   PR_type PHASE   env   dev_link devm
+# inyr devmaxyr dev_PH Block  Block_Fxn
 # Sex: 2  BioPattern: 1  NatMort
 -3      3       0       0       99      0       -2      0       0       0  
      0       0       0       0       #       NatM_p_1_Mal_GP_1       
@@ -192,24 +194,6 @@
  5 #max rec_dev
  0 #_read_recdevs
 #
-#_placeholder for full parameter lines for recruitment cycles
-# read specified recr devs
-#_Yr Input_value
-#
-# all recruitment deviations
-#  1916R 1917F 1918F 1919F 1920F 1921F 1922F 1923F 1924F 1925F 1926F 1927F 
-# 1928F 1929F 1930F 1931F 1932F 1933F 1934F 1935F 1936F 1937F 1938F 1939F 1
-# 940F 1941F 1942F 1943F 1944F 1945F 1946F 1947F 1948F 1949F 1950F 1951F 19
-# 52F 1953F 1954F 1955F 1956F 1957F 1958F 1959F 1960F 1961F 1962F 1963F 196
-# 4F 1965F 1966F 1967F 1968F 1969F 1970F 1971F 1972F 1973F 1974F 1975F 1976
-# F 1977F 1978F 1979F 1980F 1981F 1982F 1983F 1984F 1985F 1986F 1987F 1988F
-#  1989F 1990F 1991F 1992F 1993F 1994F 1995F 1996F 1997F 1998F 1999F 2000F 
-# 2001F 2002F 2003F 2004F 2005F 2006F 2007F 2008F 2009F 2010F 2011F 2012F 2
-# 013F 2014F 2015F 2016F 2017F 2018F 2019F 2020F 2021F 2022F
-#  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-# 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-#  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-# implementation error by year in forecast:  0 0 0 0 0 0 0 0 0 0 0 0
 #
 #Fishing Mortality info
 0.2 # F ballpark
@@ -229,18 +213,18 @@
 #_   fleet      link link_info  extra_se   biasadj     float  #  fleetname
          5         1         0         1         0         0  #  WCGBTS
          6         1         0         1         0         0  #  Triennial
-#         7         1         0         1         0         0  #  IPHC
 -9999 0 0 0 0 0
 #
 #_Q_parms(if_any);Qunits_are_ln(q)
 #_          LO            HI          INIT         PRIOR         PR_SD     
 #   PR_type      PHASE    env-var    use_dev   dev_mnyr   dev_mxyr     dev_
 # PH      Block    Blk_Fxn  #  parm_name
-#            -2             2             0        -0.188         0.187    
-#          0          1          0          0          0          0        
-#   0          0          0  #  LnQ_base_WCGBTS(5)
 # Q prior from 2007 Longnose review
-            -2             2             0        -0.188         0.187     
+#            -2             2             0        -0.188         0.187    
+#          6          1          0          0          0          0        
+#   0          0          0  #  LnQ_base_WCGBTS(5)
+# new Q prior on 6/5/2019
+            -2             2             0        -0.355         0.326     
         6          1          0          0          0          0          0
           0          0  #  LnQ_base_WCGBTS(5)
              0             2           0.1          0.01            99     
@@ -252,33 +236,38 @@
              0             2           0.1          0.01            99     
         0          1          0          0          0          0          0
           0          0  #  Q_extraSD_Triennial(6)
-#           -20             5      -13.6036             0            99    
-#          0          1          0          0          0          0        
-#   0          0          0  #  LnQ_base_IPHC(7)
-#             0             2      0.331424          0.01            99    
-#          0          5          0          0          0          0        
-#   0          0          0  #  Q_extraSD_IPHC(7)
-# timevary Q parameters
+# timevary Q parameters (block on Q for Triennial)
 #_          LO            HI          INIT         PRIOR         PR_SD     
 #   PR_type     PHASE  #  parm_name
             -7             0             0             0            99     
         0      1  # LnQ_base_Triennial(6)_BLK1repl_1995
 
-#_size_selex_types
-#discard_options:_0=none;_1=define_retention;_2=retention&mortality;_3=all_
-# discarded_dead
-
-## # male offset alternative 1
-## #_Pattern Discard Male Special
-## 24 2 2 0 #  1_Fishery_current
-## 15 0 0 1 #  2_Fishery_historical
-## 15 0 0 1 #  3_Discard_historical
-## 15 0 0 1 #  4_Fishery_tribal
-## 24 0 2 0 #  5_NWFSC_shelf_slope
-## 24 0 0 0 #  6_Triennial
-## 24 0 0 5 #  7_IPHC
-
-# male offset alternative 2
+#_size_selex_patterns
+#Pattern:_0; parm=0; selex=1.0 for all sizes
+#Pattern:_1; parm=2; logistic; with 95% width specification
+#Pattern:_5; parm=2; mirror another size selex; PARMS pick the min-max bin 
+# to mirror
+#Pattern:_15; parm=0; mirror another age or length selex
+#Pattern:_6; parm=2+special; non-parm len selex
+#Pattern:_43; parm=2+special+2;  like 6, with 2 additional param for scalin
+# g (average over bin range)
+#Pattern:_8; parm=8; New doublelogistic with smooth transitions and constan
+# t above Linf option
+#Pattern:_9; parm=6; simple 4-parm double logistic with starting length; pa
+# rm 5 is first length; parm 6=1 does desc as offset
+#Pattern:_21; parm=2+special; non-parm len selex, read as pairs of size, th
+# en selex
+#Pattern:_22; parm=4; double_normal as in CASAL
+#Pattern:_23; parm=6; double_normal where final value is directly equal to 
+# sp(6) so can be >1.0
+#Pattern:_24; parm=6; double_normal with sel(minL) and sel(maxL), using joi
+# ners
+#Pattern:_25; parm=3; exponential-logistic in size
+#Pattern:_27; parm=3+special; cubic spline 
+#Pattern:_42; parm=2+special+3; // like 27, with 2 additional param for sca
+# ling (average over bin range)
+#_discard_options:_0=none;_1=define_retention;_2=retention&mortality;_3=all
+# _discarded_dead;_4=define_dome-shaped_retention
 #_Pattern Discard Male Special
 24 2 4 0 #  1_Fishery_current
 15 0 0 1 #  2_Fishery_historical
@@ -286,9 +275,27 @@
 15 0 0 1 #  4_Fishery_tribal
 24 0 4 0 #  5_NWFSC_shelf_slope
 24 0 4 0 #  6_Triennial
-#24 0 0 5 #  7_IPHC
 
-#_age_selex_types
+#_age_selex_patterns
+#Pattern:_0; parm=0; selex=1.0 for ages 0 to maxage
+#Pattern:_10; parm=0; selex=1.0 for ages 1 to maxage
+#Pattern:_11; parm=2; selex=1.0  for specified min-max age
+#Pattern:_12; parm=2; age logistic
+#Pattern:_13; parm=8; age double logistic
+#Pattern:_14; parm=nages+1; age empirical
+#Pattern:_15; parm=0; mirror another age or length selex
+#Pattern:_16; parm=2; Coleraine - Gaussian
+#Pattern:_17; parm=nages+1; empirical as random walk  N parameters to read 
+# can be overridden by setting special to non-zero
+#Pattern:_41; parm=2+nages+1; // like 17, with 2 additional param for scali
+# ng (average over bin range)
+#Pattern:_18; parm=8; double logistic - smooth transition
+#Pattern:_19; parm=6; simple 4-parm double logistic with starting age
+#Pattern:_20; parm=6; double_normal,using joiners
+#Pattern:_26; parm=3; exponential-logistic in age
+#Pattern:_27; parm=3+special; cubic spline in age
+#Pattern:_42; parm=2+special+3; // cubic spline; with 2 additional param fo
+# r scaling (average over bin range)
 #_Pattern Discard Male Special
  0 0 0 0 # 1_Fishery_current
  0 0 0 0 # 2_Fishery_historical
@@ -351,35 +358,22 @@
              0             0             0             0    99       0     
     -5          0          0          0          0          0          0   
        0  #  DiscMort_L_male_offset_Fishery_current(1)
-# male offset alternative 3 (dogleg)
-            ##  5           150            60            50            99  
-#            0          4          0          0          0          0      
-#     0          0          0  #  SzSel_MaleDogleg_Fishery_current(1)
-            ## -5             5             0             0            99  
-#            0          4          0          0          0          0      
-#     0          0          0  #  SzSel_MaleatZero_Fishery_current(1)
-            ## -5             5             0             0            99  
-#            0          4          0          0          0          0      
-#     0          0          0  #  SzSel_MaleatDogleg_Fishery_current(1)
-            ## -5             5             0             0            99  
-#            0         -4          0          0          0          0      
-#     0          0          0  #  SzSel_MaleatMaxage_Fishery_current(1)
 # female offset alternative 4 (parameter offsets)
-           -50            50             0             0            99     
-        0         4          0          0          0          0          0 
-         0          0  #  SzSel_Male_Peak_Fishery_current(1)
-            -5             5             0             0            99     
-        0         -4          0          0          0          0          0
-          0          0  #  SzSel_Male_Ascend_Fishery_current(1)
-            -5             5             0             0            99     
-        0         -4          0          0          0          0          0
-          0          0  #  SzSel_Male_Descend_Fishery_current(1)
-            -5             5             0             0            99     
-        0         -4          0          0          0          0          0
-          0          0  #  SzSel_Male_Final_Fishery_current(1)
-           0.5           1.5           1.0           1.0            99     
-        0         4          0          0          0          0          0 
-         0          0  #  SzSel_Male_Scale_Fishery_current(1)
+           -50            50             0             0    99       0     
+     4          0          0          0          0          0          0   
+       0  #  SzSel_Fem_Peak_Fishery_current(1)
+            -5             5             0             0    99       0     
+    -4          0          0          0          0          0          0   
+       0  #  SzSel_Fem_Ascend_Fishery_current(1)
+            -5             5             0             0    99       0     
+    -4          0          0          0          0          0          0   
+       0  #  SzSel_Fem_Descend_Fishery_current(1)
+            -5             5             0             0    99       0     
+    -4          0          0          0          0          0          0   
+       0  #  SzSel_Fem_Final_Fishery_current(1)
+           0.5           1.5           1.0           1.0    99       0     
+     4          0          0          0          0          0          0   
+       0  #  SzSel_Fem_Scale_Fishery_current(1)
 # 2   Discard_historical LenSelex
 # 3   Fishery_historical LenSelex
 # 4   Fishery_tribal LenSelex
@@ -404,35 +398,22 @@
           -999             9          -999          -999    99       0     
     -5          0          0          0          0          0          0   
        0  #  Size_DblN_end_logit_WCGBTS(5)
-# male offset alternative 1 (dogleg)
-            ##  5           150            60            50            99  
-#            0          4          0          0          0          0      
-#     0          0          0  #  SzSel_MaleDogleg_Fishery_current(1)
-            ## -5             5             0             0            99  
-#            0          4          0          0          0          0      
-#     0          0          0  #  SzSel_MaleatZero_Fishery_current(1)
-            ## -5             5             0             0            99  
-#            0          4          0          0          0          0      
-#     0          0          0  #  SzSel_MaleatDogleg_Fishery_current(1)
-            ## -5             5             0             0            99  
-#            0         -4          0          0          0          0      
-#     0          0          0  #  SzSel_MaleatMaxage_Fishery_current(1)
 # female offset alternative 2 (parameter offsets)
-           -50            50             0             0            99     
-        0         4          0          0          0          0          0 
-         0          0  #  SzSel_Male_Peak_Fishery_current(1)
-            -5             5             0             0            99     
-        0         -4          0          0          0          0          0
-          0          0  #  SzSel_Male_Ascend_Fishery_current(1)
-            -5             5             0             0            99     
-        0         -4          0          0          0          0          0
-          0          0  #  SzSel_Male_Descend_Fishery_current(1)
-            -5             5             0             0            99     
-        0         -4          0          0          0          0          0
-          0          0  #  SzSel_Male_Final_Fishery_current(1)
-           0.5           1.5           1.0           1.0            99     
-        0         4          0          0          0          0          0 
-         0          0  #  SzSel_Male_Scale_Fishery_current(1)
+           -50            50             0             0    99       0     
+     4          0          0          0          0          0          0   
+       0  #  SzSel_Fem_Peak_Fishery_current(1)
+            -5             5             0             0    99       0     
+    -4          0          0          0          0          0          0   
+       0  #  SzSel_Fem_Ascend_Fishery_current(1)
+            -5             5             0             0    99       0     
+    -4          0          0          0          0          0          0   
+       0  #  SzSel_Fem_Descend_Fishery_current(1)
+            -5             5             0             0    99       0     
+    -4          0          0          0          0          0          0   
+       0  #  SzSel_Fem_Final_Fishery_current(1)
+           0.5           1.5           1.0           1.0    99       0     
+     4          0          0          0          0          0          0   
+       0  #  SzSel_Fem_Scale_Fishery_current(1)
 # 6   Triennial LenSelex
 #_          LO            HI          INIT         PRIOR PR_SD PR_type    P
 # HASE  #  parm_name
@@ -445,59 +426,32 @@
             -1             9       8.93782             9    99       0     
      4          0          0          0          0          0          0   
        0  #  Size_DblN_ascend_se_Triennial(6)
-# descending slope parameterforcing slope more gently
-           -1            20            20           7.2    99       0      
-   -5          0          0          0          0          0          0    
-      0  #  Size_DblN_descend_se_Triennial(6)
-          -15             9            -5          -5    99       0        
- 4          0          0          0          0          0          0       
-   0  #  Size_DblN_start_logit_Triennial(6)
+            -1            20            20           7.2    99       0     
+    -5          0          0          0          0          0          0   
+       0  #  Size_DblN_descend_se_Triennial(6)
+           -15             9            -5            -5    99       0     
+     4          0          0          0          0          0          0   
+       0  #  Size_DblN_start_logit_Triennial(6)
           -999             9          -999          -999    99       0     
     -5          0          0          0          0          0          0   
        0  #  Size_DblN_end_logit_Triennial(6)
 # female offset alternative 2 (parameter offsets)
-           -50            50             0             0            99     
-        0         -4          0          0          0          0          0
-          0          0  #  SzSel_Male_Peak_Fishery_current(1)
-            -5             5             0             0            99     
-        0         -4          0          0          0          0          0
-          0          0  #  SzSel_Male_Ascend_Fishery_current(1)
-            -5             5             0             0            99     
-        0         -4          0          0          0          0          0
-          0          0  #  SzSel_Male_Descend_Fishery_current(1)
-            -5             5             0             0            99     
-        0         -4          0          0          0          0          0
-          0          0  #  SzSel_Male_Final_Fishery_current(1)
-           0.5           1.5           1.0           1.0            99     
-        0         4          0          0          0          0          0 
-         0          0  #  SzSel_Male_Scale_Fishery_current(1)
-# 7   IPHC LenSelex
-          ##   50           180       109.716            75            99  
-#            0         -4          0          0          0          0      
-#     0          0          0  #  Size_DblN_peak_IPHC(7)
-          ##  -15             4           -15           -15            99  
-#            0         -5          0          0          0          0      
-#     0          0          0  #  Size_DblN_top_logit_IPHC(7)
-          ##   -1             9       6.47609             9            99  
-#            0         -4          0          0          0          0      
-#     0          0          0  #  Size_DblN_ascend_se_IPHC(7)
-          ##   -1            20       16.9205           7.2            99  
-#            0         -5          0          0          0          0      
-#     0          0          0  #  Size_DblN_descend_se_IPHC(7)
-          ## -999             9            -5          -999            99  
-#            0         -4          0          0          0          0      
-#     0          0          0  #  Size_DblN_start_logit_IPHC(7)
-          ## -999             9          -999          -999            99  
-#            0         -5          0          0          0          0      
-#     0          0          0  #  Size_DblN_end_logit_IPHC(7)
-# 1   Fishery_current AgeSelex
-# 2   Discard_historical AgeSelex
-# 3   Fishery_historical AgeSelex
-# 4   Fishery_tribal AgeSelex
-# 5   WCGBTS AgeSelex
-# 6   Triennial AgeSelex
-# 7   IPHC AgeSelex
-# timevary selex parameters
+           -50            50             0             0    99       0     
+    -4          0          0          0          0          0          0   
+       0  #  SzSel_Fem_Peak_Fishery_current(1)
+            -5             5             0             0    99       0     
+    -4          0          0          0          0          0          0   
+       0  #  SzSel_Fem_Ascend_Fishery_current(1)
+            -5             5             0             0    99       0     
+    -4          0          0          0          0          0          0   
+       0  #  SzSel_Fem_Descend_Fishery_current(1)
+            -5             5             0             0    99       0     
+    -4          0          0          0          0          0          0   
+       0  #  SzSel_Fem_Final_Fishery_current(1)
+           0.5           1.5           1.0           1.0    99       0     
+     4          0          0          0          0          0          0   
+       0  #  SzSel_Fem_Scale_Fishery_current(1)
+# timevary selex parameters (retention rate asymptotes)
 #_          LO            HI          INIT         PRIOR PR_SD PR_type    P
 # HASE  #  parm_name
            -10            20       1.37269           0.6    99       0     
@@ -534,15 +488,6 @@
 0  # TG_custom:  0=no read; 1=read if tags exist
 #_Cond -6 6 1 1 2 0.01 -4 0 0 0 0 0 0 0  #_placeholder if no parameters
 #
-# deviation vectors for timevary parameters
-#  base   base first block   block  env  env   dev   dev   dev   dev   dev
-#  type  index  parm trend pattern link  var  vectr link _mnyr  mxyr phase 
-#  dev_vector
-#      3     1     1     0     0     0     0     0     0     0     0     0
-#      3     3     1     0     0     0     0     0     0     0     0     0
-#      3     5     1     0     0     0     0     0     0     0     0     0
-#      3     8     1     0     0     0     0     0     0     0     0     0
-     #
 # Input variance adjustments factors:
  #_1=add_to_survey_CV
  #_2=add_to_discard_stddev
@@ -574,31 +519,10 @@
 # 10=recrdev; 11=parm_prior; 12=parm_dev; 13=CrashPen; 14=Morphcomp; 15=Tag
 # -comp; 16=Tag-negbin; 17=F_ballpark
 #like_comp fleet  phase  value  sizefreq_method
-#1          7      1      .01  99 # severely reduce likelihood for IPHC ind
-# ex
-#4          7      1      .01  99 # severely reduce likelihood for IPHC len
-# gth comp
 7          5      1      0      99 # turn off likelihood for mean length at
 #  age
 -9999      1      1      1      1  #  terminator
 #
 0 # (0/1) read specs for more stddev reporting
-
-## 1  # selex type
-## 1  # len/age
-## 2018 # year
-## 19 # N selex bins
-## 1 # Growth pattern
-## 15 # N growth ages
-## 1 # NatAge_area(-1 for all), NatAge_yr, N Natages
-## -1 # NatAge_yr
-## 3 #  N Natages
-## # placeholder for vector of selex bins to be reported
-## 20  30  40  50  60  70  80  90 100 110 120 130 140 150 160 170 180 190 2
-# 00
-##  # placeholder for vector of growth ages to be reported
-## 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
-## # placeholder for vector of NatAges ages to be reported
-## 1 5 10
 999
 

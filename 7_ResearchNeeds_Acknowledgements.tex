@@ -1,0 +1,145 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{}
+    \pretitle{\vspace{\droptitle}}
+  \posttitle{}
+    \author{}
+    \preauthor{}\postauthor{}
+    \date{}
+    \predate{}\postdate{}
+  
+
+\begin{document}
+
+\hypertarget{research-and-data-needs}{%
+\section{Research and Data Needs}\label{research-and-data-needs}}
+
+We recommend the following research be conducted before the next
+assessment.
+
+\begin{enumerate}
+
+\item \textbf{Extend all ongoing data streams used in this assessment.} A longer fishery-independent index from a continued WCGBT Survey with associated compositions of length and age-at-length will improve understanding of dynamics of the stock. Continued sampling of lengths and ages from the landed catch and lengths, mean body weights, and discard rates from the fishery will be even more valuable for the years ahead now that Big Skate are landed as a separate market category and the estimates will be more precise.
+
+\item \textbf{Investigate factors contributing to estimated lower selectivity for females than males.} Sex-specific differences in selectivity were included in the base model to better fit differences in sex ratios in the length composition data but the behavioral processes that might contribute to this pattern are not understood and other explanations for the sex ratios are possible.
+
+\item \textbf{Investigate the distribution of Big Skate shallower than the 55 m limit of the WCGBT Survey.} This would help with interpretation of the biomass estimates from the survey and potentially refining the associated prior on catchability.
+
+\item \textbf{Pursue additional approaches for estimating historical discards.} The approaches used here were based on averages applied over a period of decades. The catch reconstructions conducted for each state were much more sophisticated, but were applied only to the subset of the catch that was landed. Reconstructed spatial patterns of fishing effort could be used to estimate changes in total mortality over time.
+
+\item \textbf{Improve understanding of links between Big Skate on the U.S. West Coast and other areas.} Tagging studies in Alaska indicated that Big Skate are capable of long distance movements. A better understanding of links through tagging in other areas and genetic studies could highlight strengths or weaknesses of the status-quo approach.
+
+\item \textbf{Conduct studies of mortality of discarded skates in commercial fisheries.} Estimates of discard mortality for skates in general could be improved.
+
+\item \textbf{Improve understanding of catch history and population dynamics of California Skate.} California Skate is the third most commonly occurring Skate in California waters after Longnose Skate and Big Skate and the catch reconstruction indicated that the center of abundance for California Skate is centered around San Francisco, where the fishery was strongest in the early years. If California Skate is found to be at a low biomass compared to historical levels it would have implications for the catch reconstruction of the other two species, as well as suggesting that management of California Skate should be a higher priority.
+
+\end{enumerate}
+
+\hypertarget{acknowledgments}{%
+\section{Acknowledgments}\label{acknowledgments}}
+
+The authors gratefully acknowledge the time and effort Stacey Miller,
+John DeVore, Owen Hamel, and Jim Hastie put into making this a more
+polished document.
+
+We thank the STAR panel Chair, David Sampson, and reviewers Robin Cook,
+Henrik Sparholt, and Cody Szulwalski.
+
+The Reconstructions of historical catch were critical to this
+assessment, and there are many people who contributed, among them
+
+our colleagues at WDFW: Theresa Tsou, Jessi Doerpinghaus, and Greg
+Lippert,
+
+our colleagues at ODFW: Ali Whitman, Patrick Mirick, and Ted Calavan,
+
+our colleagues at the SWFSC: John Field and Rebecca Miller,
+
+and others whose knowledge of the fishery provided context: Gerry
+Richter and Todd Phillips.
+
+Our colleagues at NWFWC, including Chantel Wetzel, Kelli Johnson, and
+John Wallace all provided valuable contributions to the extraction and
+processing of the survey and fishery data.
+
+Finally, we are deeply grateful to Mellissa Monk of the SWFSC, for
+creating the RMarkdown template which was used to produce this
+assessment report.
+
+\newpage
+\FloatBarrier
+
+
+\end{document}

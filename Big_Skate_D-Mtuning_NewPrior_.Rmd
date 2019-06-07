@@ -1,0 +1,69 @@
+---
+title: Status of Big Skate (*Beringraja binoculata*) Off the U.S. Pacific Coast
+  in 2019
+author: ''
+date: ''
+output:
+  pdf_document:
+    fig_caption: yes
+    highlight: haddock
+    includes:
+      before_body: Titlepage.tex
+      in_header: header.tex
+    keep_tex: yes
+    number_sections: yes
+    template: Default_template_modified.tex
+    toc: yes
+    toc_depth: 4
+  html_document:
+    toc: yes
+  word_document:
+    reference_docx: Word.Styles.Reference.docx
+    highlight: haddock
+    fig_caption: yes
+    toc: yes
+    toc_depth: 4
+documentclass: article
+fontsize: 12pt
+footer: ''
+geometry: margin=1in
+header-includes:
+link-citations: yes
+csl: CJFAS.csl
+bibliography: BibFile.bib
+---
+```{r global_options, include=FALSE}
+    # set global options for R code chunks: echo=FALSE (don't include source code); 
+    # warning=FALSE (suppress R warnings); message=FALSE (suppress R messages)
+    # eval = TRUE is default
+    knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+```{r}
+    # Read in preamble R code - including required libraries and the SS file(s)
+    source('./Rcode/Preamble.R')
+ 
+    # Read in data/manipulations for executive summary tables and figures
+    # It may take time to edit this file and get it ready for your assessment
+    # Make small changes in this file and then try to compile the document
+    # Commit when you have a success!
+    source('./Rcode/Exec_summary_figs_tables.R')
+    #
+    # Andi added to create multi-line headings for tables.  From the internet, somewhere.
+    #
+    source("./Rcode/MultiHeader.R")
+```
+
+\setlength{\parskip}{5mm plus1mm minus1mm}
+\pagebreak
+
+\pagenumbering{roman}
+<!--\setcounter{page}{1}-->
+\renewcommand{\thefigure}{\alph{figure}}
+\renewcommand{\thetable}{\alph{table}}
+
+
+```{r child = "0_Executive_Summary.Rmd"}
+```
+
+<!-- ********************END OF THE DOCUMENT******************************* -->

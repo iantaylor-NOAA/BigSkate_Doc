@@ -3,6 +3,7 @@
 #Foreign copyrights may apply. See copyright.txt for more information.
 #_user_support_available_at:NMFS.Stock.Synthesis@noaa.gov
 #_user_info_available_at:https://vlab.ncep.noaa.gov/group/stock-synthesis
+#C Starter file Big Skate 2019
 BSKT2019_data.ss
 BSKT2019_control.ss
 0 # 0=use init values in control file; 1=use ss.par

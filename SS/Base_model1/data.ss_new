@@ -3,7 +3,7 @@
 #Foreign copyrights may apply. See copyright.txt for more information.
 #_user_support_available_at:NMFS.Stock.Synthesis@noaa.gov
 #_user_info_available_at:https://vlab.ncep.noaa.gov/group/stock-synthesis
-#_Start_time: Mon May 13 14:13:04 2019
+#_Start_time: Thu Jun  6 09:46:53 2019
 #_Number_of_datafiles: 1
 #C Data file Big Skate 2019
 #_observed data: 
@@ -549,9 +549,10 @@
  -9999 0 0 0 0 0 0 # terminator for mean body size data 
 #
 # set up population length bin structure (note - irrelevant if not using size data and using empirical wtatage
-3 # length bin method: 1=use databins; 2=generate from binwidth,min,max below; 3=read vector
-47 # number of population size bins 
- 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100 105 110 115 120 125 130 135 140 145 150 155 160 165 170 175 180 185 190 195 200 205 210 215 220 225 230 235 240 245 250
+2 # length bin method: 1=use databins; 2=generate from binwidth,min,max below; 3=read vector
+5 # binwidth for population size comp 
+20 # minimum size in the population (lower edge of first bin and size at age 0.00) 
+250 # maximum size in the population (lower edge of last bin) 
 1 # use length composition data (0/1)
 #_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
 #_addtocomp:  after accumulation of tails; this value added to all bins
