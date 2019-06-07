@@ -49,7 +49,9 @@ and others whose knowledge of the fishery provided context: Gerry Richter and To
 
 Our colleagues at NWFWC, including Chantel Wetzel, Kelli Johnson, and John Wallace all provided valuable contributions to the extraction and processing of the survey and fishery data.
 
-Finally, we are deeply grateful to Mellissa Monk of the SWFSC, for creating the RMarkdown template which was used to produce this assessment report.
+Curt Whitmire's input was critical to the development of the new catchability prior for the WCGBTS.
+
+Finally, we are deeply grateful to Melissa Monk of the SWFSC, for creating the RMarkdown template which was used to produce this assessment report.
 
 
 \newpage
