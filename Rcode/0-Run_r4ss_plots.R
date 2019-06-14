@@ -275,147 +275,147 @@ source('./Rcode/SS_files_linebreaks.R')
 
 
 
-# SECTION 2: COMPARISON PLOTS ACROSS MODELS ===================================
-# IT it not recommended to blindly run this section.  You'll need to change names,
-# possibly margins, etc!!!
-
-
-if(n_models > 1){
-
- # if you need to reload the workspace
- load("./r4ss/SS_output.RData")
-  
- # create base model summary list
- out.mod1 = mod1
- out.mod2 = mod2
-if(n_models==3) {out.mod3 = mod3}
-     
- 
-# base.summary <-  SSsummarize(list(out.mod1, out.mod2))
- 
- 
- base.summary <-  if (n_models==2) {SSsummarize(list(out.mod1, out.mod2))} else
-                   {SSsummarize(list(out.mod1, out.mod2 , out.mod3))}
-    
- # save results to this comparison directory  
- dir.create(file.path(output.dir,'plots_compare'))
- dir.compare.plots <- file.path(getwd(),'/r4ss/plots_compare') 
-    
- # vector of names and colors models as defined
- mod.names <- c("WA","CA","OR")
- mod.cols  <- c("blue", "purple", "red")
-} # end n_models if
-
-
-
-
-# Time series comparison plots for exec summary -------------------------------
-# These plots are repeated with regular plots
-SSplotComparisons(base.summary, 
-                  plot = FALSE, 
-                  print = TRUE, 
-                  plotdir = dir.compare.plots,
-                  spacepoints = 20,  # years between points on each line
-                  initpoint = 0,     # "first" year of points (modular arithmetic)
-                  staggerpoints = 0, # points aligned across models
-                  endyrvec = 2015,   # final year to show in time series
-                  legendlabels = mod.names, 
-                  filenameprefix = "base_", 
-                  col = mod.cols)
-
-SSplotComparisons(base.summary, 
-                  plot = FALSE, 
-                  print = TRUE, 
-                  plotdir = dir.compare.plots,
-                  subplot = 1:10,
-                  spacepoints = 20,  # years between points on each line
-                  initpoint = 0,     # "first" year of points (modular arithmetic)
-                  staggerpoints = 0, # points aligned across models
-                  endyrvec = 2025,   # final year to show in time series
-                  legendlabels = mod.names, 
-                  filenameprefix = "forecast_", 
-                  col = mod.cols)
-  
-  
-  
-# Plot comparison of growth curves --------------------------------------------
-png(file.path(dir.compare.plots, 'growth_comparison.png'),
-    width = 6.5, 
-    height = 5, 
-    res = 300, 
-    units = 'in')
-
-SSplotBiology(out.mod1, 
-              colvec = c(mod.cols[1], NA, NA), 
-              subplot = 1)
-      
-SSplotBiology(out.mod2, 
-              colvec = c(mod.cols[2], NA, NA),
-              subplot = 1, 
-              add = TRUE)
-      
-if(n_models>2){
-  SSplotBiology(out.mod3, 
-              colvec = c(mod.cols[3], NA, NA), 
-              subplot = 1, 
-              add = TRUE)
-}
-
-# legend to cover up non-useful Females/Males default legend
-legend('topleft', legend = mod.names, col = mod.cols, lwd = 3, bg = 'white')
- 
-# close PNG file
-dev.off()
-
-
-# Plot comparison of yield curves ---------------------------------------------
-png(file.path(dir.compare.plots, 'yield_comparison_n_models.png'),
-    width = 6.5, 
-    height = 6.5, 
-    res = 300, 
-    units = 'in', 
-    pointsize = 10)
-par(las = 1)
-
-
-if(n_models==2){
-  SSplotYield(out.mod2, col = mod.cols[2], subplot = 1)
-  grid()
-  SSplotYield(out.mod1, col = mod.cols[1], subplot = 1, add = TRUE)
-}
-
-if(n_models==3){
-  SSplotYield(out.mod3, col = mod.cols[3], subplot = 1)
-  grid()
-  SSplotYield(out.mod2, col = mod.cols[2], subplot = 1, add = TRUE)
-  SSplotYield(out.mod1, col = mod.cols[1], subplot = 1, add = TRUE)
-  
-}
-
-
-# legend to cover up non-useful Females/Males default legend
-legend('topright', legend = mod.names, col = mod.cols, lwd = 3, bg = 'white', bty = 'n')
-
-# close PNG file
-dev.off()
-
-# =============================================================================
-# END SECTION 2================================================================
-# =============================================================================
-
-
-
-
-# =============================================================================
-# Section 3: saves entire myreplist and mod_structure files 
-# writes the entire myreplist and mod structure to a file
-# useful if you need to find a particular variable r4ss creates
-# change model and directory
-
-#sink("./r4ss/plots_mod1/list_of_dataframes.csv", type="output")
-#invisible(lapply(mod1, function(x) dput(write.csv(x))))
-#sink()
-
-#sink("./r4ss/plots_mod1/mod_structure.csv", type="output")
-#invisible(str(mod1,list.len = 9999))
-#sink()
+# # SECTION 2: COMPARISON PLOTS ACROSS MODELS ===================================
+# # IT it not recommended to blindly run this section.  You'll need to change names,
+# # possibly margins, etc!!!
+# 
+# 
+# if(n_models > 1){
+# 
+#  # if you need to reload the workspace
+#  load("./r4ss/SS_output.RData")
+#   
+#  # create base model summary list
+#  out.mod1 = mod1
+#  out.mod2 = mod2
+# if(n_models==3) {out.mod3 = mod3}
+#      
+#  
+# # base.summary <-  SSsummarize(list(out.mod1, out.mod2))
+#  
+#  
+#  base.summary <-  if (n_models==2) {SSsummarize(list(out.mod1, out.mod2))} else
+#                    {SSsummarize(list(out.mod1, out.mod2 , out.mod3))}
+#     
+#  # save results to this comparison directory  
+#  dir.create(file.path(output.dir,'plots_compare'))
+#  dir.compare.plots <- file.path(getwd(),'/r4ss/plots_compare') 
+#     
+#  # vector of names and colors models as defined
+#  mod.names <- c("WA","CA","OR")
+#  mod.cols  <- c("blue", "purple", "red")
+# } # end n_models if
+# 
+# 
+# 
+# 
+# # Time series comparison plots for exec summary -------------------------------
+# # These plots are repeated with regular plots
+# SSplotComparisons(base.summary, 
+#                   plot = FALSE, 
+#                   print = TRUE, 
+#                   plotdir = dir.compare.plots,
+#                   spacepoints = 20,  # years between points on each line
+#                   initpoint = 0,     # "first" year of points (modular arithmetic)
+#                   staggerpoints = 0, # points aligned across models
+#                   endyrvec = 2015,   # final year to show in time series
+#                   legendlabels = mod.names, 
+#                   filenameprefix = "base_", 
+#                   col = mod.cols)
+# 
+# SSplotComparisons(base.summary, 
+#                   plot = FALSE, 
+#                   print = TRUE, 
+#                   plotdir = dir.compare.plots,
+#                   subplot = 1:10,
+#                   spacepoints = 20,  # years between points on each line
+#                   initpoint = 0,     # "first" year of points (modular arithmetic)
+#                   staggerpoints = 0, # points aligned across models
+#                   endyrvec = 2025,   # final year to show in time series
+#                   legendlabels = mod.names, 
+#                   filenameprefix = "forecast_", 
+#                   col = mod.cols)
+#   
+#   
+#   
+# # Plot comparison of growth curves --------------------------------------------
+# png(file.path(dir.compare.plots, 'growth_comparison.png'),
+#     width = 6.5, 
+#     height = 5, 
+#     res = 300, 
+#     units = 'in')
+# 
+# SSplotBiology(out.mod1, 
+#               colvec = c(mod.cols[1], NA, NA), 
+#               subplot = 1)
+#       
+# SSplotBiology(out.mod2, 
+#               colvec = c(mod.cols[2], NA, NA),
+#               subplot = 1, 
+#               add = TRUE)
+#       
+# if(n_models>2){
+#   SSplotBiology(out.mod3, 
+#               colvec = c(mod.cols[3], NA, NA), 
+#               subplot = 1, 
+#               add = TRUE)
+# }
+# 
+# # legend to cover up non-useful Females/Males default legend
+# legend('topleft', legend = mod.names, col = mod.cols, lwd = 3, bg = 'white')
+#  
+# # close PNG file
+# dev.off()
+# 
+# 
+# # Plot comparison of yield curves ---------------------------------------------
+# png(file.path(dir.compare.plots, 'yield_comparison_n_models.png'),
+#     width = 6.5, 
+#     height = 6.5, 
+#     res = 300, 
+#     units = 'in', 
+#     pointsize = 10)
+# par(las = 1)
+# 
+# 
+# if(n_models==2){
+#   SSplotYield(out.mod2, col = mod.cols[2], subplot = 1)
+#   grid()
+#   SSplotYield(out.mod1, col = mod.cols[1], subplot = 1, add = TRUE)
+# }
+# 
+# if(n_models==3){
+#   SSplotYield(out.mod3, col = mod.cols[3], subplot = 1)
+#   grid()
+#   SSplotYield(out.mod2, col = mod.cols[2], subplot = 1, add = TRUE)
+#   SSplotYield(out.mod1, col = mod.cols[1], subplot = 1, add = TRUE)
+#   
+# }
+# 
+# 
+# # legend to cover up non-useful Females/Males default legend
+# legend('topright', legend = mod.names, col = mod.cols, lwd = 3, bg = 'white', bty = 'n')
+# 
+# # close PNG file
+# dev.off()
+# 
+# # =============================================================================
+# # END SECTION 2================================================================
+# # =============================================================================
+# 
+# 
+# 
+# 
+# # =============================================================================
+# # Section 3: saves entire myreplist and mod_structure files 
+# # writes the entire myreplist and mod structure to a file
+# # useful if you need to find a particular variable r4ss creates
+# # change model and directory
+# 
+# #sink("./r4ss/plots_mod1/list_of_dataframes.csv", type="output")
+# #invisible(lapply(mod1, function(x) dput(write.csv(x))))
+# #sink()
+# 
+# #sink("./r4ss/plots_mod1/mod_structure.csv", type="output")
+# #invisible(str(mod1,list.len = 9999))
+# #sink()

@@ -23,7 +23,6 @@
  1           -1             1    1           0               Fishery_tribal     # 4
  3            1             1    1           0               WCGBTS             # 5
  3            1             1    1           0               Triennial          # 6
-# 3            1             1    1           0               IPHC               # 7
 #Bycatch_fleet_input_goes_next
 #a:  fleet index
 #b:  1=include dead bycatch in total dead catch for F0.1 and MSY optimizations and forecast ABC; 2=omit from total catch for these purposes (but still include the mortality)
@@ -36,475 +35,232 @@
 #_catch_se:  standard error of log(catch)
 #_NOTE:  catch data is ignored for survey fleets
 
-# catch inputs calculated by code in /R/catch_calculations.R
 #yr     seas    fleet   catch   catch_se  #_note
 #-999    1       1       0       0.01    # optional_input_for_initial_equilibrium
 
-## landings prior to 1995
+# catch inputs calculated by code in /R/catch_calculations.R
+# landings prior to 1995
 #yr     seas    fleet   catch   catch_se  #_note
-1916	1	3	0	0.01	#_historical_landings
-1917	1	3	0	0.01	#_historical_landings
-1918	1	3	0	0.01	#_historical_landings
-1919	1	3	0	0.01	#_historical_landings
-1920	1	3	0	0.01	#_historical_landings
-1921	1	3	0	0.01	#_historical_landings
-1922	1	3	0	0.01	#_historical_landings
-1923	1	3	0	0.01	#_historical_landings
-1924	1	3	0	0.01	#_historical_landings
-1925	1	3	0	0.01	#_historical_landings
-1926	1	3	0	0.01	#_historical_landings
-1927	1	3	0	0.01	#_historical_landings
-1928	1	3	0	0.01	#_historical_landings
-1929	1	3	0	0.01	#_historical_landings
-1930	1	3	0	0.01	#_historical_landings
-1931	1	3	0	0.01	#_historical_landings
-1932	1	3	0	0.01	#_historical_landings
-1933	1	3	0	0.01	#_historical_landings
-1934	1	3	0	0.01	#_historical_landings
-1935	1	3	0	0.01	#_historical_landings
-1936	1	3	0	0.01	#_historical_landings
-1937	1	3	0	0.01	#_historical_landings
-1938	1	3	0	0.01	#_historical_landings
-1939	1	3	90.9	0.01	#_historical_landings
-1940	1	3	65.7	0.01	#_historical_landings
-1941	1	3	109.4	0.01	#_historical_landings
-1942	1	3	61.4	0.01	#_historical_landings
-1943	1	3	21.3	0.01	#_historical_landings
-1944	1	3	9.5	0.01	#_historical_landings
-1945	1	3	13.5	0.01	#_historical_landings
-1946	1	3	18.9	0.01	#_historical_landings
-1947	1	3	24.1	0.01	#_historical_landings
-1948	1	3	36.3	0.01	#_historical_landings
-1949	1	3	39.1	0.01	#_historical_landings
-1950	1	3	36.4	0.01	#_historical_landings
-1951	1	3	30.3	0.01	#_historical_landings
-1952	1	3	46.9	0.01	#_historical_landings
-1953	1	3	127.6	0.01	#_historical_landings
-1954	1	3	42.4	0.01	#_historical_landings
-1955	1	3	82.9	0.01	#_historical_landings
-1956	1	3	46.1	0.01	#_historical_landings
-1957	1	3	52	0.01	#_historical_landings
-1958	1	3	38.9	0.01	#_historical_landings
-1959	1	3	47.3	0.01	#_historical_landings
-1960	1	3	39.8	0.01	#_historical_landings
-1961	1	3	99.8	0.01	#_historical_landings
-1962	1	3	77.6	0.01	#_historical_landings
-1963	1	3	85.7	0.01	#_historical_landings
-1964	1	3	80.9	0.01	#_historical_landings
-1965	1	3	50.6	0.01	#_historical_landings
-1966	1	3	57	0.01	#_historical_landings
-1967	1	3	75.5	0.01	#_historical_landings
-1968	1	3	109.5	0.01	#_historical_landings
-1969	1	3	72.9	0.01	#_historical_landings
-1970	1	3	28.2	0.01	#_historical_landings
-1971	1	3	21.6	0.01	#_historical_landings
-1972	1	3	35.6	0.01	#_historical_landings
-1973	1	3	41.7	0.01	#_historical_landings
-1974	1	3	27.8	0.01	#_historical_landings
-1975	1	3	41.8	0.01	#_historical_landings
-1976	1	3	52.2	0.01	#_historical_landings
-1977	1	3	64.9	0.01	#_historical_landings
-1978	1	3	149.1	0.01	#_historical_landings
-1979	1	3	196.4	0.01	#_historical_landings
-1980	1	3	56.9	0.01	#_historical_landings
-1981	1	3	159.3	0.01	#_historical_landings
-1982	1	3	98.1	0.01	#_historical_landings
-1983	1	3	78.4	0.01	#_historical_landings
-1984	1	3	32.7	0.01	#_historical_landings
-1985	1	3	65.6	0.01	#_historical_landings
-1986	1	3	37.8	0.01	#_historical_landings
-1987	1	3	42.9	0.01	#_historical_landings
-1988	1	3	26.5	0.01	#_historical_landings
-1989	1	3	25.3	0.01	#_historical_landings
-1990	1	3	34.8	0.01	#_historical_landings
-1991	1	3	44.5	0.01	#_historical_landings
-1992	1	3	36.1	0.01	#_historical_landings
-1993	1	3	50.2	0.01	#_historical_landings
-1994	1	3	50.7	0.01	#_historical_landings
+1916    1       3       0       0.01    #_historical_landings
+1917    1       3       0       0.01    #_historical_landings
+1918    1       3       0       0.01    #_historical_landings
+1919    1       3       0       0.01    #_historical_landings
+1920    1       3       0       0.01    #_historical_landings
+1921    1       3       0       0.01    #_historical_landings
+1922    1       3       0       0.01    #_historical_landings
+1923    1       3       0       0.01    #_historical_landings
+1924    1       3       0       0.01    #_historical_landings
+1925    1       3       0       0.01    #_historical_landings
+1926    1       3       0       0.01    #_historical_landings
+1927    1       3       0       0.01    #_historical_landings
+1928    1       3       0       0.01    #_historical_landings
+1929    1       3       0       0.01    #_historical_landings
+1930    1       3       0       0.01    #_historical_landings
+1931    1       3       0       0.01    #_historical_landings
+1932    1       3       0       0.01    #_historical_landings
+1933    1       3       0       0.01    #_historical_landings
+1934    1       3       0       0.01    #_historical_landings
+1935    1       3       0       0.01    #_historical_landings
+1936    1       3       0       0.01    #_historical_landings
+1937    1       3       0       0.01    #_historical_landings
+1938    1       3       0       0.01    #_historical_landings
+1939    1       3       90.9    0.01    #_historical_landings
+1940    1       3       65.7    0.01    #_historical_landings
+1941    1       3       109.4   0.01    #_historical_landings
+1942    1       3       61.4    0.01    #_historical_landings
+1943    1       3       21.3    0.01    #_historical_landings
+1944    1       3       9.5     0.01    #_historical_landings
+1945    1       3       13.5    0.01    #_historical_landings
+1946    1       3       18.9    0.01    #_historical_landings
+1947    1       3       24.1    0.01    #_historical_landings
+1948    1       3       36.3    0.01    #_historical_landings
+1949    1       3       39.1    0.01    #_historical_landings
+1950    1       3       36.4    0.01    #_historical_landings
+1951    1       3       30.3    0.01    #_historical_landings
+1952    1       3       46.9    0.01    #_historical_landings
+1953    1       3       127.6   0.01    #_historical_landings
+1954    1       3       42.4    0.01    #_historical_landings
+1955    1       3       82.9    0.01    #_historical_landings
+1956    1       3       46.1    0.01    #_historical_landings
+1957    1       3       52      0.01    #_historical_landings
+1958    1       3       38.9    0.01    #_historical_landings
+1959    1       3       47.3    0.01    #_historical_landings
+1960    1       3       39.8    0.01    #_historical_landings
+1961    1       3       99.8    0.01    #_historical_landings
+1962    1       3       77.6    0.01    #_historical_landings
+1963    1       3       85.7    0.01    #_historical_landings
+1964    1       3       80.9    0.01    #_historical_landings
+1965    1       3       50.6    0.01    #_historical_landings
+1966    1       3       57      0.01    #_historical_landings
+1967    1       3       75.5    0.01    #_historical_landings
+1968    1       3       109.5   0.01    #_historical_landings
+1969    1       3       72.9    0.01    #_historical_landings
+1970    1       3       28.2    0.01    #_historical_landings
+1971    1       3       21.6    0.01    #_historical_landings
+1972    1       3       35.6    0.01    #_historical_landings
+1973    1       3       41.7    0.01    #_historical_landings
+1974    1       3       27.8    0.01    #_historical_landings
+1975    1       3       41.8    0.01    #_historical_landings
+1976    1       3       52.2    0.01    #_historical_landings
+1977    1       3       64.9    0.01    #_historical_landings
+1978    1       3       149.1   0.01    #_historical_landings
+1979    1       3       196.4   0.01    #_historical_landings
+1980    1       3       56.9    0.01    #_historical_landings
+1981    1       3       159.3   0.01    #_historical_landings
+1982    1       3       98.1    0.01    #_historical_landings
+1983    1       3       78.4    0.01    #_historical_landings
+1984    1       3       32.7    0.01    #_historical_landings
+1985    1       3       65.6    0.01    #_historical_landings
+1986    1       3       37.8    0.01    #_historical_landings
+1987    1       3       42.9    0.01    #_historical_landings
+1988    1       3       26.5    0.01    #_historical_landings
+1989    1       3       25.3    0.01    #_historical_landings
+1990    1       3       34.8    0.01    #_historical_landings
+1991    1       3       44.5    0.01    #_historical_landings
+1992    1       3       36.1    0.01    #_historical_landings
+1993    1       3       50.2    0.01    #_historical_landings
+1994    1       3       50.7    0.01    #_historical_landings
 
-## landings from 1995 onward
-1995	1	1	105.9	0.01	#_current_landings
-1996	1	1	307.9	0.01	#_current_landings
-1997	1	1	527.8	0.01	#_current_landings
-1998	1	1	194.7	0.01	#_current_landings
-1999	1	1	282.2	0.01	#_current_landings
-2000	1	1	360.7	0.01	#_current_landings
-2001	1	1	217.1	0.01	#_current_landings
-2002	1	1	208.3	0.01	#_current_landings
-2003	1	1	337.5	0.01	#_current_landings
-2004	1	1	249.2	0.01	#_current_landings
-2005	1	1	297.8	0.01	#_current_landings
-2006	1	1	375.1	0.01	#_current_landings
-2007	1	1	255	0.01	#_current_landings
-2008	1	1	362.8	0.01	#_current_landings
-2009	1	1	188.2	0.01	#_current_landings
-2010	1	1	183.7	0.01	#_current_landings
-2011	1	1	242	0.01	#_current_landings
-2012	1	1	228	0.01	#_current_landings
-2013	1	1	126.2	0.01	#_current_landings
-2014	1	1	343.9	0.01	#_current_landings
-2015	1	1	255	0.01	#_current_landings
-2016	1	1	333.7	0.01	#_current_landings
-2017	1	1	217.4	0.01	#_current_landings
-2018	1	1	142	0.01	#_current_landings
+# landings from 1995 onward
+1995    1       1       105.9   0.01    #_current_landings
+1996    1       1       307.9   0.01    #_current_landings
+1997    1       1       527.8   0.01    #_current_landings
+1998    1       1       194.7   0.01    #_current_landings
+1999    1       1       282.2   0.01    #_current_landings
+2000    1       1       360.7   0.01    #_current_landings
+2001    1       1       217.1   0.01    #_current_landings
+2002    1       1       208.3   0.01    #_current_landings
+2003    1       1       337.5   0.01    #_current_landings
+2004    1       1       249.2   0.01    #_current_landings
+2005    1       1       297.8   0.01    #_current_landings
+2006    1       1       375.1   0.01    #_current_landings
+2007    1       1       255     0.01    #_current_landings
+2008    1       1       362.8   0.01    #_current_landings
+2009    1       1       188.2   0.01    #_current_landings
+2010    1       1       183.7   0.01    #_current_landings
+2011    1       1       242     0.01    #_current_landings
+2012    1       1       228     0.01    #_current_landings
+2013    1       1       126.2   0.01    #_current_landings
+2014    1       1       343.9   0.01    #_current_landings
+2015    1       1       255     0.01    #_current_landings
+2016    1       1       333.7   0.01    #_current_landings
+2017    1       1       217.4   0.01    #_current_landings
+2018    1       1       142     0.01    #_current_landings
 
 # discard estimates
-1916	1	2	0	0.01	#_estimated_discards_from_mean_values
-1917	1	2	12.3	0.01	#_estimated_discards_from_mean_values
-1918	1	2	24.6	0.01	#_estimated_discards_from_mean_values
-1919	1	2	37	0.01	#_estimated_discards_from_mean_values
-1920	1	2	49.3	0.01	#_estimated_discards_from_mean_values
-1921	1	2	61.6	0.01	#_estimated_discards_from_mean_values
-1922	1	2	73.9	0.01	#_estimated_discards_from_mean_values
-1923	1	2	86.3	0.01	#_estimated_discards_from_mean_values
-1924	1	2	98.6	0.01	#_estimated_discards_from_mean_values
-1925	1	2	110.9	0.01	#_estimated_discards_from_mean_values
-1926	1	2	123.2	0.01	#_estimated_discards_from_mean_values
-1927	1	2	135.6	0.01	#_estimated_discards_from_mean_values
-1928	1	2	147.9	0.01	#_estimated_discards_from_mean_values
-1929	1	2	160.2	0.01	#_estimated_discards_from_mean_values
-1930	1	2	172.5	0.01	#_estimated_discards_from_mean_values
-1931	1	2	184.9	0.01	#_estimated_discards_from_mean_values
-1932	1	2	197.2	0.01	#_estimated_discards_from_mean_values
-1933	1	2	209.5	0.01	#_estimated_discards_from_mean_values
-1934	1	2	221.8	0.01	#_estimated_discards_from_mean_values
-1935	1	2	234.2	0.01	#_estimated_discards_from_mean_values
-1936	1	2	246.5	0.01	#_estimated_discards_from_mean_values
-1937	1	2	258.8	0.01	#_estimated_discards_from_mean_values
-1938	1	2	271.1	0.01	#_estimated_discards_from_mean_values
-1939	1	2	238	0.01	#_estimated_discards_from_mean_values
-1940	1	2	262.9	0.01	#_estimated_discards_from_mean_values
-1941	1	2	253.4	0.01	#_estimated_discards_from_mean_values
-1942	1	2	289.7	0.01	#_estimated_discards_from_mean_values
-1943	1	2	322.1	0.01	#_estimated_discards_from_mean_values
-1944	1	2	340.3	0.01	#_estimated_discards_from_mean_values
-1945	1	2	350.6	0.01	#_estimated_discards_from_mean_values
-1946	1	2	360.2	0.01	#_estimated_discards_from_mean_values
-1947	1	2	370	0.01	#_estimated_discards_from_mean_values
-1948	1	2	376.2	0.01	#_estimated_discards_from_mean_values
-1949	1	2	387.1	0.01	#_estimated_discards_from_mean_values
-1950	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1951	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1952	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1953	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1954	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1955	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1956	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1957	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1958	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1959	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1960	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1961	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1962	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1963	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1964	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1965	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1966	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1967	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1968	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1969	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1970	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1971	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1972	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1973	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1974	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1975	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1976	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1977	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1978	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1979	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1980	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1981	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1982	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1983	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1984	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1985	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1986	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1987	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1988	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1989	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1990	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1991	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1992	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1993	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-1994	1	2	387.4	0.01	#_estimated_discards_from_mean_values
-
-## alternative discard estimates from 3yr moving average of landings and LN disc rates
-# 1916	1	2	0	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1917	1	2	17	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1918	1	2	34.1	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1919	1	2	51.1	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1920	1	2	68.2	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1921	1	2	85.2	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1922	1	2	102.3	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1923	1	2	119.3	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1924	1	2	136.4	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1925	1	2	153.4	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1926	1	2	170.4	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1927	1	2	187.5	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1928	1	2	204.5	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1929	1	2	221.6	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1930	1	2	238.6	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1931	1	2	255.7	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1932	1	2	272.7	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1933	1	2	289.8	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1934	1	2	306.8	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1935	1	2	323.9	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1936	1	2	340.9	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1937	1	2	357.9	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1938	1	2	375	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1939	1	2	346.6	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1940	1	2	376.3	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1941	1	2	371.4	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1942	1	2	412.5	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1943	1	2	449.5	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1944	1	2	472.5	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1945	1	2	487.5	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1946	1	2	501.9	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1947	1	2	516.3	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1948	1	2	527.3	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1949	1	2	542.9	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1950	1	2	561.3	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1951	1	2	632.5	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1952	1	2	459.8	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1953	1	2	429.6	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1954	1	2	369.7	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1955	1	2	341.8	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1956	1	2	370.4	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1957	1	2	400.7	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1958	1	2	456	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1959	1	2	432.1	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1960	1	2	350.6	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1961	1	2	270.5	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1962	1	2	268.2	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1963	1	2	285.7	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1964	1	2	296	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1965	1	2	302.9	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1966	1	2	305.2	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1967	1	2	291	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1968	1	2	291.8	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1969	1	2	317.5	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1970	1	2	416.5	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1971	1	2	579.6	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1972	1	2	716.1	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1973	1	2	631.5	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1974	1	2	619.3	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1975	1	2	376.8	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1976	1	2	344.3	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1977	1	2	398.6	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1978	1	2	606	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1979	1	2	595.5	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1980	1	2	701.1	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1981	1	2	515.8	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1982	1	2	603.5	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1983	1	2	561.5	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1984	1	2	538.4	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1985	1	2	507.1	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1986	1	2	562.7	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1987	1	2	516.3	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1988	1	2	478.1	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1989	1	2	368.5	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1990	1	2	356.7	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1991	1	2	308.9	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1992	1	2	298.6	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1993	1	2	218	0.01	#_estimated_discards_from_3yr_moving_avg
-# 1994	1	2	208	0.01	#_estimated_discards_from_3yr_moving_avg
-
-## alternative discard estimates with discard mortality = 0.4
-# 1916	1	2	0	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1917	1	2	14.8	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1918	1	2	29.6	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1919	1	2	44.4	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1920	1	2	59.2	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1921	1	2	73.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1922	1	2	88.7	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1923	1	2	103.5	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1924	1	2	118.3	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1925	1	2	133.1	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1926	1	2	147.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1927	1	2	162.7	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1928	1	2	177.5	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1929	1	2	192.3	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1930	1	2	207	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1931	1	2	221.8	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1932	1	2	236.6	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1933	1	2	251.4	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1934	1	2	266.2	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1935	1	2	281	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1936	1	2	295.8	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1937	1	2	310.6	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1938	1	2	325.4	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1939	1	2	285.6	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1940	1	2	315.5	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1941	1	2	304	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1942	1	2	347.7	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1943	1	2	386.5	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1944	1	2	408.4	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1945	1	2	420.8	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1946	1	2	432.3	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1947	1	2	444	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1948	1	2	451.4	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1949	1	2	464.6	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1950	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1951	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1952	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1953	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1954	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1955	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1956	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1957	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1958	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1959	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1960	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1961	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1962	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1963	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1964	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1965	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1966	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1967	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1968	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1969	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1970	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1971	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1972	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1973	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1974	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1975	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1976	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1977	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1978	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1979	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1980	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1981	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1982	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1983	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1984	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1985	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1986	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1987	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1988	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1989	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1990	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1991	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1992	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1993	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-# 1994	1	2	464.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.4
-
-## alternative discard estimates with discard mortality = 0.6
-# 1916	1	2	0	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1917	1	2	9.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1918	1	2	19.7	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1919	1	2	29.6	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1920	1	2	39.4	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1921	1	2	49.3	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1922	1	2	59.2	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1923	1	2	69	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1924	1	2	78.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1925	1	2	88.7	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1926	1	2	98.6	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1927	1	2	108.5	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1928	1	2	118.3	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1929	1	2	128.2	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1930	1	2	138	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1931	1	2	147.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1932	1	2	157.7	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1933	1	2	167.6	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1934	1	2	177.5	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1935	1	2	187.3	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1936	1	2	197.2	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1937	1	2	207	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1938	1	2	216.9	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1939	1	2	190.4	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1940	1	2	210.4	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1941	1	2	202.7	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1942	1	2	231.8	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1943	1	2	257.7	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1944	1	2	272.3	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1945	1	2	280.5	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1946	1	2	288.2	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1947	1	2	296	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1948	1	2	301	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1949	1	2	309.7	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1950	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1951	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1952	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1953	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1954	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1955	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1956	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1957	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1958	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1959	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1960	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1961	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1962	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1963	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1964	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1965	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1966	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1967	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1968	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1969	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1970	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1971	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1972	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1973	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1974	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1975	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1976	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1977	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1978	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1979	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1980	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1981	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1982	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1983	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1984	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1985	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1986	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1987	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1988	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1989	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1990	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1991	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1992	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1993	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
-# 1994	1	2	310	0.01	#_estimated_discards_from_mean_values_with_mort=0.6
+1916    1       2       0       0.01    #_estimated_discards_from_mean_values
+1917    1       2       12.3    0.01    #_estimated_discards_from_mean_values
+1918    1       2       24.6    0.01    #_estimated_discards_from_mean_values
+1919    1       2       37      0.01    #_estimated_discards_from_mean_values
+1920    1       2       49.3    0.01    #_estimated_discards_from_mean_values
+1921    1       2       61.6    0.01    #_estimated_discards_from_mean_values
+1922    1       2       73.9    0.01    #_estimated_discards_from_mean_values
+1923    1       2       86.3    0.01    #_estimated_discards_from_mean_values
+1924    1       2       98.6    0.01    #_estimated_discards_from_mean_values
+1925    1       2       110.9   0.01    #_estimated_discards_from_mean_values
+1926    1       2       123.2   0.01    #_estimated_discards_from_mean_values
+1927    1       2       135.6   0.01    #_estimated_discards_from_mean_values
+1928    1       2       147.9   0.01    #_estimated_discards_from_mean_values
+1929    1       2       160.2   0.01    #_estimated_discards_from_mean_values
+1930    1       2       172.5   0.01    #_estimated_discards_from_mean_values
+1931    1       2       184.9   0.01    #_estimated_discards_from_mean_values
+1932    1       2       197.2   0.01    #_estimated_discards_from_mean_values
+1933    1       2       209.5   0.01    #_estimated_discards_from_mean_values
+1934    1       2       221.8   0.01    #_estimated_discards_from_mean_values
+1935    1       2       234.2   0.01    #_estimated_discards_from_mean_values
+1936    1       2       246.5   0.01    #_estimated_discards_from_mean_values
+1937    1       2       258.8   0.01    #_estimated_discards_from_mean_values
+1938    1       2       271.1   0.01    #_estimated_discards_from_mean_values
+1939    1       2       238     0.01    #_estimated_discards_from_mean_values
+1940    1       2       262.9   0.01    #_estimated_discards_from_mean_values
+1941    1       2       253.4   0.01    #_estimated_discards_from_mean_values
+1942    1       2       289.7   0.01    #_estimated_discards_from_mean_values
+1943    1       2       322.1   0.01    #_estimated_discards_from_mean_values
+1944    1       2       340.3   0.01    #_estimated_discards_from_mean_values
+1945    1       2       350.6   0.01    #_estimated_discards_from_mean_values
+1946    1       2       360.2   0.01    #_estimated_discards_from_mean_values
+1947    1       2       370     0.01    #_estimated_discards_from_mean_values
+1948    1       2       376.2   0.01    #_estimated_discards_from_mean_values
+1949    1       2       387.1   0.01    #_estimated_discards_from_mean_values
+1950    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1951    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1952    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1953    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1954    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1955    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1956    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1957    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1958    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1959    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1960    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1961    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1962    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1963    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1964    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1965    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1966    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1967    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1968    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1969    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1970    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1971    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1972    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1973    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1974    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1975    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1976    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1977    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1978    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1979    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1980    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1981    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1982    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1983    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1984    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1985    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1986    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1987    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1988    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1989    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1990    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1991    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1992    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1993    1       2       387.4   0.01    #_estimated_discards_from_mean_values
+1994    1       2       387.4   0.01    #_estimated_discards_from_mean_values
 
 ## tribal landings
-1982	1	4	0	0.01	#_tribal_landings
-1987	1	4	1	0.01	#_tribal_landings
-1988	1	4	1.2	0.01	#_tribal_landings
-1990	1	4	0.1	0.01	#_tribal_landings
-1991	1	4	0.1	0.01	#_tribal_landings
-1992	1	4	0	0.01	#_tribal_landings
-1993	1	4	0.6	0.01	#_tribal_landings
-1994	1	4	0.1	0.01	#_tribal_landings
-1995	1	4	0.1	0.01	#_tribal_landings
-1996	1	4	0.1	0.01	#_tribal_landings
-1997	1	4	0.2	0.01	#_tribal_landings
-1998	1	4	0.2	0.01	#_tribal_landings
-1999	1	4	0.4	0.01	#_tribal_landings
-2000	1	4	0.3	0.01	#_tribal_landings
-2001	1	4	0.4	0.01	#_tribal_landings
-2002	1	4	4.8	0.01	#_tribal_landings
-2003	1	4	5.4	0.01	#_tribal_landings
-2004	1	4	4.6	0.01	#_tribal_landings
-2005	1	4	15.7	0.01	#_tribal_landings
-2006	1	4	24.9	0.01	#_tribal_landings
-2007	1	4	19.9	0.01	#_tribal_landings
-2008	1	4	3.2	0.01	#_tribal_landings
-2009	1	4	17.5	0.01	#_tribal_landings
-2010	1	4	12.5	0.01	#_tribal_landings
-2011	1	4	26.4	0.01	#_tribal_landings
-2012	1	4	41.6	0.01	#_tribal_landings
-2013	1	4	8.8	0.01	#_tribal_landings
-2014	1	4	28.6	0.01	#_tribal_landings
-2015	1	4	76.6	0.01	#_tribal_landings
-2016	1	4	77.8	0.01	#_tribal_landings
-2017	1	4	60.2	0.01	#_tribal_landings
-2018	1	4	30.6	0.01	#_tribal_landings
+1982    1       4       0       0.01    #_tribal_landings
+1987    1       4       1       0.01    #_tribal_landings
+1988    1       4       1.2     0.01    #_tribal_landings
+1990    1       4       0.1     0.01    #_tribal_landings
+1991    1       4       0.1     0.01    #_tribal_landings
+1992    1       4       0       0.01    #_tribal_landings
+1993    1       4       0.6     0.01    #_tribal_landings
+1994    1       4       0.1     0.01    #_tribal_landings
+1995    1       4       0.1     0.01    #_tribal_landings
+1996    1       4       0.1     0.01    #_tribal_landings
+1997    1       4       0.2     0.01    #_tribal_landings
+1998    1       4       0.2     0.01    #_tribal_landings
+1999    1       4       0.4     0.01    #_tribal_landings
+2000    1       4       0.3     0.01    #_tribal_landings
+2001    1       4       0.4     0.01    #_tribal_landings
+2002    1       4       4.8     0.01    #_tribal_landings
+2003    1       4       5.4     0.01    #_tribal_landings
+2004    1       4       4.6     0.01    #_tribal_landings
+2005    1       4       15.7    0.01    #_tribal_landings
+2006    1       4       24.9    0.01    #_tribal_landings
+2007    1       4       19.9    0.01    #_tribal_landings
+2008    1       4       3.2     0.01    #_tribal_landings
+2009    1       4       17.5    0.01    #_tribal_landings
+2010    1       4       12.5    0.01    #_tribal_landings
+2011    1       4       26.4    0.01    #_tribal_landings
+2012    1       4       41.6    0.01    #_tribal_landings
+2013    1       4       8.8     0.01    #_tribal_landings
+2014    1       4       28.6    0.01    #_tribal_landings
+2015    1       4       76.6    0.01    #_tribal_landings
+2016    1       4       77.8    0.01    #_tribal_landings
+2017    1       4       60.2    0.01    #_tribal_landings
+2018    1       4       30.6    0.01    #_tribal_landings
 #
 -9999   0       0       0       0       #_end_of_catch_input
 #
@@ -519,7 +275,6 @@
  4      1     0       0         # Fishery_tribal     # 4
  5      1     0       0         # WCGBTS             # 5
  6      1     0       0         # Triennial          # 6
-# 7      0     0       0         # IPHC               # 7
 
 # WCGBTS index
 # values from "Table for SS3.csv" in
@@ -547,55 +302,14 @@
 # \indices\Triennial\Triennial full\VAST_output_2019-04-13_Longnose-Triennial_nx=250_Domain=Triennial_gamma\
 #Year month fleet obs      stderr
 1980  7     6      467.83  0.527038
-#1981  7    -6        1.0   999         # dummy observation to get expected value
-#1982  7    -6        1.0   999         # dummy observation to get expected value
 1983  7     6      911.85  0.299835
-#1984  7    -6        1.0   999         # dummy observation to get expected value
-#1985  7    -6        1.0   999         # dummy observation to get expected value
 1986  7     6      996.75  0.287580
-#1987  7    -6        1.0   999         # dummy observation to get expected value
-#1988  7    -6        1.0   999         # dummy observation to get expected value
 1989  7     6     1431.65  0.219108
-#1990  7    -6        1.0   999         # dummy observation to get expected value
-#1991  7    -6        1.0   999         # dummy observation to get expected value
 1992  7     6     2426.18  0.197846
-#1993  7    -6        1.0   999         # dummy observation to get expected value
-#1994  7    -6        1.0   999         # dummy observation to get expected value
 1995  7     6      497.24  0.257142
-#1996  7    -6        1.0   999         # dummy observation to get expected value
-#1997  7    -6        1.0   999         # dummy observation to get expected value
 1998  7     6     2437.75  0.198937
-#1999  7    -6        1.0   999         # dummy observation to get expected value
-#2000  7    -6        1.0   999         # dummy observation to get expected value
 2001  7     6     1669.73  0.228075
-#2002  7    -6        1.0   999         # dummy observation to get expected value
-#2003  7    -6        1.0   999         # dummy observation to get expected value
 2004  7     6     3674.14  0.192026
-#
-## # IPHC index
-## # values from "IPHC.index.BigSkate_4-22-2019.csv" in \indices\IPHC\
-## # created by code in \indices\IPHC\"IPHC Binomial GLM skates.R"
-## #Year   month   fleet   obs       stderr
-## 1999    7       7       0.002770  0.1700
-## #2000    7       -7       1.0       999    # dummy observation to get expected value
-## 2001    7       7       0.001391  0.2866
-## 2002    7       7       0.000434  0.5265
-## 2003    7       7       0.000678  0.4348
-## 2004    7       7       0.002568  0.2000
-## 2005    7       7       0.002457  0.1845
-## 2006    7       7       0.000324  0.6425
-## 2007    7       7       0.001027  0.3366
-## 2008    7       7       0.000199  0.8069
-## 2009    7       7       0.000395  0.4767
-## 2010    7       7       0.001239  0.2399
-## 2011    7       7       0.002461  0.1989
-## 2012    7       7       0.000295  0.6147
-## 2013    7       7       0.001481  0.2027
-## 2014    7       7       0.001639  0.1914
-## 2015    7       7       0.002584  0.1570
-## 2016    7       7       0.002549  0.1693
-## 2017    7       7       0.001513  0.1763
-## 2018    7       7       0.000941  0.2592
 #
 -9999   1       1       1         1           # terminator for survey observations
 #
@@ -618,27 +332,16 @@
 2008    7       1       0.06    0.259
 2009    7       1       0.092   0.264
 2010    7       1       0.06    0.256
-#### values based on BSKT + LSKT + USKT
-## #year   month   fleet   ratio   CV
-## 2002   7       1       0.650   0.057
-## 2003   7       1       0.381   0.139
-## 2004   7       1       0.554   0.081
-## 2005   7       1       0.502   0.095
-## 2006   7       1       0.427   0.087
-## 2007   7       1       0.486   0.083
-## 2008   7       1       0.288   0.094
-## 2009   7       1       0.259   0.097
-## 2010   7       1       0.156   0.117
 # values from the catch-shares period before sorting requirement
 # are based on BSKT + USKT
-2011   7       1       0.099   0.010
-2012   7       1       0.104   0.010
-2013   7       1       0.124   0.010
-2014   7       1       0.119   0.010
+2011    7       1       0.099   0.010
+2012    7       1       0.104   0.010
+2013    7       1       0.124   0.010
+2014    7       1       0.119   0.010
 # values based on Big Skate only for period with sorting requirement
-2015   7       1       0.129   0.010
-2016   7       1       0.156   0.010
-2017   7       1       0.140   0.010
+2015    7       1       0.129   0.010
+2016    7       1       0.156   0.010
+2017    7       1       0.140   0.010
 #
 -9999   0       0       0       0 # terminator for discard data
 #
@@ -666,14 +369,10 @@
 -9999 0 0 0 0 0 0 # terminator for mean body size data
 #
 # set up population length bin structure (note - irrelevant if not using size data and using empirical wtatage
-## 2 # length bin method: 1=use databins; 2=generate from binwidth,min,max below; 3=read vector
-## 5 # binwidth
-## 5   # minimum length bin
-## 250 # maximum length bin
-
-3 # length bin method: 1=use databins; 2=generate from binwidth,min,max below; 3=read vector
-47
-20  25  30  35  40  45  50  55  60  65  70  75  80  85  90  95 100 105 110 115 120 125 130 135 140 145 150 155 160 165 170 175 180 185 190 195 200 205 210 215 220 225 230 235 240 245 250
+2 # length bin method: 1=use databins; 2=generate from binwidth,min,max below; 3=read vector
+5 # binwidth
+20 # minimum length bin
+250 # maximum length bin
 
 1 # use length composition data (0/1)
 #_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
@@ -690,7 +389,6 @@
 -1            0.0001    0       0            0         0          0.01  #_Fishery_tribal     # 4
 -1            0.0001    0       0            0         0          0.01  #_WCGBTS             # 5
 -1            0.0001    0       0            0         0          0.01  #_Triennial          # 6
-#-1            0.0001    0       0            0         0          0.01  #_IPHC               # 7
 # sex codes:  0=combined; 1=use female only; 2=use male only; 3=use both as joint sexxlength distribution
 # partition codes:  (0=combined; 1=discard; 2=retained
 37 #_N_LengthBins; then enter lower edge of each length bin
@@ -766,11 +464,6 @@
 2001    7       6       3       0       84      2       3       0       0       0       2       2       3       0       2       2       2       3       0       0       0       1       0       1       0       1       0       0       1       0       0       0       0       0       1       4       1       0       0       0       0       0       2       1       1       0       2       0       2       1       0       3       3       5       2       3       2       1       5       0       3       3       6       0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 2004    7       6       3       0       92      2       1       1       0       0       1       2       3       2       0       2       1       5       1       1       2       2       0       2       3       1       0       4       0       2       0       1       0       0       0       1       0       0       0       0       0       0       2       0       3       2       0       1       4       2       0       3       2       0       1       2       2       5       2       5       2       8       6       5       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 #
-# IPHC length comp
-# from \R\IPHC_length_comp.R
-#year month fleet sex part Nsamps  F20 F25 F30 F35 F40 F45 F50 F55 F60 F65 F70 F75 F80 F85 F90 F95 F100 F105 F110 F115 F120 F125 F130 F135 F140 F145 F150 F155 F160 F165 F170 F175 F180 F185 F190 F195 F200 M20 M25 M30 M35 M40 M45 M50 M55 M60 M65 M70 M75 M80 M85 M90 M95 M100 M105 M110 M115 M120 M125 M130 M135 M140 M145 M150 M155 M160 M165 M170 M175 M180 M185 M190 M195 M200
-#2014      7     7   3    2     46    0   0   0   0   0   0   0   0   0   2   0   0   0   2   2   0    0    2    0    2    2    0    0    0    0    0    0    0    0    0    2    0    0    2    0    0    0   0   0   0   0   0   0   0   0   0   0   2   2   0   4   0   5    0    5    1    4    1    4    0    0    2    0    0    0    0    0    0    0    0    0    0    0    0
-#
 -9999   0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0      
 
 #
@@ -791,14 +484,13 @@
 #_Comp_Error:  0=multinomial, 1=dirichlet
 #_Comp_Error2:  parm number  for dirichlet
 #_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
-#_mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
--1 0.0001 0 0 0 0 0.01 #_fleet:Fishery_current
--1 0.0001 0 0 0 0 0.01 #_fleet:Discards_historical
--1 0.0001 0 0 0 0 0.01 #_fleet:Fishery_historical
--1 0.0001 0 0 0 0 0.01 #_fleet:Fishery_tribal
--1 0.0001 0 0 0 0 0.01 #_fleet:WCGBTS
--1 0.0001 0 0 0 0 0.01 #_fleet:Triennial
-#-1 0.0001 0 0 0 0 0.01 #_fleet:IPHC
+#_mintail addtocomp     combM+F Compres CompErr ParmSel minsamplesize   
+-1        0.0001        0       0       0       0       0.01    #_fleet:Fishery_current
+-1        0.0001        0       0       0       0       0.01    #_fleet:Discards_historical
+-1        0.0001        0       0       0       0       0.01    #_fleet:Fishery_historical
+-1        0.0001        0       0       0       0       0.01    #_fleet:Fishery_tribal
+-1        0.0001        0       0       0       0       0.01    #_fleet:WCGBTS
+-1        0.0001        0       0       0       0       0.01    #_fleet:Triennial
 
 3 #_Lbin_method_for_Age_Data: 1=poplenbins; 2=datalenbins; 3=lengths
 # sex codes:  0=combined; 1=use female only; 2=use male only; 3=use both as joint sexxlength distribution
@@ -818,15 +510,6 @@
 2011    7       -1      3       2       1       -1      -1      201     0       0       0.0621  0.073   0.0232  0.0176  0.0255  0.0067  0.0024  0.0031  0.0021  0.0045  0.0045  0.0027  0       0       0       0       0.071   0.1233  0.1876  0.2034  0.0922  0.0793  0.0058  0.01    0       0       0       0       0       0
 2012    7       -1      3       2       1       -1      -1      120     0       0       0.1253  0.0734  0.0461  0.0435  0.0187  0.0088  0.0192  3.00E-04        0       3.00E-04        0       0       0       0       0       0       0       0.1078  0.091   0.137   0.1574  0.085   0.0859  4.00E-04        0       0       0       0       0       0
 2018    7       -1      3       2       1       -1      -1      132     0       0       0       0       0.004   0.0257  0.0565  0.1706  0.0543  0.011   0.0182  0.0368  0.013   0.0246  0.0169  0       0       0       0       0       0       0.0506  0.1638  0.1936  0.112   0.0312  0.0172  0       0       0       0       0
-# alternative marginal ages with no expansion (again  with negative fleet number)
-## #year   month   fleet   gender  part    ageErr  LbinLo  LbinHi  Nsamps  F0      F1      F2      F3      F4      F5      F6      F7      F8      F9      F10     F11     F12     F13     F14     F15     M0      M1      M2      M3      M4      M5      M6      M7      M8      M9      M10     M11     M12     M13     M14     M15
-## 2004    7       -1      3       2       1       -1      -1      11      0       0       0       0.0909  0       0       0.1818  0       0       0.0909  0       0       0       0       0       0       0       0       0       0.0909  0.1818  0.2727  0.0909  0       0       0       0       0       0       0       0       0
-## 2008    7       -1      3       2       1       -1      -1      79      0       0       0       0.0253  0.0633  0.038   0.038   0.0127  0.0506  0.0127  0       0.0127  0.0127  0       0       0       0       0       0.0127  0.0506  0.0506  0.1899  0.1266  0.2025  0.0506  0.0506  0       0       0       0       0       0
-## 2009    7       -1      3       2       1       -1      -1      85      0       0       0       0.0706  0.0118  0       0.0471  0.0235  0.1059  0.0471  0.0118  0.0118  0.0118  0       0       0       0       0       0       0.0353  0.0941  0.0471  0.1412  0.1176  0.0941  0.0824  0.0353  0       0.0118  0       0       0
-## 2010    7       -1      3       2       1       -1      -1      102     0       0       0       0.0196  0.0294  0.0392  0.0392  0.0294  0.0392  0.0294  0       0       0.0196  0       0       0       0       0       0       0.0098  0.1765  0.1765  0.1765  0.1078  0.0686  0.0196  0.0098  0.0098  0       0       0       0
-## 2011    7       -1      3       2       1       -1      -1      201     0       0       0.0448  0.0746  0.0249  0.0398  0.0299  0.01    0.01    0.005   0.005   0.005   0.005   0.005   0       0       0       0       0.0697  0.0945  0.194   0.1741  0.1144  0.0597  0.0149  0.0199  0       0       0       0       0       0
-## 2012    7       -1      3       2       1       -1      -1      120     0       0       0.075   0.0583  0.0417  0.0667  0.0417  0.0333  0.0167  0.0083  0       0.0083  0       0       0       0       0       0       0       0.075   0.0833  0.15    0.1417  0.1167  0.075   0.0083  0       0       0       0       0       0
-## 2018    7       -1      3       2       1       -1      -1      132     0       0       0       0       0.0076  0.0152  0.053   0.1591  0.053   0.0152  0.0227  0.0455  0.0152  0.0455  0.0227  0       0       0       0       0       0       0.0303  0.1288  0.1894  0.1364  0.0379  0.0227  0       0       0       0       0
 # conditional ages
 #year   month   fleet   gender  part    ageErr  LbinLo  LbinHi  Nsamps  F0      F1      F2      F3      F4      F5      F6      F7      F8      F9      F10     F11     F12     F13     F14     F15     M0      M1      M2      M3      M4      M5      M6      M7      M8      M9      M10     M11     M12     M13     M14     M15
 2004    7       1       2       2       1       70      70      1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       1       0       0       0       0       0       0       0       0       0       0       0
@@ -1266,6 +949,7 @@
 #
 #0
 1 #_Use_MeanSize-at-Age_obs (0/1)
+### Mean size at age is excluded from the likelihood using lambda=0 in control file
 #year month fleet sex part ageerr ignore   F0   F1   F2   F3 F4   F5    F6    F7    F8  F9   F10 F11 F12 F13   F14 F15   M0   M1   M2 M3   M4   M5    M6    M7    M8    M9   M10 M11 M12  M13  M14  M15 NF0 NF1 NF2 NF3 NF4 NF5 NF6 NF7 NF8 NF9 NF10 NF11 NF12 NF13 NF14 NF15 NM0 NM1 NM2 NM3 NM4 NM5 NM6 NM7 NM8 NM9 NM10 NM11 NM12 NM13 NM14 NM15
  2011     7     5   3    0      1     99 29.4 42.3 55.9 63.7 76 89.2 104.4 108.7 128.8 130 140.8 179 141 144 168.5 177 28.6 43.5 55.4 65 79.5 91.4 103.4 111.7 113.7 120.4 126.6 126 133  99.9  99.9  99.9  28  81 122  95  51  28  19  13   8   5    4    1    3    1    2    1  17  52 100 114  70  62  61  43  36   7    5    1    1    0    0    0
 -9999     0     0   0    0      0     0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0  0  0 0  0  0  0  0  0   0   0    0    0    0    0    0    0  0  0 0 0  0  0  0  0  0   0    0    0    0    0    0    0
