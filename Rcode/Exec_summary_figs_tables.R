@@ -726,23 +726,18 @@ colnames(decision_mod1) = c('',
                             'Year',  
                             'Catch',	
                             'Spawning Output',	
-                            'Depletion', 
+                            '%Unfished', 
                             'Spawning Output',	
-                            'Depletion',	
+                            '%Unfished',	
                             'Spawning Output',	
-                            'Depletion')
+                            '%Unfished')
 
 decision_mod1.table = xtable(decision_mod1, 
-                             caption = c(paste('Summary of 10-year 
-                                             projections beginning in ', LastYR+2,' 
-                                             for alternate states of nature based on 
-                                             an axis of uncertainty for the ', mod1_label, 
-                                               '.  Columns range over low, mid, and high
-                                             states of nature, and rows range over different 
-                                             assumptions of catch levels. An entry of "--" 
-                                             indicates that the stock is driven to very low 
-                                             abundance under the particular scenario.', sep = '')), 
-                             label='tab:Decision_table_mod1')
+    caption = c(paste0('Summary of 12-year projections beginning in ', LastYR,
+        ' for alternate states of nature based the axis of uncertainty for the model.',
+        ' Columns range over low, mid, and high states of nature, and rows range over different', 
+        ' assumptions of catch levels.')), 
+    label='tab:Decision_table_mod1')
 
 # Assign alignment and add the header columns
 align(decision_mod1.table) = c('l','l|','c','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c') 
@@ -758,107 +753,6 @@ addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{}
                                & \\multicolumn{2}{c}{Base State} 
                                &  \\multicolumn{2}{c}{High State} \\\\\n')
 
-
-# Model 2
-if (n_models >= 2) {
-  # Read in decision table file 
-  decision_mod2 = read.csv('./txt_files/DecisionTable_mod2.csv')
-  colnames(decision_mod2) = c('', 
-                              'Year',  
-                              'Catch',  
-                              'Spawning Output',	
-                              'Depletion',
-                              'Spawning Output',	
-                              'Depletion',	
-                              'Spawning Output',	
-                              'Depletion')
-  
-  decision_mod2.table = xtable(decision_mod2, 
-                               caption=c(paste('Summary of 10-year projections 
-                                                  beginning in ', LastYR+2,' for 
-                                                  alternate states of nature based 
-                                                  on an axis of uncertainty for the ',
-                                               mod2_label,'.  Columns range over low, 
-                                                  mid, and high states of nature, and rows 
-                                                  range over different assumptions of catch 
-                                                  levels. An entry of "--" indicates that the 
-                                                  stock is driven to very low abundance under the
-                                                  particular scenario.', sep='')), 
-                               label='tab:Decision_table_mod2')
-  
-  # Assign alignment and add the header columns
-  align(decision_mod2.table) = c('l',
-                                 'l|',
-                                 'c',
-                                 'c|',
-                                 '>{\\centering}p{.7in}',
-                                 'c|',
-                                 '>{\\centering}p{.7in}',
-                                 'c|',
-                                 '>{\\centering}p{.7in}',
-                                 'c') 
-  # Add additional header
-  addtorow <- list()
-  addtorow$pos <- list()
-  addtorow$pos[[1]] <- -1
-  addtorow$pos[[2]] <- -1
-  addtorow$command <- c( ' \\multicolumn{3}{c}{} &  \\multicolumn{2}{c}{} 
-                          &  \\multicolumn{2}{c}{\\textbf{States of nature}} 
-                          &   \\multicolumn{2}{c}{} \\\\\n', 
-                         ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{Low M 0.05} 
-                          &  \\multicolumn{2}{c}{Base M 0.07} 
-                          &   \\multicolumn{2}{c}{High M 0.09} \\\\\n')
-}   
-
-# Model 3
-if (n_models == 3) {
-  # Read in decision table file
-  decision_mod3 = read.csv('./txt_files/DecisionTable_mod3.csv')
-  colnames(decision_mod3) = c('', 
-                              'Year',  
-                              'Catch',  
-                              'Spawning Output',	
-                              'Depletion',
-                              'Spawning Output',	
-                              'Depletion',	
-                              'Spawning Output',	
-                              'Depletion')
-  
-  decision_mod3.table = xtable(decision_mod3, 
-                               caption = c(paste('Summary of 10-year projections 
-                                                     beginning in ', LastYR+2, ' for 
-                                                     alternate states of nature based 
-                                                     on an axis of uncertainty for the ', 
-                                                 mod3_label,'.  Columns range over low, 
-                                                     mid, and high states of nature, and rows \
-                                                     range over different assumptions of catch 
-                                                     levels. An entry of "--" indicates that the 
-                                                     stock is driven to very low abundance under the
-                                                     particular scenario.',sep='')), 
-                               label='tab:Decision_table_mod3')
-  
-  # Assign alignment and add the header columns
-  align(decision_mod3.table) = c('l',
-                                 'l|',
-                                 'c',
-                                 'c|',
-                                 '>{\\centering}p{.7in}',
-                                 'c|',
-                                 '>{\\centering}p{.7in}',
-                                 'c|',
-                                 '>{\\centering}p{.7in}','c') 
-  # Add extra colulmn headers    
-  addtorow <- list()
-  addtorow$pos <- list()
-  addtorow$pos[[1]] <- -1
-  addtorow$pos[[2]] <- -1
-  addtorow$command <- c( ' \\multicolumn{3}{c}{} &  \\multicolumn{2}{c}{} 
-                           &  \\multicolumn{2}{c}{\\textbf{States of nature}} 
-                           &   \\multicolumn{2}{c}{} \\\\\n', 
-                         ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{Low M 0.05} 
-                           &  \\multicolumn{2}{c}{Base M 0.07} 
-                           &   \\multicolumn{2}{c}{High M 0.09} \\\\\n')
-}
 
 
 # =============================================================================
@@ -978,7 +872,7 @@ if (n_models == 1) {
                        paste('Age ',min_age,' biomass (mt)',sep=''),
                        'Spawning Output',
                        '~95\\% CI',
-                       'Depletion',
+                       '%Unfished',
                        '~95\\% CI',
                        'Recruits',
                        '~95\\% CI')
@@ -1021,7 +915,7 @@ if (n_models == 2) {
                        paste('Age ',min_age,' biomass (mt)',sep=''),
                        'Spawning Output',
                        '~95\\% CI',
-                       'Depletion',
+                       '%Unfished',
                        '~95\\% CI',
                        'Recruits',
                        '~95\\% CI',
@@ -1031,7 +925,7 @@ if (n_models == 2) {
                        paste('Age ',min_age,' biomass (mt)',sep=''),
                        'Spawning Output',
                        '~95\\% CI',
-                       'Depletion',
+                       '%Unfished',
                        '~95\\% CI',
                        'Recruits',
                        '~95\\% CI')
@@ -1083,7 +977,7 @@ if (n_models == 3) {
                        paste('Age ',min_age,' biomass (mt)',sep=''),
                        'Spawning Output',
                        '~95\\% CI',
-                       'Depletion',
+                       '%Unfished',
                        '~95\\% CI',
                        'Recruits',
                        '~95\\% CI',
@@ -1093,7 +987,7 @@ if (n_models == 3) {
                        paste('Age ',min_age,' biomass (mt)',sep=''),
                        'Spawning Output',
                        '~95\\% CI',
-                       'Depletion',
+                       '%Unfished',
                        '~95\\% CI',
                        'Recruits',
                        '~95\\% CI',
@@ -1103,7 +997,7 @@ if (n_models == 3) {
                        paste('Age ',min_age,' biomass (mt)',sep=''),
                        'Spawning Output',
                        '~95\\% CI',
-                       'Depletion',
+                       '%Unfished',
                        '~95\\% CI',
                        'Recruits',
                        '~95\\% CI')
