@@ -218,40 +218,6 @@ align(Spawn_Deplete_mod1.table) = c('l', 'l',
                                     '>{\\centering}p{1in}', 
                                     '>{\\centering}p{1.2in}')  
 
-# Model 2 table ---------------------------------------------------------------
-if (n_models >= 2) {
-  Spawn_Deplete_mod2.table = xtable(SpawnDepletemod2, 
-                                    caption=c(paste('Recent trend in 
-                                             beginning of the year spawning output
-                                             and depletion for the ', mod2_label,
-                                                    ' for ', spp,'.',sep='')), 
-                                    label='tab:SpawningDeplete_mod2', digits = 3)     
-  
-  # Add alignment 
-  align(Spawn_Deplete_mod2.table) = c('l', 'l',
-                                      '>{\\centering}p{1.3in}', 
-                                      '>{\\centering}p{1.2in}',
-                                      '>{\\centering}p{1in}',
-                                      '>{\\centering}p{1.2in}')  
-} # end n_models>=2
-
-# Model 3 table ---------------------------------------------------------------
-if (n_models == 3) {
-  Spawn_Deplete_mod3.table = xtable(SpawnDepletemod3, 
-                                    caption=c(paste('Recent trend in beginning of
-                                              the year spawning output and                                           
-                                              depletion for the ', mod3_label, 
-                                                    ' for ', spp, '.', sep='')), 
-                                    label='tab:SpawningDeplete_mod3',digits=3)     
-  
-  # Add alignment  
-  align(Spawn_Deplete_mod3.table) = c('l', 'l', 
-                                      '>{\\centering}p{1.3in}',
-                                      '>{\\centering}p{1.2in}', 
-                                      '>{\\centering}p{1in}',
-                                      '>{\\centering}p{1.2in}')  
-} # end n_models==3
-
 # =============================================================================
 # Recruitment =================================================================
 
@@ -325,31 +291,6 @@ align(Recruit_mod1.table) = c('l',
                               '>{\\centering}p{1.6in}',
                               '>{\\centering}p{2in}')
 
-# Model 2
-if (n_models >= 2) {
-  Recruit_mod2.table = xtable(Recruittab_mod2, 
-                              caption=c(paste('Recent recruitment for the ',
-                                              mod2_label,'.',sep='')),
-                              label='tab:Recruit_mod2', digits = 2) 
-  
-  align(Recruit_mod2.table) = c('l',
-                                '>{\\centering}p{.8in}',
-                                '>{\\centering}p{1.6in}',
-                                '>{\\centering}p{1.3in}')
-}
-
-
-# Model 3
-if (n_models == 3) {
-  Recruit_mod3.table = xtable(Recruittab_mod3, 
-                              caption=c(paste('Recent recruitment for the ', 
-                                              mod3_label,'.',sep='')), 
-                              label = 'tab:Recruit_mod3', digits = 2)  
-  align(Recruit_mod3.table) = c('l',
-                                '>{\\centering}p{.8in}',
-                                '>{\\centering}p{1.6in}',
-                                '>{\\centering}p{1.3in}')
-}
 
 # =============================================================================
 # Exploitation data -----------------------------------------------------------
@@ -439,41 +380,6 @@ align(SPRratio_Exploit_mod1.table) = c('l','l',
                                        '>{\\centering}p{1in}',
                                        '>{\\centering}p{1.2in}') 
 
-# Model 2
-if (n_models >= 2) {
-  SPRratio_Exploit_mod2.table = xtable(SPRratio_Exploit_mod2, 
-                                       caption=c(paste('Recent trend in spawning potential 
-                                        ratio and exploitation for ', spp, ' in the ', 
-                                                       mod2_label, '. Relative fishing intensity is (1-SPR) 
-                                        divided by 50\\% (the SPR target) and exploitation 
-                                        is catch divided by age 2+ biomass.', sep='')), 
-                                       label='tab:SPR_Exploit_mod2')  
-  
-  align(SPRratio_Exploit_mod2.table) = c('l','l',
-                                         '>{\\centering}p{1in}',
-                                         '>{\\centering}p{1.2in}',
-                                         '>{\\centering}p{1in}',
-                                         '>{\\centering}p{1.2in}') 
-}
-
-
-# Model 3
-if (n_models == 3) {
-  SPRratio_Exploit_mod3.table = xtable(SPRratio_Exploit_mod3, 
-                                       caption=c(paste('Recent trend in spawning potential 
-                                        ratio and exploitation for ', spp, ' in the ', 
-                                                       mod3_label,'.  Relative fishing intensity is (1-SPR) 
-                                        divided by 50\\% (the SPR target) and exploitation 
-                                        is catch divided by age 2+ biomass.',sep='')), 
-                                       label='tab:SPR_Exploit_mod3')  
-  
-  align(SPRratio_Exploit_mod3.table) = c('l','l',
-                                         '>{\\centering}p{1in}',
-                                         '>{\\centering}p{1.2in}',
-                                         '>{\\centering}p{1in}',
-                                         '>{\\centering}p{1.2in}') 
-}
-
 # =============================================================================
 # Reference points ------------------------------------------------------------
 
@@ -495,7 +401,7 @@ for (model in 1:n_models) {
   # Rbind all of the data for the big summary reference table  
   Ref_pts = rbind (
     SSB_Unfished    = mod$derived_quants[grep('SSB_I', mod$derived_quants$Label), ],
-    TotBio_Unfished = mod$derived_quants[grep('TotBio', mod$derived_quants$Label, ignore.case=TRUE), ],
+    TotBio_Unfished = mod$derived_quants[grep('SmryBio', mod$derived_quants$Label, ignore.case=TRUE), ],
     Recr_Unfished   = mod$derived_quants[grep('Recr_I', mod$derived_quants$Label), ],
     SSB_lastyr      = mod$derived_quants[grep(paste0('SSB_', LastYR), mod$derived_quants$Label), ],
     Depletion_lastyr= mod$derived_quants[grep(paste0('Bratio_', LastYR), mod$derived_quants$Label), ],
@@ -523,10 +429,10 @@ for (model in 1:n_models) {
   Ref_pts$places  = ifelse(Ref_pts$Value >= 1, 
                            nchar(round(Ref_pts$Value)), NA) 
   
-  Ref_pts$Value1  = ifelse((Ref_pts$Value >= 1 & Ref_pts$Label !='TotBio_Unfished'), 
-                           comma(ifelse(nchar(round(Ref_pts$Value))>4, 
+  Ref_pts$Value1  = ifelse((Ref_pts$Value >= 1 & Ref_pts$Label !='SmryBio_unfished'), 
+                           comma(ifelse(nchar(round(Ref_pts$Value))>5, 
                                         Ref_pts$Value/10^(nchar(round(Ref_pts$Value))-4), Ref_pts$Value), big.mark=','), 
-                           ifelse(Ref_pts$Label == 'TotBio_Unfished', comma(Ref_pts$Value, big.mark=','), 
+                           ifelse(Ref_pts$Label == 'SmryBio_unfished', comma(Ref_pts$Value, big.mark=','), 
                                   round(Ref_pts$Value, 3)))  
   
   
@@ -535,16 +441,16 @@ for (model in 1:n_models) {
   Ref_pts$upperCI  = round(Ref_pts$Value - qnorm(0.025) * Ref_pts$StdDev, digits = 3)
   
   
-  Ref_pts$lowerCI1 = ifelse((abs(Ref_pts$lowerCI) >= 1 & Ref_pts$Label !='TotBio_Unfished'), 
-                            comma(ifelse(nchar(round(Ref_pts$lowerCI))>4, 
+  Ref_pts$lowerCI1 = ifelse((abs(Ref_pts$lowerCI) >= 1 & Ref_pts$Label !='SmryBio_unfished'), 
+                            comma(ifelse(nchar(round(Ref_pts$lowerCI))>5, 
                                          Ref_pts$lowerCI/10^(nchar(round(Ref_pts$lowerCI))-4), Ref_pts$lowerCI), big.mark=','), 
-                            ifelse(Ref_pts$Label == 'TotBio_Unfished', comma(Ref_pts$lowerCI, big.mark=','), 
+                            ifelse(Ref_pts$Label == 'SmryBio_unfished', comma(Ref_pts$lowerCI, big.mark=','), 
                                    round(Ref_pts$lowerCI, 3)))  
   
-  Ref_pts$upperCI1 = ifelse((Ref_pts$upperCI >= 1 & Ref_pts$Label !='TotBio_Unfished'), 
-                            comma(ifelse(nchar(round(Ref_pts$upperCI))>4, 
+  Ref_pts$upperCI1 = ifelse((Ref_pts$upperCI >= 1 & Ref_pts$Label !='SmryBio_unfished'), 
+                            comma(ifelse(nchar(round(Ref_pts$upperCI))>5, 
                                          Ref_pts$upperCI/10^(nchar(round(Ref_pts$upperCI))-4), Ref_pts$upperCI), big.mark=','), 
-                            ifelse(Ref_pts$Label == 'TotBio_Unfished', comma(Ref_pts$upperCI, big.mark=','), 
+                            ifelse(Ref_pts$Label == 'SmryBio_unfished', comma(Ref_pts$upperCI, big.mark=','), 
                                    round(Ref_pts$upperCI, 3)))  
   
   
@@ -602,33 +508,6 @@ align(Ref_pts_mod1.table) = c('l',
                               '>{\\raggedleft}p{.62in}')  
 
 
-# Model 2
-if (n_models >= 2) {
-  Ref_pts_mod2.table = xtable(Ref_pts_mod2, 
-                              caption=c(paste('Summary of reference points 
-                                      and management quantities for the base case ', 
-                                              mod2_label, '.', sep = '')),  
-                              label='tab:Ref_pts_mod2') 
-  # Add alignment      
-  align(Ref_pts_mod2.table) = c('l',
-                                '>{\\raggedright}p{4.1in}',
-                                '>{\\centering}p{.65in}',
-                                '>{\\centering}p{1.4in}')  
-}
-
-# Model 3
-if (n_models == 3) {
-  Ref_pts_mod3.table = xtable(Ref_pts_mod3, 
-                              caption=c(paste('Summary of reference points 
-                                      and management quantities for the base 
-                                      case ', mod3_label, '.',sep='')), 
-                              label='tab:Ref_pts_mod3')  
-  # Add alignment      
-  align(Ref_pts_mod3.table) = c('l',
-                                '>{\\raggedright}p{4.1in}',
-                                '>{\\centering}p{.65in}',
-                                '>{\\centering}p{1.4in}')  
-}
 
 # =============================================================================
 # Management performance ------------------------------------------------------
@@ -733,7 +612,7 @@ colnames(decision_mod1) = c('',
                             '%Unfished')
 
 decision_mod1.table = xtable(decision_mod1, 
-    caption = c(paste0('Summary of 12-year projections beginning in ', LastYR,
+    caption = c(paste0('Summary of 12-year projections beginning in 2019',
         ' for alternate states of nature based the axis of uncertainty for the model.',
         ' Columns range over low, mid, and high states of nature, and rows range over different', 
         ' assumptions of catch levels.')), 
@@ -798,59 +677,6 @@ mod1_summary = cbind(SPRratio_Exploit_mod1,
                      SpawnDeplete_mod1,
                      Recruittab_mod1)
 
-# Model 2
-if (n_models >= 2) {
-  # SPR ratio and exploitation
-  SPRratio_Exploit_mod2 = SPRratio_Exploit_mod2[2:nrow(SPRratio_Exploit_mod2),c(2,4)]
-  SPRratio_Exploit_mod2[,c(1,2)] = round(SPRratio_Exploit_mod2[,c(1,2)],2)
-  #SPRratio_Exploit_mod2 = SPRratio_Exploit_mod2[-dim(SPRratio_Exploit_mod2)[1],]
-  SPRratio_Exploit_mod2 = rbind(SPRratio_Exploit_mod2,blanks)
-  rownames(SPRratio_Exploit_mod2)[10]='Lastyear'
-  
-  # Age 5+ biomass 
-  Age5biomass_mod2 = mod2$timeseries[,c('Yr','Bio_smry')]
-  Age5biomassyrs_mod2 = subset(Age5biomass_mod2, Yr>=(FirstYR) & Yr<=(LastYR))
-  Age5biomassyrs_mod2 = Age5biomassyrs_mod2[,2]
-  Age5biomassyrs_mod2 = round(Age5biomassyrs_mod2,2)
-  
-  # Spawning biomass and depltion
-  SpawnDeplete_mod2 = SpawnDeplete_mod2[,c(2:5)]
-  SpawnDeplete_mod2[,1] = round(SpawnDeplete_mod2[,1],0)
-  SpawnDeplete_mod2[,3] = round(SpawnDeplete_mod2[,3],2)
-  
-  # Recruitment 
-  Recruittab_mod2 = Recruittab_mod2[,c(2,3)]
-  
-  # BIND ALL DATA TOGETHER
-  mod2_summary = cbind(SPRratio_Exploit_mod2,Age5biomassyrs_mod2,SpawnDeplete_mod2,Recruittab_mod2)
-}
-
-# Model 3
-if (n_models == 3) {
-  # SPR ratio and exploitation
-  SPRratio_Exploit_mod3 = SPRratio_Exploit_mod3[2:nrow(SPRratio_Exploit_mod3),c(2,4)]
-  SPRratio_Exploit_mod3[,c(1,2)] = round(SPRratio_Exploit_mod3[,c(1,2)],2)
-  #SPRratio_Exploit_mod3 = SPRratio_Exploit_mod3[-dim(SPRratio_Exploit_mod3)[1],]
-  SPRratio_Exploit_mod3 = rbind(SPRratio_Exploit_mod3,blanks)
-  rownames(SPRratio_Exploit_mod3)[10]='Lastyear'
-  
-  # Age 5+ biomass 
-  Age5biomass_mod3 = mod3$timeseries[,c('Yr','Bio_smry')]
-  Age5biomassyrs_mod3 = subset(Age5biomass_mod3, Yr>=(FirstYR) & Yr<=(LastYR))
-  Age5biomassyrs_mod3 = Age5biomassyrs_mod3[,2]
-  Age5biomassyrs_mod3 = round(Age5biomassyrs_mod3,2)
-  
-  # Spawning biomass and depltion 
-  SpawnDeplete_mod3 = SpawnDeplete_mod3[,c(2:5)]
-  SpawnDeplete_mod3[,1] = round(SpawnDeplete_mod3[,1],0)
-  SpawnDeplete_mod3[,3] = round(SpawnDeplete_mod3[,3],2)
-  
-  # Recruitment 
-  Recruittab_mod3 = Recruittab_mod3[,c(2,3)]
-  
-  # BIND ALL DATA TOGETHER
-  mod3_summary = cbind(SPRratio_Exploit_mod3,Age5biomassyrs_mod3,SpawnDeplete_mod3,Recruittab_mod3)
-}
 
 # -----------------------------------------------------------------------------    
 # CREATE TABLES BASED ON HOW MANY MODELS AND MANAGEMENT AREAS YOU HAVE
@@ -897,144 +723,6 @@ if (n_models == 1) {
                                 '>{\\centering}p{1.1in}',
                                 '>{\\centering}p{1.1in}')
 }
-# TWO MODELS
-if (n_models == 2) {
-  # Bind data from all three models together
-  base_summary1 = as.data.frame(cbind(mngmt,mod1_summary, mod2_summary))
-  
-  
-  # Transpose the dataframe to create the table and create data labels  
-  base_summary = as.data.frame(t(base_summary1))
-  base_summary$names=c('Landings (mt)',
-                       'Total Est. Catch (mt)',
-                       'OFL (mt)', 
-                       'ACL (mt)',
-                       
-                       '(1-$SPR$)(1-$SPR_{50\\%}$)',
-                       'Exploitation rate',
-                       paste('Age ',min_age,' biomass (mt)',sep=''),
-                       'Spawning Output',
-                       '~95\\% CI',
-                       '%Unfished',
-                       '~95\\% CI',
-                       'Recruits',
-                       '~95\\% CI',
-                       
-                       '(1-$SPR$)(1-$SPR_{50\\%}$)',
-                       'Exploitation rate',
-                       paste('Age ',min_age,' biomass (mt)',sep=''),
-                       'Spawning Output',
-                       '~95\\% CI',
-                       '%Unfished',
-                       '~95\\% CI',
-                       'Recruits',
-                       '~95\\% CI')
-  
-  base_summary$region = c('','','','',
-                          'Model 1','Base Case','','','','','','','',
-                          'Model 2','Base Case','','','','','','','' )
-  
-  base_summary = base_summary[,c(ncol(base_summary),
-                                 (ncol(base_summary)-1),
-                                 1:(ncol(base_summary)-2))]
-  
-  colnames(base_summary) = c('Model Region','Quantity',seq(FirstYR+1,LastYR+1))
-  
-  # # Create the table
-  base_summary.table = xtable(base_summary, caption=c(paste(spp,' base case results summary.',sep='')),
-                              label='tab:base_summary',digits=0)
-  # # Add alignment   
-  align(base_summary.table) = c('l',
-                                'r',
-                                'r',
-                                '>{\\centering}p{1.1in}',
-                                '>{\\centering}p{1.1in}',
-                                '>{\\centering}p{1.1in}',
-                                '>{\\centering}p{1.1in}',
-                                '>{\\centering}p{1.1in}',
-                                '>{\\centering}p{1.1in}',
-                                '>{\\centering}p{1.1in}',
-                                '>{\\centering}p{1.1in}',
-                                '>{\\centering}p{1.1in}',
-                                '>{\\centering}p{1.1in}')
-}
-#THREE MODELS 
-if (n_models == 3) {
-  # Bind data from all three models together
-  base_summary1 = as.data.frame(cbind(mngmt, mod1_summary, mod2_summary, mod3_summary))
-  
-  
-  # Transpose the dataframe to create the table and create data labels  
-  base_summary = as.data.frame(t(base_summary1))
-  
-  base_summary$names=c('Landings (mt)',
-                       'Total Est. Catch (mt)',
-                       'OFL (mt)', 
-                       'ACL (mt)',
-                       
-                       '(1-$SPR$)(1-$SPR_{50\\%}$)',
-                       'Exploitation rate',
-                       paste('Age ',min_age,' biomass (mt)',sep=''),
-                       'Spawning Output',
-                       '~95\\% CI',
-                       '%Unfished',
-                       '~95\\% CI',
-                       'Recruits',
-                       '~95\\% CI',
-                       
-                       '(1-$SPR$)(1-$SPR_{50\\%}$)',
-                       'Exploitation rate',
-                       paste('Age ',min_age,' biomass (mt)',sep=''),
-                       'Spawning Output',
-                       '~95\\% CI',
-                       '%Unfished',
-                       '~95\\% CI',
-                       'Recruits',
-                       '~95\\% CI',
-                       
-                       '(1-$SPR$)(1-$SPR_{50\\%}$)',
-                       'Exploitation rate',
-                       paste('Age ',min_age,' biomass (mt)',sep=''),
-                       'Spawning Output',
-                       '~95\\% CI',
-                       '%Unfished',
-                       '~95\\% CI',
-                       'Recruits',
-                       '~95\\% CI')
-  
-  base_summary$region = c('','','','',
-                          'Model 1','Base Case','','','','','','','',
-                          'Model 2','Base Case','','','','','','','',
-                          'Model 3','Base Case','','','','','','','')
-  
-  base_summary = base_summary[,c(ncol(base_summary),
-                                 (ncol(base_summary)-1),
-                                 1:(ncol(base_summary)-2))]
-  
-  colnames(base_summary) = c('Model Region','Quantity',seq(FirstYR+1,LastYR+1))
-  
-  
-  
-  # Create the table
-  base_summary.table = xtable(base_summary, caption=c('Base case results summary.'), 
-                              label='tab:base_summary',digits=0) 
-  # Add alignment   
-  align(base_summary.table) = c('l',
-                                'r',
-                                'r', 
-                                '>{\\centering}p{1.1in}', 
-                                '>{\\centering}p{1.1in}', 
-                                '>{\\centering}p{1.1in}', 
-                                '>{\\centering}p{1.1in}', 
-                                '>{\\centering}p{1.1in}', 
-                                '>{\\centering}p{1.1in}', 
-                                '>{\\centering}p{1.1in}', 
-                                '>{\\centering}p{1.1in}', 
-                                '>{\\centering}p{1.1in}', 
-                                '>{\\centering}p{1.1in}')  
-  
-}
-
 
 
 ################################################################################################################################################################
