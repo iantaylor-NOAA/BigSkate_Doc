@@ -6,7 +6,7 @@
 if(Sys.info()["user"] == "Ian.Taylor"){
   dir.outer <- c('c:/SS/skates/models')
 }
-dir.sensitivities <- file.path(dir.outer, "sensitivity.bigskate82")
+dir.sensitivities <- file.path(dir.outer, "sensitivity.bigskate99")
 
 
 ################
@@ -53,8 +53,8 @@ convert.offsets <- function(tab){
 ## which things to read from the model output
 
 thingnames <- c("Recr_Virgin", "R0", "NatM", "Linf",
-    "LnQ_base_WCGBTS",
-    "SSB_Virg", "SSB_2019",
+                "LnQ_base_WCGBTS",
+                "SSB_Virg", "SSB_2019",
                 "Bratio_2019", "SPRratio_2018", "Ret_Catch_MSY", "Dead_Catch_MSY",
                 "Totbio_unfished", "OFLCatch_2021")
 likenames = c("TOTAL", "Survey", "Length_comp", "Age_comp",
@@ -65,21 +65,51 @@ likenames = c("TOTAL", "Survey", "Length_comp", "Age_comp",
 if(FALSE){
 
 # getbs function from /BigSkate_Doc/R/BigSkate_functions.R
-#getbs(82, sensname="sel1")
-getbs(82, sensname="sel2")
-getbs(82, sensname="sel3")
-getbs(82, sensname="Q1")
-getbs(82, sensname="Q2")
+if(!exists("getbs")){
+  source('c:/SS/skates/BigSkate_Doc/R/BigSkate_functions.R')
+}
+getbs(99)
 
-sens.sum_sel_and_Q <- SSsummarize(list(bs82, #bs82sel1,
-                                       bs82sel2, bs82sel3,
-                                       bs82Q1, bs82Q2))
+#getbs(99, sensname="sel1")
+getbs(99, sensname="sel2") # all domed
+getbs(99, sensname="sel3") # no fem offset
+getbs(99, sensname="sel4") # annual blocks
+getbs(99, sensname="Q1") # no prior
+getbs(99, sensname="Q2") # request 6 half prior
+getbs(99, sensname="Q7") # old longnose prior
+# sel4 is annual blocks instead of grouping 2002-2004, with higher discards in 1995-2002
+sum(bs99sel4$catch$kill_bio)
+#[1] 36270.45
+sum(bs99$catch$kill_bio)
+#[1] 34818.48
+# change in total dead biomass as a result of annual blocks
+sum(bs99sel4$catch$kill_bio)/sum(bs99$catch$kill_bio)
+#[1] 1.041701
+
+
+SS_plots(bs99sel4,
+         fleetnames=c("Fishery",
+             "Discard (historical)",
+             "Fishery (historical)",
+             "Fishery (tribal)",
+             "WCGBT Survey",
+             "Triennial Survey"),
+         pwidth = 5.2,
+         pheight = 4,
+         plot = 9:10)
+sum(bs99sel4$catch$kill_bio[bs99sel4$catch$Yr%in% 1995:2002])/
+  sum(bs99$catch$kill_bio[bs99$catch$Yr%in% 1995:2002])
+## [1] 1.597286
+
+sens.sum_sel_and_Q <- SSsummarize(list(bs99,
+                                       bs99sel2, bs99sel3,
+                                       bs99Q7, bs99Q1, bs99Q2))
 sens.names_sel_and_Q <- c("Base model",
-                          #"Sel all asymptotic",
-                          "Sel all domed",
-                          "Sel no sex offset",
-                          "Q no prior on WCGBTS",
-                          "Q no offset on triennial")
+                          "Sel. all domed",
+                          "Sel. no sex offset",
+                          "Longnose Skate q prior",
+                          "No q prior on WCGBTS",
+                          "No q offset on triennial")
 # make table of model results
 sens.table_sel_and_Q <-
     SStableComparisons(sens.sum_sel_and_Q,
@@ -119,22 +149,43 @@ file.copy(file.path(dir.sensitivities, "sens.sel_and_Q_compare1_spawnbio.png"),
                     "sens.sel_and_Q_compare1_spawnbio.png"),
           overwrite=TRUE)
 
+SSplotComparisons(sens.sum_sel_and_Q,
+                  plot = FALSE,
+                  print = TRUE,
+                  subplot = c(1,11),
+                  pwidth = 5.2,
+                  pheight = 4,
+                  legendloc = 'right',
+                  filenameprefix = "sens.sel_and_Q_4x5_",
+                  legendlabels = sens.names_sel_and_Q,
+                  plotdir = dir.sensitivities)
+file.copy(file.path(dir.sensitivities, "sens.sel_and_Q_4x5_compare1_spawnbio.png"),
+          file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
+                    "sens.sel_and_Q_4x5_compare1_spawnbio.png"),
+          overwrite=TRUE)
 
 ############# sensitivities to miscellaneous things
 
-getbs(82, sensname="misc1")
-getbs(82, sensname="misc2")
-getbs(82, sensname="misc4")
-getbs(82, sensname="rec2")
+getbs(99, sensname="misc1")
+getbs(99, sensname="misc2")
+getbs(99, sensname="misc4")
+getbs(99, sensname="rec2")
+getbs(99, sensname="rec4") # no Q prior
 
-sens.sum_misc <- SSsummarize(list(bs82,
-                                  bs82misc1, bs82misc2, bs82misc4,
-                                  bs82rec2))
+sens.sum_misc <- SSsummarize(list(bs99,
+                                  bs99misc1, bs99misc2, bs99misc4, #bs99misc5,
+                                  bs99rec2, bs99rec4))
+                                  #bs99misc7, bs99misc9,
+                                  #bs99))
 sens.names_misc <- c("Base model",
                      "McAllister-Ianelli tuning",
                      "Dirichlet-Multinomial tuning",
-                     "No extra index std. dev.",
-                     "Recruitment deviations")
+                     "No extra index SD",
+                     "Estimated recruitment deviations",
+                     "Estimated rec. devs. with no q prior")
+                     #"No extra index SD on WCGBTS",
+                     #"D-M tuning + No extra SD on WCGBTS",
+                     #"New prior but assume 1% and 99% quantiles")
 
 # make table of model results
 sens.table_misc <-
@@ -144,7 +195,7 @@ sens.table_misc <-
                      likenames = likenames,
                      csv=TRUE,
                      csvdir = dir.sensitivities,
-                     csvfile = "comparison_table_sens.82.csv"
+                     csvfile = "comparison_table_sens.99.csv"
                      )
 
 # convert some things to new units (non-log or non-offset)
@@ -167,23 +218,66 @@ SSplotComparisons(sens.sum_misc,
                   print = TRUE,
                   filenameprefix = "sens.misc_",
                   legendlabels = sens.names_misc,
+                  legendloc = 'bottomleft',
+                  indexfleets = 5,
                   plotdir = dir.sensitivities)
 file.copy(file.path(dir.sensitivities, "sens.misc_compare1_spawnbio.png"),
           file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
                     "sens.misc_compare1_spawnbio.png"),
           overwrite=TRUE)
 
+SSplotComparisons(sens.sum_misc,
+                  plot = FALSE,
+                  print = TRUE,
+                  subplot = c(1,11),
+                  pwidth = 5.2,
+                  pheight = 4,
+                  indexfleets = 5,
+                  legendloc = 'bottomleft',
+                  filenameprefix = "sens.misc_4x5_",
+                  legendlabels = sens.names_misc,
+                  plotdir = dir.sensitivities)
+file.copy(file.path(dir.sensitivities, "sens.misc_4x5_compare1_spawnbio.png"),
+          file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
+                    "sens.misc_4x5_compare1_spawnbio.png"),
+          overwrite=TRUE)
+
+## ############# extra plots for review
+## sens.sum_misc2 <- SSsummarize(list(bs99,
+##                                   bs99rec2, bs99rec4))
+## sens.names_misc2 <- c("Base model",
+##                       "Recruitment deviations",
+##                       "Recruitment deviations & no Q prior")
+## SSplotComparisons(sens.sum_misc2,
+##                   plot = FALSE,
+##                   print = TRUE,
+##                   indexfleets = 5,
+##                   indexUncertainty = TRUE,
+##                   pwidth = 5.2,
+##                   pheight = 4,
+##                   legendloc = 'bottomleft',
+##                   filenameprefix = "sens.misc2_4x5_",
+##                   legendlabels = sens.names_misc2,
+##                   plotdir = dir.sensitivities)
+## file.copy(file.path(dir.sensitivities, "sens.misc2_4x5_compare1_spawnbio.png"),
+##           file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
+##                     "sens.misc2_4x5_compare1_spawnbio.png"),
+##           overwrite=TRUE)
+
 
 ############# sensitivities to biology things
-getbs(82, sensname="bio1")
-getbs(82, sensname="bio2")
-getbs(82, sensname="bio3")
-getbs(82, sensname="bio4")
+getbs(99, sensname="bio1_")
+bs99bio1 <- bs99bio1_
+getbs(99, sensname="bio2")
+getbs(99, sensname="bio3")
+getbs(99, sensname="bio4")
+getbs(99, sensname="bio12")
 
 
-sens.sum_bio <- SSsummarize(list(bs82, bs82bio1,
-                                 bs82bio2, bs82bio3,
-                                 bs82bio4))
+sens.sum_bio <- SSsummarize(list(bs99, 
+                                 bs99bio1,
+                                 bs99bio2, bs99bio3,
+                                 bs99bio12))
 sens.names_bio <- c("Base model",
                     "Separate M by sex",
                     "No M prior",
@@ -198,16 +292,16 @@ sens.table_bio <-
                        likenames = likenames,
                        csv=TRUE,
                        csvdir = dir.sensitivities,
-                       csvfile = "comparison_table_sens.82.csv"
+                       csvfile = "comparison_table_sens.99.csv"
                        )
 
 # add in Richards and vonB growth values
 sens.table_bio[grep("Linf", sens.table_bio$Label),
                         1 + grep("Richards", sens.names_bio)] <- 
-                          bs82bio4$Growth_Parameters$Linf
+                          bs99bio12$Growth_Parameters$Linf
 sens.table_bio[grep("Linf", sens.table_bio$Label),
                         1 + grep("von", sens.names_bio)] <- 
-                          bs82bio3$Growth_Parameters$Linf
+                          bs99bio3$Growth_Parameters$Linf
 
 
 # convert some things to new units (non-log or non-offset)
@@ -227,18 +321,34 @@ file.copy(file.path(dir.sensitivities, "Sensitivities_bio.csv"),
           overwrite=TRUE)
 
 # Richards growth didn't converge, so replacing timeseries to get plot
-sens.sum_bio$SpawnBio$model5 <- bs82bio4$timeseries$SpawnBio
+sens.sum_bio$SpawnBio$model5 <- bs99bio12$timeseries$SpawnBio
 
 SSplotComparisons(sens.sum_bio,
                   print = TRUE,
                   filenameprefix = "sens.bio_",
                   legendlabels = sens.names_bio,
+                  legendloc = 'bottomleft',
+                  indexfleets = 5,
                   plotdir = dir.sensitivities)
 file.copy(file.path(dir.sensitivities, "sens.bio_compare1_spawnbio.png"),
           file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
                     "sens.bio_compare1_spawnbio.png"),
           overwrite=TRUE)
 
+SSplotComparisons(sens.sum_bio,
+                  plot = FALSE,
+                  print = TRUE,
+                  subplot = c(1,11),
+                  legendloc = 'bottomleft',
+                  pwidth = 5.2,
+                  pheight = 4,
+                  filenameprefix = "sens.bio_4x5_",
+                  legendlabels = sens.names_bio,
+                  plotdir = dir.sensitivities)
+file.copy(file.path(dir.sensitivities, "sens.bio_4x5_compare1_spawnbio.png"),
+          file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
+                    "sens.bio_4x5_compare1_spawnbio.png"),
+          overwrite=TRUE)
 
 plot_growth_curve_comparison <- function(){
   png(file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
@@ -252,7 +362,7 @@ plot_growth_curve_comparison <- function(){
   mtext(side=1, line=2.5, outer=TRUE, text="Age (yr)")
   mtext(side=2, line=2.5, outer=TRUE, text="Length (cm)", las=0)
   # add growth curves
-  SSplotBiology(bs82, subplot=1, add=TRUE, legendloc=FALSE)
+  SSplotBiology(bs99, subplot=1, add=TRUE, legendloc=FALSE)
   # add legend, grid, and outer box
   axis(1)
   grid()
@@ -263,7 +373,7 @@ plot_growth_curve_comparison <- function(){
   # make empty plot for Growth Pattern 2 (to ensure consistent dimensions)
   plot(0, type='n', xlim=c(0,20), ylim=c(0,277.75), xaxs='i', yaxs='i', axes=FALSE)
   # add growth curves 
-  SSplotBiology(bs82bio3, subplot=1, add=TRUE, legendloc=FALSE)
+  SSplotBiology(bs99bio3, subplot=1, add=TRUE, legendloc=FALSE)
   # add legend, grid, and outer box
   axis(1)
   grid()
@@ -273,7 +383,7 @@ plot_growth_curve_comparison <- function(){
   # make empty plot for Growth Pattern 3 (to ensure consistent dimensions)
   plot(0, type='n', xlim=c(0,20), ylim=c(0,277.75), xaxs='i', yaxs='i', axes=FALSE)
   # add growth curves 
-  SSplotBiology(bs82bio4, subplot=1, add=TRUE, legendloc=FALSE)
+  SSplotBiology(bs99bio12, subplot=1, add=TRUE, legendloc=FALSE)
   # add legend, grid, and outer box
   axis(1)
   grid()
@@ -287,14 +397,15 @@ plot_growth_curve_comparison()
 
 #### catch sensitivities
 
-getbs(82, sensname="catch1")
-getbs(82, sensname="catch2")
-getbs(82, sensname="catch3")
-getbs(82, sensname="catch4")
-getbs(82, sensname="catch5")
+getbs(99, sensname="catch1")
+getbs(99, sensname="catch2")
+getbs(99, sensname="catch3")
+getbs(99, sensname="catch4")
+getbs(99, sensname="catch5")
+getbs(99, sensname="catch6")
 
-sens.sum_catch <- SSsummarize(list(bs82, bs82catch1, bs82catch2,
-                                   bs82catch3, bs82catch4, bs82catch5))
+sens.sum_catch <- SSsummarize(list(bs99, bs99catch1, bs99catch2,
+                                   bs99catch3, bs99catch4, bs99catch5))
 sens.names_catch <- c("Base model",
                       "Discards based on 3yr averages",
                       "Discard mortality = 0.4",
@@ -310,7 +421,7 @@ sens.table_catch <-
                        likenames = likenames,
                        csv=TRUE,
                        csvdir = dir.sensitivities,
-                       csvfile = "comparison_table_sens.82.csv"
+                       csvfile = "comparison_table_sens.99.csv"
                        )
 
 # convert some things to new units (non-log or non-offset)
@@ -333,6 +444,7 @@ file.copy(file.path(dir.sensitivities, "Sensitivities_catch.csv"),
 SSplotComparisons(sens.sum_catch,
                   print = TRUE,
                   filenameprefix = "sens.catch_",
+                  legendloc = 'bottomleft',
                   legendlabels = sens.names_catch,
                   plotdir = dir.sensitivities)
 
@@ -345,6 +457,35 @@ SSplotComparisons(sens.sum_catch, subplot=11,
                   legendlabels = sens.names_catch,
                   plotdir = dir.sensitivities)
 
+sens.sum_catchB <- SSsummarize(list(bs99, bs99catch4, bs99catch5))
+SSplotComparisons(sens.sum_catchB,
+                  col = rich.colors.short(7)[1+c(1,5,6)],
+                  subplot = c(2,4),
+                  print = TRUE,
+                  filenameprefix = "sens.catchB_",
+                  legendlabels = sens.names_catch[c(1,5,6)],
+                  plotdir = dir.sensitivities)
+SSplotComparisons(sens.sum_catchB,
+                  col = rich.colors.short(7)[1+c(1,5,6)],
+                  subplot = c(2,4),
+                  pwidth=5.2,
+                  pheight=4,
+                  print = TRUE,
+                  filenameprefix = "sens.catchB_4x5",
+                  legendlabels = sens.names_catch[c(1,5,6)],
+                  plotdir = dir.sensitivities)
+sens.sum_catchC <- SSsummarize(list(bs99, bs99catch4, bs99catch5, bs99catch6))
+SSplotComparisons(sens.sum_catchC,
+                  col = c(rich.colors.short(7)[1+c(1,5,6)],'purple'),
+                  subplot = c(2,4),
+                  pwidth=5.2,
+                  pheight=4,
+                  print = TRUE,
+                  filenameprefix = "sens.catchC_4x5",
+                  legendlabels = c(sens.names_catch[c(1,5,6)],
+                                           "Trend in F from Petrale Sole (no Q prior)"),
+                  plotdir = dir.sensitivities)
+
 # copy to document repository
 file.copy(file.path(dir.sensitivities, "sens.catch_compare1_spawnbio.png"),
           file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
@@ -355,6 +496,25 @@ file.copy(file.path(dir.sensitivities, "sens.catch_compare11_indices_flt5.png"),
                     "sens.catch_compare11_indices_flt5.png"),
           overwrite=TRUE)
 
+# plot for presentations
+SSplotComparisons(sens.sum_catch,
+                  plot = FALSE,
+                  print = TRUE,
+                  subplot = c(1,11),
+                  pwidth = 5.2,
+                  pheight = 4,
+                  indexfleets = 5,
+                  legendloc = 'bottomleft',
+                  filenameprefix = "sens.catch_4x5_",
+                  legendlabels = sens.names_catch,
+                  plotdir = dir.sensitivities)
+file.copy(file.path(dir.sensitivities, "sens.catch_4x5_compare1_spawnbio.png"),
+          file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
+                    "sens.catch_4x5_compare1_spawnbio.png"),
+          overwrite=TRUE)
+
+
+
 
 # make catch plot
 fleetnames_catch <- c("Fishery (current)",
@@ -363,20 +523,24 @@ fleetnames_catch <- c("Fishery (current)",
                       "Fishery (tribal)",
                       "WCGBTS",
                       "Triennial")
-SS_plots(bs82catch4, plot=7,
+SS_plots(bs99catch4, plot=7,
          fleetnames = fleetnames_catch)
-file.copy(file.path(bs82catch4$inputs$dir,
+file.copy(file.path(bs99catch4$inputs$dir,
                     "plots/catch3 observed and expected landings (if different).png"),
           file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
-                    "catch_multiplier_catch_comparison.png"))
-file.copy(file.path(bs82catch4$inputs$dir,
+                    "catch_multiplier_catch_comparison.png"),
+          overwrite = TRUE)
+file.copy(file.path(bs99catch4$inputs$dir,
                     "plots/catch5 total catch (including discards) stacked.png"),
           file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
-                    "catch_multiplier_total_catch.png"))
-file.copy(file.path(bs82catch4$inputs$dir,
+                    "catch_multiplier_total_catch.png"),
+          overwrite = TRUE)
+file.copy(file.path(bs99catch4$inputs$dir,
                     "plots/catch5 total catch (including discards) stacked.png"),
           file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
-                    "catch_multiplier_total_catch.png"))
+                    "catch_multiplier_total_catch.png"),
+          overwrite = TRUE)
+
 
 
 fleetnames_catch <- c("Fishery (current)",
@@ -385,29 +549,31 @@ fleetnames_catch <- c("Fishery (current)",
                       "Fishery (tribal)",
                       "WCGBTS",
                       "Triennial")
-SS_plots(bs82catch5, plot=7,
+SS_plots(bs99catch5, plot=7,
          fleetnames = fleetnames_catch)
-file.copy(file.path(bs82catch5$inputs$dir,
+file.copy(file.path(bs99catch5$inputs$dir,
                     "plots/catch3 observed and expected landings (if different).png"),
           file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
-                    "catch_petraleF_catch_comparison.png"))
-file.copy(file.path(bs82catch5$inputs$dir,
+                    "catch_petraleF_catch_comparison.png"),
+          overwrite = TRUE)
+file.copy(file.path(bs99catch5$inputs$dir,
                     "plots/catch5 total catch (including discards) stacked.png"),
           file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
-                    "catch_petraleF_total_catch.png"))
+                    "catch_petraleF_total_catch.png"),
+          overwrite = TRUE)
 
-catch0 <- SSplotCatch(bs82, print=FALSE, plot=FALSE)
+catch0 <- SSplotCatch(bs99, print=FALSE, plot=FALSE)
 yrs <- catch0$totcatchmat$Yr
 totcatch0 <- apply(catch0$totcatchmat[,1:4], MARGIN = 1, FUN = sum)
-catch1 <- SSplotCatch(bs82catch1, print=FALSE, plot=FALSE)
+catch1 <- SSplotCatch(bs99catch1, print=FALSE, plot=FALSE)
 totcatch1 <- apply(catch1$totcatchmat[,1:4], MARGIN = 1, FUN = sum)
-catch2 <- SSplotCatch(bs82catch2, print=FALSE, plot=FALSE)
+catch2 <- SSplotCatch(bs99catch2, print=FALSE, plot=FALSE)
 totcatch2 <- apply(catch2$totcatchmat[,1:4], MARGIN = 1, FUN = sum)
-catch3 <- SSplotCatch(bs82catch3, print=FALSE, plot=FALSE)
+catch3 <- SSplotCatch(bs99catch3, print=FALSE, plot=FALSE)
 totcatch3 <- apply(catch3$totcatchmat[,1:4], MARGIN = 1, FUN = sum)
-catch4 <- SSplotCatch(bs82catch4, print=FALSE, plot=FALSE)
+catch4 <- SSplotCatch(bs99catch4, print=FALSE, plot=FALSE)
 totcatch4 <- apply(catch4$totcatchmat[,1:4], MARGIN = 1, FUN = sum)
-catch5 <- SSplotCatch(bs82catch5, print=FALSE, plot=FALSE)
+catch5 <- SSplotCatch(bs99catch5, print=FALSE, plot=FALSE)
 totcatch5 <- apply(catch5$totcatchmat[,1:4], MARGIN = 1, FUN = sum)
 
 cols <- rich.colors.short(7)[-1]
@@ -436,17 +602,17 @@ png(file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
     res=300, units='in', width=6.5, height=5, pointsize=10)
 #par(mar=c(4,4,1,1))
 F_index2 <- read.csv('C:/ss/skates/models/sensitivity.bigskate82/petrale_F_index2.csv')
-F_est_agg0 <- aggregate(bs82$catch$F, by=list(bs82$catch$Yr), FUN=sum)
-F_est_agg4 <- aggregate(bs82catch4$catch$F, by=list(bs82catch4$catch$Yr), FUN=sum)
-F_est_agg5 <- aggregate(bs82catch5$catch$F, by=list(bs82catch5$catch$Yr), FUN=sum)
-## plot(bs82catch5$catch$Yr[bs82catch5$catch$Fleet==2],
-##      bs82catch5$catch$F[bs82catch5$catch$Fleet==2], type='l')
+F_est_agg0 <- aggregate(bs99$catch$F, by=list(bs99$catch$Yr), FUN=sum)
+F_est_agg4 <- aggregate(bs99catch4$catch$F, by=list(bs99catch4$catch$Yr), FUN=sum)
+F_est_agg5 <- aggregate(bs99catch5$catch$F, by=list(bs99catch5$catch$Yr), FUN=sum)
+## plot(bs99catch5$catch$Yr[bs99catch5$catch$Fleet==2],
+##      bs99catch5$catch$F[bs99catch5$catch$Fleet==2], type='l')
 plot(F_est_agg0, type='l', lwd=2,
      xlab="Year", ylab="Instantaneous fishing mortality (F)",
      xlim = c(1916, 2018), ylim = c(0,0.085), yaxs='i', col=cols[1])
 lines(F_est_agg4, type='l', lwd=2, col=cols[5])
 lines(F_est_agg5, type='l', lwd=2, col=cols[6])
-lines(F_index$F_table.Yr, F_index$obs/bs82catch5$cpue$Calc_Q[1], col='purple', lty=3, lwd=2)
+lines(F_index2$F_table.Yr, F_index2$obs/bs99catch5$cpue$Calc_Q[1], col='purple', lty=3, lwd=2)
 rect(1950,0,1994,1, col=gray(0,0.1), border=NA)
 legend('topleft', lty=c(1,1,1,3), lwd=3, col=c(cols[c(1,5,6)],'purple'),
        legend=c(sens.names_catch[c(1,5,6)], 'Petrale Sole time series (scaled by q)'),
@@ -463,28 +629,178 @@ dev.off()
 
 
 
+#### review panel results for time-varying M and 1980 start
+getbs(99, sensname="bio6")
+getbs(99, sensname="bio7")
+getbs(99, sensname="bio8")
+getbs(99, sensname="bio9")
+getbs(99, sensname="misc5")
+getbs(99, sensname="bio10")
+getbs(99, sensname="misc6")
+
+### new prior
+png(file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
+              'sens.1980start_comparisons.png'),
+    res=300, units='in', width=6.5, height=5, pointsize=10)
+
+SSplotComparisons(SSsummarize(list(bs99misc5, bs99misc6)),
+                  legendlabels=c(#"Pre-STAR Base",
+                      "Start in 1980 at fished equilibrium age structure",
+                      "Start in 1980 with flexible initial age structure"),
+                  plotdir = dir.sensitivities,
+                  plot = TRUE,
+                  print = FALSE,
+                  col = 2:3,
+                  subplot = 1,
+                  new = FALSE,
+                  legendloc = c(2.5e3, 1995),
+                  filenameprefix = "sens.1980start_")
+
+SSplotComparisons(SSsummarize(list(bs99)), #bs99misc5, bs99misc6)),
+                  legendlabels=c("Pre-STAR Base"),
+                      #"Start in 1980 at fished equilibrium age structure",
+                      #"Start in 1980 with flexible initial age structure"),
+                  col = 4,
+                  plotdir = dir.sensitivities,
+                  plot = TRUE,
+                  print = FALSE,
+                  subplot = 1,
+                  add = TRUE,
+                  new = FALSE,
+                  filenameprefix = "sens.1980start_")
+
+legend(legend = c("Start in 1980 at fished equilibrium age structure",
+           "Start in 1980 with flexible initial age structure"),
+       x = 2000, y = 2800,
+       col = 2:3,
+       bty='n',
+       lwd=2)
+
+dev.off()
+
+
+####
+
+
+### new prior
+SSplotComparisons(SSsummarize(list(bs99, bs99Q5)),
+                  legendlabels=c("Base","New prior on catchability"),
+                  densitynames=c("OFLCatch_2021","ForeCatch_2021"),
+                  plotdir = dir.sensitivities,
+                  plot = FALSE,
+                  print = TRUE,
+                  filenameprefix = "sens.Q_new_prior_")
+
+
+#### comparing estimates of natural mortality
+colvec <- rich.colors.short(6)[-1]
+plot(1916:2018, bs99bio6$MGparmAdj$NatM_p_1_Fem_GP_1[bs99bio6$MGparmAdj$Yr %in% 1916:2018],
+     ylim = c(0,0.7), yaxs='i', xlim=c(1916, 2018), #ylim=c(0, 0.6),
+     xlab="Year", ylab="Natural mortality",
+     type='l', lwd=2, col=colvec[1])
+lines(1916:2018, bs99bio7$MGparmAdj$NatM_p_1_Fem_GP_1[bs99bio7$MGparmAdj$Yr %in% 1916:2018],
+     type='l', lwd=2, col=colvec[2])
+lines(1916:2018, bs99bio8$MGparmAdj$NatM_p_1_Fem_GP_1[bs99bio8$MGparmAdj$Yr %in% 1916:2018],
+     type='l', lwd=2, col=colvec[3])
+lines(1916:2018, bs99bio9$MGparmAdj$NatM_p_1_Fem_GP_1[bs99bio9$MGparmAdj$Yr %in% 1916:2018],
+     type='l', lwd=2, col=colvec[4])
+lines(1916:2018, bs99bio10$MGparmAdj$NatM_p_1_Fem_GP_1[bs99bio10$MGparmAdj$Yr %in% 1916:2018],
+     type='l', lwd=2, col=colvec[5])
+
+SSplotComparisons(SSsummarize(list(bs99, bs99bio6, bs99bio7, bs99bio8, bs99bio9, bs99bio10)),
+                  #legendlabels=c("Base","New prior on catchability"),
+                  legendlabels = c("Base",paste0("Time-varying M option ", 1:5)),
+                  densitynames=c("OFLCatch_2021","ForeCatch_2021"),
+                  plotdir = dir.sensitivities,
+                  plot = FALSE,
+                  print = TRUE,
+                  legendloc = 'bottomright',
+                  indexfleets = 5,
+                  indexUncertainty = TRUE,
+                  filenameprefix = "sens.tv_M_")
+
+SSplotComparisons(SSsummarize(list(bs99, bs99bio6, bs99bio7, bs99bio8, bs99bio9, bs99bio10)),
+                  #legendlabels=c("Base","New prior on catchability"),
+                  legendlabels = c("Base",paste0("Time-varying M option ", 1:5)),
+                  densitynames=c("OFLCatch_2021","ForeCatch_2021"),
+                  plotdir = dir.sensitivities,
+                  plot = FALSE,
+                  print = TRUE,
+                  legendloc = 'topleft',
+                  indexfleets = 6,
+                  subplot = 11,
+                  indexUncertainty = TRUE,
+                  filenameprefix = "sens.tv_M_")
+
+SS_plots(bs99bio6)
+SS_plots(bs99bio7)
+SS_plots(bs99bio8)
+SS_plots(bs99bio9)
+SS_plots(bs99misc5)
+SS_plots(bs99bio10)
+SS_plots(bs99misc6)
+
+
+### new prior
+SSplotComparisons(SSsummarize(list(bs99, bs99Q5)),
+                  legendlabels=c("Base","New prior on catchability"),
+                  densitynames=c("OFLCatch_2021","ForeCatch_2021"),
+                  plotdir = dir.sensitivities,
+                  plot = FALSE,
+                  print = TRUE,
+                  filenameprefix = "sens.Q_new_prior_")
+
+
+### request #6
+# new prior value in non-log space
+exp(-0.355)
+## [1] 0.7011734
+# half that value
+exp(-0.355)*.5
+## [1] 0.3505867
+# half of q in log space
+log(exp(-0.355)*.5)
+## [1] -1.048147
+
+png(file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
+              'request6_prior_comparisons.png'),
+    res=300, units='in', width=6.5, height=6.5, pointsize=10)
+par(mfrow=c(3,1), mar=c(2,1,1,1), oma=c(3,0,0,0), cex=1);
+SSplotPars(bs99, string="LnQ_base_W", new=FALSE, newheaders = "New base model (prior q = 0.701)",
+           xlab = "Log-scale catchability of the WCGBT Survey: log(q)")
+SSplotPars(bs99Q6, string="LnQ_base_W", new=FALSE, newheaders = "Prior q = 0.3505 (half of new base value)")
+SSplotPars(bs99Q1, string="LnQ_base_W", new=FALSE, newheaders = "No prior")
+dev.off()
+
 
 # getbs function from /BigSkate_Doc/R/BigSkate_functions.R
-#getbs(82, sensname="sel1")
-getbs(82, sensname="sel2")
-getbs(82, sensname="sel3")
-getbs(82, sensname="Q1")
-getbs(82, sensname="Q2")
+source('c:/SS/skates/BigSkate_Doc/R/BigSkate_functions.R')
+getbs(99) 
+#getbs(99, sensname="sel1")
+getbs(99, sensname="sel2")
+getbs(99, sensname="sel3")
+getbs(99, sensname="Q1")
+getbs(99, sensname="Q2")
 
-getbs(82, sensname="catch1")
-getbs(82, sensname="catch2")
-getbs(82, sensname="catch3")
-getbs(82, sensname="catch4")
+getbs(99, sensname="bio1")
+getbs(99, sensname="bio2")
+getbs(99, sensname="bio3")
+getbs(99, sensname="bio12")
+getbs(99, sensname="bio5") # nohess version
 
-getbs(82, sensname="bio1")
-getbs(82, sensname="bio2")
-getbs(82, sensname="bio3")
-getbs(82, sensname="bio4")
+getbs(99, sensname="misc1")
+getbs(99, sensname="misc2")
+getbs(99, sensname="misc4")
+getbs(99, sensname="rec2")
+getbs(99, sensname="rec4") # no Q prior
 
-getbs(82, sensname="misc1")
-getbs(82, sensname="misc2")
-getbs(82, sensname="misc4")
-getbs(82, sensname="rec2")
+getbs(99, sensname="catch1")
+getbs(99, sensname="catch2")
+getbs(99, sensname="catch3")
+getbs(99, sensname="catch4")
+getbs(99, sensname="catch5")
+
+
 
 sens.names_all <- c("Base model",
 
@@ -494,43 +810,56 @@ sens.names_all <- c("Base model",
                     "Q no prior on WCGBTS",
                     "Q no offset on triennial",
     
-                    "Discards based on 3yr averages",
-                    "Discard mortality = 0.4",
-                    "Discard mortality = 0.6",
-                    "Multipliers on historical discards",
-
                     "Bio separate M by sex",
                     "Bio no M prior",
                     "Bio von Bertalanffy growth",
                     "Bio Richards growth",
-                    "Misc: McAllister-Ianelli tuning")
 
-model.summaries <- SSsummarize(list(bs82,
-                                    bs82sel2, bs82sel3, bs82Q1, bs82Q2,
-                                    bs82catch1, bs82catch2, bs82catch3, bs82catch4,
-                                    bs82bio1, bs82bio2, bs82bio3, bs82bio4, bs82misc1))
-                                    
+                    "McAllister-Ianelli tuning",
+                    "Dirichlet-Multinomial tuning",
+                    "No extra index std. dev.",
+                    "Recruitment deviations",
+                    
+                    "Discards based on 3yr averages",
+                    "Discard mortality = 0.4",
+                    "Discard mortality = 0.6",
+                    "Multipliers on historical discards",
+                    "Trend in F from Petrale Sole")
+
+model.summaries <- SSsummarize(list(bs99,
+                                    bs99sel2, bs99sel3, bs99Q1, bs99Q2,
+                                    bs99bio1, bs99bio2, bs99bio3, bs99bio5,
+                                    bs99misc1, bs99misc2, bs99misc4, bs99rec2, 
+                                    bs99catch1, bs99catch2, bs99catch3, bs99catch4, bs99catch5))
+
+SSplotComparisons(model.summaries, legendlabels = sens.names_all,
+                  plot=FALSE,
+                  print=TRUE,
+                  subplot=1:4,
+                  plotdir = file.path(dir.sensitivities,'plots'))
+
 source('c:/SS/skates/R/SS_Sensi_plot.R')
 
 #Run the sensitivity plot function
 SS_Sensi_plot(model.summaries = model.summaries,
-              Dir = dir.sensitivities,
+              Dir = file.path(dir.sensitivities,'plots'),
               current.year = 2019,
               mod.names = sens.names_all, #List the names of the sensitivity runs
-              likelihood.out = c(1,1,0),
+              likelihood.out = c(0,0,0),
               Sensi.RE.out = "Sensi_RE_out.DMP", #Saved file of relative errors
               CI = 0.95, #Confidence interval box based on the reference model
               TRP.in = 0.4, #Target relative abundance value
               LRP.in = 0.25, #Limit relative abundance value
               sensi_xlab = "Sensitivity scenarios", #X-axis label
-              ylims.in = c(-1,1,-1,1,-1,1,-1,1,-1,1,-1,1), #Y-axis label
+              ylims.in = c(-1,1, -1,1, -1,1, -1,1, -1,1, -1,1), #Y-axis label
               plot.figs = c(1,1,1,1,1,1) , #Which plots to make/save? 
-              sensi.type.breaks = c(5.5,9.5), #vertical breaks that can separate out types of sensitivities
-              anno.x = c(3,7.5,12.5), # Vertical positioning of the sensitivity types labels
-              anno.y = c(1,1,1), # Horizontal positioning of the sensitivity types labels
+              sensi.type.breaks = c(5.5,9.5,13.5), #vertical breaks that can separate out types of sensitivities
+              anno.x = c(3,7.5,11.5,16.0), # Vertical positioning of the sensitivity types labels
+              anno.y = c(1,1,1,1), # Horizontal positioning of the sensitivity types labels
               anno.lab = c("Selectivity &\n Catchability",
-                  "Catch history",
-                  "Biology &\n data-weighting") #Sensitivity types labels
-)
+                  "Biology",
+                  "Data-\nweighting",
+                  "Catch history") #Sensitivity types labels
+              )
 
 } # end if(FALSE) which allows sourcing the file to get the stuff at the top

@@ -12,6 +12,7 @@ catch.Tri.BS <- PullCatch.fn(Name = "big skate", SurveyName = "Triennial")
 bio.Tri.BS   <- PullBio.fn(Name = "big skate", SurveyName = "Triennial")
 catch.WCGBTS.Starry <- PullCatch.fn(Name = "starry flounder", SurveyName = "NWFSC.Combo")
 catch.Tri.Starry <- PullCatch.fn(Name = "starry flounder", SurveyName = "Triennial")
+catch.WCGBTS.Petrale <- PullCatch.fn(Name = "petrale sole", SurveyName = "NWFSC.Combo")
 
 catch.Tri.LN <- PullCatch.fn(Name = "longnose skate", SurveyName = "Triennial")
 bio.Tri.LN   <- PullBio.fn(Name = "longnose skate", SurveyName = "Triennial")
@@ -20,6 +21,9 @@ bio.Tri.LN   <- PullBio.fn(Name = "longnose skate", SurveyName = "Triennial")
 save(catch.WCGBTS.BS, bio.WCGBTS.BS,
      catch.Tri.BS,    bio.Tri.BS,
      file = 'c:/SS/skates/data/BigSkate_survey_extractions_5-17-2019.Rdata')
+save(catch.WCGBTS.Petrale,
+     file = 'c:/SS/skates/data/BigSkate_petrale_extraction_5-31-2019.Rdata')
+
 ### load previously extracted values
 # load('c:/SS/skates/data/BigSkate_survey_extractions_4-22-2019.Rdata')
 # load('c:/SS/skates/data/BigSkate_survey_extractions_5-17-2019.Rdata')

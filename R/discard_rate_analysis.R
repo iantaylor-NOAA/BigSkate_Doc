@@ -73,6 +73,7 @@ ncs_1spec <- read.csv(file.path(dir.dis, 'WCGOP discard rates',
 # with NCS for the years prior to 2011 and the CS for the years after
 # plot was written to C:\SS\skates\discards\
 head(ncs_2spec)
+
 # rates for SS
 SSinputs <- rbind(ncs_3spec[ncs_3spec$ryear < 2011 & ncs_3spec$gear3 == "Trawl",
                             c('ryear','Observed_Ratio','CV.Boot_Ratio')],

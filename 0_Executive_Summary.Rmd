@@ -275,10 +275,6 @@ The fit to the length data was significantly improved by estimating a difference
 
 ## Decision Table{-}    
 
-**$\color{red}{\text{Template in Table h and associated discussion to be filled in during the STAR panel}}$**
-
-
-
 <!-- ***********BEGIN EXECUTIVE SUMMARY OFL AND DECISION TABLES************ -->
 \FloatBarrier
 
@@ -298,7 +294,7 @@ Potential OFLs projected by the model are shown in Table \ref{tab:OFL_projection
     # print Model 1 decision table
     print(decision_mod1.table, add.to.row = addtorow, include.rownames = FALSE, 
           caption.placement = 'top', 
-          hline.after = c(-1, 0, 10, 20, 30, nrow(decision_mod1.table)), 
+          hline.after = c(-1, 0, 12, 24, nrow(decision_mod1.table)), 
           scalebox = .85)
 ```
 \FloatBarrier

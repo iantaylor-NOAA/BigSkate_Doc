@@ -13,12 +13,49 @@ require(r4ss)
 require(SSutils) # package with functions for copying SS input files
 #devtools::install_github('r4ss/SSutils')
 
-mod <- 'bigskate82_base_May13'
+#mod <- 'bigskate82_base_May13'
+#mod <- 'bigskate95_new_prior'
+mod <- 'bigskate99_new_prior_98percent_priorSD'
 dir.mod <- file.path(dir.outer, mod)
-dir.sensitivities <- file.path(dir.outer, "sensitivity.bigskate82")
+dir.sensitivities <- file.path(dir.outer, "sensitivity.bigskate99")
 #dir.create(dir.sensitivities)
 
 if(FALSE){
+
+################################################################################
+# update sensitivities for new candidate base model June 5, 2019
+################################################################################
+
+populate_multiple_folders(outerdir.old = file.path(dir.outer, "sensitivity.bigskate82"),
+                          outerdir.new = file.path(dir.outer, "sensitivity.bigskate99"),
+                          create.dir = TRUE,
+                          overwrite = FALSE,
+                          use_ss_new = FALSE,
+                          exe.dir = file.path(dir.outer, "bigskate99_new_prior_98percent_priorSD"),
+                          exe.file = "ss.exe",
+                          exe.only = FALSE,
+                          verbose = TRUE) 
+  
+sens.list     <- dir(dir.sensitivities)
+for(isens in 1:length(sens.list)){
+  dir <- file.path(dir.sensitivities, sens.list[isens])
+  SS_changepars(dir = dir,
+                ctlfile = "BSKT2019_control.ss",
+                newctlfile = "BSKT2019_control.ss",
+                strings = "LnQ_base_WCGBTS(5)",
+                newprior = -0.355,
+                newprsd = 0.326,
+                newphs = 1,
+                estimate=TRUE)
+}
+
+sens.list     <- dir(dir.sensitivities)
+dirvec <- file.path(dir.sensitivities, sens.list)
+run_SS_models(dirvec=dirvec, skipfinished=FALSE, extras = "-nox")
+
+
+
+
 ################################################################################
 # alternative approach to sensitivities where the change is easy to make
 # standard approach is below, after the commented out stuff
@@ -84,6 +121,8 @@ if(FALSE){
 
 ## dirvec <- file.path(dir.sensitivities, sens.list)
 ## run_SS_models(dirvec=dirvec)
+
+  
   
 ################################################################################
 #### standard approach creating one directory at a time
@@ -141,6 +180,14 @@ SS_changepars(dir = dir.sens,
               strings = "SzSel_Fem",
               estimate = FALSE)
 run_SS_models(dir.sens)
+
+dir.sens <- file.path(dir.sensitivities, "sel4_annual_blocks")
+copy_SS_inputs(dir.old = dir.mod,
+               dir.new = dir.sens,
+               use_ss_new = FALSE,
+               copy_exe = TRUE,
+               copy_par = TRUE)
+
 
 dir.sens <- file.path(dir.sensitivities, "bio1_male_M_offset")
 copy_SS_inputs(dir.old = dir.mod,
