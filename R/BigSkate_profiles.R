@@ -15,7 +15,12 @@ require(SSutils) # package with functions for copying SS input files
 # load model output into R
 # read base model from each area
 #mod <- 'bigskate74_spawnbio_3.30.13.02'
-mod <- 'bigskate82_base_May13'
+#mod <- 'bigskate82_base_May13'
+#mod <- 'bigskate94_petraleF'
+#mod <- 'bigskate95_new_prior'
+#mod <- 'bigskate96_new_prior_NoExtraSD_on_WCGBTS'
+mod <- 'bigskate99_new_prior_98percent_priorSD'
+#mod <- 'bigskate101_DMtuning_new_prior_98perc'
 
 dir.mod <- file.path(dir.outer, mod)
 # read model without printing stuff (assuming it's already been looked at)
@@ -40,7 +45,8 @@ out$parameters["LnQ_base_WCGBTS(5)","Value"]
 # vector of log(R0) spanning estimates
 # (going from high to low in case low value cause crashes)
 #logR0vec <- seq(9, 7, -.25)
-logR0vec <- seq(9.6, 7, -.2)
+#logR0vec <- seq(9.6, 7, -.2)
+logR0vec <- seq(9.6, 8.0, -.2)
 
 # vector of M
 M.vec <- seq(0.2, 0.6, 0.05)
@@ -77,8 +83,8 @@ SS_profile(dir = dir.profile.R0,
            newctlfile = "control_modified.ss",
            string = "SR_LN(R0)",
            profilevec = logR0vec,
-           extras = "-nohess -nox")
-           #extras = "-nox")
+           #extras = "-nohess -nox")
+           extras = "-nox")
 
 ##################################################################################
 # mortality profile
@@ -143,8 +149,8 @@ SS_profile(dir = dir.profile.Q,
            newctlfile = "control_modified.ss",
            string = "LnQ_base_WCGBTS",
            profilevec = lnQ.vec,
-           #extras = "-nohess -nox")
-           extras = "-nox")
+           extras = "-nohess -nox")
+           #extras = "-nox")
 
 
 
@@ -164,6 +170,13 @@ if(FALSE){
   # some explorations contributing to the text
   plot(as.numeric(profilesummary$pars[profilesummary$pars$Label == "NatM_p_1_Fem_GP_1",1:8]),
        as.numeric(profilesummary$pars[profilesummary$pars$Label == "SR_LN(R0)",1:8]))
+
+  # example plot of B0 vs. total likelihood for Jemery
+  plot(as.numeric(profilesummary$SpawnBio[profilesummary$SpawnBio$Label == "SSB_Virgin",1:8]),
+       as.numeric(profilesummary$likelihoods[profilesummary$likelihoods$Label == "TOTAL",1:8]))
+
+
+  # correlation between log(R0) and M
   cor(as.numeric(profilesummary$pars[profilesummary$pars$Label == "NatM_p_1_Fem_GP_1",1:8]),
        as.numeric(profilesummary$pars[profilesummary$pars$Label == "SR_LN(R0)",1:8]))
 }
@@ -176,7 +189,7 @@ SSplotProfile(profilesummary,           # summary object
               models = goodmodels,
               sort.by.max.change = FALSE,
               #xlim=c(3.2,4.6),
-              ymax=4, # modify as required to get reasonable scale to see differences
+              #ymax=4, # modify as required to get reasonable scale to see differences
               legendloc='top',
               plotdir = dir.profile.R0,
               print = TRUE,
@@ -253,7 +266,7 @@ profilesummary <- SSsummarize(profilemodels)
 # filter models for those with reasonable likelihoods
 # and cutting off those below 0.25
 goodmodels <- which(profilesummary$likelihoods[1,1:(length(logR0vec)+1)] < 1e5 &
-                    M.vec >= 0.25)
+                    c(M.vec,0.4) >= 0.25)
 
 # make plot
 SSplotProfile(profilesummary,           # summary object
@@ -320,6 +333,7 @@ SSplotComparisons(profilesummary, subplot=1,
 dir.profile.Q <- file.path(dir.mod, "profile.Q")
 profilemodels <- SSgetoutput(dirvec=dir.profile.Q,
                              keyvec=1:length(Q.vec), getcovar=FALSE)
+#low_state <- profilemodels[[5]]
 profilemodels$MLE <- out
 # summarize output
 profilesummary <- SSsummarize(profilemodels)
@@ -329,18 +343,22 @@ goodmodels <- c(which(profilesummary$likelihoods[1,1:length(Q.vec + 1)] < 1e5 &
                 which(names(profilemodels) == "MLE"))
 
 png('c:/SS/skates/BigSkate_Doc/Figures/profile_Q.png', 
+#png('c:/SS/skates/BigSkate_Doc/Figures/profile_Q_petraleF.png', 
+#png('c:/SS/skates/BigSkate_Doc/Figures/profile_Q_newest_prior_D-M.png', 
     width=6.5, height=5, res=300, units='in')
 tmp <- SSplotProfile(profilesummary,           # summary object
                      minfraction = 0.001,
                      print=FALSE,
                      models=goodmodels,
-                     ymax=10,
+                     #ymax=10,
                      legendloc='top',
                      sort.by.max.change = FALSE,
                      plotdir=dir.profile.Q,
                      profile.string = "LnQ_base_WCGBTS", # substring of profile parameter
                      profile.label="Log of WCGBT Survey catchability, log(q)") # axis label
 axis(3, at=log(Q.vec), lab = Q.vec)
+base.logQ <- bs99$estimated_non_dev_parameters["LnQ_base_WCGBTS(5)","Value"]
+axis(3, at=base.logQ, lab=round(exp(base.logQ), 3))
 mtext(side = 3, line=2.5, text = "WCGBT Survey catchability, q")
 dev.off()
 
@@ -364,6 +382,8 @@ for(imod in 1:length(profilemodels)){
 profilesummary2$likelihoods <- likes
 
 png('c:/SS/skates/BigSkate_Doc/Figures/profile_Q_noprior.png', 
+#png('c:/SS/skates/BigSkate_Doc/Figures/profile_Q_noprior_petraleF.png', 
+#png('c:/SS/skates/BigSkate_Doc/Figures/profile_Q_newest_prior_D-M_noprior.png', 
     width=6.5, height=5, res=300, units='in')
 tmp2 <- SSplotProfile(profilesummary2,           # summary object
                       minfraction = 0.001,
@@ -376,6 +396,8 @@ tmp2 <- SSplotProfile(profilesummary2,           # summary object
                       profile.string = "LnQ_base_WCGBTS", # substring of profile parameter
                       profile.label="Log of WCGBT Survey catchability, log(q)") # axis label
 axis(3, at=log(Q.vec), lab = Q.vec)
+base.logQ <- bs99$estimated_non_dev_parameters["LnQ_base_WCGBTS(5)","Value"]
+axis(3, at=base.logQ, lab=round(exp(base.logQ), 3))
 mtext(side = 3, line=2.5, text = "WCGBT Survey catchability, q")
 dev.off()
 
@@ -406,23 +428,42 @@ SSplotComparisons(profilesummary, subplot=1,
                   legendlabels=labels[goodmodels],
                   models=goodmodels,
                   png=TRUE, plotdir=dir.profile.Q,
-                  filenameprefix="profile_Q_", legendloc="bottomleft")
-# copy plot with generic name to main folder with more specific name
-file.copy(file.path(dir.profile.Q, 'profile_plot_likelihood.png'),
-          file.path(dir.profile.Q, 'profile_Q.png'), overwrite=TRUE)
+                  filenameprefix="profile_Q_DM_", legendloc="bottomleft")
+SSplotComparisons(profilesummary, subplot=1,
+                  pwidth=5.2, pheight=4,
+                  legendlabels=labels[goodmodels],
+                  models=goodmodels,
+                  legendncol = 2,
+                  png=TRUE, plotdir=dir.profile.Q,
+                  filenameprefix="profile_Q_DM_4x5_", legendloc="bottomleft")
+SSplotComparisons(profilesummary, subplot=3,
+                  legendlabels=labels[goodmodels],
+                  models=goodmodels,
+                  png=TRUE, plotdir=dir.profile.Q,
+                  legendncol = 2,
+                  filenameprefix="profile_Q_DM_", legendloc="bottomleft")
+SSplotComparisons(profilesummary, subplot=3,
+                  pwidth=5.2, pheight=4,
+                  legendlabels=labels[goodmodels],
+                  models=goodmodels,
+                  png=TRUE, plotdir=dir.profile.Q,
+                  legendncol = 2,
+                  filenameprefix="profile_Q_DM_4x5_", legendloc="bottomleft")
+
 
 plot(exp(as.numeric(profilesummary$pars[profilesummary$pars$Label=="LnQ_base_WCGBTS(5)",1:11])),
      as.numeric(profilesummary$pars[profilesummary$pars$Label=="SR_LN(R0)",1:11]))
 
-dir.profile.R0 <- file.path(dir.mod, "profile.R0")
-profilemodels.R0 <- SSgetoutput(dirvec=dir.profile.R0,
-                                keyvec=1:length(logR0vec), getcovar=FALSE)
-profilemodels.R0$MLE <- out
-profilesummary.R0 <- SSsummarize(profilemodels.R0)
+#####
+## dir.profile.R0 <- file.path(dir.mod, "profile.R0")
+## profilemodels.R0 <- SSgetoutput(dirvec=dir.profile.R0,
+##                                 keyvec=1:length(logR0vec), getcovar=FALSE)
+## profilemodels.R0$MLE <- out
+## profilesummary.R0 <- SSsummarize(profilemodels.R0)
 
-points(exp(as.numeric(profilesummary.R0$pars[profilesummary.R0$pars$Label=="LnQ_base_WCGBTS(5)",1:11])),
-       as.numeric(profilesummary.R0$pars[profilesummary.R0$pars$Label=="SR_LN(R0)",1:11]),
-       col=2)
+## points(exp(as.numeric(profilesummary.R0$pars[profilesummary.R0$pars$Label=="LnQ_base_WCGBTS(5)",1:11])),
+##        as.numeric(profilesummary.R0$pars[profilesummary.R0$pars$Label=="SR_LN(R0)",1:11]),
+##        col=2)
 
 
 } # end if(FALSE) section that doesn't get sourced

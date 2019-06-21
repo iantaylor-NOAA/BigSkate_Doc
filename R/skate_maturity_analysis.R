@@ -218,8 +218,10 @@ n <-310
 
 #L50 glm =  106.895cm##
 
+
+
 ####Table of maturity by length bin####
 mat.table.BS.m <- mat.table(bins=seq(5,200,5),
-                            len=L_m$Length_cm,
-                            mature=L_m$Biological_maturity)
+                            len=Big_m$Length_cm,
+                            mature=Big_m$Biological_maturity)
 plot.mat(mat.table.BS.m, fit.mat.glm.BS.m)

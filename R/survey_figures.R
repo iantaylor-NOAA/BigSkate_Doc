@@ -21,6 +21,7 @@ strata <- CreateStrataDF.fn(
 ## 3 shallow_n 208174619        55       183            42            49
 ## 4    deep_n 106872334       183       549            42            49
 
+
 # design-based indices
 biomass.WCGBTS <- Biomass.fn(dir = 'c:/SS/skates/indices/WCGBTS', 
                             dat = catch.WCGBTS.BS,  
@@ -32,6 +33,14 @@ biomass.Tri <- Biomass.fn(dir = 'c:/SS/skates/indices/Triennial',
                           strat.df = strata, 
                           printfolder = "", 
                           outputMedian = TRUE)
+
+
+strata <- CreateStrataDF.fn(
+    names=c("shallow_s", "deep_s","shallow_n", "deep_n"), 
+    depths.shallow = c( 0, 2555, 183,  55, 183),
+    depths.deep    = c(183, 549, 183, 549),
+    lats.south     = c( 32,  32,  42,  42),
+    lats.north     = c( 42,  42,  49,  49))
 
 
   

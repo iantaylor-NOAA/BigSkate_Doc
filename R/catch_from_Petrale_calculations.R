@@ -17,6 +17,19 @@ CA.ratio2 <- sum(VAST_output_gamma[VAST_output_gamma$Fleet=="CA", "Estimate_metr
 ## [1] 0.4170509
 
 pet <- SS_output('c:/SS/Petrale/Petrale2015_REALbase')
+dov <- SS_output('c:/SS/Dover/DoverSole2011_baseModelFiles/', forecast=FALSE)
+SSplotComparisons(SSsummarize(list(pet, dov)),
+                  subplot = c(4,18),
+                  legendlabels = c("Petrale Sole (2015 assessment)",
+                      "Dover Sole (2011 assessment)"),
+                  legendloc = 'bottomleft',
+                  plotdir='c:/SS/skates/BigSkate_Doc/Figures/',
+                  plot = FALSE,
+                  print = TRUE,
+                  pwidth=5.2, pheight=4,
+                  filenameprefix = "Dover_vs_Petrale_")
+
+
 pet$FleetNames
 ## [1] "WinterN"  "SummerN"  "WinterS"  "SummerS"  "TriEarly" "TriLate"  "NWFSC"   
 
@@ -58,3 +71,12 @@ newcatch$note[newcatch$fleet==4] <- "#_fleet4_is_tribal_fishery"
 write.csv(newcatch, file='C:/ss/skates/models/sensitivity.bigskate82/catch6_petraleF/newcatch.csv')
 
  
+#### co-occurence of petrale and big skate
+#load('c:/SS/skates/data/BigSkate_survey_extractions_5-17-2019.Rdata')
+#load('c:/SS/skates/data/BigSkate_petrale_extraction_5-17-2019.Rdata')
+
+table(catch.WCGBTS.Petrale$total_catch_wt_kg[catch.WCGBTS.BS$total_catch_wt_kg > 0] > 0)
+## FALSE  TRUE 
+##    80  1522 
+mean(catch.WCGBTS.Petrale$total_catch_wt_kg[catch.WCGBTS.BS$total_catch_wt_kg > 0] > 0)
+## [1] 0.9500624

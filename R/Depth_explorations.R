@@ -32,3 +32,21 @@ dev.off()
 
 nrow(catch2)
 ## [1] 0.3852819
+
+
+
+catch3 <- catch.WCGBTS.Petrale[catch.WCGBTS.Petrale$Depth_m < 425,]
+
+# create new depth variable binned to 10m 
+catch3$Depth_m_bin25 <- 25*floor(catch3$Depth_m/25)
+
+tab <- table(catch3$Depth_m_bin25, catch3$cpue_kg_km2 > 0)
+dimnames(tab)[[2]] <- c("Absent","Present")
+
+png(file.path(dir.figs, 'WCGBTS_Petrale_presence_absence_by_depth_bin.png'),
+    width=7, height=5, units='in', res=300, pointsize=10)
+par(mar=c(1,1,1,.1))
+plot(tab, col=c(gray(.7), 'blue3'), main="", cex=1)
+dev.off()
+
+nrow(catch3)

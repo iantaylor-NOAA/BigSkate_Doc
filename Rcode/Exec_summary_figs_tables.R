@@ -401,7 +401,7 @@ for (model in 1:n_models) {
   # Rbind all of the data for the big summary reference table  
   Ref_pts = rbind (
     SSB_Unfished    = mod$derived_quants[grep('SSB_I', mod$derived_quants$Label), ],
-    TotBio_Unfished = mod$derived_quants[grep('SmryBio', mod$derived_quants$Label, ignore.case=TRUE), ],
+    SmryBio_Unfished = mod$derived_quants[grep('SmryBio', mod$derived_quants$Label, ignore.case=TRUE), ],
     Recr_Unfished   = mod$derived_quants[grep('Recr_I', mod$derived_quants$Label), ],
     SSB_lastyr      = mod$derived_quants[grep(paste0('SSB_', LastYR), mod$derived_quants$Label), ],
     Depletion_lastyr= mod$derived_quants[grep(paste0('Bratio_', LastYR), mod$derived_quants$Label), ],

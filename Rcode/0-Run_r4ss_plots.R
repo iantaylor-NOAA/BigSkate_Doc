@@ -199,6 +199,7 @@ tmp$infotable$col <- rich.colors.short(15, alpha=0.7)
 tmp$infotable$pch <- NA
 tmp$infotable$lty <- 1
 tmp$infotable$longname <- tmp$infotable$Yr_range
+tmp$infotable$longname[1] <- gsub(1916, 1995, tmp$infotable$longname[1])
 
 # make plot of time-varying retention
 png('Figures/retention.png', width=6.5, height=4, units='in',
