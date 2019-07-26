@@ -11,6 +11,10 @@
 
 ![Extrapolated catch rates (upper panel) and estimated biomass after adjustment for area of each bin (lower panel). The gray regions indicate those depths outside the survey range which were extrapolated based on catch rates from the commercial bottom trawl fishery. The extrapolated biomass is equal to 25.8% of the total biomass (extrapolated plus surveyed area).\label{fig:survey_estimates_by_depth_with_shallow}](Figures/survey_estimates_by_depth_with_shallow.png)
 
+![Time series of spawning biomass for the pre-STAR (old) base model (blue) compared to two alternative models that used the revised catchability prior in combination with either the status-quo Francis data weighting (red) or the Dirichlet-Multinomial data weighting (green).\label{fig:spawnbio_SRG_request1}](Figures/sens.SRG1_compare2_spawnbio_uncertainty.png)
+
+
+
 
 
 

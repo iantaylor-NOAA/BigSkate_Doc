@@ -169,7 +169,7 @@ Figures illustrating responses to these requests are in Appendix B. <!-- add lin
 
 \textbf{STAT Response:} An estimate of the fraction of Big Skate biomass unavailable to the survey due to occurrence shallower than 55 m was estimated at 25.8% of the total population as described in detail in the "Priors" section above. ??add link to Priors section??. This was used to revise the "Depth availability" component of the prior calculation. A new component representing "Habitat availability" was also added to account for the potential impact of survey biomass estimate into untrawable habitat which woudl be expected to have lower density of Big Skate. The resulting prior on $log(q)$ had $mean = log(0.701) = -0.355$ and standard deviation 0.326, as compared to the Longnose Skate prior with mean = $log(0.83) = -0.188 and standard deviation = 0.187.
 
-Replacing the Longnose Skate catchability prior with the new Big Skate catchability prior resulted in a lower catchability estimate and a higher biomass. 
+Replacing the Longnose Skate catchability prior with the new Big Skate catchability prior resulted in a lower catchability estimate and a higher biomass (Figure \ref{fig:spawnbio_SRG_request1}).
 
 \item[Request 2: Explore changes to the model to provide better fits to the trawl surveys.] \hfill \\
 
