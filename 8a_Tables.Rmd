@@ -474,9 +474,9 @@
     ForecastC$total = rowSums(ForecastC[, -1])
     ForecastCyrs = subset(ForecastC, Yr > (Project_firstyr - 1) & Yr < (Project_lastyr + 1))
 
-    # Pull Age 5+ biomass and subset years
-    Age5biomass = mod1$timeseries[, c('Yr', 'Bio_smry')]
-    Age5biomassyrs = subset(Age5biomass, Yr > (Project_firstyr - 1) & Yr < (Project_lastyr + 1))
+    # Pull summary biomass and subset years
+    Smry_biomass = mod1$timeseries[, c('Yr', 'Bio_smry')]
+    Smry_biomassyrs = subset(Smry_biomass, Yr > (Project_firstyr - 1) & Yr < (Project_lastyr + 1))
 
 
     # Pull spawning biomass and subset years
@@ -495,14 +495,14 @@
     Forecast_mod1 = as.data.frame(cbind(seq(Project_firstyr, Project_lastyr, 1),
                                         OFLcatchyrs$Value,
                                         ForecastCyrs$total,
-                                        Age5biomassyrs$Bio_smry,
+                                        Smry_biomassyrs$Bio_smry,
                                         SpawningByrs$Value,
                                         Depletionyrs$Value))
     # Add column names
     colnames(Forecast_mod1)=c('Yr',
                            'OFL contribution (mt)',
                            'ACL landings (mt)',
-                           'Age 5+ biomass (mt)',
+                           'Age 2+ biomass (mt)',
                            'Spawning Biomass (mt)',
                            'Depletion')
 
@@ -664,6 +664,19 @@
 
 \FloatBarrier
 \clearpage
+
+```{r, results='asis'}   
+   # Decision tables is the same as the one in the Exec Summary created in
+   # R_exec_summary_figs_tables.R
+
+   # change the label so it can be referenced separately
+   label(decision_mod1.table) <- "tab:Decision_table_mod1_text"
+    # print decision table
+    print(decision_mod1.table, add.to.row = addtorow, include.rownames = FALSE, 
+          caption.placement = 'top', 
+          hline.after = c(-1, 0, 12, 24, nrow(decision_mod1.table)), 
+          scalebox = .85)
+```
 
 \FloatBarrier
 ```{r, results='asis'}
