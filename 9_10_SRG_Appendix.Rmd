@@ -11,7 +11,27 @@
 
 ![Extrapolated catch rates (upper panel) and estimated biomass after adjustment for area of each bin (lower panel). The gray regions indicate those depths outside the survey range which were extrapolated based on catch rates from the commercial bottom trawl fishery. The extrapolated biomass is equal to 25.8% of the total biomass (extrapolated plus surveyed area).\label{fig:survey_estimates_by_depth_with_shallow}](Figures/survey_estimates_by_depth_with_shallow.png)
 
-![Time series of spawning biomass for the pre-STAR (old) base model (blue) compared to two alternative models that used the revised catchability prior in combination with either the status-quo Francis data weighting (red) or the Dirichlet-Multinomial data weighting (green).\label{fig:spawnbio_SRG_request1}](Figures/sens.SRG1_compare2_spawnbio_uncertainty.png)
+![Time series of spawning biomass with 95% uncertainty intervals for the pre-STAR (old) base model (blue) compared to two alternative models that used the revised catchability prior in combination with either the status-quo Francis data weighting (red) or the Dirichlet-Multinomial data weighting (green).\label{fig:spawnbio_STAR_request1}](Figures/sens.STAR1_compare2_spawnbio_uncertainty.png)
+
+![Time series of spawning biomass for the pre-STAR base model compared to two alternative models that started in 1980 with either equilibrium or flexible initial age structure. Disconnected points prior to 1980 represent the unfished equilibrium in each case.\label{fig:spawnbio_STAR_request2}](Figures/sens.1980start_comparisons_old_prior.png)
+
+![Fit to WCGBT Survey index for the pre-STAR base model and the two alternative models that started in 1980. Uncertainty intervals include the extra standard deviation estimates from the pre-STAR base model.\label{fig:indexfit_WCGBTS_STAR_request2}](Figures/sens.1980start_compare11_indices_flt5.png)
+
+![Fit to Triennial Survey index for the pre-STAR base model and the two alternative models that started in 1980. Uncertainty intervals include the extra standard deviation estimates from the pre-STAR base model.\label{fig:indexfit_Tri_STAR_request2}](Figures/sens.1980start_compare11_indices_flt6.png)
+
+![Time series of time-varying natural mortality for sensitivity analyses associated with STAR request 3.\label{fig:tv_M}](Figures/sens.tv_M_time_series_of_M.png)
+
+![Time series of time-varying natural mortality estimated in 5 models with different options for variability and autocorrelation associated with STAR request 3.\label{fig:tv_M1}](Figures/sens.tv_M_time_series_of_M.png)
+
+![Time series of spawning biomass estimated in the models with time-varying natural mortality associated with STAR request 3.\label{fig:tv_M2}](Figures/sens.tv_M_compare1_spawnbio.png)
+
+![Time series of recruitment estimated in the models with time-varying natural mortality associated with STAR request 3.\label{fig:tv_M3}](Figures/sens.tv_M_compare7_recruits.png)
+
+#![Fit to WCGBT Survey index for the models with time-varying natural mortality. Uncertainty intervals include the extra standard deviation estimates from the pre-STAR base model.\label{fig:tv_M4}](Figures/sens.tv_M_compare11_indices_flt5.png)
+
+#![Fit to Triennial Survey index for the models with time-varying natural mortality. Uncertainty intervals include the extra standard deviation estimates from the pre-STAR base model.\label{fig:tv_M5}](Figures/sens.tv_M_compare11_indices_flt6.png)
+
+
 
 
 

@@ -171,14 +171,18 @@ Figures illustrating responses to these requests are in Appendix B. <!-- add lin
 
 Replacing the Longnose Skate catchability prior with the new Big Skate catchability prior resulted in a lower catchability estimate and a higher biomass (Figure \ref{fig:spawnbio_SRG_request1}).
 
+The revised catchability prior was considered by the STAT to be a better choice for Big Skate and was used in all subsequent analyses with the exception of the responses to Requests 2 below which was conducted concurrently with the revision to the prior.
+
 \item[Request 2: Explore changes to the model to provide better fits to the trawl surveys.] \hfill \\
 
 \textbf{Rationale:} The models explored to date do not fit the survey trends well.
 
 \vspace{.4cm}
 
-\textbf{STAT Response:} ??
-    
+\textbf{STAT Response:} The stock assessment team acknowledges that the increasing trends in both the Triennial and WCGBT Surveys is not well fit by the model as discussed at length elsewhere in this report. Models were developed with a start year of 1980 to allow more flexibility in the population size at the start of the survey time series with the hope that this would improve the fit to the survey indices. In one case, the initial conditions were based on an estimated equilibrium fishing mortality with the associated fished equilibrium age structure. In the other case the initial age structure was allowed to be more flexible by estimating recruitment deviations for the years 1965-1980 to allow out-of-equilibrium age structure in 1980.
+
+The model with flexible initial conditions had very similar estimates of unfished equilibrium and current biomass to the pre-STAR base model (Figure \ref{fig:spawnbio_STAR_request2}) while the model with less flexible initial conditions had implausibly low biomass in 1980 and an oscillating pattern of biomass as the population rebuilt from initial conditions associated with the change from a fished equilibrium associated within initial fishing mortality abiout 10 times higher than the estimated mortality for the years 1980-1984. The oscillations in model with less flexible equilibrium conditions fit the both indices of abundance slightly better (by a total of 2.1 units of negative log-likelihood) but the equilibrium catch was implausibly high while the model with more flexible initial conditions had a very similar fit to the indices (Figures \ref{fig:indexfit_WCGBTS_SRG_request2} and \ref{fig:indexfit_Tri_SRG_request2}).
+
 
 \item[Request 3: Explore a time-varying M model.] \hfill \\
 
@@ -186,7 +190,12 @@ Replacing the Longnose Skate catchability prior with the new Big Skate catchabil
 
 \vspace{.4cm}
 
-\textbf{STAT Response:} ??
+\textbf{STAT Response:}
+
+Time-varying natural mortality ($M$) was imlemented using a wide range of settings related to overall variability and autocorrelation among years in the setup of time-varying natural mortality. In some cases, the resulting time series of $M$ was implausibly variable, while other estimates were more reasonable.\label{fig:tv_M1}. However, the associated time series of biomass and recruitment showed implausible patterns for all but the least flexible setups (Figures \ref{fig:tv_M2} and \ref{fig:tv_M3}). The improvement in the fit to the indices was biggest for the least plausible scenarios and relatively small for the least flexible one (Figures \ref{fig:tv_M4} and \ref{fig:tv_M5}).
+
+This exploration indicated that even a small amount of time-varying natural mortality could explain some of the observed variability in the indices, but the STAT felt that Big Skate did not have sufficient data to reliably estimate time-varying $M$. 
+
 
 
 \item[Request 4: Provide a run with the new prior from request \#1 with diagnostics, fits, and likelihood profiles, if possible.] \hfill \\
