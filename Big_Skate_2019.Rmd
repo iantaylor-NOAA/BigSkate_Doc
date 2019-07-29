@@ -131,6 +131,18 @@ bibliography: BibFile.bib
 ```
 \newpage
 
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+
+\newpage
+\setcounter{page}{1}
+\renewcommand{\thepage}{B-\arabic{page}}
+\renewcommand{\thefigure}{B-\arabic{figure}}
+```{r child = "9_10_SRG_Appendix.Rmd"}
+```
+\newpage
 <!-- ====================================================================== -->
 <!-- **********REFERENCES - WILL APPEAR AFTER APPENDICES******************* -->
 <!-- ====================================================================== -->

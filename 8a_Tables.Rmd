@@ -666,16 +666,46 @@
 \clearpage
 
 ```{r, results='asis'}   
-   # Decision tables is the same as the one in the Exec Summary created in
-   # R_exec_summary_figs_tables.R
+# Decision tables is the same as the one in the Exec Summary created in
+# R_exec_summary_figs_tables.R.  For some reason, it has to be re-created here.
 
-   # change the label so it can be referenced separately
-   label(decision_mod1.table) <- "tab:Decision_table_mod1_text"
-    # print decision table
-    print(decision_mod1.table, add.to.row = addtorow, include.rownames = FALSE, 
-          caption.placement = 'top', 
-          hline.after = c(-1, 0, 12, 24, nrow(decision_mod1.table)), 
-          scalebox = .85)
+# Read in decision table file
+decision_mod1 = read.csv('./txt_files/DecisionTable_mod1.csv')
+colnames(decision_mod1) = c('', 
+                            'Year',  
+                            'Catch',	
+                            'Spawning Output',	
+                            '%Unfished', 
+                            'Spawning Output',	
+                            '%Unfished',	
+                            'Spawning Output',	
+                            '%Unfished')
+
+decision_mod1.table = xtable(decision_mod1, 
+                             caption = c(paste0('Summary of 12-year projections beginning in 2019',
+                                                ' for alternate states of nature based the axis of uncertainty for the model.',
+                                                ' Columns range over low, mid, and high states of nature, and rows range over different', 
+                                                ' assumptions of catch levels.')), 
+                             label='tab:Decision_table_mod1_text')
+
+# Assign alignment and add the header columns
+align(decision_mod1.table) = c('l','l|','c','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c') 
+
+addtorow <- list()
+addtorow$pos <- list()
+addtorow$pos[[1]] <- -1
+addtorow$pos[[2]] <- -1
+addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{} 
+                               & \\multicolumn{2}{c}{\\textbf{States of nature}} 
+                               & \\multicolumn{2}{c}{} \\\\\n', 
+                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{Low State} 
+                               & \\multicolumn{2}{c}{Base State} 
+                               &  \\multicolumn{2}{c}{High State} \\\\\n')
+
+print(decision_mod1.table, add.to.row = addtorow, include.rownames = FALSE, 
+      caption.placement = 'top', 
+      hline.after = c(-1, 0, 12, 24, nrow(decision_mod1.table)), 
+      scalebox = .85)
 ```
 
 \FloatBarrier
