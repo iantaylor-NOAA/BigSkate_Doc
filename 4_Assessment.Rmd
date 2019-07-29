@@ -204,8 +204,11 @@ This exploration indicated that even a small amount of time-varying natural mort
  
 \vspace{.4cm}
 
-\textbf{STAT Response:} ??
+\textbf{STAT Response:}
 
+A full set of r4ss outputs for this new candidate base model were provided to the STAR panel through the FTP site. Likelihood profiles on catchability and steepness were also provided. The profile with no prior is the same as was provided for the pre-STAR base model (Figure \ref{fig:profile_logQ_noprior}), while the profile including the prior (Figure \ref{fig:profile_logQ}) showed that the change in negative log-likelihood over the range of $q$ = 0.5 to 2.0 was smaller than before, with a change of about 5 units compared to over 10 units for the Longnose Skate catchability prior (not shown).
+
+The steepness profile (Figure \ref{fig:profile_h}) showed that the change in likelihood over the range $h$ = 0.3 to 0.9 was even smaller than in the pre-STAR base model, with a total change of about 0.5 units of negative log-likelihood compared to about 0.7 previously.
 
 \item[Request 5: Provide the diagnostics, fits, and the likelihood profiles associated with the model from run \#4 with Dirichlet weighting.] \hfill\\ 
 
@@ -226,7 +229,9 @@ This exploration indicated that even a small amount of time-varying natural mort
 
 \vspace{.4cm}
   
-\textbf{STAT Response:} ??  
+\textbf{STAT Response:}
+
+A full set of r4ss outputs for this alternative model were provided to the STAR panel through the FTP site. A likelihood profile was conducted over survey catchability of the survey but there was a problem with convergence requiring further investigation (Figure \ref{fig:profile_logQ_D-M}). As the Dirichlet-Multinomial model was not chosen for the based model, further investigations in the profiles were not attempted.
 
 \item[Request 6: Repeat run \#4 with no survey q prior and a run with the mean of the survey q prior of at half the mean of the prior from run \#4.] \hfill\\
 
@@ -234,7 +239,9 @@ This exploration indicated that even a small amount of time-varying natural mort
 
 \vspace{.4cm}
 
-\textbf{STAT Response:} ??
+\textbf{STAT Response:}
+
+The q prior from request #4 had mean 0.701 corresponding to $log(q) = -0.355$. A model with the prior at half this value, $q = 0.3505$, $log(q) = -1.048$ had a maximum likelihood estimate of $q = 0.343$, $log(q) = -1.070$, indicating that the estimated values is closely following the prior. This is expected given the likelihood profile indicated that the best total likelihood occurred at the minimum q values among those considered. A model with no prior on survey catchability has the $q$ estimated at the lower bound of $log(q) = -2$ (Figure \ref{fig:request6_prior_comparisons}).
 
 \item[Request 7: Catch streams for the decision table should be as follows:] \hfill\\
 
@@ -254,7 +261,12 @@ This exploration indicated that even a small amount of time-varying natural mort
 
 \vspace{.4cm}
 
-\textbf{STAT Response:} ??
+\textbf{STAT Response:}
+
+Based on the discussion in the review, the following steps were taken to develop the states of nature and the decision table. Catchability of the WCGBT Survey was used as the axis of uncertainty. The new base model estimate has $q = 0.668$, $log(q) = -0.403$, with the standard deviation of 0.315 for the estimated $log(q)$ parameter. Using the formula of 1.15 units of standard deviation (provided in the terms of reference) to get low and high values leads to $log(q) = -0.766$ and $log(q) = -0.041$, corresponding to catchability values of $q = 0.465$, and $q = 0.960$. The high $q$ value was associated with a low state of nature which was near the 25% quantile of the 2019 spawning biomass estimate from the base model, which was perceived as too similar to the mean (where 12.5% and 87.5% quantiles were desired). A model with $log(q) = 0.223$, $q = 1.250$ (already run as part of the profile over $q$ was a better match to the 12.5% quantile in 2019 spawning biomass and chosen as the low state of nature. The high state with $q = 0.465$ was similar to the 87.5% quantile so was retained.
+
+The time series of spawning biomass and distribution of estimated 2019 spawning biomass were provided to the panel (Figures \ref{fig:states_spawnbio} and \ref{fig:states_spawnbio_2019}).
+
 
 \end{description}
 

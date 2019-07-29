@@ -9,9 +9,9 @@
 
 # Appendix B. Figures and Table associated with responses to STAR Requests {-}
 
-![Extrapolated catch rates (upper panel) and estimated biomass after adjustment for area of each bin (lower panel). The gray regions indicate those depths outside the survey range which were extrapolated based on catch rates from the commercial bottom trawl fishery. The extrapolated biomass is equal to 25.8% of the total biomass (extrapolated plus surveyed area).\label{fig:survey_estimates_by_depth_with_shallow}](Figures/survey_estimates_by_depth_with_shallow.png)
+![Extrapolated catch rates (upper panel) and estimated biomass after adjustment for area of each bin (lower panel). The gray regions indicate those depths outside the survey range which were extrapolated based on catch rates from the commercial bottom trawl fishery. The extrapolated biomass is equal to 25.8\% of the total biomass (extrapolated plus surveyed area).\label{fig:survey_estimates_by_depth_with_shallow}](Figures/survey_estimates_by_depth_with_shallow.png)
 
-![Time series of spawning biomass with 95% uncertainty intervals for the pre-STAR (old) base model (blue) compared to two alternative models that used the revised catchability prior in combination with either the status-quo Francis data weighting (red) or the Dirichlet-Multinomial data weighting (green).\label{fig:spawnbio_STAR_request1}](Figures/sens.STAR1_compare2_spawnbio_uncertainty.png)
+![Time series of spawning biomass with 95\% uncertainty intervals for the pre-STAR (old) base model (blue) compared to two alternative models that used the revised catchability prior in combination with either the status-quo Francis data weighting (red) or the Dirichlet-Multinomial data weighting (green).\label{fig:spawnbio_STAR_request1}](Figures/sens.STAR1_compare2_spawnbio_uncertainty.png)
 
 ![Time series of spawning biomass for the pre-STAR base model compared to two alternative models that started in 1980 with either equilibrium or flexible initial age structure. Disconnected points prior to 1980 represent the unfished equilibrium in each case.\label{fig:spawnbio_STAR_request2}](Figures/sens.1980start_comparisons_old_prior.png)
 
@@ -27,14 +27,17 @@
 
 ![Time series of recruitment estimated in the models with time-varying natural mortality associated with STAR request 3.\label{fig:tv_M3}](Figures/sens.tv_M_compare7_recruits.png)
 
-#![Fit to WCGBT Survey index for the models with time-varying natural mortality. Uncertainty intervals include the extra standard deviation estimates from the pre-STAR base model.\label{fig:tv_M4}](Figures/sens.tv_M_compare11_indices_flt5.png)
+![Fit to WCGBT Survey index for the models with time-varying natural mortality. Uncertainty intervals include the extra standard deviation estimates from the pre-STAR base model.\label{fig:tv_M4}](Figures/sens.tv_M_compare11_indices_flt5.png)
 
-#![Fit to Triennial Survey index for the models with time-varying natural mortality. Uncertainty intervals include the extra standard deviation estimates from the pre-STAR base model.\label{fig:tv_M5}](Figures/sens.tv_M_compare11_indices_flt6.png)
+![Fit to Triennial Survey index for the models with time-varying natural mortality. Uncertainty intervals include the extra standard deviation estimates from the pre-STAR base model.\label{fig:tv_M5}](Figures/sens.tv_M_compare11_indices_flt6.png)
 
+![Likelihood profile over the catchability of the WCGBT survey ($q$) for an alternative model with Dirichlet-Multinomial likelihood showing issues with convergence of some of the model runs.\label{fig:profile_logQ_D-M}](Figures/profile_Q_newest_prior_D-M.png)
 
+![Comparison of prior and maximum likelihood estimates with asymptotic approximation of uncertainty for the new prior and two alternative prior setups associated with STAR panel request 6.\label{fig:request6_prior_comparisons}](Figures/request6_prior_comparisons.png)
 
+![Time series of spawning biomass with approximate 95\% asymptotic intervals for the low and high states of nature compared to the base model.\label{fig:states_spawnbio}](Figures/state_compare2_spawnbio_uncertainty.png)
 
-
+![Maximum likelihood estimates and approximate asymptotic uncertainty for 2019 spawning biomass from the low and high states of nature compared to the base model. The symbols on each curve indicate the 2.5\%, 10\%, 25\%, 50\%, 75\%, 90\%, and 97.5\% quantiles and the low and high MLE estimates are just inside the 10\% and 90\% quantiles.\label{fig:states_spawnbio_2019}](Figures/state_compare14_densities_SSB_2019.png)
 
 
 
