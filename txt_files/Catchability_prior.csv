@@ -1,0 +1,7 @@
+Factor,Minimum,Best guess,Maximum
+Depth availability,0.6,0.75,0.9
+Latitudinal availability,1,1,1
+Vertical availability,0.75,0.85,0.95
+Probability of capture given in net path,0.75,1,1.5
+Habitat availability,1,1.1,1.2
+Product of all factors,0.338,0.701,1.539
