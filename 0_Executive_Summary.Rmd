@@ -273,6 +273,10 @@ The fit to the length data was significantly improved by estimating a difference
 
 ## Decision Table{-}    
 
+The catchability of the WCGBT Survey was chosen as the axis of uncertainty during the STAR panel given the importance of this value in determining the scale of the population and the influence of the prior distribution on this quantity. The high state of nature had $log(q) = -0.766$, $q = 0.465$ and was chosen based on 1.15 units of standard deviation in the estimated $log(q)$ parameter from the base model. The 2019 spawning biomass for the high state of nature was close ot the 87.5\% quantile of the base mdoel. The low state of nature had $log(q) = 0.223$, $q = 1.250$ and was chosen to approximate the 12.5\% quantile of the 2019 spawning biomass in the base model as the method of using 1.15 units of standard deviation was closer to the 25\% quantile.
+
+Based on input from the Groundfish Management Team representative to the STAR panel, the catch streams chosen for the decision table were a constant catch of 250 mt per year (based on recent low catch values), a constant catch of 494 mt per year (based on the status-quo harvest limits), and the ACL = ABC from the base model assumping a Category 2 sigma and P* = 0.45.
+
 <!-- ***********BEGIN EXECUTIVE SUMMARY OFL AND DECISION TABLES************ -->
 \FloatBarrier
 
