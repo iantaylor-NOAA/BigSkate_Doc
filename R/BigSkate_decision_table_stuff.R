@@ -31,12 +31,15 @@ round(q_high, 3)
 
 dir <- 'C:/SS/skates/models/bigskate99_new_prior_98percent_priorSD/forecasts'
 #bs.low <- SS_output(file.path(dir, 'low_state'))
-bs.high <- SS_output(file.path(dir, 'high_state'))
+#bs.high <- SS_output(file.path(dir, 'high_state'))
 ## dir.profile.Q <- file.path(dir.mod, "profile.Q")
 ## profilemodels <- SSgetoutput(dirvec=dir.profile.Q,
 ##                              keyvec=1:length(Q.vec), getcovar=FALSE)
-bs.low <- profilemodels[[5]]
+#bs.low <- profilemodels[[5]]
 
+
+bs.high <- SS_output(file.path(dir, 'high_state_default'))
+bs.low <- SS_output(file.path(dir, 'low_state_default'))
 
 
 # exact calculations
@@ -57,53 +60,69 @@ qnorm(p = .125, mean = mean, sd = sd)
 
 state.sum <- SSsummarize(list(bs99, bs.low, bs.high))
 
-SSplotComparisons(state.sum,
-                  plot = FALSE,
-                  print = TRUE,
-                  #subplot = c(1,11),
-                  pwidth = 5.2,
-                  pheight = 4,
-                  indexfleets = 5,
-                  indexUncertainty = TRUE,
-                  legendloc = 'topright',
-                  filenameprefix = "state_4x5_",
-                  densitynames = c("SSB_Virgin", "SSB_2019", "R0",
-                      "ForeCatch_2021","OFL_2019", "NatM"),
-                  legendlabels = c("New base model (q = 0.668)","Low state (q = 1.250)","High state (q = 0.464)"),
-                  plotdir = dir)
+for(size in 1:2){
+  if(size == 1){
+    w <- 5.2
+    h <- 4
+    pref <- "4x5_"
+  }
+  if(size == 2){
+    w <- 6.5
+    h <- 5
+    pref <- ""
+  }
+  SSplotComparisons(state.sum,
+                    plot = FALSE,
+                    print = TRUE,
+                    #subplot = c(1,11),
+                    pwidth = w,
+                    pheight = h,
+                    indexfleets = 5,
+                    indexUncertainty = TRUE,
+                    legendloc = 'topright',
+                    filenameprefix = paste0("state_", pref),
+                    densitynames = c("SSB_Virgin", "SSB_2019", "R0",
+                        #"ForeCatch_2021",
+                        "OFL_2019", "NatM"),
+                    legendlabels = c("New base model (q = 0.668)",
+                        "Low state (q = 1.250)",
+                        "High state (q = 0.464)"),
+                    plotdir = dir)
 
+  SSplotComparisons(state.sum,
+                    subplot = 14,
+                    plot = FALSE,
+                    print = TRUE,
+                    #subplot = c(1,11),
+                    pwidth = w,
+                    pheight = h,
+                    indexfleets = 5,
+                    indexUncertainty = TRUE,
+                    legendloc = 'topright',
+                    filenameprefix = paste0("state_", pref),
+                    densitynames = c("SSB_Virgin", "SSB_2019", "R0",
+                        #"ForeCatch_2021",
+                        "OFL_2019", "NatM"),
+                    legendlabels = c("New base model (q = 0.668)",
+                        "Low state (q = 1.250)",
+                        "High state (q = 0.464)"),
+                    plotdir = dir)
 
-
-SSplotComparisons(state.sum,
-                  plot = FALSE,
-                  print = TRUE,
-                  #subplot = c(1,11),
-                  pwidth = 5.2,
-                  pheight = 4,
-                  indexfleets = 5,
-                  indexUncertainty = TRUE,
-                  legendloc = 'topright',
-                  filenameprefix = "state_4x5_",
-                  densitynames = c("SSB_Virgin", "SSB_2019", "R0",
-                      "ForeCatch_2021","OFL_2019", "NatM"),
-                  legendlabels = c("New base model (q = 0.668)","Low state (q = 1.250)","High state (q = 0.464)"),
-                  plotdir = dir)
-
-SSplotComparisons(state.sum,
-                  plot = FALSE,
-                  print = TRUE,
-                  endyrvec = 2030,
-                  subplot = c(1,2),
-                  pwidth = 5.2,
-                  pheight = 4,
-                  indexfleets = 5,
-                  indexUncertainty = TRUE,
-                  legendloc = 'topright',
-                  filenameprefix = "state_forecast_4x5_",
-                  densitynames = c("SSB_2019"),
-                  legendlabels = c("New base model (q = 0.668)","Low state (q = 1.250)","High state (q = 0.464)"),
-                  plotdir = dir)
-
+  SSplotComparisons(state.sum,
+                    plot = FALSE,
+                    print = TRUE,
+                    endyrvec = 2030,
+                    subplot = c(1,2),
+                    pwidth = w,
+                    pheight = h,
+                    indexfleets = 5,
+                    indexUncertainty = TRUE,
+                    legendloc = 'topright',
+                    filenameprefix = paste0("state_forecast", pref),
+                    densitynames = c("SSB_2019"),
+                    legendlabels = c("New base model (q = 0.668)","Low state (q = 1.250)","High state (q = 0.464)"),
+                    plotdir = dir)
+}
 #########################################################################
 ## get three catch streams
 #########################################################################
@@ -257,12 +276,23 @@ vals.high_state_494t    <- r4ss:::SS_decision_table_stuff(high_state_494t, yrs=2
 decision1 <- read.csv('c:/SS/skates/BigSkate_Doc/txt_files/DecisionTable_blank.csv',
                       check.names = FALSE, stringsAsFactors = FALSE)
 names(decision1) <- gsub(pattern = "Depletion",
-                         replacement = "%Unfished",
+                         replacement = "Fraction unfished",
                          names(decision1))
 
 newtab <- rbind(cbind(vals.low_state_250t,    vals.base_state_250t,    vals.high_state_250t),
                 cbind(vals.low_state_494t,    vals.base_state_494t,    vals.high_state_494t),
                 cbind(vals.low_state_default, vals.base_state_default, vals.high_state_default))
+
+# confirming that fixed catches came our right
+newtab[newtab$yr == 2021,]
+##         yr  catch SpawnBio   dep   yr    catch SpawnBio   dep   yr  catch
+## 2087  2021  250.0   1144.9 0.638 2021  250.000     2012 0.797 2021  250.0
+## 20871 2021  494.0   1144.9 0.638 2021  494.000     2012 0.797 2021  494.0
+## 20872 2021 1476.8   1144.9 0.638 2021 1476.753     2012 0.797 2021 1476.8
+##       SpawnBio   dep
+## 2087    2840.4 0.857
+## 20871   2840.4 0.857
+## 20872   2840.4 0.857
 
 newtab2 <- newtab[,c(2, which(names(newtab) %in% c("SpawnBio","dep")))]
 names(newtab2) <- names(decision1)[-c(1:2)]

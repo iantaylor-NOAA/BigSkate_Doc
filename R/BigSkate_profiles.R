@@ -40,7 +40,9 @@ out$parameters["SR_BH_steep","Value"]
 
 # estimated Q value
 out$parameters["LnQ_base_WCGBTS(5)","Value"]
-## -0.143787
+## [1] -0.403308
+exp(out$parameters["LnQ_base_WCGBTS(5)","Value"])
+## [1] 0.6681063
 
 # vector of log(R0) spanning estimates
 # (going from high to low in case low value cause crashes)
@@ -282,6 +284,20 @@ SSplotProfile(profilesummary,           # summary object
 file.copy(file.path(dir.profile.M, 'profile_plot_likelihood.png'),
           file.path(dir.profile.M, 'profile_M.png'), overwrite=TRUE)
 
+SSplotProfile(profilesummary,           # summary object
+              minfraction = 0.1,
+              print=TRUE,
+              models=goodmodels,
+              ymax=10,
+              add_cutoff = TRUE,
+              sort.by.max.change = FALSE,
+              plotdir=dir.profile.M,
+              profile.string = "NatM_p_1_Fem_GP_1", # substring of profile parameter
+              profile.label="Natural mortality (M)") # axis label
+# copy plot with generic name to main folder with more specific name
+file.copy(file.path(dir.profile.M, 'profile_plot_likelihood.png'),
+          file.path(dir.profile.M, 'profile_M_with_example_line_minfraction0.1.png'), overwrite=TRUE)
+
 # compare spawning biomass time series
 SSplotComparisons(profilesummary, subplot=1,
                   models=goodmodels,
@@ -421,34 +437,34 @@ file.copy(file.path(dir.profile.Q, 'profile_plot_likelihood.png'),
 
 
 # compare spawning biomass time series
-labels <- c(paste0("log(q)=",round(lnQ.vec,2),", q=",Q.vec), "Base Model, q=0.81")
+labels <- c(paste0("log(q)=",round(lnQ.vec,2),", q=",Q.vec), "Base Model, q=0.668")
 ## lnQ.base <- out$parameters["LnQ_base_WCGBTS", "Value"]
 ## labels[lnQ.vec==h.base] <- paste(labels[lnQ.vec==lnQ.base], "(Base Model)")
 SSplotComparisons(profilesummary, subplot=1,
                   legendlabels=labels[goodmodels],
                   models=goodmodels,
                   png=TRUE, plotdir=dir.profile.Q,
-                  filenameprefix="profile_Q_DM_", legendloc="bottomleft")
+                  filenameprefix="profile_Q_", legendloc="bottomleft")
 SSplotComparisons(profilesummary, subplot=1,
                   pwidth=5.2, pheight=4,
                   legendlabels=labels[goodmodels],
                   models=goodmodels,
                   legendncol = 2,
                   png=TRUE, plotdir=dir.profile.Q,
-                  filenameprefix="profile_Q_DM_4x5_", legendloc="bottomleft")
+                  filenameprefix="profile_Q_4x5_", legendloc="bottomleft")
 SSplotComparisons(profilesummary, subplot=3,
                   legendlabels=labels[goodmodels],
                   models=goodmodels,
                   png=TRUE, plotdir=dir.profile.Q,
                   legendncol = 2,
-                  filenameprefix="profile_Q_DM_", legendloc="bottomleft")
+                  filenameprefix="profile_Q_", legendloc="bottomleft")
 SSplotComparisons(profilesummary, subplot=3,
                   pwidth=5.2, pheight=4,
                   legendlabels=labels[goodmodels],
                   models=goodmodels,
                   png=TRUE, plotdir=dir.profile.Q,
                   legendncol = 2,
-                  filenameprefix="profile_Q_DM_4x5_", legendloc="bottomleft")
+                  filenameprefix="profile_Q_4x5_", legendloc="bottomleft")
 
 
 plot(exp(as.numeric(profilesummary$pars[profilesummary$pars$Label=="LnQ_base_WCGBTS(5)",1:11])),

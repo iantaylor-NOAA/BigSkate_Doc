@@ -265,3 +265,93 @@ legend('topleft',
        legend = c("Dead discards", "Landings", "Tribal"))
 title(ylab="Landings + dead discards (mt)")
 dev.off()
+
+
+
+### SRG request 1
+# define directory on a specific computer
+getbs(82) # old base
+getbs(99) # new prior
+getbs(101) # new prior + DM tuning
+
+sens.sum_SRG1 <- SSsummarize(list(bs82,
+                                  bs99,
+                                  bs101))
+sens.names_SRG1 <- c("old base",
+                     "new prior (with 1% and 99% quantiles)",
+                     "new prior (with 1% and 99% quantiles) + Dirichlet-Multinomial")
+# make comparison plot
+SSplotComparisons(sens.sum_SRG1,
+                  plot = FALSE,
+                  print = TRUE,
+                  subplot = 2,
+                  filenameprefix = "sens.SRG1_",
+                  legendlabels = sens.names_SRG1,
+                  legendloc = 'topright',
+                  indexfleets = 5,
+                  plotdir = 'c:/SS/skates/BigSkate_Doc/Figures/')
+
+### SRG request 2
+getbs(82)
+getbs(82, sensname="misc5")
+getbs(82, sensname="misc6")
+getbs(82, sensname="misc8") # old bad run initially presented to STAR
+
+png(file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
+              'sens.1980start_comparisons_old_prior.png'),
+    res=300, units='in', width=6.5, height=5, pointsize=10)
+
+SSplotComparisons(SSsummarize(list(bs82misc5, bs82misc6)),
+                  legendlabels=c(#"Pre-STAR Base",
+                      "Start in 1980 at fished equilibrium age structure",
+                      "Start in 1980 with flexible initial age structure"),
+                  plot = TRUE,
+                  print = FALSE,
+                  col = 2:3,
+                  pch = 2:3,
+                  subplot = 1,
+                  new = FALSE,
+                  legendloc = c(.3, .95),
+                  filenameprefix = "sens.1980start_")
+
+SSplotComparisons(SSsummarize(list(bs82)), #bs99misc5, bs99misc6)),
+                  legendlabels=c("Pre-STAR Base"),
+                      #"Start in 1980 at fished equilibrium age structure",
+                      #"Start in 1980 with flexible initial age structure"),
+                  col = 4,
+                  plot = TRUE,
+                  print = FALSE,
+                  subplot = 1,
+                  add = TRUE,
+                  new = FALSE,
+                  legendloc = c(.3, 1),
+                  filenameprefix = "sens.1980start_")
+
+points(x = 1979, y = bs82$SBzero, col=4, lwd=2, cex=1.5)
+
+dev.off()
+
+
+SSplotComparisons(SSsummarize(list(bs82, bs82misc5, bs82misc6)),
+                  legendlabels=c("Pre-STAR Base",
+                      "Start in 1980 at fished equilibrium age structure",
+                      "Start in 1980 with flexible initial age structure"),
+                  plotdir = file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/"),
+                  plot = FALSE,
+                  print = TRUE,
+                  subplot = 11,
+                  indexfleets = 6,
+                  indexUncertainty = TRUE,
+                  filenameprefix = "sens.1980start_")
+
+SSplotComparisons(SSsummarize(list(bs82, bs82misc5, bs82misc6)),
+                  legendlabels=c("Pre-STAR Base",
+                      "Start in 1980 at fished equilibrium age structure",
+                      "Start in 1980 with flexible initial age structure"),
+                  plotdir = file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/"),
+                  plot = FALSE,
+                  print = TRUE,
+                  subplot = 11,
+                  indexfleets = 5,
+                  indexUncertainty = TRUE,
+                  filenameprefix = "sens.1980start_")

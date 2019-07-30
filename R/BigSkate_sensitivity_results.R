@@ -640,7 +640,7 @@ getbs(99, sensname="misc6")
 
 ### new prior
 png(file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
-              'sens.1980start_comparisons.png'),
+              'sens.1980start_comparisons_new_prior.png'),
     res=300, units='in', width=6.5, height=5, pointsize=10)
 
 SSplotComparisons(SSsummarize(list(bs99misc5, bs99misc6)),
@@ -693,19 +693,30 @@ SSplotComparisons(SSsummarize(list(bs99, bs99Q5)),
 
 
 #### comparing estimates of natural mortality
-colvec <- rich.colors.short(6)[-1]
+png(file.path(dir.sensitivities, "../../BigSkate_Doc/Figures/",
+              'sens.tv_M_time_series_of_M.png'),
+    res=300, units='in', width=6.5, height=5, pointsize=10)
+colvec <- rich.colors.short(7)[-1]
 plot(1916:2018, bs99bio6$MGparmAdj$NatM_p_1_Fem_GP_1[bs99bio6$MGparmAdj$Yr %in% 1916:2018],
      ylim = c(0,0.7), yaxs='i', xlim=c(1916, 2018), #ylim=c(0, 0.6),
      xlab="Year", ylab="Natural mortality",
-     type='l', lwd=2, col=colvec[1])
+     type='l', lwd=2, col=colvec[2], las=1)
 lines(1916:2018, bs99bio7$MGparmAdj$NatM_p_1_Fem_GP_1[bs99bio7$MGparmAdj$Yr %in% 1916:2018],
-     type='l', lwd=2, col=colvec[2])
-lines(1916:2018, bs99bio8$MGparmAdj$NatM_p_1_Fem_GP_1[bs99bio8$MGparmAdj$Yr %in% 1916:2018],
      type='l', lwd=2, col=colvec[3])
-lines(1916:2018, bs99bio9$MGparmAdj$NatM_p_1_Fem_GP_1[bs99bio9$MGparmAdj$Yr %in% 1916:2018],
+lines(1916:2018, bs99bio8$MGparmAdj$NatM_p_1_Fem_GP_1[bs99bio8$MGparmAdj$Yr %in% 1916:2018],
      type='l', lwd=2, col=colvec[4])
-lines(1916:2018, bs99bio10$MGparmAdj$NatM_p_1_Fem_GP_1[bs99bio10$MGparmAdj$Yr %in% 1916:2018],
+lines(1916:2018, bs99bio9$MGparmAdj$NatM_p_1_Fem_GP_1[bs99bio9$MGparmAdj$Yr %in% 1916:2018],
      type='l', lwd=2, col=colvec[5])
+lines(1916:2018, bs99bio10$MGparmAdj$NatM_p_1_Fem_GP_1[bs99bio10$MGparmAdj$Yr %in% 1916:2018],
+     type='l', lwd=2, col=colvec[6])
+lines(1916:2018, bs99$MGparmAdj$NatM_p_1_Fem_GP_1[bs99$MGparmAdj$Yr %in% 1916:2018],
+     type='l', lwd=2, col=colvec[1])
+legend('bottomleft',
+       col = colvec,
+       lwd=2,
+       bty = 'n',
+       legend = c("Base",paste0("Time-varying M option ", 1:5)))
+dev.off()
 
 SSplotComparisons(SSsummarize(list(bs99, bs99bio6, bs99bio7, bs99bio8, bs99bio9, bs99bio10)),
                   #legendlabels=c("Base","New prior on catchability"),
