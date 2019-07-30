@@ -86,7 +86,7 @@ Big Skates are highly mobile and capable of long range (> 2000 km) movements (@K
 
 The Big Skate is broadly distributed, occurring from the southeastern Bering Sea [@Mecklenburg2002] to southern Baja California (22.90º N, 110.03º W; [@Castro1993]) and the Gulf of California [@Castro1996]. It has been reported at depths of 2–501 m (min: @Miller1980; max: @Farrugia2016) but is most common on the inner continental shelf (< 100 m; [@Love2011]; [@Bizzarro2015]). Big Skates are highly mobile and capable of long range (> 2000 km) movements ([@KingandMcF2009]; [@Farrugia2016]). 
 
-In 2012, the Big Skate was moved from genus *Raja* to the new genus *Beringraja* together with the Mottled Skate (*B. pulchra*) [@Ishihara2012].  These are the only two skates with multiple embryos per egg case, and they are very similar mophologically and genetically [@Bizzarro2019].  More recently, Longnose Skate has also moved to *Beringraja* [@Last2016].
+In 2012, the Big Skate was moved from genus *Raja* to the new genus *Beringraja* together with the Mottled Skate (*B. pulchra*) [@Ishihara2012].  These are the only two skates with multiple embryos per egg case, and they are very similar morphologically and genetically [@Bizzarro2019].  More recently, Longnose Skate has also moved to *Beringraja* [@Last2016].
 
 ## Ecosystem Considerations
 
