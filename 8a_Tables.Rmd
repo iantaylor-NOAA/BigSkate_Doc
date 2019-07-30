@@ -279,6 +279,7 @@
                               'Base',
                               'All selectivity domed',
                               'No sex-specific selectivity',
+                              'Longnose Skate catchability prior',
                               'Remove catchability prior',
                               'No catchability change in Triennial')
 
@@ -358,7 +359,9 @@
                               'McAllister-Ianelli tuning',
                               'Dirichlet-Multinomial tuning',
                               'No extra SD on indices',
-                              'Estimate rec. devs.')
+                              'Estimate rec. devs.',
+                              'Estimate rec. devs., no $q$ prior'
+                              )
 
     #colnames(Sens_model1) <- gsub(pattern=".", replacement=" ", x=colnames(Sens_model1), fixed=TRUE)
     
