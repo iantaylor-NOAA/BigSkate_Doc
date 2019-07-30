@@ -132,7 +132,7 @@ for (model in 1:n_models) {
   SpawningBtab = subset(SpawningByrs, select = c('YEAR', 'Value', 'CI'))
   
   # Assign column names
-  colnames(SpawningBtab) = c('Year', paste('Spawning Output (', fecund_unit,')', 
+  colnames(SpawningBtab) = c('Year', paste('Spawning Biomass (', fecund_unit,')', 
                                            sep=''), '~ 95% confidence interval')
   
   
@@ -165,15 +165,15 @@ for (model in 1:n_models) {
   
   Depletiontab = subset(Depletionyrs, select=c('Value', 'CI'))
   
-  colnames(Depletiontab) = c('Estimated %unfished', '~ 95% confidence interval')
+  colnames(Depletiontab) = c('Fraction Unfished', '~ 95% confidence interval')
   
-  # Bind the spawning output and depletion data together 
+  # Bind the spawning biomass and depletion data together 
   Spawn_Deplete = cbind(SpawningBtab, Depletiontab)
   
   colnames(Spawn_Deplete) = c('Year', 
-                              paste('Spawning Output (', fecund_unit, ')', sep = ''), 
+                              paste('Spawning Biomass (', fecund_unit, ')', sep = ''), 
                               '~ 95% confidence interval',
-                              'Estimated %unfished',
+                              'Fraction Unfished',
                               '~ 95% confidence interval')
   
   # Assign a model number to the Spawn_deplete table, if you do cbind within this step
@@ -204,7 +204,7 @@ for (model in 1:n_models) {
 # Model 1 table ---------------------------------------------------------------
 Spawn_Deplete_mod1.table <- xtable(SpawnDepletemod1,
                                    caption = 'Recent trend in beginning of the 
-                                      year spawning output and %unfished
+                                      year spawning biomass and fraction unfished
                                       (spawning biomass relative to unfished
                                       equilibrum spawning biomass)', 
                                    label='tab:SpawningDeplete_mod1',
@@ -459,10 +459,10 @@ for (model in 1:n_models) {
   
   
   
-  Quantity = c(paste('Unfished spawning output (', fecund_unit, ')', sep = ''),
+  Quantity = c(paste('Unfished spawning biomass (', fecund_unit, ')', sep = ''),
                paste('Unfished age ', min_age, ' biomass (mt)', sep = ''),
                'Unfished recruitment ($R_{0}$, thousands)',
-               paste('Spawning output (', LastYR, ' ', fecund_unit, ')', sep = ''),
+               paste('Spawning biomass (', LastYR, ' ', fecund_unit, ')', sep = ''),
                paste('Depletion (', LastYR,')',sep=''),
                '\\textbf{$\\text{Reference points based on } \\mathbf{B_{40\\%}}$}',
                'Spawning biomass ($B_{40\\%}$)',
@@ -604,12 +604,12 @@ decision_mod1 = read.csv('./txt_files/DecisionTable_mod1.csv')
 colnames(decision_mod1) = c('', 
                             'Year',  
                             'Catch',	
-                            'Spawning Output',	
-                            '%Unfished', 
-                            'Spawning Output',	
-                            '%Unfished',	
-                            'Spawning Output',	
-                            '%Unfished')
+                            'Spawning Biomass',	
+                            'Fraction Unfished', 
+                            'Spawning Biomass',	
+                            'Fraction Unfished',	
+                            'Spawning Biomass',	
+                            'Fraction Unfished')
 
 decision_mod1.table = xtable(decision_mod1, 
     caption = c(paste0('Summary of 12-year projections beginning in 2019',
@@ -696,9 +696,9 @@ if (n_models == 1) {
                        '(1-$SPR$)(1-$SPR_{50\\%}$)',
                        'Exploitation rate',
                        paste('Age ',min_age,' biomass (mt)',sep=''),
-                       'Spawning Output',
+                       'Spawning Biomass',
                        '~95\\% CI',
-                       '%Unfished',
+                       'Fraction Unfished',
                        '~95\\% CI',
                        'Recruits',
                        '~95\\% CI')
