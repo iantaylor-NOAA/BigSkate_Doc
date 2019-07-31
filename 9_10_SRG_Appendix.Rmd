@@ -9,7 +9,20 @@
 
 # Appendix B. Figures and Table associated with responses to STAR Requests {-}
 
-![Extrapolated catch rates (upper panel) and estimated biomass after adjustment for area of each bin (lower panel). The gray regions indicate those depths outside the survey range which were extrapolated based on catch rates from the commercial bottom trawl fishery. The extrapolated biomass is equal to 25.8\% of the total biomass (extrapolated plus surveyed area).\label{fig:survey_estimates_by_depth_with_shallow}](Figures/survey_estimates_by_depth_with_shallow.png)
+<!-- ![Extrapolated catch rates (upper panel) and estimated biomass after adjustment for area of each bin (lower panel). The gray regions indicate those depths outside the survey range which were extrapolated based on catch rates from the commercial bottom trawl fishery. The extrapolated biomass is equal to 25.8\% of the total biomass (extrapolated plus surveyed area).\label{fig:survey_estimates_by_depth_with_shallow}](Figures/survey_estimates_by_depth_with_shallow.png) -->
+
+\vspace{1.5cm}
+
+\noindent
+\begin{minipage}{\linewidth}% to keep image and caption on one page
+\makebox[\linewidth]{%        to center the image
+  \includegraphics[keepaspectratio=true,width=6in]{Figures/survey_estimates_by_depth_with_shallow.png}}
+\captionof{figure}{Extrapolated catch rates (upper panel) and estimated biomass after adjustment for area of each bin (lower panel). The gray regions indicate those depths outside the survey}\label{fig:survey_estimates_by_depth_with_shallow}%
+\begin{centering}
+range which were extrapolated based on catch rates from the commercial bottom trawl fishery. The extrapolated biomass is equal to 25.8\% of the total biomass (extrapolated plus surveyed area).
+\end{centering}
+\end{minipage}
+
 
 ![Time series of spawning biomass with 95\% uncertainty intervals for the pre-STAR (old) base model (blue) compared to two alternative models that used the revised catchability prior in combination with either the status-quo Francis data weighting (red) or the Dirichlet-Multinomial data weighting (green).\label{fig:spawnbio_STAR_request1}](Figures/sens.STAR1_compare2_spawnbio_uncertainty.png)
 
