@@ -84,25 +84,7 @@ for(size in 1:2){
                     densitynames = c("SSB_Virgin", "SSB_2019", "R0",
                         #"ForeCatch_2021",
                         "OFL_2019", "NatM"),
-                    legendlabels = c("New base model (q = 0.668)",
-                        "Low state (q = 1.250)",
-                        "High state (q = 0.464)"),
-                    plotdir = dir)
-
-  SSplotComparisons(state.sum,
-                    subplot = 14,
-                    plot = FALSE,
-                    print = TRUE,
-                    #subplot = c(1,11),
-                    pwidth = w,
-                    pheight = h,
-                    indexfleets = 5,
-                    indexUncertainty = TRUE,
-                    legendloc = 'topright',
-                    filenameprefix = paste0("state_", pref),
-                    densitynames = c("SSB_Virgin", "SSB_2019", "R0",
-                        #"ForeCatch_2021",
-                        "OFL_2019", "NatM"),
+                    ylimAdj = 1.05, yaxs = 'i',
                     legendlabels = c("New base model (q = 0.668)",
                         "Low state (q = 1.250)",
                         "High state (q = 0.464)"),
@@ -117,12 +99,23 @@ for(size in 1:2){
                     pheight = h,
                     indexfleets = 5,
                     indexUncertainty = TRUE,
+                    ylimAdj = 1.05, yaxs = 'i',
                     legendloc = 'topright',
                     filenameprefix = paste0("state_forecast", pref),
                     densitynames = c("SSB_2019"),
                     legendlabels = c("New base model (q = 0.668)","Low state (q = 1.250)","High state (q = 0.464)"),
                     plotdir = dir)
 }
+file.copy(file.path(dir, "state_compare2_spawnbio_uncertainty.png"),
+          file.path(dir, "../../../BigSkate_Doc/Figures/",
+                    "state_compare2_spawnbio_uncertainty.png"),
+          overwrite=TRUE)
+file.copy(file.path(dir, "state_compare14_densities_SSB_2019.png"),
+          file.path(dir, "../../../BigSkate_Doc/Figures/",
+                    "state_compare14_densities_SSB_2019.png"),
+          overwrite=TRUE)
+
+
 #########################################################################
 ## get three catch streams
 #########################################################################

@@ -101,7 +101,7 @@
  colnames(Timeseries)=c('Yr', 
                         'Total biomass (mt)', 
                         paste0('Spawning biomass', SpawningB_units, ' (mt)'),
-                        '%Unfished', 
+                        'Fraction unfished', 
                         'Age-0 recruits', 
                         'Total catch (mt)',
                         'Relative exploitation rate', 
@@ -289,7 +289,10 @@
     Sens_model1.table = xtable(Sens_model1, 
                                caption = c('Sensitivity of the base model 
                                           to assumptions about selectivity and
-                                          catchability.'),
+                                          catchability.
+                                          Likelihood values are negative
+                                          log-likelihood where smaller values
+                                          indicate a better fit.'),
                                label = 'tab:Sensitivity_sel_and_Q', digits = 2)    
   
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
@@ -330,7 +333,10 @@
     # Create sensitivities table
     Sens_model1.table = xtable(Sens_model1, 
                                caption = c('Sensitivity of the base model 
-                                          to assumptions about biology'),
+                                          to assumptions about biology.
+                                          Likelihood values are negative
+                                          log-likelihood where smaller values
+                                          indicate a better fit.'),
                                label = 'tab:Sensitivity_bio', digits = 2)    
   
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
@@ -360,7 +366,7 @@
                               'Dirichlet-Multinomial tuning',
                               'No extra SD on indices',
                               'Estimate rec. devs.',
-                              'Estimate rec. devs., no $q$ prior'
+                              'Estimate rec. devs., no q prior'
                               )
 
     #colnames(Sens_model1) <- gsub(pattern=".", replacement=" ", x=colnames(Sens_model1), fixed=TRUE)
@@ -368,7 +374,11 @@
     # Create sensitivities table
     Sens_model1.table = xtable(Sens_model1, 
                                caption = c('Sensitivity of the base model 
-                                          to assumptions about data weighting and recruitment'),
+                                          to assumptions about data weighting
+                                          and recruitment. 
+                                          Likelihood values are negative
+                                          log-likelihood where smaller values
+                                          indicate a better fit.'),
                                label = 'tab:Sensitivity_misc', digits = 2)    
   
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
@@ -406,7 +416,10 @@
     # Create sensitivities table
     Sens_model1.table = xtable(Sens_model1, 
                                caption = c('Sensitivity of the base model 
-                                          to assumptions about catches and discards.'),
+                                          to assumptions about catches and discards.
+                                          Likelihood values are negative
+                                          log-likelihood where smaller values
+                                          indicate a better fit..'),
                                label = 'tab:Sensitivity_catch', digits = 2)    
   
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
@@ -626,7 +639,7 @@
  colnames(Timeseries)=c('Yr', 
                         'Total biomass (mt)', 
                         paste0('Spawning biomass', SpawningB_units, ' (mt)'),
-                        '%Unfished', 
+                        'Fraction unfished', 
                         'Age-0 recruits', 
                         'Total catch (mt)',
                         'Relative exploitation rate', 
@@ -677,12 +690,12 @@ decision_mod1 = read.csv('./txt_files/DecisionTable_mod1.csv')
 colnames(decision_mod1) = c('', 
                             'Year',  
                             'Catch',	
-                            'Spawning Output',	
-                            '%Unfished', 
-                            'Spawning Output',	
-                            '%Unfished',	
-                            'Spawning Output',	
-                            '%Unfished')
+                            'Spawning Biomass',	
+                            'Frac. Unfished', 
+                            'Spawning Biomass',	
+                            'Frac. Unfished',	
+                            'Spawning Biomass',	
+                            'Frac. Unfished')
 
 decision_mod1.table = xtable(decision_mod1, 
                              caption = c(paste0('Summary of 12-year projections beginning in 2019',
