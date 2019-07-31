@@ -16,8 +16,6 @@ We recommend the following research be conducted before the next assessment.
 
 \item \textbf{Investigate factors contributing to estimated lower selectivity for females than males.} Sex-specific differences in selectivity were included in the base model to better fit differences in sex ratios in the length composition data but the behavioral processes that might contribute to this pattern are not understood and other explanations for the sex ratios are possible.
 
-\item \textbf{Investigate the distribution of Big Skate shallower than the 55 m limit of the WCGBT Survey.} This would help with interpretation of the biomass estimates from the survey and potentially refining the associated prior on catchability.
-
 \item \textbf{Pursue additional approaches for estimating historical discards.} The approaches used here were based on averages applied over a period of decades. The catch reconstructions conducted for each state were much more sophisticated, but were applied only to the subset of the catch that was landed. Reconstructed spatial patterns of fishing effort could be used to estimate changes in total mortality over time.
 
 \item \textbf{Improve understanding of links between Big Skate on the U.S. West Coast and other areas.} Tagging studies in Alaska indicated that Big Skate are capable of long distance movements. A better understanding of links through tagging in other areas and genetic studies could highlight strengths or weaknesses of the status-quo approach.
