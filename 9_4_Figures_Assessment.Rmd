@@ -188,6 +188,9 @@ Lines indicate 95\% uncertainty interval around index values. Thicker lines indi
 
 ![Time series of spawning biomass (mt) estimated in sensitivity analyses related to data weighting and recruitment. \label{fig:Sensitivity_misc}](Figures/sens.misc_compare1_spawnbio.png)
 
+![Fit to the WCGBT Survey estimated in the sensitivity analyses related to data weighting and recruitment. \label{fig:Sensitivity_misc2}](Figures/sens.misc_compare11_indices_flt5.png)
+
+
 ![Time series of spawning biomass (mt) estimated in sensitivity analyses related to historic catch and discards. \label{fig:Sensitivity_catch}](Figures/sens.catch_compare1_spawnbio.png)
 
 ![Fit to the WCGBT Survey estimated in the sensitivity analyses related to historic catch and discards. \label{fig:Sensitivity_catch2}](Figures/sens.catch_compare11_indices_flt5.png)

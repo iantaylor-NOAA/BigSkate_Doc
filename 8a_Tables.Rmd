@@ -289,7 +289,10 @@
     Sens_model1.table = xtable(Sens_model1, 
                                caption = c('Sensitivity of the base model 
                                           to assumptions about selectivity and
-                                          catchability.'),
+                                          catchability.
+                                          Likelihood values are negative
+                                          log-likelihood where smaller values
+                                          indicate a better fit.'),
                                label = 'tab:Sensitivity_sel_and_Q', digits = 2)    
   
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
@@ -330,7 +333,10 @@
     # Create sensitivities table
     Sens_model1.table = xtable(Sens_model1, 
                                caption = c('Sensitivity of the base model 
-                                          to assumptions about biology'),
+                                          to assumptions about biology.
+                                          Likelihood values are negative
+                                          log-likelihood where smaller values
+                                          indicate a better fit.'),
                                label = 'tab:Sensitivity_bio', digits = 2)    
   
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
@@ -368,7 +374,11 @@
     # Create sensitivities table
     Sens_model1.table = xtable(Sens_model1, 
                                caption = c('Sensitivity of the base model 
-                                          to assumptions about data weighting and recruitment'),
+                                          to assumptions about data weighting
+                                          and recruitment. 
+                                          Likelihood values are negative
+                                          log-likelihood where smaller values
+                                          indicate a better fit.'),
                                label = 'tab:Sensitivity_misc', digits = 2)    
   
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
@@ -406,7 +416,10 @@
     # Create sensitivities table
     Sens_model1.table = xtable(Sens_model1, 
                                caption = c('Sensitivity of the base model 
-                                          to assumptions about catches and discards.'),
+                                          to assumptions about catches and discards.
+                                          Likelihood values are negative
+                                          log-likelihood where smaller values
+                                          indicate a better fit..'),
                                label = 'tab:Sensitivity_catch', digits = 2)    
   
     # Add alignment - this uses centered aligment of .6 inches for all columns 2+,
