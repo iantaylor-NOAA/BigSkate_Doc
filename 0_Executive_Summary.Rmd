@@ -94,7 +94,7 @@ The age and length data provide evidence for growth patterns and sex-specific di
 
 The final model has 44 estimated parameters, most of which are related to selectivity (including sex-specific differences), time-varying retention, and growth (including sex-specific differences). The remaining 7 parameters include natural mortality, equilibrium recruitment, an extra survey uncertainty parameter for each of the two surveys, and three catchability parameters, where the Triennial Survey is assumed to have a change in catchability starting in 1995 due to changes in survey design.
 
-The scale of the population is not reliably informed by the data due to the combination of surveys that show trends which can't be matched by the structure of the model, and length and age data which inform growth and selectivity but provide relatively little information about changes in stock structure over time. Therefore, a prior on catchability of the WCGBT Survey (centered at 0.83) was applied in order to provide more stable results.
+The scale of the population is not reliably informed by the data due to the combination of surveys that show trends which can't be matched by the structure of the model, and length and age data which inform growth and selectivity but provide relatively little information about changes in stock structure over time. Therefore, a prior on catchability of the WCGBT Survey (centered at 0.701) was applied in order to provide more stable results.
 
 Although the assessment model requires numerous simplifying assumptions, it represents an improvement over the simplistic status-quo method of setting management limits, which relies on average survey biomass and an assumption about $F_{MSY}$. The use of an age-structured model with estimated growth, selectivity, and natural mortality likely provides a better estimate of past dynamics and the impacts of fishing in the future than the status-quo approach.
 
@@ -261,7 +261,7 @@ Annual Catch Limits have only been in place for Big Skate in recent years and to
 
 ## Unresolved Problems and Major Uncertainties{-}
 
-The data provide little information about the scale of the population, necessitating the use of a prior on catchability to maintain stable model results. The prior was developed for the 2007 Longnose Skate stock assessment and has not been revised to account for any differences between the two species.
+The data provide little information about the scale of the population, necessitating the use of a prior on catchability to maintain stable model results. During the review panel the prior was updated from the one developed in the 2007 Longnose Skate stock assessment to better account for Big Skate occurrences in shallower water than the surveyed region, but further refinement of this prior could be considered in the future.
 
 There is little evidence that the population is overfished or experiencing overfishing, but forecasts of overfishing limits vary considerably among the sensitivity analyses explored (though all remain well above the recent average catch).
 
@@ -348,8 +348,6 @@ We recommend the following research be conducted before the next assessment.
 
 \item \textbf{Investigate factors contributing to estimated lower selectivity for females than males.} Sex-specific differences in selectivity were included in the base model to better fit differences in sex ratios in the length composition data but the behavioral processes that might contribute to this pattern are not understood and other explanations for the sex ratios are possible.
 
-\item \textbf{Investigate the distribution of Big Skate shallower than the 55 m limit of the WCGBT Survey.} This would help with interpretation of the biomass estimates from the survey and potentially refining the associated prior on catchability.
-
 \item \textbf{Pursue additional approaches for estimating historical discards.} The approaches used here were based on averages applied over a period of decades. The catch reconstructions conducted for each state were much more sophisticated, but were applied only to the subset of the catch that was landed. Reconstructed spatial patterns of fishing effort could be used to estimate changes in total mortality over time.
 
 \item \textbf{Improve understanding of links between Big Skate on the U.S. West Coast and other areas.} Tagging studies in Alaska indicated that Big Skate are capable of long distance movements. A better understanding of links through tagging in other areas and genetic studies could highlight strengths or weaknesses of the status-quo approach.
@@ -364,7 +362,7 @@ We recommend the following research be conducted before the next assessment.
 
 \FloatBarrier
 
-<!--************RESET FIGURE & TABLE NUMBERS FOR THE DOCUMENT'S MAIN BODY** -->
+<!--************RESET FIGURE & TABLE NUMBERS FOR THE DOCUMENT'S MAIN BODY**-->
 \newpage
 \renewcommand{\thefigure}{\arabic{figure}}
 \renewcommand{\thetable}{\arabic{table}}

@@ -605,11 +605,11 @@ colnames(decision_mod1) = c('',
                             'Year',  
                             'Catch',	
                             'Spawning Biomass',	
-                            'Fraction Unfished', 
+                            'Frac. Unfished', 
                             'Spawning Biomass',	
-                            'Fraction Unfished',	
+                            'Frac. Unfished',	
                             'Spawning Biomass',	
-                            'Fraction Unfished')
+                            'Frac. Unfished')
 
 decision_mod1.table = xtable(decision_mod1, 
     caption = c(paste0('Summary of 12-year projections beginning in 2019',
