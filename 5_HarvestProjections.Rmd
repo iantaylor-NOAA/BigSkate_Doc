@@ -6,7 +6,7 @@ The forecasts of stock abundance and yield were developed using the final base m
 with the forecasted projections of the OFL presented in Table \ref{tab:OFL_projection}. 
 
 The forecasted projections of the OFL for each model are presented 
-in Table \ref{tab:Decision_table_mod1}. 
+in Table \ref{tab:Decision_table_mod1_text}. 
 
  
 
