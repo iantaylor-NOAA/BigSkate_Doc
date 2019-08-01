@@ -68,7 +68,7 @@ bibliography: BibFile.bib
 
 \newpage
 \pagenumbering{arabic}
-\setcounter{page}{1}-->
+\setcounter{page}{1}
 \renewcommand{\thefigure}{\arabic{figure}}
 \renewcommand{\thetable}{\arabic{table}}
 \setcounter{figure}{0}
