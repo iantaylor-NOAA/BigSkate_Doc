@@ -90,7 +90,7 @@ The assessment relies on two bottom trawl survey indices of abundance, the Trien
 
 Length composition data from the fishery is available starting in 1995 but is sparse until the most recent 10 years. Most of the ages are also from 2008 onward. This limits the ability of the model to estimate any changes in composition of the population during the majority of the history of the fishery. Estimates of discard rates and mean body weight of discards are available for the years 2002 onward and discard length compositions are available starting in 2010.
 
-The age and length data provide evidence for growth patterns and sex-specific differences in selectivity that are unusual among groundfish stocks that have been assessed within the U.S. West Coast and are not found in Longnose Skate, where the data show little difference between the sexes. Growth appears to be almost linear and similar between females and males up to about age 7 or over 100 cm at which point male growth appears to stabilize while females continue to grow. However, in spite of the similar growth pattern for ages prior to 7, males are observed more frequently in the length bins associated with these ages, with the 70--100 cm length bins showing more than 60% males in many years. Sex-specific differences in selectivity were included in the model in order to better match patterns in the sex ratios in the length composition data and a new "growth cessation model" was used to model growth as it provided much better fits than the von Bertalanffy growth function. The length and age data do not cover enough years or show enough evidence of distinct cohorts to reliably estimate deviations in recruitment around the stock-recruit curve, so recruitment in the final model is based directly on the Beverton-Holt stock-recruit curve. Steepness of this stock-recruit curve was not well-informed by the model so was fixed at the value used in a previous Longnose Skate stock assessment.
+The age and length data provide evidence for growth patterns and sex-specific differences in selectivity that are unusual among groundfish stocks that have been assessed within the U.S. West Coast and are not found in Longnose Skate, where the data show little difference between the sexes. Growth appears to be almost linear and similar between females and males up to about age 7 or over 100 cm at which point male growth appears to stabilize while females continue to grow. However, in spite of the similar growth pattern for ages prior to 7, males are observed more frequently in the length bins associated with these ages, with the 70--100 cm length bins showing more than 60% males in many years. Sex-specific differences in selectivity were included in the model in order to better match patterns in the sex ratios in the length composition data and a new "growth cessation model" was used to model growth as it provided much better fits than the von Bertalanffy growth function. The length and age data do not cover enough years or show enough evidence of distinct cohorts to reliably estimate deviations in recruitment around the stock-recruit curve, so recruitment in the final model is based directly on the Beverton-Holt stock-recruit curve. Steepness of this stock-recruit curve was not well-informed by the model so was fixed at the 0.4 value used in a previous Longnose Skate stock assessment.
 
 The final model has 44 estimated parameters, most of which are related to selectivity (including sex-specific differences), time-varying retention, and growth (including sex-specific differences). The remaining 7 parameters include natural mortality, equilibrium recruitment, an extra survey uncertainty parameter for each of the two surveys, and three catchability parameters, where the Triennial Survey is assumed to have a change in catchability starting in 1995 due to changes in survey design.
 
@@ -102,7 +102,7 @@ Although the assessment model requires numerous simplifying assumptions, it repr
 
 <!-- (Figure \ref{fig:Spawnbio_all} and Table \ref{tab:SpawningDeplete_mod1}).  -->
 
-The `r LastYR` estimated spawning biomass relative to unfished 
+The `r LastYR+1` estimated spawning biomass relative to unfished 
 equilibrium spawning biomass is above the target of 40% of unfished spawning biomass at `r Depl_mod1` 
 (95% asymptotic interval: $\pm$ `r Depl_mod1_CI`) (Figure \ref{fig:Spawnbio_all} and Table \ref{tab:SpawningDeplete_mod1}). 
 Approximate confidence intervals based on the 
@@ -169,8 +169,7 @@ Recruitment was assumed to follow the Beverton-Holt stock recruit curve with the
 
 
 ## Exploitation Status{-}
-Harvest rates estimated by the base model indicate catch levels have been below the limits that would be associated with the Spawning Potential Ratio (SPR) = 50% limit (corresponding to a relative fishing intensity of 100%)
-(Table \ref{tab:SPR_Exploit_mod1} and Figures \ref{fig:SPR_all} and \ref{fig:phase}). SPR is calculated as the lifetime spawning potential per recruit at a given fishing level relative to the lifetime spawning potential per recruit with no fishing. The exploitation rate of age 2+ fish has been below 3% over the recent 10-year period.
+Harvest rates estimated by the base model indicate catch levels have been below the 100% relative fishing intensity upper limit defined as $(1 - SPR)/(1 - SPR_{target})$ (Table \ref{tab:SPR_Exploit_mod1} and Figures \ref{fig:SPR_all} and \ref{fig:phase}). SPR is calculated as the lifetime spawning potential per recruit at a given fishing level relative to the lifetime spawning potential per recruit with no fishing. The annual exploitation rate of age 2+ fish has been below 2% over the recent 10-year period.
 
 \vspace{.5cm}
 
@@ -210,8 +209,8 @@ This stock assessment estimates that `r spp` is
 target ($B_{40\%}$), and well `r ifelse(Deplete_mod1[nrow(Deplete_mod1),2]-MSST>0,"above","below")` 
 the minimum stock size threshold ($B_{25\%}$). The estimated fraction unfished level for the base 
 model in `r LastYR+1` is 
-`r Depl_mod1` (95% asymptotic interval: $\pm$ `r Depl_mod1_CI`, relative to an unfished spawning biomass of `r paste(round(Spawn_mod1), fecund_unit,sep=' ')` 
-(95% asymptotic interval: `r paste(Spawn_mod1_CI, fecund_unit, sep=' ')`) (Table \ref{tab:Ref_pts_mod1}).  Unfished 
+`r Depl_mod1` (95% asymptotic interval: $\pm$ `r Depl_mod1_CI`, relative to an unfished spawning biomass of 2,525 mt
+(95% asymptotic interval: 1,068-3,981 mt) (Table \ref{tab:Ref_pts_mod1}).  Unfished 
 age `r min_age` biomass was estimated to be `r Ref_pts_mod1[2,2]` mt in the 
 base case model. The target spawning biomass ($B_{40\%}$) 
 is `r paste(Ref_pts_mod1[7,2], fecund_unit,sep=' ')`, which corresponds with an 
@@ -273,7 +272,7 @@ The fit to the length data was significantly improved by estimating a difference
 
 ## Decision Table{-}    
 
-The catchability of the WCGBT Survey was chosen as the axis of uncertainty during the STAR panel given the importance of this value in determining the scale of the population and the influence of the prior distribution on this quantity. The high state of nature had $log(q) = -0.766$, $q = 0.465$ and was chosen based on 1.15 units of standard deviation in the estimated $log(q)$ parameter from the base model. The 2019 spawning biomass for the high state of nature was close OT the 87.5\% quantile of the base model. The low state of nature had $log(q) = 0.223$, $q = 1.250$ and was chosen to approximate the 12.5\% quantile of the 2019 spawning biomass in the base model as the method of using 1.15 units of standard deviation was closer to the 25\% quantile.
+The catchability of the WCGBT Survey was chosen as the axis of uncertainty during the STAR panel given the importance of this value in determining the scale of the population and the influence of the prior distribution on this quantity. The high state of nature had $log(q) = -0.766$, $q = 0.465$ and was chosen based on 1.15 units of standard deviation in the estimated $log(q)$ parameter from the base model. The 2019 spawning biomass for the high state of nature was close to the 87.5\% quantile of the base model. The low state of nature had $log(q) = 0.223$, $q = 1.250$ and was chosen to approximate the 12.5\% quantile of the 2019 spawning biomass in the base model as the method of using 1.15 units of standard deviation was closer to the 25\% quantile.
 
 Based on input from the Groundfish Management Team representative to the STAR panel, the catch streams chosen for the decision table were a constant catch of 250 mt per year (based on recent low catch values), a constant catch of 494 mt per year (based on the status-quo harvest limits), and the ACL = ABC from the base model assuming a Category 2 sigma and P* = 0.45.
 

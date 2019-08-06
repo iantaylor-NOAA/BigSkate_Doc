@@ -104,13 +104,13 @@ The history of Big Skate is not well documented.  They were used as a food sourc
 
 Skates have been regarded as a predator on desirable market species such as Dungeness crab, and were thought of as nuisance fish with no appeal as a food item save for small local markets. They had been discarded or harvested at a minimal level until their livers became valued along with those of other cartilaginous fishes for the extraction of vitamin A in the 1940s.  Chapman [-@Chapman1944] recorded that “At present they are being fished heavily, in common with the other elasmobranchs of the coast, for the vitamins in their livers. The carcasses are either thrown away at sea or made into fish meal.  Little use is made of the excellent meat of the wings”.
 
-Little information is available about the historic Washington fishery for Big Skate.  In records before 2000, they are lumped together with other skates or in market categories [@GregLippert]; this necessitates considerable attention to reconstructing the fishery by observing the composition of skate catches in the modern fishery and applying those to the recently reconstructed historical records.
+Little information is available about the historic Washington fishery for Big Skate.  In records before 2000, they are lumped together with other skates or in market categories that include non-skate species [@GregLippert]; this necessitates considerable attention to reconstructing the fishery by observing the composition of skate catches in the modern fishery and applying those to the recently reconstructed historical records.
 
 Very little information is known about the Big Skate historical fishery in Oregon. The information we do have is mainly from historical landing data and species composition samples starting in the mid-nineties. The bulk of the catch is from the bottom trawl and longline fisheries, with smaller amounts as by-catch in mid-water trawl and the shrimp trawl fishery. Big Skate was lumped into the nominal “Skate” category until 2015 when it was separated into its own market category. Species composition data have been vitally important in reconstructing the pre-2015 historical catch [@TedCalavan].
 
 ## Stock Status and Management History
 
-The history of Big Skate management is documented in [@PFMC2018], reproduced here.
+The history of Big Skate management is documented in Pacific Fishery Management Council [-@PFMC2018], reproduced with minor edits for clarity and brevity in the following two paragraphs.
 
 Big Skate were managed in the "Other Fish" complex until 2015 when they were designated an Ecosystem Component (EC) species.  Catches of Big Skate are estimated to have averaged 95 mt from 2007–2011, along with large landings of "Unspecified Skate".  Analysis of Oregon port-sampling data indicates that about 98 percent of the recent Unspecified Skate landings in Oregon were comprised of Big Skate. Such large landings indicates targeting of Big Skate has occurred and an EC designation was not warranted. Based on this evidence, Big Skate was redesignated as an actively-managed species in the fishery. Big Skate has been managed with stock-specific harvest specifications since 2017 [@PFMC2018].
 
@@ -133,6 +133,8 @@ The Gulf of Alaska (GOA) skate complex is managed as three units. Big skates and
 
 In the Bering Sea and Aleutian Islands, skates are assessed as a group rather than as separate species.
 
+Stock Assessment models for Big Skate and Longnose Skate in the Gulf of Alaska were developed by Farrugia [-@Farrugia2017] but have not yet been used for management. For both species there was an increasing trend in the Gulf of Alaska bottom trawl survey spanning the years 1984-2013 that could not be well fit by the models and catchability was set to 1.0 to provide information about population scale in the absence of adequate information in the data.
+
 ### Canada
 
 In Canada historic information regarding skate catches goes back to the 1950’s. Prior to 1990’s skates were taken mostly as bycatch and landings were reported as part of a skate complex (not by species). As with the U.S. West Coast, the trawl fishery is responsible for the largest amount of bycatch.  Skate catches off British Columbia accelerated in the early 1990’s, partly due to emerging Asian markets. Since 1996, Longnose Skate has been targeted by the B.C. trawl fishery and as a result, catches have been more accurately reported. 
@@ -141,7 +143,7 @@ Assessments of Longnose Skate and Big Skate were conducted by Canada's Division 
 
 DCAC produced a range of potential yield estimates that were above the long-term average catch, with an upper bound that was three orders of magnitude larger than the long-term average catch. The Catch-MSY approach was found to be quite sensitive to assumptions and was not recommended as the sole basis of advice to managers.
 
-The recommendation for management for both skate species was that they should be managed with harvest yields based on mean historic catch, with consideration given to survey trends and to the ranges of maximum sustainable yield estimates identified by the Catch-MSY Approach. However, the analysis found no significant trends in abundance indices for Big Skate, and mean historical catches were below the maximum MSY estimate from the catch-MSY results.
+The recommendation for management for both skate species was that they should be managed with harvest yields based on mean historic catch, with consideration given to survey trends and to the ranges of maximum sustainable yield estimates identified by the Catch-MSY approach. However, the analysis found no significant trends in abundance indices for Big Skate, and mean historical catches were below the maximum MSY estimate from the catch-MSY results.
 
 ### Mexico
 
