@@ -403,8 +403,8 @@ for (model in 1:n_models) {
     SSB_Unfished    = mod$derived_quants[grep('SSB_I', mod$derived_quants$Label), ],
     SmryBio_Unfished = mod$derived_quants[grep('SmryBio', mod$derived_quants$Label, ignore.case=TRUE), ],
     Recr_Unfished   = mod$derived_quants[grep('Recr_I', mod$derived_quants$Label), ],
-    SSB_lastyr      = mod$derived_quants[grep(paste0('SSB_', LastYR), mod$derived_quants$Label), ],
-    Depletion_lastyr= mod$derived_quants[grep(paste0('Bratio_', LastYR), mod$derived_quants$Label), ],
+    SSB_lastyr      = mod$derived_quants[grep(paste0('SSB_', LastYR+1), mod$derived_quants$Label), ],
+    Depletion_lastyr= mod$derived_quants[grep(paste0('Bratio_', LastYR+1), mod$derived_quants$Label), ],
     Refpt_sB        = c(NA, NA, NA),
     SSB_Btgt        = mod$derived_quants[grep('SSB_Btgt', mod$derived_quants$Label), ],
     SPR_Btgt        = mod$derived_quants[grep('SPR_Btgt', mod$derived_quants$Label), ],
@@ -462,8 +462,8 @@ for (model in 1:n_models) {
   Quantity = c(paste('Unfished spawning biomass (', fecund_unit, ')', sep = ''),
                paste('Unfished age ', min_age, ' biomass (mt)', sep = ''),
                'Unfished recruitment ($R_{0}$, thousands)',
-               paste('Spawning biomass (', LastYR, ' ', fecund_unit, ')', sep = ''),
-               paste('Depletion (', LastYR,')',sep=''),
+               paste('Spawning biomass (', LastYR+1, ' ', fecund_unit, ')', sep = ''),
+               paste('Percent unfished (', LastYR+1,')',sep=''),
                '\\textbf{$\\text{Reference points based on } \\mathbf{B_{40\\%}}$}',
                'Spawning biomass ($B_{40\\%}$)',
                'SPR resulting in $B_{40\\%}$ ($SPR_{B40\\%}$)',
@@ -532,8 +532,8 @@ mngmnt.table = xtable(mngmnt,
                               designated an Ecosystem Component species in 2015 and
                               2016, and managed with stock-specific harvest
                               specifications since 2017. Estimated total mortality
-                              includes discards estimated in the model with an
-                              assumed mortality rate of 50\\%.'),
+                              includes dead discards estimated in the model
+                              (assuming a discard mortality rate of 50\\%).'),
                       label='tab:mnmgt_perform',
                       digits = c(0,0,1,1,1,1,1))  
 # Add alignment
@@ -558,7 +558,11 @@ colnames(project) = c('Year',
 project$Buffer <- c(1.0, 1.0, 0.874, 0.865, 0.857, 0.849,
                     0.841, 0.833, 0.826, 0.818, 0.810, 0.803)
 OFL.table = xtable(project,
-    caption=c('Projections of landings, total mortality, OFL, and ACL values.'),
+    caption=c('Projections of landings, total mortality, OFL, and ACL values.
+               For 2019 and 2020, mortality estimates were provided by the
+               Groundfish Management Team based on recent trends in catch.
+               For 2021 and beyond, estimated total mortality is assumed
+               equal to the ACL in each year.'),
     label = 'tab:OFL_projection_Exec',
     digits = c(0,0,1,1,1,1,3)) 
 
@@ -614,7 +618,11 @@ colnames(decision_mod1) = c('',
 decision_mod1.table = xtable(decision_mod1, 
     caption = c(paste0('Summary of 12-year projections beginning in 2019',
         ' for alternate states of nature based the axis of uncertainty for the model.',
-        ' Columns range over low, mid, and high states of nature, and rows range over different', 
+        ' Columns range over low, mid, and high states of nature associated with',
+        ' WCGBT Survey catchability values of 0.960 for the low state,',
+        ' 0.668 for the base state, and 0.465 for the high state',
+        ' (where higher catchability is associated with lower stock size).',
+        ' Rows range over different', 
         ' assumptions of catch levels.')), 
     label='tab:Decision_table_mod1')
 
@@ -628,9 +636,9 @@ addtorow$pos[[2]] <- -1
 addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{} 
                                & \\multicolumn{2}{c}{\\textbf{States of nature}} 
                                & \\multicolumn{2}{c}{} \\\\\n', 
-                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{Low State} 
-                               & \\multicolumn{2}{c}{Base State} 
-                               &  \\multicolumn{2}{c}{High State} \\\\\n')
+                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{Low State (q=0.960)} 
+                               & \\multicolumn{2}{c}{Base State (q=0.668)} 
+                               &  \\multicolumn{2}{c}{High State (q=0.465)} \\\\\n')
 
 
 
