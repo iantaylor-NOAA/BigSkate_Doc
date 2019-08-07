@@ -463,7 +463,7 @@ for (model in 1:n_models) {
                paste('Unfished age ', min_age, ' biomass (mt)', sep = ''),
                'Unfished recruitment ($R_{0}$, thousands)',
                paste('Spawning biomass (', LastYR+1, ' ', fecund_unit, ')', sep = ''),
-               paste('Percent unfished (', LastYR+1,')',sep=''),
+               paste('Fraction unfished (', LastYR+1,')',sep=''),
                '\\textbf{$\\text{Reference points based on } \\mathbf{B_{40\\%}}$}',
                'Spawning biomass ($B_{40\\%}$)',
                'SPR resulting in $B_{40\\%}$ ($SPR_{B40\\%}$)',
