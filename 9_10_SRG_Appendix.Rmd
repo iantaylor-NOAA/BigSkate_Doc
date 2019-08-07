@@ -54,3 +54,9 @@ range which were extrapolated based on catch rates from the commercial bottom tr
 
 
 
+\newpage
+
+<!-- ************************************DATAFILE(S)************************************************--> 
+
+# Appendix C. Auxiliary files {-}
+Links to model input files and supplementary tables will be provided here in the final version of this document.

@@ -188,6 +188,14 @@
                                            "Max","Status","Parm_StDev",
                                            "Pr_type","Prior","Pr_SD"))]  
 
+    # replace some parameter labels
+    mod_params$Label <- gsub(pattern = "Cessation",
+                             replacement = "Cessation_slope",
+                             x = mod_params$Label)
+    mod_params$Label <- gsub(pattern = "VonBert_K",
+                             replacement = "Cessation_age",
+                             x = mod_params$Label)
+
     # Combine bounds into one column
     mod_params$Min = paste('(', mod_params$Min, ', ', mod_params$Max, ')', sep='')
     

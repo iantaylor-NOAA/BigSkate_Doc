@@ -201,6 +201,8 @@ Lines indicate 95\% uncertainty interval around index values. Thicker lines indi
 
 ![Comparison of total mortality for the base model and the sensitivity analyses where historic catch was adjusted either by the estimated multipliers or to match the time series of F for Petrale Sole. Total mortality shown here includes discards with the discard rate applied. \label{fig:adjusted_historic_catch_comparison}](Figures/adjusted_historic_catch_comparison.png)
 
+![Time series of fraction unfished with approximate 95% asymptotic intervals estimated for the base model and the sensitivity analyses where historic catch was adjusted either by the estimated multipliers or to match the time series of F for Petrale Sole. \label{fig:Sensitivity_catch3}](Figures/sens.catchB_compare4_Bratio_uncertainty.png)
+
 
 
 

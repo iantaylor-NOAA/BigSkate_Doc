@@ -3,10 +3,9 @@
 # Harvest Projections and Decision Tables
 
 The forecasts of stock abundance and yield were developed using the final base model, 
-with the forecasted projections of the OFL presented in Table \ref{tab:OFL_projection}. 
+with the forecasted calculations of the OFL and ACL presented in Table \ref{tab:OFL_projection}. For 2019 and 2020, mortality estimates were provided by the Groundfish Management Team based on recent trends in catch. For 2021 and beyond, estimated total mortality is assumed equal to the ACL in each year.
 
-The forecasted projections of the OFL for each model are presented 
-in Table \ref{tab:Decision_table_mod1_text}. 
+The decision table including alternative catch streams for the alternative states of anture is presented in Table \ref{tab:Decision_table_mod1_text}. 
 
  
 

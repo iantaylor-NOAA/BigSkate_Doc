@@ -266,6 +266,11 @@ There is little evidence that the population is overfished or experiencing overf
 
 The fit to the length data was significantly improved by estimating a difference between female and male selectivity, with females having a lower maximum selectivity than males, but the behavioral processes that might contribute to this difference are not understood.
 
+\FloatBarrier
+
+## Scientific uncertainty{-}
+
+The Sigma values associated with the 2019 spawning biomass (calculated from the normal approximation and converted to the log-standard deviation of a lognormal distibution) was 0.35, well below the minimum 1.0 value associated with Category 2, the most likely classification for this assessment.
 
 \FloatBarrier
 
