@@ -224,15 +224,16 @@ axis(2, at=seq(0,1,.2))
 box()
 dev.off()
 
-### write tables of catch for exec summary
+### write tables of catch for exec summary (forecast values are from a different model)
+mod.forecast <- SS_output(dir = file.path(input.dir,'Base_model1_forecast'))
 
 yrs.forecast <- 2019:2030
-Landings <- (mod1$timeseries$"retain(B):_1" +
-               mod1$timeseries$"retain(B):_4")[mod1$timeseries$Yr %in% yrs.forecast]
-EstCatch <- (mod1$timeseries$"dead(B):_1" +
-               mod1$timeseries$"dead(B):_4")[mod1$timeseries$Yr %in% yrs.forecast]
-OFL <- mod1$derived_quants[paste0("OFLCatch_", yrs.forecast), "Value"]
-ACL <- mod1$derived_quants[paste0("ForeCatch_", yrs.forecast), "Value"]
+Landings <- (mod.forecast$timeseries$"retain(B):_1" +
+               mod.forecast$timeseries$"retain(B):_4")[mod.forecast$timeseries$Yr %in% yrs.forecast]
+EstCatch <- (mod.forecast$timeseries$"dead(B):_1" +
+               mod.forecast$timeseries$"dead(B):_4")[mod.forecast$timeseries$Yr %in% yrs.forecast]
+OFL <- mod.forecast$derived_quants[paste0("OFLCatch_", yrs.forecast), "Value"]
+ACL <- mod.forecast$derived_quants[paste0("ForeCatch_", yrs.forecast), "Value"]
 OFL[1:2] <- 541
 ACL[1:2] <- 494
 
