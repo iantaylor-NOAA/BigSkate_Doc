@@ -856,6 +856,26 @@ if(FALSE){
   dev.off()
 
 
+  # prior comparisons
+  png(file.path('C:/ss/skates/BigSkate_Doc/Figures/',
+                'GFSC_prior_comparisons.png'),
+      res=300, units='in', width=5.2, height=4, pointsize=10)
+  SSplotPars(bs82, strings="LnQ_base_WCGBTS(5)", showpost=FALSE,
+             nrow=1, ncol=1, new=FALSE, add=FALSE, showmle=TRUE,
+             showinit=FALSE, showlegend=FALSE, ltyvec=rep(3,4))
+  SSplotPars(bs99, strings="LnQ_base_WCGBTS(5)", showpost=FALSE,
+             nrow=1, ncol=1, new=FALSE, add=TRUE, showmle=TRUE,
+             showinit=FALSE, showlegend=FALSE)
+  legend('topright', lty=c(1,1,3,3), lwd=c(2,1,2,1),
+         legend=c("Big Skate prior","MLE","Longnose Skate prior","fit to LSKT prior"),
+         bty='n', col=c(1,4,1,4))
+  mtext(side=1, line=3, outer=FALSE, "log(q)")
+  mtext(side=2, line=3, outer=FALSE, "Density")
+  dev.off()
+
+
+  
+
   # getbs function from /BigSkate_Doc/R/BigSkate_functions.R
   source('c:/SS/skates/BigSkate_Doc/R/BigSkate_functions.R')
   getbs(99) 
@@ -947,3 +967,4 @@ if(FALSE){
                 )
 
 } # end if(FALSE) which allows sourcing the file to get the stuff at the top
+

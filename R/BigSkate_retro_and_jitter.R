@@ -31,7 +31,7 @@ legendlabels <- c("Base Model", paste("Data",-1:-5,"years"))
 # retro North
 # make time-series plots
 retro.mods <- SSgetoutput(dirvec=file.path(dir.mod, 'retrospectives',
-                             paste0("retro",0:-5)))
+                              paste0("retro",0:-5)))
 # replace one that had a bad Hessian
 ## retroMods.N[[6]] <- SS_output(file.path(YTdir.mods,
 ##                                         'retrospectives/retro.N/retro-5_nohess'))
@@ -83,3 +83,46 @@ if(runjitter){
   jit.out <- SS_RunJitter(dir.jit, Njitter=100)
   save(jit.out, file = file.path(dir.mod, "jitter/jitter_results.Rdata"))
 }
+
+
+dir.mod <- 'c:/SS/skates/models/bigskate99_new_prior_98percent_priorSD'
+
+# vector of total likelihood after estimation
+likesaved <- rep(NA, 100)
+
+# loop over jitter models
+for(i in 1:100){
+  # read first row of ParmTrace for each jitter
+  file = file.path(dir.mod, "jitter", paste0("ParmTrace",i,".sso"))
+  pars.i <- read.table(file, header = TRUE, nrows = 1, check.names = FALSE)
+
+  # combine parameter values into a data.frame
+  if(i == 1){
+    pars <- pars.i
+  }else{
+    pars <- rbind(pars, pars.i)
+  }
+
+  # get total likelihood after estimation
+  repfile <- file.path(dir.mod, "jitter", paste0("Report",i,".sso"))
+  Rep.head <- readLines(repfile, n = 300)
+  likelinenum <- grep("^LIKELIHOOD", Rep.head)
+  likeline <- Rep.head[likelinenum]
+  like <- as.numeric(substring(likeline, nchar("LIKELIHOOD") + 2))
+  likesaved[i] <- like
+}
+
+# convert total likelihoods into a TRUE/FALSE if equal to MLE
+likegood <- likesaved == min(likesaved)
+
+# look at correlation between TRUE/FALSE values and MLE
+cors <- cor(likegood, pars, use = "complete.obs")
+
+range(cors, na.rm=TRUE)
+## [1] -0.3182141  0.2577683
+names(pars)[!is.na(cors) & abs(cors) > 0.2]
+## [1] "VonBert_K_Fem_GP_1"                                       
+## [2] "VonBert_K_Mal_GP_1"                                       
+## [3] "Size_DblN_ascend_se_Fishery_current(1)"                   
+## [4] "Retain_L_asymptote_logit_Fishery_current(1)_BLK2repl_2015"
+
