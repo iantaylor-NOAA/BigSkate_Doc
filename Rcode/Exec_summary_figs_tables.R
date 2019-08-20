@@ -555,7 +555,7 @@ colnames(project) = c('Year',
             'Estimated total mortality (mt)', 
             'OFL (mt)', 
             'ACL (mt)')
-project$Buffer <- c(1.0, 1.0, 0.874, 0.865, 0.857, 0.849,
+project$Buffer <- c(NA, NA, 0.874, 0.865, 0.857, 0.849,
                     0.841, 0.833, 0.826, 0.818, 0.810, 0.803)
 OFL.table = xtable(project,
     caption=c('Projections of landings, total mortality, OFL, and ACL values.
@@ -623,7 +623,8 @@ decision_mod1.table = xtable(decision_mod1,
         ' 0.668 for the base state, and 0.465 for the high state',
         ' (where higher catchability is associated with lower stock size).',
         ' Rows range over different', 
-        ' assumptions of catch levels.')), 
+        ' assumptions of catch levels.')),
+    digits = c(0,0,0,1,0,3,0,3,0,3),
     label='tab:Decision_table_mod1')
 
 # Assign alignment and add the header columns
