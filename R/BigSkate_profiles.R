@@ -343,6 +343,9 @@ SSplotComparisons(profilesummary, subplot=1,
                   filenameprefix="profile_h_", legendloc="bottomleft")
 
 
+plot(h.vec, profilesummary$quants[profilesummary$quants$Label == "SSB_SPR", 1:7]/profilesummary$quants[profilesummary$quants$Label == "SSB_unfished", 1:7], type = 'l', xlab='Steepness (h)', ylab="Fraction unfished", lwd=3, yaxs='i')
+lines(h.vec, profilesummary$quants[profilesummary$quants$Label == "SSB_MSY", 1:7]/profilesummary$quants[profilesummary$quants$Label == "SSB_unfished", 1:7], lwd = 3, col=2)
+legend('bottomright', col=1:2, legend = c('SPR', 'MSY'), lwd=3, bty='n')
 
 ##################################################################################
 # Q profile

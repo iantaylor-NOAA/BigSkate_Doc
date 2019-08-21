@@ -334,7 +334,7 @@ Potential OFLs projected by the model are shown in Table \ref{tab:OFL_projection
 \restoregeometry
 <!-- \pagestyle{fancy} -->
 
-![Equilibrium yield curve for the base case model. Values are based on the `r Dat_end_mod1` fishery selectivity and retention with steepness fixed at 0.4. \label{fig:Yield_all}](r4ss/plots_mod1/yield1_yield_curve.png)
+![Equilibrium yield curve for the base case model. Values are based on the `r Dat_end_mod1` fishery selectivity and retention with steepness fixed at 0.4. \label{fig:Yield_all}](Figures/yield2_yield_curve_with_refpoints.png)
 
 <!-- ***********END EXECUTIVE SUMMARY RESULTS SUMMARY TABLE AND YIELD CURVE -->
 

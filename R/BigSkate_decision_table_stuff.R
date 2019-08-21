@@ -294,3 +294,86 @@ decision2 <- cbind(decision1[,1:2], newtab2)
 write.csv(decision2,
           file = 'c:/SS/skates/BigSkate_Doc/txt_files/DecisionTable_mod1.csv',
           row.names = FALSE)
+
+####
+# adding new rows for SPR = 60%
+####
+
+fore.dir <- file.path(bs99$inputs$dir, "forecasts")
+base_state_SPR60 <- SS_output(file.path(fore.dir, "base_state_SPR60"),
+                                verbose=FALSE, printstats=FALSE)
+SS_ForeCatch(base_state_SPR60, yrs=2019:2030, average = FALSE,
+             dead=TRUE, digits=1)
+### values below pasted into low and high state forecast files for SPR60
+
+ ## #Year Seas Fleet dead(B)               comment
+ ##  2019    1     1   195.9  #sum_for_2019: 241.3
+ ##  2019    1     4    45.4                      
+ ##  2020    1     1   195.9  #sum_for_2020: 241.3
+ ##  2020    1     4    45.4                      
+ ##  2021    1     1   911.7   #sum_for_2021: 1092
+ ##  2021    1     4   180.3                      
+ ##  2022    1     1   872.0 #sum_for_2022: 1044.7
+ ##  2022    1     4   172.7                      
+ ##  2023    1     1   840.2 #sum_for_2023: 1006.8
+ ##  2023    1     4   166.6                      
+ ##  2024    1     1   814.6  #sum_for_2024: 976.2
+ ##  2024    1     4   161.6                      
+ ##  2025    1     1   793.7  #sum_for_2025: 951.2
+ ##  2025    1     4   157.5                      
+ ##  2026    1     1   775.3  #sum_for_2026: 929.2
+ ##  2026    1     4   153.9                      
+ ##  2027    1     1   759.2  #sum_for_2027: 909.8
+ ##  2027    1     4   150.6                      
+ ##  2028    1     1   742.7    #sum_for_2028: 890
+ ##  2028    1     4   147.3                      
+ ##  2029    1     1   726.5  #sum_for_2029: 870.6
+ ##  2029    1     4   144.1                      
+ ##  2030    1     1   711.4  #sum_for_2030: 852.5
+ ##  2030    1     4   141.1
+low_state_SPR60  <- SS_output(file.path(fore.dir, "low_state_SPR60"),
+                                verbose=FALSE, printstats=FALSE)
+high_state_SPR60 <- SS_output(file.path(fore.dir, "high_state_SPR60"),
+                                verbose=FALSE, printstats=FALSE)
+
+vals.base_state_SPR60 <- r4ss:::SS_decision_table_stuff(base_state_SPR60, yrs=2019:2030)
+vals.low_state_SPR60  <- r4ss:::SS_decision_table_stuff(low_state_SPR60, yrs=2019:2030)
+vals.high_state_SPR60 <- r4ss:::SS_decision_table_stuff(high_state_SPR60, yrs=2019:2030)
+
+newtab3 <- cbind(vals.low_state_SPR60, vals.base_state_SPR60, vals.high_state_SPR60)
+newtab4 <- newtab3[,c(1,2, which(names(newtab3) %in% c("SpawnBio","dep")))]
+
+decision3 <- read.csv(file = 'c:/SS/skates/BigSkate_Doc/txt_files/DecisionTable_mod1.csv')
+newtab5 <- data.frame(xx="", newtab4)
+names(newtab5) <- names(decision3)
+decision3 <- rbind(decision3, newtab5)
+
+write.csv(decision3,
+          file = 'c:/SS/skates/BigSkate_Doc/txt_files/DecisionTable_expanded_Aug20.csv',
+          row.names = FALSE)
+
+
+### alternative forecast table
+yrs.forecast <- 2019:2030
+Landings <- (base_state_SPR60$timeseries$"retain(B):_1" +
+               base_state_SPR60$timeseries$"retain(B):_4")[base_state_SPR60$timeseries$Yr %in% yrs.forecast]
+EstCatch <- (base_state_SPR60$timeseries$"dead(B):_1" +
+               base_state_SPR60$timeseries$"dead(B):_4")[base_state_SPR60$timeseries$Yr %in% yrs.forecast]
+OFL <- base_state_SPR60$derived_quants[paste0("OFLCatch_", yrs.forecast), "Value"]
+ACL <- base_state_SPR60$derived_quants[paste0("ForeCatch_", yrs.forecast), "Value"]
+OFL[1:2] <- 541
+ACL[1:2] <- 494
+
+#Stock,Landings,EstCatch,OFL,ACL
+Exec_basemodel_summary <- data.frame(Stock = yrs.forecast,
+                                     Landings = Landings,
+                                     EstCatch = EstCatch,
+                                     OFL = OFL,
+                                     ACL = ACL)
+write.csv(Exec_basemodel_summary, "./txt_files/Exec_basemodel_summary_SPR60.csv",
+          row.names=FALSE)
+
+
+
+
+
