@@ -689,6 +689,8 @@
 \FloatBarrier
 \clearpage
 
+\newgeometry{hmargin=0.75in,vmargin=0.5in}
+
 ```{r, results='asis'}   
 # Decision tables is the same as the one in the Exec Summary created in
 # R_exec_summary_figs_tables.R.  For some reason, it has to be re-created here.
@@ -720,18 +722,21 @@ addtorow <- list()
 addtorow$pos <- list()
 addtorow$pos[[1]] <- -1
 addtorow$pos[[2]] <- -1
-addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{} 
-                               & \\multicolumn{2}{c}{\\textbf{States of nature}} 
-                               & \\multicolumn{2}{c}{} \\\\\n', 
-                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{Low State} 
-                               & \\multicolumn{2}{c}{Base State} 
-                               &  \\multicolumn{2}{c}{High State} \\\\\n')
+addtorow$pos[[3]] <- -1
+addtorow$command <- c( ' \\hline\n', ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{}
+                               & \\multicolumn{2}{c}{\\textbf{States of nature}}
+                               & \\multicolumn{2}{c}{} \\\\\n',
+                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{Low State (q=0.960)}
+                               & \\multicolumn{2}{c}{Base State (q=0.668)}
+                                &  \\multicolumn{2}{c}{High State (q=0.465)} \\\\\n')
 
 print(decision_mod1.table, add.to.row = addtorow, include.rownames = FALSE, 
       caption.placement = 'top', 
       hline.after = c(-1, 0, 12, 24, nrow(decision_mod1.table)), 
       scalebox = .85)
 ```
+
+\restoregeometry
 
 \FloatBarrier
 ```{r, results='asis'}
