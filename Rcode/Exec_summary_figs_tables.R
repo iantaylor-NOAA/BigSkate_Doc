@@ -609,11 +609,11 @@ colnames(decision_mod1) = c('',
                             'Year',  
                             'Catch',	
                             'Spawning Biomass',	
-                            'Frac. Unfished', 
+                            'Fraction Unfished', 
                             'Spawning Biomass',	
-                            'Frac. Unfished',	
+                            'Fraction Unfished',	
                             'Spawning Biomass',	
-                            'Frac. Unfished')
+                            'Fraction Unfished')
 
 decision_mod1.table = xtable(decision_mod1, 
     caption = c(paste0('Summary of 12-year projections beginning in 2019',
@@ -628,18 +628,21 @@ decision_mod1.table = xtable(decision_mod1,
     label='tab:Decision_table_mod1')
 
 # Assign alignment and add the header columns
-align(decision_mod1.table) = c('l','l|','c','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c') 
+align(decision_mod1.table) = c('l','l|','c','c|','>{\\centering}p{.6in}','>{\\centering}p{.7in}|','>{\\centering}p{.6in}','>{\\centering}p{.7in}|','>{\\centering}p{.6in}','>{\\centering}p{.7in}') 
+
 
 addtorow <- list()
 addtorow$pos <- list()
 addtorow$pos[[1]] <- -1
 addtorow$pos[[2]] <- -1
-addtorow$command <- c( ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{} 
-                               & \\multicolumn{2}{c}{\\textbf{States of nature}} 
-                               & \\multicolumn{2}{c}{} \\\\\n', 
-                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{Low State (q=0.960)} 
-                               & \\multicolumn{2}{c}{Base State (q=0.668)} 
-                               &  \\multicolumn{2}{c}{High State (q=0.465)} \\\\\n')
+addtorow$pos[[3]] <- -1
+addtorow$command <- c( ' \\hline\n', ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{}
+                               & \\multicolumn{2}{c}{\\textbf{States of nature}}
+                               & \\multicolumn{2}{c}{} \\\\\n',
+                       ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{Low State (q=0.960)}
+                               & \\multicolumn{2}{c}{Base State (q=0.668)}
+                                &  \\multicolumn{2}{c}{High State (q=0.465)} \\\\\n')
+
 
 
 

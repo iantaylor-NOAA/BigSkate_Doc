@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 
 # Executive Summary{-}
 
@@ -291,7 +296,11 @@ Potential OFLs projected by the model are shown in Table \ref{tab:OFL_projection
 ```{r, results='asis'}   
     # Print OFL table 
       print(OFL.table, include.rownames = FALSE, caption.placement = 'top')
+```
 
+\newgeometry{hmargin=0.75in,vmargin=0.5in}
+
+```{r, results='asis'} 
    # Decision tables currently read in as txt files and will need to be changed
    # Decision table text set up for alternate states of natural mortality, but 
    # the text can be changed in the Decision Table section of the R file, 
@@ -303,6 +312,8 @@ Potential OFLs projected by the model are shown in Table \ref{tab:OFL_projection
           hline.after = c(-1, 0, 12, 24, nrow(decision_mod1.table)), 
           scalebox = .85)
 ```
+
+\restoregeometry
 \FloatBarrier
 
 <!-- ***********END EXECUTIVE SUMMARY OFL AND DECISION TABLES************** -->
@@ -329,9 +340,11 @@ Potential OFLs projected by the model are shown in Table \ref{tab:OFL_projection
        align = TRUE, 
        hline.after = c(-1, 0, 4, 5, 7, 9, 11, nrow(base_summary.table)))
 ```
+
 \renewcommand{\arraystretch}{1}
 \end{landscape}
 \restoregeometry
+
 <!-- \pagestyle{fancy} -->
 
 ![Equilibrium yield curve for the base case model. Values are based on the `r Dat_end_mod1` fishery selectivity and retention with steepness fixed at 0.4. \label{fig:Yield_all}](Figures/yield2_yield_curve_with_refpoints.png)
