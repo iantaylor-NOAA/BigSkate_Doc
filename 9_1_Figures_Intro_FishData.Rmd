@@ -93,6 +93,10 @@ output:
 
 ![Map of estimated density by year for Big Skate in the WCGBT Survey calculated using VAST with a Gamma error structure. \label{fig:VAST_Yearly_Dens_WCGBTS}](Figures/VAST_Yearly_Dens_WCGBTS.png)
 
+![Map of Pearson residuals for the encounter probability in the Triennial Survey associated with each knot in the VAST standardization.\label{fig:VAST_encounter_pearson_TRI}](Figures/maps--encounter_pearson_resid_TRI.png)
+
+![Map of Pearson residuals for the catch rate in the Triennial Survey associated with each knot in the VAST standardization.\label{fig:VAST_catchrate_pearson_TRI}](Figures/maps--catchrate_pearson_resid_TRI.png)
+
 ![Map of Pearson residuals for the encounter probability in the WCGBT Survey associated with each knot in the VAST standardization.\label{fig:VAST_encounter_pearson}](Figures/maps--encounter_pearson_resid.png)
 
 ![Map of Pearson residuals for the catch rate in the WCGBT Survey associated with each knot in the VAST standardization.\label{fig:VAST_catchrate_pearson}](Figures/maps--catchrate_pearson_resid.png)

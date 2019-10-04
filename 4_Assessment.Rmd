@@ -338,6 +338,8 @@ Fit to the discard fraction estimates (Figure \ref{fig:discard_fitFishery}) and 
 
 ### Uncertainty and Sensitivity Analyses
 
+The uncertainty associated with the base model estimates is likely an underestimate of the true uncertainty about the stock. The Sigma values associated with the 2019 spawning biomass (calculated from the normal approximation and converted to the log-standard deviation of a lognormal distibution) is 0.35, well below the minimum 1.0 value associated with Category 2, the most likely classification for this assessment. A sigma calculated in the same way for the estimated 2019 OFL is 0.33.
+
 A number of sensitivity analyses were conducted, including:
 
 \begin{itemize}
@@ -468,7 +470,7 @@ The profile over natural mortality ($M$) shows that most of the information in t
 
 ### Reference Points
 
-Reference points were calculated using the estimated selectivities and catch distribution among fleets in the most recent year of the model, (`r LastYR`). Sustainable total yield (landings plus discards) were `r Ref_pts_mod1[15,2]` mt when using an $SPR_{50\%}$ reference harvest rate and with a 95% confidence interval of `r Ref_pts_mod1[15,3]` mt based on estimates of uncertainty. The spawning biomass equivalent to 40% of the unfished level ($SB_{40\%}$) was `r Ref_pts_mod1[7,2]` mt.
+Reference points were calculated using the estimated selectivities, retention rates, and catch distribution among fleets in 2018. Yield estimates represent total mortality including both retained and dead discarded fish. Sustainable total yield (landings plus discards) were `r Ref_pts_mod1[15,2]` mt when using an $SPR_{50\%}$ reference harvest rate and with a 95% confidence interval of `r Ref_pts_mod1[15,3]` mt based on estimates of uncertainty. The spawning biomass equivalent to 40% of the unfished level ($SB_{40\%}$) was `r Ref_pts_mod1[7,2]` mt.
 
 The `r LastYR+1` spawning biomass relative to unfished equilibrium spawning biomass is above the target of 40% of unfished levels (Figure \ref{fig:ts9_unfished_with_95_asymptotic_intervals_intervals}). The relative fishing intensity, $(1-SPR)/(1-SPR_{50\%})$, has been below the management target for the entire time series of the model (Table \ref{tab:Timeseries_mod1}).
 

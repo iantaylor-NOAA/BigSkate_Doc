@@ -275,7 +275,7 @@ The fit to the length data was significantly improved by estimating a difference
 
 ## Scientific uncertainty{-}
 
-The Sigma values associated with the 2019 spawning biomass (calculated from the normal approximation and converted to the log-standard deviation of a lognormal distibution) was 0.35, well below the minimum 1.0 value associated with Category 2, the most likely classification for this assessment.
+The Sigma values associated with the 2019 spawning biomass (calculated from the normal approximation and converted to the log-standard deviation of a lognormal distibution) is 0.35, well below the minimum 1.0 value associated with Category 2, the most likely classification for this assessment. A sigma calculated in the same way for the estimated 2019 OFL is 0.33.
 
 \FloatBarrier
 

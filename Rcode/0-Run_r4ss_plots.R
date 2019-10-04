@@ -148,6 +148,17 @@ SS_plots(mod1,
          printfolder = '', 
          dir = out.dir.mod1)
 
+# remake (ghost) length-at-age plot to only have 1 panel
+SS_plots(mod1,
+         fleetnames = fleetnames1,
+         plot = 20,
+         maxrows = 1,
+         maxcols = 1,
+         png = TRUE,
+         html = FALSE,
+         printfolder = '',
+         dir = out.dir.mod1)
+
 # remake length-comp multi-fleet plots to be taller
 SS_plots(mod1,
          fleetnames = fleetnames1,

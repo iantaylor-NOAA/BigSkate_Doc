@@ -59,4 +59,16 @@ range which were extrapolated based on catch rates from the commercial bottom tr
 <!-- ************************************DATAFILE(S)************************************************--> 
 
 # Appendix C. Auxiliary files {-}
-Links to model input files and supplementary tables will be provided here in the final version of this document.
+The listed files are available as auxiliary files to accompany the assessment document:
+
+\begin{enumerate}
+  \item Numbers at age (BigSkate2019_supplementary_tables.xlsx)
+  \item The `r spp` Stock Synthesis input files
+  
+  \begin{enumerate}
+    \item BSKT2019_data.ss
+    \item BSKT2019_control.ss
+    \item forecast.ss
+    \item starter.ss
+  \end{enumerate}
+\end{enumerate}

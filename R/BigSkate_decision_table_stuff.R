@@ -85,7 +85,7 @@ for(size in 1:2){
                         #"ForeCatch_2021",
                         "OFL_2019", "NatM"),
                     ylimAdj = 1.05, yaxs = 'i',
-                    legendlabels = c("New base model (q = 0.668)",
+                    legendlabels = c("Base model (q = 0.668)",
                         "Low state (q = 1.250)",
                         "High state (q = 0.464)"),
                     plotdir = dir)
@@ -103,7 +103,7 @@ for(size in 1:2){
                     legendloc = 'topright',
                     filenameprefix = paste0("state_forecast", pref),
                     densitynames = c("SSB_2019"),
-                    legendlabels = c("New base model (q = 0.668)","Low state (q = 1.250)","High state (q = 0.464)"),
+                    legendlabels = c("Base model (q = 0.668)","Low state (q = 1.250)","High state (q = 0.464)"),
                     plotdir = dir)
 }
 file.copy(file.path(dir, "state_compare2_spawnbio_uncertainty.png"),
@@ -113,6 +113,14 @@ file.copy(file.path(dir, "state_compare2_spawnbio_uncertainty.png"),
 file.copy(file.path(dir, "state_compare14_densities_SSB_2019.png"),
           file.path(dir, "../../../BigSkate_Doc/Figures/",
                     "state_compare14_densities_SSB_2019.png"),
+          overwrite=TRUE)
+file.copy(file.path(dir, "state_4x5_compare2_spawnbio_uncertainty.png"),
+          file.path(dir, "../../../BigSkate_Doc/Figures/",
+                    "state_4x5_compare2_spawnbio_uncertainty.png"),
+          overwrite=TRUE)
+file.copy(file.path(dir, "state_4x5_compare14_densities_SSB_2019.png"),
+          file.path(dir, "../../../BigSkate_Doc/Figures/",
+                    "state_4x5_compare14_densities_SSB_2019.png"),
           overwrite=TRUE)
 
 

@@ -496,9 +496,12 @@ for (model in 1:n_models) {
 
 # Model 1 
 Ref_pts_mod1.table = xtable(Ref_pts_mod1, 
-                            caption=c(paste('Summary of reference 
+                            caption=c(paste0('Summary of reference 
                                       points and management quantities for the 
-                                      base case ', mod1_label, '.',sep = '')), 
+                                      base case model.
+                                      Reference points were calculated using the
+                                      estimated selectivities, retention rates, and
+                                      catch distribution among fleets in 2018.')), 
                             label='tab:Ref_pts_mod1')  
 # Add alignment      
 align(Ref_pts_mod1.table) = c('l',
@@ -559,6 +562,7 @@ project$Buffer <- c(NA, NA, 0.874, 0.865, 0.857, 0.849,
                     0.841, 0.833, 0.826, 0.818, 0.810, 0.803)
 OFL.table = xtable(project,
     caption=c('Projections of landings, total mortality, OFL, and ACL values.
+               Total mortality is the sum of landings and dead discards.
                For 2019 and 2020, mortality estimates were provided by the
                Groundfish Management Team based on recent trends in catch.
                For 2021 and beyond, estimated total mortality is assumed

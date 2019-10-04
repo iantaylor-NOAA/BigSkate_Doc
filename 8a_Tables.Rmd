@@ -18,7 +18,11 @@
     Bio_all = mod1$timeseries[, c('Yr', 'Bio_all')]
     Bio_allyrs = subset(Bio_all, Yr > (Dat_start_mod1 - 1) & Yr <= (LastYR + 1))
 
-  
+    # 4-Oct-2019 cluge to fill in missing value for 2019
+    if(Bio_allyrs[Bio_allyrs$Yr == 2019] == 0){
+      Bio_allyrs[Bio_allyrs$Yr == 2019] <-
+        sum(mod1$batage[mod1$batage$Time == 2019.0, paste(0:mod1$accuage)])
+    }
   
     # Spawning biomass, extract and subset, and turn into scientific notation
     SpawningB = mod1$derived_quants[grep('SSB', mod1$derived_quants$Label), ]
@@ -670,7 +674,12 @@
     # xtable commands repeated from Exec_summary_figs_tables.R to change the label
     
     OFL.table = xtable(project,
-        caption=c('Projections of landings, total mortality, OFL, and ACL values.'),
+        caption=c('Projections of landings, total mortality, OFL, and ACL values.
+                   Total mortality is the sum of landings and dead discards.
+                   For 2019 and 2020, mortality estimates were provided by the
+                   Groundfish Management Team based on recent trends in catch.
+                   For 2021 and beyond, estimated total mortality is assumed
+                   equal to the ACL in each year.'),
         label = 'tab:OFL_projection',
         digits = c(0,0,1,1,1,1,3)) 
     
@@ -743,9 +752,12 @@ print(decision_mod1.table, add.to.row = addtorow, include.rownames = FALSE,
    # Print reference point tables
 
 Ref_pts_mod1.table2 = xtable(Ref_pts_mod1, 
-                            caption=c(paste('Summary of reference 
+                            caption=c(paste0('Summary of reference 
                                       points and management quantities for the 
-                                      base case ', mod1_label, '.',sep = '')), 
+                                      base case model.
+                                      Reference points were calculated using the
+                                      estimated selectivities, retention rates, and
+                                      catch distribution among fleets in 2018.')), 
                             label='tab:Ref_pts_mod1V2')  
 # Add alignment      
 align(Ref_pts_mod1.table2) = c('l',
