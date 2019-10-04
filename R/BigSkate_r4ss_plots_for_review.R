@@ -211,8 +211,26 @@ fleetcols2[1] <- fleetcols1[2]
 fleetcols3[1] <- fleetcols0[1]
 
 
-png('c:/SS/skates/BigSkate_Doc/Figures/LongnoseSkate_catch_plot_v2_6-3-2019.png',
+png('c:/SS/skates/BigSkate_Doc/Figures_extras/LongnoseSkate_catch_plot_v2_6-3-2019.png',
     res=300, units='in', width=6.5, height=5, pointsize=10)
+## SSplotCatch(model136, subplot=5, fleetcols = fleetcols3, addmax=FALSE,
+##             labels=rep("",10))
+SSplotCatch(model136, subplot=16, add=FALSE, fleetcols = fleetcols2, addmax=FALSE, labels=rep("",10), showlegend=FALSE)
+SSplotCatch(model136, subplot=2, add=TRUE, fleetcols = fleetcols1, addmax=FALSE, labels=rep("",10), showlegend=FALSE)
+legend('topleft',
+       bg='white',
+       bty='n',
+       fill = fleetcols1[c(2,1,4)],
+       legend = c("Dead discards", "Landings", "Tribal"))
+## legend(x=par()$usr[2]/2.5, y=par()$usr[4],
+##        fill = c(fleetcols3[1], fleetcols2[1], fleetcols1[1]),
+##        legend = c("Discard (surviving)","Discard (dead)","Landings"),
+##        bty='n')
+title(ylab="Landings + dead discards (mt)")
+dev.off()
+
+png('c:/SS/skates/BigSkate_Doc/Figures_extras/LongnoseSkate_catch_plot_smaller.png',
+    res=300, units='in', width=5.2, height=4, pointsize=10)
 ## SSplotCatch(model136, subplot=5, fleetcols = fleetcols3, addmax=FALSE,
 ##             labels=rep("",10))
 SSplotCatch(model136, subplot=16, add=FALSE, fleetcols = fleetcols2, addmax=FALSE, labels=rep("",10), showlegend=FALSE)
@@ -232,6 +250,18 @@ dev.off()
 
 png('c:/SS/skates/BigSkate_Doc/Figures/BigSkate_catch_plot_model99.png',
     res=300, units='in', width=6.5, height=5, pointsize=10)
+SSplotCatch(bs99, subplot=16, add=FALSE, fleetcols = fleetcols2, addmax=FALSE, labels=rep("",10), showlegend=FALSE)
+SSplotCatch(bs99, subplot=2, add=TRUE, fleetcols = fleetcols1, addmax=FALSE, labels=rep("",10), showlegend=FALSE)
+legend('topleft',
+       bg='white',
+       bty='n',
+       fill = fleetcols1[c(2,1,4)],
+       legend = c("Dead discards", "Landings", "Tribal"))
+title(ylab="Landings + dead discards (mt)")
+dev.off()
+
+png('c:/SS/skates/BigSkate_Doc/Figures/BigSkate_catch_plot_model99_4x5.png',
+    res=300, units='in', width=5.2, height=4, pointsize=10)
 SSplotCatch(bs99, subplot=16, add=FALSE, fleetcols = fleetcols2, addmax=FALSE, labels=rep("",10), showlegend=FALSE)
 SSplotCatch(bs99, subplot=2, add=TRUE, fleetcols = fleetcols1, addmax=FALSE, labels=rep("",10), showlegend=FALSE)
 legend('topleft',
