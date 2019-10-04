@@ -90,7 +90,7 @@ b_header <- construct_header(
 
 a_header$command = c(a_header$command, b_header$command[2:3])
 a_header$pos = c(a_header$pos, b_header$pos[[2]], b_header$pos[[3]])
-caption = "Modeled and design-based indices for the assessment model. The WCGBT and Triennial Surveys were standardized using the VAST geostatistical software and are in units of metric tons."
+caption = "Modeled and design-based indices for the assessment model with associated log-scale standard error estimates (se_log). The WCGBT and Triennial Surveys were standardized using the VAST geostatistical software and are in units of metric tons."
 
 index.table = xtable(Indices,
                     caption = caption,
