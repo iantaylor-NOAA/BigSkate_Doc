@@ -16,6 +16,17 @@ output:
 
 # Figures
 
+<!-- [!h] to control floating -->
+
+\begin{figure}[!h]
+\begin{centering}
+\includegraphics{Figures/assess_region_map.png}
+\caption{U.S. West Coast Exclusive Economic zone covering the area in which this stock assessment is focused.}\label{fig:assess_region_map}
+\end{centering}
+\end{figure}
+
+\clearpage
+
 ## Data Figures
 
 <!-- ====================================================================== --> 

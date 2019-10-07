@@ -297,7 +297,7 @@ Lines indicate 95\% uncertainty interval around index values. Thicker lines indi
 
 \begin{figure}[!h]
 \begin{centering}
-\includegraphics{r4ss/plots_mod1/yield2_yield_curve_with_refpoints.png}
+\includegraphics{Figures/yield2_yield_curve_with_refpoints.png}
 \caption{Equilibrium yield curve for the base case model. Values are based on the fishery selectivity and with steepness fixed at 0.4.}\label{fig:yield1_yield_curve}
 \end{centering}
 \end{figure}
