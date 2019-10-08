@@ -18,12 +18,12 @@
     Bio_all = mod1$timeseries[, c('Yr', 'Bio_all')]
     Bio_allyrs = subset(Bio_all, Yr > (Dat_start_mod1 - 1) & Yr <= (LastYR + 1))
 
-    # 4-Oct-2019 cluge to fill in missing value for 2019
-    if(Bio_allyrs[Bio_allyrs$Yr == 2019] == 0){
-      Bio_allyrs[Bio_allyrs$Yr == 2019] <-
+    # 4-Oct-2019 kluge to fill in missing value for 2019
+    if(Bio_allyrs$Bio_all[Bio_allyrs$Yr == 2019] == 0){
+      Bio_allyrs$Bio_all[Bio_allyrs$Yr == 2019] <-
         sum(mod1$batage[mod1$batage$Time == 2019.0, paste(0:mod1$accuage)])
     }
-  
+
     # Spawning biomass, extract and subset, and turn into scientific notation
     SpawningB = mod1$derived_quants[grep('SSB', mod1$derived_quants$Label), ]
     SpawningB = SpawningB[c(-1, -2), ]
@@ -460,6 +460,7 @@
 <!-- ********************MODEL 1 CONVERGENCE TABLE************************* --> 
 
 <!-- ***********JITTER TABLE*********************************************** --> 
+\vspace{1cm}
 
 ```{r, results = 'asis'}
     # Replace values in file and read in - values for all models in 1 table  
@@ -490,78 +491,24 @@
 
 
 <!-- ***********MODEL 1 HARVEST PROJECTIONS TABLE************************** --> 
-\newpage
+
+\vspace{3.5cm}
+
 ```{r, results = 'asis'}
-    # Pull OFL contribution and subset years
-    OFLcatch = mod1$derived_quants[grep('OFLCatch', mod1$derived_quants$Label), ]
-    OFLcatchyrs = OFLcatch[OFLcatch$Label >= paste('OFLCatch_', Project_firstyr, sep = '') &
-                           OFLcatch$Label <= paste('OFLCatch_', Project_lastyr, sep = ''), ]
 
-    # Pull forecasted landings and subset years
-    ForecastC = mod1$timeseries[, grepl('Yr|retain[(]B[)]', names(mod1$timeseries))]
-    ForecastC$total = rowSums(ForecastC[, -1])
-    ForecastCyrs = subset(ForecastC, Yr > (Project_firstyr - 1) & Yr < (Project_lastyr + 1))
+    # Print management performance table - will have to edit the text file and 
+    # R code for this table
+    # Edit file: './txt_files/Exec_mngmt_performance.csv'
+    print(mngmnt.table, include.rownames = FALSE, caption.placement = 'top', 
+          sanitize.text.function = function(x){x}, scalebox = .9)
 
-    # Pull summary biomass and subset years
-    Smry_biomass = mod1$timeseries[, c('Yr', 'Bio_smry')]
-    Smry_biomassyrs = subset(Smry_biomass, Yr > (Project_firstyr - 1) & Yr < (Project_lastyr + 1))
-
-
-    # Pull spawning biomass and subset years
-    SpawningB = mod1$derived_quants[grep('SSB', mod1$derived_quants$Label), ]
-    SpawningB = SpawningB[c(-1, -2), ]
-    SpawningByrs = SpawningB[SpawningB$Label >= paste('SSB_', Project_firstyr, sep = '') &
-                             SpawningB$Label <= paste('SSB_', Project_lastyr, sep = ''), ]
-
-    # Pull depletion and subset years
-    Depletion = mod1$derived_quants[grep('Bratio', mod1$derived_quants$Label), ]
-    Depletion = Depletion[c(-1, -2), ]
-    Depletionyrs = Depletion[Depletion$Label >= paste('Bratio_', Project_firstyr, sep = '') &
-                             Depletion$Label <= paste('Bratio_', Project_lastyr, sep = ''), ]
-
-    # Combine the data for the forecast table
-    Forecast_mod1 = as.data.frame(cbind(seq(Project_firstyr, Project_lastyr, 1),
-                                        OFLcatchyrs$Value,
-                                        ForecastCyrs$total,
-                                        Smry_biomassyrs$Bio_smry,
-                                        SpawningByrs$Value,
-                                        Depletionyrs$Value))
-    # Add column names
-    colnames(Forecast_mod1)=c('Yr',
-                           'OFL contribution (mt)',
-                           'ACL landings (mt)',
-                           'Age 2+ biomass (mt)',
-                           'Spawning Biomass (mt)',
-                           'Depletion')
-
-    # Make sure year is a factor, so you don't get decimals
-    Forecast_mod1$Yr = as.factor(Forecast_mod1$Yr)
-
-    # Create the forecast table
-    Forecast_mod1.table = xtable(Forecast_mod1,
-                              caption = c('Projection of potential
-                                        OFL, spawning biomass, and depletion for the
-                                        base case model.'),
-                              label = 'tab:Forecast_mod1', digits = 3)
-    # Add alignment
-    align(Forecast_mod1.table) = c('l',
-                                   'c',
-                                   '>{\\centering}p{1in}',
-                                   '>{\\centering}p{1in}',
-                                   '>{\\centering}p{1in}',
-                                   '>{\\centering}p{1in}',
-                                   '>{\\centering}p{1in}')
-
-    # Print model 1 forecast table
-    print(Forecast_mod1.table,
-          include.rownames = FALSE,
-          caption.placement = 'top')
 ```
 <!-- ---------------------------------------------------------------------- -->
 \FloatBarrier
 
 
 <!-- ***********MODEL 1 REFERENCE POINTS TIME SERIES TABLE***************** --> 
+\newpage
 
 ```{r}
     # Total biomass, extract and subset
@@ -710,22 +657,27 @@ colnames(decision_mod1) = c('',
                             'Year',  
                             'Catch',	
                             'Spawning Biomass',	
-                            'Frac. Unfished', 
+                            'Fraction Unfished', 
                             'Spawning Biomass',	
-                            'Frac. Unfished',	
+                            'Fraction Unfished',	
                             'Spawning Biomass',	
-                            'Frac. Unfished')
+                            'Fraction Unfished')
 
 decision_mod1.table = xtable(decision_mod1, 
-                             caption = c(paste0('Summary of 12-year projections beginning in 2019',
-                                                ' for alternate states of nature based the axis of uncertainty for the model.',
-                                                ' Columns range over low, mid, and high states of nature, and rows range over different', 
-                                                ' assumptions of catch levels.')), 
-                             digits = c(0,0,0,1,0,3,0,3,0,3),
-                             label='tab:Decision_table_mod1_text')
+    caption = c(paste0('Summary of 12-year projections beginning in 2019',
+        ' for alternate states of nature based the axis of uncertainty for the model.',
+        ' Columns range over low, mid, and high states of nature associated with',
+        ' WCGBT Survey catchability values of 0.960 for the low state,',
+        ' 0.668 for the base state, and 0.465 for the high state',
+        ' (where higher catchability is associated with lower stock size).',
+        ' Rows range over different', 
+        ' assumptions of catch levels.')),
+    digits = c(0,0,0,1,0,3,0,3,0,3),
+    label='tab:Decision_table_mod1')
 
 # Assign alignment and add the header columns
-align(decision_mod1.table) = c('l','l|','c','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c|','>{\\centering}p{.7in}','c') 
+align(decision_mod1.table) = c('l','l|','c','c|','>{\\centering}p{.6in}','>{\\centering}p{.7in}|','>{\\centering}p{.6in}','>{\\centering}p{.7in}|','>{\\centering}p{.6in}','>{\\centering}p{.7in}') 
+
 
 addtorow <- list()
 addtorow$pos <- list()
@@ -738,6 +690,8 @@ addtorow$command <- c( ' \\hline\n', ' \\multicolumn{3}{c}{}  &  \\multicolumn{2
                        ' \\multicolumn{3}{c}{}  &  \\multicolumn{2}{c}{Low State (q=0.960)}
                                & \\multicolumn{2}{c}{Base State (q=0.668)}
                                 &  \\multicolumn{2}{c}{High State (q=0.465)} \\\\\n')
+
+
 
 print(decision_mod1.table, add.to.row = addtorow, include.rownames = FALSE, 
       caption.placement = 'top', 
