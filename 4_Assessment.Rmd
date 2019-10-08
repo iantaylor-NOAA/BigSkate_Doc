@@ -338,7 +338,7 @@ Fit to the discard fraction estimates (Figure \ref{fig:discard_fitFishery}) and 
 
 ### Uncertainty and Sensitivity Analyses
 
-The uncertainty associated with the base model estimates is likely an underestimate of the true uncertainty about the stock. The Sigma values associated with the 2019 spawning biomass (calculated from the normal approximation and converted to the log-standard deviation of a lognormal distibution) is 0.35, well below the minimum 1.0 value associated with Category 2, the most likely classification for this assessment. A sigma calculated in the same way for the estimated 2019 OFL is 0.33.
+The uncertainty associated with the base model estimates is likely an underestimate of the true uncertainty about the stock. The Sigma values associated with the 2019 spawning biomass (calculated from the normal approximation and converted to the log-standard deviation of a lognormal distribution) is 0.35, well below the minimum 1.0 value associated with Category 2, the most likely classification for this assessment. A sigma calculated in the same way for the estimated 2019 OFL is 0.33.
 
 A number of sensitivity analyses were conducted, including:
 
