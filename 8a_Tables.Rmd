@@ -496,6 +496,35 @@
 
 ```{r, results = 'asis'}
 
+mngmnt = read.csv('./txt_files/Exec_mngmt_performance.csv')
+
+colnames(mngmnt) = c('Year',
+                     'OFL (mt; ABC prior to 2011)',  
+                     'ABC (mt)', 
+                     'ACL (mt; OY prior to 2011)',
+                     'Landings (mt)',
+                     'Estimated total mortality (mt)')
+
+# Create the management performance table
+mngmnt.table = xtable(mngmnt, 
+                      caption=c('Recent trend in total catch (mt) relative to the 
+                              management guidelines. Big skate was
+                              managed in the Other Species complex in 2013 and 2014,
+                              designated an Ecosystem Component species in 2015 and
+                              2016, and managed with stock-specific harvest
+                              specifications since 2017. Estimated total mortality
+                              includes dead discards estimated in the model
+                              (assuming a discard mortality rate of 50\\%).'),
+                      label='tab:MAIN_mnmgt_perform',
+                      digits = c(0,0,1,1,1,1,1))  
+# Add alignment
+align(mngmnt.table) = c('l','l',
+                        '>{\\centering}p{1.2in}',
+                        '>{\\centering}p{1in}',
+                        '>{\\centering}p{1in}', 
+                        '>{\\centering}p{1in}', 
+                        '>{\\centering}p{1in}')
+
     # Print management performance table - will have to edit the text file and 
     # R code for this table
     # Edit file: './txt_files/Exec_mngmt_performance.csv'

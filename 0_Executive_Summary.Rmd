@@ -9,14 +9,14 @@ output:
 ## Stock{-}
 
 This assessment reports the status of the `r spp` (\emph{`r spp.sci`}) resource in U.S. waters off the West Coast using data through `r LastYR`.
-A map showing the area of the U.S. West Coast Exclusive Economic Zone covered by this stock assessment is provided in Figure \ref{fig:assess_region_map}.
+A map showing the area of the U.S. West Coast Exclusive Economic Zone covered by this stock assessment is provided in Figure \ref{fig:ES_assess_region_map}.
 
 <!-- [H] to control floating -->
 
 \begin{figure}[H]
 \begin{centering}
 \includegraphics{Figures/assess_region_map.png}
-\caption{U.S. West Coast Exclusive Economic zone covering the area in which this stock assessment is focused.}\label{fig:assess_region_map}
+\caption{U.S. West Coast Exclusive Economic zone covering the area in which this stock assessment is focused.}\label{fig:ES_assess_region_map}
 \end{centering}
 \end{figure}
 
@@ -27,7 +27,7 @@ A map showing the area of the U.S. West Coast Exclusive Economic Zone covered by
 
 ## Catches{-}
 
-The majority of Big Skate catch was discarded prior to 1995 when markets for Big Skate and Longnose Skate developed, landings increased, and discarding decreased. The majority of the discards were unrecorded and the landings were in the unspecified skates category. The landings from prior to 1995 were reconstructed separately in each of the three coastal states for this assessment. In general the methods all relied on differences in depth distribution of the different skates species (primarily Big Skate and Longnose Skate). Discards during this period prior to 1995 were estimated outside the model based on an assumption that the average discard rate during the period 1950--1994 was equal to that for Longnose Skate. The current fishery, beginning in 1995, has less uncertainty in landings, lower discard rates, and more data on discards. The discards are estimated within the model for this period using a time-varying retention function. Big Skate have only been landed in their own species category in the past few years (starting in 2015).
+The majority of Big Skate catch was discarded prior to 1995 when markets for Big Skate and Longnose Skate developed, landings increased, and discarding decreased. The majority of the discards were unrecorded and the landings were in the unspecified skates category. The landings from prior to 1995 were reconstructed separately in each of the three coastal states for this assessment. In general the methods all relied on differences in depth distribution of the different skates species (primarily Big Skate and Longnose Skate). Discards during this period prior to 1995 were estimated outside the model based on an assumption that the average discard rate (tons discarded over tons caught) during the period 1950--1994 was equal to that for Longnose Skate. The current fishery, beginning in 1995, has less uncertainty in landings, lower discard rates, and more data on discards. The discards are estimated within the model for this period using a time-varying, length-based retention function. Big Skate have only been landed in their own species category in the past few years (starting in 2015).
 
 <!-- (Table \ref{tab:Exec_catch}).  -->
 
@@ -95,7 +95,7 @@ The assessment relies on two bottom trawl survey indices of abundance, the Trien
 
 Length composition data from the fishery is available starting in 1995 but is sparse until the most recent 10 years. Most of the ages are also from 2008 onward. This limits the ability of the model to estimate any changes in composition of the population during the majority of the history of the fishery. Estimates of discard rates and mean body weight of discards are available for the years 2002 onward and discard length compositions are available starting in 2010.
 
-The age and length data provide evidence for growth patterns and sex-specific differences in selectivity that are unusual among groundfish stocks that have been assessed within the U.S. West Coast and are not found in Longnose Skate, where the data show little difference between the sexes. Growth appears to be almost linear and similar between females and males up to about age 7 or over 100 cm at which point male growth appears to stabilize while females continue to grow. However, in spite of the similar growth pattern for ages prior to 7, males are observed more frequently in the length bins associated with these ages, with the 70--100 cm length bins showing more than 60% males in many years. Sex-specific differences in selectivity were included in the model in order to better match patterns in the sex ratios in the length composition data and a new "growth cessation model" was used to model growth as it provided much better fits than the von Bertalanffy growth function. The length and age data do not cover enough years or show enough evidence of distinct cohorts to reliably estimate deviations in recruitment around the stock-recruit curve, so recruitment in the final model is based directly on the Beverton-Holt stock-recruit curve. Steepness of this stock-recruit curve was not well-informed by the model so was fixed at the 0.4 value used in a previous Longnose Skate stock assessment.
+The age and length data provide evidence for growth patterns and sex-specific differences in selectivity that are unusual among groundfish stocks that have been assessed within the U.S. West Coast; these traits are not found in Longnose Skate, where the data show little difference between the sexes. Growth appears to be almost linear and similar between females and males up to about age 7 or over 100 cm at which point male growth appears to stabilize while females continue to grow. However, in spite of the similar growth pattern for ages prior to 7, males are observed more frequently in the length bins associated with these ages, with the 70--100 cm length bins showing more than 60% males in many years. Sex-specific differences in selectivity were included in the model in order to better match patterns in the sex ratios in the length composition data and a new "growth cessation model" was used to model growth as it provided much better fits than the von Bertalanffy growth function. The length and age data do not cover enough years or show enough evidence of distinct cohorts to reliably estimate deviations in recruitment around the stock-recruit curve, so recruitment in the final model is based directly on the Beverton-Holt stock-recruit curve. Steepness of this stock-recruit curve was not well-informed by the model so was fixed at the 0.4 value used in a previous Longnose Skate stock assessment.
 
 The final model has 44 estimated parameters, most of which are related to selectivity (including sex-specific differences), time-varying retention, and growth (including sex-specific differences). The remaining 7 parameters include natural mortality, equilibrium recruitment, an extra survey uncertainty parameter for each of the two surveys, and three catchability parameters, where the Triennial Survey is assumed to have a change in catchability starting in 1995 due to changes in survey design.
 
@@ -249,7 +249,7 @@ In this assessment, neither environmental nor ecosystem considerations were expl
 
 ## Management Performance{-}
 
-Annual Catch Limits have only been in place for Big Skate in recent years and total catch, including discards has remained below these limits with the exception of 2014, where in retrospect the catch was above the ACL although still below the Overfishing Limit (Table \ref{tab:mnmgt_perform}).
+Annual Catch Limits have only been in place for Big Skate in recent years and total catch, including discards, has remained below these limits with the exception of 2014, where in retrospect the catch was above the ACL although still below the Overfishing Limit (Table \ref{tab:mnmgt_perform}).
 
 <!-- ***********BEGIN EXECUTIVE SUMMARY MANAGEMENT PERFORMANCE TABLE******* --> 
 ```{r, results='asis'}
@@ -265,7 +265,7 @@ Annual Catch Limits have only been in place for Big Skate in recent years and to
 
 ## Unresolved Problems and Major Uncertainties{-}
 
-The data provide little information about the scale of the population, necessitating the use of a prior on catchability to maintain stable model results. During the review panel the prior was updated from the one developed in the 2007 Longnose Skate stock assessment to better account for Big Skate occurrences in shallower water than the surveyed region, but further refinement of this prior could be considered in the future.
+The data provide little information about the scale of the population, necessitating the use of a prior on catchability of the WCGBT Survey to maintain stable model results. During the review panel the prior was updated from the one developed in the 2007 Longnose Skate stock assessment to better account for Big Skate occurrences in shallower water than the surveyed region, but further refinement of this prior could be considered in the future.
 
 There is little evidence that the population is overfished or experiencing overfishing, but forecasts of overfishing limits vary considerably among the sensitivity analyses explored (though all remain well above the recent average catch).
 

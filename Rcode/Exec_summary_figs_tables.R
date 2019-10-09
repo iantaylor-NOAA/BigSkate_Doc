@@ -525,7 +525,7 @@ colnames(mngmnt) = c('Year',
                      'ABC (mt)', 
                      'ACL (mt; OY prior to 2011)',
                      'Landings (mt)',
-                     'Estimated total mortality (mt)')
+                     'Estimated total fishing mortality (mt)')
 
 # Create the management performance table
 mngmnt.table = xtable(mngmnt, 
@@ -542,10 +542,10 @@ mngmnt.table = xtable(mngmnt,
 # Add alignment
 align(mngmnt.table) = c('l','l',
                         '>{\\centering}p{1.2in}',
-                        '>{\\centering}p{1in}',
-                        '>{\\centering}p{1in}', 
-                        '>{\\centering}p{1in}', 
-                        '>{\\centering}p{1in}')  
+                        '>{\\centering}p{.8in}',
+                        '>{\\centering}p{1.2in}', 
+                        '>{\\centering}p{.8in}', 
+                        '>{\\centering}p{1.6in}')  
 
 
 # =============================================================================
