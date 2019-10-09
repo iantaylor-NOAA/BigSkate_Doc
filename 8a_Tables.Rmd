@@ -702,7 +702,7 @@ decision_mod1.table = xtable(decision_mod1,
         ' Rows range over different', 
         ' assumptions of catch levels.')),
     digits = c(0,0,0,1,0,3,0,3,0,3),
-    label='tab:Decision_table_mod1')
+    label='tab:Decision_table_mod1_text')
 
 # Assign alignment and add the header columns
 align(decision_mod1.table) = c('l','l|','c','c|','>{\\centering}p{.6in}','>{\\centering}p{.7in}|','>{\\centering}p{.6in}','>{\\centering}p{.7in}|','>{\\centering}p{.6in}','>{\\centering}p{.7in}') 

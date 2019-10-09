@@ -31,13 +31,13 @@ The input sample sizes for the length compositions were calculated via the Stewa
 
 \begin{centering}
 
-Input N = $N_{\text{hauls}} + 0.138 * N_{\text{fish}}$ if $N_{\text{fish}}/N_{\text{hauls}}$ is $<$ 44,
+Input N = $N_{\text{trips}} + 0.138 * N_{\text{fish}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is $<$ 44,
 
-Input N = $7.06 * N_{\text{hauls}}$ if $N_{\text{fish}}/N_{\text{hauls}}$ is $\geq$ 44.
+Input N = $7.06 * N_{\text{trips}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is $\geq$ 44.
 
 \end{centering}
 
-However, no haul had more than 44 Big Skate sampled, so only the first formula was used.
+However, no trip had more than 44 Big Skate sampled, so only the first formula was used.
 
 
 ## Survey length and age composition data
