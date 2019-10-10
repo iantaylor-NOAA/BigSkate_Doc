@@ -50,7 +50,7 @@ range which were extrapolated based on catch rates from the commercial bottom tr
 
 ![Time series of spawning biomass with approximate 95\% asymptotic intervals for the low and high states of nature compared to the base model.\label{fig:states_spawnbio}](Figures/state_compare2_spawnbio_uncertainty.png)
 
-![Maximum likelihood estimates and approximate asymptotic uncertainty for 2019 spawning biomass from the low and high states of nature compared to the base model. The symbols on each curve indicate the 2.5\%, 10\%, 25\%, 50\%, 75\%, 90\%, and 97.5\% quantiles and the low and high MLE estimates are just inside the 10\% and 90\% quantiles.\label{fig:states_spawnbio_2019}](Figures/state_compare14_densities_SSB_2019.png)
+![Maximum likelihood estimates and approximate asymptotic uncertainty for 2019 spawning biomass (in thousands of tons) from the low and high states of nature compared to the base model. The symbols on each curve indicate the 2.5\%, 10\%, 25\%, 50\%, 75\%, 90\%, and 97.5\% quantiles and the low and high MLE estimates are just inside the 10\% and 90\% quantiles.\label{fig:states_spawnbio_2019}](Figures/state_compare14_densities_SSB_2019.png)
 
 
 

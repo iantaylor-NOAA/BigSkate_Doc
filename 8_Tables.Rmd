@@ -123,7 +123,7 @@ print(index.table, add.to.row = a_header,
 
 PacFIN = read.csv("./txt_files/data_summaries/PacFIN.sample_sizes_by_state_with_ages.csv")
 
-colnames(PacFIN) = c("Year", rep(c("Ntows","Nfish"),5))
+colnames(PacFIN) = c("Year", rep(c("Ntrips","Nfish"),5))
 
 a_header <- construct_header(
   # the data.frame or matrix that should be plotted
@@ -137,7 +137,7 @@ a_header <- construct_header(
 )
 
 
-caption = "PacFIN length and age sample sizes by year and state with the number of unique tows from which Big Skate were sampled as well as the number of individual Big Skates that were measured. Samples from all landings were combined for the fishery length and age compositions, while samples from discards provided separate annual compositions."
+caption = "PacFIN length and age sample sizes by year and state with the number of unique trips from which Big Skate were sampled as well as the number of individual Big Skates that were measured. Samples from all landings were combined for the fishery length and age compositions, while samples from discards provided separate annual compositions."
 
 PacFIN.table = xtable(PacFIN,
                              caption = caption,
