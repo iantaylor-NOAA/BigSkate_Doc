@@ -186,10 +186,6 @@ One hundred sets of jittered starting values were generated using the jitter fun
 Figures illustrating responses to these requests are in Appendix B. 
 
 \begin{description}
-\item[Foo] \hfill \\
-Some text here.
-\item[Bar] \hfill \\
-Some other text here.
 
 \item[Request 1: Explore possible changes to the prior distribution on survey q for the West Coast Bottom Trawl Survey.] \hfill \\
 
