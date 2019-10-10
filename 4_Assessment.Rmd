@@ -183,21 +183,27 @@ One hundred sets of jittered starting values were generated using the jitter fun
 
 ## Response to the Current STAR Panel Requests
 
-Figures illustrating responses to these requests are in Appendix B. <!-- add link -->
+Figures illustrating responses to these requests are in Appendix B. 
 
-\begin{description}[style=sameline]
+\begin{description}
+\item[Foo] \hfill \\
+Some text here.
+\item[Bar] \hfill \\
+Some other text here.
 
 \item[Request 1: Explore possible changes to the prior distribution on survey q for the West Coast Bottom Trawl Survey.] \hfill \\
-  
+
 \textbf{Rationale:} The scale of the population is determined by the assumed prior of the survey q for the West Coast Bottom Trawl Survey, which was based on the 2007 longnose skate assessment.  Longnose skate have a very different depth distribution than big skate which occur in shallower depths than longnose skate or the West Coast Bottom Trawl Survey.
 
 \vspace{.4cm}
 
-\textbf{STAT Response:} An estimate of the fraction of Big Skate biomass unavailable to the survey due to occurrence shallower than 55 m was estimated at 25.8 percent of the total population as described in detail in the "Priors" section above. This was used to revise the "Depth availability" component of the prior calculation. A new component representing "Habitat availability" was also added to account for the potential impact of survey biomass estimate into untrawable habitat which would be expected to have lower density of Big Skate. The resulting prior on $log(q)$ had $mean = log(0.701) = -0.355$ and standard deviation 0.326, as compared to the Longnose Skate prior with mean = $log(0.83) = -0.188 and standard deviation = 0.187.
+\textbf{STAT Response:} An estimate of the fraction of Big Skate biomass unavailable to the survey due to occurrence shallower than 55 m was estimated at 25.8 percent of the total population as described in detail in the "Priors" section above. This was used to revise the "Depth availability" component of the prior calculation. A new component representing "Habitat availability" was also added to account for the potential impact of survey biomass estimate into untrawable habitat which would be expected to have lower density of Big Skate. The resulting prior on $log(q)$ had $mean = log(0.701) = -0.355$ and standard deviation 0.326, as compared to the Longnose Skate prior with mean = $log(0.83) = -0.188$ and standard deviation $= 0.187$.
 
 Replacing the Longnose Skate catchability prior with the new Big Skate catchability prior resulted in a lower catchability estimate and a higher biomass (Figure \ref{fig:spawnbio_STAR_request1}).
 
 The revised catchability prior was considered by the STAT to be a better choice for Big Skate and was used in all subsequent analyses with the exception of the responses to Requests 2 and 3 below which were conducted concurrently with the revision to the prior.
+
+
 
 \item[Request 2: Explore changes to the model to provide better fits to the trawl surveys.] \hfill \\
 
@@ -220,14 +226,13 @@ The model with flexible initial conditions had very similar estimates of unfishe
 
 Time-varying natural mortality ($M$) was implemented using a wide range of settings related to overall variability and autocorrelation among years in the setup of time-varying natural mortality. In some cases, the resulting time series of $M$ was implausibly variable, while other estimates were more reasonable.\label{fig:tv_M1}. However, the associated time series of biomass and recruitment showed implausible patterns for all but the least flexible setups (Figures \ref{fig:tv_M2} and \ref{fig:tv_M3}). The improvement in the fit to the indices was biggest for the least plausible scenarios and relatively small for the least flexible one (Figures \ref{fig:tv_M4} and \ref{fig:tv_M5}).
 
-This exploration indicated that even a small amount of time-varying natural mortality could explain some of the observed variability in the indices, but the STAT felt that Big Skate did not have sufficient data to reliably estimate time-varying $M$. 
-
+This exploration indicated that even a small amount of time-varying natural mortality could explain some of the observed variability in the indices, but the STAT felt that Big Skate did not have sufficient data to reliably estimate time-varying $M$.
 
 
 \item[Request 4: Provide a run with the new prior from request \#1 with diagnostics, fits, and likelihood profiles, if possible.] \hfill \\
 
 \textbf{Rationale:} The scale of the population is determined by the assumed prior of the survey q for the West Coast Bottom Trawl Survey, which was based on the 2007 longnose skate assessment.  Longnose skate have a very different depth distribution than big skate which occur in shallower depths than longnose skate or the West Coast Bottom Trawl Survey.  The new prior has more information specific to big skate distribution.
- 
+
 \vspace{.4cm}
 
 \textbf{STAT Response:}
@@ -236,7 +241,10 @@ A full set of r4ss outputs for this new candidate base model were provided to th
 
 The steepness profile (Figure \ref{fig:profile_h}) showed that the change in likelihood over the range $h$ = 0.3 to 0.9 was even smaller than in the pre-STAR base model, with a total change of about 0.5 units of negative log-likelihood compared to about 0.7 previously.
 
-\item[Request 5: Provide the diagnostics, fits, and the likelihood profiles associated with the model from run \#4 with Dirichlet weighting.] \hfill\\ 
+
+
+
+\item[Request 5: Provide the diagnostics, fits, and the likelihood profiles associated with the model from run \#4 with Dirichlet weighting.] \hfill\\
 
 \textbf{For the likelihood profiles:}
 
@@ -251,16 +259,18 @@ The steepness profile (Figure \ref{fig:profile_h}) showed that the change in lik
 
 \vspace{.4cm}
 
-\textbf{Rationale:} To confirm the model with Dirichlet weights better estimates scale without relying as heavily on the survey q prior.  There is a need to understand what is driving this counter-intuitive result.  This may provide the basis for a new base model.
+\textbf{Rationale:} To confirm the model with Dirichlet weights better estimates scale without relying as heavily on the survey $q$ prior.  There is a need to understand what is driving this counter-intuitive result.  This may provide the basis for a new base model.
 
 \vspace{.4cm}
-  
+
 \textbf{STAT Response:}
 
 
 A full set of r4ss outputs for this alternative model were provided to the STAR panel through the FTP site. A likelihood profile was conducted over survey catchability of the survey but there was a problem with convergence requiring further investigation (Figure \ref{fig:profile_logQ_D-M}). As the Dirichlet-Multinomial model was not chosen for the base model, further investigations in the profiles were not attempted.
 
-\item[Request 6: Repeat run \#4 with no survey q prior and a run with the mean of the survey q prior of at half the mean of the prior from run \#4.] \hfill\\
+
+
+\item[Request 6: Repeat run \#4 with no survey $q$ prior and a run with the mean of the survey $q$ prior of at half the mean of the prior from run \#4.] \hfill\\
 
 \textbf{Rationale:} To ensure the model is capable of estimating scale.
 
@@ -269,6 +279,8 @@ A full set of r4ss outputs for this alternative model were provided to the STAR 
 \textbf{STAT Response:}
 
 The $q$ prior from request \#4 had mean 0.701 corresponding to $log(q) = -0.355$. A model with the prior at half this value, $q = 0.3505$, $log(q) = -1.048$ had a maximum likelihood estimate of $q = 0.343$, $log(q) = -1.070$, indicating that the estimated values is closely following the prior. This is expected given the likelihood profile indicated that the best total likelihood occurred at the minimum q values among those considered. A model with no prior on survey catchability has the $q$ estimated at the lower bound of $log(q) = -2$ (Figure \ref{fig:request6_prior_comparisons}).
+
+
 
 \item[Request 7: Catch streams for the decision table should be as follows:] \hfill\\
 
@@ -290,11 +302,14 @@ The $q$ prior from request \#4 had mean 0.701 corresponding to $log(q) = -0.355$
 
 \textbf{STAT Response:}
 
-Based on the discussion in the review, the following steps were taken to develop the states of nature and the decision table. Catchability of the WCGBT Survey was used as the axis of uncertainty. The new base model estimate has $q = 0.668$, $log(q) = -0.403$, with the standard deviation of 0.315 for the estimated $log(q)$ parameter. Using the formula of 1.15 units of standard deviation (provided in the terms of reference) to get low and high values leads to $log(q) = -0.766$ and $log(q) = -0.041$, corresponding to catchability values of $q = 0.465$, and $q = 0.960$. The high $q$ value was associated with a low state of nature which was near the 25\% quantile of the 2019 spawning biomass estimate from the base model, which was perceived as too similar to the mean (where 12.5% and 87.5% quantiles were desired). A model with $log(q) = 0.223$, $q = 1.250$ (already run as part of the profile over $q$ was a better match to the 12.5% quantile in 2019 spawning biomass and chosen as the low state of nature. The high state with $q = 0.465$ was similar to the 87.5% quantile so was retained.
+Based on the discussion in the review, the following steps were taken to develop the states of nature and the decision table. Catchability of the WCGBT Survey was used as the axis of uncertainty. The new base model estimate has $q = 0.668$, $log(q) = -0.403$, with the standard deviation of 0.315 for the estimated $log(q)$ parameter. Using the formula of 1.15 units of standard deviation (provided in the terms of reference) to get low and high values leads to $log(q) = -0.766$ and $log(q) = -0.041$, corresponding to catchability values of $q = 0.465$, and $q = 0.960$. 
+
+The high $q$ value was associated with a low state of nature which was near the 25th quantile of the 2019 spawning biomass estimate from the base model, which was perceived as too similar to the mean (where the 12.5 and 87.5 quantiles were desired). A model with $log(q) = 0.223$, $q = 1.250$ (already run as part of the profile over $q$ was a better match to the 12.5 quantile in 2019 spawning biomass and chosen as the low state of nature. The high state with $q = 0.465$ was similar to the 87.5 quantile, so it was retained.
 
 The time series of spawning biomass and distribution of estimated 2019 spawning biomass were provided to the panel (Figures \ref{fig:states_spawnbio} and \ref{fig:states_spawnbio_2019}).
 
 \end{description}
+
 
 <!-- *********************MODEL 1 RESULTS********************************** -->
 
@@ -408,7 +423,7 @@ A number of sensitivity analyses were conducted, including:
 
 \end{itemize}
 
-Results of these sensitivity analyses are shown in Figures \ref{fig:Sensitivity_sel_and_Q} to \ref{fig:Sensitivity_catch}, and Tables \ref{tab:Sensitivity_sel_and_Q} to \ref{fig:Sensitivity_catch3}. More detailed descriptions of each group of sensitivities is provided below.
+Results of these sensitivity analyses are shown in Figures \ref{fig:Sensitivity_sel_and_Q} to \ref{fig:Sensitivity_catch}, and Tables \ref{tab:Sensitivity_sel_and_Q} to \ref{tab:Sensitivity_catch}. More detailed descriptions of each group of sensitivities is provided below.
 
 Additional sensitivity analyses were conducted during the STAR panel review, the results of which are discussed in the "Response to the Current STAR Panel Requests" section above.
 
