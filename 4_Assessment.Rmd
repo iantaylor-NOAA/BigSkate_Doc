@@ -220,7 +220,7 @@ The model with flexible initial conditions had very similar estimates of unfishe
 
 \textbf{STAT Response:}
 
-Time-varying natural mortality ($M$) was implemented using a wide range of settings related to overall variability and autocorrelation among years in the setup of time-varying natural mortality. In some cases, the resulting time series of $M$ was implausibly variable, while other estimates were more reasonable.\label{fig:tv_M1}. However, the associated time series of biomass and recruitment showed implausible patterns for all but the least flexible setups (Figures \ref{fig:tv_M2} and \ref{fig:tv_M3}). The improvement in the fit to the indices was biggest for the least plausible scenarios and relatively small for the least flexible one (Figures \ref{fig:tv_M4} and \ref{fig:tv_M5}).
+Time-varying natural mortality ($M$) was implemented using a wide range of settings related to overall variability and autocorrelation among years in the setup of time-varying natural mortality. In some cases, the resulting time series of $M$ was implausibly variable, while other estimates were more reasonable (Figure \ref{fig:tv_M1}). However, the associated time series of biomass and recruitment showed implausible patterns for all but the least flexible setups (Figures \ref{fig:tv_M2} and \ref{fig:tv_M3}). The improvement in the fit to the indices was biggest for the least plausible scenarios and relatively small for the least flexible one (Figures \ref{fig:tv_M4} and \ref{fig:tv_M5}).
 
 This exploration indicated that even a small amount of time-varying natural mortality could explain some of the observed variability in the indices, but the STAT felt that Big Skate did not have sufficient data to reliably estimate time-varying $M$.
 
@@ -314,7 +314,7 @@ The time series of spawning biomass and distribution of estimated 2019 spawning 
 The base model parameter estimates and their approximate asymptotic standard errors 
 are shown in Table \ref{tab:model_params}.  Estimates of derived reference points and 
 approximate 95% asymptotic confidence intervals are shown in Table \ref{tab:Ref_pts_mod1V2}.
-Time-series of estimated stock size over time are shown in Table \ref{tab:Timeseries_mod1}.
+Time-series of estimated stock size over time are shown in Table \ref{tab:Timeseries_mod1} and in Figures \ref{fig:ts7_Spawning_biomass_(mt)_with_95_asymptotic_intervals_intervals} to \ref{fig:SR_curve2}.
 
 ### Parameter Estimates
 

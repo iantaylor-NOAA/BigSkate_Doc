@@ -23,7 +23,11 @@ Love et al.  [-@Love1987] -->
 
 ## Fishery dependent length and age composition data
 
-Fishery length composition data from PacFIN were available for the years 1995--2018 (with the exception of 2000) as shown in Table \ref{tab:PacFIN_Samples}. Ages were available only from 2004, 2008-2012, and 2018. These were all represented in the model as conditioned on length, in order to provide more detailed information about the relationship between age and length.  Treating the data this way also reduces any influence of size-based selectivity on the age composition, and ensures independence from the length samples. Furthermore, samples recorded in data from Washington in 2009 were sampled using a length-stratified system, and therefore should only be treated as conditioned on length.
+Fishery length composition data from PacFIN were available for the years 1995--2018 (with the exception of 2000) as shown in Table \ref{tab:PacFIN_Samples}.
+
+The length compositions from the fishery and each of the two surveys aggregated across all years is shown in Figure \ref{fig:comp_lendat_aggregated_across_time}.
+
+Ages were available only from 2004, 2008-2012, and 2018. These were all represented in the model as conditioned on length in order to provide more detailed information about the relationship between age and length (Figure \ref{fig:age_dat_fishery}).  Treating the data this way also reduces any influence of size-based selectivity on the age composition, and ensures independence from the length samples. Furthermore, samples recorded in data from Washington in 2009 were sampled using a length-stratified system, and therefore should only be treated as conditioned on length.
 
 Length compositions of Big Skate discarded in commercial fisheries and measured by the West Coast Groundfish Observer program were available for the years 2010--2017.
 
@@ -44,10 +48,7 @@ However, no trip had more than 44 Big Skate sampled, so only the first formula w
 
 Lengths of Big Skate were only collected from the Triennial survey in 1998, 2001, and 2004, but in 1998 only 3 `r spp` were sampled, so those lengths were excluded from this analysis. Length compositions were available for all years of the WCGBT Survey. Sample sizes for both surveys are provided in Table \ref{tab:Survey_Samples}. The WCGBT Survey measured disc width for the years 2006 and 2007, and total length in all other years. Those samples for which  only disc width was measured were converted to total length using the formula above.
 
-The length compositions from the fishery and each of the two surveys aggregated across all years is shown in Figure
-\ref{fig:comp_lendat_aggregated_across_time}.
-
-Ages were available from the WCGBT Survey in the years 2009, 2010, 2016, 2017, and 2018. No ages were available from the Triennial Survey.
+Ages were available from the WCGBT Survey in the years 2009, 2010, 2016, 2017, and 2018 which again were represented as conditioned on length (Figure \ref{fig:age_dat_survey}). No ages were available from the Triennial Survey.
 
 \vspace{.5cm}
 

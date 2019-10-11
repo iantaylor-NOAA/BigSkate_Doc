@@ -110,7 +110,7 @@ Very little information is known about the Big Skate historical fishery in Orego
 
 ## Stock Status and Management History
 
-The history of Big Skate management is documented in Pacific Fishery Management Council [-@PFMC2018], reproduced with minor edits for clarity and brevity in the following two paragraphs.
+The history of Big Skate management on the U.S. West Coast (Figure \ref{fig:assess_region_map}) is documented in Pacific Fishery Management Council [-@PFMC2018], reproduced with minor edits for clarity and brevity in the following two paragraphs.
 
 Big Skate were managed in the "Other Fish" complex until 2015 when they were designated an Ecosystem Component (EC) species.  Catches of Big Skate are estimated to have averaged 95 mt from 2007–2011, along with large landings of "Unspecified Skate".  Analysis of Oregon port-sampling data indicates that about 98 percent of the recent Unspecified Skate landings in Oregon were comprised of Big Skate. Such large landings indicates targeting of Big Skate has occurred and an EC designation was not warranted. Based on this evidence, Big Skate was redesignated as an actively-managed species in the fishery. Big Skate has been managed with stock-specific harvest specifications since 2017 [@PFMC2018].
 

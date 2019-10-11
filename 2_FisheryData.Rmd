@@ -84,7 +84,9 @@ Two alternative methods were explored to estimate the mean annual discard amount
 
 A discard mortality rate of 50 percent was assumed for all discards, following the assumption used for the Longnose Skate assessment conducted for the U.S. West Coast in 2007 [@Gertseva2007] The same rate has been used for skates in the trawl fishery in British Columbia, based on an approximate average of these reported rates. In 2015, PFMC's Groundfish Management Team  (GMT) conducted a comprehensive literature review of skate discard mortality, and concluded that the current assumption regarding Big Skate discard mortality is consistent with existing reported rates for other similar species.
 
-Estimation of discard rates (discard amount relative to total catch) during the period of the West Coast Groundfish Observer Program (WCGOP), which began in 2002, was hindered by the landings of Big Skate primarily occurring in the "unspecified skate" category prior to 2015. Therefore, a discard rate was computed for this period using the combination of Big Skate and unspecified skate, under the assumption that the vast majority of the unspecified skates were Big Skate. A coefficient of variation was calculated for this rate by bootstrapping vessels within ports, because the observer program randomly chooses vessels within ports to be observed. For the years after the catch share program was implemented in 2011, the trawl fishery was subject to 100% observer coverage and discarding is assumed to be known with minimal error (CV = 0.01).
+Estimation of discard rates (discard amount relative to total catch) during the period of the West Coast Groundfish Observer Program (WCGOP), which began in 2002, was hindered by the landings of Big Skate primarily occurring in the "unspecified skate" category prior to 2015. Therefore, a discard rate was computed for this period using the combination of Big Skate and unspecified skate, under the assumption that the vast majority of the unspecified skates were Big Skate. A coefficient of variation was calculated for this rate by bootstrapping vessels within ports, because the observer program randomly chooses vessels within ports to be observed. For the years after the catch share program was implemented in 2011, the trawl fishery was subject to 100% observer coverage and discarding is assumed to be known with minimal error (CV = 0.01). 
+
+The model inputs for dead catch by fleet are shown in Figure \ref{fig:catch_input_plot} and the resulting estimates of total dead catch by year, including model estimates of dead discards, are shown in Figure \ref{fig:dead_catches}.
 
 The mean body weight of discarded Big Skates, calculated from the weight and count of baskets of discarded Big Skate, was available for the years 2002--2017.
 
@@ -95,7 +97,7 @@ The mean body weight of discarded Big Skates, calculated from the weight and cou
 
 ## Indices of abundance
 
-Description of two indices used in the model and one that was not included are below. Index values, diagnostics, and maps are provided in Table \ref{tab:index_inputs} and Figures \ref{fig:VAST_QQ_plots} through \ref{fig:IPHC_map}.
+Description of two indices used in the model and one that was not included are below. Index values, diagnostics, and maps are provided in Table \ref{tab:index_inputs} and Figures \ref{fig:survey_hauls_map} through \ref{fig:IPHC_map}.
 
 ### Alaska Fisheries Science Center (AFSC) Triennial Shelf Survey
 
@@ -105,7 +107,7 @@ The survey design used equally-spaced transects from which searches for tows in 
 
 ### Northwest Fisheries Science Center West Coast Groundfish Bottom Trawl Survey
 
-In 2003, the NWFSC took over an ongoing slope survey that the AFSC had been conducting, and expanded it spatially to include the continental shelf. This survey, referred to in this document as the "WCGBT Survey" or "WCGBTS", is conducted annually. It uses a random-grid design covering the coastal waters from a depth of 55 m to 1,280 m from late-May to early-October [@Bradburn2011 ; @Keller2017]. Four chartered industry vessels are used in most years. The location of Big Skate catches relative to all survey stations in WCGBT Survey are shown in Figure \ref{fig:survey_hauls_map}.
+In 2003, the NWFSC expanded the ongoing slope survey to include the continental shelf. This survey, referred to in this document as the "WCGBT Survey" or "WCGBTS", is conducted annually. It uses a random-grid design covering the coastal waters from a depth of 55 m to 1,280 m from late-May to early-October [@Bradburn2011 ; @Keller2017]. Four chartered industry vessels are used in most years. The location of Big Skate catches relative to all survey stations in WCGBT Survey are shown in Figure \ref{fig:survey_hauls_map}. Relative frequency of presence or absence of Big Skate by depth bin is shown in Figure \ref{fig:WCGBTS_presence_absence_by_depth_bin}.
 
 ### Index Standardization
 

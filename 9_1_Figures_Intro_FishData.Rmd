@@ -51,7 +51,17 @@ output:
 
 \clearpage
 
-<!-- ![Summary of data sources used in the `r mod1_label`. \label{fig:data_plot}](r4ss/plots_mod1/data_plot.png) -->
+\FloatBarrier
+
+\newpage
+
+![Reconstructed landings by area. Tribal catch was all landed in Washington. \label{fig:catch_by_state}](Figures/catch_by_source.png)
+
+![Estimated total catch using different assumptions for discards. The discard rates shown in green lines are relative to the right-hand axis while all other values are relative to the left-hand axis.\label{fig:discard_calculations}](Figures/discard_calculations.png)
+
+![Catch data input to the model under assumed fleet structure. The historical discards shown in green have been scaled to account for an assumed 50% discard mortality. Discards during the period from 1995 onward are not represented here as they are estimated within the model. \label{fig:catch_input_plot}](r4ss/plots_mod1/catch2 landings stacked.png)
+
+![Estimated catch history of Big Skate. Discards prior to 1995 were estimated outside the model while those from 1995 onward are estimated internally based on a time-varying retention function.\label{fig:dead_catches}](Figures/BigSkate_catch_plot_model99.png)
 
 \FloatBarrier
 
@@ -75,15 +85,6 @@ output:
 \FloatBarrier
 
 ![Presence or absence of Big Skate in the WCGBT Survey by 25 m depth bin for all 6,382 hauls with depth less than 425 m over the years 2003--2018. The height and width of each block are prortional to the number of hauls within that bin. For 50--75 m, there were 324 hauls with Big Skate present and 263 with no Big Skate.\label{fig:WCGBTS_presence_absence_by_depth_bin}](Figures/WCGBTS_presence_absence_by_depth_bin.png)
-
-
-![Reconstructed landings by area. Tribal catch was all landed in Washington. \label{fig:catch_by_state}](Figures/catch_by_source.png)
-
-![Estimated total catch using different assumptions for discards. The discard rates shown in green lines are relative to the right-hand axis while all other values are relative to the left-hand axis.\label{fig:discard_calculations}](Figures/discard_calculations.png)
-
-![Catch data input to the model under assumed fleet structure. The historical discards shown in green have been scaled to account for an assumed 50% discard mortality. Discards during the period from 1995 onward are not represented here as they are estimated within the model. \label{fig:catch_input_plot}](r4ss/plots_mod1/catch2 landings stacked.png)
-
-
 
 
 \FloatBarrier

@@ -13,16 +13,40 @@
 
 \FloatBarrier
 
+<!-- ********************************************************************** -->
+<!-- **********************Weight-Length FIGURES*************************** --> 
+<!-- ********************************************************************** -->
+
+
 <!-- [H] to control floating -->
 
 \begin{figure}[!h]
 \begin{centering}
-\includegraphics{r4ss/plots_mod1/comp_lendat__aggregated_across_time.png}
-\caption{Length comp data, aggregated across time by fleet.}\label{fig:comp_lendat_aggregated_across_time}
+\includegraphics{Figures/Big Skate bio relationships.png}
+\caption{Estimated relationship between length and weight (left) and
+disc-width and length (right) for `r spp`. Colored points show observed values
+and the black line indicates the estimated relationship
+$W = 0.0000074924L^{2.9925}$.}\label{fig:weight-length}
 \end{centering}
 \end{figure}
 
-<!-- ![Length comp data, aggregated across time by fleet. \label{fig:comp_lendat_aggregated_across_time}](r4ss/plots_mod1/comp_lendat__aggregated_across_time.png) -->
+<!-- ![Estimated relationship between length and weight (left) and
+disc-width and length (right) for `r spp`. Colored points show observed values
+and the black line indicates the estimated relationship
+$W = 0.0000074924L^{2.9925}$.\label{fig:weight-length}](Figures/Big Skate bio relationships.png) -->
+
+
+<!-- [H] to control floating -->
+<!-- no longer needed because length-weight figure added above
+
+<!-- \begin{figure}[!h]
+\begin{centering}
+\includegraphics{r4ss/plots_mod1/comp_lendat__aggregated_across_time.png}
+\caption{Length composition data, aggregated across time by fleet.}\label{fig:comp_lendat_aggregated_across_time}
+\end{centering}
+\end{figure} -->
+
+![Length comp data, aggregated across time by fleet. \label{fig:comp_lendat_aggregated_across_time}](r4ss/plots_mod1/comp_lendat__aggregated_across_time.png)
 
 \FloatBarrier
 
@@ -30,7 +54,7 @@
 
 ![Conditional age-at-length data from the current fishery. \label{fig:age_dat_fishery}](r4ss/plots_mod1/comp_condAALdat_bubflt1mkt2.png)
 
-![Conditional age-at-length data from the WCGBT Survey. \label{fig:age_dat_fishery}](r4ss/plots_mod1/comp_condAALdat_bubflt5mkt0.png)
+![Conditional age-at-length data from the WCGBT Survey. \label{fig:age_dat_survey}](r4ss/plots_mod1/comp_condAALdat_bubflt5mkt0.png)
 
 
 
@@ -43,17 +67,7 @@
 ![Estimated ageing imprecision.\label{fig:ageing_imprecision}](r4ss/plots_mod1/numbers10_ageerror_matrix_1.png)
 
 <!-- ********************************************************************** -->
-<!-- **********************Weight-Length FIGURES*************************** --> 
-<!-- ********************************************************************** -->
-![Estimated relationship between length and weight (left) and
-disc-width and length (right) for `r spp`. Colored points show observed values
-and the black line indicates the estimated relationship
-$W = 0.0000074924L^{2.9925}$.\label{fig:weight-length}](Figures/Big Skate bio relationships.png)
-
-
-
-<!-- ********************************************************************** -->
-<!-- **************Sex Ratio, Maturity, FecundityFIGURES******************* --> 
+<!-- **************Sex Ratio, Maturity, Fecundity FIGURES****************** --> 
 <!-- ********************************************************************** -->
 
 ![Estimated maturity relationship for female `r spp`.
