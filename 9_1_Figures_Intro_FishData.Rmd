@@ -95,9 +95,15 @@ output:
 
 ![Quantile-quantile (Q-Q) plot showing empirical quantiles of the positive catch rate relative to their expected theoretical quantiles within the VAST geostatistical standardization for the two surveys with both Gamma and Lognormal error structures.\label{fig:VAST_QQ_plots}](Figures/VAST_QQ_plots.png)
 
-![Index of abundance from the Triennial Survey calculated three ways.\label{fig:Triennial_index_compare}](Figures/Triennial_index_compare.png)
+![Index of abundance from the Triennial Survey calculated as a
+  design-based index and using the VAST geostatistical analysis with
+  alternative error structures. Details on the alternative calculations
+  are provided in the text.\label{fig:Triennial_index_compare}](Figures/Triennial_index_compare.png)
 
-![Index of abundance from the WCGBT Survey calculated three ways.\label{fig:WCGBTS_index_compare}](Figures/WCGBTS_index_compare.png)
+![Index of abundance from the WCGBT Survey calculated as a
+  design-based index and using the VAST geostatistical analysis with
+  alternative error structures. Details on the alternative calculations
+  are provided in the text.\label{fig:WCGBTS_index_compare}](Figures/WCGBTS_index_compare.png)
 
 ![Index of abundance from the International Pacific Halibut Commission longline survey (not used in the assessment model).\label{fig:IPHC_index}](Figures/IPHC index for Big Skate.png)
 

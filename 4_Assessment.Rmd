@@ -488,4 +488,12 @@ The `r LastYR+1` spawning biomass relative to unfished equilibrium spawning biom
 Table \ref{tab:Ref_pts_mod1V2} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield1_yield_curve} shows the equilibrium curve based on a steepness value of 0.4.
 
 
+### Unresolved Problems and Major Uncertainties
+
+The data provide little information about the scale of the population, necessitating the use of a prior on catchability of the WCGBT Survey to maintain stable model results. During the review panel the prior was updated from the one developed in the 2007 Longnose Skate stock assessment to better account for Big Skate occurrences in shallower water than the surveyed region, but further refinement of this prior could be considered in the future.
+
+There is little evidence that the population is overfished or experiencing overfishing, but forecasts of overfishing limits vary considerably among the sensitivity analyses explored (though all remain well above the recent average catch).
+
+The fit to the length data was significantly improved by estimating a difference between female and male selectivity, with females having a lower maximum selectivity than males, but the behavioral processes that might contribute to this difference are not understood.
+
 

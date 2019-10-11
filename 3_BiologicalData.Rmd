@@ -6,7 +6,9 @@
 
 ## Measurement Details and Conversion Factors
 
-Size measurements of skates are not always total-length measurements, requiring conversion factors.  Some size measurements in the data are recorded as either disc width or inter-spiracle width. A conversion factor from disc width to total-length was estimated as $L = 1.3399 * W$, based on 95 samples from the WCGBT Survey, where both measurements were collected (R-squared = 0.9983). Little sex difference is observed, so the data were converted using a single relationship for both sexes (Figure \ref{fig:weight-length}). This estimate is similar to the conversion estimated by Ebert [-@Ebert2008] for Big Skate in Alaska. The inter-spiracle width to total length conversion was based on estimates from Downs & Cheng [-@Downs2013], and does differ by sex:
+Size measurements of skates are not always total-length measurements, requiring conversion factors.  Some size measurements in the data are recorded as either disc width or inter-spiracle width. About one third of the size measurements from Big Skate landed in Washington were inter-spiracle width (which was first used in 2013) and all size measurements for Big Skate landed in California were disc width. Finally, all survey size measuresments in 2006 were disc width and in 2007 both width and length were measured for about half the samples, but only width for the other half. 
+
+A conversion factor from disc width to total-length was estimated as $L = 1.3399 * W$, based on 95 samples from the 2007 WCGBT Survey where both measurements were collected (R-squared = 0.9983). Little sex difference is observed, so the data were converted using a single relationship for both sexes (Figure \ref{fig:weight-length}). This estimate is similar to the conversion estimated by Ebert [-@Ebert2008] for Big Skate in Alaska. The inter-spiracle width to total length conversion was based on estimates from Downs & Cheng [-@Downs2013], and does differ by sex:
 
 \begin{centering}
 
@@ -16,10 +18,6 @@ $L = 3.824 + 10.927*ISW$ (males).
 
 \end{centering}
 
-
-<!--
-Not sure why this is here:
-Love et al.  [-@Love1987] -->
 
 ## Fishery dependent length and age composition data
 

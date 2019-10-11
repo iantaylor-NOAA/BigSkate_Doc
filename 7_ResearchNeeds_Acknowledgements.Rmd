@@ -8,7 +8,7 @@ output:
 
 # Research and Data Needs
 
-We recommend the following research be conducted before the next assessment.
+We recommend the following research be conducted before the next assessment. This are listed in order of descending priority.
 
 \begin{enumerate}
 

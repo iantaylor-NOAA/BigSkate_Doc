@@ -357,7 +357,7 @@ Potential OFLs projected by the model are shown in Table \ref{tab:OFL_projection
 
 ## Research and Data Needs{-}
 
-We recommend the following research be conducted before the next assessment.
+We recommend the following research be conducted before the next assessment. This are listed in order of descending priority.
 
 \begin{enumerate}
 
