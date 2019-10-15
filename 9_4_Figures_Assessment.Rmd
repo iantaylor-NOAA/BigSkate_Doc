@@ -91,7 +91,7 @@ Lines indicate 95\% uncertainty interval around index values. Thicker lines indi
 
 
 
-![Fits to length comp data, aggregated across time by fleet. \label{fig:comp_lenfit_aggregated_across_time}](r4ss/plots_mod1/comp_lenfit__aggregated_across_time.png)
+![Fits to length composition data, aggregated across time by fleet. \label{fig:comp_lenfit_aggregated_across_time}](r4ss/plots_mod1/comp_lenfit__aggregated_across_time.png)
 
 ![Pearson residuals for length composition data for all years and fleets, with females in red and males in blue. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected). \label{fig:comp_lenfit__multi-fleet_comparison}](r4ss/plots_mod1/comp_lenfit__multi-fleet_comparison.png)
 
@@ -101,9 +101,9 @@ Lines indicate 95\% uncertainty interval around index values. Thicker lines indi
 
 <!-- ***********Implied fits to the sex ratios ************************** --> 
 
-![Observed sex ratios (points) from the fishery length comp data with 75% intervals (vertical lines) calculated as a Jeffreys interval based on the adjusted input sample size. The model expectation is shown in the blue line.\label{fig:sexratio_len_flt1mkt2}](r4ss/plots_mod1/sexratio_len_flt1mkt2.png)
+![Observed sex ratios (points) from the fishery length composition data with 75% intervals (vertical lines) calculated as a Jeffreys interval based on the adjusted input sample size. The model expectation is shown in the blue line.\label{fig:sexratio_len_flt1mkt2}](r4ss/plots_mod1/sexratio_len_flt1mkt2.png)
 
-![Observed sex ratios (points) from the WCGBT Survey length comp data with 75% intervals (vertical lines) calculated as a Jeffreys interval based on the adjusted input sample size. The model expectation is shown in the blue line.\label{fig:sexratio_len_flt5mkt0}](r4ss/plots_mod1/sexratio_len_flt5mkt0.png)
+![Observed sex ratios (points) from the WCGBT Survey length composition data with 75% intervals (vertical lines) calculated as a Jeffreys interval based on the adjusted input sample size. The model expectation is shown in the blue line.\label{fig:sexratio_len_flt5mkt0}](r4ss/plots_mod1/sexratio_len_flt5mkt0.png)
 
 <!-- ***********Fits to the discards and mean body weight *************** --> 
 ![Fit to the discard fraction estimates. Points are model estimates with 95% uncertainty intervals. The model estimate is shown in the blue lines.\label{fig:discard_fitFishery}](r4ss/plots_mod1/discard_fitFishery.png)
@@ -148,7 +148,8 @@ Lines indicate 95\% uncertainty interval around index values. Thicker lines indi
 
 ![Estimated recruitment and the assumed stock-recruit relationship. \label{fig:SR_curve2}](r4ss/plots_mod1/SR_curve2.png)
 
-![Estimated total catch including discards estimated within the model. The historical discards shown in green have been scaled to account for an assumed 50% discard mortality but the discards in the recent period show both live and dead discards. \label{fig:catch_total_plot}](r4ss/plots_mod1/catch5 total catch (including discards) stacked.png)
+<!-- removing total catch figure which is redundant with new figure added earlier -->
+<!-- ![Estimated total catch including discards estimated within the model. The historical discards shown in green have been scaled to account for an assumed 50% discard mortality but the discards in the recent period show both live and dead discards. \label{fig:catch_total_plot}](r4ss/plots_mod1/catch5 total catch (including discards) stacked.png) -->
 
 \FloatBarrier
 
@@ -301,8 +302,6 @@ Lines indicate 95\% uncertainty interval around index values. Thicker lines indi
 \caption{Equilibrium yield curve for the base case model. Values are based on the fishery selectivity and with steepness fixed at 0.4.}\label{fig:yield1_yield_curve}
 \end{centering}
 \end{figure}
-
-<!-- ![Equilibrium yield curve for the base case model. Values are based on the fishery selectivity and with steepness fixed at 0.4. \label{fig:yield1_yield_curve}](r4ss/plots_mod1/yield1_yield_curve.png) -->
 
 
 \FloatBarrier

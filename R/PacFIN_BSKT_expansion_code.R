@@ -66,11 +66,25 @@ nrow(PacFIN.BSKT.BDS)
 
 # To convert from from disc width to total lengths
 # (conversion is derived from WCGBTS data)
+table(PacFIN.BSKT.BDS$FISH_LENGTH_TYPE, PacFIN.BSKT.BDS$SOURCE_AGID)
+   
+#       C    O    W
+#  A 1309    0    0
+#  F    2    0    0
+#  R    0    0  528
+#  T    0 5097  884
 
 sub <- PacFIN.BSKT.BDS$FISH_LENGTH_TYPE %in% "A"
 PacFIN.BSKT.BDS$FISH_LENGTH[sub] <- 1.3399 * PacFIN.BSKT.BDS$FISH_LENGTH[sub]
 
+
 # To convert to from interspiracular width to total lengths
+table(PacFIN.BSKT.BDS$FISH_LENGTH_TYPE %in% "R", PacFIN.BSKT.BDS$SOURCE_AGID)
+#           C    O    W
+#  FALSE 1311 5097  884
+#  TRUE     0    0  528
+
+
 # Females or unsexed (only 2 unsexed fish with interspiracular width)
 sub <- PacFIN.BSKT.BDS$FISH_LENGTH_TYPE %in% "R" &
   PacFIN.BSKT.BDS$SEX %in% c("F","U") &
