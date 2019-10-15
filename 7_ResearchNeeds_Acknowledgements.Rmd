@@ -35,15 +35,20 @@ The authors gratefully acknowledge the time and effort Stacey Miller, John DeVor
 
 We thank the STAR panel Chair, David Sampson, and reviewers Robin Cook, Henrik Sparholt, and Cody Szulwalski.
 
-The Reconstructions of historical catch were critical to this assessment, and there are many people who contributed, among them
+The reconstructions of historical catch were critical to this assessment, and there are many people who contributed, among them:
 
-our colleagues at WDFW:  Theresa Tsou, Jessi Doerpinghaus, and Greg Lippert,
+\begin{itemize}
 
-our colleagues at ODFW:  Ali Whitman, Patrick Mirick, and Ted Calavan,
+\item our colleagues at WDFW:  Theresa Tsou, Jessi Doerpinghaus, and Greg Lippert
 
-our colleagues at the SWFSC:  John Field and Rebecca Miller,
+\item our colleagues at ODFW:  Ali Whitman, Patrick Mirick, and Ted Calavan
 
-and others whose knowledge of the fishery provided context: Gerry Richter and Todd Phillips.
+\item our colleagues at the SWFSC:  John Field and Rebecca Miller
+
+
+\item others whose knowledge of the fishery provided context: Gerry Richter and Todd Phillips
+
+\end{itemize}
 
 Our colleagues at NWFWC, including Chantel Wetzel, Kelli Johnson, and John Wallace all provided valuable contributions to the extraction and processing of the survey and fishery data.
 
