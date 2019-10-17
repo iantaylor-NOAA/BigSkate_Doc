@@ -50,7 +50,7 @@ The reconstructions of historical catch were critical to this assessment, and th
 
 \end{itemize}
 
-Our colleagues at NWFWC, including Chantel Wetzel, Kelli Johnson, and John Wallace all provided valuable contributions to the extraction and processing of the survey and fishery data.
+Our colleagues at NWFSC, including Chantel Wetzel, Kelli Johnson, and John Wallace all provided valuable contributions to the extraction and processing of the survey and fishery data.
 
 Curt Whitmire's input was critical to the development of the new catchability prior for the WCGBTS.
 
