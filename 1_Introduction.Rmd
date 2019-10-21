@@ -137,7 +137,7 @@ Stock Assessment models for Big Skate and Longnose Skate in the Gulf of Alaska w
 
 ### Canada
 
-In Canada historic information regarding skate catches goes back to the 1950’s. Prior to the 1990’s skates were taken mostly as bycatch and landings were reported as part of a skate complex (not by species). As with the U.S. West Coast, the trawl fishery is responsible for the largest amount of bycatch.  Skate catches off British Columbia accelerated in the early 1990’s, partly due to emerging Asian markets. Since 1996, Longnose Skate has been targeted by the B.C. trawl fishery and as a result, catches have been more accurately reported. 
+In Canada historic information regarding skate catches goes back to the 1950s. Prior to the 1990s skates were taken mostly as bycatch and landings were reported as part of a skate complex (not by species). As with the U.S. West Coast, the trawl fishery is responsible for the largest amount of bycatch.  Skate catches off British Columbia accelerated in the early 1990s, partly due to emerging Asian markets. Since 1996, Longnose Skate has been targeted by the B.C. trawl fishery and as a result, catches have been more accurately reported. 
 
 Assessments of Longnose Skate and Big Skate were conducted by Canada's Division of Fisheries and Oceans in 2015 [@King2015].  For Big Skate, a Bayesian surplus production model failed to provide plausible results, and two data-limited approaches were investigated: Depletion-Corrected Average Catch Analysis (DCAC), and a Catch-MSY (maximum sustainable yield) Approach.  
 

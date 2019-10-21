@@ -86,10 +86,8 @@ bibliography: BibFile.bib
 \newpage
 ```{r child = "4_Assessment.Rmd"}
 ```
-\newpage
 ```{r child = "5_HarvestProjections.Rmd"}
 ```
-\newpage
 ```{r child = "6_RegionalManagement.Rmd"}
 ```
 \newpage
